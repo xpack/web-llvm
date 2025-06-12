@@ -113,7 +113,10 @@ The format on ARM64 is:
 
 3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 +------—+------—+-+-+—+--------------------------------—+ | C Wrd | Epi Cnt |E|X|Ver| <a href="/docs/api/classes/llvm/function">Function</a> Length | +------—+---—+–&#39;-&#39;-&#39;—&#39;—+----------------------------—+ | Reserved |Ex. Code Words| (Extended Epilogue Count) | +----—+-----—+-----------—+----------------------------—+
 
-<a href="/docs/api/classes/llvm/function">Function</a> Length : 18-bit field indicating the total length of the function in bytes divided by 2. If a function is larger than 512KB, then multiple pdata and xdata records must be used. Vers : 2-bit field describing the version of the remaining structure. Only version 0 is currently defined (values 1-3 are not permitted). X : 1-bit field indicating the presence of exception data E : 1-bit field indicating that the single epilogue is packed into the header F : 1-bit field indicating that the record describes a function fragment (implies that no prologue is present, and prologue processing should be skipped) (<a href="/docs/api/namespaces/llvm/arm">ARM</a> only) Epilogue Count : 5-bit field that differs in meaning based on the E field. <CodeBlock>             If E is set, then this field specifies the index of the
+<a href="/docs/api/classes/llvm/function">Function</a> Length : 18-bit field indicating the total length of the function in bytes divided by 2. If a function is larger than 512KB, then multiple pdata and xdata records must be used. Vers : 2-bit field describing the version of the remaining structure. Only version 0 is currently defined (values 1-3 are not permitted). X : 1-bit field indicating the presence of exception data E : 1-bit field indicating that the single epilogue is packed into the header F : 1-bit field indicating that the record describes a function fragment (implies that no prologue is present, and prologue processing should be skipped) (<a href="/docs/api/namespaces/llvm/arm">ARM</a> only) Epilogue Count : 5-bit field that differs in meaning based on the E field. 
+
+<CodeBlock>
+             If E is set, then this field specifies the index of the
              first unwind code describing the (only) epilogue.
 
              Otherwise, this field indicates the number of exception

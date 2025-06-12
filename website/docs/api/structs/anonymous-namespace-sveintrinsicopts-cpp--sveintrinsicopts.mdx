@@ -241,7 +241,10 @@ Currently, this pass only coalesces calls to SVE ptrue intrinsics if they match 
 </ul>
 
 
-EXAMPLE: <CodeBlock>%1 = &lt;vscale x 8 x i1&gt; ptrue(i32 SV&#95;ALL)
+EXAMPLE: 
+
+<CodeBlock>
+%1 = &lt;vscale x 8 x i1&gt; ptrue(i32 SV&#95;ALL)
 ; Logical:  &lt;1, 1, 1, 1, 1, 1, 1, 1&gt;
 ; Physical: &lt;1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0&gt;
 ...
@@ -252,7 +255,10 @@ EXAMPLE: <CodeBlock>%1 = &lt;vscale x 8 x i1&gt; ptrue(i32 SV&#95;ALL)
 ...
 </CodeBlock>
 
-Here, %2 can be replaced by an SVE reinterpret of %1, giving, for instance: <CodeBlock>%1 = &lt;vscale x 8 x i1&gt; ptrue(i32 i31)
+Here, %2 can be replaced by an SVE reinterpret of %1, giving, for instance: 
+
+<CodeBlock>
+%1 = &lt;vscale x 8 x i1&gt; ptrue(i32 i31)
 %2 = &lt;vscale x 16 x i1&gt; convert.to.svbool(&lt;vscale x 8 x i1&gt; %1)
 %3 = &lt;vscale x 4 x i1&gt; convert.from.svbool(&lt;vscale x 16 x i1&gt; %2)
 </CodeBlock>

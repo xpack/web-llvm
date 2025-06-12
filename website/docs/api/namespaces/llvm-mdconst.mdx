@@ -115,6 +115,7 @@ In prehistory – when metadata was a subclass of <em><a href="/docs/api/classes
 
 </ProgramListing>
 
+
 Now that <em><a href="/docs/api/classes/llvm/value">Value</a></em> and <em><a href="/docs/api/classes/llvm/metadata">Metadata</a></em> are in separate hierarchies, maintaining the semantics for <em><a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa()</a></em>, <em><a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast()</a></em>, <em><a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast()</a></em> (etc.) requires three steps: cast in the <em><a href="/docs/api/classes/llvm/metadata">Metadata</a></em> hierarchy, extraction of the <em><a href="/docs/api/classes/llvm/value">Value</a></em>, and cast in the <em><a href="/docs/api/classes/llvm/value">Value</a></em> hierarchy. Besides creating boiler-plate, this requires subtle control flow changes.
 
 The end-goal is to create a new type of metadata, called (e.g.) <em>MDInt</em>, so that metadata can refer to numbers without traversing a bridge to the <em><a href="/docs/api/classes/llvm/value">Value</a></em> hierarchy. In this final state, the code above would look like this:
@@ -127,6 +128,7 @@ The end-goal is to create a new type of metadata, called (e.g.) <em>MDInt</em>, 
 
 </ProgramListing>
 
+
 The API in this namespace supports the transition. <em>MDInt</em> doesn&#39;t exist yet, and even once it does, changing each metadata schema to use it is its own mini-project. In the meantime this API prevents us from introducing complex and bug-prone control flow that will disappear in the end. In particular, the above code looks like this:
 
 
@@ -136,6 +138,7 @@ The API in this namespace supports the transition. <em>MDInt</em> doesn&#39;t ex
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;CI = <a href="#ad7ca5290dc5789cbeae763690e6edccf">mdconst::dyn&#95;extract&lt;ConstantInt&gt;</a>(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>-&gt;getOperand(2));</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 The full set of provided functions includes:
 

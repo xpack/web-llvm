@@ -478,7 +478,10 @@ The number is split into a signed scale and unsigned digits. The number represen
 
 Unlike <a href="/docs/api/classes/llvm/apfloat">APFloat</a>, <a href="/docs/api/classes/llvm/scalednumber">ScaledNumber</a> does not model architecture floating point behaviour – while this might make it a little faster and easier to reason about, it certainly makes it more dangerous for general numerics.
 
-<a href="/docs/api/classes/llvm/scalednumber">ScaledNumber</a> is totally ordered. However, there is no canonical form, so there are multiple representations of most scalars. E.g.: <CodeBlock>ScaledNumber(8u, 0) == ScaledNumber(4u, 1)
+<a href="/docs/api/classes/llvm/scalednumber">ScaledNumber</a> is totally ordered. However, there is no canonical form, so there are multiple representations of most scalars. E.g.: 
+
+<CodeBlock>
+ScaledNumber(8u, 0) == ScaledNumber(4u, 1)
 ScaledNumber(4u, 1) == ScaledNumber(2u, 2)
 ScaledNumber(2u, 2) == ScaledNumber(1u, 3)
 </CodeBlock>
@@ -938,7 +941,10 @@ Convert to a string. Uses scientific notation for very large/small numbers. Scie
 
 <code>Precision</code> indicates the number of decimal digits of precision to use; 0 requests the maximum available.
 
-As a special case to make debugging easier, if the number is small enough to convert without scientific notation and has more than <code>Precision</code> digits before the decimal place, it&#39;s printed accurately to the first digit past zero. E.g., assuming 10 digits of precision: <CodeBlock>98765432198.7654... =&gt; 98765432198.8
+As a special case to make debugging easier, if the number is small enough to convert without scientific notation and has more than <code>Precision</code> digits before the decimal place, it&#39;s printed accurately to the first digit past zero. E.g., assuming 10 digits of precision: 
+
+<CodeBlock>
+98765432198.7654... =&gt; 98765432198.8
  8765432198.7654... =&gt;  8765432198.8
   765432198.7654... =&gt;   765432198.8
    65432198.7654... =&gt;    65432198.77

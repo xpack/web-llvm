@@ -216,21 +216,36 @@ SPECIAL OPCODES
 
 Opcodes LTOC&#95;FirstSpecial through 255 are special opcodes that always increment both the Row.Addr and Row.Line and push &quot;Row&quot; onto the LineEntry.Lines array. They do this by using some of the bits to increment/decrement the source line number, and some of the bits to increment the address. Line numbers can go up or down when making line tables, where addresses always only increase since line tables are sorted by address.
 
-In order to calculate the amount to increment the line and address for these special opcodes, we calculate the number of values reserved for the line increment/decrement using the &quot;MinDelta&quot; and &quot;MaxDelta&quot; from the prolog: <CodeBlock>const int64&#95;t LineRange = MaxDelta - MinDelta + 1;
+In order to calculate the amount to increment the line and address for these special opcodes, we calculate the number of values reserved for the line increment/decrement using the &quot;MinDelta&quot; and &quot;MaxDelta&quot; from the prolog: 
+
+<CodeBlock>
+const int64&#95;t LineRange = MaxDelta - MinDelta + 1;
 </CodeBlock>
 
-Then we can adjust the opcode to not include any of the normal opcodes: <CodeBlock>const uint8&#95;t AdjustedOp = Opcode - LTOC&#95;FirstSpecial;
+Then we can adjust the opcode to not include any of the normal opcodes: 
+
+<CodeBlock>
+const uint8&#95;t AdjustedOp = Opcode - LTOC&#95;FirstSpecial;
 </CodeBlock>
 
-And we can calculate the line offset, and address offset: <CodeBlock>const int64&#95;t LineDelta = MinDelta + (AdjustedOp % LineRange);
+And we can calculate the line offset, and address offset: 
+
+<CodeBlock>
+const int64&#95;t LineDelta = MinDelta + (AdjustedOp % LineRange);
 const uint64&#95;t AddrDelta = (AdjustedOp / LineRange);
 </CodeBlock>
 
-And use these to modify our &quot;Row&quot;: <CodeBlock>Row.Line += LineDelta;
+And use these to modify our &quot;Row&quot;: 
+
+<CodeBlock>
+Row.Line += LineDelta;
 Row.Addr += AddrDelta;
 </CodeBlock>
 
-And push a row onto the line table: <CodeBlock>Lines.push&#95;back(Row);
+And push a row onto the line table: 
+
+<CodeBlock>
+Lines.push&#95;back(Row);
 </CodeBlock>
 
 This is verify similar to the way that DWARF encodes its line tables. The only difference is the DWARF line tables have more normal opcodes and the &quot;Row&quot; contains more members, like source column number, bools for end of prologue, beginnging of epilogue, is statement and many others. There are also more complex rules that happen for the extra normal opcodes. By leaving these extra opcodes out, we leave more bits for the special opcodes that allows us to encode line tables in fewer bytes than standard DWARF encodings.

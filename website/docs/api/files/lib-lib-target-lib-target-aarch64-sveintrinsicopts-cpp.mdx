@@ -179,12 +179,18 @@ Definition at line <a href="#l00077">77</a> of file <a href="/docs/api/files/lib
   labels = {["static"]}>
 Checks if a ptrue intrinsic call is promoted.
 
-The act of promoting a ptrue will introduce zeroing. For example: <CodeBlock>%1 = &lt;vscale x 4 x i1&gt; call @llvm.aarch64.sve.ptrue.nxv4i1(i32 31)
+The act of promoting a ptrue will introduce zeroing. For example: 
+
+<CodeBlock>
+%1 = &lt;vscale x 4 x i1&gt; call @llvm.aarch64.sve.ptrue.nxv4i1(i32 31)
 %2 = &lt;vscale x 16 x i1&gt; call @llvm.aarch64.sve.convert.to.svbool.nxv4i1(&lt;vscale x 4 x i1&gt; %1)
 %3 = &lt;vscale x 8 x i1&gt; call @llvm.aarch64.sve.convert.from.svbool.nxv8i1(&lt;vscale x 16 x i1&gt; %2)
 </CodeBlock>
 
-%1 is promoted, because it is converted: <CodeBlock>&lt;vscale x 4 x i1&gt; =&gt; &lt;vscale x 16 x i1&gt; =&gt; &lt;vscale x 8 x i1&gt;
+%1 is promoted, because it is converted: 
+
+<CodeBlock>
+&lt;vscale x 4 x i1&gt; =&gt; &lt;vscale x 16 x i1&gt; =&gt; &lt;vscale x 8 x i1&gt;
 </CodeBlock>
 
 via a sequence of the SVE reinterpret intrinsics convert.&#123;to,from&#125;.svbool.
@@ -693,5 +699,6 @@ The file content with the documentation metadata removed is:
 <Link id="l00462" /><CodeLine lineNumber="462"><Highlight kind="normal">&#125;</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 </DoxygenPage>

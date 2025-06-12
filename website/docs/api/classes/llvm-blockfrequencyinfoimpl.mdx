@@ -454,7 +454,10 @@ Run a single post-order traversal and save it (in reverse) in RPOT. All other st
 Translate LoopInfo/MachineLoopInfo into a form suitable for the rest of the algorithm. In particular, store the immediate members of each loop in reverse post-order.</li>
 <li>Calculate mass and scale in loops (<em>computeMassInLoops()</em>).
 For each loop (bottom-up), distribute mass through the DAG resulting from ignoring backedges and treating sub-loops as a single pseudo-node. Track the backedge mass distributed to the loop header, and use it to calculate the loop scale (number of loop iterations). Immediate members that represent sub-loops will already have been visited and packaged into a pseudo-node.
-Distributing mass in a loop is a reverse-post-order traversal through the loop. Start by assigning full mass to the <a href="/docs/api/classes/llvm/loop">Loop</a> header. For each node in the loop: <CodeBlock>- Fetch and categorize the weight distribution for its successors.
+Distributing mass in a loop is a reverse-post-order traversal through the loop. Start by assigning full mass to the <a href="/docs/api/classes/llvm/loop">Loop</a> header. For each node in the loop: 
+
+<CodeBlock>
+- Fetch and categorize the weight distribution for its successors.
   If this is a packaged-subloop, the weight distribution is stored
   in \\a LoopData::Exits.  Otherwise, fetch it from
   BranchProbabilityInfo.

@@ -231,13 +231,15 @@ This interface does not impose requirements on the hasher <code>update(<a href="
 <CodeLine><Highlight kind="normal">builder.add(&#123;1&#125;);</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">builder.add(&#123;2, 3&#125;);</Highlight></CodeLine>
 
-</ProgramListing> and 
+</ProgramListing>
+ and 
 <ProgramListing>
 
 <CodeLine><Highlight kind="normal">builder.add(&#123;1, 2&#125;);</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">builder.add(&#123;3&#125;);</Highlight></CodeLine>
 
-</ProgramListing> . Thus, specializations of <code>add</code> and <code>addHash</code> for variable-size types must not assume that the hasher type considers the size as part of the hash; they must explicitly add the size to the hash. See for example specializations for <code><a href="/docs/api/classes/llvm/arrayref">ArrayRef</a></code> and <code><a href="/docs/api/classes/llvm/stringref">StringRef</a></code>.
+</ProgramListing>
+ . Thus, specializations of <code>add</code> and <code>addHash</code> for variable-size types must not assume that the hasher type considers the size as part of the hash; they must explicitly add the size to the hash. See for example specializations for <code><a href="/docs/api/classes/llvm/arrayref">ArrayRef</a></code> and <code><a href="/docs/api/classes/llvm/stringref">StringRef</a></code>.
 
 Additionally, since types are eventually forwarded to the hasher&#39;s <code>void update(<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt;uint8&#95;t&gt;)</code> method, endianness plays a role in the hash computation (for example when computing <code>add((int)123)</code>). Specifiying a non-<code>native</code> <code>Endianness</code> template parameter allows to compute stable hash across platforms with different endianness.
 
@@ -324,13 +326,15 @@ Support hashing <code><a href="/docs/api/classes/llvm/arrayref">ArrayRef</a></co
 <CodeLine><Highlight kind="normal">builder.add(&#123;1&#125;);</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">builder.add(&#123;2, 3&#125;);</Highlight></CodeLine>
 
-</ProgramListing> and 
+</ProgramListing>
+ and 
 <ProgramListing>
 
 <CodeLine><Highlight kind="normal">builder.add(&#123;1, 2&#125;);</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">builder.add(&#123;3&#125;);</Highlight></CodeLine>
 
-</ProgramListing> do not collide.
+</ProgramListing>
+ do not collide.
 
 Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/hashbuilder-h/#l00166">166</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/hashbuilder-h">HashBuilder.h</a>.
 </MemberDefinition>
@@ -349,13 +353,15 @@ Support hashing <code><a href="/docs/api/classes/llvm/stringref">StringRef</a></
 <CodeLine><Highlight kind="normal">builder.add(</Highlight><Highlight kind="stringliteral">&quot;a&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">builder.add(</Highlight><Highlight kind="stringliteral">&quot;bc&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
 
-</ProgramListing> and 
+</ProgramListing>
+ and 
 <ProgramListing>
 
 <CodeLine><Highlight kind="normal">builder.add(</Highlight><Highlight kind="stringliteral">&quot;ab&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">builder.add(</Highlight><Highlight kind="stringliteral">&quot;c&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
 
-</ProgramListing> do not collide.
+</ProgramListing>
+ do not collide.
 
 Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/hashbuilder-h/#l00196">196</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/hashbuilder-h">HashBuilder.h</a>.
 </MemberDefinition>
@@ -379,6 +385,7 @@ Implement hashing for user-defined <code>struct</code>s.
 
 </ProgramListing>
 
+
 For example: 
 <ProgramListing>
 
@@ -395,6 +402,7 @@ For example:
 <CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 To avoid endianness issues, specializations of <code>addHash</code> should generally rely on exising <code>add</code>, <code>addRange</code>, and <code>addRangeElements</code> functions. If directly using <code>update</code>, an implementation must correctly handle endianness.
 
@@ -422,6 +430,7 @@ To avoid endianness issues, specializations of <code>addHash</code> should gener
 <CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 To avoid collisions, specialization of <code>addHash</code> for variable-size types must take the size into account.
 
@@ -491,7 +500,8 @@ It simply iterates over its arguments, in order.
 
 <CodeLine><Highlight kind="normal"><a href="#a91945efc8e44a3f170402a1b1a2316fe">add</a>(Arg1, Arg2);</Highlight></CodeLine>
 
-</ProgramListing> is equivalent to 
+</ProgramListing>
+ is equivalent to 
 <ProgramListing>
 
 <CodeLine><Highlight kind="normal"><a href="#a91945efc8e44a3f170402a1b1a2316fe">add</a>(Arg1)</Highlight></CodeLine>

@@ -654,6 +654,7 @@ The case it is currently looking for is the following one. Known intrinsics or l
 
 </ProgramListing>
 
+
 =&gt;
 
 
@@ -821,7 +822,8 @@ E.g.,
 <CodeLine><Highlight kind="normal">    %zext = zext i32 %<a href="/docs/api/namespaces/llvm/arm-am/#a5d0557608eaebed12bc00812724ba2cdae6bcee28992dab735eaa43f5dfa48a09">add</a> to i64</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// </Highlight></CodeLine>
 
-</ProgramListing> =&gt; 
+</ProgramListing>
+ =&gt; 
 <ProgramListing>
 
 <CodeLine><Highlight kind="normal">%ld = <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpumarklastscratchload-cpp/#a8a3fe89940744b94ffe5dacd6704c2be">load</a> i32&#42; %addr</Highlight></CodeLine>
@@ -839,7 +841,8 @@ E.g.,
 <CodeLine><Highlight kind="normal">d = sext i32 a to i64</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/numbers/#a92f4283d4e0e2ea1776894b3ae93640f">e</a> = getelementptr ..., i64 d</Highlight></CodeLine>
 
-</ProgramListing> =&gt; 
+</ProgramListing>
+ =&gt; 
 <ProgramListing>
 
 <CodeLine><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ea8fa14cdd754f91cc6554c9e71929cce7">f</a> = sext i32 <a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ea92eb5ffee6ae2fec3ad71c777531578f">b</a> to i64</Highlight></CodeLine>
@@ -847,6 +850,7 @@ E.g.,
 <CodeLine><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/numbers/#a92f4283d4e0e2ea1776894b3ae93640f">e</a> = getelementptr ..., i64 a</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 <code>Inst</code>&#91;in/out&#93; the extension may be modified during the process if some promotions apply.
 
@@ -1087,7 +1091,8 @@ Some targets prefer to split a conditional branch like:
 <CodeLine><Highlight kind="normal">%or.cond = or i1 %0, %1</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">br i1 %or.cond, label %TrueBB, label %FalseBB</Highlight></CodeLine>
 
-</ProgramListing> into multiple branch instructions like: 
+</ProgramListing>
+ into multiple branch instructions like: 
 <ProgramListing>
 
 <CodeLine><Highlight kind="normal">bb1:</Highlight></CodeLine>
@@ -1097,7 +1102,8 @@ Some targets prefer to split a conditional branch like:
 <CodeLine><Highlight kind="normal">  %1 = icmp ne i32 %<a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ea92eb5ffee6ae2fec3ad71c777531578f">b</a>, 0</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">  br i1 %1, label %TrueBB, label %FalseBB</Highlight></CodeLine>
 
-</ProgramListing> This usually allows instruction selection to do even further optimizations and combine the compare with the branch instruction. Currently this is applied for targets which have &quot;cheap&quot; jump instructions.
+</ProgramListing>
+ This usually allows instruction selection to do even further optimizations and combine the compare with the branch instruction. Currently this is applied for targets which have &quot;cheap&quot; jump instructions.
 
 FIXME: Remove the (equivalent?) implementation in <a href="/docs/api/classes/llvm/selectiondag">SelectionDAG</a>.
 

@@ -144,6 +144,7 @@ Using the C++ API:
 
 
 
+
 Using the C API:
 
 
@@ -193,6 +194,7 @@ Using the C API:
 
 
 
+
 <Link id="details" />
 
 
@@ -211,7 +213,8 @@ Using the C API:
 <CodeLine><Highlight kind="normal">  llvm&#95;blake3&#95;hasher Hasher;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
 
-</ProgramListing> 
+</ProgramListing>
+ 
 <ProgramListing extension="c">
 
 <CodeLine><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
@@ -219,6 +222,7 @@ Using the C API:
 <CodeLine><Highlight kind="normal">&#125; <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a>;</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 
 
@@ -240,13 +244,15 @@ An incremental BLAKE3 hashing state, which can accept any number of updates. Thi
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> BLAKE3::init();</Highlight></CodeLine>
 
-</ProgramListing> 
+</ProgramListing>
+ 
 <ProgramListing extension="c">
 
 <CodeLine><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a8a051c13b70081b426f0c0693e6977af">llvm&#95;blake3&#95;hasher&#95;init</a>(</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self);</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 
 
@@ -266,7 +272,8 @@ Initialize a <code><a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> BLAKE3::update(StringRef Str);</Highlight></CodeLine>
 
-</ProgramListing> 
+</ProgramListing>
+ 
 <ProgramListing extension="c">
 
 <CodeLine><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a75e25f25c6fc1db9056087bbc458a0bc">llvm&#95;blake3&#95;hasher&#95;update</a>(</Highlight></CodeLine>
@@ -275,6 +282,7 @@ Initialize a <code><a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake
 <CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> input&#95;len);</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 
 
@@ -299,7 +307,8 @@ Add input to the hasher. This can be called any number of times.
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> NumBytes = LLVM&#95;BLAKE3&#95;OUT&#95;LEN&gt;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">BLAKE3Result&lt;NumBytes&gt; BLAKE3::final();</Highlight></CodeLine>
 
-</ProgramListing> 
+</ProgramListing>
+ 
 <ProgramListing extension="c">
 
 <CodeLine><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a269ade5376073ccdb1307a0daddaa1de">llvm&#95;blake3&#95;hasher&#95;finalize</a>(</Highlight></CodeLine>
@@ -308,6 +317,7 @@ Add input to the hasher. This can be called any number of times.
 <CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> out&#95;len);</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 
 
@@ -341,6 +351,7 @@ Shorter BLAKE3 outputs are prefixes of longer ones. Explicitly requesting a shor
 
 
 
+
 Initialize a <code><a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a></code> in the keyed hashing mode. The key must be exactly 32 bytes.
 
 
@@ -358,6 +369,7 @@ Initialize a <code><a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake
 <CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;context);</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 
 
@@ -387,6 +399,7 @@ This function is intended for application code written in C. For language bindin
 
 
 
+
 As <code>llvm&#95;blake3&#95;hasher&#95;init&#95;derive&#95;key</code> above, except that the context string is given as a pointer to an array of arbitrary bytes with a provided length. This is intended for writing language bindings, where C string conversion would add unnecessary overhead and new error cases. Unicode strings should be encoded as UTF-8.
 
 
@@ -413,6 +426,7 @@ Application code in C should prefer <code>llvm&#95;blake3&#95;hasher&#95;init&#9
 
 
 
+
 The same as <code>llvm&#95;blake3&#95;hasher&#95;finalize</code>, but with an additional <code>seek</code> parameter for the starting byte position in the output stream. To efficiently stream a large output without allocating memory, call this function in a loop, incrementing <code>seek</code> by the output length each time.
 
 
@@ -429,6 +443,7 @@ The same as <code>llvm&#95;blake3&#95;hasher&#95;finalize</code>, but with an ad
 <CodeLine><Highlight kind="normal">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self);</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 
 

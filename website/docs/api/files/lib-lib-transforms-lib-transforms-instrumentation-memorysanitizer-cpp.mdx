@@ -802,7 +802,10 @@ But there are differences too. The first and the major one: compiler instrumenta
 
 The default value of shadow is 0, which means &quot;clean&quot; (not poisoned).
 
-Every module initializer should call &#95;&#95;msan&#95;init to ensure that the shadow memory is ready. On error, &#95;&#95;msan&#95;warning is called. Since parameters and return values may be passed via registers, we have a specialized thread-local shadow for return values (&#95;&#95;msan&#95;retval&#95;tls) and parameters (&#95;&#95;msan&#95;param&#95;tls). <CodeBlock>                      Origin tracking.
+Every module initializer should call &#95;&#95;msan&#95;init to ensure that the shadow memory is ready. On error, &#95;&#95;msan&#95;warning is called. Since parameters and return values may be passed via registers, we have a specialized thread-local shadow for return values (&#95;&#95;msan&#95;retval&#95;tls) and parameters (&#95;&#95;msan&#95;param&#95;tls). 
+
+<CodeBlock>
+                      Origin tracking.
 </CodeBlock>
 
 <a href="/docs/api/classes/anonymous-namespace-memorysanitizer-cpp-/memorysanitizer">MemorySanitizer</a> can track origins (allocation points) of all uninitialized values. This behavior is controlled with a flag (msan-track-origins) and is disabled by default.
@@ -811,17 +814,26 @@ Origins are 4-byte values created and interpreted by the runtime library. They a
 
 Every 4 aligned, consecutive bytes of application memory have one origin value associated with them. If these bytes contain uninitialized data coming from 2 different allocations, the last store wins. Because of this, <a href="/docs/api/classes/anonymous-namespace-memorysanitizer-cpp-/memorysanitizer">MemorySanitizer</a> reports can show unrelated origins, but this is unlikely in practice.
 
-Origins are meaningless for fully initialized values, so <a href="/docs/api/classes/anonymous-namespace-memorysanitizer-cpp-/memorysanitizer">MemorySanitizer</a> avoids storing origin to memory when a fully initialized value is stored. This way it avoids needless overwriting origin of the 4-byte region on a short (i.e. 1 byte) clean store, and it is also good for performance. <CodeBlock>                       Atomic handling.
+Origins are meaningless for fully initialized values, so <a href="/docs/api/classes/anonymous-namespace-memorysanitizer-cpp-/memorysanitizer">MemorySanitizer</a> avoids storing origin to memory when a fully initialized value is stored. This way it avoids needless overwriting origin of the 4-byte region on a short (i.e. 1 byte) clean store, and it is also good for performance. 
+
+<CodeBlock>
+                       Atomic handling.
 </CodeBlock>
 
 Ideally, every atomic store of application value should update the corresponding shadow location in an atomic way. Unfortunately, atomic store of two disjoint locations can not be done without severe slowdown.
 
 Therefore, we implement an approximation that may err on the safe side. In this implementation, every atomically accessed location in the program may only change from (partially) uninitialized to fully initialized, but not the other way around. We load the shadow <em>after</em> the application load, and we store the shadow <em>before</em> the app store. Also, we always store clean shadow (if the application store is atomic). This way, if the store-load pair constitutes a happens-before arc, shadow store and load are correctly ordered such that the load will get either the value that was stored, or some later value (which is always clean).
 
-This does not work very well with Compare-And-Swap (CAS) and Read-Modify-Write (RMW) operations. To follow the above logic, CAS and RMW must store the new shadow before the app operation, and load the shadow after the app operation. Computers don&#39;t work this way. Current implementation ignores the load aspect of CAS/RMW, always returning a clean value. It implements the store part as a simple atomic store by storing a clean shadow. <CodeBlock>                 Instrumenting inline assembly.
+This does not work very well with Compare-And-Swap (CAS) and Read-Modify-Write (RMW) operations. To follow the above logic, CAS and RMW must store the new shadow before the app operation, and load the shadow after the app operation. Computers don&#39;t work this way. Current implementation ignores the load aspect of CAS/RMW, always returning a clean value. It implements the store part as a simple atomic store by storing a clean shadow. 
+
+<CodeBlock>
+                 Instrumenting inline assembly.
 </CodeBlock>
 
-For inline assembly code LLVM has little idea about which memory locations become initialized depending on the arguments. It can be possible to figure out which arguments are meant to point to inputs and outputs, but the actual semantics can be only visible at runtime. In the Linux kernel it&#39;s also possible that the arguments only indicate the offset for a base taken from a segment register, so it&#39;s dangerous to treat any asm() arguments as pointers. We take a conservative approach generating calls to &#95;&#95;msan&#95;instrument&#95;asm&#95;store(ptr, size) , which defer the memory unpoisoning to the runtime library. The latter can perform more complex address checks to figure out whether it&#39;s safe to touch the shadow memory. Like with atomic operations, we call &#95;&#95;msan&#95;instrument&#95;asm&#95;store() before the assembly call, so that changes to the shadow memory will be seen by other threads together with main memory initialization. <CodeBlock>             KernelMemorySanitizer (KMSAN) implementation.
+For inline assembly code LLVM has little idea about which memory locations become initialized depending on the arguments. It can be possible to figure out which arguments are meant to point to inputs and outputs, but the actual semantics can be only visible at runtime. In the Linux kernel it&#39;s also possible that the arguments only indicate the offset for a base taken from a segment register, so it&#39;s dangerous to treat any asm() arguments as pointers. We take a conservative approach generating calls to &#95;&#95;msan&#95;instrument&#95;asm&#95;store(ptr, size) , which defer the memory unpoisoning to the runtime library. The latter can perform more complex address checks to figure out whether it&#39;s safe to touch the shadow memory. Like with atomic operations, we call &#95;&#95;msan&#95;instrument&#95;asm&#95;store() before the assembly call, so that changes to the shadow memory will be seen by other threads together with main memory initialization. 
+
+<CodeBlock>
+             KernelMemorySanitizer (KMSAN) implementation.
 </CodeBlock>
 
 The major differences between KMSAN and MSan instrumentation are:
@@ -8167,5 +8179,6 @@ The file content with the documentation metadata removed is:
 <Link id="l06679" /><CodeLine lineNumber="6679"><Highlight kind="normal">&#125;</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 </DoxygenPage>

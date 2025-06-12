@@ -2040,7 +2040,8 @@ Return if the target supports combining a chain like:
 <CodeLine><Highlight kind="normal">%andResult = and %val1, #<a href="/docs/api/namespaces/shuffles/#a6abf8a645bd24dfb42085db9672ac39a">mask</a></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">%icmpResult = icmp %andResult, 0</Highlight></CodeLine>
 
-</ProgramListing> into a single machine instruction of a form like: 
+</ProgramListing>
+ into a single machine instruction of a form like: 
 <ProgramListing>
 
 <CodeLine><Highlight kind="normal">cc = <a href="/docs/api/files/lib/lib/codegen/moduloschedule-cpp/#a106e32122c569cdb42ddf61ecbb0aad1">test</a> %</Highlight><Highlight kind="keyword">register</Highlight><Highlight kind="normal">, #<a href="/docs/api/namespaces/shuffles/#a6abf8a645bd24dfb42085db9672ac39a">mask</a></Highlight></CodeLine>
@@ -3135,7 +3136,10 @@ Darwin only has one TLS scheme which must be capable of dealing with the fully g
 
 The general system is that each &#95;&#95;thread variable has a &#91;3 x i32&#93; descriptor which contains information used by the runtime to calculate the address. The only part of this the compiler needs to know about is the first word, which contains a function pointer that must be called with the address of the entire descriptor in &quot;r0&quot;.
 
-Since this descriptor may be in a different unit, in general access must proceed along the usual <a href="/docs/api/namespaces/llvm/arm">ARM</a> rules. A common sequence to produce is: <CodeBlock>movw rT1, :lower16:&#95;var$non&#95;lazy&#95;ptr
+Since this descriptor may be in a different unit, in general access must proceed along the usual <a href="/docs/api/namespaces/llvm/arm">ARM</a> rules. A common sequence to produce is: 
+
+<CodeBlock>
+movw rT1, :lower16:&#95;var$non&#95;lazy&#95;ptr
 movt rT1, :upper16:&#95;var$non&#95;lazy&#95;ptr
 ldr r0, &#91;rT1&#93;
 ldr rT2, &#91;r0&#93;

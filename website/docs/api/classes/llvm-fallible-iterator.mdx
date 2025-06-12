@@ -227,6 +227,7 @@ The <a href="/docs/api/classes/llvm/fallible-iterator">fallible&#95;iterator</a>
 
 </ProgramListing>
 
+
 It produces an interface that is (mostly) compatible with a traditional c++ iterator, including ++ and – operators that do not fail.
 
 Instances of the wrapper are constructed with an instance of the underlying iterator and (for non-end iterators) a reference to an <a href="/docs/api/classes/llvm/error">Error</a> instance. If the underlying increment/decrement operations fail, the <a href="/docs/api/classes/llvm/error">Error</a> is returned via this reference, and the resulting iterator value set to an end-of-range sentinel value. This enables the following loop idiom:
@@ -255,6 +256,7 @@ Instances of the wrapper are constructed with an instance of the underlying iter
 <CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 The wrapper marks the referenced <a href="/docs/api/classes/llvm/error">Error</a> as unchecked after each increment and/or decrement operation, and clears the unchecked flag when a non-end value is compared against end (since, by the increment invariant, not being an end value proves that there was no error, and is equivalent to checking that the <a href="/docs/api/classes/llvm/error">Error</a> is success). This allows early exits from the loop body without requiring redundant error checks.
 

@@ -372,7 +372,10 @@ First, if there is a profile information associated with the branch then it is t
 
 Second, estimate absolute execution weights for each block based on statically known information. Roots of such information are &quot;cold&quot;, &quot;unreachable&quot;, &quot;noreturn&quot; and &quot;unwind&quot; blocks. Those blocks get their weights set to <a href="/docs/api/files/lib/lib/analysis/branchprobabilityinfo-cpp/#a0bab6cbda2c6f1e9dd352004a6b9f393a3f7ff4daa99912d1b0c8c64340edb9fb">BlockExecWeight::COLD</a>, <a href="/docs/api/files/lib/lib/analysis/branchprobabilityinfo-cpp/#a0bab6cbda2c6f1e9dd352004a6b9f393a58fd3b3b1f27606728077423eb21d8d6">BlockExecWeight::UNREACHABLE</a>, <a href="/docs/api/files/lib/lib/analysis/branchprobabilityinfo-cpp/#a0bab6cbda2c6f1e9dd352004a6b9f393a25c263e3b7486f9453d37151d62ff7d1">BlockExecWeight::NORETURN</a> and <a href="/docs/api/files/lib/lib/analysis/branchprobabilityinfo-cpp/#a0bab6cbda2c6f1e9dd352004a6b9f393a37b88a87188456429fa6e6c31a6d2301">BlockExecWeight::UNWIND</a> respectively. Then the weights are propagated to the other blocks up the domination line. In addition, if all successors have estimated weights set then maximum of these weights assigned to the block itself (while this is not ideal heuristic in theory it&#39;s simple and works reasonably well in most cases) and the process repeats. Once the process of weights propagation converges branch probabilities are set for all such branches that have at least one successor with the weight set. Default execution weight (<a href="/docs/api/files/lib/lib/analysis/branchprobabilityinfo-cpp/#a0bab6cbda2c6f1e9dd352004a6b9f393a5b39c8b553c821e7cddc6da64b5bd2ee">BlockExecWeight::DEFAULT</a>) is used for any successors which doesn&#39;t have its weight set. For loop back branches we use their weights scaled by loop trip count equal to &#39;LBH&#95;TAKEN&#95;WEIGHT/LBH&#95;NOTTAKEN&#95;WEIGHT&#39;.
 
-Here is a simple example demonstrating how the described algorithm works. <CodeBlock>     BB1
+Here is a simple example demonstrating how the described algorithm works. 
+
+<CodeBlock>
+     BB1
     /   \\
    v     v
  BB2     BB3

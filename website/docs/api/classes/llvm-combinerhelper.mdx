@@ -3179,6 +3179,7 @@ Match expression trees of the form.
 
 </ProgramListing>
 
+
 And check if the tree can be replaced with a M-bit load + possibly a bswap.
 
 Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/include/llvm/codegen/globalisel/combinerhelper-h/#l00603">603</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/include/llvm/codegen/globalisel/combinerhelper-h">CombinerHelper.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/combinerhelper-cpp/#l04001">4001</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/combinerhelper-cpp">CombinerHelper.cpp</a>.
@@ -3886,26 +3887,38 @@ Optimize memcpy intrinsics et al, e.g.
 
 constant len calls. /p MaxLen if non-zero specifies the max length of a mem libcall to inline.
 
-For example (pre-indexed): <CodeBlock>$addr = G&#95;PTR&#95;ADD $base, $offset
+For example (pre-indexed): 
+
+<CodeBlock>
+$addr = G&#95;PTR&#95;ADD $base, $offset
 &#91;...&#93;
 $val = G&#95;LOAD $addr
 &#91;...&#93;
 $whatever = COPY $addr
 </CodeBlock>
 
---&gt; <CodeBlock>$val, $addr = G&#95;INDEXED&#95;LOAD $base, $offset, 1 (IsPre)
+--&gt; 
+
+<CodeBlock>
+$val, $addr = G&#95;INDEXED&#95;LOAD $base, $offset, 1 (IsPre)
 &#91;...&#93;
 $whatever = COPY $addr
 </CodeBlock>
 
-or (post-indexed): <CodeBlock>G&#95;STORE $val, $base
+or (post-indexed): 
+
+<CodeBlock>
+G&#95;STORE $val, $base
 &#91;...&#93;
 $addr = G&#95;PTR&#95;ADD $base, $offset
 &#91;...&#93;
 $whatever = COPY $addr
 </CodeBlock>
 
---&gt; <CodeBlock>$addr = G&#95;INDEXED&#95;STORE $val, $base, $offset
+--&gt; 
+
+<CodeBlock>
+$addr = G&#95;INDEXED&#95;STORE $val, $base, $offset
 &#91;...&#93;
 $whatever = COPY $addr 
 </CodeBlock>

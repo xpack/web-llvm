@@ -352,7 +352,10 @@ Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/sc
   prototype={<>bool SeparateConstOffsetFromGEP::reuniteExts (<a href="/docs/api/classes/llvm/function">Function</a> &amp; F)</>}>
 Optimize sext(a)+sext(b) to sext(a+b) when a+b can&#39;t sign overflow.
 
-<a href="/docs/api/classes/anonymous-namespace-separateconstoffsetfromgep-cpp-/separateconstoffsetfromgep">SeparateConstOffsetFromGEP</a> distributes a sext to leaves before extracting the constant offset. After extraction, it becomes desirable to reunion the distributed sexts. For example, <CodeBlock>                         &amp;a&#91;sext(i +nsw (j +nsw 5)&#93;
+<a href="/docs/api/classes/anonymous-namespace-separateconstoffsetfromgep-cpp-/separateconstoffsetfromgep">SeparateConstOffsetFromGEP</a> distributes a sext to leaves before extracting the constant offset. After extraction, it becomes desirable to reunion the distributed sexts. For example, 
+
+<CodeBlock>
+                         &amp;a&#91;sext(i +nsw (j +nsw 5)&#93;
 </CodeBlock> =&gt; distribute &amp;a&#91;sext(i) +nsw (sext(j) +nsw 5)&#93; =&gt; constant extraction &amp;a&#91;sext(i) + sext(j)&#93; + 5 =&gt; reunion &amp;a&#91;sext(i +nsw j)&#93; + 5
 
 Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/separateconstoffsetfromgep-cpp/#l00452">452</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/separateconstoffsetfromgep-cpp">SeparateConstOffsetFromGEP.cpp</a>.

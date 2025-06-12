@@ -219,13 +219,15 @@ The function looks through the previously emitted shuffle instructions and prope
 <CodeLine><Highlight kind="normal">%s1 = shufflevector &lt;2 x ty&gt; %0, poison, &lt;1, 0&gt;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">%s2 = shufflevector &lt;2 x ty&gt; %1, poison, &lt;1, 0&gt;</Highlight></CodeLine>
 
-</ProgramListing> and if need to emit shuffle of s1 and s2 with mask &lt;1, 0, 3, 2&gt;, it will look through s1 and s2 and select vectors %0 and %1 with mask &lt;0, 1, 2, 3&gt; for the shuffle. If 2 operands are of different size, the smallest one will be resized and the mask recalculated properly. For example, given the code 
+</ProgramListing>
+ and if need to emit shuffle of s1 and s2 with mask &lt;1, 0, 3, 2&gt;, it will look through s1 and s2 and select vectors %0 and %1 with mask &lt;0, 1, 2, 3&gt; for the shuffle. If 2 operands are of different size, the smallest one will be resized and the mask recalculated properly. For example, given the code 
 <ProgramListing>
 
 <CodeLine><Highlight kind="normal">%s1 = shufflevector &lt;2 x ty&gt; %0, poison, &lt;1, 0, 1, 0&gt;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">%s2 = shufflevector &lt;2 x ty&gt; %1, poison, &lt;1, 0, 1, 0&gt;</Highlight></CodeLine>
 
-</ProgramListing> and if need to emit shuffle of s1 and s2 with mask &lt;1, 0, 5, 4&gt;, it will look through s1 and s2 and select vectors %0 and %1 with mask &lt;0, 1, 2, 3&gt; for the shuffle. So, it tries to transform permutations to simple vector merge, if possible. 
+</ProgramListing>
+ and if need to emit shuffle of s1 and s2 with mask &lt;1, 0, 5, 4&gt;, it will look through s1 and s2 and select vectors %0 and %1 with mask &lt;0, 1, 2, 3&gt; for the shuffle. So, it tries to transform permutations to simple vector merge, if possible. 
 <ParametersList title="Parameters">
 <ParametersListItem name="V">The input vector which must be shuffled using the given <code>Mask</code>. If the better candidate is found, <code>V</code> is set to this best candidate vector.</ParametersListItem>
 <ParametersListItem name="Mask">The input mask for the shuffle. If the best candidate is found during looking-through-shuffles attempt, it is updated accordingly.</ParametersListItem>

@@ -767,7 +767,10 @@ Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aa
   prototype={<>void AArch64AsmPrinter::LowerJumpTableDest (<a href="/docs/api/classes/llvm/mcstreamer">MCStreamer</a> &amp; OutStreamer, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}>
 Small jump tables contain an unsigned byte or half, representing the offset from the lowest-addressed possible destination to the desired basic block.
 
-Since all instructions are 4-byte aligned, this is further compressed by counting in instructions rather than bytes (i.e. divided by 4). So, to materialize the correct destination we need: <CodeBlock>        adr xDest, .LBB0&#95;0
+Since all instructions are 4-byte aligned, this is further compressed by counting in instructions rather than bytes (i.e. divided by 4). So, to materialize the correct destination we need: 
+
+<CodeBlock>
+        adr xDest, .LBB0&#95;0
         ldrb wScratch, &#91;xTable, xEntry&#93;   (with &quot;lsl #1&quot; for ldrh).
         add xDest, xDest, xScratch (with &quot;lsl #2&quot; for smaller entries) 
 </CodeBlock>

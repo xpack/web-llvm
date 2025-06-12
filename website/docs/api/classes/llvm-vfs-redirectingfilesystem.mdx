@@ -398,7 +398,10 @@ A virtual file system parsed from a YAML file.
 
 Currently, this class allows creating virtual files and directories. Virtual files map to existing external files in <code>ExternalFS</code>, and virtual directories may either map to existing directories in <code>ExternalFS</code> or list their contents in the form of other virtual directories and/or files.
 
-The basic structure of the parsed file is: <CodeBlock>/// &#123;
+The basic structure of the parsed file is: 
+
+<CodeBlock>
+/// &#123;
 ///   &#39;version&#39;: &lt;version number&gt;,
 ///   &lt;optional configuration&gt;
 ///   &#39;roots&#39;: &#91;
@@ -411,19 +414,28 @@ All configuration options are optional. &#39;case-sensitive&#39;: &lt;boolean, d
 
 To clarify, &#39;root-relative&#39; option will prepend the current working directory, or the overlay directory to the &#39;roots-&gt;name&#39; field only if &#39;roots-&gt;name&#39; is a relative path. On the other hand, when &#39;overlay-relative&#39; is set to &#39;true&#39;, external paths will always be prepended with the overlay directory, even if external paths are not relative paths. The &#39;root-relative&#39; option has no interaction with the &#39;overlay-relative&#39; option.
 
-Virtual directories that list their contents are represented as <CodeBlock>/// &#123;
+Virtual directories that list their contents are represented as 
+
+<CodeBlock>
+/// &#123;
 ///   &#39;type&#39;: &#39;directory&#39;,
 ///   &#39;name&#39;: &lt;string&gt;,
 ///   &#39;contents&#39;: &#91; &lt;file or directory entries&gt; &#93;
 /// &#125;
-/// </CodeBlock> The default attributes for such virtual directories are: <CodeBlock>/// MTime = now() when created
+/// </CodeBlock> The default attributes for such virtual directories are: 
+
+<CodeBlock>
+/// MTime = now() when created
 /// Perms = 0777
 /// User = Group = 0
 /// Size = 0
 /// UniqueID = unspecified unique value
 /// </CodeBlock> When a path prefix matches such a directory, the next component in the path is matched against the entries in the &#39;contents&#39; array.
 
-Re-mapped directories, on the other hand, are represented as /// <CodeBlock>/// &#123;
+Re-mapped directories, on the other hand, are represented as /// 
+
+<CodeBlock>
+/// &#123;
 ///   &#39;type&#39;: &#39;directory-remap&#39;,
 ///   &#39;name&#39;: &lt;string&gt;,
 ///   &#39;use-external-name&#39;: &lt;boolean&gt;, # Optional
@@ -431,7 +443,10 @@ Re-mapped directories, on the other hand, are represented as /// <CodeBlock>/// 
 /// &#125;
 /// </CodeBlock> and inherit their attributes from the external directory. When a path prefix matches such an entry, the unmatched components are appended to the &#39;external-contents&#39; path, and the resulting path is looked up in the external file system instead.
 
-Re-mapped files are represented as <CodeBlock>/// &#123;
+Re-mapped files are represented as 
+
+<CodeBlock>
+/// &#123;
 ///   &#39;type&#39;: &#39;file&#39;,
 ///   &#39;name&#39;: &lt;string&gt;,
 ///   &#39;use-external-name&#39;: &lt;boolean&gt;, # Optional

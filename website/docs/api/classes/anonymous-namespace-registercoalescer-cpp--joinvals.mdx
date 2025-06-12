@@ -390,7 +390,10 @@ Consider the following situation when coalescing the copy between %31 and %45 at
 
 This sometimes happens when undefined subranges are copied around. These ranges contain no useful information and can be removed.
 
-(The vertical lines represent live range segments.) <CodeBlock>                         Main range         Subrange 0004 (sub2)
+(The vertical lines represent live range segments.) 
+
+<CodeBlock>
+                         Main range         Subrange 0004 (sub2)
                          %31    %45           %31    %45
 </CodeBlock> 544 %45 = COPY %28 + + | v1 | v1 560B bb.1: + + 624 = %45.sub2 | v2 | v2 800 %31 = COPY %45 + + + + | v0 | v0 816 %31.sub1 = ... + | 880 %30 = COPY %31 | v1 + 928 %45 = COPY %30 | + + | | v0 | v0 &lt;–+ 992B ; backedge -&gt; bb.1 | + + | 1040 = %31.sub0 + | This value must remain live-out!
 

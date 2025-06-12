@@ -1430,6 +1430,7 @@ If the target supports conditional faulting, we look for the following pattern:
 
 </ProgramListing>
 
+
 and transform it into:
 
 
@@ -1449,6 +1450,7 @@ and transform it into:
 
 </ProgramListing>
 
+
 where cload/cstore are represented by llvm.masked.load/store intrinsics, e.g.
 
 
@@ -1466,6 +1468,7 @@ where cload/cstore are represented by llvm.masked.load/store intrinsics, e.g.
 <CodeLine><Highlight kind="normal">           (&lt;1 x i32&gt; &lt;i32 1&gt;, ptr %q, i32 4, &lt;1x i1&gt; %vcond.not)</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 So we need to turn hoisted load/store into cload/cstore.
 
@@ -1790,7 +1793,8 @@ Following pattern:
 <CodeLine><Highlight kind="normal">if (r != default&#95;value)</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">   ...</Highlight></CodeLine>
 
-</ProgramListing> Is optimized to: 
+</ProgramListing>
+ Is optimized to: 
 <ProgramListing>
 
 <CodeLine><Highlight kind="normal">cond = idx &lt; tablesize;</Highlight></CodeLine>
@@ -1801,7 +1805,8 @@ Following pattern:
 <CodeLine><Highlight kind="normal">if (cond)</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">   ...</Highlight></CodeLine>
 
-</ProgramListing> Jump threading will then eliminate the second if(cond).
+</ProgramListing>
+ Jump threading will then eliminate the second if(cond).
 
 Definition at line <a href="#l06846">6846</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/simplifycfg-cpp">SimplifyCFG.cpp</a>.
 </MemberDefinition>
@@ -3184,8 +3189,8 @@ The file content with the documentation metadata removed is:
 <Link id="l00858" /><CodeLine lineNumber="858"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Otherwise, just sort both lists and compare element by element.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00859" /><CodeLine lineNumber="859"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#add1eb5637dd671428b6f138ed3db6428">array&#95;pod&#95;sort</a>(V1-&gt;begin(), V1-&gt;end());</Highlight></CodeLine>
 <Link id="l00860" /><CodeLine lineNumber="860"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#add1eb5637dd671428b6f138ed3db6428">array&#95;pod&#95;sort</a>(V2-&gt;begin(), V2-&gt;end());</Highlight></CodeLine>
-<Link id="l00861" /><CodeLine lineNumber="861"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i1 = 0, i2 = 0, e1 = V1-&gt;size(), e2 = V2-&gt;size();</Highlight></CodeLine>
-<Link id="l00862" /><CodeLine lineNumber="862"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (i1 != e1 &amp;&amp; i2 != e2) &#123;</Highlight></CodeLine>
+<Link id="l00861" /><CodeLine lineNumber="861"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i1 = 0, i2 = 0, NaN = V1-&gt;size(), NaN = V2-&gt;size();</Highlight></CodeLine>
+<Link id="l00862" /><CodeLine lineNumber="862"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (i1 != NaN &amp;&amp; i2 != e2) &#123;</Highlight></CodeLine>
 <Link id="l00863" /><CodeLine lineNumber="863"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((&#42;V1)&#91;i1&#93;.<a href="/docs/api/classes/llvm/value">Value</a> == (&#42;V2)&#91;i2&#93;.<a href="/docs/api/classes/llvm/value">Value</a>)</Highlight></CodeLine>
 <Link id="l00864" /><CodeLine lineNumber="864"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 <Link id="l00865" /><CodeLine lineNumber="865"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((&#42;V1)&#91;i1&#93;.<a href="/docs/api/classes/llvm/value">Value</a> &lt; (&#42;V2)&#91;i2&#93;.<a href="/docs/api/classes/llvm/value">Value</a>)</Highlight></CodeLine>
@@ -10801,5 +10806,6 @@ The file content with the documentation metadata removed is:
 <Link id="l08475" /><CodeLine lineNumber="8475"><Highlight kind="normal">&#125;</Highlight></CodeLine>
 
 </ProgramListing>
+
 
 </DoxygenPage>
