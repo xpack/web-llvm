@@ -1,0 +1,161 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/namespaces/llvm/aarch64pauth
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - namespace
+
+---
+
+import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import EnumerationList from '@xpack/docusaurus-plugin-doxygen/components/EnumerationList'
+import EnumerationListItem from '@xpack/docusaurus-plugin-doxygen/components/EnumerationListItem'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `AArch64PAuth` Namespace Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Definition
+
+<CodeBlock>namespace llvm::AArch64PAuth &#123; ... &#125;</CodeBlock>
+
+## Enumerations Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="enum class"
+  name={<>:  &#123; <a href="#abf78b4a589091577668be8331dbf3e10">...</a> &#125;</>}>
+Variants of check performed on an authenticated pointer. <a href="#abf78b4a589091577668be8331dbf3e10">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a89f9d58f53aa5fefd75ce86659f52f71">getCheckerSizeInBytes</a> (AuthCheckMethod Method)</>}>
+Returns the number of bytes added by checkAuthenticatedRegister. <a href="#a89f9d58f53aa5fefd75ce86659f52f71">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Enumerations
+
+### enum class  {#abf78b4a589091577668be8331dbf3e10}
+
+<MemberDefinition
+  prototype="enum class llvm::AArch64PAuth::AuthCheckMethod "
+ labels = {["strong"]}>
+Variants of check performed on an authenticated pointer.
+
+<EnumerationList title="Enumeration values">
+
+<Link id="abf78b4a589091577668be8331dbf3e10a6adf97f83acf6453d4a6a4b1070f3754" />
+<EnumerationListItem name="None">
+Do not check the value at all
+</EnumerationListItem>
+
+<Link id="abf78b4a589091577668be8331dbf3e10a24204a7fa8ab4d609a76a48ac4673b22" />
+<EnumerationListItem name="DummyLoad">
+Perform a load to a temporary register
+</EnumerationListItem>
+
+<Link id="abf78b4a589091577668be8331dbf3e10a47343d56dc562d3a8366d3854eb64161" />
+<EnumerationListItem name="HighBitsNoTBI">
+<a href="/docs/api/namespaces/llvm/check">Check</a> by comparing bits 62 and 61 of the authenticated address
+</EnumerationListItem>
+
+<Link id="abf78b4a589091577668be8331dbf3e10a1fb8b484947fc2d97a18d9b90e0c08fb" />
+<EnumerationListItem name="XPACHint">
+<a href="/docs/api/namespaces/llvm/check">Check</a> by comparing the authenticated value with an XPAC-ed one without using PAuth instructions not encoded as HINT
+</EnumerationListItem>
+
+<Link id="abf78b4a589091577668be8331dbf3e10ae34527c9d45ac8d5e68634911bfcd36e" />
+<EnumerationListItem name="XPAC">
+Similar to XPACHint but using Armv8.3-only XPAC instruction, thus not restricted to LR:
+</EnumerationListItem>
+
+</EnumerationList>
+
+In cases such as authenticating the LR value when performing a tail call or when re-signing a signed pointer with a different signing schema, a failed authentication may not generate an exception on its own and may create an authentication or signing oracle if not checked explicitly.
+
+A number of check methods modify control flow in a similar way by rewriting the code
+
+
+<ProgramListing>
+
+<CodeLine><Highlight kind="normal">&lt;authenticate LR&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&lt;more <a href="/docs/api/namespaces/llvm/#a7e3e687ddfdcbacd404bcf17b917dd88">instructions</a>&gt;</Highlight></CodeLine>
+
+</ProgramListing>
+
+as follows:
+
+
+<ProgramListing>
+
+<CodeLine><Highlight kind="normal">  &lt;authenticate LR&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &lt;method-specific checker&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">on&#95;fail:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  brk &lt;code&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">on&#95;success:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &lt;more <a href="/docs/api/namespaces/llvm/#a7e3e687ddfdcbacd404bcf17b917dd88">instructions</a>&gt;</Highlight></CodeLine>
+
+</ProgramListing>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64pointerauth-h/#l00044">44</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64pointerauth-h">AArch64PointerAuth.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Functions
+
+### getCheckerSizeInBytes() {#a89f9d58f53aa5fefd75ce86659f52f71}
+
+<MemberDefinition
+  prototype={<>unsigned llvm::AArch64PAuth::getCheckerSizeInBytes (<a href="#abf78b4a589091577668be8331dbf3e10">AuthCheckMethod</a> Method)</>}>
+Returns the number of bytes added by checkAuthenticatedRegister.
+
+Declaration at line <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64pointerauth-h/#l00105">105</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64pointerauth-h">AArch64PointerAuth.h</a>, definition at line <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64pointerauth-cpp/#l00244">244</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64pointerauth-cpp">AArch64PointerAuth.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this namespace was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64pointerauth-cpp">AArch64PointerAuth.cpp</a></li>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64pointerauth-h">AArch64PointerAuth.h</a></li>
+</ul>
+
+</DoxygenPage>

@@ -1,0 +1,414 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `CodeExtractor.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/ArrayRef.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/DenseMap.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/SetVector.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/setvector-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="limits"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/codeextractoranalysiscache">CodeExtractorAnalysisCache</a></>}>
+A cache for the <a href="/docs/api/classes/llvm/codeextractor">CodeExtractor</a> analysis. <a href="/docs/api/classes/llvm/codeextractoranalysiscache/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/codeextractor">CodeExtractor</a></>}>
+Utility class for extracting code into a new function. <a href="/docs/api/classes/llvm/codeextractor/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/codeextractor/lifetimemarkerinfo">LifetimeMarkerInfo</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- Transform/Utils/CodeExtractor.h - Code extraction util ---&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// A utility to support extracting code from one function into its own</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// stand-alone function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;TRANSFORMS&#95;UTILS&#95;CODEEXTRACTOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;TRANSFORMS&#95;UTILS&#95;CODEEXTRACTOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h">llvm/ADT/ArrayRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h">llvm/ADT/DenseMap.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/setvector-h">llvm/ADT/SetVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;limits&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> PtrType&gt; </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>;</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocainst">AllocaInst</a>;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/basicblock">BasicBlock</a>;</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/blockfrequency">BlockFrequency</a>;</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a>;</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/branchprobabilityinfo">BranchProbabilityInfo</a>;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a>;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/callinst">CallInst</a>;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a>;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/function">Function</a>;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/instruction">Instruction</a>;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/module">Module</a>;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/type">Type</a>;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/value">Value</a>;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/structtype">StructType</a>;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">/// A cache for the CodeExtractor analysis. The operation \\ref</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">/// CodeExtractor::extractCodeRegion is guaranteed not to invalidate this</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">/// object. This object should conservatively be considered invalid if any</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">/// other mutating operations on the IR occur.</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="comment">/// Constructing this object is O(n) in the size of the function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46" lineLink="/docs/api/classes/llvm/codeextractoranalysiscache"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/codeextractoranalysiscache/#a6c11ef80226655b08c6203641896fa50">CodeExtractorAnalysisCache</a> &#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="comment">  /// The allocas in the function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;AllocaInst &#42;, 16&gt;</a> Allocas;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="comment">  /// Base memory addresses of load/store instructions, grouped by block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;BasicBlock &#42;, DenseSet&lt;Value &#42;&gt;</a>&gt; BaseMemAddrs;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">  /// Blocks which contain instructions which may have unknown side-effects</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="comment">  /// on memory.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/denseset">DenseSet&lt;BasicBlock &#42;&gt;</a> SideEffectingBlocks;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> findSideEffectInfoForBlock(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp;BB);</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/codeextractoranalysiscache/#a6c11ef80226655b08c6203641896fa50">CodeExtractorAnalysisCache</a>(<a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="comment">  /// Get the allocas in the function at the time the analysis was created.</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="comment">  /// Note that some of these allocas may no longer be present in the function,</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="comment">  /// due to \\ref CodeExtractor::extractCodeRegion.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/classes/llvm/codeextractoranalysiscache/#a35fd9ad0c2debb7b171f4c61ce7bdac6"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;AllocaInst &#42;&gt;</a> <a href="/docs/api/classes/llvm/codeextractoranalysiscache/#a35fd9ad0c2debb7b171f4c61ce7bdac6">getAllocas</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Allocas; &#125;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="comment">  /// Check whether \\p BB contains an instruction thought to load from, store</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="comment">  /// to, or otherwise clobber the alloca \\p Addr.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/codeextractoranalysiscache/#af0ee5fce396f816a21443799205fbedd">doesBlockContainClobberOfAddr</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp;BB, <a href="/docs/api/classes/llvm/allocainst">AllocaInst</a> &#42;Addr) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">  /// Utility class for extracting code into a new function.</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">  /// This utility provides a simple interface for extracting some sequence of</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">  /// code into its own function, replacing it with a call to that function. It</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">  /// also provides various methods to query about the nature and result of</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">  /// such a transformation.</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="comment">  /// The rough algorithm used is:</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="comment">  /// 1) Find both the inputs and outputs for the extracted region.</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// 2) Pass the inputs as arguments, remapping them within the extracted</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">  ///    function to arguments.</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">  /// 3) Add allocas for any scalar outputs, adding all of the outputs&#39; allocas</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  ///    as arguments, and inserting stores to the arguments for any scalars.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85" lineLink="/docs/api/classes/llvm/codeextractor"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/codeextractor/#a152c260d40a85ed5b0ef5f11f86ac3b4">CodeExtractor</a> &#123;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">ValueSet = <a href="/docs/api/classes/llvm/setvector">SetVector&lt;Value &#42;&gt;</a>;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Various bits of state computed on construction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &#42;</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> DT;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> AggregateArgs;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> &#42;BFI;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/branchprobabilityinfo">BranchProbabilityInfo</a> &#42;BPI;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &#42;AC;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// A block outside of the extraction set where any intermediate</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// allocations will be placed inside. If this is null, allocations</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// will be placed in the entry block of the function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;AllocationBlock;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// If true, varargs functions can be extracted.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> AllowVarArgs;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Bits of intermediate state computed at various phases of extraction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/setvector">SetVector&lt;BasicBlock &#42;&gt;</a> Blocks;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">    /// Lists of blocks that are branched from the code region to be extracted,</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="comment">    /// also called the exit blocks. Each block is contained at most once. Its</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="comment">    /// order defines the return value of the extracted function.</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="comment">    ///</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="comment">    /// When there is just one (or no) exit block, the return value is</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">    /// irrelevant.</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">    ///</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">    /// When there are exactly two exit blocks, the extracted function returns a</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">    /// boolean. For ExtractedFuncRetVals&#91;0&#93;, it returns &#39;true&#39;. For</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">    /// ExtractedFuncRetVals&#91;1&#93; it returns &#39;false&#39;.</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">    /// NOTE: Since a boolean is represented by i1, ExtractedFuncRetVals&#91;0&#93;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">    ///       returns 1 and ExtractedFuncRetVals&#91;1&#93; returns 0, which opposite</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="comment">    ///       of the regular pattern below.</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">    ///</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">    /// When there are 3 or more exit blocks, leaving the extracted function via</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">    /// the first block it returns 0 When leaving via the second entry it</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="comment">    /// returns 1, etc.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;BasicBlock &#42;&gt;</a> ExtractedFuncRetVals;</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Suffix to use when creating extracted function (appended to the original</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// function name + &quot;.&quot;). If empty, the default is to use the entry block</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// label, if non-empty, otherwise &quot;extracted&quot;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">    std::string Suffix;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// If true, the outlined function has aggregate argument in zero address</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// space.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> ArgsInZeroAddressSpace;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">    /// Create a code extractor for a sequence of blocks.</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">    ///</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="comment">    /// Given a sequence of basic blocks where the first block in the sequence</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">    /// dominates the rest, prepare a code extractor object for pulling this</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="comment">    /// sequence out into its new function. When a DominatorTree is also given,</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="comment">    /// extra checking and transformations are enabled. If AllowVarArgs is true,</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="comment">    /// vararg functions can be extracted. This is safe, if all vararg handling</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">    /// code is extracted, including vastart. If AllowAlloca is true, then</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="comment">    /// extraction of blocks containing alloca instructions would be possible,</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="comment">    /// however code extractor won&#39;t validate whether extraction is legal.</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="comment">    /// Any new allocations will be placed in the AllocationBlock, unless</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="comment">    /// it is null, in which case it will be placed in the entry block of</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="comment">    /// the function from which the code is being extracted.</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="comment">    /// If ArgsInZeroAddressSpace param is set to true, then the aggregate</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="comment">    /// param pointer of the outlined function is declared in zero address</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="comment">    /// space.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/codeextractor/#a152c260d40a85ed5b0ef5f11f86ac3b4">CodeExtractor</a>(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;BasicBlock &#42;&gt;</a> BBs, <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &#42;DT = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">                  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> AggregateArgs = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">, <a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> &#42;BFI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">                  <a href="/docs/api/classes/llvm/branchprobabilityinfo">BranchProbabilityInfo</a> &#42;BPI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">                  <a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &#42;AC = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> AllowVarArgs = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">                  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> AllowAlloca = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">                  <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;AllocationBlock = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">                  std::string Suffix = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> ArgsInZeroAddressSpace = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="comment">    /// Perform the extraction, returning the new function.</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="comment">    ///</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="comment">    /// Returns zero when called on a CodeExtractor instance where isEligible</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="comment">    /// returns false.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/classes/llvm/codeextractor/#a8561c48aa0b397c37f9e071dad7df392">extractCodeRegion</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/codeextractoranalysiscache">CodeExtractorAnalysisCache</a> &amp;CEAC);</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="comment">    /// Perform the extraction, returning the new function and providing an</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="comment">    /// interface to see what was categorized as inputs and outputs.</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="comment">    ///</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="comment">    /// \\param CEAC - Cache to speed up operations for the CodeExtractor when</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="comment">    /// hoisting, and extracting lifetime values and assumes.</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="comment">    /// \\param Inputs &#91;out&#93; - filled with  values marked as inputs to the</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="comment">    /// newly outlined function.</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="comment">     /// \\param Outputs &#91;out&#93; - filled with values marked as outputs to the</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="comment">    /// newly outlined function.</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="comment">    /// \\returns zero when called on a CodeExtractor instance where isEligible</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="comment">    /// returns false.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/classes/llvm/codeextractor/#a8561c48aa0b397c37f9e071dad7df392">extractCodeRegion</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/codeextractoranalysiscache">CodeExtractorAnalysisCache</a> &amp;CEAC,</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">                                ValueSet &amp;Inputs, ValueSet &amp;Outputs);</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="comment">    /// Verify that assumption cache isn&#39;t stale after a region is extracted.</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="comment">    /// Returns true when verifier finds errors. AssumptionCache is passed as</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="comment">    /// parameter to make this function stateless.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/codeextractor/#a995ee70f3e9a0cb350322bb1e058a707">verifyAssumptionCache</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/function">Function</a> &amp;OldFunc,</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">                                      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/function">Function</a> &amp;NewFunc,</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">                                      <a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &#42;AC);</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="comment">    /// Test whether this code extractor is eligible.</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="comment">    ///</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="comment">    /// Based on the blocks used when constructing the code extractor,</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="comment">    /// determine whether it is eligible for extraction.</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="comment">    ///</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="comment">    /// Checks that varargs handling (with vastart and vaend) is only done in</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="comment">    /// the outlined blocks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/codeextractor/#ad3a4770e725305d3529cba8c6562c85a">isEligible</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="comment">    /// Compute the set of input values and output values for the code.</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="comment">    ///</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="comment">    /// These can be used either when performing the extraction or to evaluate</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="comment">    /// the expected size of a call to the extracted function. Note that this</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="comment">    /// work cannot be cached between the two as once we decide to extract</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="comment">    /// a code sequence, that sequence is modified, including changing these</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="comment">    /// sets, before extraction occurs. These modifications won&#39;t have any</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="comment">    /// significant impact on the cost however.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/codeextractor/#ab4d4236fd0a481a0d93e159a9882fc53">findInputsOutputs</a>(ValueSet &amp;Inputs, ValueSet &amp;Outputs,</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">                           </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ValueSet &amp;Allocas,</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">                           </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> CollectGlobalInputs = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="comment">    /// Check if life time marker nodes can be hoisted/sunk into the outline</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="comment">    /// region.</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="comment">    ///</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="comment">    /// Returns true if it is safe to do the code motion.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/codeextractor/#ae9ce92095ff18cb2c607d5a3591703ca">isLegalToShrinkwrapLifetimeMarkers</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/codeextractoranalysiscache">CodeExtractorAnalysisCache</a> &amp;CEAC,</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">                                       <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;AllocaAddr) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="comment">    /// Find the set of allocas whose life ranges are contained within the</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="comment">    /// outlined region.</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="comment">    ///</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="comment">    /// Allocas which have life&#95;time markers contained in the outlined region</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="comment">    /// should be pushed to the outlined function. The address bitcasts that</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="comment">    /// are used by the lifetime markers are also candidates for shrink-</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="comment">    /// wrapping. The instructions that need to be sunk are collected in</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="comment">    /// &#39;Allocas&#39;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/codeextractor/#a537993928c8af5b0d064fcd5ce1dec2f">findAllocas</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/codeextractoranalysiscache">CodeExtractorAnalysisCache</a> &amp;CEAC,</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">                     ValueSet &amp;SinkCands, ValueSet &amp;HoistCands,</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">                     <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;&amp;ExitBlock) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="comment">    /// Find or create a block within the outline region for placing hoisted</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="comment">    /// code.</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="comment">    ///</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="comment">    /// CommonExitBlock is block outside the outline region. It is the common</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="comment">    /// successor of blocks inside the region. If there exists a single block</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="comment">    /// inside the region that is the predecessor of CommonExitBlock, that block</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="comment">    /// will be returned. Otherwise CommonExitBlock will be split and the</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="comment">    /// original block will be added to the outline region.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;<a href="/docs/api/classes/llvm/codeextractor/#a19ce83f3f1fef433e2ba91a0b2a196a0">findOrCreateBlockForHoisting</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;CommonExitBlock);</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="comment">    /// Exclude a value from aggregate argument passing when extracting a code</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="comment">    /// region, passing it instead as a scalar.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/codeextractor/#ad4d03968d09741d23f5b83e7a538f04f">excludeArgFromAggregate</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Arg);</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">LifetimeMarkerInfo &#123;</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> SinkLifeStart = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> HoistLifeEnd = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;LifeStart = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;LifeEnd = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">    ValueSet ExcludeArgsFromAggregate;</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">    LifetimeMarkerInfo</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">    getLifetimeMarkers(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/codeextractoranalysiscache">CodeExtractorAnalysisCache</a> &amp;CEAC,</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;Addr, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;ExitBlock) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="comment">    /// Updates the list of SwitchCases (corresponding to exit blocks) after</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="comment">    /// changes of the control flow or the Blocks list.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> computeExtractedFuncRetVals();</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="comment">    /// Return the type used for the return code of the extracted function to</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="comment">    /// indicate which exit block to jump to.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/type">Type</a> &#42;getSwitchType();</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> severSplitPHINodesOfEntry(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;&amp;Header);</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> severSplitPHINodesOfExits();</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> splitReturnBlocks();</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> moveCodeToFunction(<a href="/docs/api/classes/llvm/function">Function</a> &#42;newFunction);</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> calculateNewCallTerminatorWeights(</Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;CodeReplacer,</Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;BasicBlock &#42;, BlockFrequency&gt;</a> &amp;ExitWeights,</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/branchprobabilityinfo">BranchProbabilityInfo</a> &#42;BPI);</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="comment">    /// Normalizes the control flow of the extracted regions, such as ensuring</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="comment">    /// that the extracted region does not contain a return instruction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> normalizeCFGForExtraction(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;&amp;header);</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="comment">    /// Generates the function declaration for the function containing the</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="comment">    /// extracted code.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/function">Function</a> &#42;constructFunctionDeclaration(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ValueSet &amp;inputs,</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">                                           </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ValueSet &amp;outputs,</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">                                           <a href="/docs/api/classes/llvm/blockfrequency">BlockFrequency</a> EntryFreq,</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">                                           </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp;Name,</Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">                                           ValueSet &amp;StructValues,</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">                                           <a href="/docs/api/classes/llvm/structtype">StructType</a> &#42;&amp;StructTy);</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="comment">    /// Generates the code for the extracted function. That is: a prolog, the</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="comment">    /// moved or copied code from the original function, and epilogs for each</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="comment">    /// exit.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> emitFunctionBody(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ValueSet &amp;inputs, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ValueSet &amp;outputs,</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">                          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ValueSet &amp;StructValues, <a href="/docs/api/classes/llvm/function">Function</a> &#42;newFunction,</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">                          <a href="/docs/api/classes/llvm/structtype">StructType</a> &#42;StructArgTy, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;header,</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">                          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ValueSet &amp;SinkingCands);</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="comment">    /// Generates a Basic Block that calls the extracted function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/callinst">CallInst</a> &#42;emitReplacerCall(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ValueSet &amp;inputs, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ValueSet &amp;outputs,</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal">                               </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ValueSet &amp;StructValues,</Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/function">Function</a> &#42;newFunction, <a href="/docs/api/classes/llvm/structtype">StructType</a> &#42;StructArgTy,</Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/function">Function</a> &#42;oldFunction, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;ReplIP,</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/blockfrequency">BlockFrequency</a> EntryFreq,</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Value &#42;&gt;</a> LifetimesStart,</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">                               std::vector&lt;Value &#42;&gt; &amp;Reloads);</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="comment">    /// Connects the basic block containing the call to the extracted function</Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="comment">    /// into the original function&#39;s control flow.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> insertReplacerCall(</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/function">Function</a> &#42;oldFunction, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;header, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;codeReplacer,</Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ValueSet &amp;outputs, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Value &#42;&gt;</a> Reloads,</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;BasicBlock &#42;, BlockFrequency&gt;</a> &amp;ExitWeights);</Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;TRANSFORMS&#95;UTILS&#95;CODEEXTRACTOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

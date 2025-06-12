@@ -1,0 +1,593 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/branchfolder
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `BranchFolder` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Declaration
+
+<CodeBlock>class llvm::BranchFolder</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="CodeGen/BranchFolding.h"
+  permalink="/docs/api/files/lib/lib/codegen/branchfolding-h"
+  isLocal="true" />
+</IncludesList>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a5032dc7ee5f0a594dbf9665be3800b8e">MPIterator</a> = std::vector&lt; MergePotentialsElt &gt;::iterator</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#acd1adbbf741128687beee153521c3318">BranchFolder</a> (bool DefaultEnableTailMerge, bool CommonHoist, MBFIWrapper &amp;FreqInfo, const MachineBranchProbabilityInfo &amp;ProbInfo, ProfileSummaryInfo &#42;PSI, unsigned MinTailLength=0)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#aa0d50fee4d0d41ccf591e29de109786f">OptimizeFunction</a> (MachineFunction &amp;MF, const TargetInstrInfo &#42;tii, const TargetRegisterInfo &#42;tri, MachineLoopInfo &#42;mli=nullptr, bool AfterPlacement=false)</>}>
+Perhaps branch folding, tail merging and other CFG optimizations on the given function. <a href="#aa0d50fee4d0d41ccf591e29de109786f">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#ad186c4ee71ad0df3a205364aa9165cb6">ComputeSameTails</a> (unsigned CurHash, unsigned minCommonTailLength, MachineBasicBlock &#42;SuccBB, MachineBasicBlock &#42;PredBB)</>}>
+Look through all the blocks in MergePotentials that have hash CurHash (guaranteed to match the last element). <a href="#ad186c4ee71ad0df3a205364aa9165cb6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ae1e7b78443bf2ff7fcc0063e11db34a1">CreateCommonTailOnlyBlock</a> (MachineBasicBlock &#42;&amp;PredBB, MachineBasicBlock &#42;SuccBB, unsigned maxCommonTailLength, unsigned &amp;commonTailIndex)</>}>
+None of the blocks to be tail-merged consist only of the common tail. <a href="#ae1e7b78443bf2ff7fcc0063e11db34a1">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a1c32a92b590c0414b041cabe00a4cbb0">HoistCommonCode</a> (MachineFunction &amp;MF)</>}>
+Hoist common instruction sequences at the start of basic blocks to their common predecessor. <a href="#a1c32a92b590c0414b041cabe00a4cbb0">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a2ba24911a0f7e8ee167b8e3816ca453d">HoistCommonCodeInSuccs</a> (MachineBasicBlock &#42;MBB)</>}>
+If the successors of MBB has common instruction sequence at the start of the function, move the instructions before MBB terminator if it&#39;s legal. <a href="#a2ba24911a0f7e8ee167b8e3816ca453d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a7c7300d213b9cfcf8b11c8e733848e4b">mergeCommonTails</a> (unsigned commonTailIndex)</>}>
+Create merged DebugLocs of identical instructions across SameTails and assign it to the instruction in common tail; merge MMOs and undef flags. <a href="#a7c7300d213b9cfcf8b11c8e733848e4b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#aba4d278656e7fa6ad21f02e32e99e577">OptimizeBlock</a> (MachineBasicBlock &#42;MBB)</>}>
+Analyze and optimize control flow related to the specified block. <a href="#aba4d278656e7fa6ad21f02e32e99e577">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a049e89ea0f4677d14ac181d3f6b2785c">OptimizeBranches</a> (MachineFunction &amp;MF)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aa508be704409a874b2f10484764b228b">RemoveBlocksWithHash</a> (unsigned CurHash, MachineBasicBlock &#42;SuccBB, MachineBasicBlock &#42;PredBB, const DebugLoc &amp;BranchDL)</>}>
+Remove all blocks with hash CurHash from MergePotentials, restoring branches at ends of blocks as appropriate. <a href="#aa508be704409a874b2f10484764b228b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a9014a13a9c23df95aa56bc094f80a8c9">RemoveDeadBlock</a> (MachineBasicBlock &#42;MBB)</>}>
+Remove the specified dead machine basic block from the function, updating the CFG. <a href="#a9014a13a9c23df95aa56bc094f80a8c9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aa136ca23fe4f7556c93c9c94ab9c2ab4">replaceTailWithBranchTo</a> (MachineBasicBlock::iterator OldInst, MachineBasicBlock &amp;NewDest)</>}>
+Delete the instruction OldInst and everything after it, replacing it with an unconditional branch to NewDest. <a href="#aa136ca23fe4f7556c93c9c94ab9c2ab4">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a0235e11af8de64dd309b3752244556c2">setCommonTailEdgeWeights</a> (MachineBasicBlock &amp;TailMBB)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;</>}
+  name={<><a href="#a099fe69a19df662adcc320a2f261cda5">SplitMBBAt</a> (MachineBasicBlock &amp;CurMBB, MachineBasicBlock::iterator BBI1, const BasicBlock &#42;BB)</>}>
+Given a machine basic block and an iterator into it, split the MBB so that the part before the iterator falls into the part starting at the iterator. <a href="#a099fe69a19df662adcc320a2f261cda5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a95bc0bb858b1c2a366d7f274b6144af2">TailMergeBlocks</a> (MachineFunction &amp;MF)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a324d73f3fb0c08e1ee7d4f8e75df3762">TryTailMergeBlocks</a> (MachineBasicBlock &#42;SuccBB, MachineBasicBlock &#42;PredBB, unsigned MinCommonTailLength)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a6bc7c24ca698713b244575ba86706943">AfterBlockPlacement</a> = false</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;, int &gt;</>}
+  name={<><a href="#a3bb3393226355ff1b329201a85efaf0b">EHScopeMembership</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ae08d297cc6c155672a598262a82ba4c1">EnableHoistCommonCode</a> = false</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#aa3567149b3e5bac53145d96a4f4dff59">EnableTailMerge</a> = false</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/livephysregs">LivePhysRegs</a></>}
+  name={<><a href="#a765b1ca67a35c2d5615b1aabb12cfc59">LiveRegs</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/mbfiwrapper">MBFIWrapper</a> &amp;</>}
+  name={<><a href="#a0c7940dc05a7fc28d9766dc76596d373">MBBFreqInfo</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebranchprobabilityinfo">MachineBranchProbabilityInfo</a> &amp;</>}
+  name={<><a href="#a0c00280b2372faa4703acd48510cb787">MBPI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::vector&lt; MergePotentialsElt &gt;</>}
+  name={<><a href="#a5e878e98e6d772cf2ef21e14fab45971">MergePotentials</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a185d3d72e3f7a90feb89e80d07ea70b4">MinCommonTailLength</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineloopinfo">MachineLoopInfo</a> &#42;</>}
+  name={<><a href="#acb059989dc36c036444abed798df0985">MLI</a> = nullptr</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &#42;</>}
+  name={<><a href="#a041332df6a0e5853c3a48f3af99e01b4">MRI</a> = nullptr</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42;</>}
+  name={<><a href="#a937f91fc3784941c5c5393146bef4b27">PSI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::vector&lt; SameTailElt &gt;</>}
+  name={<><a href="#a52a7b562e71ba28a15b2f1f2251f97fb">SameTails</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;</>}
+  name={<><a href="#acaa353388470cfc66ce071957127dbea">TII</a> = nullptr</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &#42;</>}
+  name={<><a href="#a374176ed65c181b7123ff067bbf804ab">TRI</a> = nullptr</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;, 2 &gt;</>}
+  name={<><a href="#af32313ebde0d0b7162a90b12628b06f4">TriedMerging</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a18b2c94b73b04f035d97a21fb8166449">UpdateLiveIns</a> = false</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+Definition at line 31 of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### MPIterator {#a5032dc7ee5f0a594dbf9665be3800b8e}
+
+<MemberDefinition
+  prototype={<>using llvm::BranchFolder::MPIterator =  std::vector&lt;MergePotentialsElt&gt;::iterator</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00071">71</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### BranchFolder() {#acd1adbbf741128687beee153521c3318}
+
+<MemberDefinition
+  prototype={<>BranchFolder::BranchFolder (bool DefaultEnableTailMerge, bool CommonHoist, <a href="/docs/api/classes/llvm/mbfiwrapper">MBFIWrapper</a> &amp; FreqInfo, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebranchprobabilityinfo">MachineBranchProbabilityInfo</a> &amp; ProbInfo, <a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42; PSI, unsigned MinTailLength=0)</>}
+  labels = {["explicit"]}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00033">33</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l00141">141</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### OptimizeFunction() {#aa0d50fee4d0d41ccf591e29de109786f}
+
+<MemberDefinition
+  prototype={<>bool BranchFolder::OptimizeFunction (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42; tii, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &#42; tri, <a href="/docs/api/classes/llvm/machineloopinfo">MachineLoopInfo</a> &#42; mli=nullptr, bool AfterPlacement=false)</>}>
+Perhaps branch folding, tail merging and other CFG optimizations on the given function.
+
+Block placement changes the layout and may create new tail merging opportunities.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00044">44</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l00180">180</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### ComputeSameTails() {#ad186c4ee71ad0df3a205364aa9165cb6}
+
+<MemberDefinition
+  prototype={<>unsigned BranchFolder::ComputeSameTails (unsigned CurHash, unsigned minCommonTailLength, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; SuccBB, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; PredBB)</>}>
+Look through all the blocks in MergePotentials that have hash CurHash (guaranteed to match the last element).
+
+Build the vector SameTails of all those that have the (same) largest number of instructions in common of any pair of these blocks. SameTails entries contain an iterator into MergePotentials (from which the <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> can be found) and a <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> into that MBB indicating the instruction where the matching code sequence begins. Order of elements in SameTails is the reverse of the order in which those blocks appear in MergePotentials (where they are not necessarily consecutive).
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00162">162</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l00654">654</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+### CreateCommonTailOnlyBlock() {#ae1e7b78443bf2ff7fcc0063e11db34a1}
+
+<MemberDefinition
+  prototype={<>bool BranchFolder::CreateCommonTailOnlyBlock (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;&amp; PredBB, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; SuccBB, unsigned maxCommonTailLength, unsigned &amp; commonTailIndex)</>}>
+None of the blocks to be tail-merged consist only of the common tail.
+
+Create a block that does by splitting one.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00174">174</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l00710">710</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+### HoistCommonCode() {#a1c32a92b590c0414b041cabe00a4cbb0}
+
+<MemberDefinition
+  prototype={<>bool BranchFolder::HoistCommonCode (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF)</>}>
+Hoist common instruction sequences at the start of basic blocks to their common predecessor.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00195">195</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l01779">1779</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+### HoistCommonCodeInSuccs() {#a2ba24911a0f7e8ee167b8e3816ca453d}
+
+<MemberDefinition
+  prototype={<>bool BranchFolder::HoistCommonCodeInSuccs (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB)</>}>
+If the successors of MBB has common instruction sequence at the start of the function, move the instructions before MBB terminator if it&#39;s legal.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00199">199</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l01912">1912</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+### mergeCommonTails() {#a7c7300d213b9cfcf8b11c8e733848e4b}
+
+<MemberDefinition
+  prototype="void BranchFolder::mergeCommonTails (unsigned commonTailIndex)">
+Create merged DebugLocs of identical instructions across SameTails and assign it to the instruction in common tail; merge MMOs and undef flags.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00181">181</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l00810">810</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+### OptimizeBlock() {#aba4d278656e7fa6ad21f02e32e99e577}
+
+<MemberDefinition
+  prototype={<>bool BranchFolder::OptimizeBlock (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB)</>}>
+Analyze and optimize control flow related to the specified block.
+
+This is never called on the entry block.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00187">187</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l01318">1318</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+### OptimizeBranches() {#a049e89ea0f4677d14ac181d3f6b2785c}
+
+<MemberDefinition
+  prototype={<>bool BranchFolder::OptimizeBranches (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF)</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00183">183</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l01209">1209</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+### RemoveBlocksWithHash() {#aa508be704409a874b2f10484764b228b}
+
+<MemberDefinition
+  prototype={<>void BranchFolder::RemoveBlocksWithHash (unsigned CurHash, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; SuccBB, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; PredBB, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> &amp; BranchDL)</>}>
+Remove all blocks with hash CurHash from MergePotentials, restoring branches at ends of blocks as appropriate.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00168">168</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l00690">690</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+### RemoveDeadBlock() {#a9014a13a9c23df95aa56bc094f80a8c9}
+
+<MemberDefinition
+  prototype={<>void BranchFolder::RemoveDeadBlock (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB)</>}>
+Remove the specified dead machine basic block from the function, updating the CFG.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00191">191</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l00156">156</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+### replaceTailWithBranchTo() {#aa136ca23fe4f7556c93c9c94ab9c2ab4}
+
+<MemberDefinition
+  prototype={<>void BranchFolder::replaceTailWithBranchTo (<a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> OldInst, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; NewDest)</>}>
+Delete the instruction OldInst and everything after it, replacing it with an unconditional branch to NewDest.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00143">143</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l00362">362</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+### setCommonTailEdgeWeights() {#a0235e11af8de64dd309b3752244556c2}
+
+<MemberDefinition
+  prototype={<>void BranchFolder::setCommonTailEdgeWeights (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; TailMBB)</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00139">139</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l01161">1161</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+### SplitMBBAt() {#a099fe69a19df662adcc320a2f261cda5}
+
+<MemberDefinition
+  prototype={<>MachineBasicBlock &#42; BranchFolder::SplitMBBAt (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; CurMBB, <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> BBI1, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB)</>}>
+Given a machine basic block and an iterator into it, split the MBB so that the part before the iterator falls into the part starting at the iterator.
+
+This returns the new MBB.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00149">149</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l00396">396</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+### TailMergeBlocks() {#a95bc0bb858b1c2a366d7f274b6144af2}
+
+<MemberDefinition
+  prototype={<>bool BranchFolder::TailMergeBlocks (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF)</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00135">135</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l01011">1011</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+### TryTailMergeBlocks() {#a324d73f3fb0c08e1ee7d4f8e75df3762}
+
+<MemberDefinition
+  prototype={<>bool BranchFolder::TryTailMergeBlocks (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; SuccBB, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; PredBB, unsigned MinCommonTailLength)</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00136">136</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp/#l00889">889</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### AfterBlockPlacement {#a6bc7c24ca698713b244575ba86706943}
+
+<MemberDefinition
+  prototype="bool llvm::BranchFolder::AfterBlockPlacement = false">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00119">119</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### EHScopeMembership {#a3bb3393226355ff1b329201a85efaf0b}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;const MachineBasicBlock &#42;, int&gt; llvm::BranchFolder::EHScopeMembership</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00075">75</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### EnableHoistCommonCode {#ae08d297cc6c155672a598262a82ba4c1}
+
+<MemberDefinition
+  prototype="bool llvm::BranchFolder::EnableHoistCommonCode = false">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00121">121</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### EnableTailMerge {#aa3567149b3e5bac53145d96a4f4dff59}
+
+<MemberDefinition
+  prototype="bool llvm::BranchFolder::EnableTailMerge = false">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00120">120</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### LiveRegs {#a765b1ca67a35c2d5615b1aabb12cfc59}
+
+<MemberDefinition
+  prototype="LivePhysRegs llvm::BranchFolder::LiveRegs">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00128">128</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### MBBFreqInfo {#a0c7940dc05a7fc28d9766dc76596d373}
+
+<MemberDefinition
+  prototype={<>MBFIWrapper&amp; llvm::BranchFolder::MBBFreqInfo</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00131">131</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### MBPI {#a0c00280b2372faa4703acd48510cb787}
+
+<MemberDefinition
+  prototype={<>const MachineBranchProbabilityInfo&amp; llvm::BranchFolder::MBPI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00132">132</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### MergePotentials {#a5e878e98e6d772cf2ef21e14fab45971}
+
+<MemberDefinition
+  prototype={<>std::vector&lt;MergePotentialsElt&gt; llvm::BranchFolder::MergePotentials</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00073">73</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### MinCommonTailLength {#a185d3d72e3f7a90feb89e80d07ea70b4}
+
+<MemberDefinition
+  prototype="unsigned llvm::BranchFolder::MinCommonTailLength">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00123">123</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### MLI {#acb059989dc36c036444abed798df0985}
+
+<MemberDefinition
+  prototype={<>MachineLoopInfo&#42; llvm::BranchFolder::MLI = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00127">127</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### MRI {#a041332df6a0e5853c3a48f3af99e01b4}
+
+<MemberDefinition
+  prototype={<>const MachineRegisterInfo&#42; llvm::BranchFolder::MRI = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00125">125</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### PSI {#a937f91fc3784941c5c5393146bef4b27}
+
+<MemberDefinition
+  prototype={<>ProfileSummaryInfo&#42; llvm::BranchFolder::PSI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00133">133</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### SameTails {#a52a7b562e71ba28a15b2f1f2251f97fb}
+
+<MemberDefinition
+  prototype={<>std::vector&lt;SameTailElt&gt; llvm::BranchFolder::SameTails</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00117">117</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### TII {#acaa353388470cfc66ce071957127dbea}
+
+<MemberDefinition
+  prototype={<>const TargetInstrInfo&#42; llvm::BranchFolder::TII = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00124">124</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### TRI {#a374176ed65c181b7123ff067bbf804ab}
+
+<MemberDefinition
+  prototype={<>const TargetRegisterInfo&#42; llvm::BranchFolder::TRI = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00126">126</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### TriedMerging {#af32313ebde0d0b7162a90b12628b06f4}
+
+<MemberDefinition
+  prototype={<>SmallPtrSet&lt;const MachineBasicBlock&#42;, 2&gt; llvm::BranchFolder::TriedMerging</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00074">74</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+### UpdateLiveIns {#a18b2c94b73b04f035d97a21fb8166449}
+
+<MemberDefinition
+  prototype="bool llvm::BranchFolder::UpdateLiveIns = false">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/branchfolding-h/#l00122">122</a> of file <a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/codegen/branchfolding-cpp">BranchFolding.cpp</a></li>
+<li><a href="/docs/api/files/lib/lib/codegen/branchfolding-h">BranchFolding.h</a></li>
+</ul>
+
+</DoxygenPage>

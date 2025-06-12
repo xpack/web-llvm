@@ -1,0 +1,209 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/outeranalysismanagerproxy
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `OuterAnalysisManagerProxy` Class Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+An analysis over an &quot;inner&quot; IR unit that provides access to an analysis manager over a &quot;outer&quot; IR unit. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;typename AnalysisManagerT, typename IRUnitT, typename... ExtraArgTs&gt;
+class llvm::OuterAnalysisManagerProxy&lt;AnalysisManagerT, IRUnitT, ExtraArgTs&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/IR/PassManager.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/analysisinfomixin">AnalysisInfoMixin&lt;DerivedT&gt;</a></>}>
+A CRTP mix-in that provides informational APIs needed for analysis passes. <a href="/docs/api/structs/llvm/analysisinfomixin/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt; ... &gt;</>}
+  name={<><a href="#ac45b2069285adb1d482b5bd80b2b281c">OuterAnalysisManagerProxy</a> (const AnalysisManagerT &amp;OuterAM)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt; ... &gt;</>}
+  type={<><a href="/docs/api/classes/llvm/outeranalysismanagerproxy/result">Result</a></>}
+  name={<><a href="#ab5b413ed02f38146175d4d3ec11540bc">run</a> (IRUnitT &amp;, AnalysisManager&lt; IRUnitT, ExtraArgTs... &gt; &amp;, ExtraArgTs...)</>}>
+Run the analysis pass and create our proxy result object. <a href="#ab5b413ed02f38146175d4d3ec11540bc">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt; ... &gt;</>}
+  type="friend"
+  name={<><a href="#ab36191daaf4cfd6f33f7655587430f2b">AnalysisInfoMixin&lt; OuterAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt; &gt;</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt; ... &gt;</>}
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> AnalysisManagerT &#42;</>}
+  name={<><a href="#ac4cb329debaa1e7d9b92e6bd4ad884a4">OuterAM</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Static Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt; ... &gt;</>}
+  type={<><a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a></>}
+  name={<><a href="#a8ca5331f8970e41c978f2f360100b9b5">Key</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+An analysis over an &quot;inner&quot; IR unit that provides access to an analysis manager over a &quot;outer&quot; IR unit.
+
+The inner unit must be contained in the outer unit.
+
+For example <a href="/docs/api/classes/llvm/outeranalysismanagerproxy">OuterAnalysisManagerProxy&lt;ModuleAnalysisManager, Function&gt;</a> is an analysis over Functions (the &quot;inner&quot; unit) which provides access to a <a href="/docs/api/classes/llvm/module">Module</a> analysis manager. The <a href="/docs/api/namespaces/llvm/#af9c9208365fd9ce11392b4d79485e259">ModuleAnalysisManager</a> is the &quot;outer&quot; manager being proxied, and Modules are the &quot;outer&quot; IR unit. The inner/outer relationship is valid because each <a href="/docs/api/classes/llvm/function">Function</a> is contained in one <a href="/docs/api/classes/llvm/module">Module</a>.
+
+This proxy only exposes the const interface of the outer analysis manager, to indicate that you cannot cause an outer analysis to run from within an inner pass. Instead, you must rely on the <code>getCachedResult</code> API. This is due to keeping potential future concurrency in mind. To give an example, running a module analysis before any function passes may give a different result than running it in a function pass. Both may be valid, but it would produce non-deterministic results. <a href="/docs/api/classes/llvm/globalsaa">GlobalsAA</a> is a good analysis example, because the cached information has the mod/ref info for all memory for each function at the time the analysis was computed. The information is still valid after a function transformation, but it may be <em>different</em> if recomputed after that transform. <a href="/docs/api/classes/llvm/globalsaa">GlobalsAA</a> is never invalidated. This proxy doesn&#39;t manage invalidation in any way – that is handled by the recursive return path of each layer of the pass manager. A consequence of this is the outer analyses may be stale. We invalidate the outer analyses only when we&#39;re done running passes over the inner IR units.
+
+Definition at line 690 of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### OuterAnalysisManagerProxy() {#ac45b2069285adb1d482b5bd80b2b281c}
+
+<MemberDefinition
+  template={<>template &lt;typename AnalysisManagerT, typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>llvm::OuterAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs &gt;::OuterAnalysisManagerProxy (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> AnalysisManagerT &amp; OuterAM)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00774">774</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### run() {#ab5b413ed02f38146175d4d3ec11540bc}
+
+<MemberDefinition
+  template={<>template &lt;typename AnalysisManagerT, typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>Result llvm::OuterAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs &gt;::run (IRUnitT &amp;, <a href="/docs/api/classes/llvm/analysismanager">AnalysisManager</a>&lt; IRUnitT, ExtraArgTs... &gt; &amp;, ExtraArgTs...)</>}
+  labels = {["inline"]}>
+Run the analysis pass and create our proxy result object.
+
+Nothing to see here, it just forwards the <code>OuterAM</code> reference into the result.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00780">780</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### AnalysisInfoMixin&lt; OuterAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt; &gt; {#ab36191daaf4cfd6f33f7655587430f2b}
+
+<MemberDefinition
+  template={<>template &lt;typename AnalysisManagerT, typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>friend llvm::OuterAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs &gt;::AnalysisInfoMixin&lt; OuterAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs... &gt; &gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00786">786</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### OuterAM {#ac4cb329debaa1e7d9b92e6bd4ad884a4}
+
+<MemberDefinition
+  template={<>template &lt;typename AnalysisManagerT, typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>const AnalysisManagerT&#42; llvm::OuterAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs &gt;::OuterAM</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00791">791</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Static Attributes
+
+### Key {#a8ca5331f8970e41c978f2f360100b9b5}
+
+<MemberDefinition
+  template={<>template &lt;typename AnalysisManagerT, typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>AnalysisKey llvm::OuterAnalysisManagerProxy&lt; AnalysisManagerT, IRUnitT, ExtraArgTs &gt;::Key</>}
+  labels = {["static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00789">789</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a></li>
+</ul>
+
+</DoxygenPage>

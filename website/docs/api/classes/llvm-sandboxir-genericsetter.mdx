@@ -1,0 +1,275 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/sandboxir/genericsetter
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `GenericSetter` Class Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This class can be used for tracking most instruction setters. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;auto GetterFn, auto SetterFn&gt;
+class llvm::sandboxir::GenericSetter&lt;GetterFn, SetterFn&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/SandboxIR/Tracker.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/sandboxir/irchangebase">IRChangeBase</a></>}>
+The base class for IR Change classes. <a href="/docs/api/classes/llvm/sandboxir/irchangebase/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  type="using"
+  name={<><a href="#a77b21508e49fdca6b0d84937dcffca42">InstrT</a> = typename GetClassTypeFromGetter&lt; decltype(GetterFn)&gt;::ClassType</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  type="using"
+  name={<><a href="#a5fc01bf061ecb4f00dd9b8540a365de5">SavedValT</a> = std::invoke&#95;result&#95;t&lt; decltype(GetterFn), InstrT &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  name={<><a href="#a3e6d9f7e6369ac080d127f64c50bbd57">GenericSetter</a> (InstrT &#42;I)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  type="void"
+  name={<><a href="#a43dd1771fc6a17fc58cc8b98cf79f48f">accept</a> () final</>}>
+This runs when changes get accepted. <a href="#a43dd1771fc6a17fc58cc8b98cf79f48f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  type="void"
+  name={<><a href="#a1ce7e1a69fcd0faec470346d60a436f4">dump</a> (raw&#95;ostream &amp;OS) const final</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  type={<><a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#aa863693eef567397d9c292da5bf22d34">LLVM&#95;DUMP&#95;METHOD</a> void</>}
+  name={<><a href="#a78cf03974174777527608b3254bd260a">dump</a> () const final</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  type="void"
+  name={<><a href="#a578d1fdfcdaad7c1028b1c8f1cc4b737">revert</a> (Tracker &amp;Tracker) final</>}>
+This runs when changes get reverted. <a href="#a578d1fdfcdaad7c1028b1c8f1cc4b737">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  type={<>InstrT &#42;</>}
+  name={<><a href="#a757bf55f71f3210f1c7e2d80157a75c0">I</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  type="SavedValT"
+  name={<><a href="#ab8ad93ea06b020857f77ad50ea0dc9f2">OrigVal</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This class can be used for tracking most instruction setters.
+
+The two template arguments are:
+<ul>
+<li>GetterFn: The getter member function pointer (e.g., <code>&amp;Foo::get</code>)</li>
+<li>SetterFn: The setter member function pointer (e.g., <code>&amp;Foo::set</code>) Upon construction, it saves a copy of the original value by calling the getter function. Revert sets the value back to the one saved, using the setter function provided.</li>
+</ul>
+
+
+Example: Tracker.track(std::make&#95;unique&lt;
+               GenericSetter&lt;&amp;FooInst::get, &amp;FooInst::set&gt;&gt;(I, Tracker));
+
+Definition at line 275 of file <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h">Tracker.h</a>.
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### InstrT {#a77b21508e49fdca6b0d84937dcffca42}
+
+<MemberDefinition
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  prototype={<>using llvm::sandboxir::GenericSetter&lt; GetterFn, SetterFn &gt;::InstrT =  typename GetClassTypeFromGetter&lt;decltype(GetterFn)&gt;::ClassType</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h/#l00282">282</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h">Tracker.h</a>.
+</MemberDefinition>
+
+### SavedValT {#a5fc01bf061ecb4f00dd9b8540a365de5}
+
+<MemberDefinition
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  prototype={<>using llvm::sandboxir::GenericSetter&lt; GetterFn, SetterFn &gt;::SavedValT =  std::invoke&#95;result&#95;t&lt;decltype(GetterFn), InstrT&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h/#l00283">283</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h">Tracker.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### GenericSetter() {#a3e6d9f7e6369ac080d127f64c50bbd57}
+
+<MemberDefinition
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  prototype={<>llvm::sandboxir::GenericSetter&lt; GetterFn, SetterFn &gt;::GenericSetter (InstrT &#42; I)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h/#l00288">288</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h">Tracker.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### accept() {#a43dd1771fc6a17fc58cc8b98cf79f48f}
+
+<MemberDefinition
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  prototype={<>void llvm::sandboxir::GenericSetter&lt; GetterFn, SetterFn &gt;::accept ()</>}
+  labels = {["inline", "virtual"]}>
+This runs when changes get accepted.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h/#l00290">290</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h">Tracker.h</a>.
+</MemberDefinition>
+
+### dump() {#a1ce7e1a69fcd0faec470346d60a436f4}
+
+<MemberDefinition
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  prototype={<>void llvm::sandboxir::GenericSetter&lt; GetterFn, SetterFn &gt;::dump (<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp; OS) const</>}
+  labels = {["inline", "virtual"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h/#l00292">292</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h">Tracker.h</a>.
+</MemberDefinition>
+
+### dump() {#a78cf03974174777527608b3254bd260a}
+
+<MemberDefinition
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  prototype={<>LLVM&#95;DUMP&#95;METHOD void llvm::sandboxir::GenericSetter&lt; GetterFn, SetterFn &gt;::dump () const</>}
+  labels = {["inline", "virtual"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h/#l00293">293</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h">Tracker.h</a>.
+</MemberDefinition>
+
+### revert() {#a578d1fdfcdaad7c1028b1c8f1cc4b737}
+
+<MemberDefinition
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  prototype={<>void llvm::sandboxir::GenericSetter&lt; GetterFn, SetterFn &gt;::revert (<a href="/docs/api/classes/llvm/sandboxir/tracker">Tracker</a> &amp; Tracker)</>}
+  labels = {["inline", "virtual"]}>
+This runs when changes get reverted.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h/#l00289">289</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h">Tracker.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### I {#a757bf55f71f3210f1c7e2d80157a75c0}
+
+<MemberDefinition
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  prototype={<>InstrT&#42; llvm::sandboxir::GenericSetter&lt; GetterFn, SetterFn &gt;::I</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h/#l00284">284</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h">Tracker.h</a>.
+</MemberDefinition>
+
+### OrigVal {#ab8ad93ea06b020857f77ad50ea0dc9f2}
+
+<MemberDefinition
+  template={<>template &lt;auto GetterFn, auto SetterFn&gt;</>}
+  prototype={<>SavedValT llvm::sandboxir::GenericSetter&lt; GetterFn, SetterFn &gt;::OrigVal</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h/#l00285">285</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h">Tracker.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/tracker-h">Tracker.h</a></li>
+</ul>
+
+</DoxygenPage>

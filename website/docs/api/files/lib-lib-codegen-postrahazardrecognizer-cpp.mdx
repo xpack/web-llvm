@@ -1,0 +1,272 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/codegen/postrahazardrecognizer-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `PostRAHazardRecognizer.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This runs the hazard recognizer and emits noops when necessary. <a href="#details">More...</a>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/Statistic.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/statistic-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/MachineFunctionPass.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/machinefunctionpass-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/ScheduleHazardRecognizer.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/schedulehazardrecognizer-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/TargetInstrInfo.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/targetinstrinfo-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/TargetSubtargetInfo.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/targetsubtargetinfo-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/InitializePasses.h"
+  permalink="/docs/api/files/include/include/llvm/initializepasses-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Pass.h"
+  permalink="/docs/api/files/include/include/llvm/pass-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/anonymous-postrahazardrecognizer-cpp-">anonymous&#123;PostRAHazardRecognizer.cpp&#125;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer">PostRAHazardRecognizer</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a072411a9e831b0296e9186c7e510a17d">INITIALIZE&#95;PASS</a> (PostRAHazardRecognizer, DEBUG&#95;TYPE, &quot;Post RA hazard recognizer&quot;, false, false) bool PostRAHazardRecognizer</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  name={<><a href="#ae6c4b0995569bfabe165d6464444b740">STATISTIC</a> (NumNoops, &quot;Number of noops inserted&quot;)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Defines Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="#define"
+  name={<><a href="#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG&#95;TYPE</a>&nbsp;&nbsp;&nbsp;&quot;post-<a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/sioptimizeexecmaskingprera-cpp/#a3e47bdb3e296b00df96eff7896fa57bf">RA</a>-hazard-rec&quot;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This runs the hazard recognizer and emits noops when necessary.
+
+This gives targets a way to run the hazard recognizer without running one of the schedulers. Example use cases for this pass would be:
+
+
+<ul>
+<li>Targets that need the hazard recognizer to be run at -O0.</li>
+<li>Targets that want to guarantee that hazards at the beginning of scheduling regions are handled correctly. The post-RA scheduler is a top-down scheduler, but when there are multiple scheduling regions in a basic block, it visits the regions in bottom-up order. This makes it impossible for the scheduler to gauranttee it can correctly handle hazards at the beginning of scheduling regions.</li>
+</ul>
+
+
+This pass traverses all the instructions in a program in top-down order. In contrast to the instruction scheduling passes, this pass never resets the hazard recognizer to ensure it can correctly handles noop hazards at the beginning of blocks.
+
+<SectionDefinition>
+
+## Functions
+
+### INITIALIZE&#95;PASS() {#a072411a9e831b0296e9186c7e510a17d}
+
+<MemberDefinition
+  prototype={<>INITIALIZE&#95;PASS (PostRAHazardRecognizer, <a href="/docs/api/files/include/include/llvm/include/llvm/adt/genericcycleimpl-h/#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG&#95;TYPE</a>, &quot;Post <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/sioptimizeexecmaskingprera-cpp/#a3e47bdb3e296b00df96eff7896fa57bf">RA</a> hazard recognizer&quot;, false, false)</>}>
+
+Definition at line <a href="#l00063">63</a> of file <a href="/docs/api/files/lib/lib/codegen/postrahazardrecognizer-cpp">PostRAHazardRecognizer.cpp</a>.
+</MemberDefinition>
+
+### STATISTIC() {#ae6c4b0995569bfabe165d6464444b740}
+
+<MemberDefinition
+  prototype={<>STATISTIC (NumNoops, &quot;Number of noops inserted&quot;)</>}>
+
+Definition at line <a href="#l00040">40</a> of file <a href="/docs/api/files/lib/lib/codegen/postrahazardrecognizer-cpp">PostRAHazardRecognizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Defines
+
+### DEBUG&#95;TYPE {#ad78e062f62e0d6e453941fb4ca843e4d}
+
+<MemberDefinition
+  prototype={<>#define DEBUG&#95;TYPE&nbsp;&nbsp;&nbsp;&quot;post-<a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/sioptimizeexecmaskingprera-cpp/#a3e47bdb3e296b00df96eff7896fa57bf">RA</a>-hazard-rec&quot;</>}>
+
+Definition at line <a href="#l00038">38</a> of file <a href="/docs/api/files/lib/lib/codegen/postrahazardrecognizer-cpp">PostRAHazardRecognizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===----- PostRAHazardRecognizer.cpp - hazard recognizer -----------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="comment">/// \\file</Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="comment">/// This runs the hazard recognizer and emits noops when necessary.  This</Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="comment">/// gives targets a way to run the hazard recognizer without running one of</Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="comment">/// the schedulers.  Example use cases for this pass would be:</Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="comment">/// - Targets that need the hazard recognizer to be run at -O0.</Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="comment">/// - Targets that want to guarantee that hazards at the beginning of</Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="comment">///   scheduling regions are handled correctly.  The post-RA scheduler is</Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="comment">///   a top-down scheduler, but when there are multiple scheduling regions</Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="comment">///   in a basic block, it visits the regions in bottom-up order.  This</Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="comment">///   makes it impossible for the scheduler to gauranttee it can correctly</Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="comment">///   handle hazards at the beginning of scheduling regions.</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="comment">/// This pass traverses all the instructions in a program in top-down order.</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="comment">/// In contrast to the instruction scheduling passes, this pass never resets</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="comment">/// the hazard recognizer to ensure it can correctly handles noop hazards at</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="comment">/// the beginning of blocks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/statistic-h">llvm/ADT/Statistic.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/machinefunctionpass-h">llvm/CodeGen/MachineFunctionPass.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/schedulehazardrecognizer-h">llvm/CodeGen/ScheduleHazardRecognizer.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/targetinstrinfo-h">llvm/CodeGen/TargetInstrInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/targetsubtargetinfo-h">llvm/CodeGen/TargetSubtargetInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/initializepasses-h">llvm/InitializePasses.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/pass-h">llvm/Pass.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38" lineLink="#ad78e062f62e0d6e453941fb4ca843e4d"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEBUG&#95;TYPE &quot;post-RA-hazard-rec&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40" lineLink="#ae6c4b0995569bfabe165d6464444b740"><Highlight kind="normal"><a href="/docs/api/files/include/include/llvm/include/llvm/adt/statistic-h/#ad6117415b93e5675d5a6c8e1855b3b2f">STATISTIC</a>(NumNoops, </Highlight><Highlight kind="stringliteral">&quot;Number of noops inserted&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42" lineLink="/docs/api/namespaces/anonymous-postrahazardrecognizer-cpp-"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43" lineLink="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#a3b5b6fb2100c841891cc6bf72043c002">PostRAHazardRecognizer</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinefunctionpass/#a29c81d2386f4a727c6d33413807530c8">MachineFunctionPass</a> &#123;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46" lineLink="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#aa02c12661218219ed3d5f7c68cb65254"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#aa02c12661218219ed3d5f7c68cb65254">ID</a>;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#a3b5b6fb2100c841891cc6bf72043c002"><Highlight kind="normal">    <a href="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#a3b5b6fb2100c841891cc6bf72043c002">PostRAHazardRecognizer</a>() : <a href="/docs/api/classes/llvm/machinefunctionpass/#a29c81d2386f4a727c6d33413807530c8">MachineFunctionPass</a>(<a href="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#aa02c12661218219ed3d5f7c68cb65254">ID</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49" lineLink="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#afa8609d98b24d2196e814edb7615ab65"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#afa8609d98b24d2196e814edb7615ab65">getAnalysisUsage</a>(<a href="/docs/api/classes/llvm/analysisusage">AnalysisUsage</a> &amp;AU)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">      AU.<a href="/docs/api/classes/llvm/analysisusage/#af11a6ebf7ab3c388234cb6d5378439a3">setPreservesCFG</a>();</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/machinefunctionpass/#a864fd57b4304ef933b3281d0ef85a88e">MachineFunctionPass::getAnalysisUsage</a>(AU);</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54" lineLink="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#abd9a79b48e2d1055f9636fc2cd7bf3d1"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#abd9a79b48e2d1055f9636fc2cd7bf3d1">runOnMachineFunction</a>(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;Fn) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#aa02c12661218219ed3d5f7c68cb65254">PostRAHazardRecognizer::ID</a> = 0;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61" lineLink="/docs/api/namespaces/llvm/#a0a8b2bf85c8335aebd5f41c86485d89e"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/namespaces/llvm/#a0a8b2bf85c8335aebd5f41c86485d89e">llvm::PostRAHazardRecognizerID</a> = <a href="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#aa02c12661218219ed3d5f7c68cb65254">PostRAHazardRecognizer::ID</a>;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="#a072411a9e831b0296e9186c7e510a17d"><Highlight kind="normal"><a href="/docs/api/files/include/include/llvm/passsupport-h/#af807c9595d50b45c0008924c4679c85c">INITIALIZE&#95;PASS</a>(<a href="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#a3b5b6fb2100c841891cc6bf72043c002">PostRAHazardRecognizer</a>, <a href="/docs/api/files/include/include/llvm/include/llvm/adt/genericcycleimpl-h/#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG&#95;TYPE</a>,</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">                </Highlight><Highlight kind="stringliteral">&quot;Post RA hazard recognizer&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">bool <a href="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#a3b5b6fb2100c841891cc6bf72043c002">PostRAHazardRecognizer</a>::<a href="/docs/api/classes/anonymous-namespace-postrahazardrecognizer-cpp-/postrahazardrecognizer/#abd9a79b48e2d1055f9636fc2cd7bf3d1">runOnMachineFunction</a>(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;Fn) &#123;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncopytocombine-cpp/#a1d40004718218dbdf06b496766299101">TII</a> = Fn.getSubtarget().getInstrInfo();</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  std::unique&#95;ptr&lt;ScheduleHazardRecognizer&gt; HazardRec(</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncopytocombine-cpp/#a1d40004718218dbdf06b496766299101">TII</a>-&gt;CreateTargetPostRAHazardRecognizer(Fn));</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Return if the target has not implemented a hazard recognizer.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!HazardRec)</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Loop over all of the basic blocks</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a> : Fn) &#123;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// We do not call HazardRec-&gt;reset() here to make sure we are handling noop</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// hazards at the start of basic blocks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a> : <a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>) &#123;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// If we need to emit noops prior to this instruction, then do so.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumPreNoops = HazardRec-&gt;PreEmitNoops(&amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>);</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">      HazardRec-&gt;EmitNoops(NumPreNoops);</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagoncopytocombine-cpp/#a1d40004718218dbdf06b496766299101">TII</a>-&gt;insertNoops(<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a>(<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>), NumPreNoops);</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">      NumNoops += NumPreNoops;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (NumPreNoops)</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">        <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">      HazardRec-&gt;EmitInstruction(&amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>);</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (HazardRec-&gt;atIssueLimit()) &#123;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">        HazardRec-&gt;AdvanceCycle();</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

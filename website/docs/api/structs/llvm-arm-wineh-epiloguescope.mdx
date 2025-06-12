@@ -1,0 +1,244 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/arm/wineh/epiloguescope
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `EpilogueScope` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+<a href="/docs/api/structs/llvm/arm/wineh/exceptiondatarecord">ExceptionDataRecord</a> - An entry in the table of exception data (.xdata) <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct llvm::ARM::WinEH::EpilogueScope</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/ARMWinEH.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#ae36c0f761bc889edd17953a79056e4e2">EpilogueScope</a> (const support::ulittle32&#95;t Data)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>uint8&#95;t</>}
+  name={<><a href="#a1fedca71fc57023b360b39ecda2c069a">Condition</a> () const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>uint16&#95;t</>}
+  name={<><a href="#ae55f0ef46220287826415a6b94cb6847">EpilogueStartIndexAArch64</a> () const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>uint8&#95;t</>}
+  name={<><a href="#aa76a34504b65a7005760348a2e699742">EpilogueStartIndexARM</a> () const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>uint32&#95;t</>}
+  name={<><a href="#a6f719f3030062c18119f52ef29d596a2">EpilogueStartOffset</a> () const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>uint8&#95;t</>}
+  name={<><a href="#a52a5ffda8feda4ff92198f5793db4c46">ResAArch64</a> () const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>uint8&#95;t</>}
+  name={<><a href="#a091fdd44d698bdded70898d916977c45">ResARM</a> () const</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/namespaces/llvm/support/#a206b37274fa3e908017da357d12724d1">support::ulittle32&#95;t</a></>}
+  name={<><a href="#a465355f44b5483ff629b1a0712a817ed">ES</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+<a href="/docs/api/structs/llvm/arm/wineh/exceptiondatarecord">ExceptionDataRecord</a> - An entry in the table of exception data (.xdata)
+
+The format on <a href="/docs/api/namespaces/llvm/arm">ARM</a> is:
+
+3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 +----—+------—+-+-+-+—+--------------------------------—+ | C Wrd | Epi Cnt |F|E|X|Ver| <a href="/docs/api/classes/llvm/function">Function</a> Length | +----—+-----—+&#39;-&#39;-&#39;-&#39;—&#39;—+----------------------------—+ | Reserved |Ex. Code Words| (Extended Epilogue Count) | +----—+-----—+-----------—+----------------------------—+
+
+The format on ARM64 is:
+
+3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 +------—+------—+-+-+—+--------------------------------—+ | C Wrd | Epi Cnt |E|X|Ver| <a href="/docs/api/classes/llvm/function">Function</a> Length | +------—+---—+–&#39;-&#39;-&#39;—&#39;—+----------------------------—+ | Reserved |Ex. Code Words| (Extended Epilogue Count) | +----—+-----—+-----------—+----------------------------—+
+
+<a href="/docs/api/classes/llvm/function">Function</a> Length : 18-bit field indicating the total length of the function in bytes divided by 2. If a function is larger than 512KB, then multiple pdata and xdata records must be used. Vers : 2-bit field describing the version of the remaining structure. Only version 0 is currently defined (values 1-3 are not permitted). X : 1-bit field indicating the presence of exception data E : 1-bit field indicating that the single epilogue is packed into the header F : 1-bit field indicating that the record describes a function fragment (implies that no prologue is present, and prologue processing should be skipped) (<a href="/docs/api/namespaces/llvm/arm">ARM</a> only) Epilogue Count : 5-bit field that differs in meaning based on the E field. <CodeBlock>             If E is set, then this field specifies the index of the
+             first unwind code describing the (only) epilogue.
+
+             Otherwise, this field indicates the number of exception
+             scopes.  If more than 31 scopes exist, then this field and
+             the Code Words field must both be set to 0 to indicate that
+             an extension word is required.
+</CodeBlock> Code Words : 4-bit (5-bit on ARM64) field that specifies the number of 32-bit words needed to contain all the unwind codes. If more than 15 words (31 words on ARM64) are required, then this field and the Epilogue Count field must both be set to 0 to indicate that an extension word is required. Extended Epilogue Count, Extended Code Words : Valid only if Epilog Count and Code Words are both set to 0. Provides an 8-bit extended code word count and 16-bits for epilogue count
+
+The epilogue scope format on <a href="/docs/api/namespaces/llvm/arm">ARM</a> is:
+
+3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 +-------------—+---—+—+—+----------------------------—+ | Ep Start Idx | Cond |Res| Epilogue Start Offset | +-------------—+---—+—+--------------------------------—+
+
+The epilogue scope format on ARM64 is:
+
+3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 +----------------—+----—+—+----------------------------—+ | Ep Start Idx | Res | Epilogue Start Offset | +----------------—+----—+--------------------------------—+
+
+If the E bit is unset in the header, the header is followed by a series of epilogue scopes, which are sorted by their offset.
+
+Epilogue Start Offset: 18-bit field encoding the offset of epilogue relative to the start of the function in bytes divided by two Res : 2-bit field reserved for future expansion (must be set to 0) Condition : (<a href="/docs/api/namespaces/llvm/arm">ARM</a> only) 4-bit field providing the condition under which the epilogue is executed. Unconditional epilogues should set this field to 0xe. Epilogues must be entirely conditional or unconditional, and in Thumb-2 mode. The epilogue begins with the first instruction after the IT opcode. Epilogue Start Index : 8-bit field indicating the byte index of the first unwind code describing the epilogue
+
+3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 +------------—+------------—+------------—+------------—+ | Unwind Code 3 | Unwind Code 2 | Unwind Code 1 | Unwind Code 0 | +------------—+------------—+------------—+------------—+
+
+Following the epilogue scopes, the byte code describing the unwinding follows. This is padded to align up to word alignment. Bytes are stored in little endian.
+
+3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 +------------------------------------------------------------—+ | Exception Handler RVA (requires X = 1) | +------------------------------------------------------------—+ | (possibly followed by data required for exception handler) | +------------------------------------------------------------—+
+
+If the X bit is set in the header, the unwind byte code is followed by the exception handler information. This constants of one Exception Handler RVA which is the address to the exception handler, followed immediately by the variable length data associated with the exception handler.
+
+Definition at line 396 of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h">ARMWinEH.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### EpilogueScope() {#ae36c0f761bc889edd17953a79056e4e2}
+
+<MemberDefinition
+  prototype={<>llvm::ARM::WinEH::EpilogueScope::EpilogueScope (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/namespaces/llvm/support/#a206b37274fa3e908017da357d12724d1">support::ulittle32&#95;t</a> Data)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h/#l00399">399</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h">ARMWinEH.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### Condition() {#a1fedca71fc57023b360b39ecda2c069a}
+
+<MemberDefinition
+  prototype={<>uint8&#95;t llvm::ARM::WinEH::EpilogueScope::Condition () const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h/#l00415">415</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h">ARMWinEH.h</a>.
+</MemberDefinition>
+
+### EpilogueStartIndexAArch64() {#ae55f0ef46220287826415a6b94cb6847}
+
+<MemberDefinition
+  prototype={<>uint16&#95;t llvm::ARM::WinEH::EpilogueScope::EpilogueStartIndexAArch64 () const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h/#l00424">424</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h">ARMWinEH.h</a>.
+</MemberDefinition>
+
+### EpilogueStartIndexARM() {#aa76a34504b65a7005760348a2e699742}
+
+<MemberDefinition
+  prototype={<>uint8&#95;t llvm::ARM::WinEH::EpilogueScope::EpilogueStartIndexARM () const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h/#l00420">420</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h">ARMWinEH.h</a>.
+</MemberDefinition>
+
+### EpilogueStartOffset() {#a6f719f3030062c18119f52ef29d596a2}
+
+<MemberDefinition
+  prototype={<>uint32&#95;t llvm::ARM::WinEH::EpilogueScope::EpilogueStartOffset () const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h/#l00401">401</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h">ARMWinEH.h</a>.
+</MemberDefinition>
+
+### ResAArch64() {#a52a5ffda8feda4ff92198f5793db4c46}
+
+<MemberDefinition
+  prototype={<>uint8&#95;t llvm::ARM::WinEH::EpilogueScope::ResAArch64 () const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h/#l00410">410</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h">ARMWinEH.h</a>.
+</MemberDefinition>
+
+### ResARM() {#a091fdd44d698bdded70898d916977c45}
+
+<MemberDefinition
+  prototype={<>uint8&#95;t llvm::ARM::WinEH::EpilogueScope::ResARM () const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h/#l00406">406</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h">ARMWinEH.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### ES {#a465355f44b5483ff629b1a0712a817ed}
+
+<MemberDefinition
+  prototype={<>const support::ulittle32&#95;t llvm::ARM::WinEH::EpilogueScope::ES</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h/#l00397">397</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h">ARMWinEH.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/support/armwineh-h">ARMWinEH.h</a></li>
+</ul>
+
+</DoxygenPage>

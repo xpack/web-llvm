@@ -1,0 +1,149 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/namespaces/llvm/misexpect
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - namespace
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `misexpect` Namespace Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Definition
+
+<CodeBlock>namespace llvm::misexpect &#123; ... &#125;</CodeBlock>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a62ecd68a608ec120263975c279ae3dab">checkBackendInstrumentation</a> (Instruction &amp;I, const llvm::ArrayRef&lt; uint32&#95;t &gt; RealWeights)</>}>
+checkBackendInstrumentation - compares PGO counters to the thresholds used for llvm.expect and warns if the PGO counters are outside of the expected range. <a href="#a62ecd68a608ec120263975c279ae3dab">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a4c52059f91406714507309d168ff95b8">checkExpectAnnotations</a> (Instruction &amp;I, const ArrayRef&lt; uint32&#95;t &gt; ExistingWeights, bool IsFrontend)</>}>
+checkExpectAnnotations - compares PGO counters to the thresholds used for llvm.expect and warns if the PGO counters are outside of the expected range. <a href="#a4c52059f91406714507309d168ff95b8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a21de4796e674d8dabcea69242abe5005">checkFrontendInstrumentation</a> (Instruction &amp;I, const ArrayRef&lt; uint32&#95;t &gt; ExpectedWeights)</>}>
+checkFrontendInstrumentation - compares PGO counters to the thresholds used for llvm.expect and warns if the PGO counters are outside of the expected range. <a href="#a21de4796e674d8dabcea69242abe5005">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a8677c5d2618fcf52eda43f5530decb6b">verifyMisExpect</a> (Instruction &amp;I, ArrayRef&lt; uint32&#95;t &gt; RealWeights, const ArrayRef&lt; uint32&#95;t &gt; ExpectedWeights)</>}>
+veryifyMisExpect - compares RealWeights to the thresholds used for llvm.expect and warns if the PGO counters are outside of the expected range. <a href="#a8677c5d2618fcf52eda43f5530decb6b">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Functions
+
+### checkBackendInstrumentation() {#a62ecd68a608ec120263975c279ae3dab}
+
+<MemberDefinition
+  prototype={<>void llvm::misexpect::checkBackendInstrumentation (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/arrayref">llvm::ArrayRef</a>&lt; uint32&#95;t &gt; RealWeights)</>}>
+checkBackendInstrumentation - compares PGO counters to the thresholds used for llvm.expect and warns if the PGO counters are outside of the expected range.
+
+It extracts the expected weights from the MD&#95;prof weights attached to the instruction, which are assumed to come from lowered llvm.expect intrinsics. The RealWeights parameter and the extracted expected weights are then passed to verifyMisexpect() for verification
+
+
+<ParametersList title="Parameters">
+<ParametersListItem name="I">The <a href="/docs/api/classes/llvm/instruction">Instruction</a> being checked</ParametersListItem>
+<ParametersListItem name="RealWeights">A vector of profile weights for each target block</ParametersListItem>
+</ParametersList>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/misexpect-cpp/#l00179">179</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/misexpect-cpp">MisExpect.cpp</a>.
+</MemberDefinition>
+
+### checkExpectAnnotations() {#a4c52059f91406714507309d168ff95b8}
+
+<MemberDefinition
+  prototype={<>void llvm::misexpect::checkExpectAnnotations (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; uint32&#95;t &gt; ExistingWeights, bool IsFrontend)</>}>
+checkExpectAnnotations - compares PGO counters to the thresholds used for llvm.expect and warns if the PGO counters are outside of the expected range.
+
+It extracts the expected weights from the MD&#95;prof weights attached to the instruction, which are assumed to come from lowered llvm.expect intrinsics. The RealWeights parameter and the extracted expected weights are then passed to verifyMisexpect() for verification. It is a thin wrapper around the checkFrontendInstrumentation and checkBackendInstrumentation APIs
+
+
+<ParametersList title="Parameters">
+<ParametersListItem name="I">The <a href="/docs/api/classes/llvm/instruction">Instruction</a> being checked</ParametersListItem>
+<ParametersListItem name="ExistingWeights">A vector of profile weights for each target block</ParametersListItem>
+<ParametersListItem name="IsFrontend">A boolean describing if this is Frontend instrumentation</ParametersListItem>
+</ParametersList>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/misexpect-cpp/#l00202">202</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/misexpect-cpp">MisExpect.cpp</a>.
+</MemberDefinition>
+
+### checkFrontendInstrumentation() {#a21de4796e674d8dabcea69242abe5005}
+
+<MemberDefinition
+  prototype={<>void llvm::misexpect::checkFrontendInstrumentation (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; uint32&#95;t &gt; ExpectedWeights)</>}>
+checkFrontendInstrumentation - compares PGO counters to the thresholds used for llvm.expect and warns if the PGO counters are outside of the expected range.
+
+It extracts the expected weights from the MD&#95;prof weights attached to the instruction, which are assumed to come from profiling data attached by the frontend prior to llvm.expect intrinsic lowering. The ExpectedWeights parameter and the extracted real weights are then passed to verifyMisexpect() for verification
+
+
+<ParametersList title="Parameters">
+<ParametersListItem name="I">The <a href="/docs/api/classes/llvm/instruction">Instruction</a> being checked</ParametersListItem>
+<ParametersListItem name="ExpectedWeights">A vector of the expected weights for each target block, this determines the threshold values used when emitting diagnostics</ParametersListItem>
+</ParametersList>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/misexpect-cpp/#l00194">194</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/misexpect-cpp">MisExpect.cpp</a>.
+</MemberDefinition>
+
+### verifyMisExpect() {#a8677c5d2618fcf52eda43f5530decb6b}
+
+<MemberDefinition
+  prototype={<>void llvm::misexpect::verifyMisExpect (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; uint32&#95;t &gt; RealWeights, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; uint32&#95;t &gt; ExpectedWeights)</>}>
+veryifyMisExpect - compares RealWeights to the thresholds used for llvm.expect and warns if the PGO counters are outside of the expected range.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="I">The <a href="/docs/api/classes/llvm/instruction">Instruction</a> being checked</ParametersListItem>
+<ParametersListItem name="RealWeights">A vector of profile weights from the profile data</ParametersListItem>
+<ParametersListItem name="ExpectedWeights">A vector of the weights attatch by llvm.expect</ParametersListItem>
+</ParametersList>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/misexpect-cpp/#l00122">122</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/misexpect-cpp">MisExpect.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this namespace was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/misexpect-cpp">MisExpect.cpp</a></li>
+</ul>
+
+</DoxygenPage>

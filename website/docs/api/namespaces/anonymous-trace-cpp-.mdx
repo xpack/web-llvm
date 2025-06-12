@@ -1,0 +1,121 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/namespaces/anonymous-trace-cpp-
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - namespace
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `anonymous{Trace.cpp}` Namespace Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Definition
+
+<CodeBlock>namespace &#123; ... &#125;</CodeBlock>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/error">Error</a></>}
+  name={<><a href="#a6b4f89ac434c992939934e78f19cd33e">loadFDRLog</a> (StringRef Data, bool IsLittleEndian, XRayFileHeader &amp;FileHeader, std::vector&lt; XRayRecord &gt; &amp;Records)</>}>
+Reads a log in FDR mode for version 1 of this binary format. <a href="#a6b4f89ac434c992939934e78f19cd33e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/error">Error</a></>}
+  name={<><a href="#ab12a9d7c65de7b4e040ca540157bf373">loadNaiveFormatLog</a> (StringRef Data, bool IsLittleEndian, XRayFileHeader &amp;FileHeader, std::vector&lt; XRayRecord &gt; &amp;Records)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/error">Error</a></>}
+  name={<><a href="#a7782cd0e983ec47c2ebde56b05575ecb">loadYAMLLog</a> (StringRef Data, XRayFileHeader &amp;FileHeader, std::vector&lt; XRayRecord &gt; &amp;Records)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Functions
+
+### loadFDRLog() {#a6b4f89ac434c992939934e78f19cd33e}
+
+<MemberDefinition
+  prototype={<>Error anonymous&#95;namespace&#123;Trace.cpp&#125;::loadFDRLog (<a href="/docs/api/classes/llvm/stringref">StringRef</a> Data, bool IsLittleEndian, <a href="/docs/api/structs/llvm/xray/xrayfileheader">XRayFileHeader</a> &amp; FileHeader, std::vector&lt; <a href="/docs/api/structs/llvm/xray/xrayrecord">XRayRecord</a> &gt; &amp; Records)</>}>
+Reads a log in FDR mode for version 1 of this binary format.
+
+FDR mode is defined as part of the compiler-rt project in xray&#95;fdr&#95;logging.h, and such a log consists of the familiar 32 bit XRayHeader, followed by sequences of of interspersed 16 byte <a href="/docs/api/classes/llvm/metadata">Metadata</a> Records and 8 byte <a href="/docs/api/classes/llvm/function">Function</a> Records.
+
+The following is an attempt to document the grammar of the format, which is parsed by this function for little-endian machines. Since the format makes use of BitFields, when we support big-endian architectures, we will need to adjust not only the endianness parameter to llvm&#39;s RecordExtractor, but also the bit twiddling logic, which is consistent with the little-endian convention that BitFields within a struct will first be packed into the least significant bits the address they belong to.
+
+We expect a format complying with the grammar in the following pseudo-EBNF in Version 1 of the FDR log.
+
+FDRLog: <a href="/docs/api/structs/llvm/xray/xrayfileheader">XRayFileHeader</a> ThreadBuffer&#42; <a href="/docs/api/structs/llvm/xray/xrayfileheader">XRayFileHeader</a>: 32 bytes to identify the log as FDR with machine metadata. Includes BufferSize ThreadBuffer: NewBuffer WallClockTime NewCPUId FunctionSequence EOB BufSize: 8 byte unsigned integer indicating how large the buffer is. NewBuffer: 16 byte metadata record with Thread Id. WallClockTime: 16 byte metadata record with human readable time. Pid: 16 byte metadata record with Pid NewCPUId: 16 byte metadata record with CPUId and a 64 bit TSC reading. EOB: 16 byte record in a thread buffer plus mem garbage to fill BufSize. FunctionSequence: NewCPUId | TSCWrap | <a href="/docs/api/classes/llvm/xray/functionrecord">FunctionRecord</a> TSCWrap: 16 byte metadata record with a full 64 bit TSC reading. <a href="/docs/api/classes/llvm/xray/functionrecord">FunctionRecord</a>: 8 byte record with <a href="/docs/api/classes/llvm/sampleprof/functionid">FunctionId</a>, entry/exit, and TSC delta.
+
+In Version 2, we make the following changes:
+
+ThreadBuffer: <a href="/docs/api/classes/llvm/xray/bufferextents">BufferExtents</a> NewBuffer WallClockTime NewCPUId FunctionSequence <a href="/docs/api/classes/llvm/xray/bufferextents">BufferExtents</a>: 16 byte metdata record describing how many usable bytes are in the buffer. This is measured from the start of the buffer and must always be at least 48 (bytes).
+
+In Version 3, we make the following changes:
+
+ThreadBuffer: <a href="/docs/api/classes/llvm/xray/bufferextents">BufferExtents</a> NewBuffer WallClockTime Pid NewCPUId FunctionSequence EOB: <em>deprecated</em>
+
+In Version 4, we make the following changes:
+
+<a href="/docs/api/classes/llvm/xray/customeventrecord">CustomEventRecord</a> now includes the CPU data.
+
+In Version 5, we make the following changes:
+
+<a href="/docs/api/classes/llvm/xray/customeventrecord">CustomEventRecord</a> and <a href="/docs/api/classes/llvm/xray/typedeventrecord">TypedEventRecord</a> now use TSC delta encoding similar to what <a href="/docs/api/classes/llvm/xray/functionrecord">FunctionRecord</a> instances use, and we no longer need to include the CPU id in the <a href="/docs/api/classes/llvm/xray/customeventrecord">CustomEventRecord</a>.
+
+Definition at line <a href="/docs/api/files/lib/lib/xray/trace-cpp/#l00268">268</a> of file <a href="/docs/api/files/lib/lib/xray/trace-cpp">Trace.cpp</a>.
+</MemberDefinition>
+
+### loadNaiveFormatLog() {#ab12a9d7c65de7b4e040ca540157bf373}
+
+<MemberDefinition
+  prototype={<>Error anonymous&#95;namespace&#123;Trace.cpp&#125;::loadNaiveFormatLog (<a href="/docs/api/classes/llvm/stringref">StringRef</a> Data, bool IsLittleEndian, <a href="/docs/api/structs/llvm/xray/xrayfileheader">XRayFileHeader</a> &amp; FileHeader, std::vector&lt; <a href="/docs/api/structs/llvm/xray/xrayrecord">XRayRecord</a> &gt; &amp; Records)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/xray/trace-cpp/#l00034">34</a> of file <a href="/docs/api/files/lib/lib/xray/trace-cpp">Trace.cpp</a>.
+</MemberDefinition>
+
+### loadYAMLLog() {#a7782cd0e983ec47c2ebde56b05575ecb}
+
+<MemberDefinition
+  prototype={<>Error anonymous&#95;namespace&#123;Trace.cpp&#125;::loadYAMLLog (<a href="/docs/api/classes/llvm/stringref">StringRef</a> Data, <a href="/docs/api/structs/llvm/xray/xrayfileheader">XRayFileHeader</a> &amp; FileHeader, std::vector&lt; <a href="/docs/api/structs/llvm/xray/xrayrecord">XRayRecord</a> &gt; &amp; Records)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/xray/trace-cpp/#l00351">351</a> of file <a href="/docs/api/files/lib/lib/xray/trace-cpp">Trace.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this namespace was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/xray/trace-cpp">Trace.cpp</a></li>
+</ul>
+
+</DoxygenPage>

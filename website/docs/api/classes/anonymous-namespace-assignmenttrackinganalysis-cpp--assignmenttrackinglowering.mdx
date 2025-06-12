@@ -1,0 +1,908 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/anonymous-namespace-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import EnumerationList from '@xpack/docusaurus-plugin-doxygen/components/EnumerationList'
+import EnumerationListItem from '@xpack/docusaurus-plugin-doxygen/components/EnumerationListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `AssignmentTrackingLowering` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+<a href="/docs/api/classes/anonymous-namespace-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering">AssignmentTrackingLowering</a> encapsulates a dataflow analysis over a function that interprets assignment tracking debug info metadata and stores in IR to create a map of variable locations. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class anonymous_namespace{AssignmentTrackingAnalysis.cpp}::AssignmentTrackingLowering</CodeBlock>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#aecd3fbed2e4d7501952b5de23ba8aba8">AssignmentMap</a> = <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/structs/anonymous-namespace-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering/assignment">Assignment</a> &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a6e0b2146e9115e385d8e406b6c36e645">AssignRecord</a> = <a href="/docs/api/classes/llvm/pointerunion">PointerUnion</a>&lt; <a href="/docs/api/classes/llvm/dbgassignintrinsic">DbgAssignIntrinsic</a> &#42;, <a href="/docs/api/classes/llvm/dbgvariablerecord">DbgVariableRecord</a> &#42; &gt;</>}>
+An abstraction of the assignment of a value to a variable or memory location. <a href="#a6e0b2146e9115e385d8e406b6c36e645">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#afadbf47f53cfe3d4eb25a3cb1e53b19d">LocMap</a> = <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="#a4012a71c02f4a13c5234aea48e772f4c">LocKind</a> &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a0ff60cdc2be1ee891c876f458018fd1c">OverlapMap</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a>, <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a> &gt; &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a0dcaf963c14e849c62941b7f402bf74e">UntaggedStoreAssignmentMap</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;, <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; std::pair&lt; <a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a>, <a href="/docs/api/structs/llvm/at/assignmentinfo">at::AssignmentInfo</a> &gt; &gt; &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#ac1a71f3e9fc332d4fae9351111e97486">InstInsertMap</a> = <a href="/docs/api/classes/llvm/mapvector">MapVector</a>&lt; <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a6c7f6b65820380603c12c83d4d3b620c">VarLocInsertPt</a>, <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/structs/llvm/varlocinfo">VarLocInfo</a> &gt; &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Enumerations Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="enum class"
+  name={<>:  &#123; <a href="#a4012a71c02f4a13c5234aea48e772f4c">...</a> &#125;</>}>
+The kind of location in use for a variable, where Mem is the stack home, Val is an SSA value or const, and None means that there is not one single kind (either because there are multiple or because there is none; it may prove useful to split this into two values in the future). <a href="#a4012a71c02f4a13c5234aea48e772f4c">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a14796ed9d9b5b6770e2a62108feca587">AssignmentTrackingLowering</a> (Function &amp;Fn, const DataLayout &amp;Layout, const DenseSet&lt; DebugAggregate &gt; &#42;VarsWithStackSlot)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename T&gt;</>}
+  type="void"
+  name={<><a href="#a81d863ec17163a5dcedc09cb1a48aadf">emitDbgValue</a> (AssignmentTrackingLowering::LocKind Kind, const T Source, VarLocInsertPt After)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a9db16f6b49d380b76183877d54b42c5c">run</a> (FunctionVarLocsBuilder &#42;FnVarLocs)</>}>
+Run the analysis, adding variable location info to <code>FnVarLocs</code>. <a href="#a9db16f6b49d380b76183877d54b42c5c">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#af3ff0c30e3418026bec378dcf3094951">emitDbgValue</a> (LocKind Kind, AssignRecord Source, VarLocInsertPt After)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename T&gt;</>}
+  type="void"
+  name={<><a href="#a7c44df02806cf6f4abb1e57fac4a5774">emitDbgValue</a> (LocKind Kind, const T Source, VarLocInsertPt After)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a8dc095d5a7ebf04bdcee6c8bbfdc0c0c">emitPromotedVarLocs</a> (FunctionVarLocsBuilder &#42;FnVarLocs)</>}>
+Emit info for variables that are fully promoted. <a href="#a8dc095d5a7ebf04bdcee6c8bbfdc0c0c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a> &gt;</>}
+  name={<><a href="#add36cc320c73ceca3c4b781d2632e62d">getContainedFragments</a> (VariableID Var) const</>}>
+Return the set of VariableIDs corresponding the fragments contained fully within the variable/fragment <code>Var</code>. <a href="#add36cc320c73ceca3c4b781d2632e62d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#a4012a71c02f4a13c5234aea48e772f4c">LocKind</a></>}
+  name={<><a href="#aaaa9406d8d3ceb2831508d9a3af47eb1">getLocKind</a> (BlockInfo &#42;LiveSet, VariableID Var)</>}>
+Get the live <a href="#a4012a71c02f4a13c5234aea48e772f4c">LocKind</a> for a <code>Var</code>. <a href="#aaaa9406d8d3ceb2831508d9a3af47eb1">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a></>}
+  name={<><a href="#a6a9ba2a4c1d82ad44e9d75af9c304fc1">getVariableID</a> (const DebugVariable &amp;Var)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a1748ba335a579a8166341235b4e07504">hasVarWithAssignment</a> (BlockInfo &#42;LiveSet, BlockInfo::AssignmentKind Kind, VariableID Var, const Assignment &amp;AV)</>}>
+Return true if <code>Var</code> has an assignment in <code>M</code> matching <code>AV</code>. <a href="#a1748ba335a579a8166341235b4e07504">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af0a599e9e9a2ec3e762ac2a1ff3f6801">join</a> (const BasicBlock &amp;BB, const SmallPtrSet&lt; BasicBlock &#42;, 16 &gt; &amp;Visited)</>}>
+Join the LiveOut values of preds that are contained in <code>Visited</code> into LiveIn&#91;BB&#93;. <a href="#af0a599e9e9a2ec3e762ac2a1ff3f6801">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#af7a4ca3a25308251fca56b212108ab2c">process</a> (BasicBlock &amp;BB, BlockInfo &#42;LiveSet)</>}>
+<a href="/docs/api/classes/llvm/sys/process">Process</a> the instructions in <code>BB</code> updating <code>LiveSet</code> along the way. <a href="#af7a4ca3a25308251fca56b212108ab2c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a0fcbe6b3e2238d2527750fb9229641cb">resetInsertionPoint</a> (Instruction &amp;After)</>}>
+Clear the location definitions currently cached for insertion after /p After. <a href="#a0fcbe6b3e2238d2527750fb9229641cb">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a3db1e9c5375ffd29742c0fecdc8acedc">resetInsertionPoint</a> (DbgVariableRecord &amp;After)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a932045eceb64e8070ec4058d915c79ec">setLocKind</a> (BlockInfo &#42;LiveSet, VariableID Var, LocKind K)</>}>
+Set the <a href="#a4012a71c02f4a13c5234aea48e772f4c">LocKind</a> for <code>Var</code>. <a href="#a932045eceb64e8070ec4058d915c79ec">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a20f6564be46165cd2d8c7c931ca01f15">touchFragment</a> (VariableID Var)</>}>
+Mark <code>Var</code> as having been touched this frame. <a href="#a20f6564be46165cd2d8c7c931ca01f15">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/function">Function</a> &amp;</>}
+  name={<><a href="#ace3fb6446346e99d5e1f996d6691f86c">Fn</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/functionvarlocsbuilder">FunctionVarLocsBuilder</a> &#42;</>}
+  name={<><a href="#a03de30a67feb92759fbcbbdcd0f3e151">FnVarLocs</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/mapvector">InstInsertMap</a></>}
+  name={<><a href="#a11aecf12030437ee0754dc89b45122d4">InsertBeforeMap</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/datalayout">DataLayout</a> &amp;</>}
+  name={<><a href="#ae6dd837818886caa416388cb894e0617">Layout</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, BlockInfo &gt;</>}
+  name={<><a href="#a42dd67983e1e57ba55bb4547f5e0098a">LiveIn</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, BlockInfo &gt;</>}
+  name={<><a href="#a030d7cd52be1827efbb975ef3b6884c4">LiveOut</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a05c5b2328f38cb1affebb8ad4ab6fe40">DebugAggregate</a> &gt;</>}
+  name={<><a href="#a93d689c2128cdf73067ce441fd3337c6">NotAlwaysStackHomed</a></>}>
+The set of variables that sometimes are not located in their stack home. <a href="#a93d689c2128cdf73067ce441fd3337c6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#ac39d04e9015d4b22203bdc7878a5b411">TrackedVariablesVectorSize</a> = 0</>}>
+The highest numbered <a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a> for partially promoted variables plus 1, the values for which start at 1. <a href="#ac39d04e9015d4b22203bdc7878a5b411">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#a0dcaf963c14e849c62941b7f402bf74e">UntaggedStoreAssignmentMap</a></>}
+  name={<><a href="#add6b4e5ace0120a7aa432375cd646c7f">UntaggedStoreVars</a></>}>
+Map untagged stores to the variable fragments they assign to. <a href="#add6b4e5ace0120a7aa432375cd646c7f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#a0ff60cdc2be1ee891c876f458018fd1c">OverlapMap</a></>}
+  name={<><a href="#a0eefa7f711d818fe8df07e5af7f9a35e">VarContains</a></>}>
+Map a variable to the set of variables that it fully contains. <a href="#a0eefa7f711d818fe8df07e5af7f9a35e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a> &gt;</>}
+  name={<><a href="#aa7a33f46af3ed06d248cca47b81f0b2f">VarsTouchedThisFrame</a></>}>
+Helper for process methods to track variables touched each frame. <a href="#aa7a33f46af3ed06d248cca47b81f0b2f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a05c5b2328f38cb1affebb8ad4ab6fe40">DebugAggregate</a> &gt; &#42;</>}
+  name={<><a href="#a3ce4e3e0b2e8283d365bfac025630623">VarsWithStackSlot</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ab415c1f08b41ea0367bdde0bc900f2f3">mapsAreEqual</a> (const BitVector &amp;Mask, const AssignmentMap &amp;A, const AssignmentMap &amp;B)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## joinMethods Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/structs/anonymous-namespace-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering/assignment">Assignment</a></>}
+  name={<><a href="#a284bde494a758f137ae9aadc3eaf0dbf">joinAssignment</a> (const Assignment &amp;A, const Assignment &amp;B)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="BlockInfo"
+  name={<><a href="#a9e3dea86b716ecd08aec5804e14bf632">joinBlockInfo</a> (const BlockInfo &amp;A, const BlockInfo &amp;B)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#a4012a71c02f4a13c5234aea48e772f4c">LocKind</a></>}
+  name={<><a href="#adf5287e05f6fc042184d45a9d60a8ed6">joinKind</a> (LocKind A, LocKind B)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## processMethods Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a7cbb8139150f8f691c89fb73658f92c9">addDbgDef</a> (BlockInfo &#42;LiveSet, VariableID Var, const Assignment &amp;AV)</>}>
+Add an assignment to the variable /p Var. <a href="#a7cbb8139150f8f691c89fb73658f92c9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a7490ef214b500a29b5125bac0bdbdf8b">addMemDef</a> (BlockInfo &#42;LiveSet, VariableID Var, const Assignment &amp;AV)</>}>
+Add an assignment to memory for the variable /p Var. <a href="#a7490ef214b500a29b5125bac0bdbdf8b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#af22058985c8fdfd518da9118f5aa1bce">processDbgAssign</a> (AssignRecord Assign, BlockInfo &#42;LiveSet)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a59bb8432b7c3837317cc521c69ff06f6">processDbgInstruction</a> (DbgInfoIntrinsic &amp;I, BlockInfo &#42;LiveSet)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ac2a8586109e219243dc14ea0fef3e3c0">processDbgValue</a> (PointerUnion&lt; DbgValueInst &#42;, DbgVariableRecord &#42; &gt; DbgValueRecord, BlockInfo &#42;LiveSet)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ab04cf251f137dd30b8d6da9ef2fb6694">processDbgVariableRecord</a> (DbgVariableRecord &amp;DVR, BlockInfo &#42;LiveSet)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a47f512f6497daf8ba0be6476d70b90d7">processNonDbgInstruction</a> (Instruction &amp;I, BlockInfo &#42;LiveSet)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a8a1f2f4bbbe8a0c19a6b96343e2fe826">processTaggedInstruction</a> (Instruction &amp;I, BlockInfo &#42;LiveSet)</>}>
+Update <code>LiveSet</code> after encountering an instruction with a <a href="/docs/api/classes/llvm/diassignid">DIAssignID</a> attachment, <code>I</code>. <a href="#a8a1f2f4bbbe8a0c19a6b96343e2fe826">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#abbb525e882e3f6d0bf70f9ea18565393">processUntaggedInstruction</a> (Instruction &amp;I, BlockInfo &#42;LiveSet)</>}>
+Update <code>LiveSet</code> after encountering an instruciton without a <a href="/docs/api/classes/llvm/diassignid">DIAssignID</a> attachment, <code>I</code>. <a href="#abbb525e882e3f6d0bf70f9ea18565393">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+<a href="/docs/api/classes/anonymous-namespace-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering">AssignmentTrackingLowering</a> encapsulates a dataflow analysis over a function that interprets assignment tracking debug info metadata and stores in IR to create a map of variable locations.
+
+Definition at line 990 of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### AssignmentMap {#aecd3fbed2e4d7501952b5de23ba8aba8}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::AssignmentMap =  SmallVector&lt;Assignment&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01100">1100</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### AssignRecord {#a6e0b2146e9115e385d8e406b6c36e645}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::AssignRecord =  PointerUnion&lt;DbgAssignIntrinsic &#42;, DbgVariableRecord &#42;&gt;</>}>
+An abstraction of the assignment of a value to a variable or memory location.
+
+An <a href="/docs/api/structs/anonymous-namespace-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering/assignment">Assignment</a> is Known or NoneOrPhi. A Known <a href="/docs/api/structs/anonymous-namespace-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering/assignment">Assignment</a> means we have a <a href="/docs/api/classes/llvm/diassignid">DIAssignID</a> ptr that represents it. NoneOrPhi means that we don&#39;t (or can&#39;t) know the <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> of the last assignment that took place.
+
+The <a href="/docs/api/structs/status">Status</a> of the <a href="/docs/api/structs/anonymous-namespace-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering/assignment">Assignment</a> (Known or NoneOrPhi) is another join-semilattice. The partial order is: NoneOrPhi &gt; Known &#123;id&#95;0, id&#95;1, ...id&#95;N&#125;
+
+i.e. for all values x and y where x != y: join(x, x) = x join(x, y) = NoneOrPhi
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01031">1031</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### LocMap {#afadbf47f53cfe3d4eb25a3cb1e53b19d}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::LocMap =  SmallVector&lt;LocKind&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01101">1101</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### OverlapMap {#a0ff60cdc2be1ee891c876f458018fd1c}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::OverlapMap =  DenseMap&lt;VariableID, SmallVector&lt;VariableID&gt;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01102">1102</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### UntaggedStoreAssignmentMap {#a0dcaf963c14e849c62941b7f402bf74e}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::UntaggedStoreAssignmentMap = 
+      DenseMap&lt;const Instruction &#42;,
+               SmallVector&lt;std::pair&lt;VariableID, at::AssignmentInfo&gt;&gt;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01103">1103</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### InstInsertMap {#ac1a71f3e9fc332d4fae9351111e97486}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::InstInsertMap =  MapVector&lt;VarLocInsertPt, SmallVector&lt;VarLocInfo&gt;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01118">1118</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Enumerations
+
+### enum class  {#a4012a71c02f4a13c5234aea48e772f4c}
+
+<MemberDefinition
+  prototype={<>enum class anonymous_namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::LocKind </>}
+ labels = {["strong"]}>
+The kind of location in use for a variable, where Mem is the stack home, Val is an SSA value or const, and None means that there is not one single kind (either because there are multiple or because there is none; it may prove useful to split this into two values in the future).
+
+<EnumerationList title="Enumeration values">
+
+<Link id="a4012a71c02f4a13c5234aea48e772f4cadba5553473d129a7985fb532dc249ff4" />
+<EnumerationListItem name="Mem">
+
+</EnumerationListItem>
+
+<Link id="a4012a71c02f4a13c5234aea48e772f4ca5988c20a047cfe063999787584b0aca7" />
+<EnumerationListItem name="Val">
+
+</EnumerationListItem>
+
+<Link id="a4012a71c02f4a13c5234aea48e772f4ca6adf97f83acf6453d4a6a4b1070f3754" />
+<EnumerationListItem name="None">
+
+</EnumerationListItem>
+
+</EnumerationList>
+
+<a href="#a4012a71c02f4a13c5234aea48e772f4c">LocKind</a> is a join-semilattice with the partial order: None &gt; Mem, Val
+
+i.e. join(Mem, Mem) = Mem join(Val, Val) = Val join(Mem, Val) = None join(None, Mem) = None join(None, Val) = None join(None, None) = None
+
+Note: the order is not <code>None &gt; Val &gt; Mem</code> because we&#39;re using <a href="/docs/api/classes/llvm/diassignid">DIAssignID</a> to name assignments and are not tracking the actual stored values. Therefore currently there&#39;s no way to ensure that Mem values and Val values are the same. This could be a future extension, though it&#39;s not clear that many additional locations would be recovered that way in practice as the likelihood of this sitation arising naturally seems incredibly low.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01015">1015</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### AssignmentTrackingLowering() {#a14796ed9d9b5b6770e2a62108feca587}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::AssignmentTrackingLowering (<a href="/docs/api/classes/llvm/function">Function</a> &amp; Fn, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/datalayout">DataLayout</a> &amp; Layout, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a05c5b2328f38cb1affebb8ad4ab6fe40">DebugAggregate</a> &gt; &#42; VarsWithStackSlot)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01389">1389</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### emitDbgValue() {#a81d863ec17163a5dcedc09cb1a48aadf}
+
+<MemberDefinition
+  template={<>template &lt;typename T&gt;</>}
+  prototype={<>void anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::emitDbgValue (<a href="#a4012a71c02f4a13c5234aea48e772f4c">AssignmentTrackingLowering::LocKind</a> Kind, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> T Source, <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a6c7f6b65820380603c12c83d4d3b620c">VarLocInsertPt</a> After)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01535">1535</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### run() {#a9db16f6b49d380b76183877d54b42c5c}
+
+<MemberDefinition
+  prototype={<>bool AssignmentTrackingLowering::run (<a href="/docs/api/classes/functionvarlocsbuilder">FunctionVarLocsBuilder</a> &#42; FnVarLocs)</>}>
+Run the analysis, adding variable location info to <code>FnVarLocs</code>.
+
+Returns true if any variable locations have been added to FnVarLocs.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01394">1394</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### emitDbgValue() {#af3ff0c30e3418026bec378dcf3094951}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::emitDbgValue (<a href="#a4012a71c02f4a13c5234aea48e772f4c">LocKind</a> Kind, <a href="#a6e0b2146e9115e385d8e406b6c36e645">AssignRecord</a> Source, <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a6c7f6b65820380603c12c83d4d3b620c">VarLocInsertPt</a> After)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01131">1131</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### emitDbgValue() {#a7c44df02806cf6f4abb1e57fac4a5774}
+
+<MemberDefinition
+  template={<>template &lt;typename T&gt;</>}
+  prototype={<>void anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::emitDbgValue (<a href="#a4012a71c02f4a13c5234aea48e772f4c">LocKind</a> Kind, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> T Source, <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a6c7f6b65820380603c12c83d4d3b620c">VarLocInsertPt</a> After)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01133">1133</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### emitPromotedVarLocs() {#a8dc095d5a7ebf04bdcee6c8bbfdc0c0c}
+
+<MemberDefinition
+  prototype={<>bool AssignmentTrackingLowering::emitPromotedVarLocs (<a href="/docs/api/classes/functionvarlocsbuilder">FunctionVarLocsBuilder</a> &#42; FnVarLocs)</>}>
+Emit info for variables that are fully promoted.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01386">1386</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getContainedFragments() {#add36cc320c73ceca3c4b781d2632e62d}
+
+<MemberDefinition
+  prototype={<>ArrayRef&lt; VariableID &gt; AssignmentTrackingLowering::getContainedFragments (<a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a> Var) const</>}>
+Return the set of VariableIDs corresponding the fragments contained fully within the variable/fragment <code>Var</code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01379">1379</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getLocKind() {#aaaa9406d8d3ceb2831508d9a3af47eb1}
+
+<MemberDefinition
+  prototype={<>AssignmentTrackingLowering::LocKind AssignmentTrackingLowering::getLocKind (BlockInfo &#42; LiveSet, <a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a> Var)</>}>
+Get the live <a href="#a4012a71c02f4a13c5234aea48e772f4c">LocKind</a> for a <code>Var</code>.
+
+Requires addMemDef or addDbgDef to have been called for <code>Var</code> first.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01373">1373</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getVariableID() {#a6a9ba2a4c1d82ad44e9d75af9c304fc1}
+
+<MemberDefinition
+  prototype={<>VariableID anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::getVariableID (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/debugvariable">DebugVariable</a> &amp; Var)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01309">1309</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### hasVarWithAssignment() {#a1748ba335a579a8166341235b4e07504}
+
+<MemberDefinition
+  prototype={<>bool AssignmentTrackingLowering::hasVarWithAssignment (BlockInfo &#42; LiveSet, BlockInfo::AssignmentKind Kind, <a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a> Var, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/anonymous-namespace-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering/assignment">Assignment</a> &amp; AV)</>}>
+Return true if <code>Var</code> has an assignment in <code>M</code> matching <code>AV</code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01375">1375</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### join() {#af0a599e9e9a2ec3e762ac2a1ff3f6801}
+
+<MemberDefinition
+  prototype={<>bool AssignmentTrackingLowering::join (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; BB, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, 16 &gt; &amp; Visited)</>}>
+Join the LiveOut values of preds that are contained in <code>Visited</code> into LiveIn&#91;BB&#93;.
+
+Return True if LiveIn&#91;BB&#93; has changed as a result. LiveIn&#91;BB&#93; values monotonically increase. See the join methods  documentation for more info.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01317">1317</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### process() {#af7a4ca3a25308251fca56b212108ab2c}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::process (<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; BB, BlockInfo &#42; LiveSet)</>}>
+<a href="/docs/api/classes/llvm/sys/process">Process</a> the instructions in <code>BB</code> updating <code>LiveSet</code> along the way.
+
+<code>LiveSet</code> must be initialized with the current live-in locations before calling this.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01345">1345</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### resetInsertionPoint() {#a0fcbe6b3e2238d2527750fb9229641cb}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::resetInsertionPoint (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; After)</>}>
+Clear the location definitions currently cached for insertion after /p After.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01122">1122</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### resetInsertionPoint() {#a3db1e9c5375ffd29742c0fecdc8acedc}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::resetInsertionPoint (<a href="/docs/api/classes/llvm/dbgvariablerecord">DbgVariableRecord</a> &amp; After)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01123">1123</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### setLocKind() {#a932045eceb64e8070ec4058d915c79ec}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::setLocKind (BlockInfo &#42; LiveSet, <a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a> Var, <a href="#a4012a71c02f4a13c5234aea48e772f4c">LocKind</a> K)</>}>
+Set the <a href="#a4012a71c02f4a13c5234aea48e772f4c">LocKind</a> for <code>Var</code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01370">1370</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### touchFragment() {#a20f6564be46165cd2d8c7c931ca01f15}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::touchFragment (<a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a> Var)</>}>
+Mark <code>Var</code> as having been touched this frame.
+
+Note, this applies only to the exact fragment <code>Var</code> and not to any fragments contained within.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01383">1383</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### Fn {#ace3fb6446346e99d5e1f996d6691f86c}
+
+<MemberDefinition
+  prototype={<>Function&amp; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::Fn</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01296">1296</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### FnVarLocs {#a03de30a67feb92759fbcbbdcd0f3e151}
+
+<MemberDefinition
+  prototype={<>FunctionVarLocsBuilder&#42; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::FnVarLocs</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01299">1299</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### InsertBeforeMap {#a11aecf12030437ee0754dc89b45122d4}
+
+<MemberDefinition
+  prototype={<>InstInsertMap anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::InsertBeforeMap</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01119">1119</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### Layout {#ae6dd837818886caa416388cb894e0617}
+
+<MemberDefinition
+  prototype={<>const DataLayout&amp; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::Layout</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01297">1297</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### LiveIn {#a42dd67983e1e57ba55bb4547f5e0098a}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;const BasicBlock &#42;, BlockInfo&gt; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::LiveIn</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01300">1300</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### LiveOut {#a030d7cd52be1827efbb975ef3b6884c4}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;const BasicBlock &#42;, BlockInfo&gt; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::LiveOut</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01301">1301</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### NotAlwaysStackHomed {#a93d689c2128cdf73067ce441fd3337c6}
+
+<MemberDefinition
+  prototype={<>DenseSet&lt;DebugAggregate&gt; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::NotAlwaysStackHomed</>}>
+The set of variables that sometimes are not located in their stack home.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01307">1307</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### TrackedVariablesVectorSize {#ac39d04e9015d4b22203bdc7878a5b411}
+
+<MemberDefinition
+  prototype={<>unsigned anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::TrackedVariablesVectorSize = 0</>}>
+The highest numbered <a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a> for partially promoted variables plus 1, the values for which start at 1.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01110">1110</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### UntaggedStoreVars {#add6b4e5ace0120a7aa432375cd646c7f}
+
+<MemberDefinition
+  prototype={<>UntaggedStoreAssignmentMap anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::UntaggedStoreVars</>}>
+Map untagged stores to the variable fragments they assign to.
+
+Used by processUntaggedInstruction.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01115">1115</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### VarContains {#a0eefa7f711d818fe8df07e5af7f9a35e}
+
+<MemberDefinition
+  prototype={<>OverlapMap anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::VarContains</>}>
+Map a variable to the set of variables that it fully contains.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01112">1112</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### VarsTouchedThisFrame {#aa7a33f46af3ed06d248cca47b81f0b2f}
+
+<MemberDefinition
+  prototype={<>DenseSet&lt;VariableID&gt; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::VarsTouchedThisFrame</>}>
+Helper for process methods to track variables touched each frame.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01304">1304</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### VarsWithStackSlot {#a3ce4e3e0b2e8283d365bfac025630623}
+
+<MemberDefinition
+  prototype={<>const DenseSet&lt;DebugAggregate&gt;&#42; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::VarsWithStackSlot</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01298">1298</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Static Functions
+
+### mapsAreEqual() {#ab415c1f08b41ea0367bdde0bc900f2f3}
+
+<MemberDefinition
+  prototype={<>static bool anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::AssignmentTrackingLowering::mapsAreEqual (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/bitvector">BitVector</a> &amp; Mask, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#aecd3fbed2e4d7501952b5de23ba8aba8">AssignmentMap</a> &amp; A, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#aecd3fbed2e4d7501952b5de23ba8aba8">AssignmentMap</a> &amp; B)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01135">1135</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## joinMethods
+
+
+Functions that implement <code>join</code> (the least upper bound) for the join-semilattice types used in the dataflow.
+
+There is an explicit bottom value (⊥) for some types and and explicit top value (⊤) for all types. By definition: <CodeBlock>Join(A, B) &gt;= A &amp;&amp; Join(A, B) &gt;= B
+Join(A, ⊥) = A
+Join(A, ⊤) = ⊤
+</CodeBlock>
+
+These invariants are important for monotonicity.
+
+For the map-type functions, all unmapped keys in an empty map are associated with a bottom value (⊥). This represents their values being unknown. Unmapped keys in non-empty maps (joining two maps with a key only present in one) represents either a variable going out of scope or dropped debug info. It is assumed the key is associated with a top value (⊤) in this case (unknown location / assignment).
+
+### joinAssignment {#a284bde494a758f137ae9aadc3eaf0dbf}
+
+<MemberDefinition
+  prototype={<>AssignmentTrackingLowering::Assignment AssignmentTrackingLowering::joinAssignment (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/anonymous-namespace-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering/assignment">Assignment</a> &amp; A, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/anonymous-namespace-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering/assignment">Assignment</a> &amp; B)</>}
+  labels = {["static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01338">1338</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### joinBlockInfo {#a9e3dea86b716ecd08aec5804e14bf632}
+
+<MemberDefinition
+  prototype={<>AssignmentTrackingLowering::BlockInfo AssignmentTrackingLowering::joinBlockInfo (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> BlockInfo &amp; A, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> BlockInfo &amp; B)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01339">1339</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### joinKind {#adf5287e05f6fc042184d45a9d60a8ed6}
+
+<MemberDefinition
+  prototype={<>AssignmentTrackingLowering::LocKind AssignmentTrackingLowering::joinKind (<a href="#a4012a71c02f4a13c5234aea48e772f4c">LocKind</a> A, <a href="#a4012a71c02f4a13c5234aea48e772f4c">LocKind</a> B)</>}
+  labels = {["static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01337">1337</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## processMethods
+
+
+Methods to process instructions in order to update the LiveSet (current location information).
+
+### addDbgDef {#a7cbb8139150f8f691c89fb73658f92c9}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::addDbgDef (BlockInfo &#42; LiveSet, <a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a> Var, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/anonymous-namespace-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering/assignment">Assignment</a> &amp; AV)</>}>
+Add an assignment to the variable /p Var.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01366">1366</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### addMemDef {#a7490ef214b500a29b5125bac0bdbdf8b}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::addMemDef (BlockInfo &#42; LiveSet, <a href="/docs/api/namespaces/llvm/#a8c9d5a3046b96979a032c218e858cd15">VariableID</a> Var, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/anonymous-namespace-assignmenttrackinganalysis-cpp-/assignmenttrackinglowering/assignment">Assignment</a> &amp; AV)</>}>
+Add an assignment to memory for the variable /p Var.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01364">1364</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### processDbgAssign {#af22058985c8fdfd518da9118f5aa1bce}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::processDbgAssign (<a href="#a6e0b2146e9115e385d8e406b6c36e645">AssignRecord</a> Assign, BlockInfo &#42; LiveSet)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01358">1358</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### processDbgInstruction {#a59bb8432b7c3837317cc521c69ff06f6}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::processDbgInstruction (<a href="/docs/api/classes/llvm/dbginfointrinsic">DbgInfoIntrinsic</a> &amp; I, BlockInfo &#42; LiveSet)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01351">1351</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### processDbgValue {#ac2a8586109e219243dc14ea0fef3e3c0}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::processDbgValue (<a href="/docs/api/classes/llvm/pointerunion">PointerUnion</a>&lt; <a href="/docs/api/classes/llvm/dbgvalueinst">DbgValueInst</a> &#42;, <a href="/docs/api/classes/llvm/dbgvariablerecord">DbgVariableRecord</a> &#42; &gt; DbgValueRecord, BlockInfo &#42; LiveSet)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01360">1360</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### processDbgVariableRecord {#ab04cf251f137dd30b8d6da9ef2fb6694}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::processDbgVariableRecord (<a href="/docs/api/classes/llvm/dbgvariablerecord">DbgVariableRecord</a> &amp; DVR, BlockInfo &#42; LiveSet)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01359">1359</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### processNonDbgInstruction {#a47f512f6497daf8ba0be6476d70b90d7}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::processNonDbgInstruction (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I, BlockInfo &#42; LiveSet)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01350">1350</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### processTaggedInstruction {#a8a1f2f4bbbe8a0c19a6b96343e2fe826}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::processTaggedInstruction (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I, BlockInfo &#42; LiveSet)</>}>
+Update <code>LiveSet</code> after encountering an instruction with a <a href="/docs/api/classes/llvm/diassignid">DIAssignID</a> attachment, <code>I</code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01354">1354</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### processUntaggedInstruction {#abbb525e882e3f6d0bf70f9ea18565393}
+
+<MemberDefinition
+  prototype={<>void AssignmentTrackingLowering::processUntaggedInstruction (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I, BlockInfo &#42; LiveSet)</>}>
+Update <code>LiveSet</code> after encountering an instruciton without a <a href="/docs/api/classes/llvm/diassignid">DIAssignID</a> attachment, <code>I</code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l01357">1357</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a></li>
+</ul>
+
+</DoxygenPage>

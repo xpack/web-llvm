@@ -1,0 +1,284 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/symbolize/diprinter-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `DIPrinter.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/StringRef.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/JSON.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/json-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="memory"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="vector"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/symbolize">llvm::symbolize</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/symbolize/request">Request</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/symbolize/diprinter">DIPrinter</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/symbolize/printerconfig">PrinterConfig</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/symbolize/plainprinterbase">PlainPrinterBase</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/symbolize/llvmprinter">LLVMPrinter</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/symbolize/gnuprinter">GNUPrinter</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/symbolize/jsonprinter">JSONPrinter</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/DebugInfo/Symbolize/DIPrinter.h ---------------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file declares the DIPrinter class, which is responsible for printing</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// structures defined in DebugInfo/DIContext.h</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;DEBUGINFO&#95;SYMBOLIZE&#95;DIPRINTER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;DEBUGINFO&#95;SYMBOLIZE&#95;DIPRINTER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h">llvm/ADT/StringRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/json-h">llvm/Support/JSON.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;memory&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;vector&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/dilineinfo">DILineInfo</a>;</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/diinlininginfo">DIInliningInfo</a>;</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/diglobal">DIGlobal</a>;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/dilocal">DILocal</a>;</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/errorinfobase">ErrorInfoBase</a>;</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a>;</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30" lineLink="/docs/api/namespaces/llvm/symbolize"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/symbolize">symbolize</a> &#123;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/symbolize/sourcecode">SourceCode</a>;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34" lineLink="/docs/api/structs/llvm/symbolize/request"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/symbolize/request">Request</a> &#123;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35" lineLink="/docs/api/structs/llvm/symbolize/request/#a4f33064ef397b8459aed69fbec6678dd"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/structs/llvm/symbolize/request/#a4f33064ef397b8459aed69fbec6678dd">ModuleName</a>;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36" lineLink="/docs/api/structs/llvm/symbolize/request/#a83c781c64952d6872733020df238024c"><Highlight kind="normal">  std::optional&lt;uint64&#95;t&gt; <a href="/docs/api/structs/llvm/symbolize/request/#a83c781c64952d6872733020df238024c">Address</a>;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37" lineLink="/docs/api/structs/llvm/symbolize/request/#a28fbc3b40283db46d112cdd6a4483c3c"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/structs/llvm/symbolize/request/#a28fbc3b40283db46d112cdd6a4483c3c">Symbol</a>;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40" lineLink="/docs/api/classes/llvm/symbolize/diprinter"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/symbolize/diprinter/#a1b85e2cf465e4f694ee34668646bf0a2">DIPrinter</a> &#123;</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42" lineLink="/docs/api/classes/llvm/symbolize/diprinter/#a1b85e2cf465e4f694ee34668646bf0a2"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/symbolize/diprinter/#a1b85e2cf465e4f694ee34668646bf0a2">DIPrinter</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43" lineLink="/docs/api/classes/llvm/symbolize/diprinter/#abdac14943082715a5d00da374e11764e"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/diprinter/#abdac14943082715a5d00da374e11764e">~DIPrinter</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45" lineLink="/docs/api/classes/llvm/symbolize/diprinter/#a7d68ff942e7c347303116d55224b3d0c"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/diprinter/#a7d68ff942e7c347303116d55224b3d0c">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dilineinfo">DILineInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>) = 0;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46" lineLink="/docs/api/classes/llvm/symbolize/diprinter/#ac1c0e21be7e3c3ae668b3ed67544e053"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/diprinter/#ac1c0e21be7e3c3ae668b3ed67544e053">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/diinlininginfo">DIInliningInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>) = 0;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/classes/llvm/symbolize/diprinter/#a63ab7bf0a87288d84cf974dc34451539"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/diprinter/#a63ab7bf0a87288d84cf974dc34451539">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/diglobal">DIGlobal</a> &amp;<a href="/docs/api/namespaces/llvm/#a9aa6dce3613309b3509522a00d6569bfa4cc6684df7b4a92b1dec6fce3264fac8">Global</a>) = 0;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48" lineLink="/docs/api/classes/llvm/symbolize/diprinter/#a3ec8d257eb8c0bea8fdb099bdfb0b400"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/diprinter/#a3ec8d257eb8c0bea8fdb099bdfb0b400">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>,</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">                     </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::vector&lt;DILocal&gt; &amp;Locals) = 0;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50" lineLink="/docs/api/classes/llvm/symbolize/diprinter/#aec6d719f33bf797e0796f2a16205ad5d"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/diprinter/#aec6d719f33bf797e0796f2a16205ad5d">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>,</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">                     </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::vector&lt;DILineInfo&gt; &amp;Locations) = 0;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53" lineLink="/docs/api/classes/llvm/symbolize/diprinter/#ac56d5033bd57732dda74d65768e07f8c"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/diprinter/#ac56d5033bd57732dda74d65768e07f8c">printError</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>,</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">                          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/errorinfobase">ErrorInfoBase</a> &amp;<a href="/docs/api/classes/llvm/errorinfo">ErrorInfo</a>) = 0;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56" lineLink="/docs/api/classes/llvm/symbolize/diprinter/#a48b701879c70eb6610fb357365d19298"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/diprinter/#a48b701879c70eb6610fb357365d19298">listBegin</a>() = 0;</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57" lineLink="/docs/api/classes/llvm/symbolize/diprinter/#a7b7d1b5aefcb53e9b3c6e8e9828587e0"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/diprinter/#a7b7d1b5aefcb53e9b3c6e8e9828587e0">listEnd</a>() = 0;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60" lineLink="/docs/api/structs/llvm/symbolize/printerconfig"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/symbolize/printerconfig">PrinterConfig</a> &#123;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61" lineLink="/docs/api/structs/llvm/symbolize/printerconfig/#a5b8c5c483952365679fe4954a382dadd"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/printerconfig/#a5b8c5c483952365679fe4954a382dadd">PrintAddress</a>;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62" lineLink="/docs/api/structs/llvm/symbolize/printerconfig/#adbd5ed5ce5aea0b44a6593fc7932992a"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/printerconfig/#adbd5ed5ce5aea0b44a6593fc7932992a">PrintFunctions</a>;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/structs/llvm/symbolize/printerconfig/#a93eac407a5ba616b2b04f18c40ca6b7b"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/printerconfig/#a93eac407a5ba616b2b04f18c40ca6b7b">Pretty</a>;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64" lineLink="/docs/api/structs/llvm/symbolize/printerconfig/#ae17e3da94c3614590b05810ef0cc00a8"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/printerconfig/#ae17e3da94c3614590b05810ef0cc00a8">Verbose</a>;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/structs/llvm/symbolize/printerconfig/#ab7966791591bceeb2d46c344ff2d1c57"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/printerconfig/#ab7966791591bceeb2d46c344ff2d1c57">SourceContextLines</a>;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68" lineLink="/docs/api/namespaces/llvm/symbolize/#ac67f275b2f972109d61404aa31a1e919"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/symbolize/#ac67f275b2f972109d61404aa31a1e919">ErrorHandler</a> = std::function&lt;void(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/errorinfobase">ErrorInfoBase</a> &amp;, <a href="/docs/api/classes/llvm/stringref">StringRef</a>)&gt;;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/classes/llvm/symbolize/plainprinterbase"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#a3530621e53d751ebd7417db46a0d9c42">PlainPrinterBase</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/diprinter/#a1b85e2cf465e4f694ee34668646bf0a2">DIPrinter</a> &#123;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72" lineLink="/docs/api/classes/llvm/symbolize/plainprinterbase/#afb39ae511d18027fef991ffa36451221"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;<a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#afb39ae511d18027fef991ffa36451221">OS</a>;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73" lineLink="/docs/api/classes/llvm/symbolize/plainprinterbase/#afeb7ad9c475d4d19f182d9c1ffe78b0e"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/symbolize/#ac67f275b2f972109d61404aa31a1e919">ErrorHandler</a> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#afeb7ad9c475d4d19f182d9c1ffe78b0e">ErrHandler</a>;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/classes/llvm/symbolize/plainprinterbase/#affbf9407a119ebebac9dbf9af8a40e84"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/symbolize/printerconfig">PrinterConfig</a> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affbf9407a119ebebac9dbf9af8a40e84">Config</a>;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affd94f6421b8ea9074813cb07edf9af1">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dilineinfo">DILineInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Inlined);</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#ab2c186a58dd705d72e7c689355080b01">printFunctionName</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> FunctionName, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Inlined);</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78" lineLink="/docs/api/classes/llvm/symbolize/plainprinterbase/#a8ce63a033c09a94bc80b9e43ac721256"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#a8ce63a033c09a94bc80b9e43ac721256">printSimpleLocation</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Filename,</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">                                   </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dilineinfo">DILineInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>) = 0;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#a078d1ed09490a2b10bc581bee91d20a4">printContext</a>(<a href="/docs/api/classes/llvm/symbolize/sourcecode">SourceCode</a> <a href="/docs/api/classes/llvm/symbolize/sourcecode">SourceCode</a>);</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#a9dfac6ddf7f17b7fd9d397483d13d091">printVerbose</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Filename, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dilineinfo">DILineInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>);</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82" lineLink="/docs/api/classes/llvm/symbolize/plainprinterbase/#a2bba3718362838610c71e8da832d562b"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#a2bba3718362838610c71e8da832d562b">printStartAddress</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dilineinfo">DILineInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/classes/llvm/symbolize/plainprinterbase/#a226b126adf5e247cbe3b8c68a6ece60c"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#a226b126adf5e247cbe3b8c68a6ece60c">printFooter</a>() &#123;&#125;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> printHeader(std::optional&lt;uint64&#95;t&gt; <a href="/docs/api/namespaces/llvm/#a8e02bbea14c70bab55fbc1384e1472d9add7bf230fde8d4836917806aff6a6b27">Address</a>);</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89" lineLink="/docs/api/classes/llvm/symbolize/plainprinterbase/#a3530621e53d751ebd7417db46a0d9c42"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#a3530621e53d751ebd7417db46a0d9c42">PlainPrinterBase</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;<a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#afb39ae511d18027fef991ffa36451221">OS</a>, <a href="/docs/api/namespaces/llvm/symbolize/#ac67f275b2f972109d61404aa31a1e919">ErrorHandler</a> EH, <a href="/docs/api/structs/llvm/symbolize/printerconfig">PrinterConfig</a> &amp;<a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affbf9407a119ebebac9dbf9af8a40e84">Config</a>)</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">      : <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#afb39ae511d18027fef991ffa36451221">OS</a>(<a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#afb39ae511d18027fef991ffa36451221">OS</a>), <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#afeb7ad9c475d4d19f182d9c1ffe78b0e">ErrHandler</a>(EH), <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affbf9407a119ebebac9dbf9af8a40e84">Config</a>(<a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affbf9407a119ebebac9dbf9af8a40e84">Config</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affd94f6421b8ea9074813cb07edf9af1">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dilineinfo">DILineInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affd94f6421b8ea9074813cb07edf9af1">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/diinlininginfo">DIInliningInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affd94f6421b8ea9074813cb07edf9af1">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/diglobal">DIGlobal</a> &amp;<a href="/docs/api/namespaces/llvm/#a9aa6dce3613309b3509522a00d6569bfa4cc6684df7b4a92b1dec6fce3264fac8">Global</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affd94f6421b8ea9074813cb07edf9af1">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>,</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">             </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::vector&lt;DILocal&gt; &amp;Locals) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affd94f6421b8ea9074813cb07edf9af1">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>,</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">             </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::vector&lt;DILineInfo&gt; &amp;Locations) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#a34d548e5b8beb93beda1d1d8b7966ac9">printError</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>,</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">                  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/errorinfobase">ErrorInfoBase</a> &amp;<a href="/docs/api/classes/llvm/errorinfo">ErrorInfo</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103" lineLink="/docs/api/classes/llvm/symbolize/plainprinterbase/#aed017d550b5b59574c315791ca69114a"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#aed017d550b5b59574c315791ca69114a">listBegin</a>()</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;&#125;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104" lineLink="/docs/api/classes/llvm/symbolize/plainprinterbase/#ac89565f433cc604edacf4aace5547941"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#ac89565f433cc604edacf4aace5547941">listEnd</a>()</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;&#125;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107" lineLink="/docs/api/classes/llvm/symbolize/llvmprinter"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/symbolize/llvmprinter/#a1b7e5d6f1fab74a3c74efbd7bf0dd058">LLVMPrinter</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#a3530621e53d751ebd7417db46a0d9c42">PlainPrinterBase</a> &#123;</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> printSimpleLocation(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Filename, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dilineinfo">DILineInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> printStartAddress(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dilineinfo">DILineInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#a226b126adf5e247cbe3b8c68a6ece60c">printFooter</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114" lineLink="/docs/api/classes/llvm/symbolize/llvmprinter/#a1b7e5d6f1fab74a3c74efbd7bf0dd058"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/symbolize/llvmprinter/#a1b7e5d6f1fab74a3c74efbd7bf0dd058">LLVMPrinter</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;<a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#afb39ae511d18027fef991ffa36451221">OS</a>, <a href="/docs/api/namespaces/llvm/symbolize/#ac67f275b2f972109d61404aa31a1e919">ErrorHandler</a> EH, <a href="/docs/api/structs/llvm/symbolize/printerconfig">PrinterConfig</a> &amp;<a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affbf9407a119ebebac9dbf9af8a40e84">Config</a>)</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">      : <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#a3530621e53d751ebd7417db46a0d9c42">PlainPrinterBase</a>(<a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#afb39ae511d18027fef991ffa36451221">OS</a>, EH, <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affbf9407a119ebebac9dbf9af8a40e84">Config</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118" lineLink="/docs/api/classes/llvm/symbolize/gnuprinter"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/symbolize/gnuprinter/#aa69dbcfadd20ce4148b46b572605c9cd">GNUPrinter</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#a3530621e53d751ebd7417db46a0d9c42">PlainPrinterBase</a> &#123;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> printSimpleLocation(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Filename, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dilineinfo">DILineInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123" lineLink="/docs/api/classes/llvm/symbolize/gnuprinter/#aa69dbcfadd20ce4148b46b572605c9cd"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/symbolize/gnuprinter/#aa69dbcfadd20ce4148b46b572605c9cd">GNUPrinter</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;<a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#afb39ae511d18027fef991ffa36451221">OS</a>, <a href="/docs/api/namespaces/llvm/symbolize/#ac67f275b2f972109d61404aa31a1e919">ErrorHandler</a> EH, <a href="/docs/api/structs/llvm/symbolize/printerconfig">PrinterConfig</a> &amp;<a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affbf9407a119ebebac9dbf9af8a40e84">Config</a>)</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">      : <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#a3530621e53d751ebd7417db46a0d9c42">PlainPrinterBase</a>(<a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#afb39ae511d18027fef991ffa36451221">OS</a>, EH, <a href="/docs/api/classes/llvm/symbolize/plainprinterbase/#affbf9407a119ebebac9dbf9af8a40e84">Config</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128" lineLink="/docs/api/classes/llvm/symbolize/jsonprinter"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/symbolize/jsonprinter/#a969bd554198e7c173fccd54ce534a2c3">JSONPrinter</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/diprinter/#a1b85e2cf465e4f694ee34668646bf0a2">DIPrinter</a> &#123;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS;</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/symbolize/printerconfig">PrinterConfig</a> Config;</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">  std::unique&#95;ptr&lt;json::Array&gt; ObjectList;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> printJSON(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/json/value">json::Value</a> &amp;V) &#123;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/json/ostream">json::OStream</a> JOS(OS, Config.<a href="/docs/api/structs/llvm/symbolize/printerconfig/#a93eac407a5ba616b2b04f18c40ca6b7b">Pretty</a> ? 2 : 0);</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">    JOS.<a href="/docs/api/classes/llvm/json/ostream/#ad132dccf457f071b5854a8c94135e7c2">value</a>(V);</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="charliteral">&#39;\\n&#39;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141" lineLink="/docs/api/classes/llvm/symbolize/jsonprinter/#a969bd554198e7c173fccd54ce534a2c3"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/symbolize/jsonprinter/#a969bd554198e7c173fccd54ce534a2c3">JSONPrinter</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS, <a href="/docs/api/structs/llvm/symbolize/printerconfig">PrinterConfig</a> &amp;Config)</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">      : OS(OS), Config(Config) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/jsonprinter/#a49caccc35b75eca4c29effcf33e9717e">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dilineinfo">DILineInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/jsonprinter/#a49caccc35b75eca4c29effcf33e9717e">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/diinlininginfo">DIInliningInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/jsonprinter/#a49caccc35b75eca4c29effcf33e9717e">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/diglobal">DIGlobal</a> &amp;<a href="/docs/api/namespaces/llvm/#a9aa6dce3613309b3509522a00d6569bfa4cc6684df7b4a92b1dec6fce3264fac8">Global</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/jsonprinter/#a49caccc35b75eca4c29effcf33e9717e">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>,</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">             </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::vector&lt;DILocal&gt; &amp;Locals) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/jsonprinter/#a49caccc35b75eca4c29effcf33e9717e">print</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>,</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">             </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::vector&lt;DILineInfo&gt; &amp;Locations) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/jsonprinter/#adaadef0779896ae891a1167ef217fa48">printError</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/symbolize/request">Request</a> &amp;<a href="/docs/api/structs/llvm/symbolize/request">Request</a>,</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">                  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/errorinfobase">ErrorInfoBase</a> &amp;<a href="/docs/api/classes/llvm/errorinfo">ErrorInfo</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/jsonprinter/#ab29b15e874d0295115211971f14ee7c8">listBegin</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/symbolize/jsonprinter/#ad27ebba1da6c74b1f5790dfe0fc95f79">listEnd</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace symbolize</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

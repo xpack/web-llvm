@@ -1,0 +1,168 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/threadsafeallocator
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ThreadSafeAllocator` Class Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Thread-safe allocator adaptor. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;class AllocatorType&gt;
+class llvm::ThreadSafeAllocator&lt;AllocatorType&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/ThreadSafeAllocator.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/threadsafeallocator-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;class AllocatorType&gt;</>}
+  type="auto"
+  name={<><a href="#a3675bca5885ec5fdfbc222e625bbd473">Allocate</a> (size&#95;t N)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;class AllocatorType&gt;</>}
+  type="auto"
+  name={<><a href="#a1a58565d13e784d8f050754596f7ac18">Allocate</a> (size&#95;t Size, size&#95;t Align)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt; ... &gt;</>}
+  type="T"
+  name={<><a href="#a612cbd70572a15da5143e25cdc19991d">applyLocked</a> (FnT Fn)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;class AllocatorType&gt;</>}
+  type="AllocatorType"
+  name={<><a href="#ab9ffde2baf3139f4f3aecfaac13a8084">Alloc</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;class AllocatorType&gt;</>}
+  type={<>std::atomic&#95;flag</>}
+  name={<><a href="#a00682ece6102df4b89cd6cf19db2d392">Flag</a> = ATOMIC&#95;FLAG&#95;INIT</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Thread-safe allocator adaptor.
+
+Uses a spin lock on the assumption that contention here is extremely rare.
+
+TODO: Using a spin lock on every allocation can be quite expensive when contention is high. Since this is mainly used for <a href="/docs/api/namespaces/llvm/#a8e612822d4ba7bb36c9c79582a567108">BumpPtrAllocator</a> and <a href="/docs/api/classes/llvm/specificbumpptrallocator">SpecificBumpPtrAllocator</a>, it&#39;d be better to have a specific thread-safe <a href="/docs/api/namespaces/llvm/#a8e612822d4ba7bb36c9c79582a567108">BumpPtrAllocator</a> implementation that only use a fair lock when allocating a new slab but otherwise using atomic and be lock-free.
+
+Definition at line 26 of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/threadsafeallocator-h">ThreadSafeAllocator.h</a>.
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### Allocate() {#a3675bca5885ec5fdfbc222e625bbd473}
+
+<MemberDefinition
+  template={<>template &lt;class AllocatorType&gt;</>}
+  prototype={<>auto llvm::ThreadSafeAllocator&lt; AllocatorType &gt;::Allocate (size&#95;t N)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/threadsafeallocator-h/#l00038">38</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/threadsafeallocator-h">ThreadSafeAllocator.h</a>.
+</MemberDefinition>
+
+### Allocate() {#a1a58565d13e784d8f050754596f7ac18}
+
+<MemberDefinition
+  template={<>template &lt;class AllocatorType&gt;</>}
+  prototype={<>auto llvm::ThreadSafeAllocator&lt; AllocatorType &gt;::Allocate (size&#95;t Size, size&#95;t Align)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/threadsafeallocator-h/#l00042">42</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/threadsafeallocator-h">ThreadSafeAllocator.h</a>.
+</MemberDefinition>
+
+### applyLocked() {#a612cbd70572a15da5143e25cdc19991d}
+
+<MemberDefinition
+  template={<>template &lt;typename FnT, typename T = typename llvm::function&#95;traits&lt;FnT&gt;::result&#95;t&gt;</>}
+  prototype={<>T llvm::ThreadSafeAllocator&lt; AllocatorType &gt;::applyLocked (FnT Fn)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/threadsafeallocator-h/#l00050">50</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/threadsafeallocator-h">ThreadSafeAllocator.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### Alloc {#ab9ffde2baf3139f4f3aecfaac13a8084}
+
+<MemberDefinition
+  template={<>template &lt;class AllocatorType&gt;</>}
+  prototype={<>AllocatorType llvm::ThreadSafeAllocator&lt; AllocatorType &gt;::Alloc</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/threadsafeallocator-h/#l00056">56</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/threadsafeallocator-h">ThreadSafeAllocator.h</a>.
+</MemberDefinition>
+
+### Flag {#a00682ece6102df4b89cd6cf19db2d392}
+
+<MemberDefinition
+  template={<>template &lt;class AllocatorType&gt;</>}
+  prototype={<>std::atomic&#95;flag llvm::ThreadSafeAllocator&lt; AllocatorType &gt;::Flag = ATOMIC&#95;FLAG&#95;INIT</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/threadsafeallocator-h/#l00057">57</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/threadsafeallocator-h">ThreadSafeAllocator.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/support/threadsafeallocator-h">ThreadSafeAllocator.h</a></li>
+</ul>
+
+</DoxygenPage>

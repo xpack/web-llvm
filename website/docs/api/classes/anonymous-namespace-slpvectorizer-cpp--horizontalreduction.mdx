@@ -1,0 +1,589 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/anonymous-namespace-slpvectorizer-cpp-/horizontalreduction
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `HorizontalReduction` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Model horizontal reductions. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class anonymous_namespace{SLPVectorizer.cpp}::HorizontalReduction</CodeBlock>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#ac1bbe2b8aa1728bb52634bcc2e283f26">ReductionOpsListType</a> = <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/classes/llvm/smallvector">ReductionOpsType</a>, 2 &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a82cb8939b908ceedc7fe66012636b16b">ReductionOpsType</a> = <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42;, 16 &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a9a19496e1483ab253ecc04ce3fa0c3a6">HorizontalReduction</a> ()=default</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a7df4bae7dbd152d7a3c399384a110fe8">matchAssociativeReduction</a> (BoUpSLP &amp;R, Instruction &#42;Root, ScalarEvolution &amp;SE, const DataLayout &amp;DL, const TargetLibraryInfo &amp;TLI)</>}>
+Try to find a reduction tree. <a href="#a7df4bae7dbd152d7a3c399384a110fe8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#ab1f9d3b9bc61d6ec2606916f8d7b92f4">tryToReduce</a> (BoUpSLP &amp;V, const DataLayout &amp;DL, TargetTransformInfo &#42;TTI, const TargetLibraryInfo &amp;TLI, AssumptionCache &#42;AC)</>}>
+Attempt to vectorize the tree found by matchAssociativeReduction. <a href="#ab1f9d3b9bc61d6ec2606916f8d7b92f4">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a7e5c11dcf045a80ce42d0d7367869221">addReductionOps</a> (Instruction &#42;I)</>}>
+Add all reduction operations for the reduction instruction <code>I</code>. <a href="#a7e5c11dcf045a80ce42d0d7367869221">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#aeef4eed59a6b591aa4eeabd821facd0b">emitReduction</a> (Value &#42;VectorizedValue, IRBuilderBase &amp;Builder, const TargetTransformInfo &#42;TTI, Type &#42;DestTy)</>}>
+Emit a horizontal reduction of the vectorized value. <a href="#aeef4eed59a6b591aa4eeabd821facd0b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#a3acecd41e49a74e0b98bfc8e530ad2fb">emitReusedOps</a> (Value &#42;VectorizedValue, IRBuilderBase &amp;Builder, BoUpSLP &amp;R, const SmallMapVector&lt; Value &#42;, unsigned, 16 &gt; &amp;SameValuesCounter, const DenseMap&lt; Value &#42;, Value &#42; &gt; &amp;TrackedToOrig)</>}>
+Emits actual operation for the scalar identity values, found during horizontal reduction analysis. <a href="#a3acecd41e49a74e0b98bfc8e530ad2fb">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#a64c9106761190ed1b36944d02be8ea45">emitScaleForReusedOps</a> (Value &#42;VectorizedValue, IRBuilderBase &amp;Builder, unsigned Cnt)</>}>
+Emits optimized code for unique scalar value reused <code>Cnt</code> times. <a href="#a64c9106761190ed1b36944d02be8ea45">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/instructioncost">InstructionCost</a></>}
+  name={<><a href="#a3623100f171b3a13f9788ec31a15fc3e">getReductionCost</a> (TargetTransformInfo &#42;TTI, ArrayRef&lt; Value &#42; &gt; ReducedVals, bool IsCmpSelMinMax, FastMathFlags FMF, const BoUpSLP &amp;R)</>}>
+Calculate the cost of a reduction. <a href="#a3623100f171b3a13f9788ec31a15fc3e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a0fc8bbaa3c19cabec1c0e277c095cf26">initReductionOps</a> (Instruction &#42;I)</>}>
+Initializes the list of reduction operations. <a href="#a0fc8bbaa3c19cabec1c0e277c095cf26">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a8d185e45d27c0915eefba9623b9dc5da">IsSupportedHorRdxIdentityOp</a> = false</>}>
+Checks if the optimization of original scalar identity operations on matched horizontal reductions is enabled and allowed. <a href="#a8d185e45d27c0915eefba9623b9dc5da">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#aac36edd0f1ce976f0025c98e88d3830e">RecurKind</a></>}
+  name={<><a href="#af7e3740a39464de76bfe323cba1b8de6">RdxKind</a></>}>
+The type of reduction operation. <a href="#af7e3740a39464de76bfe323cba1b8de6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt; &gt;</>}
+  name={<><a href="#af7d0f73b6be1b4d0305b89d3f6a1387c">ReducedVals</a></>}>
+List of possibly reduced values. <a href="#af7d0f73b6be1b4d0305b89d3f6a1387c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smalldensemap">SmallDenseMap</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42;, <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; &gt;, 16 &gt;</>}
+  name={<><a href="#a7ff356a8667a2de4812ca31faa76eb97">ReducedValsToOps</a></>}>
+Maps reduced value to the corresponding reduction operation. <a href="#a7ff356a8667a2de4812ca31faa76eb97">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">ReductionOpsListType</a></>}
+  name={<><a href="#a13111b40234cadd74ba601594a3471cb">ReductionOps</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/weaktrackingvh">WeakTrackingVH</a></>}
+  name={<><a href="#a07bb39fe748d1c4b041fbc46d6cebf7f">ReductionRoot</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a9a63158f073cdcf3696b623f1b8e0601">getFirstOperandIndex</a> (Instruction &#42;I)</>}>
+Get the index of the first operand. <a href="#a9a63158f073cdcf3696b623f1b8e0601">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#aac36edd0f1ce976f0025c98e88d3830e">RecurKind</a></>}
+  name={<><a href="#a842f13add9ede73561cdbad22101b255">getRdxKind</a> (Value &#42;V)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#a7eb7173f8c5554251c785ecfb8ad4a84">createOp</a> (IRBuilderBase &amp;Builder, RecurKind Kind, Value &#42;LHS, Value &#42;RHS, const Twine &amp;Name, bool UseSelect)</>}>
+Creates reduction operation with the current opcode. <a href="#a7eb7173f8c5554251c785ecfb8ad4a84">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#ab4899ad7457900fa098f5f39fe2fdf1c">createOp</a> (IRBuilderBase &amp;Builder, RecurKind RdxKind, Value &#42;LHS, Value &#42;RHS, const Twine &amp;Name, const ReductionOpsListType &amp;ReductionOps)</>}>
+Creates reduction operation with the current opcode with the IR flags from <code>ReductionOps</code>, dropping nuw/nsw flags. <a href="#ab4899ad7457900fa098f5f39fe2fdf1c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a718f11e982d5161c53e2360a8412adb6">getNumberOfOperands</a> (Instruction &#42;I)</>}>
+Total number of operands in the reduction operation. <a href="#a718f11e982d5161c53e2360a8412adb6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#a991f39946aa4a6c9fd946dc8221bffb3">getRdxOperand</a> (Instruction &#42;I, unsigned Index)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a3368a049b17486ecdc256a3cf8b82609">hasRequiredNumberOfUses</a> (bool IsCmpSelMinMax, Instruction &#42;I)</>}>
+<a href="/docs/api/classes/llvm/expected">Expected</a> number of uses for reduction operations/reduced values. <a href="#a3368a049b17486ecdc256a3cf8b82609">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a08b7c1a781a7fa2b12c7f72d05cea24e">hasSameParent</a> (Instruction &#42;I, BasicBlock &#42;BB)</>}>
+Checks if the instruction is in basic block <code>BB</code>. <a href="#a08b7c1a781a7fa2b12c7f72d05cea24e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a8650b74df12ce59ed7edb47ebe6fc356">isBoolLogicOp</a> (Instruction &#42;I)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a2b503faa306494cff5bb0242110bd48b">isCmpSelMinMax</a> (Instruction &#42;I)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a09a40a8ccd7d0464bb820420b07cae54">isGoodForReduction</a> (ArrayRef&lt; Value &#42; &gt; Data)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ac0ab594a25adc55c05b1d3fa601d44fd">isVectorizable</a> (RecurKind Kind, Instruction &#42;I)</>}>
+Checks if instruction is associative and can be vectorized. <a href="#ac0ab594a25adc55c05b1d3fa601d44fd">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Model horizontal reductions.
+
+A horizontal reduction is a tree of reduction instructions that has values that can be put into a vector as its leaves. For example:
+
+mul mul mul mul \\ / \\ /
+<ul>
+<li>+ \\ /
+<ul>
+<li>This tree has &quot;mul&quot; as its leaf values and &quot;+&quot; as its reduction instructions. A reduction can feed into a store or a binary operation feeding a phi. ... \\ /</li>
+</ul></li>
+</ul>
+
+
+| phi +=
+
+Or: ... \\ /
+<ul>
+<li>| &#42;p =</li>
+</ul>
+
+Definition at line 19382 of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### ReductionOpsListType {#ac1bbe2b8aa1728bb52634bcc2e283f26}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::ReductionOpsListType =  SmallVector&lt;ReductionOpsType, 2&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19384">19384</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### ReductionOpsType {#a82cb8939b908ceedc7fe66012636b16b}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::ReductionOpsType =  SmallVector&lt;Value &#42;, 16&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19383">19383</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### HorizontalReduction() {#a9a19496e1483ab253ecc04ce3fa0c3a6}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::HorizontalReduction ()</>}
+  labels = {["default"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19684">19684</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### matchAssociativeReduction() {#a7df4bae7dbd152d7a3c399384a110fe8}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::matchAssociativeReduction (<a href="/docs/api/classes/llvm/slpvectorizer/boupslp">BoUpSLP</a> &amp; R, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; Root, <a href="/docs/api/classes/llvm/scalarevolution">ScalarEvolution</a> &amp; SE, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/datalayout">DataLayout</a> &amp; DL, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetlibraryinfo">TargetLibraryInfo</a> &amp; TLI)</>}
+  labels = {["inline"]}>
+Try to find a reduction tree.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19687">19687</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### tryToReduce() {#ab1f9d3b9bc61d6ec2606916f8d7b92f4}
+
+<MemberDefinition
+  prototype={<>Value &#42; anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::tryToReduce (<a href="/docs/api/classes/llvm/slpvectorizer/boupslp">BoUpSLP</a> &amp; V, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/datalayout">DataLayout</a> &amp; DL, <a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> &#42; TTI, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetlibraryinfo">TargetLibraryInfo</a> &amp; TLI, <a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &#42; AC)</>}
+  labels = {["inline"]}>
+Attempt to vectorize the tree found by matchAssociativeReduction.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19850">19850</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### addReductionOps() {#a7e5c11dcf045a80ce42d0d7367869221}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::addReductionOps (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I)</>}
+  labels = {["inline"]}>
+Add all reduction operations for the reduction instruction <code>I</code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19667">19667</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### emitReduction() {#aeef4eed59a6b591aa4eeabd821facd0b}
+
+<MemberDefinition
+  prototype={<>Value &#42; anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::emitReduction (<a href="/docs/api/classes/llvm/value">Value</a> &#42; VectorizedValue, <a href="/docs/api/classes/llvm/irbuilderbase">IRBuilderBase</a> &amp; Builder, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> &#42; TTI, <a href="/docs/api/classes/llvm/type">Type</a> &#42; DestTy)</>}
+  labels = {["inline"]}>
+Emit a horizontal reduction of the vectorized value.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l20654">20654</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### emitReusedOps() {#a3acecd41e49a74e0b98bfc8e530ad2fb}
+
+<MemberDefinition
+  prototype={<>Value &#42; anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::emitReusedOps (<a href="/docs/api/classes/llvm/value">Value</a> &#42; VectorizedValue, <a href="/docs/api/classes/llvm/irbuilderbase">IRBuilderBase</a> &amp; Builder, <a href="/docs/api/classes/llvm/slpvectorizer/boupslp">BoUpSLP</a> &amp; R, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/smallmapvector">SmallMapVector</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42;, unsigned, 16 &gt; &amp; SameValuesCounter, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42;, <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt; &amp; TrackedToOrig)</>}
+  labels = {["inline"]}>
+Emits actual operation for the scalar identity values, found during horizontal reduction analysis.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l20734">20734</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### emitScaleForReusedOps() {#a64c9106761190ed1b36944d02be8ea45}
+
+<MemberDefinition
+  prototype={<>Value &#42; anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::emitScaleForReusedOps (<a href="/docs/api/classes/llvm/value">Value</a> &#42; VectorizedValue, <a href="/docs/api/classes/llvm/irbuilderbase">IRBuilderBase</a> &amp; Builder, unsigned Cnt)</>}
+  labels = {["inline"]}>
+Emits optimized code for unique scalar value reused <code>Cnt</code> times.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l20676">20676</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### getReductionCost() {#a3623100f171b3a13f9788ec31a15fc3e}
+
+<MemberDefinition
+  prototype={<>InstructionCost anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::getReductionCost (<a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> &#42; TTI, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt; ReducedVals, bool IsCmpSelMinMax, <a href="/docs/api/classes/llvm/fastmathflags">FastMathFlags</a> FMF, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/slpvectorizer/boupslp">BoUpSLP</a> &amp; R)</>}
+  labels = {["inline"]}>
+Calculate the cost of a reduction.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l20543">20543</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### initReductionOps() {#a0fc8bbaa3c19cabec1c0e277c095cf26}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::initReductionOps (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I)</>}
+  labels = {["inline"]}>
+Initializes the list of reduction operations.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19659">19659</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### IsSupportedHorRdxIdentityOp {#a8d185e45d27c0915eefba9623b9dc5da}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::IsSupportedHorRdxIdentityOp = false</>}>
+Checks if the optimization of original scalar identity operations on matched horizontal reductions is enabled and allowed.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19395">19395</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### RdxKind {#af7e3740a39464de76bfe323cba1b8de6}
+
+<MemberDefinition
+  prototype={<>RecurKind anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::RdxKind</>}>
+The type of reduction operation.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19392">19392</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### ReducedVals {#af7d0f73b6be1b4d0305b89d3f6a1387c}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;SmallVector&lt;Value &#42;&gt; &gt; anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::ReducedVals</>}>
+List of possibly reduced values.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19387">19387</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### ReducedValsToOps {#a7ff356a8667a2de4812ca31faa76eb97}
+
+<MemberDefinition
+  prototype={<>SmallDenseMap&lt;Value &#42;, SmallVector&lt;Instruction &#42;&gt;, 16&gt; anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::ReducedValsToOps</>}>
+Maps reduced value to the corresponding reduction operation.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19389">19389</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### ReductionOps {#a13111b40234cadd74ba601594a3471cb}
+
+<MemberDefinition
+  prototype={<>ReductionOpsListType anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::ReductionOps</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19385">19385</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### ReductionRoot {#a07bb39fe748d1c4b041fbc46d6cebf7f}
+
+<MemberDefinition
+  prototype={<>WeakTrackingVH anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::ReductionRoot</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19390">19390</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Functions
+
+### getFirstOperandIndex() {#a9a63158f073cdcf3696b623f1b8e0601}
+
+<MemberDefinition
+  prototype={<>static unsigned anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::getFirstOperandIndex (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I)</>}
+  labels = {["inline", "static"]}>
+Get the index of the first operand.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19623">19623</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### getRdxKind() {#a842f13add9ede73561cdbad22101b255}
+
+<MemberDefinition
+  prototype={<>static RecurKind anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::getRdxKind (<a href="/docs/api/classes/llvm/value">Value</a> &#42; V)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19521">19521</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Static Functions
+
+### createOp() {#a7eb7173f8c5554251c785ecfb8ad4a84}
+
+<MemberDefinition
+  prototype={<>static Value &#42; anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::createOp (<a href="/docs/api/classes/llvm/irbuilderbase">IRBuilderBase</a> &amp; Builder, <a href="/docs/api/namespaces/llvm/#aac36edd0f1ce976f0025c98e88d3830e">RecurKind</a> Kind, <a href="/docs/api/classes/llvm/value">Value</a> &#42; LHS, <a href="/docs/api/classes/llvm/value">Value</a> &#42; RHS, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp; Name, bool UseSelect)</>}
+  labels = {["inline", "static"]}>
+Creates reduction operation with the current opcode.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19444">19444</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### createOp() {#ab4899ad7457900fa098f5f39fe2fdf1c}
+
+<MemberDefinition
+  prototype={<>static Value &#42; anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::createOp (<a href="/docs/api/classes/llvm/irbuilderbase">IRBuilderBase</a> &amp; Builder, <a href="/docs/api/namespaces/llvm/#aac36edd0f1ce976f0025c98e88d3830e">RecurKind</a> RdxKind, <a href="/docs/api/classes/llvm/value">Value</a> &#42; LHS, <a href="/docs/api/classes/llvm/value">Value</a> &#42; RHS, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp; Name, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallvector">ReductionOpsListType</a> &amp; ReductionOps)</>}
+  labels = {["inline", "static"]}>
+Creates reduction operation with the current opcode with the IR flags from <code>ReductionOps</code>, dropping nuw/nsw flags.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19496">19496</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### getNumberOfOperands() {#a718f11e982d5161c53e2360a8412adb6}
+
+<MemberDefinition
+  prototype={<>static unsigned anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::getNumberOfOperands (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I)</>}
+  labels = {["inline", "static"]}>
+Total number of operands in the reduction operation.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19629">19629</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### getRdxOperand() {#a991f39946aa4a6c9fd946dc8221bffb3}
+
+<MemberDefinition
+  prototype={<>static Value &#42; anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::getRdxOperand (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I, unsigned Index)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19433">19433</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### hasRequiredNumberOfUses() {#a3368a049b17486ecdc256a3cf8b82609}
+
+<MemberDefinition
+  prototype={<>static bool anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::hasRequiredNumberOfUses (bool IsCmpSelMinMax, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I)</>}
+  labels = {["inline", "static"]}>
+<a href="/docs/api/classes/llvm/expected">Expected</a> number of uses for reduction operations/reduced values.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19645">19645</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### hasSameParent() {#a08b7c1a781a7fa2b12c7f72d05cea24e}
+
+<MemberDefinition
+  prototype={<>static bool anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::hasSameParent (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB)</>}
+  labels = {["inline", "static"]}>
+Checks if the instruction is in basic block <code>BB</code>.
+
+For a cmp+sel min/max reduction check that both ops are in <code>BB</code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19635">19635</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### isBoolLogicOp() {#a8650b74df12ce59ed7edb47ebe6fc356}
+
+<MemberDefinition
+  prototype={<>static bool anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::isBoolLogicOp (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19405">19405</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### isCmpSelMinMax() {#a2b503faa306494cff5bb0242110bd48b}
+
+<MemberDefinition
+  prototype={<>static bool anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::isCmpSelMinMax (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19397">19397</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### isGoodForReduction() {#a09a40a8ccd7d0464bb820420b07cae54}
+
+<MemberDefinition
+  prototype={<>static bool anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::isGoodForReduction (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt; Data)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19676">19676</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### isVectorizable() {#ac0ab594a25adc55c05b1d3fa601d44fd}
+
+<MemberDefinition
+  prototype={<>static bool anonymous&#95;namespace&#123;SLPVectorizer.cpp&#125;::HorizontalReduction::isVectorizable (<a href="/docs/api/namespaces/llvm/#aac36edd0f1ce976f0025c98e88d3830e">RecurKind</a> Kind, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I)</>}
+  labels = {["inline", "static"]}>
+Checks if instruction is associative and can be vectorized.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l19411">19411</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a></li>
+</ul>
+
+</DoxygenPage>

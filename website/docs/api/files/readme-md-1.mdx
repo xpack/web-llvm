@@ -1,0 +1,335 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/readme-md-1
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `README.md` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<CodeLine><Highlight kind="normal">Implementation of BLAKE3, originating from https://github.com/BLAKE3-team/BLAKE3/tree/1.3.1/c</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal"># Example</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">An example program that hashes bytes from standard input and prints the</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">result:</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">Using the C++ API:</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c++</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">#include &quot;llvm/Support/BLAKE3.h&quot;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">#include &lt;errno.h&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">#include &lt;stdio.h&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">#include &lt;stdlib.h&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">#include &lt;string.h&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">#include &lt;unistd.h&gt;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">int main() &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  // Initialize the hasher.</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  llvm::BLAKE3 hasher;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">  // Read input bytes from stdin.</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  char buf&#91;65536&#93;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  while (1) &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    ssize&#95;t n = read(STDIN&#95;FILENO, buf, sizeof(buf));</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    if (n &gt; 0) &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">      hasher.update(llvm::StringRef(buf, n));</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    &#125; else if (n == 0) &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">      break; // end of file</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    &#125; else &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">      fprintf(stderr, &quot;read failed: %s\\n&quot;, strerror(errno));</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">      exit(1);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">  // Finalize the hash. Default output length is 32 bytes.</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  auto output = hasher.final();</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">  // Print the hash as hexadecimal.</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  for (uint8&#95;t byte : output) &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    printf(&quot;%02x&quot;, byte);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  printf(&quot;\\n&quot;);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  return 0;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">Using the C API:</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">#include &quot;llvm-c/blake3.h&quot;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">#include &lt;errno.h&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">#include &lt;stdio.h&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">#include &lt;stdlib.h&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">#include &lt;string.h&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">#include &lt;unistd.h&gt;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">int main() &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  // Initialize the hasher.</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  llvm&#95;blake3&#95;hasher hasher;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  llvm&#95;blake3&#95;hasher&#95;init(&amp;hasher);</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">  // Read input bytes from stdin.</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  unsigned char buf&#91;65536&#93;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  while (1) &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    ssize&#95;t n = read(STDIN&#95;FILENO, buf, sizeof(buf));</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    if (n &gt; 0) &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">      llvm&#95;blake3&#95;hasher&#95;update(&amp;hasher, buf, n);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    &#125; else if (n == 0) &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">      break; // end of file</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    &#125; else &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">      fprintf(stderr, &quot;read failed: %s\\n&quot;, strerror(errno));</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">      exit(1);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">  // Finalize the hash. LLVM&#95;BLAKE3&#95;OUT&#95;LEN is the default output length, 32 bytes.</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  uint8&#95;t output&#91;LLVM&#95;BLAKE3&#95;OUT&#95;LEN&#93;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  llvm&#95;blake3&#95;hasher&#95;finalize(&amp;hasher, output, LLVM&#95;BLAKE3&#95;OUT&#95;LEN);</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">  // Print the hash as hexadecimal.</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  for (size&#95;t i = 0; i &lt; LLVM&#95;BLAKE3&#95;OUT&#95;LEN; i++) &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    printf(&quot;%02x&quot;, output&#91;i&#93;);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  printf(&quot;\\n&quot;);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  return 0;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal"># API</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">## The Class/Struct</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c++</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">class BLAKE3 &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  // API</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">private:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  llvm&#95;blake3&#95;hasher Hasher;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">typedef struct &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  // private fields</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125; llvm&#95;blake3&#95;hasher;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">An incremental BLAKE3 hashing state, which can accept any number of</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">updates. This implementation doesn&#39;t allocate any heap memory, but</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;sizeof(llvm&#95;blake3&#95;hasher)&#96; itself is relatively large, currently 1912 bytes</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">on x86-64. This size can be reduced by restricting the maximum input</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">length, as described in Section 5.4 of &#91;the BLAKE3</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">spec&#93;(https://github.com/BLAKE3-team/BLAKE3-specs/blob/master/blake3.pdf),</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">but this implementation doesn&#39;t currently support that strategy.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">## Common API Functions</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c++</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">BLAKE3::BLAKE3();</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">void BLAKE3::init();</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">void llvm&#95;blake3&#95;hasher&#95;init(</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  llvm&#95;blake3&#95;hasher &#42;self);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">Initialize a &#96;llvm&#95;blake3&#95;hasher&#96; in the default hashing mode.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">---</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c++</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">void BLAKE3::update(ArrayRef&lt;uint8&#95;t&gt; Data);</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">void BLAKE3::update(StringRef Str);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">void llvm&#95;blake3&#95;hasher&#95;update(</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  llvm&#95;blake3&#95;hasher &#42;self,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  const void &#42;input,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  size&#95;t input&#95;len);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">Add input to the hasher. This can be called any number of times.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">---</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c++</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">template &lt;size&#95;t NumBytes = LLVM&#95;BLAKE3&#95;OUT&#95;LEN&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">using BLAKE3Result = std::array&lt;uint8&#95;t, NumBytes&gt;;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">template &lt;size&#95;t NumBytes = LLVM&#95;BLAKE3&#95;OUT&#95;LEN&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">void BLAKE3::final(BLAKE3Result&lt;NumBytes&gt; &amp;Result);</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">template &lt;size&#95;t NumBytes = LLVM&#95;BLAKE3&#95;OUT&#95;LEN&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">BLAKE3Result&lt;NumBytes&gt; BLAKE3::final();</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">void llvm&#95;blake3&#95;hasher&#95;finalize(</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  const llvm&#95;blake3&#95;hasher &#42;self,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  uint8&#95;t &#42;out,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  size&#95;t out&#95;len);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">Finalize the hasher and return an output of any length, given in bytes.</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">This doesn&#39;t modify the hasher itself, and it&#39;s possible to finalize</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">again after adding more input. The constant &#96;LLVM&#95;BLAKE3&#95;OUT&#95;LEN&#96; provides</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">the default output length, 32 bytes, which is recommended for most</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">callers.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">Outputs shorter than the default length of 32 bytes (256 bits) provide</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">less security. An N-bit BLAKE3 output is intended to provide N bits of</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">first and second preimage resistance and N/2 bits of collision</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">resistance, for any N up to 256 Longer outputs don&#39;t provide any</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">additional security.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">Shorter BLAKE3 outputs are prefixes of longer ones. Explicitly</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">requesting a short output is equivalent to truncating the default-length</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">output. (Note that this is different between BLAKE2 and BLAKE3.)</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">## Less Common API Functions</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">void llvm&#95;blake3&#95;hasher&#95;init&#95;keyed(</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  llvm&#95;blake3&#95;hasher &#42;self,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  const uint8&#95;t key&#91;LLVM&#95;BLAKE3&#95;KEY&#95;LEN&#93;);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">Initialize a &#96;llvm&#95;blake3&#95;hasher&#96; in the keyed hashing mode. The key must be</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">exactly 32 bytes.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">---</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">void llvm&#95;blake3&#95;hasher&#95;init&#95;derive&#95;key(</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  llvm&#95;blake3&#95;hasher &#42;self,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  const char &#42;context);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">Initialize a &#96;llvm&#95;blake3&#95;hasher&#96; in the key derivation mode. The context</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">string is given as an initialization parameter, and afterwards input key</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">material should be given with &#96;llvm&#95;blake3&#95;hasher&#95;update&#96;. The context string</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">is a null-terminated C string which should be &#42;&#42;hardcoded, globally</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">unique, and application-specific&#42;&#42;. The context string should not</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">include any dynamic input like salts, nonces, or identifiers read from a</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">database at runtime. A good default format for the context string is</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&quot;&#91;application&#93; &#91;commit timestamp&#93; &#91;purpose&#93;&quot;&#96;, e.g., &#96;&quot;example.com</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">2019-12-25 16:18:03 session tokens v1&quot;&#96;.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">This function is intended for application code written in C. For</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">language bindings, see &#96;llvm&#95;blake3&#95;hasher&#95;init&#95;derive&#95;key&#95;raw&#96; below.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">---</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">void llvm&#95;blake3&#95;hasher&#95;init&#95;derive&#95;key&#95;raw(</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  llvm&#95;blake3&#95;hasher &#42;self,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  const void &#42;context,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  size&#95;t context&#95;len);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">As &#96;llvm&#95;blake3&#95;hasher&#95;init&#95;derive&#95;key&#96; above, except that the context string</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">is given as a pointer to an array of arbitrary bytes with a provided</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">length. This is intended for writing language bindings, where C string</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">conversion would add unnecessary overhead and new error cases. Unicode</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">strings should be encoded as UTF-8.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">Application code in C should prefer &#96;llvm&#95;blake3&#95;hasher&#95;init&#95;derive&#95;key&#96;,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">which takes the context as a C string. If you need to use arbitrary</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">bytes as a context string in application code, consider whether you&#39;re</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">violating the requirement that context strings should be hardcoded.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">---</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">void llvm&#95;blake3&#95;hasher&#95;finalize&#95;seek(</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  const llvm&#95;blake3&#95;hasher &#42;self,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  uint64&#95;t seek,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  uint8&#95;t &#42;out,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  size&#95;t out&#95;len);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">The same as &#96;llvm&#95;blake3&#95;hasher&#95;finalize&#96;, but with an additional &#96;seek&#96;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">parameter for the starting byte position in the output stream. To</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">efficiently stream a large output without allocating memory, call this</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">function in a loop, incrementing &#96;seek&#96; by the output length each time.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">---</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;c</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">void llvm&#95;blake3&#95;hasher&#95;reset(</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  llvm&#95;blake3&#95;hasher &#42;self);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;&#96;&#96;</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">Reset the hasher to its initial state, prior to any calls to</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;llvm&#95;blake3&#95;hasher&#95;update&#96;. Currently this is no different from calling</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;llvm&#95;blake3&#95;hasher&#95;init&#96; or similar again. However, if this implementation gains</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">multithreading support in the future, and if &#96;llvm&#95;blake3&#95;hasher&#96; holds (optional)</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">threading resources, this function will reuse those resources.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal"># Building</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">This implementation is just C and assembly files.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">## x86</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">Dynamic dispatch is enabled by default on x86. The implementation will</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">query the CPU at runtime to detect SIMD support, and it will use the</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">widest instruction set available. By default, &#96;blake3&#95;dispatch.c&#96;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">expects to be linked with code for five different instruction sets:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">portable C, SSE2, SSE4.1, AVX2, and AVX-512.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">For each of the x86 SIMD instruction sets, four versions are available:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">three flavors of assembly (Unix, Windows MSVC, and Windows GNU) and one</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">version using C intrinsics. The assembly versions are generally</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">preferred. They perform better, they perform more consistently across</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">different compilers, and they build more quickly. On the other hand, the</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">assembly versions are x86\\&#95;64-only, and you need to select the right</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">flavor for your target platform.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">## ARM NEON</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">The NEON implementation is enabled by default on AArch64, but not on</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">other ARM targets, since not all of them support it. To enable it, set</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;BLAKE3&#95;USE&#95;NEON=1&#96;.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">To explicitiy disable using NEON instructions on AArch64, set</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#96;BLAKE3&#95;USE&#95;NEON=0&#96;.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">## Other Platforms</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">The portable implementation should work on most other architectures.</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal"># Multithreading</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">The implementation doesn&#39;t currently support multithreading.</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

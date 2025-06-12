@@ -1,0 +1,656 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/anonymous-namespace-armloadstoreoptimizer-cpp-/armloadstoreopt
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ARMLoadStoreOpt` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Post- register allocation pass the combine load / store instructions to form ldm / stm instructions. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct anonymous_namespace{ARMLoadStoreOptimizer.cpp}::ARMLoadStoreOpt</CodeBlock>
+
+## Base struct
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/machinefunctionpass">MachineFunctionPass</a></>}>
+<a href="/docs/api/classes/llvm/machinefunctionpass">MachineFunctionPass</a> - This class adapts the <a href="/docs/api/classes/llvm/functionpass">FunctionPass</a> interface to allow convenient creation of passes that operate on the <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> representation. <a href="/docs/api/classes/llvm/machinefunctionpass/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a509b06397ce64f3273c7e66ef5f53551">MemOpQueue</a> = <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; MemOpQueueEntry, 8 &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#ac76cbfa4b82f01e7f0c76057712629de">ARMLoadStoreOpt</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/stringref">StringRef</a></>}
+  name={<><a href="#a07e08f46c3bb3fbf5ef7567c38627519">getPassName</a> () const override</>}>
+getPassName - Return a nice clean name for a pass. <a href="#a07e08f46c3bb3fbf5ef7567c38627519">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machinefunctionproperties">MachineFunctionProperties</a></>}
+  name={<><a href="#a736df1b5edb86baaa058b68de0a2c0c1">getRequiredProperties</a> () const override</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a72a74dfe772dbb0e69cc4f5751487c97">runOnMachineFunction</a> (MachineFunction &amp;Fn) override</>}>
+runOnMachineFunction - This method must be overloaded to perform the desired machine code transformation or analysis. <a href="#a72a74dfe772dbb0e69cc4f5751487c97">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a0338b30387803e48bba525b6078ec0b0">CombineMovBx</a> (MachineBasicBlock &amp;MBB)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;</>}
+  name={<><a href="#a6066b211040ea30c10561417b9c1d1bf">CreateLoadStoreDouble</a> (MachineBasicBlock &amp;MBB, MachineBasicBlock::iterator InsertBefore, int Offset, unsigned Base, bool BaseKill, unsigned Opcode, ARMCC::CondCodes Pred, unsigned PredReg, const DebugLoc &amp;DL, ArrayRef&lt; std::pair&lt; unsigned, bool &gt; &gt; Regs, ArrayRef&lt; MachineInstr &#42; &gt; Instrs) const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;</>}
+  name={<><a href="#a4e27315389fdc6eaf5d6cf1fcd8c8fce">CreateLoadStoreMulti</a> (MachineBasicBlock &amp;MBB, MachineBasicBlock::iterator InsertBefore, int Offset, unsigned Base, bool BaseKill, unsigned Opcode, ARMCC::CondCodes Pred, unsigned PredReg, const DebugLoc &amp;DL, ArrayRef&lt; std::pair&lt; unsigned, bool &gt; &gt; Regs, ArrayRef&lt; MachineInstr &#42; &gt; Instrs)</>}>
+Create and insert a LDM or STM with Base as base register and registers in Regs as the register operands that would be loaded / stored. <a href="#a4e27315389fdc6eaf5d6cf1fcd8c8fce">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a2be8b47cd85ffd250f44f851f24598c6">findFreeReg</a> (const TargetRegisterClass &amp;RegClass)</>}>
+Return the first register of class <code>RegClass</code> that is not in <code>Regs</code>. <a href="#a2be8b47cd85ffd250f44f851f24598c6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ac97181d8d108c754f9ba3d62b2eea6c2">FixInvalidRegPairOp</a> (MachineBasicBlock &amp;MBB, MachineBasicBlock::iterator &amp;MBBI)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a1b65229fc4b01a541981e6ce868e272f">FormCandidates</a> (const MemOpQueue &amp;MemOps)</>}>
+Find candidates for load/store multiple merge in list of MemOpQueueEntries. <a href="#a1b65229fc4b01a541981e6ce868e272f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a18be3c12134115eccaf813a781161b51">LoadStoreMultipleOpti</a> (MachineBasicBlock &amp;MBB)</>}>
+An optimization pass to turn multiple LDR / STR ops of the same base and incrementing offset into LDM / STM ops. <a href="#a18be3c12134115eccaf813a781161b51">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af38b4667797c4c6220a20424230d126f">MergeBaseUpdateLoadStore</a> (MachineInstr &#42;MI)</>}>
+Fold proceeding/trailing inc/dec of base register into the LDR/STR/FLD&#123;D|S&#125;/FST&#123;D|S&#125; op when possible: <a href="#af38b4667797c4c6220a20424230d126f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a1f13bb924bcac57dc738835463a23cd2">MergeBaseUpdateLSDouble</a> (MachineInstr &amp;MI) const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a3047876239b93fd0c492d2e595d67d86">MergeBaseUpdateLSMultiple</a> (MachineInstr &#42;MI)</>}>
+Fold proceeding/trailing inc/dec of base register into the LDM/STM/VLDM&#123;D|S&#125;/VSTM&#123;D|S&#125; op when possible: <a href="#a3047876239b93fd0c492d2e595d67d86">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;</>}
+  name={<><a href="#ae9a190e6cd88906b1a23f21a9adc5b52">MergeOpsUpdate</a> (const MergeCandidate &amp;Cand)</>}>
+Call MergeOps and update MemOps and merges accordingly on success. <a href="#ae9a190e6cd88906b1a23f21a9adc5b52">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a0e536b2f3f085cbf64103c1f792feaf9">MergeReturnIntoLDM</a> (MachineBasicBlock &amp;MBB)</>}>
+If this is a exit BB, try merging the return ops (&quot;bx lr&quot; and &quot;mov pc, lr&quot;) into the preceding stack restore so it directly restore the value of LR into pc. <a href="#a0e536b2f3f085cbf64103c1f792feaf9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a3861003c48c39c745adbe93bd3f1e128">moveLiveRegsBefore</a> (const MachineBasicBlock &amp;MBB, MachineBasicBlock::const&#95;iterator Before)</>}>
+Compute live registers just before instruction <code>Before</code> (in normal schedule direction). <a href="#a3861003c48c39c745adbe93bd3f1e128">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a42eac4b7dfa5926a958c5e070a23835c">UpdateBaseRegUses</a> (MachineBasicBlock &amp;MBB, MachineBasicBlock::iterator MBBI, const DebugLoc &amp;DL, unsigned Base, unsigned WordOffset, ARMCC::CondCodes Pred, unsigned PredReg)</>}>
+Update future uses of the base register with the offset introduced due to writeback. <a href="#a42eac4b7dfa5926a958c5e070a23835c">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/armfunctioninfo">ARMFunctionInfo</a> &#42;</>}
+  name={<><a href="#a7c3ab5d778e02db0d60a375e4e29ee10">AFI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a1f4ac9b7d4c7aae836cd57574bed10ae">isThumb1</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a53296c44408aaf533663805b2a245050">isThumb2</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machinebasicblock/#a199a6e4bfdffc8f3379ef4f35004488f">MachineBasicBlock::const&#95;iterator</a></>}
+  name={<><a href="#af64dc76502586e05750fe8d35b6930aa">LiveRegPos</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/liveregunits">LiveRegUnits</a></>}
+  name={<><a href="#ac184664281817d5e31574dcbd3fbcd37">LiveRegs</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#abd5e9c71819dd22033b4a9a61443a644">LiveRegsValid</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42;</>}
+  name={<><a href="#a54e28aa88375b89902974ce27f7387cd">MF</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/registerclassinfo">RegisterClassInfo</a></>}
+  name={<><a href="#a519e763d64e3bf1686a6cc7164224eba">RegClassInfo</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#aedb0ba52e10104d306ebe8ebf61df425">RegClassInfoValid</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/armsubtarget">ARMSubtarget</a> &#42;</>}
+  name={<><a href="#aea930fe138f88c5d727653f77b13e494">STI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;</>}
+  name={<><a href="#a094aeeef07c9a6c03a6ab6759adda4ba">TII</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetlowering">TargetLowering</a> &#42;</>}
+  name={<><a href="#af3018f18a75fa1c4ba496e105f23c514">TL</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &#42;</>}
+  name={<><a href="#a6746ccb6956eb4633c5be2618443695e">TRI</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/specificbumpptrallocator">SpecificBumpPtrAllocator</a>&lt; MergeCandidate &gt;</>}
+  name={<><a href="#abc7e4bfce6004d19b197b074a50baf9d">Allocator</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> MergeCandidate &#42;, 4 &gt;</>}
+  name={<><a href="#aad87a20fa12eee0a88d751888c2a6e3a">Candidates</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;, 4 &gt;</>}
+  name={<><a href="#a5b7f918fcb78165b881f75f63e70e2c6">MergeBaseCandidates</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="char"
+  name={<><a href="#a78af971628c5d1af122d493e085523a3">ID</a> = 0</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Post- register allocation pass the combine load / store instructions to form ldm / stm instructions.
+
+Definition at line 101 of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### MemOpQueue {#a509b06397ce64f3273c7e66ef5f53551}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::MemOpQueue =  SmallVector&lt;MemOpQueueEntry, 8&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00139">139</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### ARMLoadStoreOpt() {#ac76cbfa4b82f01e7f0c76057712629de}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::ARMLoadStoreOpt ()</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00117">117</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### getPassName() {#a07e08f46c3bb3fbf5ef7567c38627519}
+
+<MemberDefinition
+  prototype={<>StringRef anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::getPassName () const</>}
+  labels = {["inline", "virtual"]}>
+getPassName - Return a nice clean name for a pass.
+
+This usually implemented in terms of the name that is registered by one of the Registration templates, but can be overloaded directly.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00126">126</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### getRequiredProperties() {#a736df1b5edb86baaa058b68de0a2c0c1}
+
+<MemberDefinition
+  prototype={<>MachineFunctionProperties anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::getRequiredProperties () const</>}
+  labels = {["inline", "virtual"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00121">121</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### runOnMachineFunction() {#a72a74dfe772dbb0e69cc4f5751487c97}
+
+<MemberDefinition
+  prototype={<>bool ARMLoadStoreOpt::runOnMachineFunction (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF)</>}
+  labels = {["virtual"]}>
+runOnMachineFunction - This method must be overloaded to perform the desired machine code transformation or analysis.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00119">119</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### CombineMovBx() {#a0338b30387803e48bba525b6078ec0b0}
+
+<MemberDefinition
+  prototype={<>bool ARMLoadStoreOpt::CombineMovBx (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00195">195</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### CreateLoadStoreDouble() {#a6066b211040ea30c10561417b9c1d1bf}
+
+<MemberDefinition
+  prototype={<>MachineInstr &#42; ARMLoadStoreOpt::CreateLoadStoreDouble (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> InsertBefore, int Offset, unsigned Base, bool BaseKill, unsigned Opcode, <a href="/docs/api/namespaces/llvm/armcc/#ac8391dd6b8083baa870dee5142ff22b6">ARMCC::CondCodes</a> Pred, unsigned PredReg, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> &amp; DL, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; std::pair&lt; unsigned, bool &gt; &gt; Regs, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt; Instrs) const</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00180">180</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### CreateLoadStoreMulti() {#a4e27315389fdc6eaf5d6cf1fcd8c8fce}
+
+<MemberDefinition
+  prototype={<>MachineInstr &#42; ARMLoadStoreOpt::CreateLoadStoreMulti (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> InsertBefore, int Offset, unsigned Base, bool BaseKill, unsigned Opcode, <a href="/docs/api/namespaces/llvm/armcc/#ac8391dd6b8083baa870dee5142ff22b6">ARMCC::CondCodes</a> Pred, unsigned PredReg, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> &amp; DL, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; std::pair&lt; unsigned, bool &gt; &gt; Regs, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt; Instrs)</>}>
+Create and insert a LDM or STM with Base as base register and registers in Regs as the register operands that would be loaded / stored.
+
+It returns true if the transformation is done.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00174">174</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### findFreeReg() {#a2be8b47cd85ffd250f44f851f24598c6}
+
+<MemberDefinition
+  prototype={<>unsigned ARMLoadStoreOpt::findFreeReg (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetregisterclass">TargetRegisterClass</a> &amp; RegClass)</>}>
+Return the first register of class <code>RegClass</code> that is not in <code>Regs</code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00169">169</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### FixInvalidRegPairOp() {#ac97181d8d108c754f9ba3d62b2eea6c2}
+
+<MemberDefinition
+  prototype={<>bool ARMLoadStoreOpt::FixInvalidRegPairOp (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> &amp; MBBI)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00188">188</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### FormCandidates() {#a1b65229fc4b01a541981e6ce868e272f}
+
+<MemberDefinition
+  prototype={<>void ARMLoadStoreOpt::FormCandidates (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallvector">MemOpQueue</a> &amp; MemOps)</>}>
+Find candidates for load/store multiple merge in list of MemOpQueueEntries.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00186">186</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### LoadStoreMultipleOpti() {#a18be3c12134115eccaf813a781161b51}
+
+<MemberDefinition
+  prototype={<>bool ARMLoadStoreOpt::LoadStoreMultipleOpti (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB)</>}>
+An optimization pass to turn multiple LDR / STR ops of the same base and incrementing offset into LDM / STM ops.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00193">193</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### MergeBaseUpdateLoadStore() {#af38b4667797c4c6220a20424230d126f}
+
+<MemberDefinition
+  prototype={<>bool ARMLoadStoreOpt::MergeBaseUpdateLoadStore (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI)</>}>
+Fold proceeding/trailing inc/dec of base register into the LDR/STR/FLD&#123;D|S&#125;/FST&#123;D|S&#125; op when possible:
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00190">190</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### MergeBaseUpdateLSDouble() {#a1f13bb924bcac57dc738835463a23cd2}
+
+<MemberDefinition
+  prototype={<>bool ARMLoadStoreOpt::MergeBaseUpdateLSDouble (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI) const</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00192">192</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### MergeBaseUpdateLSMultiple() {#a3047876239b93fd0c492d2e595d67d86}
+
+<MemberDefinition
+  prototype={<>bool ARMLoadStoreOpt::MergeBaseUpdateLSMultiple (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI)</>}>
+Fold proceeding/trailing inc/dec of base register into the LDM/STM/VLDM&#123;D|S&#125;/VSTM&#123;D|S&#125; op when possible:
+
+stmia rn, &lt;ra, rb, rc&gt; rn := rn + 4 &#42; 3; =&gt; stmia rn!, &lt;ra, rb, rc&gt;
+
+rn := rn - 4 &#42; 3; ldmia rn, &lt;ra, rb, rc&gt; =&gt; ldmdb rn!, &lt;ra, rb, rc&gt;
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00191">191</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### MergeOpsUpdate() {#ae9a190e6cd88906b1a23f21a9adc5b52}
+
+<MemberDefinition
+  prototype={<>MachineInstr &#42; ARMLoadStoreOpt::MergeOpsUpdate (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> MergeCandidate &amp; Cand)</>}>
+Call MergeOps and update MemOps and merges accordingly on success.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00187">187</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### MergeReturnIntoLDM() {#a0e536b2f3f085cbf64103c1f792feaf9}
+
+<MemberDefinition
+  prototype={<>bool ARMLoadStoreOpt::MergeReturnIntoLDM (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB)</>}>
+If this is a exit BB, try merging the return ops (&quot;bx lr&quot; and &quot;mov pc, lr&quot;) into the preceding stack restore so it directly restore the value of LR into pc.
+
+ldmfd sp!, &#123;..., lr&#125; bx lr or ldmfd sp!, &#123;..., lr&#125; mov pc, lr =&gt; ldmfd sp!, &#123;..., pc&#125;
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00194">194</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### moveLiveRegsBefore() {#a3861003c48c39c745adbe93bd3f1e128}
+
+<MemberDefinition
+  prototype={<>void ARMLoadStoreOpt::moveLiveRegsBefore (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/docs/api/classes/llvm/machinebasicblock/#a199a6e4bfdffc8f3379ef4f35004488f">MachineBasicBlock::const&#95;iterator</a> Before)</>}>
+Compute live registers just before instruction <code>Before</code> (in normal schedule direction).
+
+Computes backwards so multiple queries in the same block must come in reverse order.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00167">167</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### UpdateBaseRegUses() {#a42eac4b7dfa5926a958c5e070a23835c}
+
+<MemberDefinition
+  prototype={<>void ARMLoadStoreOpt::UpdateBaseRegUses (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> MBBI, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> &amp; DL, unsigned Base, unsigned WordOffset, <a href="/docs/api/namespaces/llvm/armcc/#ac8391dd6b8083baa870dee5142ff22b6">ARMCC::CondCodes</a> Pred, unsigned PredReg)</>}>
+Update future uses of the base register with the offset introduced due to writeback.
+
+This function only works on Thumb1.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00170">170</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### AFI {#a7c3ab5d778e02db0d60a375e4e29ee10}
+
+<MemberDefinition
+  prototype={<>ARMFunctionInfo&#42; anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::AFI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00109">109</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### isThumb1 {#a1f4ac9b7d4c7aae836cd57574bed10ae}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::isThumb1</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00115">115</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### isThumb2 {#a53296c44408aaf533663805b2a245050}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::isThumb2</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00115">115</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### LiveRegPos {#af64dc76502586e05750fe8d35b6930aa}
+
+<MemberDefinition
+  prototype={<>MachineBasicBlock::const&#95;iterator anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::LiveRegPos</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00112">112</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### LiveRegs {#ac184664281817d5e31574dcbd3fbcd37}
+
+<MemberDefinition
+  prototype={<>LiveRegUnits anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::LiveRegs</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00110">110</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### LiveRegsValid {#abd5e9c71819dd22033b4a9a61443a644}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::LiveRegsValid</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00113">113</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### MF {#a54e28aa88375b89902974ce27f7387cd}
+
+<MemberDefinition
+  prototype={<>const MachineFunction&#42; anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::MF</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00104">104</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### RegClassInfo {#a519e763d64e3bf1686a6cc7164224eba}
+
+<MemberDefinition
+  prototype={<>RegisterClassInfo anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::RegClassInfo</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00111">111</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### RegClassInfoValid {#aedb0ba52e10104d306ebe8ebf61df425}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::RegClassInfoValid</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00114">114</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### STI {#aea930fe138f88c5d727653f77b13e494}
+
+<MemberDefinition
+  prototype={<>const ARMSubtarget&#42; anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::STI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00107">107</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### TII {#a094aeeef07c9a6c03a6ab6759adda4ba}
+
+<MemberDefinition
+  prototype={<>const TargetInstrInfo&#42; anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::TII</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00105">105</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### TL {#af3018f18a75fa1c4ba496e105f23c514}
+
+<MemberDefinition
+  prototype={<>const TargetLowering&#42; anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::TL</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00108">108</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### TRI {#a6746ccb6956eb4633c5be2618443695e}
+
+<MemberDefinition
+  prototype={<>const TargetRegisterInfo&#42; anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::TRI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00106">106</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### Allocator {#abc7e4bfce6004d19b197b074a50baf9d}
+
+<MemberDefinition
+  prototype={<>SpecificBumpPtrAllocator&lt;MergeCandidate&gt; anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::Allocator</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00163">163</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### Candidates {#aad87a20fa12eee0a88d751888c2a6e3a}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;const MergeCandidate&#42;,4&gt; anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::Candidates</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00164">164</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+### MergeBaseCandidates {#a5b7f918fcb78165b881f75f63e70e2c6}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;MachineInstr&#42;,4&gt; anonymous&#95;namespace&#123;ARMLoadStoreOptimizer.cpp&#125;::ARMLoadStoreOpt::MergeBaseCandidates</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00165">165</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Attributes
+
+### ID {#a78af971628c5d1af122d493e085523a3}
+
+<MemberDefinition
+  prototype="char ARMLoadStoreOpt::ID = 0"
+  labels = {["static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp/#l00102">102</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/arm/armloadstoreoptimizer-cpp">ARMLoadStoreOptimizer.cpp</a></li>
+</ul>
+
+</DoxygenPage>

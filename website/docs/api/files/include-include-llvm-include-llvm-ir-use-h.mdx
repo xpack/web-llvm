@@ -1,0 +1,236 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/ir/use-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `Use.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This defines the Use class. <a href="#details">More...</a>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm-c/Types.h"
+  permalink="/docs/api/files/include/include/llvm-c/types-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/CBindingWrapping.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/cbindingwrapping-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Compiler.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/use">Use</a></>}>
+A <a href="/docs/api/classes/llvm/use">Use</a> represents the edge between a <a href="/docs/api/classes/llvm/value">Value</a> definition and its users. <a href="/docs/api/classes/llvm/use/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/simplify-type-27218edf7fb98a791934726f4ff31474">simplify_type&lt;Use&gt;</a></>}>
+Allow clients to treat uses just like values when using casting operators. <a href="/docs/api/structs/llvm/simplify-type-27218edf7fb98a791934726f4ff31474/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/simplify-type-281e69781494059eea45e68051c37fd3">simplify_type&lt;const Use&gt;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This defines the Use class.
+
+The Use class represents the operand of an instruction or some other User instance which refers to a Value. The Use class keeps the &quot;use list&quot; of the referenced value up to date.
+
+Pointer tagging is used to efficiently find the User corresponding to a Use without having to store a User pointer in every Use. A User is preceded in memory by all the Uses corresponding to its operands, and the low bits of one of the fields (Prev) of the Use class are used to encode offsets to be able to find that User given a pointer to any Use. For details, see:
+
+<a href="http://www.llvm.org/docs/ProgrammersManual.html#UserLayout">http://www.llvm.org/docs/ProgrammersManual.html#UserLayout</a>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/Use.h - Definition of the Use class -----------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="comment">/// \\file</Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="comment">/// This defines the Use class.  The Use class represents the operand of an</Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="comment">/// instruction or some other User instance which refers to a Value.  The Use</Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="comment">/// class keeps the &quot;use list&quot; of the referenced value up to date.</Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="comment">/// Pointer tagging is used to efficiently find the User corresponding to a Use</Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="comment">/// without having to store a User pointer in every Use. A User is preceded in</Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="comment">/// memory by all the Uses corresponding to its operands, and the low bits of</Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="comment">/// one of the fields (Prev) of the Use class are used to encode offsets to be</Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="comment">/// able to find that User given a pointer to any Use. For details, see:</Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="comment">///   http://www.llvm.org/docs/ProgrammersManual.html#UserLayout</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;IR&#95;USE&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;IR&#95;USE&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm-c/types-h">llvm-c/Types.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/cbindingwrapping-h">llvm/Support/CBindingWrapping.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h">llvm/Support/Compiler.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal">&gt; </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/simplify-type">simplify&#95;type</a>;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/user">User</a>;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/value">Value</a>;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">/// A Use represents the edge between a Value definition and its users.</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">/// This is notionally a two-dimensional linked list. It supports traversing</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">/// all of the uses for a particular value definition. It also supports jumping</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">/// directly to the used value when we arrive from the User&#39;s operands, and</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">/// jumping directly to the User when we arrive from the Value&#39;s uses.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43" lineLink="/docs/api/classes/llvm/use"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/use/#a5794eddf111636a89357ec2c4dfc600d">Use</a> &#123;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45" lineLink="/docs/api/classes/llvm/use/#a5794eddf111636a89357ec2c4dfc600d"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/use/#a5794eddf111636a89357ec2c4dfc600d">Use</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/use/#a5794eddf111636a89357ec2c4dfc600d">Use</a> &amp;U) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="comment">  /// Provide a fast substitute to std::swap&lt;Use&gt;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="comment">  /// that also works with less standard-compliant compilers</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/use/#a571caa9e25e6854e940f5bd78b7d8c9b">swap</a>(<a href="/docs/api/classes/llvm/use/#a5794eddf111636a89357ec2c4dfc600d">Use</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>);</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">  /// Destructor - Only for zap()</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/use/#a5794eddf111636a89357ec2c4dfc600d">~Use</a>() &#123;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Val)</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">      removeFromList();</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">  /// Constructor</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/use/#a5794eddf111636a89357ec2c4dfc600d">Use</a>(<a href="/docs/api/classes/llvm/user">User</a> &#42;Parent) : Parent(Parent) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62" lineLink="/docs/api/classes/llvm/use/#aeceedf6e1a7d48a588516ce2b1983d6f"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/use/#aeceedf6e1a7d48a588516ce2b1983d6f">Value</a>;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/classes/llvm/use/#a38c437d9dcaefebe4efaf0edf00c45de"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/use/#a38c437d9dcaefebe4efaf0edf00c45de">User</a>;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/classes/llvm/use/#a008e3d16a9e6648481a0d2b1a61bffa4"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/use/#aeceedf6e1a7d48a588516ce2b1983d6f">Value</a> &#42;() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Val; &#125;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66" lineLink="/docs/api/classes/llvm/use/#ad77c21b5dd2c8765f87e3fb054d68def"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/use/#aeceedf6e1a7d48a588516ce2b1983d6f">Value</a> &#42;<a href="/docs/api/classes/llvm/use/#ad77c21b5dd2c8765f87e3fb054d68def">get</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Val; &#125;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="comment">  /// Returns the User that contains this Use.</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="comment">  /// For an instruction operand, for example, this will return the</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">  /// instruction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72" lineLink="/docs/api/classes/llvm/use/#a53a48d67682705c5f7f06ffc850fd622"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/use/#a38c437d9dcaefebe4efaf0edf00c45de">User</a> &#42;<a href="/docs/api/classes/llvm/use/#a53a48d67682705c5f7f06ffc850fd622">getUser</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Parent; &#125;;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/use/#a40360b4fa7b8e6920a68e5a8a0814f1f">set</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Val);</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/use/#ada20e2dc9c9b0301ce74b2fc3f40b7ee">operator=</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>);</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/use">Use</a> &amp;<a href="/docs/api/classes/llvm/use/#ada20e2dc9c9b0301ce74b2fc3f40b7ee">operator=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/use">Use</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>);</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/classes/llvm/use/#a92763d56156cb84df0086a0e39f5e487"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/use/#aeceedf6e1a7d48a588516ce2b1983d6f">Value</a> &#42;<a href="/docs/api/classes/llvm/use/#a92763d56156cb84df0086a0e39f5e487">operator-&gt;</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Val; &#125;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/classes/llvm/use/#a3a1080f6345aafd5d4b863508deaab20"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/use/#aeceedf6e1a7d48a588516ce2b1983d6f">Value</a> &#42;<a href="/docs/api/classes/llvm/use/#a3a1080f6345aafd5d4b863508deaab20">operator-&gt;</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Val; &#125;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82" lineLink="/docs/api/classes/llvm/use/#ad32360b17f849df25d61b70bc82cc753"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/use/#a5794eddf111636a89357ec2c4dfc600d">Use</a> &#42;<a href="/docs/api/classes/llvm/use/#ad32360b17f849df25d61b70bc82cc753">getNext</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Next; &#125;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  /// Return the operand # of this use in its User.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/use/#a541187eb976df2189b40b3f62ed2cee0">getOperandNo</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="comment">  /// Destroys Use operands when the number of operands of</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">  /// a User changes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/use/#a017fb8dfaf7591379bf7596ce0f196eb">zap</a>(<a href="/docs/api/classes/llvm/use">Use</a> &#42;Start, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/use">Use</a> &#42;Stop, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> del = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;Val = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/use">Use</a> &#42;<a href="/docs/api/namespaces/llvm/#ab13c360340346d082b959b8cd79f2c1a">Next</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/use">Use</a> &#42;&#42;Prev = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/user">User</a> &#42;Parent = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> addToList(<a href="/docs/api/classes/llvm/use">Use</a> &#42;&#42;<a href="/docs/api/namespaces/llvm/#acefe92adee8725ad904c7c43649790e8a4ee29ca12c7d126654bd0e5275de6135">List</a>) &#123;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#ab13c360340346d082b959b8cd79f2c1a">Next</a> = &#42;<a href="/docs/api/namespaces/llvm/#acefe92adee8725ad904c7c43649790e8a4ee29ca12c7d126654bd0e5275de6135">List</a>;</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ab13c360340346d082b959b8cd79f2c1a">Next</a>)</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ab13c360340346d082b959b8cd79f2c1a">Next</a>-&gt;Prev = &amp;<a href="/docs/api/namespaces/llvm/#ab13c360340346d082b959b8cd79f2c1a">Next</a>;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    Prev = <a href="/docs/api/namespaces/llvm/#acefe92adee8725ad904c7c43649790e8a4ee29ca12c7d126654bd0e5275de6135">List</a>;</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">    &#42;Prev = </Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> removeFromList() &#123;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">    &#42;Prev = <a href="/docs/api/namespaces/llvm/#ab13c360340346d082b959b8cd79f2c1a">Next</a>;</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ab13c360340346d082b959b8cd79f2c1a">Next</a>)</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ab13c360340346d082b959b8cd79f2c1a">Next</a>-&gt;Prev = Prev;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">/// Allow clients to treat uses just like values when using</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">/// casting operators.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115" lineLink="/docs/api/structs/llvm/simplify-type-27218edf7fb98a791934726f4ff31474"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;&gt; </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/simplify-type">simplify&#95;type</a>&lt;<a href="/docs/api/classes/llvm/use">Use</a>&gt; &#123;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116" lineLink="/docs/api/structs/llvm/simplify-type-27218edf7fb98a791934726f4ff31474/#adc3654879c6ed8cb52e90847f45ca2ed"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/simplify-type-27218edf7fb98a791934726f4ff31474/#adc3654879c6ed8cb52e90847f45ca2ed">SimpleType</a> = <a href="/docs/api/classes/llvm/value">Value</a> &#42;;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118" lineLink="/docs/api/structs/llvm/simplify-type-27218edf7fb98a791934726f4ff31474/#a96566c79e16938431d587d7e4347b231"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/simplify-type-27218edf7fb98a791934726f4ff31474/#adc3654879c6ed8cb52e90847f45ca2ed">SimpleType</a> <a href="/docs/api/structs/llvm/simplify-type-27218edf7fb98a791934726f4ff31474/#a96566c79e16938431d587d7e4347b231">getSimplifiedValue</a>(<a href="/docs/api/classes/llvm/use">Use</a> &amp;Val) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Val.<a href="/docs/api/classes/llvm/use/#ad77c21b5dd2c8765f87e3fb054d68def">get</a>(); &#125;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120" lineLink="/docs/api/structs/llvm/simplify-type-281e69781494059eea45e68051c37fd3"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;&gt; </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/simplify-type">simplify&#95;type</a>&lt;<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/use">Use</a>&gt; &#123;</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121" lineLink="/docs/api/structs/llvm/simplify-type-281e69781494059eea45e68051c37fd3/#a2ceb4de1ebffa2e519aba59191eae06a"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/simplify-type-281e69781494059eea45e68051c37fd3/#a2ceb4de1ebffa2e519aba59191eae06a">SimpleType</a> = </Highlight><Highlight kind="comment">/&#42;const&#42;/</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123" lineLink="/docs/api/structs/llvm/simplify-type-281e69781494059eea45e68051c37fd3/#a37607e885539a5a68651cece02813964"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/simplify-type-281e69781494059eea45e68051c37fd3/#a2ceb4de1ebffa2e519aba59191eae06a">SimpleType</a> <a href="/docs/api/structs/llvm/simplify-type-281e69781494059eea45e68051c37fd3/#a37607e885539a5a68651cece02813964">getSimplifiedValue</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/use">Use</a> &amp;Val) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Val.<a href="/docs/api/classes/llvm/use/#ad77c21b5dd2c8765f87e3fb054d68def">get</a>(); &#125;</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Create wrappers for C Binding types (see CBindingWrapping.h).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"><a href="/docs/api/files/include/include/llvm/include/llvm/support/cbindingwrapping-h/#a65c769c08fa9fee7f298ad9c9eee5e05">DEFINE&#95;SIMPLE&#95;CONVERSION&#95;FUNCTIONS</a>(Use, <a href="/docs/api/groups/llvmcsupporttypes/#gab30423fe4582af30d65061fddc7398d7">LLVMUseRef</a>)</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;IR&#95;USE&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

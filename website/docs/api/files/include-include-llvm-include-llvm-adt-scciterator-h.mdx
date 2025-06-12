@@ -1,0 +1,527 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/adt/scciterator-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `SCCIterator.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This builds on the <a href="/docs/api/files/include/include/llvm/include/llvm/adt/graphtraits-h">llvm/ADT/GraphTraits.h</a> file to find the strongly connected components (SCCs) of a graph in O(N+E) time using Tarjan&#39;s DFS algorithm. <a href="#details">More...</a>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/DenseMap.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/DenseSet.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/denseset-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/GraphTraits.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/graphtraits-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/iterator.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/iterator-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cassert"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="cstddef"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="iterator"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="queue"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="set"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="unordered_map"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="unordered_set"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="vector"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/scc-iterator">scc_iterator&lt;GraphT, GT&gt;</a></>}>
+Enumerate the SCCs of a directed graph in reverse topological order of the SCC DAG. <a href="/docs/api/classes/llvm/scc-iterator/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/scc-iterator/stackelement">StackElement</a></>}>
+Element of VisitStack during DFS. <a href="/docs/api/structs/llvm/scc-iterator/stackelement/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/scc-member-iterator">scc_member_iterator&lt;GraphT, GT&gt;</a></>}>
+Sort the nodes of a directed SCC in the decreasing order of the edge weights. <a href="/docs/api/classes/llvm/scc-member-iterator/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/scc-member-iterator/nodeinfo">NodeInfo</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This builds on the <a href="/docs/api/files/include/include/llvm/include/llvm/adt/graphtraits-h">llvm/ADT/GraphTraits.h</a> file to find the strongly connected components (SCCs) of a graph in O(N+E) time using Tarjan&#39;s DFS algorithm.
+
+The SCC iterator has the important property that if a node in SCC S1 has an edge to a node in SCC S2, then it visits S1 <em>after</em> S2.
+
+To visit S1 <em>before</em> S2, use the scc&#95;iterator on the Inverse graph. (NOTE: This requires some simple wrappers and is not supported yet.)
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- ADT/SCCIterator.h - Strongly Connected Comp. Iter. -------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="comment">/// \\file</Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="comment">/// This builds on the llvm/ADT/GraphTraits.h file to find the strongly</Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="comment">/// connected components (SCCs) of a graph in O(N+E) time using Tarjan&#39;s DFS</Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="comment">/// algorithm.</Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="comment">/// The SCC iterator has the important property that if a node in SCC S1 has an</Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="comment">/// edge to a node in SCC S2, then it visits S1 &#42;after&#42; S2.</Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="comment">/// To visit S1 &#42;before&#42; S2, use the scc&#95;iterator on the Inverse graph. (NOTE:</Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="comment">/// This requires some simple wrappers and is not supported yet.)</Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;ADT&#95;SCCITERATOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;ADT&#95;SCCITERATOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h">llvm/ADT/DenseMap.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/denseset-h">llvm/ADT/DenseSet.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/graphtraits-h">llvm/ADT/GraphTraits.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/iterator-h">llvm/ADT/iterator.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cassert&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstddef&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;iterator&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;queue&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;set&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;unordered&#95;map&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;unordered&#95;set&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;vector&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">/// Enumerate the SCCs of a directed graph in reverse topological order</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">/// of the SCC DAG.</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">/// This is implemented using Tarjan&#39;s DFS algorithm using an internal stack to</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">/// build up a vector of nodes in a particular SCC. Note that it is a forward</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="comment">/// iterator and thus you cannot backtrack or re-visit nodes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GraphT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GT = GraphTraits&lt;GraphT&gt;&gt;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/classes/llvm/scc-iterator"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">scc&#95;iterator : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-facade-base">iterator&#95;facade&#95;base</a>&lt;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">                         scc&#95;iterator&lt;GraphT, GT&gt;, std::forward&#95;iterator&#95;tag,</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">                         const std::vector&lt;typename GT::NodeRef&gt;, ptrdiff&#95;t&gt; &#123;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">NodeRef = </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> GT::NodeRef;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">ChildItTy = </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> GT::ChildIteratorType;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">SccTy = std::vector&lt;NodeRef&gt;;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/iterator-facade-base/#a9ac08db5b07aefa9e82e65806804268b">reference</a> = </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-facade-base/#a9ac08db5b07aefa9e82e65806804268b">scc&#95;iterator::reference</a>;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="comment">  /// Element of VisitStack during DFS.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">StackElement &#123;</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">    NodeRef <a href="/docs/api/classes/node">Node</a>;         </Highlight><Highlight kind="comment">///&lt; The current node pointer.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">    ChildItTy NextChild;  </Highlight><Highlight kind="comment">///&lt; The next child, modified inplace during DFS.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> MinVisited;  </Highlight><Highlight kind="comment">///&lt; Minimum uplink value of all children of Node.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">    StackElement(NodeRef <a href="/docs/api/classes/node">Node</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ChildItTy &amp;Child, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Min)</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">        : <a href="/docs/api/classes/node">Node</a>(<a href="/docs/api/classes/node">Node</a>), NextChild(Child), MinVisited(Min) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scc-iterator/#a9d5fe112e47fb5af00b2958b2d9f28cb">operator==</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> StackElement &amp;<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/node">Node</a> == <a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>.Node &amp;&amp;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">             NextChild == <a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>.NextChild &amp;&amp;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">             MinVisited == <a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>.MinVisited;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">  /// The visit counters used to detect when a complete SCC is on the stack.</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">  /// visitNum is the global counter.</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">  /// nodeVisitNumbers are per-node visit numbers, also used as DFS flags.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> visitNum;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;NodeRef, unsigned&gt;</a> nodeVisitNumbers;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="comment">  /// Stack holding nodes of the SCC.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  std::vector&lt;NodeRef&gt; SCCNodeStack;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// The current SCC, retrieved using operator&#42;().</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  SccTy CurrentSCC;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  /// DFS stack, Used to maintain the ordering.  The top contains the current</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="comment">  /// node, the next child to visit, and the minimum uplink value of all child</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  std::vector&lt;StackElement&gt; VisitStack;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">  /// A single &quot;visit&quot; within the non-recursive DFS traversal.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> DFSVisitOne(NodeRef <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>);</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">  /// The stack-based DFS traversal; defined below.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> DFSVisitChildren();</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">  /// Compute the next SCC using the DFS traversal.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> GetNextSCC();</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  scc&#95;iterator(NodeRef entryN) : visitNum(0) &#123;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">    DFSVisitOne(entryN);</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">    GetNextSCC();</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">  /// End is when the DFS stack is empty.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  scc&#95;iterator() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106" lineLink="/docs/api/classes/llvm/scc-iterator/#a430e6f48731308238761ee98c4d57eba"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> scc&#95;iterator <a href="/docs/api/classes/llvm/scc-iterator/#a430e6f48731308238761ee98c4d57eba">begin</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> GraphT &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>) &#123;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> scc&#95;iterator(GT::getEntryNode(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>));</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109" lineLink="/docs/api/classes/llvm/scc-iterator/#a915adc49283d43ff7e7d622ecb2f417e"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> scc&#95;iterator <a href="/docs/api/classes/llvm/scc-iterator/#a915adc49283d43ff7e7d622ecb2f417e">end</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> GraphT &amp;) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> scc&#95;iterator(); &#125;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">  /// Direct loop termination test which is more efficient than</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">  /// comparison with \\c end().</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113" lineLink="/docs/api/classes/llvm/scc-iterator/#a7d6ec03718a5e48f3ec7ce22fefcb91d"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scc-iterator/#a7d6ec03718a5e48f3ec7ce22fefcb91d">isAtEnd</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!CurrentSCC.empty() || VisitStack.empty());</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CurrentSCC.empty();</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118" lineLink="/docs/api/classes/llvm/scc-iterator/#a9d5fe112e47fb5af00b2958b2d9f28cb"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scc-iterator/#a9d5fe112e47fb5af00b2958b2d9f28cb">operator==</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> scc&#95;iterator &amp;x)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> VisitStack == x.VisitStack &amp;&amp; CurrentSCC == x.CurrentSCC;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122" lineLink="/docs/api/classes/llvm/scc-iterator/#a339d1757b1c0cacf99924d20bcfd60ac"><Highlight kind="normal">  scc&#95;iterator &amp;<a href="/docs/api/classes/llvm/scc-iterator/#a339d1757b1c0cacf99924d20bcfd60ac">operator++</a>() &#123;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    GetNextSCC();</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127" lineLink="/docs/api/classes/llvm/scc-iterator/#ac733023f04b1568e2d1552e94056dee4"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/iterator-facade-base/#a9ac08db5b07aefa9e82e65806804268b">reference</a> <a href="/docs/api/classes/llvm/scc-iterator/#ac733023f04b1568e2d1552e94056dee4">operator&#42;</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!CurrentSCC.empty() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Dereferencing END SCC iterator!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CurrentSCC;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">  /// Test if the current SCC has a cycle.</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">  /// If the SCC has more than one node, this is trivially true.  If not, it may</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">  /// still contain a cycle if the node has an edge back to itself.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scc-iterator/#abbd6357648d228d6a6e32e00aa2a5794">hasCycle</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">  /// This informs the \\c scc&#95;iterator that the specified \\c Old node</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="comment">  /// has been deleted, and \\c New is to be used in its place.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140" lineLink="/docs/api/classes/llvm/scc-iterator/#ab0a9c37a5fefddebfa09db6591b17d49"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scc-iterator/#ab0a9c37a5fefddebfa09db6591b17d49">ReplaceNode</a>(NodeRef Old, NodeRef New) &#123;</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(nodeVisitNumbers.<a href="/docs/api/classes/llvm/densemapbase/#a53408c95a7bfb5443b43fb2134c3eb23">count</a>(Old) &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Old not in scc&#95;iterator?&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Do the assignment in two steps, in case &#39;New&#39; is not yet in the map, and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// inserting it causes the map to grow.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> tempVal = nodeVisitNumbers&#91;Old&#93;;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">    nodeVisitNumbers&#91;New&#93; = tempVal;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">    nodeVisitNumbers.<a href="/docs/api/classes/llvm/densemapbase/#a1eb8504bab5f794778d82db6ac829923">erase</a>(Old);</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GraphT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GT&gt;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> scc&#95;iterator&lt;GraphT, GT&gt;::DFSVisitOne(NodeRef <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>) &#123;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  ++visitNum;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">  nodeVisitNumbers&#91;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>&#93; = visitNum;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  SCCNodeStack.push&#95;back(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>);</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">  VisitStack.push&#95;back(StackElement(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>, GT::child&#95;begin(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>), visitNum));</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if 0 </Highlight><Highlight kind="comment">// Enable if needed when debugging.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;TarjanSCC: Node &quot;</Highlight><Highlight kind="normal"> &lt;&lt; <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> &lt;&lt;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot; : visitNum = &quot;</Highlight><Highlight kind="normal"> &lt;&lt; visitNum &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GraphT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GT&gt;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> scc&#95;iterator&lt;GraphT, GT&gt;::DFSVisitChildren() &#123;</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!VisitStack.empty());</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (VisitStack.back().NextChild != GT::child&#95;end(VisitStack.back().Node)) &#123;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// TOS has at least one more child so continue DFS</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/rdf/detail/#a7f722f7078d3e80b2821b4a5460b5adf">NodeRef</a> childN = &#42;VisitStack.back().NextChild++;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/densemapbase/#a214e872d61db2ea8cb023f127cafd0b9">DenseMap&lt;NodeRef, unsigned&gt;::iterator</a> Visited =</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">        nodeVisitNumbers.find(childN);</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Visited == nodeVisitNumbers.end()) &#123;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// this node has never been seen.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">      DFSVisitOne(childN);</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> childNum = Visited-&gt;second;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (VisitStack.back().MinVisited &gt; childNum)</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">      VisitStack.back().MinVisited = childNum;</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GraphT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GT&gt; </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> scc&#95;iterator&lt;GraphT, GT&gt;::GetNextSCC() &#123;</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">  CurrentSCC.clear(); </Highlight><Highlight kind="comment">// Prepare to compute the next SCC</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (!VisitStack.empty()) &#123;</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">    DFSVisitChildren();</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Pop the leaf on top of the VisitStack.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/rdf/detail/#a7f722f7078d3e80b2821b4a5460b5adf">NodeRef</a> visitingN = VisitStack.back().Node;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> minVisitNum = VisitStack.back().MinVisited;</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(VisitStack.back().NextChild == GT::child&#95;end(visitingN));</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">    VisitStack.pop&#95;back();</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Propagate MinVisitNum to parent so we can detect the SCC starting node.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!VisitStack.empty() &amp;&amp; VisitStack.back().MinVisited &gt; minVisitNum)</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">      VisitStack.back().MinVisited = minVisitNum;</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if 0 </Highlight><Highlight kind="comment">// Enable if needed when debugging.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;TarjanSCC: Popped node &quot;</Highlight><Highlight kind="normal"> &lt;&lt; visitingN &lt;&lt;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot; : minVisitNum = &quot;</Highlight><Highlight kind="normal"> &lt;&lt; minVisitNum &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;; Node visit num = &quot;</Highlight><Highlight kind="normal"> &lt;&lt;</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">          nodeVisitNumbers&#91;visitingN&#93; &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (minVisitNum != nodeVisitNumbers&#91;visitingN&#93;)</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// A full SCC is on the SCCNodeStack!  It includes all nodes below</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// visitingN on the stack.  Copy those nodes to CurrentSCC,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// reset their minVisit values, and return (this suspends</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// the DFS traversal till the next ++).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">do</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">      CurrentSCC.push&#95;back(SCCNodeStack.back());</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">      SCCNodeStack.pop&#95;back();</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">      nodeVisitNumbers&#91;CurrentSCC.back()&#93; = ~0<a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ea4c614360da93c0a041b22e537de151eb">U</a>;</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (CurrentSCC.back() != visitingN);</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GraphT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GT&gt;</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220" lineLink="/docs/api/classes/llvm/scc-iterator/#abbd6357648d228d6a6e32e00aa2a5794"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scc-iterator/#abbd6357648d228d6a6e32e00aa2a5794">scc&#95;iterator&lt;GraphT, GT&gt;::hasCycle</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!CurrentSCC.empty() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Dereferencing END SCC iterator!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CurrentSCC.size() &gt; 1)</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">    NodeRef <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> = CurrentSCC.front();</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (ChildItTy CI = GT::child&#95;begin(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>), CE = GT::child&#95;end(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>); CI != CE;</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">         ++CI)</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (&#42;CI == <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>)</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="comment">/// Construct the begin iterator for a deduced graph type T.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233" lineLink="/docs/api/namespaces/llvm/#a3c1a67796e24a843db8a6766baa54c21"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt; <a href="/docs/api/classes/llvm/scc-iterator">scc&#95;iterator&lt;T&gt;</a> <a href="/docs/api/namespaces/llvm/#a3c1a67796e24a843db8a6766baa54c21">scc&#95;begin</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>) &#123;</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scc-iterator/#a430e6f48731308238761ee98c4d57eba">scc&#95;iterator&lt;T&gt;::begin</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>);</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="comment">/// Construct the end iterator for a deduced graph type T.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238" lineLink="/docs/api/namespaces/llvm/#ab538c5d036c618405f9bffe1b3a6955f"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt; <a href="/docs/api/classes/llvm/scc-iterator">scc&#95;iterator&lt;T&gt;</a> <a href="/docs/api/namespaces/llvm/#ab538c5d036c618405f9bffe1b3a6955f">scc&#95;end</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>) &#123;</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scc-iterator/#a915adc49283d43ff7e7d622ecb2f417e">scc&#95;iterator&lt;T&gt;::end</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>);</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="comment">/// Sort the nodes of a directed SCC in the decreasing order of the edge</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="comment">/// weights. The instantiating GraphT type should have weighted edge type</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="comment">/// declared in its graph traits in order to use this iterator.</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="comment">/// This is implemented using Kruskal&#39;s minimal spanning tree algorithm followed</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="comment">/// by Kahn&#39;s algorithm to compute a topological order on the MST. First a</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="comment">/// maximum spanning tree (forest) is built based on all edges within the SCC</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="comment">/// collection. Then a topological walk is initiated on tree nodes that do not</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="comment">/// have a predecessor and then applied to all nodes of the SCC. Such order</Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="comment">/// ensures that high-weighted edges are visited first during the traversal.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GraphT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GT = GraphTraits&lt;GraphT&gt;&gt;</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253" lineLink="/docs/api/classes/llvm/scc-member-iterator"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/scc-member-iterator/#a4fe79a1a958cfcba4ab5f27fbf602335">scc&#95;member&#95;iterator</a> &#123;</Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">NodeType = </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> GT::NodeType;</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">EdgeType = </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> GT::EdgeType;</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">NodesType = std::vector&lt;NodeType &#42;&gt;;</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Auxilary node information used during the MST calculation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">NodeInfo &#123;</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">    NodeInfo &#42;Group = </Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">    uint32&#95;t Rank = 0;</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Visited = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/denseset">DenseSet&lt;const EdgeType &#42;&gt;</a> IncomingMSTEdges;</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Find the root group of the node and compress the path from node to the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// root.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">  NodeInfo &#42;find(NodeInfo &#42;<a href="/docs/api/classes/node">Node</a>) &#123;</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/node">Node</a>-&gt;Group != <a href="/docs/api/classes/node">Node</a>)</Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">      <a href="/docs/api/classes/node">Node</a>-&gt;Group = find(<a href="/docs/api/classes/node">Node</a>-&gt;Group);</Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/node">Node</a>-&gt;Group;</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Union the source and target node into the same group and return true.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Returns false if they are already in the same group.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> unionGroups(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> EdgeType &#42;Edge) &#123;</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">    NodeInfo &#42;G1 = find(&amp;NodeInfoMap&#91;Edge-&gt;Source&#93;);</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">    NodeInfo &#42;G2 = find(&amp;NodeInfoMap&#91;Edge-&gt;Target&#93;);</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// If the edge forms a cycle, do not add it to MST</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (G1 == G2)</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Make the smaller rank tree a direct child of high rank tree.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (G1-&gt;Rank &lt; G2-&gt;Rank)</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">      G1-&gt;Group = G2;</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">      G2-&gt;Group = G1;</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// If the ranks are the same, increment root of one tree by one.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (G1-&gt;Rank == G2-&gt;Rank)</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">        G1-&gt;Rank++;</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">  std::unordered&#95;map&lt;NodeType &#42;, NodeInfo&gt; NodeInfoMap;</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal">  NodesType Nodes;</Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/scc-member-iterator/#a4fe79a1a958cfcba4ab5f27fbf602335">scc&#95;member&#95;iterator</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> NodesType &amp;InputNodes);</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302" lineLink="/docs/api/classes/llvm/scc-member-iterator/#ae661b91140ced1f47ba8e1990969a6ed"><Highlight kind="normal">  NodesType &amp;<a href="/docs/api/classes/llvm/scc-member-iterator/#ae661b91140ced1f47ba8e1990969a6ed">operator&#42;</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Nodes; &#125;</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GraphT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> GT&gt;</Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306" lineLink="/docs/api/classes/llvm/scc-member-iterator/#a4fe79a1a958cfcba4ab5f27fbf602335"><Highlight kind="normal"><a href="/docs/api/classes/llvm/scc-member-iterator/#a4fe79a1a958cfcba4ab5f27fbf602335">scc&#95;member&#95;iterator&lt;GraphT, GT&gt;::scc&#95;member&#95;iterator</a>(</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> NodesType &amp;InputNodes) &#123;</Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (InputNodes.size() &lt;= 1) &#123;</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal">    Nodes = InputNodes;</Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Initialize auxilary node information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal">  NodeInfoMap.clear();</Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/classes/node">Node</a> : InputNodes) &#123;</Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// This is specifically used to construct a &#96;NodeInfo&#96; object in place. An</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// insert operation will involve a copy construction which invalidate the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// initial value of the &#96;Group&#96; field which should be &#96;this&#96;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal">    (void)NodeInfoMap&#91;<a href="/docs/api/classes/node">Node</a>&#93;.Group;</Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Sort edges by weights.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">EdgeComparer &#123;</Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> operator()(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> EdgeType &#42;L, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> EdgeType &#42;R)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> L-&gt;Weight &gt; R-&gt;Weight;</Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal">  std::multiset&lt;const EdgeType &#42;, EdgeComparer&gt; SortedEdges;</Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/classes/node">Node</a> : InputNodes) &#123;</Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Edge : <a href="/docs/api/classes/node">Node</a>-&gt;Edges) &#123;</Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (NodeInfoMap.count(Edge.Target))</Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal">        SortedEdges.insert(&amp;Edge);</Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Traverse all the edges and compute the Maximum Weight Spanning Tree</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// using Kruskal&#39;s algorithm.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="normal">  std::unordered&#95;set&lt;const EdgeType &#42;&gt; MSTEdges;</Highlight></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;Edge : SortedEdges) &#123;</Highlight></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (unionGroups(Edge))</Highlight></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="normal">      MSTEdges.insert(Edge);</Highlight></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Run Kahn&#39;s algorithm on MST to compute a topological traversal order.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The algorithm starts from nodes that have no incoming edge. These nodes are</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// &quot;roots&quot; of the MST forest. This ensures that nodes are visited before their</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// descendants are, thus ensures hot edges are processed before cold edges,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// based on how MST is computed.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="normal">  std::queue&lt;NodeType &#42;&gt; Queue;</Highlight></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;Edge : MSTEdges)</Highlight></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="normal">    NodeInfoMap&#91;Edge-&gt;Target&#93;.IncomingMSTEdges.insert(Edge);</Highlight></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Walk through SortedEdges to initialize the queue, instead of using NodeInfoMap</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// to ensure an ordered deterministic push.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;Edge : SortedEdges) &#123;</Highlight></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!NodeInfoMap&#91;Edge-&gt;Source&#93;.Visited &amp;&amp;</Highlight></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal">        NodeInfoMap&#91;Edge-&gt;Source&#93;.IncomingMSTEdges.empty()) &#123;</Highlight></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="normal">      Queue.push(Edge-&gt;Source);</Highlight></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="normal">      NodeInfoMap&#91;Edge-&gt;Source&#93;.Visited = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (!Queue.empty()) &#123;</Highlight></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/classes/node">Node</a> = Queue.front();</Highlight></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal">    Queue.pop();</Highlight></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal">    Nodes.push&#95;back(<a href="/docs/api/classes/node">Node</a>);</Highlight></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Edge : <a href="/docs/api/classes/node">Node</a>-&gt;Edges) &#123;</Highlight></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal">      NodeInfoMap&#91;Edge.Target&#93;.IncomingMSTEdges.erase(&amp;Edge);</Highlight></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (MSTEdges.count(&amp;Edge) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal">          NodeInfoMap&#91;Edge.Target&#93;.IncomingMSTEdges.empty()) &#123;</Highlight></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">        Queue.push(Edge.Target);</Highlight></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(InputNodes.size() == Nodes.size() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;missing nodes in MST&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="normal">  std::reverse(Nodes.begin(), Nodes.end());</Highlight></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;ADT&#95;SCCITERATOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

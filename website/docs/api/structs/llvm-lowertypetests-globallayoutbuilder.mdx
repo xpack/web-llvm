@@ -1,0 +1,178 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/lowertypetests/globallayoutbuilder
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `GlobalLayoutBuilder` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This class implements a layout algorithm for globals referenced by bit sets that tries to keep members of small bit sets together. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct llvm::lowertypetests::GlobalLayoutBuilder</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Transforms/IPO/LowerTypeTests.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a2354a7882002ba4c12cd5f3be8dba7dd">GlobalLayoutBuilder</a> (uint64&#95;t NumObjects)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#abc53ed9289ca61898a56ea65b8a457db">addFragment</a> (const std::set&lt; uint64&#95;t &gt; &amp;F)</>}>
+Add F to the layout while trying to keep its indices contiguous. <a href="#abc53ed9289ca61898a56ea65b8a457db">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::vector&lt; uint64&#95;t &gt;</>}
+  name={<><a href="#ad3e6889c1625ade2687b7fee501f64be">FragmentMap</a></>}>
+Mapping from object index to fragment index. <a href="#ad3e6889c1625ade2687b7fee501f64be">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::vector&lt; std::vector&lt; uint64&#95;t &gt; &gt;</>}
+  name={<><a href="#a5d2e54b342691d69ccfc9e799d404668">Fragments</a></>}>
+The computed layout. <a href="#a5d2e54b342691d69ccfc9e799d404668">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This class implements a layout algorithm for globals referenced by bit sets that tries to keep members of small bit sets together.
+
+This can significantly reduce bit set sizes in many cases.
+
+It works by assembling fragments of layout from sets of referenced globals. Each set of referenced globals causes the algorithm to create a new fragment, which is assembled by appending each referenced global in the set into the fragment. If a referenced global has already been referenced by an fragment created earlier, we instead delete that fragment and append its contents into the fragment we are assembling.
+
+By starting with the smallest fragments, we minimize the size of the fragments that are copied into larger fragments. This is most intuitively thought about when considering the case where the globals are virtual tables and the bit sets represent their derived classes: in a single inheritance hierarchy, the optimum layout would involve a depth-first search of the class hierarchy (and in fact the computed layout ends up looking a lot like a DFS), but a naive DFS would not work well in the presence of multiple inheritance. This aspect of the algorithm ends up fitting smaller hierarchies inside larger ones where that would be beneficial.
+
+For example, consider this class hierarchy:
+
+A B \\ / | \\ C D E
+
+We have five bit sets: bsA (A, C), bsB (B, C, D, E), bsC (C), bsD (D) and bsE (E). If we laid out our objects by DFS traversing B followed by A, our layout would be &#123;B, C, D, E, A&#125;. This is optimal for bsB as it needs to cover the only 4 objects in its hierarchy, but not for bsA as it needs to cover 5 objects, i.e. the entire layout. Our algorithm proceeds as follows:
+
+Add bsC, fragments &#123;&#123;C&#125;&#125; Add bsD, fragments &#123;&#123;C&#125;, &#123;D&#125;&#125; Add bsE, fragments &#123;&#123;C&#125;, &#123;D&#125;, &#123;E&#125;&#125; Add bsA, fragments &#123;&#123;A, C&#125;, &#123;D&#125;, &#123;E&#125;&#125; Add bsB, fragments &#123;&#123;B, A, C, D, E&#125;&#125;
+
+This layout is optimal for bsA, as it now only needs to cover two (i.e. 3 fewer) objects, at the cost of bsB needing to cover 1 more object.
+
+The bit set lowering pass assigns an object index to each object that needs to be laid out, and calls addFragment for each bit set passing the object indices of its referenced globals. It then assembles a layout from the computed layout in the Fragments field.
+
+Definition at line 126 of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h">LowerTypeTests.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### GlobalLayoutBuilder() {#a2354a7882002ba4c12cd5f3be8dba7dd}
+
+<MemberDefinition
+  prototype={<>llvm::lowertypetests::GlobalLayoutBuilder::GlobalLayoutBuilder (uint64&#95;t NumObjects)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h/#l00134">134</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h">LowerTypeTests.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### addFragment() {#abc53ed9289ca61898a56ea65b8a457db}
+
+<MemberDefinition
+  prototype={<>void GlobalLayoutBuilder::addFragment (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> std::set&lt; uint64&#95;t &gt; &amp; F)</>}>
+Add F to the layout while trying to keep its indices contiguous.
+
+If a previously seen fragment uses any of F&#39;s indices, that fragment will be laid out inside F.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h/#l00140">140</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h">LowerTypeTests.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/lowertypetests-cpp/#l00194">194</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/lowertypetests-cpp">LowerTypeTests.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### FragmentMap {#ad3e6889c1625ade2687b7fee501f64be}
+
+<MemberDefinition
+  prototype={<>std::vector&lt;uint64&#95;t&gt; llvm::lowertypetests::GlobalLayoutBuilder::FragmentMap</>}>
+Mapping from object index to fragment index.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h/#l00132">132</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h">LowerTypeTests.h</a>.
+</MemberDefinition>
+
+### Fragments {#a5d2e54b342691d69ccfc9e799d404668}
+
+<MemberDefinition
+  prototype={<>std::vector&lt;std::vector&lt;uint64&#95;t&gt; &gt; llvm::lowertypetests::GlobalLayoutBuilder::Fragments</>}>
+The computed layout.
+
+Each element of this vector contains a fragment of layout (which may be empty) consisting of object indices.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h/#l00129">129</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h">LowerTypeTests.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h">LowerTypeTests.h</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/lowertypetests-cpp">LowerTypeTests.cpp</a></li>
+</ul>
+
+</DoxygenPage>

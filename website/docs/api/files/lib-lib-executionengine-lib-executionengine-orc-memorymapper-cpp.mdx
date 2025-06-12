@@ -1,0 +1,559 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/executionengine/lib/executionengine/orc/memorymapper-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `MemoryMapper.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/MemoryMapper.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/memorymapper-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Config/llvm-config.h"
+  permalink=""
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/Shared/OrcRTBridge.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/orcrtbridge-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/WindowsError.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/windowserror-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="fcntl.h"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="sys/mman.h"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="unistd.h"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/orc">llvm::orc</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- MemoryMapper.cpp - Cross-process memory mapper ------------&#42;- C++ -&#42;-==//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/memorymapper-h">llvm/ExecutionEngine/Orc/MemoryMapper.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;llvm/Config/llvm-config.h&quot;</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="comment">// for LLVM&#95;ON&#95;UNIX</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/orcrtbridge-h">llvm/ExecutionEngine/Orc/Shared/OrcRTBridge.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/windowserror-h">llvm/Support/WindowsError.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(LLVM&#95;ON&#95;UNIX) &amp;&amp; !defined(&#95;&#95;ANDROID&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;fcntl.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;sys/mman.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;MVS&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/blake3-h">llvm/Support/BLAKE3.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;sys/shm.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;unistd.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;WIN32)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;windows.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/orc">orc</a> &#123;</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30" lineLink="/docs/api/classes/llvm/orc/memorymapper/#aaac141615bd5d8a6681ca7b1fc5b72c1"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/memorymapper/#aaac141615bd5d8a6681ca7b1fc5b72c1">MemoryMapper::~MemoryMapper</a>() &#123;&#125;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32" lineLink="/docs/api/classes/llvm/orc/inprocessmemorymapper/#a83a0052e8954805eb391e3fbead2a069"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/inprocessmemorymapper/#a83a0052e8954805eb391e3fbead2a069">InProcessMemoryMapper::InProcessMemoryMapper</a>(</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a>)</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">    : <a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a>(<a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"><a href="/docs/api/classes/llvm/expected">Expected&lt;std::unique&#95;ptr&lt;InProcessMemoryMapper&gt;</a>&gt;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36" lineLink="/docs/api/classes/llvm/orc/inprocessmemorymapper/#ace0850e56331e89848ec64c74dada4bd"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/inprocessmemorymapper/#ace0850e56331e89848ec64c74dada4bd">InProcessMemoryMapper::Create</a>() &#123;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a> = <a href="/docs/api/classes/llvm/sys/process/#a2b6f374dc4eb2a7f84cc346e5630e132">sys::Process::getPageSize</a>();</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a>)</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a>.takeError();</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;unique&lt;InProcessMemoryMapper&gt;(&#42;<a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a>);</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43" lineLink="/docs/api/classes/llvm/orc/inprocessmemorymapper/#a7567e026468fa261fb6186a2d30115ff"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/inprocessmemorymapper/#a7567e026468fa261fb6186a2d30115ff">InProcessMemoryMapper::reserve</a>(</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> NumBytes,</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">                                    <a href="/docs/api/classes/llvm/orc/memorymapper/#ae6b31499ac8e7d26c03092c14275d796">OnReservedFunction</a> OnReserved) &#123;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  std::error&#95;code EC;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/mb">MB</a> = <a href="/docs/api/classes/llvm/sys/memory/#a1326dd13b23711e68ade413fbc57b9f6">sys::Memory::allocateMappedMemory</a>(</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">      NumBytes, </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, <a href="/docs/api/classes/llvm/sys/memory/#a548f317b89dc0bba738b89e5ce791395a02cae455b05abf1bfb1de69095e66417">sys::Memory::MF&#95;READ</a> | <a href="/docs/api/classes/llvm/sys/memory/#a548f317b89dc0bba738b89e5ce791395a83e34a8267f7acd88563e9d5a3ee7c25">sys::Memory::MF&#95;WRITE</a>, EC);</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (EC)</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnReserved(<a href="/docs/api/namespaces/llvm/#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(EC));</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">    std::lock&#95;guard&lt;std::mutex&gt; Lock(Mutex);</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">    Reservations&#91;<a href="/docs/api/classes/mb">MB</a>.base()&#93;.Size = <a href="/docs/api/classes/mb">MB</a>.allocatedSize();</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  OnReserved(</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">      <a href="/docs/api/structs/llvm/orc/executoraddrrange">ExecutorAddrRange</a>(<a href="/docs/api/classes/llvm/orc/executoraddr/#a8adb0ae35f7e95c960c86cfe19bc7215">ExecutorAddr::fromPtr</a>(<a href="/docs/api/classes/mb">MB</a>.base()), <a href="/docs/api/classes/mb">MB</a>.allocatedSize()));</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61" lineLink="/docs/api/classes/llvm/orc/inprocessmemorymapper/#ad56d2316a6611ee7bf8958565aee64a2"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/classes/llvm/orc/inprocessmemorymapper/#ad56d2316a6611ee7bf8958565aee64a2">InProcessMemoryMapper::prepare</a>(<a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> Addr, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> ContentSize) &#123;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Addr.<a href="/docs/api/classes/llvm/orc/executoraddr/#af5df5d5fa49d180d3ca3de567f60de79">toPtr</a>&lt;</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;&gt;();</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/classes/llvm/orc/inprocessmemorymapper/#a492e4d6b2bf660e7c499e22f85b72440"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/inprocessmemorymapper/#a492e4d6b2bf660e7c499e22f85b72440">InProcessMemoryMapper::initialize</a>(<a href="/docs/api/structs/llvm/orc/memorymapper/allocinfo">MemoryMapper::AllocInfo</a> &amp;AI,</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">                                       <a href="/docs/api/classes/llvm/orc/memorymapper/#ae546b70ffe0d3b8451b9b2a3163c4372">OnInitializedFunction</a> OnInitialized) &#123;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> MinAddr(~0ULL);</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> MaxAddr(0);</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// FIXME: Release finalize lifetime segments.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Segment : AI.<a href="/docs/api/structs/llvm/orc/memorymapper/allocinfo/#a6b6dcea60d496fc8de6d65188804b995">Segments</a>) &#123;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a> = AI.<a href="/docs/api/structs/llvm/orc/memorymapper/allocinfo/#a8ae25e2221d662f2fbffc49d0b172b3a">MappingBase</a> + Segment.Offset;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> = Segment.ContentSize + Segment.ZeroFillSize;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a> &lt; MinAddr)</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">      MinAddr = <a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a> + <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> &gt; MaxAddr)</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">      MaxAddr = <a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a> + <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">    std::memset((<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a> + Segment.ContentSize).toPtr&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;&gt;(), 0,</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">                Segment.ZeroFillSize);</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EC = <a href="/docs/api/classes/llvm/sys/memory/#ae27409ddee7e191f33392283ca826703">sys::Memory::protectMappedMemory</a>(</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">            &#123;<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>.toPtr&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;&gt;(), <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>&#125;,</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">            <a href="/docs/api/namespaces/llvm/orc/#ac28fc72cfcd4ee10f9f913aa2969bc45">toSysMemoryProtectionFlags</a>(Segment.AG.getMemProt()))) &#123;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnInitialized(<a href="/docs/api/namespaces/llvm/#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(EC));</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((Segment.AG.getMemProt() &amp; <a href="/docs/api/namespaces/llvm/orc/#a2fbb59fad28934f72ede7ddc316dfc89a953feeff1e20f40677fb7f77c073b3be">MemProt::Exec</a>) == <a href="/docs/api/namespaces/llvm/orc/#a2fbb59fad28934f72ede7ddc316dfc89a953feeff1e20f40677fb7f77c073b3be">MemProt::Exec</a>)</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/sys/memory/#a5cfd4d2a8227a3f9ca0667f42f05f20b">sys::Memory::InvalidateInstructionCache</a>(<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>.toPtr&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;&gt;(), <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>);</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> DeinitializeActions = <a href="/docs/api/namespaces/llvm/orc/shared/#aa02467cf9213727cd36bce6f59653e5b">shared::runFinalizeActions</a>(AI.<a href="/docs/api/structs/llvm/orc/memorymapper/allocinfo/#aa83c8c10a9eb18cd233eed2ecf12ca71">Actions</a>);</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!DeinitializeActions)</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnInitialized(DeinitializeActions.takeError());</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">    std::lock&#95;guard&lt;std::mutex&gt; Lock(Mutex);</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// This is the maximum range whose permission have been possibly modified</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">    Allocations&#91;MinAddr&#93;.Size = MaxAddr - MinAddr;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    Allocations&#91;MinAddr&#93;.DeinitializationActions =</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">        std::move(&#42;DeinitializeActions);</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">    Reservations&#91;AI.<a href="/docs/api/structs/llvm/orc/memorymapper/allocinfo/#a8ae25e2221d662f2fbffc49d0b172b3a">MappingBase</a>.<a href="/docs/api/classes/llvm/orc/executoraddr/#af5df5d5fa49d180d3ca3de567f60de79">toPtr</a>&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;&gt;()&#93;.Allocations.push&#95;back(MinAddr);</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  OnInitialized(MinAddr);</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110" lineLink="/docs/api/classes/llvm/orc/inprocessmemorymapper/#ac501a4fc8b8826d6451a9ae117ca3e0b"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/inprocessmemorymapper/#ac501a4fc8b8826d6451a9ae117ca3e0b">InProcessMemoryMapper::deinitialize</a>(</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;ExecutorAddr&gt;</a> Bases,</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/orc/memorymapper/#aedfe192af316b519758f8f400ff24ff5">MemoryMapper::OnDeinitializedFunction</a> OnDeinitialized) &#123;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">Error</a> AllErr = <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">    std::lock&#95;guard&lt;std::mutex&gt; Lock(Mutex);</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a> : <a href="/docs/api/namespaces/llvm/#a6b0ac1fa4f05de76413c5e0ca6334035">llvm::reverse</a>(Bases)) &#123;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/error">Error</a> Err = <a href="/docs/api/namespaces/llvm/orc/shared/#a8263d385de2b406acf8dbef9b0993cc9">shared::runDeallocActions</a>(</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">              Allocations&#91;<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>&#93;.DeinitializationActions)) &#123;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">        AllErr = <a href="/docs/api/namespaces/llvm/#a71210b99d2ef87236d8505c1771a7ab1">joinErrors</a>(std::move(AllErr), std::move(Err));</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Reset protections to read/write so the area can be reused</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EC = <a href="/docs/api/classes/llvm/sys/memory/#ae27409ddee7e191f33392283ca826703">sys::Memory::protectMappedMemory</a>(</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">              &#123;<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>.toPtr&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;&gt;(), Allocations&#91;<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>&#93;.<a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>&#125;,</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">              <a href="/docs/api/classes/llvm/sys/memory/#a548f317b89dc0bba738b89e5ce791395a02cae455b05abf1bfb1de69095e66417">sys::Memory::ProtectionFlags::MF&#95;READ</a> |</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">                  <a href="/docs/api/classes/llvm/sys/memory/#a548f317b89dc0bba738b89e5ce791395a83e34a8267f7acd88563e9d5a3ee7c25">sys::Memory::ProtectionFlags::MF&#95;WRITE</a>)) &#123;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">        AllErr = <a href="/docs/api/namespaces/llvm/#a71210b99d2ef87236d8505c1771a7ab1">joinErrors</a>(std::move(AllErr), <a href="/docs/api/namespaces/llvm/#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(EC));</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">      Allocations.<a href="/docs/api/classes/llvm/densemapbase/#a1eb8504bab5f794778d82db6ac829923">erase</a>(<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>);</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  OnDeinitialized(std::move(AllErr));</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140" lineLink="/docs/api/classes/llvm/orc/inprocessmemorymapper/#ae7b7c908c1016860ed8c53965f8f167a"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/inprocessmemorymapper/#ae7b7c908c1016860ed8c53965f8f167a">InProcessMemoryMapper::release</a>(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;ExecutorAddr&gt;</a> Bases,</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">                                    <a href="/docs/api/classes/llvm/orc/memorymapper/#a002df15a1ca5b57f024af911d7854e90">OnReleasedFunction</a> OnReleased) &#123;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">Error</a> Err = <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a> : Bases) &#123;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">    std::vector&lt;ExecutorAddr&gt; AllocAddrs;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">      std::lock&#95;guard&lt;std::mutex&gt; Lock(Mutex);</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;R = Reservations&#91;<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>.toPtr&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;&gt;()&#93;;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> = R.Size;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">      AllocAddrs.swap(R.Allocations);</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// deinitialize sub allocations</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">    std::promise&lt;MSVCPError&gt; <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>;</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>.get&#95;future();</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/orc/inprocessmemorymapper/#ac501a4fc8b8826d6451a9ae117ca3e0b">deinitialize</a>(AllocAddrs, &#91;&amp;&#93;(<a href="/docs/api/classes/llvm/error">Error</a> Err) &#123; <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>.set&#95;value(std::move(Err)); &#125;);</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a> = <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>.get()) &#123;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">      Err = <a href="/docs/api/namespaces/llvm/#a71210b99d2ef87236d8505c1771a7ab1">joinErrors</a>(std::move(Err), std::move(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>));</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// free the memory</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/mb">MB</a> = <a href="/docs/api/classes/llvm/sys/memoryblock">sys::MemoryBlock</a>(<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>.toPtr&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;&gt;(), <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>);</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EC = <a href="/docs/api/classes/llvm/sys/memory/#a042d24349a4b6a5ce475309cce529ae0">sys::Memory::releaseMappedMemory</a>(<a href="/docs/api/classes/mb">MB</a>);</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (EC) &#123;</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">      Err = <a href="/docs/api/namespaces/llvm/#a71210b99d2ef87236d8505c1771a7ab1">joinErrors</a>(std::move(Err), <a href="/docs/api/namespaces/llvm/#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(EC));</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">    std::lock&#95;guard&lt;std::mutex&gt; Lock(Mutex);</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">    Reservations.<a href="/docs/api/classes/llvm/densemapbase/#a1eb8504bab5f794778d82db6ac829923">erase</a>(<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>.toPtr&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;&gt;());</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">  OnReleased(std::move(Err));</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177" lineLink="/docs/api/classes/llvm/orc/inprocessmemorymapper/#a9a8a5be08a1b215a7da11ae9d55ad31b"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/inprocessmemorymapper/#a9a8a5be08a1b215a7da11ae9d55ad31b">InProcessMemoryMapper::~InProcessMemoryMapper</a>() &#123;</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">  std::vector&lt;ExecutorAddr&gt; ReservationAddrs;</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">    std::lock&#95;guard&lt;std::mutex&gt; Lock(Mutex);</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">    ReservationAddrs.reserve(Reservations.<a href="/docs/api/classes/llvm/densemapbase/#a3d95cc2d359b8d9ed5bd9504b44930b5">size</a>());</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;R : Reservations) &#123;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">      ReservationAddrs.push&#95;back(<a href="/docs/api/classes/llvm/orc/executoraddr/#a8adb0ae35f7e95c960c86cfe19bc7215">ExecutorAddr::fromPtr</a>(R.getFirst()));</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">  std::promise&lt;MSVCPError&gt; <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>.get&#95;future();</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a650dea4533083a886cec9f16d80356d9a123fead50246387983ee340507115ef4">release</a>(ReservationAddrs, &#91;&amp;&#93;(<a href="/docs/api/classes/llvm/error">Error</a> Err) &#123; <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>.set&#95;value(std::move(Err)); &#125;);</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#aa1e1474f15df639f0d874b21f15666f7">cantFail</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>.get());</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SharedMemoryMapper</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196" lineLink="/docs/api/classes/llvm/orc/sharedmemorymapper/#acc87c1eedea4bfa8adc928caf64d0933"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/sharedmemorymapper/#acc87c1eedea4bfa8adc928caf64d0933">SharedMemoryMapper::SharedMemoryMapper</a>(<a href="/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> &amp;EPC,</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">                                       <a href="/docs/api/structs/llvm/orc/sharedmemorymapper/symboladdrs">SymbolAddrs</a> SAs, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a>)</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">    : EPC(EPC), SAs(SAs), <a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a>(<a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a>) &#123;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if (!defined(LLVM&#95;ON&#95;UNIX) || defined(&#95;&#95;ANDROID&#95;&#95;)) &amp;&amp; !defined(&#95;WIN32)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm&#95;unreachable</a>(</Highlight><Highlight kind="stringliteral">&quot;SharedMemoryMapper is not supported on this platform yet&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal"><a href="/docs/api/classes/llvm/expected">Expected&lt;std::unique&#95;ptr&lt;SharedMemoryMapper&gt;</a>&gt;</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205" lineLink="/docs/api/classes/llvm/orc/sharedmemorymapper/#a05efc99c84f85d88901dd71a716814dd"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/sharedmemorymapper/#a05efc99c84f85d88901dd71a716814dd">SharedMemoryMapper::Create</a>(<a href="/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> &amp;EPC, <a href="/docs/api/structs/llvm/orc/sharedmemorymapper/symboladdrs">SymbolAddrs</a> SAs) &#123;</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if (defined(LLVM&#95;ON&#95;UNIX) &amp;&amp; !defined(&#95;&#95;ANDROID&#95;&#95;)) || defined(&#95;WIN32)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a> = <a href="/docs/api/classes/llvm/sys/process/#a2b6f374dc4eb2a7f84cc346e5630e132">sys::Process::getPageSize</a>();</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a>)</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a>.takeError();</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;unique&lt;SharedMemoryMapper&gt;(EPC, SAs, &#42;<a href="/docs/api/files/lib/lib/codegen/implicitnullchecks-cpp/#a90146d35673da9e3e4a7f41f3b8c9b7e">PageSize</a>);</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">make&#95;error&lt;StringError&gt;</a>(</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">      </Highlight><Highlight kind="stringliteral">&quot;SharedMemoryMapper is not supported on this platform yet&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a2b43c21951d0948b34bcf7019949032d">inconvertibleErrorCode</a>());</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219" lineLink="/docs/api/classes/llvm/orc/sharedmemorymapper/#a422f2a2c01a04dbb4fe4100fc74b90ca"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/sharedmemorymapper/#a422f2a2c01a04dbb4fe4100fc74b90ca">SharedMemoryMapper::reserve</a>(</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> NumBytes,</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">                                 <a href="/docs/api/classes/llvm/orc/memorymapper/#ae6b31499ac8e7d26c03092c14275d796">OnReservedFunction</a> OnReserved) &#123;</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if (defined(LLVM&#95;ON&#95;UNIX) &amp;&amp; !defined(&#95;&#95;ANDROID&#95;&#95;)) || defined(&#95;WIN32)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">  EPC.<a href="/docs/api/classes/llvm/orc/executorprocesscontrol/#a17f9962c6727ed170f8b494243302732">callSPSWrapperAsync</a>&lt;</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/orc/rt/#a557165be8fb59bae42025bd5c59541bb">rt::SPSExecutorSharedMemoryMapperServiceReserveSignature</a>&gt;(</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">      SAs.<a href="/docs/api/structs/llvm/orc/sharedmemorymapper/symboladdrs/#a83a5f44650bca3f7b50bfae1fdd1ca86">Reserve</a>,</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">      &#91;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">, NumBytes, OnReserved = std::move(OnReserved)&#93;(</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/error">Error</a> SerializationErr,</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/expected">Expected&lt;std::pair&lt;ExecutorAddr, std::string&gt;</a>&gt; <a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>) </Highlight><Highlight kind="keyword">mutable</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SerializationErr) &#123;</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">          <a href="/docs/api/namespaces/llvm/#aa1e1474f15df639f0d874b21f15666f7">cantFail</a>(<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>.takeError());</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnReserved(std::move(SerializationErr));</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>)</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnReserved(<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>.takeError());</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> RemoteAddr;</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">        std::string SharedMemoryName;</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">        std::tie(RemoteAddr, SharedMemoryName) = std::move(&#42;<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>);</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">        </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;LocalAddr = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(LLVM&#95;ON&#95;UNIX)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;MVS&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;uint8&#95;t&gt;</a> <a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a>(</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">            </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">uint8&#95;t &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(SharedMemoryName.c&#95;str()),</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">            SharedMemoryName.size());</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> HashedName = <a href="/docs/api/classes/llvm/blake3/#a9dbdb16a7c1e784048a1a7f65821f5be">BLAKE3::hash&lt;sizeof(key&#95;t)&gt;</a>(<a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a>);</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal">        key&#95;t <a href="/docs/api/namespaces/llvm/#a98c6256d0644613c6b5b3e2ef06ef5ce">Key</a> = &#42;</Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="normal">key&#95;t &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(HashedName.data());</Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">        </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> SharedMemoryId =</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">            shmget(<a href="/docs/api/namespaces/llvm/#a98c6256d0644613c6b5b3e2ef06ef5ce">Key</a>, NumBytes, IPC&#95;CREAT | &#95;&#95;IPC&#95;SHAREAS | 0700);</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SharedMemoryId &lt; 0) &#123;</Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnReserved(<a href="/docs/api/namespaces/llvm/#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">              std::error&#95;code(errno, std::generic&#95;category())));</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">        LocalAddr = shmat(SharedMemoryId, </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, 0);</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LocalAddr == </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(-1)) &#123;</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnReserved(<a href="/docs/api/namespaces/llvm/#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">              std::error&#95;code(errno, std::generic&#95;category())));</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">        </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> SharedMemoryFile = shm&#95;open(SharedMemoryName.c&#95;str(), O&#95;RDWR, 0700);</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SharedMemoryFile &lt; 0) &#123;</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnReserved(<a href="/docs/api/namespaces/llvm/#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(<a href="/docs/api/namespaces/llvm/#ae075c94db10b09d6d5876d32219eaf0d">errnoAsErrorCode</a>()));</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// this prevents other processes from accessing it by name</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">        shm&#95;unlink(SharedMemoryName.c&#95;str());</Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">        LocalAddr = mmap(</Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, NumBytes, PROT&#95;READ | PROT&#95;WRITE, MAP&#95;SHARED,</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">                         SharedMemoryFile, 0);</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LocalAddr == MAP&#95;FAILED) &#123;</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnReserved(<a href="/docs/api/namespaces/llvm/#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(<a href="/docs/api/namespaces/llvm/#ae075c94db10b09d6d5876d32219eaf0d">errnoAsErrorCode</a>()));</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">        close(SharedMemoryFile);</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;WIN32)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">        std::wstring WideSharedMemoryName(SharedMemoryName.begin(),</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">                                          SharedMemoryName.end());</Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">        HANDLE SharedMemoryFile = OpenFileMappingW(</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">            FILE&#95;MAP&#95;ALL&#95;ACCESS, FALSE, WideSharedMemoryName.c&#95;str());</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!SharedMemoryFile)</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnReserved(<a href="/docs/api/namespaces/llvm/#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(<a href="/docs/api/namespaces/llvm/#af0799d74677708a87dee45acdd40bab2">mapWindowsError</a>(GetLastError())));</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">        LocalAddr =</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">            MapViewOfFile(SharedMemoryFile, FILE&#95;MAP&#95;ALL&#95;ACCESS, 0, 0, 0);</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!LocalAddr) &#123;</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">          CloseHandle(SharedMemoryFile);</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnReserved(<a href="/docs/api/namespaces/llvm/#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(<a href="/docs/api/namespaces/llvm/#af0799d74677708a87dee45acdd40bab2">mapWindowsError</a>(GetLastError())));</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">        CloseHandle(SharedMemoryFile);</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">        &#123;</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">          std::lock&#95;guard&lt;std::mutex&gt; Lock(Mutex);</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">          Reservations.insert(&#123;RemoteAddr, &#123;LocalAddr, NumBytes&#125;&#125;);</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal">        OnReserved(<a href="/docs/api/structs/llvm/orc/executoraddrrange">ExecutorAddrRange</a>(RemoteAddr, NumBytes));</Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal">      &#125;,</Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">      SAs.<a href="/docs/api/structs/llvm/orc/sharedmemorymapper/symboladdrs/#a9d4ebc3aadbf05530a2b8c0263b946b4">Instance</a>, </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uint64&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(NumBytes));</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal">  OnReserved(<a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">make&#95;error&lt;StringError&gt;</a>(</Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal">      </Highlight><Highlight kind="stringliteral">&quot;SharedMemoryMapper is not supported on this platform yet&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a2b43c21951d0948b34bcf7019949032d">inconvertibleErrorCode</a>()));</Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315" lineLink="/docs/api/classes/llvm/orc/sharedmemorymapper/#a8295d4ee787fed22f7a1b37c7b0a559c"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/classes/llvm/orc/sharedmemorymapper/#a8295d4ee787fed22f7a1b37c7b0a559c">SharedMemoryMapper::prepare</a>(<a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> Addr, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> ContentSize) &#123;</Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> R = Reservations.upper&#95;bound(Addr);</Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(R != Reservations.begin() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Attempt to prepare unreserved range&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">  R--;</Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/orc/#a59b5f232ad8ec6bf405ddc77c3d6d752">ExecutorAddrDiff</a> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a> = Addr - R-&gt;first;</Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(R-&gt;second.LocalAddr) + <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>;</Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325" lineLink="/docs/api/classes/llvm/orc/sharedmemorymapper/#a6776668e9d06d4ffccc140a13cd25095"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/sharedmemorymapper/#a6776668e9d06d4ffccc140a13cd25095">SharedMemoryMapper::initialize</a>(<a href="/docs/api/structs/llvm/orc/memorymapper/allocinfo">MemoryMapper::AllocInfo</a> &amp;AI,</Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">                                    <a href="/docs/api/classes/llvm/orc/memorymapper/#ae546b70ffe0d3b8451b9b2a3163c4372">OnInitializedFunction</a> OnInitialized) &#123;</Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Reservation = Reservations.upper&#95;bound(AI.<a href="/docs/api/structs/llvm/orc/memorymapper/allocinfo/#a8ae25e2221d662f2fbffc49d0b172b3a">MappingBase</a>);</Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Reservation != Reservations.begin() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Attempt to initialize unreserved range&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal">  Reservation--;</Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> AllocationOffset = AI.<a href="/docs/api/structs/llvm/orc/memorymapper/allocinfo/#a8ae25e2221d662f2fbffc49d0b172b3a">MappingBase</a> - Reservation-&gt;first;</Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/orc/tpctypes/sharedmemoryfinalizerequest">tpctypes::SharedMemoryFinalizeRequest</a> FR;</Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">  AI.<a href="/docs/api/structs/llvm/orc/memorymapper/allocinfo/#aa83c8c10a9eb18cd233eed2ecf12ca71">Actions</a>.swap(FR.<a href="/docs/api/structs/llvm/orc/tpctypes/sharedmemoryfinalizerequest/#ac480f8342ad8500b7f9477ba74fd5ed2">Actions</a>);</Highlight></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal">  FR.<a href="/docs/api/structs/llvm/orc/tpctypes/sharedmemoryfinalizerequest/#a1cd77f9692f05fed6a1a9fa7b59da1e6">Segments</a>.reserve(AI.<a href="/docs/api/structs/llvm/orc/memorymapper/allocinfo/#a6b6dcea60d496fc8de6d65188804b995">Segments</a>.size());</Highlight></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Segment : AI.<a href="/docs/api/structs/llvm/orc/memorymapper/allocinfo/#a6b6dcea60d496fc8de6d65188804b995">Segments</a>) &#123;</Highlight></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a> = </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(Reservation-&gt;second.LocalAddr) +</Highlight></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="normal">                 AllocationOffset + Segment.Offset;</Highlight></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="normal">    std::memset(<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a> + Segment.ContentSize, 0, Segment.ZeroFillSize);</Highlight></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/orc/tpctypes/sharedmemorysegfinalizerequest">tpctypes::SharedMemorySegFinalizeRequest</a> SegReq;</Highlight></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal">    SegReq.<a href="/docs/api/structs/llvm/orc/tpctypes/sharedmemorysegfinalizerequest/#af8722c220368ae6ec29f1659a9db656d">RAG</a> = &#123;Segment.AG.getMemProt(),</Highlight></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal">                  Segment.AG.getMemLifetime() == <a href="/docs/api/namespaces/llvm/orc/#abdd6ae2070338087f3d5d54200d708d6afd565de81da1c94807c0b80840ba18b0">MemLifetime::Finalize</a>&#125;;</Highlight></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">    SegReq.<a href="/docs/api/structs/llvm/orc/tpctypes/sharedmemorysegfinalizerequest/#a291bd7c0717557dd244547b23c8c7c41">Addr</a> = AI.<a href="/docs/api/structs/llvm/orc/memorymapper/allocinfo/#a8ae25e2221d662f2fbffc49d0b172b3a">MappingBase</a> + Segment.Offset;</Highlight></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal">    SegReq.<a href="/docs/api/structs/llvm/orc/tpctypes/sharedmemorysegfinalizerequest/#a285451feed03fc082fba2259ac6f1f2d">Size</a> = Segment.ContentSize + Segment.ZeroFillSize;</Highlight></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="normal">    FR.<a href="/docs/api/structs/llvm/orc/tpctypes/sharedmemoryfinalizerequest/#a1cd77f9692f05fed6a1a9fa7b59da1e6">Segments</a>.push&#95;back(SegReq);</Highlight></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal">  EPC.<a href="/docs/api/classes/llvm/orc/executorprocesscontrol/#a17f9962c6727ed170f8b494243302732">callSPSWrapperAsync</a>&lt;</Highlight></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/orc/rt/#acde1ae43605670d8b04367538b53ae4c">rt::SPSExecutorSharedMemoryMapperServiceInitializeSignature</a>&gt;(</Highlight></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal">      SAs.<a href="/docs/api/structs/llvm/orc/sharedmemorymapper/symboladdrs/#a3c0ecff6c02c2c2ddfe1f0d13326ef39">Initialize</a>,</Highlight></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal">      &#91;OnInitialized = std::move(OnInitialized)&#93;(</Highlight></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/error">Error</a> SerializationErr, <a href="/docs/api/classes/llvm/expected">Expected&lt;ExecutorAddr&gt;</a> <a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>) </Highlight><Highlight kind="keyword">mutable</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SerializationErr) &#123;</Highlight></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="normal">          <a href="/docs/api/namespaces/llvm/#aa1e1474f15df639f0d874b21f15666f7">cantFail</a>(<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>.takeError());</Highlight></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnInitialized(std::move(SerializationErr));</Highlight></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal">        OnInitialized(std::move(<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>));</Highlight></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal">      &#125;,</Highlight></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">      SAs.<a href="/docs/api/structs/llvm/orc/sharedmemorymapper/symboladdrs/#a9d4ebc3aadbf05530a2b8c0263b946b4">Instance</a>, Reservation-&gt;first, std::move(FR));</Highlight></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368" lineLink="/docs/api/classes/llvm/orc/sharedmemorymapper/#a49a0e809cf10b6a741b5b9d62698073b"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/sharedmemorymapper/#a49a0e809cf10b6a741b5b9d62698073b">SharedMemoryMapper::deinitialize</a>(</Highlight></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;ExecutorAddr&gt;</a> Allocations,</Highlight></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/orc/memorymapper/#aedfe192af316b519758f8f400ff24ff5">MemoryMapper::OnDeinitializedFunction</a> OnDeinitialized) &#123;</Highlight></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal">  EPC.<a href="/docs/api/classes/llvm/orc/executorprocesscontrol/#a17f9962c6727ed170f8b494243302732">callSPSWrapperAsync</a>&lt;</Highlight></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/orc/rt/#ae643ba16206c473d4fa46b2e6891b495">rt::SPSExecutorSharedMemoryMapperServiceDeinitializeSignature</a>&gt;(</Highlight></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="normal">      SAs.<a href="/docs/api/structs/llvm/orc/sharedmemorymapper/symboladdrs/#a0e7041f46990f1e78c338e8b0c80d05f">Deinitialize</a>,</Highlight></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="normal">      &#91;OnDeinitialized = std::move(OnDeinitialized)&#93;(<a href="/docs/api/classes/llvm/error">Error</a> SerializationErr,</Highlight></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal">                                                     <a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>) </Highlight><Highlight kind="keyword">mutable</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SerializationErr) &#123;</Highlight></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="normal">          <a href="/docs/api/namespaces/llvm/#aa1e1474f15df639f0d874b21f15666f7">cantFail</a>(std::move(<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>));</Highlight></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnDeinitialized(std::move(SerializationErr));</Highlight></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal">        OnDeinitialized(std::move(<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>));</Highlight></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal">      &#125;,</Highlight></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="normal">      SAs.<a href="/docs/api/structs/llvm/orc/sharedmemorymapper/symboladdrs/#a9d4ebc3aadbf05530a2b8c0263b946b4">Instance</a>, Allocations);</Highlight></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386" lineLink="/docs/api/classes/llvm/orc/sharedmemorymapper/#ac8c1571f24dc447307937d7a1c82ee8b"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/sharedmemorymapper/#ac8c1571f24dc447307937d7a1c82ee8b">SharedMemoryMapper::release</a>(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;ExecutorAddr&gt;</a> Bases,</Highlight></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="normal">                                 <a href="/docs/api/classes/llvm/orc/memorymapper/#a002df15a1ca5b57f024af911d7854e90">OnReleasedFunction</a> OnReleased) &#123;</Highlight></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if (defined(LLVM&#95;ON&#95;UNIX) &amp;&amp; !defined(&#95;&#95;ANDROID&#95;&#95;)) || defined(&#95;WIN32)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">Error</a> Err = <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="normal">    std::lock&#95;guard&lt;std::mutex&gt; Lock(Mutex);</Highlight></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a> : Bases) &#123;</Highlight></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(LLVM&#95;ON&#95;UNIX)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;MVS&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (shmdt(Reservations&#91;<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>&#93;.LocalAddr) &lt; 0)</Highlight></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="normal">        Err = <a href="/docs/api/namespaces/llvm/#a71210b99d2ef87236d8505c1771a7ab1">joinErrors</a>(std::move(Err), <a href="/docs/api/namespaces/llvm/#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(<a href="/docs/api/namespaces/llvm/#ae075c94db10b09d6d5876d32219eaf0d">errnoAsErrorCode</a>()));</Highlight></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (munmap(Reservations&#91;<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>&#93;.LocalAddr, Reservations&#91;<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>&#93;.<a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>) != 0)</Highlight></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="normal">        Err = <a href="/docs/api/namespaces/llvm/#a71210b99d2ef87236d8505c1771a7ab1">joinErrors</a>(std::move(Err), <a href="/docs/api/namespaces/llvm/#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(<a href="/docs/api/namespaces/llvm/#ae075c94db10b09d6d5876d32219eaf0d">errnoAsErrorCode</a>()));</Highlight></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;WIN32)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!UnmapViewOfFile(Reservations&#91;<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>&#93;.LocalAddr))</Highlight></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="normal">        Err = <a href="/docs/api/namespaces/llvm/#a71210b99d2ef87236d8505c1771a7ab1">joinErrors</a>(std::move(Err),</Highlight></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="normal">                         <a href="/docs/api/namespaces/llvm/#ad10875fd499e8e285aaeef615e9b11aa">errorCodeToError</a>(<a href="/docs/api/namespaces/llvm/#af0799d74677708a87dee45acdd40bab2">mapWindowsError</a>(GetLastError())));</Highlight></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="normal">      Reservations.erase(<a href="/docs/api/namespaces/llvm/sampleprof/#a702f69807459cc25db5754a5f179d3fcaf6fbeb8fa9f451468611536b00878d41">Base</a>);</Highlight></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="normal">  EPC.<a href="/docs/api/classes/llvm/orc/executorprocesscontrol/#a17f9962c6727ed170f8b494243302732">callSPSWrapperAsync</a>&lt;</Highlight></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/orc/rt/#af7edf987a15b9ab28b0bd14558106a01">rt::SPSExecutorSharedMemoryMapperServiceReleaseSignature</a>&gt;(</Highlight></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420"><Highlight kind="normal">      SAs.<a href="/docs/api/structs/llvm/orc/sharedmemorymapper/symboladdrs/#a82b07ff1ab9b8c915254bbe8adb10666">Release</a>,</Highlight></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421"><Highlight kind="normal">      &#91;OnReleased = std::move(OnReleased),</Highlight></CodeLine>
+<Link id="l00422" /><CodeLine lineNumber="422"><Highlight kind="normal">       Err = std::move(Err)&#93;(<a href="/docs/api/classes/llvm/error">Error</a> SerializationErr, <a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>) </Highlight><Highlight kind="keyword">mutable</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00423" /><CodeLine lineNumber="423"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SerializationErr) &#123;</Highlight></CodeLine>
+<Link id="l00424" /><CodeLine lineNumber="424"><Highlight kind="normal">          <a href="/docs/api/namespaces/llvm/#aa1e1474f15df639f0d874b21f15666f7">cantFail</a>(std::move(<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>));</Highlight></CodeLine>
+<Link id="l00425" /><CodeLine lineNumber="425"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnReleased(</Highlight></CodeLine>
+<Link id="l00426" /><CodeLine lineNumber="426"><Highlight kind="normal">              <a href="/docs/api/namespaces/llvm/#a71210b99d2ef87236d8505c1771a7ab1">joinErrors</a>(std::move(Err), std::move(SerializationErr)));</Highlight></CodeLine>
+<Link id="l00427" /><CodeLine lineNumber="427"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00428" /><CodeLine lineNumber="428"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00429" /><CodeLine lineNumber="429"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnReleased(<a href="/docs/api/namespaces/llvm/#a71210b99d2ef87236d8505c1771a7ab1">joinErrors</a>(std::move(Err), std::move(<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>)));</Highlight></CodeLine>
+<Link id="l00430" /><CodeLine lineNumber="430"><Highlight kind="normal">      &#125;,</Highlight></CodeLine>
+<Link id="l00431" /><CodeLine lineNumber="431"><Highlight kind="normal">      SAs.<a href="/docs/api/structs/llvm/orc/sharedmemorymapper/symboladdrs/#a9d4ebc3aadbf05530a2b8c0263b946b4">Instance</a>, Bases);</Highlight></CodeLine>
+<Link id="l00432" /><CodeLine lineNumber="432"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00433" /><CodeLine lineNumber="433"><Highlight kind="normal">  OnReleased(<a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">make&#95;error&lt;StringError&gt;</a>(</Highlight></CodeLine>
+<Link id="l00434" /><CodeLine lineNumber="434"><Highlight kind="normal">      </Highlight><Highlight kind="stringliteral">&quot;SharedMemoryMapper is not supported on this platform yet&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00435" /><CodeLine lineNumber="435"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a2b43c21951d0948b34bcf7019949032d">inconvertibleErrorCode</a>()));</Highlight></CodeLine>
+<Link id="l00436" /><CodeLine lineNumber="436"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00437" /><CodeLine lineNumber="437"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00438" /><CodeLine lineNumber="438"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00439" /><CodeLine lineNumber="439" lineLink="/docs/api/classes/llvm/orc/sharedmemorymapper/#a4eac18316db606c0b211c40950acc2fa"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/sharedmemorymapper/#a4eac18316db606c0b211c40950acc2fa">SharedMemoryMapper::~SharedMemoryMapper</a>() &#123;</Highlight></CodeLine>
+<Link id="l00440" /><CodeLine lineNumber="440"><Highlight kind="normal">  std::lock&#95;guard&lt;std::mutex&gt; Lock(Mutex);</Highlight></CodeLine>
+<Link id="l00441" /><CodeLine lineNumber="441"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;R : Reservations) &#123;</Highlight></CodeLine>
+<Link id="l00442" /><CodeLine lineNumber="442"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00443" /><CodeLine lineNumber="443"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(LLVM&#95;ON&#95;UNIX) &amp;&amp; !defined(&#95;&#95;ANDROID&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00444" /><CodeLine lineNumber="444"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00445" /><CodeLine lineNumber="445"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;MVS&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00446" /><CodeLine lineNumber="446"><Highlight kind="normal">    shmdt(R.second.LocalAddr);</Highlight></CodeLine>
+<Link id="l00447" /><CodeLine lineNumber="447"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00448" /><CodeLine lineNumber="448"><Highlight kind="normal">    munmap(R.second.LocalAddr, R.second.Size);</Highlight></CodeLine>
+<Link id="l00449" /><CodeLine lineNumber="449"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00450" /><CodeLine lineNumber="450"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00451" /><CodeLine lineNumber="451"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;WIN32)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00452" /><CodeLine lineNumber="452"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00453" /><CodeLine lineNumber="453"><Highlight kind="normal">    UnmapViewOfFile(R.second.LocalAddr);</Highlight></CodeLine>
+<Link id="l00454" /><CodeLine lineNumber="454"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00455" /><CodeLine lineNumber="455"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00456" /><CodeLine lineNumber="456"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00457" /><CodeLine lineNumber="457"><Highlight kind="normal">    (void)R;</Highlight></CodeLine>
+<Link id="l00458" /><CodeLine lineNumber="458"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00459" /><CodeLine lineNumber="459"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00460" /><CodeLine lineNumber="460"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00461" /><CodeLine lineNumber="461"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00462" /><CodeLine lineNumber="462"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00463" /><CodeLine lineNumber="463"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace orc</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00464" /><CodeLine lineNumber="464"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00465" /><CodeLine lineNumber="465"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

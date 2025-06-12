@@ -1,0 +1,324 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/codegen/indirectthunks-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `IndirectThunks.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Contains a base ThunkInserter class that simplifies injection of MI thunks as well as a default implementation of MachineFunctionPass wrapping several <code>ThunkInserter</code>s for targets to extend. <a href="#details">More...</a>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/CodeGen/MachineFunction.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/machinefunction-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/MachineFunctionPass.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/machinefunctionpass-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/MachineModuleInfo.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/machinemoduleinfo-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/IRBuilder.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/irbuilder-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Module.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/module-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/thunkinserter">ThunkInserter&lt;Derived, InsertedThunksTy&gt;</a></>}>
+This class assists in inserting MI thunk functions into the module and rewriting the existing machine functions to call these thunks. <a href="/docs/api/classes/llvm/thunkinserter/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/thunkinserterpass">ThunkInserterPass&lt;Inserters&gt;</a></>}>
+Basic implementation of <a href="/docs/api/classes/llvm/machinefunctionpass">MachineFunctionPass</a> wrapping one or more <code><a href="/docs/api/classes/llvm/thunkinserter">ThunkInserter</a></code>s passed as type parameters. <a href="/docs/api/classes/llvm/thunkinserterpass/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Contains a base ThunkInserter class that simplifies injection of MI thunks as well as a default implementation of MachineFunctionPass wrapping several <code>ThunkInserter</code>s for targets to extend.
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===---- IndirectThunks.h - Indirect thunk insertion helpers ---&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="comment">/// \\file</Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="comment">/// Contains a base ThunkInserter class that simplifies injection of MI thunks</Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="comment">/// as well as a default implementation of MachineFunctionPass wrapping</Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="comment">/// several &#96;ThunkInserter&#96;s for targets to extend.</Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;CODEGEN&#95;INDIRECTTHUNKS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;CODEGEN&#95;INDIRECTTHUNKS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/machinefunction-h">llvm/CodeGen/MachineFunction.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/machinefunctionpass-h">llvm/CodeGen/MachineFunctionPass.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/machinemoduleinfo-h">llvm/CodeGen/MachineModuleInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/irbuilder-h">llvm/IR/IRBuilder.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/module-h">llvm/IR/Module.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="comment">/// This class assists in inserting MI thunk functions into the module and</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="comment">/// rewriting the existing machine functions to call these thunks.</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="comment">/// One of the common cases is implementing security mitigations that involve</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="comment">/// replacing some machine code patterns with calls to special thunk functions.</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="comment">/// Inserting a module pass late in the codegen pipeline may increase memory</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="comment">/// usage, as it serializes the transformations and forces preceding passes to</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="comment">/// produce machine code for all functions before running the module pass.</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="comment">/// For that reason, ThunkInserter can be driven by a MachineFunctionPass by</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">/// passing one MachineFunction at a time to its &#96;run(MMI, MF)&#96; method.</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">/// Then, the derived class should</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">/// &#42; call createThunkFunction from its insertThunks method exactly once for</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">///   each of the thunk functions to be inserted</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">/// &#42; populate the thunk in its populateThunk method</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">/// Note that if some other pass is responsible for rewriting the functions,</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">/// the insertThunks method may simply create all possible thunks at once,</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="comment">/// probably postponed until the first occurrence of possibly affected MF.</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="comment">/// Alternatively, insertThunks method can rewrite MF by itself and only insert</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="comment">/// the thunks being called. In that case InsertedThunks variable can be used</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="comment">/// to track which thunks were already inserted.</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="comment">/// In any case, the thunk function has to be inserted on behalf of some other</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">/// function and then populated on its own &quot;iteration&quot; later - this is because</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">/// MachineFunctionPass will see the newly created functions, but they first</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="comment">/// have to go through the preceding passes from the same pass manager,</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="comment">/// possibly even through the instruction selector.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="comment">// FIXME Maybe implement a documented and less surprising way of modifying</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="comment">//       the module from a MachineFunctionPass that is restricted to inserting</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight><Highlight kind="comment">//       completely new functions to the module.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Derived, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> InsertedThunksTy = </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">&gt;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61" lineLink="/docs/api/classes/llvm/thunkinserter"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/thunkinserter">ThunkInserter</a> &#123;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">  Derived &amp;getDerived() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">Derived &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">); &#125;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// A variable used to track whether (and possible which) thunks have been</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// inserted so far. InsertedThunksTy is usually a bool, but can be other types</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// to represent more than one type of thunk. Requires an |= operator to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// accumulate results.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  InsertedThunksTy InsertedThunks;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Interface for subclasses to use.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="comment">  /// Create an empty thunk function.</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">  /// The new function will eventually be passed to populateThunk. If multiple</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">  /// thunks are created, populateThunk can distinguish them by their names.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77" lineLink="/docs/api/classes/llvm/thunkinserter/#a1a95b72d4c28ba76251171967da03b01"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/thunkinserter/#a1a95b72d4c28ba76251171967da03b01">createThunkFunction</a>(<a href="/docs/api/classes/llvm/machinemoduleinfo">MachineModuleInfo</a> &amp;MMI, <a href="/docs/api/classes/llvm/stringref">StringRef</a> Name,</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">                           </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/comdat">Comdat</a> = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">, <a href="/docs/api/classes/llvm/stringref">StringRef</a> TargetAttrs = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Interface for subclasses to implement.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Note: all functions are non-virtual and are called via getDerived().</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Note: only doInitialization() has an implementation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="comment">  /// Initializes thunk inserter.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87" lineLink="/docs/api/classes/llvm/thunkinserter/#a740bcd15c5627326e077787331b1d60a"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/thunkinserter/#a740bcd15c5627326e077787331b1d60a">doInitialization</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">  /// Returns common prefix for thunk function&#39;s names.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/classes/llvm/thunkinserter/#a7d87c609ee113d729a15013e29da1030"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/classes/llvm/thunkinserter/#a7d87c609ee113d729a15013e29da1030">getThunkPrefix</a>(); </Highlight><Highlight kind="comment">// undefined</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="comment">  /// Checks if MF may use thunks (true - maybe, false - definitely not).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93" lineLink="/docs/api/classes/llvm/thunkinserter/#a0e76d9a11bcf2f5bb6b8842ae88ebf9e"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/thunkinserter/#a0e76d9a11bcf2f5bb6b8842ae88ebf9e">mayUseThunk</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF); </Highlight><Highlight kind="comment">// undefined</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">  /// Rewrites the function if necessary, returns the set of thunks added.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96" lineLink="/docs/api/classes/llvm/thunkinserter/#a1f77fc3ad826da7fc3c13df75da3c8ff"><Highlight kind="normal">  InsertedThunksTy <a href="/docs/api/classes/llvm/thunkinserter/#a1f77fc3ad826da7fc3c13df75da3c8ff">insertThunks</a>(<a href="/docs/api/classes/llvm/machinemoduleinfo">MachineModuleInfo</a> &amp;MMI, <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF,</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">                                InsertedThunksTy ExistingThunks); </Highlight><Highlight kind="comment">// undefined</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  /// Populate the thunk function with instructions.</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="comment">  /// If multiple thunks are created, the content that must be inserted in the</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">  /// thunk function body should be derived from the MF&#39;s name.</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="comment">  /// Depending on the preceding passes in the pass manager, by the time</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">  /// populateThunk is called, MF may have a few target-specific instructions</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">  /// (such as a single MBB containing the return instruction).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107" lineLink="/docs/api/classes/llvm/thunkinserter/#ad70655ccbb3ff3439dfe9fabddd15625"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/thunkinserter/#ad70655ccbb3ff3439dfe9fabddd15625">populateThunk</a>(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF); </Highlight><Highlight kind="comment">// undefined</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110" lineLink="/docs/api/classes/llvm/thunkinserter/#ad580754b469f950b5e7cb2a453f41768"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/thunkinserter/#ad580754b469f950b5e7cb2a453f41768">init</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M) &#123;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">    InsertedThunks = InsertedThunksTy&#123;&#125;;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">    getDerived().doInitialization(M);</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// return &#96;true&#96; if &#96;MMI&#96; or &#96;MF&#96; was modified</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115" lineLink="/docs/api/classes/llvm/thunkinserter/#a547880d64e46c0d922e0bb0f0d7f5fb9"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/thunkinserter/#a547880d64e46c0d922e0bb0f0d7f5fb9">run</a>(<a href="/docs/api/classes/llvm/machinemoduleinfo">MachineModuleInfo</a> &amp;MMI, <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF);</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Derived, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> InsertedThunksTy&gt;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119" lineLink="/docs/api/classes/llvm/thunkinserter/#a1a95b72d4c28ba76251171967da03b01"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/thunkinserter/#a1a95b72d4c28ba76251171967da03b01">ThunkInserter&lt;Derived, InsertedThunksTy&gt;::createThunkFunction</a>(</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/machinemoduleinfo">MachineModuleInfo</a> &amp;MMI, <a href="/docs/api/classes/llvm/stringref">StringRef</a> Name, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/comdat">Comdat</a>,</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/stringref">StringRef</a> TargetAttrs) &#123;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Name.starts&#95;with(getDerived().<a href="/docs/api/classes/llvm/thunkinserter/#a7d87c609ee113d729a15013e29da1030">getThunkPrefix</a>()) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">         </Highlight><Highlight kind="stringliteral">&quot;Created a thunk with an unexpected prefix!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/module">Module</a> &amp;M = </Highlight><Highlight kind="keyword">const&#95;cast&lt;</Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/module">Module</a> &amp;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(&#42;MMI.<a href="/docs/api/classes/llvm/machinemoduleinfo/#a6a05f73ad80e58a532ea879ccc166b66">getModule</a>());</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp;Ctx = M.getContext();</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/classes/llvm/type">Type</a> = <a href="/docs/api/classes/llvm/functiontype/#af8be7844c269f201ebcee1e15048c378">FunctionType::get</a>(<a href="/docs/api/classes/llvm/type/#a6e20e76960d952de088354cbcd14c3ab">Type::getVoidTy</a>(Ctx), </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = <a href="/docs/api/classes/llvm/function/#a05d7aedbbdc0fd24e8bc27edfe9c603f">Function::Create</a>(<a href="/docs/api/classes/llvm/type">Type</a>,</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">                                 <a href="/docs/api/classes/llvm/comdat">Comdat</a> ? <a href="/docs/api/classes/llvm/globalvalue/#aedfa75f0c85c4aa85b257f066fbea57caf2b592edf18170e7aff4e8f3bae3360c">GlobalValue::LinkOnceODRLinkage</a></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">                                        : <a href="/docs/api/classes/llvm/globalvalue/#aedfa75f0c85c4aa85b257f066fbea57ca1511edd03e02d1f3dd277a3c6abf6ad5">GlobalValue::InternalLinkage</a>,</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">                                 Name, &amp;M);</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/comdat">Comdat</a>) &#123;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;setVisibility(<a href="/docs/api/classes/llvm/globalvalue/#a9141f967188383108a69cc1b8ed3c195a7eade123587a08e674f2ca72e2443771">GlobalValue::HiddenVisibility</a>);</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;setComdat(M.getOrInsertComdat(Name));</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Add Attributes so that we don&#39;t create a frame, unwind information, or</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// inline.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">  AttrBuilder <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>(Ctx);</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.addAttribute(llvm::Attribute::NoUnwind);</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.addAttribute(llvm::Attribute::Naked);</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TargetAttrs != </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.addAttribute(</Highlight><Highlight kind="stringliteral">&quot;target-features&quot;</Highlight><Highlight kind="normal">, TargetAttrs);</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;addFnAttrs(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>);</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Populate our function a bit so that we can verify.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;Entry = <a href="/docs/api/classes/llvm/basicblock/#a4a5b798214be930cf8e133c032ba0129">BasicBlock::Create</a>(Ctx, </Highlight><Highlight kind="stringliteral">&quot;entry&quot;</Highlight><Highlight kind="normal">, <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/irbuilder">IRBuilder&lt;&gt;</a> Builder(Entry);</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">  Builder.<a href="/docs/api/classes/llvm/irbuilderbase/#aa6536556982b7e6e2e5884e471f3ce6b">CreateRetVoid</a>();</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// MachineFunctions aren&#39;t created automatically for the IR-level constructs</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// we already made. Create them and insert them into the module.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF = MMI.<a href="/docs/api/classes/llvm/machinemoduleinfo/#a89ccc89e9bd5881953bd1524a0d29f84">getOrCreateMachineFunction</a>(&#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// A MachineBasicBlock must not be created for the Entry block; code</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// generation from an empty naked function in C source code also does not</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// generate one.  At least GlobalISel asserts if this invariant isn&#39;t</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// respected.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Set MF properties. We never use vregs...</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">  MF.<a href="/docs/api/classes/llvm/machinefunction/#ac1f888bba00f32cb4f9a0010c958f397">getProperties</a>().<a href="/docs/api/classes/llvm/machinefunctionproperties/#aa7780563d7ca260d0ae67d957b56427f">set</a>(<a href="/docs/api/classes/llvm/machinefunctionproperties/#ad85237c6c667e4713efe8921e9c32ac1a72f7d830dd5ddb30f06d8e9639558ac3">MachineFunctionProperties::Property::NoVRegs</a>);</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Derived, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> InsertedThunksTy&gt;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165" lineLink="/docs/api/classes/llvm/thunkinserter/#a547880d64e46c0d922e0bb0f0d7f5fb9"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/thunkinserter/#a547880d64e46c0d922e0bb0f0d7f5fb9">ThunkInserter&lt;Derived, InsertedThunksTy&gt;::run</a>(<a href="/docs/api/classes/llvm/machinemoduleinfo">MachineModuleInfo</a> &amp;MMI,</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">                                                   <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF) &#123;</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// If MF is not a thunk, check to see if we need to insert a thunk.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!MF.<a href="/docs/api/classes/llvm/machinefunction/#a3d142c9e7c066059e15232c56dec9e2e">getName</a>().<a href="/docs/api/classes/llvm/stringref/#a2cd8968ff703aaeb395dcd63f6805ff1">starts&#95;with</a>(getDerived().<a href="/docs/api/classes/llvm/thunkinserter/#a7d87c609ee113d729a15013e29da1030">getThunkPrefix</a>())) &#123;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Only add thunks if one of the functions may use them.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!getDerived().<a href="/docs/api/classes/llvm/thunkinserter/#a0e76d9a11bcf2f5bb6b8842ae88ebf9e">mayUseThunk</a>(MF))</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// The target can use InsertedThunks to detect whether relevant thunks</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// have already been inserted.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// FIXME: Provide the way for insertThunks to notify us whether it changed</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">    </Highlight><Highlight kind="comment">//        the MF, instead of conservatively assuming it did.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">    InsertedThunks |= getDerived().insertThunks(MMI, MF, InsertedThunks);</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// If this &#42;is&#42; a thunk function, we need to populate it with the correct MI.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">  getDerived().populateThunk(MF);</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="comment">/// Basic implementation of MachineFunctionPass wrapping one or more</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="comment">/// &#96;ThunkInserter&#96;s passed as type parameters.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal">... Inserters&gt;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189" lineLink="/docs/api/classes/llvm/thunkinserterpass"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/thunkinserterpass/#ad508add0aef5d4c30a41660c5b4089bc">ThunkInserterPass</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinefunctionpass/#a29c81d2386f4a727c6d33413807530c8">MachineFunctionPass</a> &#123;</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191" lineLink="/docs/api/classes/llvm/thunkinserterpass/#ace02be893308e95c7ecddb6e74144660"><Highlight kind="normal">  std::tuple&lt;Inserters...&gt; <a href="/docs/api/classes/llvm/thunkinserterpass/#ace02be893308e95c7ecddb6e74144660">TIs</a>;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193" lineLink="/docs/api/classes/llvm/thunkinserterpass/#ad508add0aef5d4c30a41660c5b4089bc"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/thunkinserterpass/#ad508add0aef5d4c30a41660c5b4089bc">ThunkInserterPass</a>(</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>) : <a href="/docs/api/classes/llvm/machinefunctionpass/#a29c81d2386f4a727c6d33413807530c8">MachineFunctionPass</a>(<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196" lineLink="/docs/api/classes/llvm/thunkinserterpass/#a6baa08f8f2563ccc46c7f6969e9ab400"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/thunkinserterpass/#a6baa08f8f2563ccc46c7f6969e9ab400">doInitialization</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M)</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">    initTIs(M, <a href="/docs/api/classes/llvm/thunkinserterpass/#ace02be893308e95c7ecddb6e74144660">TIs</a>);</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201" lineLink="/docs/api/classes/llvm/thunkinserterpass/#a6fd7809c000f7c16bc390bce02924a7e"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/thunkinserterpass/#a6fd7809c000f7c16bc390bce02924a7e">runOnMachineFunction</a>(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF)</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;MMI = <a href="/docs/api/classes/llvm/pass/#a4863e5e463fb79955269fbf7fbf52b80">getAnalysis&lt;MachineModuleInfoWrapperPass&gt;</a>().getMMI();</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> runTIs(MMI, MF, <a href="/docs/api/classes/llvm/thunkinserterpass/#ace02be893308e95c7ecddb6e74144660">TIs</a>);</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal">... ThunkInserterT&gt;</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> initTIs(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M,</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">                      std::tuple&lt;ThunkInserterT...&gt; &amp;ThunkInserters) &#123;</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">    (..., std::get&lt;ThunkInserterT&gt;(ThunkInserters).init(M));</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal">... ThunkInserterT&gt;</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> runTIs(MachineModuleInfo &amp;MMI, MachineFunction &amp;MF,</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">                     std::tuple&lt;ThunkInserterT...&gt; &amp;ThunkInserters) &#123;</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (0 | ... | std::get&lt;ThunkInserterT&gt;(ThunkInserters).run(MMI, MF));</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

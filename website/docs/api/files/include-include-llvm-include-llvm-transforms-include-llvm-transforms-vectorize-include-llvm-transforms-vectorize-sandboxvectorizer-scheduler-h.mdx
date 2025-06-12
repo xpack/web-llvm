@@ -1,0 +1,292 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/scheduler-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `Scheduler.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/SandboxIR/Instruction.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/dependencygraph-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="queue"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/sandboxir">llvm::sandboxir</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/sandboxir/prioritycmp">PriorityCmp</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/sandboxir/readylistcontainer">ReadyListContainer</a></>}>
+The list holding nodes that are ready to schedule. Used by the scheduler. <a href="/docs/api/classes/llvm/sandboxir/readylistcontainer/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/sandboxir/schedbundle">SchedBundle</a></>}>
+The nodes that need to be scheduled back-to-back in a single scheduling cycle form a <a href="/docs/api/classes/llvm/sandboxir/schedbundle">SchedBundle</a>. <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/sandboxir/scheduler">Scheduler</a></>}>
+The list scheduler. <a href="/docs/api/classes/llvm/sandboxir/scheduler/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- Scheduler.h ----------------------------------------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This is the bottom-up list scheduler used by the vectorizer. It is used for</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// checking the legality of vectorization and for scheduling instructions in</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// such a way that makes vectorization possible, if legal.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The legality check is performed by &#96;trySchedule(Instrs)&#96;, which will try to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">// schedule the IR until all instructions in &#96;Instrs&#96; can be scheduled together</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">// back-to-back. If this fails then it is illegal to vectorize &#96;Instrs&#96;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Internally the scheduler uses the vectorizer-specific DependencyGraph class.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;TRANSFORMS&#95;VECTORIZE&#95;SANDBOXVECTORIZER&#95;SCHEDULER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;TRANSFORMS&#95;VECTORIZE&#95;SANDBOXVECTORIZER&#95;SCHEDULER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/sandboxir/instruction-h">llvm/SandboxIR/Instruction.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/dependencygraph-h">llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;queue&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/sandboxir">llvm::sandboxir</a> &#123;</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30" lineLink="/docs/api/classes/llvm/sandboxir/prioritycmp"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/sandboxir/prioritycmp">PriorityCmp</a> &#123;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32" lineLink="/docs/api/classes/llvm/sandboxir/prioritycmp/#a0bb88b086ad7f839e857adcba9537fe6"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/prioritycmp/#a0bb88b086ad7f839e857adcba9537fe6">operator()</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/dgnode">DGNode</a> &#42;N1, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/dgnode">DGNode</a> &#42;N2) &#123;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// TODO: This should be a hierarchical comparator.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> N1-&gt;<a href="/docs/api/classes/llvm/sandboxir/dgnode/#ad6adf15fe451a7d857cea3f8a1905f81">getInstruction</a>()-&gt;<a href="/docs/api/classes/llvm/sandboxir/instruction/#ad1664de8206ba30fc8d13a01850f42db">comesBefore</a>(N2-&gt;<a href="/docs/api/classes/llvm/sandboxir/dgnode/#ad6adf15fe451a7d857cea3f8a1905f81">getInstruction</a>());</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">/// The list holding nodes that are ready to schedule. Used by the scheduler.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39" lineLink="/docs/api/classes/llvm/sandboxir/readylistcontainer"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/sandboxir/readylistcontainer/#afc706e3727cf14ff2b5899d648c9a5f6">ReadyListContainer</a> &#123;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/prioritycmp">PriorityCmp</a> Cmp;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">  /// Control/Other dependencies are not modeled by the DAG to save memory.</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">  /// These have to be modeled in the ready list for correctness.</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">  /// This means that the list will hold back nodes that need to meet such</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">  /// unmodeled dependencies.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  std::priority&#95;queue&lt;DGNode &#42;, std::vector&lt;DGNode &#42;&gt;, <a href="/docs/api/classes/llvm/sandboxir/prioritycmp">PriorityCmp</a>&gt; List;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48" lineLink="/docs/api/classes/llvm/sandboxir/readylistcontainer/#afc706e3727cf14ff2b5899d648c9a5f6"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/readylistcontainer/#afc706e3727cf14ff2b5899d648c9a5f6">ReadyListContainer</a>() : List(Cmp) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49" lineLink="/docs/api/classes/llvm/sandboxir/readylistcontainer/#ab2adde662d63350b0903bd45a96bc1af"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/readylistcontainer/#ab2adde662d63350b0903bd45a96bc1af">insert</a>(<a href="/docs/api/classes/llvm/sandboxir/dgnode">DGNode</a> &#42;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>) &#123; List.push(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>); &#125;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50" lineLink="/docs/api/classes/llvm/sandboxir/readylistcontainer/#a6ac9fac0bc07a9fa75b2899e6499e9f4"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/dgnode">DGNode</a> &#42;<a href="/docs/api/classes/llvm/sandboxir/readylistcontainer/#a6ac9fac0bc07a9fa75b2899e6499e9f4">pop</a>() &#123;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;Back = List.top();</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">    List.pop();</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Back;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55" lineLink="/docs/api/classes/llvm/sandboxir/readylistcontainer/#a3780d00e2283c0f0a8063d682cbdf525"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/readylistcontainer/#a3780d00e2283c0f0a8063d682cbdf525">empty</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> List.empty(); &#125;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56" lineLink="/docs/api/classes/llvm/sandboxir/readylistcontainer/#aa4f2abc34f638bee18f22058271275ba"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/readylistcontainer/#aa4f2abc34f638bee18f22058271275ba">clear</a>() &#123; List = &#123;&#125;; &#125;</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef NDEBUG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/readylistcontainer/#a172b90b3c17b46d3265f2edf6f8bac85">dump</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#aa863693eef567397d9c292da5bf22d34">LLVM&#95;DUMP&#95;METHOD</a> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/readylistcontainer/#a172b90b3c17b46d3265f2edf6f8bac85">dump</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// NDEBUG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="comment">/// The nodes that need to be scheduled back-to-back in a single scheduling</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="comment">/// cycle form a SchedBundle.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a77290b0a5c2ab286f0ac1023010594d8">SchedBundle</a> &#123;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#a62e263929ff20d8211158b471703f9d6"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a62e263929ff20d8211158b471703f9d6">ContainerTy</a> = <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;DGNode &#42;, 4&gt;</a>;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a62e263929ff20d8211158b471703f9d6">ContainerTy</a> Nodes;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">  /// Called by the DGNode destructor to avoid accessing freed memory.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> eraseFromBundle(<a href="/docs/api/classes/llvm/sandboxir/dgnode">DGNode</a> &#42;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>) &#123; Nodes.erase(<a href="/docs/api/namespaces/llvm/#a086e9fbdb06276db7753101a08a63adf">find</a>(Nodes, <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>)); &#125;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/dgnode/#a5bd44e119740ec6771f922bba94a8ab2">DGNode::~DGNode</a>(); </Highlight><Highlight kind="comment">// For eraseFromBundle().</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#a77290b0a5c2ab286f0ac1023010594d8"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a77290b0a5c2ab286f0ac1023010594d8">SchedBundle</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#a163f51beccbf4c13d8ce92cd8083ce02"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a163f51beccbf4c13d8ce92cd8083ce02">SchedBundle</a>(<a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a62e263929ff20d8211158b471703f9d6">ContainerTy</a> &amp;&amp;Nodes) : Nodes(<a href="/docs/api/namespaces/std">std</a>::<a href="/docs/api/namespaces/llvm/#abfc9c7ecf70f66901e439f7c04ef3dbb">move</a>(Nodes)) &#123;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> : this-&gt;Nodes)</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>-&gt;setSchedBundle(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  &#125;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">  /// Copy CTOR (unimplemented).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#a9c38a9c22b3e19f71f455aac246a917b"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a9c38a9c22b3e19f71f455aac246a917b">SchedBundle</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a77290b0a5c2ab286f0ac1023010594d8">SchedBundle</a> &amp;<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  /// Copy Assignment (unimplemented).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#a2b68e294d13237f1c7234b46b277d131"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a77290b0a5c2ab286f0ac1023010594d8">SchedBundle</a> &amp;<a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a2b68e294d13237f1c7234b46b277d131">operator=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a77290b0a5c2ab286f0ac1023010594d8">SchedBundle</a> &amp;<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#a61420e352aecd14a2604b3df5cc3d362"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a61420e352aecd14a2604b3df5cc3d362">~SchedBundle</a>() &#123;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> : this-&gt;Nodes)</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>-&gt;clearSchedBundle();</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#ae17a25758db3b4e9c448069b5622d899"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#ae17a25758db3b4e9c448069b5622d899">empty</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Nodes.empty(); &#125;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#ab8f3e62604745a8329dfdfab4b10b48f"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/dgnode">DGNode</a> &#42;<a href="/docs/api/classes/llvm/sandboxir/schedbundle/#ab8f3e62604745a8329dfdfab4b10b48f">back</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Nodes.back(); &#125;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#aba9aea46eb0e9e270d7e04e6fb48413b"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/sandboxir/schedbundle/#aba9aea46eb0e9e270d7e04e6fb48413b">iterator</a> = <a href="/docs/api/classes/llvm/smallvectortemplatecommon/#a9eae7ba1448d9866beca95a042de2e11">ContainerTy::iterator</a>;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#ad0dd64009ef36af343b7b3a9591c40e4"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/sandboxir/schedbundle/#ad0dd64009ef36af343b7b3a9591c40e4">const&#95;iterator</a> = <a href="/docs/api/classes/llvm/smallvectortemplatecommon/#aa11b903431c1931920939bac6b5293a2">ContainerTy::const&#95;iterator</a>;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#a3b0ce3d9bd8dfd442de419dbfed12748"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#aba9aea46eb0e9e270d7e04e6fb48413b">iterator</a> <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a3b0ce3d9bd8dfd442de419dbfed12748">begin</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Nodes.begin(); &#125;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#a381de2bc9bfb56eac548a397d45c666c"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#aba9aea46eb0e9e270d7e04e6fb48413b">iterator</a> <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a381de2bc9bfb56eac548a397d45c666c">end</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Nodes.end(); &#125;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#a6f62cd6464930edb06ba6103c1513651"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#ad0dd64009ef36af343b7b3a9591c40e4">const&#95;iterator</a> <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a6f62cd6464930edb06ba6103c1513651">begin</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Nodes.begin(); &#125;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97" lineLink="/docs/api/classes/llvm/sandboxir/schedbundle/#ac8164a215ff46e6de0fb53ac1708be3a"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#ad0dd64009ef36af343b7b3a9591c40e4">const&#95;iterator</a> <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#ac8164a215ff46e6de0fb53ac1708be3a">end</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Nodes.end(); &#125;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">  /// \\Returns the bundle node that comes before the others in program order.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/dgnode">DGNode</a> &#42;<a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a2de3d46c20d973de8710506ad587749c">getTop</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">  /// \\Returns the bundle node that comes after the others in program order.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/dgnode">DGNode</a> &#42;<a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a0dda45551d702439204dbc2ef32eade7">getBot</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">  /// Move all bundle instructions to \\p Where back-to-back.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#af592edb1be21d93d852c97cb1db2dea5">cluster</a>(<a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> Where);</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef NDEBUG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a820b28f17e40381b84d8483409420ff7">dump</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#aa863693eef567397d9c292da5bf22d34">LLVM&#95;DUMP&#95;METHOD</a> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/schedbundle/#a820b28f17e40381b84d8483409420ff7">dump</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="comment">/// The list scheduler.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111" lineLink="/docs/api/classes/llvm/sandboxir/scheduler"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">Scheduler &#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">  /// This is a list-scheduler and this is the list containing the instructions</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">  /// that are ready, meaning that all their dependency successors have already</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">  /// been scheduled.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/readylistcontainer">ReadyListContainer</a> ReadyList;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">  /// The dependency graph is used by the scheduler to determine the legal</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">  /// ordering of instructions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/dependencygraph">DependencyGraph</a> DAG;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">  /// This is the top of the schedule, i.e. the location where the scheduler</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">  /// is about to place the scheduled instructions. It gets updated as we</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">  /// schedule.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  std::optional&lt;BasicBlock::iterator&gt; ScheduleTopItOpt;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// TODO: This is wasting memory in exchange for fast removal using a raw ptr.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;SchedBundle &#42;, std::unique&#95;ptr&lt;SchedBundle&gt;</a>&gt; Bndls;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">  /// The BB that we are currently scheduling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/sandboxir/#a60f87746e4945fda7ea3d5a983c9b62c">BasicBlock</a> &#42;ScheduledBB = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="comment">  /// \\Returns a scheduling bundle containing \\p Instrs.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/schedbundle">SchedBundle</a> &#42;createBundle(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Instruction &#42;&gt;</a> Instrs);</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> eraseBundle(<a href="/docs/api/classes/llvm/sandboxir/schedbundle">SchedBundle</a> &#42;SB);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="comment">  /// Schedule nodes until we can schedule \\p Instrs back-to-back.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> tryScheduleUntil(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Instruction &#42;&gt;</a> Instrs);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">  /// Schedules all nodes in \\p Bndl, marks them as scheduled, updates the</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">  /// UnscheduledSuccs counter of all dependency predecessors, and adds any of</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">  /// them that become ready to the ready list.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> scheduleAndUpdateReadyList(<a href="/docs/api/classes/llvm/sandboxir/schedbundle">SchedBundle</a> &amp;Bndl);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="comment">  /// The scheduling state of the instructions in the bundle.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">enum class</Highlight><Highlight kind="normal"> BndlSchedState &#123;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">    NoneScheduled, </Highlight><Highlight kind="comment">///&gt; No instruction in the bundle was previously scheduled.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">    PartiallyOrDifferentlyScheduled, </Highlight><Highlight kind="comment">///&gt; Only some of the instrs in the bundle</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="comment">                                     /// were previously scheduled, or all of</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">                                     /// them were but not in the same</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="comment">                                     /// SchedBundle.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">    FullyScheduled, </Highlight><Highlight kind="comment">///&gt; All instrs in the bundle were previously scheduled and</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="comment">                    /// were in the same SchedBundle.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">  &#125;;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="comment">  /// \\Returns whether none/some/all of \\p Instrs have been scheduled.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">  BndlSchedState getBndlSchedState(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Instruction &#42;&gt;</a> Instrs) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="comment">  /// Destroy the top-most part of the schedule that includes \\p Instrs.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> trimSchedule(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Instruction &#42;&gt;</a> Instrs);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="comment">  /// Disable copies.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/codegen/machinescheduler-cpp/#a1c735bd46fe1e1b5f6f85a710d99e149">Scheduler</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Scheduler &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">  Scheduler &amp;operator=(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Scheduler &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156" lineLink="/docs/api/classes/llvm/sandboxir/scheduler/#afc7ba921cb118ef7f7a8b0fac4188350"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/scheduler/#afc7ba921cb118ef7f7a8b0fac4188350">Scheduler</a>(<a href="/docs/api/classes/llvm/aaresults">AAResults</a> &amp;<a href="/docs/api/namespaces/llvm/aa">AA</a>, <a href="/docs/api/classes/llvm/sandboxir/context">Context</a> &amp;Ctx) : DAG(<a href="/docs/api/namespaces/llvm/aa">AA</a>, Ctx) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157" lineLink="/docs/api/classes/llvm/sandboxir/scheduler/#ae5196b707393b2021e397b3ccc989151"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sandboxir/scheduler/#ae5196b707393b2021e397b3ccc989151">~Scheduler</a>() &#123;&#125;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="comment">  /// Tries to build a schedule that includes all of \\p Instrs scheduled at the</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="comment">  /// same scheduling cycle. This essentially checks that there are no</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="comment">  /// dependencies among \\p Instrs. This function may involve scheduling</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="comment">  /// intermediate instructions or canceling and re-scheduling if needed.</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="comment">  /// \\Returns true on success, false otherwise.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/scheduler/#a9c67d906d22a6018e3ff649bafed6a1a">trySchedule</a>(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Instruction &#42;&gt;</a> Instrs);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="comment">  /// Clear the scheduler&#39;s state, including the DAG.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165" lineLink="/docs/api/classes/llvm/sandboxir/scheduler/#abf8f36441eb2768093b280ec47ab22fc"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/scheduler/#abf8f36441eb2768093b280ec47ab22fc">clear</a>() &#123;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">    Bndls.clear();</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// TODO: clear view once it lands.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">    DAG.clear();</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">    ReadyList.clear();</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">    ScheduleTopItOpt = std::nullopt;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">    ScheduledBB = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Bndls.empty() &amp;&amp; DAG.empty() &amp;&amp; ReadyList.empty() &amp;&amp;</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">           !ScheduleTopItOpt &amp;&amp; ScheduledBB == </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal"> &amp;&amp;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;Expected empty state!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef NDEBUG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/scheduler/#a6a39dd033ba9a22a413f05b32f498509">dump</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#aa863693eef567397d9c292da5bf22d34">LLVM&#95;DUMP&#95;METHOD</a> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sandboxir/scheduler/#a6a39dd033ba9a22a413f05b32f498509">dump</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm::sandboxir</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;TRANSFORMS&#95;VECTORIZE&#95;SANDBOXVECTORIZER&#95;SCHEDULER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

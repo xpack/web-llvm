@@ -1,0 +1,236 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/valueprofilecollector
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ValueProfileCollector` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Utility analysis that determines what values are worth profiling. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::ValueProfileCollector</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="Transforms/Instrumentation/ValueProfileCollector.h"
+  permalink="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a50d7cc1c6703d27214c819133e2f1c2d">ValueProfileCollector</a> (Function &amp;Fn, TargetLibraryInfo &amp;TLI)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  name={<><a href="#ab95bf7037940be7329308cfb90c0b724">ValueProfileCollector</a> (ValueProfileCollector &amp;&amp;)=delete</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  name={<><a href="#a2fbfb13e2bd71b792b862ff8a84ec9e0">ValueProfileCollector</a> (const ValueProfileCollector &amp;)=delete</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Destructor Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a0073f9fb1fa718484c55b00335021d99">~ValueProfileCollector</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Operators Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/valueprofilecollector">ValueProfileCollector</a> &amp;</>}
+  name={<><a href="#ade9ce0d51f3ceee8fbd4179628c50d60">operator=</a> (ValueProfileCollector &amp;&amp;)=delete</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/valueprofilecollector">ValueProfileCollector</a> &amp;</>}
+  name={<><a href="#a7f73ce8c3bf35e72afeab96ed9bcbc28">operator=</a> (const ValueProfileCollector &amp;)=delete</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::vector&lt; <a href="/docs/api/structs/llvm/valueprofilecollector/candidateinfo">CandidateInfo</a> &gt;</>}
+  name={<><a href="#a9051f7b5cb39eaecf1a333768670f72f">get</a> (InstrProfValueKind Kind) const</>}>
+returns a list of value profiling candidates of the given kind <a href="#a9051f7b5cb39eaecf1a333768670f72f">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::unique&#95;ptr&lt; <a href="/docs/api/classes/valueprofilecollector/valueprofilecollectorimpl">ValueProfileCollectorImpl</a> &gt;</>}
+  name={<><a href="#af9e1eb306272e7159c228b796fdf2fdd">PImpl</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Utility analysis that determines what values are worth profiling.
+
+The actual logic is inside the <a href="/docs/api/classes/valueprofilecollector/valueprofilecollectorimpl">ValueProfileCollectorImpl</a>, whose job is to populate the Candidates vector.
+
+<a href="/docs/api/classes/llvm/value">Value</a> profiling an expression means to track the values that this expression takes at runtime and the frequency of each value. It is important to distinguish between two sets of value profiles for a particular expression: 1) The set of values at the point of evaluation. 2) The set of values at the point of use. In some cases, the two sets are identical, but it&#39;s not unusual for the two to differ.
+
+To elaborate more, consider this C code, and focus on the expression <code>nn</code>: void foo(int nn, bool b) &#123; if (b) memcpy(x, y, nn); &#125; The point of evaluation can be as early as the start of the function, and let&#39;s say the value profile for <code>nn</code> is: total=100; (value,freq) set = &#123;(8,10), (32,50)&#125; The point of use is right before we call memcpy, and since we execute the memcpy conditionally, the value profile of <code>nn</code> can be: total=15; (value,freq) set = &#123;(8,10), (4,5)&#125;
+
+For this reason, a plugin is responsible for computing the insertion point for each value to be profiled. The <code><a href="/docs/api/structs/llvm/valueprofilecollector/candidateinfo">CandidateInfo</a></code> structure encapsulates all the information needed for each value profile site.
+
+Definition at line 57 of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h">ValueProfileCollector.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### ValueProfileCollector() {#a50d7cc1c6703d27214c819133e2f1c2d}
+
+<MemberDefinition
+  prototype={<>ValueProfileCollector::ValueProfileCollector (<a href="/docs/api/classes/llvm/function">Function</a> &amp; Fn, <a href="/docs/api/classes/llvm/targetlibraryinfo">TargetLibraryInfo</a> &amp; TLI)</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h/#l00065">65</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h">ValueProfileCollector.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-cpp/#l00066">66</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-cpp">ValueProfileCollector.cpp</a>.
+</MemberDefinition>
+
+### ValueProfileCollector() {#ab95bf7037940be7329308cfb90c0b724}
+
+<MemberDefinition
+  prototype={<>llvm::ValueProfileCollector::ValueProfileCollector (<a href="/docs/api/classes/llvm/valueprofilecollector">ValueProfileCollector</a> &amp;&amp;)</>}
+  labels = {["delete"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h/#l00066">66</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h">ValueProfileCollector.h</a>.
+</MemberDefinition>
+
+### ValueProfileCollector() {#a2fbfb13e2bd71b792b862ff8a84ec9e0}
+
+<MemberDefinition
+  prototype={<>llvm::ValueProfileCollector::ValueProfileCollector (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/valueprofilecollector">ValueProfileCollector</a> &amp;)</>}
+  labels = {["delete"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h/#l00069">69</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h">ValueProfileCollector.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Destructor
+
+### ~ValueProfileCollector() {#a0073f9fb1fa718484c55b00335021d99}
+
+<MemberDefinition
+  prototype="ValueProfileCollector::~ValueProfileCollector ()">
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h/#l00071">71</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h">ValueProfileCollector.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Operators
+
+### operator=() {#ade9ce0d51f3ceee8fbd4179628c50d60}
+
+<MemberDefinition
+  prototype={<>ValueProfileCollector &amp; llvm::ValueProfileCollector::operator= (<a href="/docs/api/classes/llvm/valueprofilecollector">ValueProfileCollector</a> &amp;&amp;)</>}
+  labels = {["delete"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h/#l00067">67</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h">ValueProfileCollector.h</a>.
+</MemberDefinition>
+
+### operator=() {#a7f73ce8c3bf35e72afeab96ed9bcbc28}
+
+<MemberDefinition
+  prototype={<>ValueProfileCollector &amp; llvm::ValueProfileCollector::operator= (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/valueprofilecollector">ValueProfileCollector</a> &amp;)</>}
+  labels = {["delete"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h/#l00070">70</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h">ValueProfileCollector.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### get() {#a9051f7b5cb39eaecf1a333768670f72f}
+
+<MemberDefinition
+  prototype={<>std::vector&lt; CandidateInfo &gt; ValueProfileCollector::get (<a href="/docs/api/namespaces/llvm/#aa3a544a0d0dd4971f6c79d9869a1ffee">InstrProfValueKind</a> Kind) const</>}>
+returns a list of value profiling candidates of the given kind
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h/#l00074">74</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h">ValueProfileCollector.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-cpp/#l00073">73</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-cpp">ValueProfileCollector.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### PImpl {#af9e1eb306272e7159c228b796fdf2fdd}
+
+<MemberDefinition
+  prototype={<>std::unique&#95;ptr&lt;ValueProfileCollectorImpl&gt; llvm::ValueProfileCollector::PImpl</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h/#l00078">78</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h">ValueProfileCollector.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-cpp">ValueProfileCollector.cpp</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/valueprofilecollector-h">ValueProfileCollector.h</a></li>
+</ul>
+
+</DoxygenPage>

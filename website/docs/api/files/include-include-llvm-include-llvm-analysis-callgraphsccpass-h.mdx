@@ -1,0 +1,236 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/analysis/callgraphsccpass-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `CallGraphSCCPass.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/ArrayRef.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Pass.h"
+  permalink="/docs/api/files/include/include/llvm/pass-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="vector"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/callgraphsccpass">CallGraphSCCPass</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a></>}>
+<a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> - This is a single SCC that a <a href="/docs/api/classes/llvm/callgraphsccpass">CallGraphSCCPass</a> is run on. <a href="/docs/api/classes/llvm/callgraphscc/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/dummycgsccpass">DummyCGSCCPass</a></>}>
+This pass is required by interprocedural register allocation. <a href="/docs/api/classes/llvm/dummycgsccpass/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- CallGraphSCCPass.h - Pass that operates BU on call graph -&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file defines the CallGraphSCCPass class, which is used for passes which</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// are implemented as bottom-up traversals on the call graph.  Because there may</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// be cycles in the call graph, passes of this type operate on the call-graph in</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SCC order: that is, they process function bottom-up, except for recursive</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// functions, which they process all at once.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">// These passes are inherently interprocedural, and are required to keep the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">// call graph up-to-date if they do anything which could modify it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;ANALYSIS&#95;CALLGRAPHSCCPASS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;ANALYSIS&#95;CALLGRAPHSCCPASS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h">llvm/ADT/ArrayRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/pass-h">llvm/Pass.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;vector&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/callgraph">CallGraph</a>;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a>;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a>;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/pmstack">PMStack</a>;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34" lineLink="/docs/api/classes/llvm/callgraphsccpass"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/callgraphsccpass/#a480100967dadb2b532fc863b7a4a80a1">CallGraphSCCPass</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pass/#a16baa169d062524be5a6b67609266174">Pass</a> &#123;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36" lineLink="/docs/api/classes/llvm/callgraphsccpass/#a480100967dadb2b532fc863b7a4a80a1"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphsccpass/#a480100967dadb2b532fc863b7a4a80a1">CallGraphSCCPass</a>(</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &amp;pid) : <a href="/docs/api/classes/llvm/pass/#a16baa169d062524be5a6b67609266174">Pass</a>(<a href="/docs/api/namespaces/llvm/#a0da955cbb4215ccd3e153c81e415b9d5a4f21fd6b3164fbf13c7c1940fb00d2e6">PT&#95;CallGraphSCC</a>, pid) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">  /// createPrinterPass - Get a pass that prints the Module</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">  /// corresponding to a CallGraph.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pass">Pass</a> &#42;<a href="/docs/api/classes/llvm/callgraphsccpass/#a5377370c7153008ccd1f5c04536051e2">createPrinterPass</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS,</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">                          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;Banner) </Highlight><Highlight kind="keyword">const override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/pass/#ab007d6c51634eb65e4f4f9dab4eb6a8c">llvm::Pass::doInitialization</a>;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/pass/#ac7811985250c75d7e2a244292d615fff">llvm::Pass::doFinalization</a>;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">  /// doInitialization - This method is called before the SCC&#39;s of the program</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="comment">  /// has been processed, allowing the pass to do initialization as necessary.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48" lineLink="/docs/api/classes/llvm/callgraphsccpass/#ad789278ad915ddf3e6d75eb29066f0b3"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphsccpass/#ad789278ad915ddf3e6d75eb29066f0b3">doInitialization</a>(<a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG) &#123;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">  /// runOnSCC - This method should be implemented by the subclass to perform</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">  /// whatever action is necessary for the specified SCC.  Note that</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="comment">  /// non-recursive (or only self-recursive) functions will have an SCC size of</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="comment">  /// 1, where recursive portions of the call graph will have SCC size &gt; 1</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="comment">  /// SCC passes that add or delete functions to the SCC are required to update</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">  /// the SCC list, otherwise stale pointers may be dereferenced.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59" lineLink="/docs/api/classes/llvm/callgraphsccpass/#a5ab09f122afda68d4c0d86e8e5877465"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphsccpass/#a5ab09f122afda68d4c0d86e8e5877465">runOnSCC</a>(<a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> &amp;SCC) = 0;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="comment">  /// doFinalization - This method is called after the SCC&#39;s of the program has</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="comment">  /// been processed, allowing the pass to do final cleanup as necessary.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/classes/llvm/callgraphsccpass/#a16cd88544ab2f8740462d61471f92e5b"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphsccpass/#a16cd88544ab2f8740462d61471f92e5b">doFinalization</a>(<a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG) &#123;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="comment">  /// Assign pass manager to manager this pass</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphsccpass/#af6897bd5a86b78fc12f93cdfb04c9e6a">assignPassManager</a>(<a href="/docs/api/classes/llvm/pmstack">PMStack</a> &amp;PMS, <a href="/docs/api/namespaces/llvm/#a3948b4d0759f9852502b466d6cfb4ebb">PassManagerType</a> PMT) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="comment">  ///  Return what kind of Pass Manager can manage this pass.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71" lineLink="/docs/api/classes/llvm/callgraphsccpass/#a3f75da9a2ae556a5cdceaee11f4afaf2"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a3948b4d0759f9852502b466d6cfb4ebb">PassManagerType</a> <a href="/docs/api/classes/llvm/callgraphsccpass/#a3f75da9a2ae556a5cdceaee11f4afaf2">getPotentialPassManagerType</a>()</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a3948b4d0759f9852502b466d6cfb4ebbacfbf7d6825e58faf3673dc5e5a7a2465">PMT&#95;CallGraphPassManager</a>;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">  /// getAnalysisUsage - For this class, we declare that we require and preserve</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">  /// the call graph.  If the derived class implements this method, it should</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">  /// always explicitly call the implementation here.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphsccpass/#a6cc67c5a27b53bc940d292c0aeb6aba3">getAnalysisUsage</a>(<a href="/docs/api/classes/llvm/analysisusage">AnalysisUsage</a> &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>) </Highlight><Highlight kind="keyword">const override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// Optional passes call this function to check whether the pass should be</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">  /// skipped. This is the case when optimization bisect is over the limit.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphsccpass/#a978ee5e9b5b33e10cea60aea38f80788">skipSCC</a>(<a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> &amp;SCC) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="comment">/// CallGraphSCC - This is a single SCC that a CallGraphSCCPass is run on.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87" lineLink="/docs/api/classes/llvm/callgraphscc"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/callgraphscc/#af477a79f11d5ec67b93f78e5ff53fda6">CallGraphSCC</a> &#123;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG; </Highlight><Highlight kind="comment">// The call graph for this SCC.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;Context; </Highlight><Highlight kind="comment">// The CGPassManager object that is vending this.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  std::vector&lt;CallGraphNode &#42;&gt; Nodes;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93" lineLink="/docs/api/classes/llvm/callgraphscc/#af477a79f11d5ec67b93f78e5ff53fda6"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/callgraphscc/#af477a79f11d5ec67b93f78e5ff53fda6">CallGraphSCC</a>(<a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;cg, </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;context) : CG(cg), Context(context) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95" lineLink="/docs/api/classes/llvm/callgraphscc/#a87e1b8515d22eb833375761e19a2d0fe"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphscc/#a87e1b8515d22eb833375761e19a2d0fe">initialize</a>(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;CallGraphNode &#42;&gt;</a> NewNodes) &#123;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">    Nodes.assign(NewNodes.<a href="/docs/api/classes/llvm/arrayref/#aab36927882fbfdcbb860d87fd9c30da8">begin</a>(), NewNodes.<a href="/docs/api/classes/llvm/arrayref/#a7ca5197533a9c1fb8a2bd30587fcec6b">end</a>());</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99" lineLink="/docs/api/classes/llvm/callgraphscc/#a07db419e819bdce43515ca70d515a151"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphscc/#a07db419e819bdce43515ca70d515a151">isSingular</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Nodes.size() == 1; &#125;</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100" lineLink="/docs/api/classes/llvm/callgraphscc/#a919970e65e098ac01a9056015c199f40"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphscc/#a919970e65e098ac01a9056015c199f40">size</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Nodes.size(); &#125;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">  /// ReplaceNode - This informs the SCC and the pass manager that the specified</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="comment">  /// Old node has been deleted, and New is to be used in its place.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphscc/#a78d3ea30abf1bae03b398ec1b266eeeb">ReplaceNode</a>(<a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;Old, <a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;New);</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">  /// DeleteNode - This informs the SCC and the pass manager that the specified</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="comment">  /// Old node has been deleted.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphscc/#a87d83af4037cb4deb9b4bd7164e3843f">DeleteNode</a>(<a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;Old);</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110" lineLink="/docs/api/classes/llvm/callgraphscc/#a0c828c12476af8ca29c04bcffb0642ae"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/callgraphscc/#a0c828c12476af8ca29c04bcffb0642ae">iterator</a> = std::vector&lt;CallGraphNode &#42;&gt;::const&#95;iterator;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112" lineLink="/docs/api/classes/llvm/callgraphscc/#abc1462ee74423b01bf6afa30d85cca9e"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/callgraphscc/#a0c828c12476af8ca29c04bcffb0642ae">iterator</a> <a href="/docs/api/classes/llvm/callgraphscc/#abc1462ee74423b01bf6afa30d85cca9e">begin</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Nodes.begin(); &#125;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113" lineLink="/docs/api/classes/llvm/callgraphscc/#aebb35c664157dd1a6c8b58e715498015"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/callgraphscc/#a0c828c12476af8ca29c04bcffb0642ae">iterator</a> <a href="/docs/api/classes/llvm/callgraphscc/#aebb35c664157dd1a6c8b58e715498015">end</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Nodes.end(); &#125;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115" lineLink="/docs/api/classes/llvm/callgraphscc/#a3ac41a0c13e49229773f3f0084e8de9d"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;<a href="/docs/api/classes/llvm/callgraphscc/#a3ac41a0c13e49229773f3f0084e8de9d">getCallGraph</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CG; &#125;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118" lineLink="/docs/api/namespaces/llvm/#a633a5c8146798c079b1bf79ae02a1a81"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a633a5c8146798c079b1bf79ae02a1a81">initializeDummyCGSCCPassPass</a>(<a href="/docs/api/classes/llvm/passregistry">PassRegistry</a> &amp;);</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">/// This pass is required by interprocedural register allocation. It forces</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">/// codegen to follow bottom up order on call graph.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122" lineLink="/docs/api/classes/llvm/dummycgsccpass"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/dummycgsccpass/#a8eca94a66ab1e41a8f3d8dcf8e9f65cd">DummyCGSCCPass</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphsccpass/#a480100967dadb2b532fc863b7a4a80a1">CallGraphSCCPass</a> &#123;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124" lineLink="/docs/api/classes/llvm/dummycgsccpass/#ada2cb9288208c2d1fb93d6471cc7c3a0"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dummycgsccpass/#ada2cb9288208c2d1fb93d6471cc7c3a0">ID</a>;</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126" lineLink="/docs/api/classes/llvm/dummycgsccpass/#a8eca94a66ab1e41a8f3d8dcf8e9f65cd"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/dummycgsccpass/#a8eca94a66ab1e41a8f3d8dcf8e9f65cd">DummyCGSCCPass</a>() : <a href="/docs/api/classes/llvm/callgraphsccpass/#a480100967dadb2b532fc863b7a4a80a1">CallGraphSCCPass</a>(<a href="/docs/api/classes/llvm/dummycgsccpass/#ada2cb9288208c2d1fb93d6471cc7c3a0">ID</a>) &#123;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/passregistry">PassRegistry</a> &amp;<a href="/docs/api/classes/llvm/registry">Registry</a> = &#42;<a href="/docs/api/classes/llvm/passregistry/#a05a729900b76c89e808c6c3094921b2f">PassRegistry::getPassRegistry</a>();</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a633a5c8146798c079b1bf79ae02a1a81">initializeDummyCGSCCPassPass</a>(<a href="/docs/api/classes/llvm/registry">Registry</a>);</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131" lineLink="/docs/api/classes/llvm/dummycgsccpass/#aeda90038e84169a16018edb8904c7d1d"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dummycgsccpass/#aeda90038e84169a16018edb8904c7d1d">runOnSCC</a>(<a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> &amp;SCC)</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133" lineLink="/docs/api/classes/llvm/dummycgsccpass/#afbe4e434241cffa8dcc09af5c6d3daf1"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dummycgsccpass/#afbe4e434241cffa8dcc09af5c6d3daf1">getAnalysisUsage</a>(<a href="/docs/api/classes/llvm/analysisusage">AnalysisUsage</a> &amp;AU)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">    AU.<a href="/docs/api/classes/llvm/analysisusage/#af22b06a6a4f9df80454071685a0d6a02">setPreservesAll</a>();</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;ANALYSIS&#95;CALLGRAPHSCCPASS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

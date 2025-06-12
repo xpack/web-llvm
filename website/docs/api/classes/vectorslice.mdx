@@ -1,0 +1,215 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/vectorslice
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `VectorSlice` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Helper class for &quot;break large PHIs&quot; (visitPHINode). <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class VectorSlice</CodeBlock>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#abcfe9b938404c5c07c3c426aca33199b">VectorSlice</a> (Type &#42;Ty, unsigned Idx, unsigned NumElts)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#aef12c412e54fb31aa597199eadc0e866">getSlicedVal</a> (BasicBlock &#42;BB, Value &#42;Inc, StringRef NewValName)</>}>
+Slice <code>Inc</code> according to the information contained within this slice. <a href="#aef12c412e54fb31aa597199eadc0e866">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a891a7aade567413c2bcf94dc3239fb15">Idx</a> = 0</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/phinode">PHINode</a> &#42;</>}
+  name={<><a href="#ae5fd35a263da73de3e3a0ef18f77ef6c">NewPHI</a> = nullptr</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#af1a8f7a1af3bdd7443dedbc655aad350">NumElts</a> = 0</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/type">Type</a> &#42;</>}
+  name={<><a href="#a83d46be9cc7330b1ccc1600f7b7c4b51">Ty</a> = nullptr</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smalldensemap">SmallDenseMap</a>&lt; std::pair&lt; <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt;, <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt;</>}
+  name={<><a href="#ad14a0359fa9814a75543163aed025f43">SlicedVals</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Helper class for &quot;break large PHIs&quot; (visitPHINode).
+
+This represents a slice of a PHI&#39;s incoming value, which is made up of:
+<ul>
+<li>The type of the slice (Ty)</li>
+<li>The index in the incoming value&#39;s vector where the slice starts (Idx)</li>
+<li>The number of elements in the slice (NumElts). It also keeps track of the NewPHI node inserted for this particular slice.</li>
+</ul>
+
+
+Slice examples: &lt;4 x i64&gt; -&gt; Split into four i64 slices. -&gt; &#91;i64, 0, 1&#93;, &#91;i64, 1, 1&#93;, &#91;i64, 2, 1&#93;, &#91;i64, 3, 1&#93; &lt;5 x i16&gt; -&gt; Split into 2 &lt;2 x i16&gt; slices + a i16 tail. -&gt; &#91;&lt;2 x i16&gt;, 0, 2&#93;, &#91;&lt;2 x i16&gt;, 2, 2&#93;, &#91;i16, 4, 1&#93;
+
+Definition at line 1902 of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp">AMDGPUCodeGenPrepare.cpp</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### VectorSlice() {#abcfe9b938404c5c07c3c426aca33199b}
+
+<MemberDefinition
+  prototype={<>VectorSlice::VectorSlice (<a href="/docs/api/classes/llvm/type">Type</a> &#42; Ty, unsigned Idx, unsigned NumElts)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp/#l01904">1904</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp">AMDGPUCodeGenPrepare.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### getSlicedVal() {#aef12c412e54fb31aa597199eadc0e866}
+
+<MemberDefinition
+  prototype={<>Value &#42; VectorSlice::getSlicedVal (<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB, <a href="/docs/api/classes/llvm/value">Value</a> &#42; Inc, <a href="/docs/api/classes/llvm/stringref">StringRef</a> NewValName)</>}
+  labels = {["inline"]}>
+Slice <code>Inc</code> according to the information contained within this slice.
+
+This is cached, so if called multiple times for the same <code>BB</code> &amp; <code>Inc</code> pair, it returns the same Sliced value as well.
+
+Note this <em>intentionally</em> does not return the same value for, say, &#91;bb.0, %0&#93; &amp; &#91;bb.1, %0&#93; as:
+<ul>
+<li>It could cause issues with dominance (e.g. if bb.1 is seen first, then the value in bb.1 may not be reachable from bb.0 if it&#39;s its predecessor.)</li>
+<li>We also want to make our extract instructions as local as possible so the DAG has better chances of folding them out. Duplicating them like that is beneficial in that regard.</li>
+</ul>
+
+
+This is both a minor optimization to avoid creating duplicate instructions, but also a requirement for correctness. It is not forbidden for a PHI node to have the same &#91;BB, Val&#93; pair multiple times. If we returned a new value each time, those previously identical pairs would all have different incoming values (from the same block) and it&#39;d cause a &quot;PHI
+node has multiple entries for the same basic block with different incoming
+values!&quot; verifier error.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp/#l01932">1932</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp">AMDGPUCodeGenPrepare.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### Idx {#a891a7aade567413c2bcf94dc3239fb15}
+
+<MemberDefinition
+  prototype="unsigned VectorSlice::Idx = 0">
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp/#l01908">1908</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp">AMDGPUCodeGenPrepare.cpp</a>.
+</MemberDefinition>
+
+### NewPHI {#ae5fd35a263da73de3e3a0ef18f77ef6c}
+
+<MemberDefinition
+  prototype={<>PHINode&#42; VectorSlice::NewPHI = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp/#l01910">1910</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp">AMDGPUCodeGenPrepare.cpp</a>.
+</MemberDefinition>
+
+### NumElts {#af1a8f7a1af3bdd7443dedbc655aad350}
+
+<MemberDefinition
+  prototype="unsigned VectorSlice::NumElts = 0">
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp/#l01909">1909</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp">AMDGPUCodeGenPrepare.cpp</a>.
+</MemberDefinition>
+
+### Ty {#a83d46be9cc7330b1ccc1600f7b7c4b51}
+
+<MemberDefinition
+  prototype={<>Type&#42; VectorSlice::Ty = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp/#l01907">1907</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp">AMDGPUCodeGenPrepare.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### SlicedVals {#ad14a0359fa9814a75543163aed025f43}
+
+<MemberDefinition
+  prototype={<>SmallDenseMap&lt;std::pair&lt;BasicBlock &#42;, Value &#42;&gt;, Value &#42;&gt; VectorSlice::SlicedVals</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp/#l01953">1953</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp">AMDGPUCodeGenPrepare.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpucodegenprepare-cpp">AMDGPUCodeGenPrepare.cpp</a></li>
+</ul>
+
+</DoxygenPage>

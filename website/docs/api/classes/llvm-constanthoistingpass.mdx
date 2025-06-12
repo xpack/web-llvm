@@ -1,0 +1,622 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/constanthoistingpass
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ConstantHoistingPass` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Declaration
+
+<CodeBlock>class llvm::ConstantHoistingPass</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Transforms/Scalar/ConstantHoisting.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/passinfomixin">PassInfoMixin&lt;DerivedT&gt;</a></>}>
+A CRTP mix-in to automatically provide informational APIs needed for passes. <a href="/docs/api/structs/llvm/passinfomixin/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#af133ba182ea3c7573abee1b917753d30">ConstCandMapType</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/pointerunion">ConstPtrUnionType</a>, unsigned &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a8bb095733d7e3207296d707f9a7f4c3f">ConstCandVecType</a> = std::vector&lt; <a href="/docs/api/structs/llvm/consthoist/constantcandidate">consthoist::ConstantCandidate</a> &gt;</>}>
+Keeps track of constant candidates found in the function. <a href="#a8bb095733d7e3207296d707f9a7f4c3f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a0a03a3aa9ae5bad5fa7f09890300f536">ConstInfoVecType</a> = <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/structs/llvm/consthoist/constantinfo">consthoist::ConstantInfo</a>, 8 &gt;</>}>
+These are the final constants we decided to hoist. <a href="#a0a03a3aa9ae5bad5fa7f09890300f536">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#ae1e0e9ece32b69e2be3861287470aefa">ConstPtrUnionType</a> = <a href="/docs/api/classes/llvm/pointerunion">PointerUnion</a>&lt; <a href="/docs/api/classes/llvm/constantint">ConstantInt</a> &#42;, <a href="/docs/api/classes/llvm/constantexpr">ConstantExpr</a> &#42; &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a8b7243bea201926d05352c76dfb3ab52">GVCandVecMapType</a> = <a href="/docs/api/classes/llvm/mapvector">MapVector</a>&lt; <a href="/docs/api/classes/llvm/globalvariable">GlobalVariable</a> &#42;, ConstCandVecType &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a7a3007f8f44353c7b4e987373260253d">GVInfoVecMapType</a> = <a href="/docs/api/classes/llvm/mapvector">MapVector</a>&lt; <a href="/docs/api/classes/llvm/globalvariable">GlobalVariable</a> &#42;, <a href="/docs/api/classes/llvm/smallvector">ConstInfoVecType</a> &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a0abaa3a1f6f4903dbd12ad1e83a226cb">cleanup</a> ()</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></>}
+  name={<><a href="#abe3f0e309e575379e5bae02d1907f394">run</a> (Function &amp;F, FunctionAnalysisManager &amp;AM)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a778bef41059be563431e55a70168520a">runImpl</a> (Function &amp;F, TargetTransformInfo &amp;TTI, DominatorTree &amp;DT, BlockFrequencyInfo &#42;BFI, BasicBlock &amp;Entry, ProfileSummaryInfo &#42;PSI)</>}>
+Optimize expensive integer constants in the given function. <a href="#a778bef41059be563431e55a70168520a">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ae0a42fefae3c07a1cd66a76f84963d75">collectConstantCandidates</a> (ConstCandMapType &amp;ConstCandMap, Instruction &#42;Inst, unsigned Idx, ConstantInt &#42;ConstInt)</>}>
+<a href="/docs/api/classes/llvm/record">Record</a> constant integer ConstInt for instruction Inst at operand index Idx. <a href="#ae0a42fefae3c07a1cd66a76f84963d75">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#abaa73cac7474a63189f11b3841860486">collectConstantCandidates</a> (ConstCandMapType &amp;ConstCandMap, Instruction &#42;Inst, unsigned Idx, ConstantExpr &#42;ConstExpr)</>}>
+<a href="/docs/api/classes/llvm/record">Record</a> constant GEP expression for instruction Inst at operand index Idx. <a href="#abaa73cac7474a63189f11b3841860486">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aff11dee1311d37b54168c7bcde4869a1">collectConstantCandidates</a> (ConstCandMapType &amp;ConstCandMap, Instruction &#42;Inst, unsigned Idx)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> the operand for instruction Inst at index Idx. <a href="#aff11dee1311d37b54168c7bcde4869a1">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aa5deff0860748465fe0a443f7a3a01da">collectConstantCandidates</a> (ConstCandMapType &amp;ConstCandMap, Instruction &#42;Inst)</>}>
+Scan the instruction for expensive integer constants and record them in the constant candidate vector. <a href="#aa5deff0860748465fe0a443f7a3a01da">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a0357ab6e9c4fd24e885da46eb87caa9c">collectConstantCandidates</a> (Function &amp;Fn)</>}>
+Collect all integer constants in the function that cannot be folded into an instruction itself. <a href="#a0357ab6e9c4fd24e885da46eb87caa9c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ad2719e9183c4113c88c891b9f09ce7ad">collectMatInsertPts</a> (const consthoist::RebasedConstantListType &amp;RebasedConstants, SmallVectorImpl&lt; BasicBlock::iterator &gt; &amp;MatInsertPts) const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aa7e752043bd169b86d1676fe9e1a7285">deleteDeadCastInst</a> () const</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> all cast instructions we made a copy of and remove them if they have no more users. <a href="#aa7e752043bd169b86d1676fe9e1a7285">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#af7fa4cb61f9c33bd2e0d9d925af3b9b7">emitBaseConstants</a> (Instruction &#42;Base, UserAdjustment &#42;Adj)</>}>
+Emit materialization code for all rebased constants and update their users. <a href="#af7fa4cb61f9c33bd2e0d9d925af3b9b7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a76c5cca54a0dea1388d891830d7f604f">emitBaseConstants</a> (GlobalVariable &#42;BaseGV)</>}>
+Hoist and hide the base constant behind a bitcast and emit materialization code for derived constants. <a href="#a76c5cca54a0dea1388d891830d7f604f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a12f145c896525dc3fc453aa4262394bf">findAndMakeBaseConstant</a> (ConstCandVecType::iterator S, ConstCandVecType::iterator E, SmallVectorImpl&lt; consthoist::ConstantInfo &gt; &amp;ConstInfoVec)</>}>
+Find the base constant within the given range and rebase all other constants with respect to the base constant. <a href="#a12f145c896525dc3fc453aa4262394bf">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#afbd9cabec35c0eba47bf3602319e2d8c">findBaseConstants</a> (GlobalVariable &#42;BaseGV)</>}>
+Finds and combines constant candidates that can be easily rematerialized with an add from a common base constant. <a href="#afbd9cabec35c0eba47bf3602319e2d8c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/setvector">SetVector</a>&lt; <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> &gt;</>}
+  name={<><a href="#a2fcdde546c7568e702a2caa04292daf7">findConstantInsertionPoint</a> (const consthoist::ConstantInfo &amp;ConstInfo, const ArrayRef&lt; BasicBlock::iterator &gt; MatInsertPts) const</>}>
+Find an insertion point that dominates all uses. <a href="#a2fcdde546c7568e702a2caa04292daf7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a></>}
+  name={<><a href="#a642ece092ec9389dc60e5af90eded4eb">findMatInsertPt</a> (Instruction &#42;Inst, unsigned Idx=~0U) const</>}>
+Find the constant materialization insertion point. <a href="#a642ece092ec9389dc60e5af90eded4eb">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a1533f024de5bdf826992bec2e9f620d8">maximizeConstantsInRange</a> (ConstCandVecType::iterator S, ConstCandVecType::iterator E, ConstCandVecType::iterator &amp;MaxCostItr)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> &#42;</>}
+  name={<><a href="#a02dbdaf72255e870f457d3a68d18baaf">BFI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/mapvector">MapVector</a>&lt; <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; &gt;</>}
+  name={<><a href="#aa16618ff8342839140040b8337843b6d">ClonedCastMap</a></>}>
+Keep track of cast instructions we already cloned. <a href="#aa16618ff8342839140040b8337843b6d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/mapvector">GVCandVecMapType</a></>}
+  name={<><a href="#af055364668cdec36f2b623a792b661dc">ConstGEPCandMap</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/mapvector">GVInfoVecMapType</a></>}
+  name={<><a href="#a8052cf46d93165c644d5ad76a30842de">ConstGEPInfoMap</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="ConstCandVecType"
+  name={<><a href="#a01c4659a1dca4738f1a8b28100b88e21">ConstIntCandVec</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">ConstInfoVecType</a></>}
+  name={<><a href="#a2ba67a38797bba9dc72e44ed715d7f03">ConstIntInfoVec</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &#42;</>}
+  name={<><a href="#a312443b5ac6cdfc8e85b8222fd30764f">Ctx</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/datalayout">DataLayout</a> &#42;</>}
+  name={<><a href="#a8692253f3bf20aa3ab1d22f8a2282c1e">DL</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &#42;</>}
+  name={<><a href="#ad6f729f546bd5eecd1debe048b6f3abe">DT</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;</>}
+  name={<><a href="#af372cf26d6ec6dce7319b33c152d578e">Entry</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a9820964a20d9c99bd755249ffd37161c">OptForSize</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42;</>}
+  name={<><a href="#a7e3559a9a1034a5764b4c151d216c386">PSI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> &#42;</>}
+  name={<><a href="#a0a374348834f55c934b8ddf6cc74fa00">TTI</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+Definition at line 126 of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### ConstCandMapType {#af133ba182ea3c7573abee1b917753d30}
+
+<MemberDefinition
+  prototype={<>using llvm::ConstantHoistingPass::ConstCandMapType =  DenseMap&lt;ConstPtrUnionType, unsigned&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00149">149</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### ConstCandVecType {#a8bb095733d7e3207296d707f9a7f4c3f}
+
+<MemberDefinition
+  prototype={<>using llvm::ConstantHoistingPass::ConstCandVecType =  std::vector&lt;consthoist::ConstantCandidate&gt;</>}>
+Keeps track of constant candidates found in the function.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00161">161</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### ConstInfoVecType {#a0a03a3aa9ae5bad5fa7f09890300f536}
+
+<MemberDefinition
+  prototype={<>using llvm::ConstantHoistingPass::ConstInfoVecType =  SmallVector&lt;consthoist::ConstantInfo, 8&gt;</>}>
+These are the final constants we decided to hoist.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00167">167</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### ConstPtrUnionType {#ae1e0e9ece32b69e2be3861287470aefa}
+
+<MemberDefinition
+  prototype={<>using llvm::ConstantHoistingPass::ConstPtrUnionType =  PointerUnion&lt;ConstantInt &#42;, ConstantExpr &#42;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00148">148</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### GVCandVecMapType {#a8b7243bea201926d05352c76dfb3ab52}
+
+<MemberDefinition
+  prototype={<>using llvm::ConstantHoistingPass::GVCandVecMapType =  MapVector&lt;GlobalVariable &#42;, ConstCandVecType&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00162">162</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### GVInfoVecMapType {#a7a3007f8f44353c7b4e987373260253d}
+
+<MemberDefinition
+  prototype={<>using llvm::ConstantHoistingPass::GVInfoVecMapType =  MapVector&lt;GlobalVariable &#42;, ConstInfoVecType&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00168">168</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### cleanup() {#a0abaa3a1f6f4903dbd12ad1e83a226cb}
+
+<MemberDefinition
+  prototype="void llvm::ConstantHoistingPass::cleanup ()"
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00135">135</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### run() {#abe3f0e309e575379e5bae02d1907f394}
+
+<MemberDefinition
+  prototype={<>PreservedAnalyses ConstantHoistingPass::run (<a href="/docs/api/classes/llvm/function">Function</a> &amp; F, <a href="/docs/api/namespaces/llvm/#adce09a5a0de0e3177eb00e932734af2f">FunctionAnalysisManager</a> &amp; AM)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00128">128</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00964">964</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### runImpl() {#a778bef41059be563431e55a70168520a}
+
+<MemberDefinition
+  prototype={<>bool ConstantHoistingPass::runImpl (<a href="/docs/api/classes/llvm/function">Function</a> &amp; F, <a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> &amp; TTI, <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &amp; DT, <a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> &#42; BFI, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; Entry, <a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42; PSI)</>}>
+Optimize expensive integer constants in the given function.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00131">131</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00922">922</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### collectConstantCandidates() {#ae0a42fefae3c07a1cd66a76f84963d75}
+
+<MemberDefinition
+  prototype={<>void ConstantHoistingPass::collectConstantCandidates (<a href="/docs/api/classes/llvm/densemap">ConstCandMapType</a> &amp; ConstCandMap, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; Inst, unsigned Idx, <a href="/docs/api/classes/llvm/constantint">ConstantInt</a> &#42; ConstInt)</>}>
+<a href="/docs/api/classes/llvm/record">Record</a> constant integer ConstInt for instruction Inst at operand index Idx.
+
+The operand at index Idx is not necessarily the constant integer itself. It could also be a cast instruction or a constant expression that uses the constant integer.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00183">183</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00363">363</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### collectConstantCandidates() {#abaa73cac7474a63189f11b3841860486}
+
+<MemberDefinition
+  prototype={<>void ConstantHoistingPass::collectConstantCandidates (<a href="/docs/api/classes/llvm/densemap">ConstCandMapType</a> &amp; ConstCandMap, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; Inst, unsigned Idx, <a href="/docs/api/classes/llvm/constantexpr">ConstantExpr</a> &#42; ConstExpr)</>}>
+<a href="/docs/api/classes/llvm/record">Record</a> constant GEP expression for instruction Inst at operand index Idx.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00186">186</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00403">403</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### collectConstantCandidates() {#aff11dee1311d37b54168c7bcde4869a1}
+
+<MemberDefinition
+  prototype={<>void ConstantHoistingPass::collectConstantCandidates (<a href="/docs/api/classes/llvm/densemap">ConstCandMapType</a> &amp; ConstCandMap, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; Inst, unsigned Idx)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> the operand for instruction Inst at index Idx.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00189">189</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00455">455</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### collectConstantCandidates() {#aa5deff0860748465fe0a443f7a3a01da}
+
+<MemberDefinition
+  prototype={<>void ConstantHoistingPass::collectConstantCandidates (<a href="/docs/api/classes/llvm/densemap">ConstCandMapType</a> &amp; ConstCandMap, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; Inst)</>}>
+Scan the instruction for expensive integer constants and record them in the constant candidate vector.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00191">191</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00501">501</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### collectConstantCandidates() {#a0357ab6e9c4fd24e885da46eb87caa9c}
+
+<MemberDefinition
+  prototype={<>void ConstantHoistingPass::collectConstantCandidates (<a href="/docs/api/classes/llvm/function">Function</a> &amp; Fn)</>}>
+Collect all integer constants in the function that cannot be folded into an instruction itself.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00193">193</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00522">522</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### collectMatInsertPts() {#ad2719e9183c4113c88c891b9f09ce7ad}
+
+<MemberDefinition
+  prototype={<>void ConstantHoistingPass::collectMatInsertPts (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/namespaces/llvm/consthoist/#a9da05914fd5cba2e1abda54af8f2f151">consthoist::RebasedConstantListType</a> &amp; RebasedConstants, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> &gt; &amp; MatInsertPts) const</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00175">175</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00162">162</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### deleteDeadCastInst() {#aa7e752043bd169b86d1676fe9e1a7285}
+
+<MemberDefinition
+  prototype="void ConstantHoistingPass::deleteDeadCastInst () const">
+<a href="/docs/api/namespaces/llvm/check">Check</a> all cast instructions we made a copy of and remove them if they have no more users.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00219">219</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00915">915</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### emitBaseConstants() {#af7fa4cb61f9c33bd2e0d9d925af3b9b7}
+
+<MemberDefinition
+  prototype={<>void ConstantHoistingPass::emitBaseConstants (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; Base, UserAdjustment &#42; Adj)</>}>
+Emit materialization code for all rebased constants and update their users.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00215">215</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00731">731</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### emitBaseConstants() {#a76c5cca54a0dea1388d891830d7f604f}
+
+<MemberDefinition
+  prototype={<>bool ConstantHoistingPass::emitBaseConstants (<a href="/docs/api/classes/llvm/globalvariable">GlobalVariable</a> &#42; BaseGV)</>}>
+Hoist and hide the base constant behind a bitcast and emit materialization code for derived constants.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00218">218</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00824">824</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### findAndMakeBaseConstant() {#a12f145c896525dc3fc453aa4262394bf}
+
+<MemberDefinition
+  prototype={<>void ConstantHoistingPass::findAndMakeBaseConstant (ConstCandVecType::iterator S, ConstCandVecType::iterator E, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/structs/llvm/consthoist/constantinfo">consthoist::ConstantInfo</a> &gt; &amp; ConstInfoVec)</>}>
+Find the base constant within the given range and rebase all other constants with respect to the base constant.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00194">194</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00612">612</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### findBaseConstants() {#afbd9cabec35c0eba47bf3602319e2d8c}
+
+<MemberDefinition
+  prototype={<>void ConstantHoistingPass::findBaseConstants (<a href="/docs/api/classes/llvm/globalvariable">GlobalVariable</a> &#42; BaseGV)</>}>
+Finds and combines constant candidates that can be easily rematerialized with an add from a common base constant.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00202">202</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00643">643</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### findConstantInsertionPoint() {#a2fcdde546c7568e702a2caa04292daf7}
+
+<MemberDefinition
+  prototype={<>SetVector&lt; BasicBlock::iterator &gt; ConstantHoistingPass::findConstantInsertionPoint (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/consthoist/constantinfo">consthoist::ConstantInfo</a> &amp; ConstInfo, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> &gt; MatInsertPts) const</>}>
+Find an insertion point that dominates all uses.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00180">180</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00317">317</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### findMatInsertPt() {#a642ece092ec9389dc60e5af90eded4eb}
+
+<MemberDefinition
+  prototype={<>BasicBlock::iterator ConstantHoistingPass::findMatInsertPt (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; Inst, unsigned Idx=~0U) const</>}>
+Find the constant materialization insertion point.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00178">178</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00171">171</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+### maximizeConstantsInRange() {#a1533f024de5bdf826992bec2e9f620d8}
+
+<MemberDefinition
+  prototype={<>unsigned ConstantHoistingPass::maximizeConstantsInRange (ConstCandVecType::iterator S, ConstCandVecType::iterator E, ConstCandVecType::iterator &amp; MaxCostItr)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00197">197</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp/#l00558">558</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### BFI {#a02dbdaf72255e870f457d3a68d18baaf}
+
+<MemberDefinition
+  prototype={<>BlockFrequencyInfo&#42; llvm::ConstantHoistingPass::BFI</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00153">153</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### ClonedCastMap {#aa16618ff8342839140040b8337843b6d}
+
+<MemberDefinition
+  prototype={<>MapVector&lt;Instruction &#42;, Instruction &#42;&gt; llvm::ConstantHoistingPass::ClonedCastMap</>}>
+Keep track of cast instructions we already cloned.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00173">173</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### ConstGEPCandMap {#af055364668cdec36f2b623a792b661dc}
+
+<MemberDefinition
+  prototype="GVCandVecMapType llvm::ConstantHoistingPass::ConstGEPCandMap">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00164">164</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### ConstGEPInfoMap {#a8052cf46d93165c644d5ad76a30842de}
+
+<MemberDefinition
+  prototype="GVInfoVecMapType llvm::ConstantHoistingPass::ConstGEPInfoMap">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00170">170</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### ConstIntCandVec {#a01c4659a1dca4738f1a8b28100b88e21}
+
+<MemberDefinition
+  prototype="ConstCandVecType llvm::ConstantHoistingPass::ConstIntCandVec">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00163">163</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### ConstIntInfoVec {#a2ba67a38797bba9dc72e44ed715d7f03}
+
+<MemberDefinition
+  prototype="ConstInfoVecType llvm::ConstantHoistingPass::ConstIntInfoVec">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00169">169</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### Ctx {#a312443b5ac6cdfc8e85b8222fd30764f}
+
+<MemberDefinition
+  prototype={<>LLVMContext&#42; llvm::ConstantHoistingPass::Ctx</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00154">154</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### DL {#a8692253f3bf20aa3ab1d22f8a2282c1e}
+
+<MemberDefinition
+  prototype={<>const DataLayout&#42; llvm::ConstantHoistingPass::DL</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00155">155</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### DT {#ad6f729f546bd5eecd1debe048b6f3abe}
+
+<MemberDefinition
+  prototype={<>DominatorTree&#42; llvm::ConstantHoistingPass::DT</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00152">152</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### Entry {#af372cf26d6ec6dce7319b33c152d578e}
+
+<MemberDefinition
+  prototype={<>BasicBlock&#42; llvm::ConstantHoistingPass::Entry</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00156">156</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### OptForSize {#a9820964a20d9c99bd755249ffd37161c}
+
+<MemberDefinition
+  prototype="bool llvm::ConstantHoistingPass::OptForSize">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00158">158</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### PSI {#a7e3559a9a1034a5764b4c151d216c386}
+
+<MemberDefinition
+  prototype={<>ProfileSummaryInfo&#42; llvm::ConstantHoistingPass::PSI</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00157">157</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+### TTI {#a0a374348834f55c934b8ddf6cc74fa00}
+
+<MemberDefinition
+  prototype={<>const TargetTransformInfo&#42; llvm::ConstantHoistingPass::TTI</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h/#l00151">151</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/scalar/constanthoisting-h">ConstantHoisting.h</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/constanthoisting-cpp">ConstantHoisting.cpp</a></li>
+</ul>
+
+</DoxygenPage>

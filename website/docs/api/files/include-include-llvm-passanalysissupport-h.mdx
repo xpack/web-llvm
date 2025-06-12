@@ -1,0 +1,396 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/passanalysissupport-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `PassAnalysisSupport.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/STLExtras.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/stlextras-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/SmallVector.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cassert"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="tuple"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="utility"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="vector"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/analysisusage">AnalysisUsage</a></>}>
+Represent the analysis usage information of a pass. <a href="/docs/api/classes/llvm/analysisusage/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/analysisresolver">AnalysisResolver</a></>}>
+<a href="/docs/api/classes/llvm/analysisresolver">AnalysisResolver</a> - Simple interface used by <a href="/docs/api/classes/llvm/pass">Pass</a> objects to pull all analysis information out of pass manager that is responsible to manage the pass. <a href="/docs/api/classes/llvm/analysisresolver/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/PassAnalysisSupport.h - Analysis Pass Support code --&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file defines stuff that is used to define and &quot;use&quot; Analysis Passes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file is automatically #included by Pass.h, so:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//           NO .CPP FILES SHOULD INCLUDE THIS FILE DIRECTLY</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Instead, #include Pass.h</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if !defined(LLVM&#95;PASS&#95;H) || defined(LLVM&#95;PASSANALYSISSUPPORT&#95;H)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#error &quot;Do not include &lt;PassAnalysisSupport.h&gt;; include &lt;Pass.h&gt; instead&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;PASSANALYSISSUPPORT&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;PASSANALYSISSUPPORT&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stlextras-h">llvm/ADT/STLExtras.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cassert&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;tuple&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;utility&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;vector&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/function">Function</a>;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/pass">Pass</a>;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/pmdatamanager">PMDataManager</a>;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/stringref">StringRef</a>;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">/// Represent the analysis usage information of a pass.  This tracks analyses</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">/// that the pass REQUIRES (must be available when the pass runs), REQUIRES</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">/// TRANSITIVE (must be available throughout the lifetime of the pass), and</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">/// analyses that the pass PRESERVES (the pass does not invalidate the results</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">/// of these analyses).  This information is provided by a pass to the Pass</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="comment">/// infrastructure through the getAnalysisUsage virtual function.</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/classes/llvm/analysisusage"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/analysisusage/#aa371d2d081bd5a108b861090ac8f8cf7">AnalysisUsage</a> &#123;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49" lineLink="/docs/api/classes/llvm/analysisusage/#aca5945c84f7ab80d6fb87b09c633aff9"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/analysisusage/#aca5945c84f7ab80d6fb87b09c633aff9">VectorType</a> = <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;AnalysisID&gt;</a>;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">  /// Sets of analyses required and preserved by a pass</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// TODO: It&#39;s not clear that SmallVector is an appropriate data structure for</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// this usecase.  The sizes were picked to minimize wasted space, but are</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// otherwise fairly meaningless.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;AnalysisID, 8&gt;</a> Required;</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;AnalysisID, 2&gt;</a> RequiredTransitive;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;AnalysisID, 2&gt;</a> Preserved;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;AnalysisID, 0&gt;</a> Used;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> PreservesAll = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> pushUnique(<a href="/docs/api/classes/llvm/analysisusage/#aca5945c84f7ab80d6fb87b09c633aff9">VectorType</a> &amp;Set, <a href="/docs/api/namespaces/llvm/#af8dcbb0c9f8f0e566a07488f68418d5b">AnalysisID</a> <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>) &#123;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/namespaces/llvm/#acd1cd968cb420c82d70926920fcdc7d7">llvm::is&#95;contained</a>(Set, <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>))</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">      Set.push&#95;back(<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>);</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68" lineLink="/docs/api/classes/llvm/analysisusage/#aa371d2d081bd5a108b861090ac8f8cf7"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisusage/#aa371d2d081bd5a108b861090ac8f8cf7">AnalysisUsage</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="comment">  ///@&#123;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">  /// Add the specified ID to the required set of the usage info for a pass.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisusage/#aa371d2d081bd5a108b861090ac8f8cf7">AnalysisUsage</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#a053677ebc731b47a534f841b11b5cf0c">addRequiredID</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>);</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisusage/#aa371d2d081bd5a108b861090ac8f8cf7">AnalysisUsage</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#a053677ebc731b47a534f841b11b5cf0c">addRequiredID</a>(</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>);</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal">&lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> PassClass&gt;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75" lineLink="/docs/api/classes/llvm/analysisusage/#ae0adcccca08fb686c9ce00f9397b660c"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisusage/#aa371d2d081bd5a108b861090ac8f8cf7">AnalysisUsage</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#ae0adcccca08fb686c9ce00f9397b660c">addRequired</a>() &#123;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/analysisusage/#a053677ebc731b47a534f841b11b5cf0c">addRequiredID</a>(PassClass::ID);</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisusage">AnalysisUsage</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#a39c64174b9b56285668f8fc3602c868a">addRequiredTransitiveID</a>(</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>);</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal">&lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> PassClass&gt;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81" lineLink="/docs/api/classes/llvm/analysisusage/#afd8af3487564621ceeb41c2838c4469e"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisusage/#aa371d2d081bd5a108b861090ac8f8cf7">AnalysisUsage</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#afd8af3487564621ceeb41c2838c4469e">addRequiredTransitive</a>() &#123;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/analysisusage/#a39c64174b9b56285668f8fc3602c868a">addRequiredTransitiveID</a>(PassClass::ID);</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">  &#125;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  ///@&#125;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="comment">  ///@&#123;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="comment">  /// Add the specified ID to the set of analyses preserved by this pass.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88" lineLink="/docs/api/classes/llvm/analysisusage/#a573df5c9c3024ebb646e15cc7450bf91"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisusage/#aa371d2d081bd5a108b861090ac8f8cf7">AnalysisUsage</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#a573df5c9c3024ebb646e15cc7450bf91">addPreservedID</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>) &#123;</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">    pushUnique(Preserved, <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>);</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92" lineLink="/docs/api/classes/llvm/analysisusage/#a4bec6c0110eba34c58f70e6cb0ae8b32"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisusage/#aa371d2d081bd5a108b861090ac8f8cf7">AnalysisUsage</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#a4bec6c0110eba34c58f70e6cb0ae8b32">addPreservedID</a>(</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>) &#123;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">    pushUnique(Preserved, &amp;<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>);</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  &#125;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="comment">  /// Add the specified Pass class to the set of analyses preserved by this pass.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal">&lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> PassClass&gt;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98" lineLink="/docs/api/classes/llvm/analysisusage/#ae9356b720f6fbab112d809738dcc4f2a"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisusage/#aa371d2d081bd5a108b861090ac8f8cf7">AnalysisUsage</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#ae9356b720f6fbab112d809738dcc4f2a">addPreserved</a>() &#123;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">    pushUnique(Preserved, &amp;PassClass::ID);</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  &#125;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">  ///@&#125;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="comment">  ///@&#123;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">  /// Add the specified ID to the set of analyses used by this pass if they are</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">  /// available..</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107" lineLink="/docs/api/classes/llvm/analysisusage/#a6e3b2899057c9d61b73d239680b6cada"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisusage/#aa371d2d081bd5a108b861090ac8f8cf7">AnalysisUsage</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#a6e3b2899057c9d61b73d239680b6cada">addUsedIfAvailableID</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>) &#123;</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">    pushUnique(Used, <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>);</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111" lineLink="/docs/api/classes/llvm/analysisusage/#a9eb4c96bc9f31369564e5061a0137bb8"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisusage/#aa371d2d081bd5a108b861090ac8f8cf7">AnalysisUsage</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#a9eb4c96bc9f31369564e5061a0137bb8">addUsedIfAvailableID</a>(</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>) &#123;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">    pushUnique(Used, &amp;<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>);</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  &#125;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">  /// Add the specified Pass class to the set of analyses used by this pass.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal">&lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> PassClass&gt;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117" lineLink="/docs/api/classes/llvm/analysisusage/#aaeddaf79040291b6f3e0db57943aac39"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisusage/#aa371d2d081bd5a108b861090ac8f8cf7">AnalysisUsage</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#aaeddaf79040291b6f3e0db57943aac39">addUsedIfAvailable</a>() &#123;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">    pushUnique(Used, &amp;PassClass::ID);</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">  &#125;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">  ///@&#125;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="comment">  /// Add the Pass with the specified argument string to the set of analyses</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="comment">  /// preserved by this pass. If no such Pass exists, do nothing. This can be</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">  /// useful when a pass is trivially preserved, but may not be linked in. Be</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="comment">  /// careful about spelling!</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisusage">AnalysisUsage</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#ae9356b720f6fbab112d809738dcc4f2a">addPreserved</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Arg);</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="comment">  /// Set by analyses that do not transform their input at all</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130" lineLink="/docs/api/classes/llvm/analysisusage/#af22b06a6a4f9df80454071685a0d6a02"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/analysisusage/#af22b06a6a4f9df80454071685a0d6a02">setPreservesAll</a>() &#123; PreservesAll = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">  /// Determine whether a pass said it does not transform its input at all</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133" lineLink="/docs/api/classes/llvm/analysisusage/#af25c3e35aa8152adb82963b80be929c0"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/analysisusage/#af25c3e35aa8152adb82963b80be929c0">getPreservesAll</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> PreservesAll; &#125;</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">  /// This function should be called by the pass, iff they do not:</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="comment">  ///  1 Add or remove basic blocks from the function</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">  ///  2 Modify terminator instructions in any way.</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="comment">  /// This function annotates the AnalysisUsage info object to say that analyses</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="comment">  /// that only depend on the CFG are preserved by this pass.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/analysisusage/#af11a6ebf7ab3c388234cb6d5378439a3">setPreservesCFG</a>();</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144" lineLink="/docs/api/classes/llvm/analysisusage/#a299caaa13ef3566bddb9781064aebdb9"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/analysisusage/#aca5945c84f7ab80d6fb87b09c633aff9">VectorType</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#a299caaa13ef3566bddb9781064aebdb9">getRequiredSet</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Required; &#125;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145" lineLink="/docs/api/classes/llvm/analysisusage/#aab8bb94b2d54bff44ec50eade145bd08"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/analysisusage/#aca5945c84f7ab80d6fb87b09c633aff9">VectorType</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#aab8bb94b2d54bff44ec50eade145bd08">getRequiredTransitiveSet</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> RequiredTransitive;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148" lineLink="/docs/api/classes/llvm/analysisusage/#af9c346823bed8d8787ced3ce5b0a2ced"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/analysisusage/#aca5945c84f7ab80d6fb87b09c633aff9">VectorType</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#af9c346823bed8d8787ced3ce5b0a2ced">getPreservedSet</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Preserved; &#125;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149" lineLink="/docs/api/classes/llvm/analysisusage/#ad0364d79e9c78f6781cbe243737f5908"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/analysisusage/#aca5945c84f7ab80d6fb87b09c633aff9">VectorType</a> &amp;<a href="/docs/api/classes/llvm/analysisusage/#ad0364d79e9c78f6781cbe243737f5908">getUsedSet</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Used; &#125;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="comment">/// AnalysisResolver - Simple interface used by Pass objects to pull all</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="comment">/// analysis information out of pass manager that is responsible to manage</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="comment">/// the pass.</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157" lineLink="/docs/api/classes/llvm/analysisresolver"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/analysisresolver/#ac31431f034fc6bed4a533fdc0adc8cb2">AnalysisResolver</a> &#123;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159" lineLink="/docs/api/classes/llvm/analysisresolver/#ac31431f034fc6bed4a533fdc0adc8cb2"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/analysisresolver/#ac31431f034fc6bed4a533fdc0adc8cb2">AnalysisResolver</a>() = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160" lineLink="/docs/api/classes/llvm/analysisresolver/#a94a90f68a08f3f67ab3a3c52014c0b7d"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/analysisresolver/#a94a90f68a08f3f67ab3a3c52014c0b7d">AnalysisResolver</a>(<a href="/docs/api/classes/llvm/pmdatamanager">PMDataManager</a> &amp;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>) : PM(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162" lineLink="/docs/api/classes/llvm/analysisresolver/#a2cfbfb9f4e4110382ff2c188a902668a"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pmdatamanager">PMDataManager</a> &amp;<a href="/docs/api/classes/llvm/analysisresolver/#a2cfbfb9f4e4110382ff2c188a902668a">getPMDataManager</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> PM; &#125;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="comment">  /// Find pass that is implementing PI.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165" lineLink="/docs/api/classes/llvm/analysisresolver/#a103386fa0d794773d859e9d29957a9e7"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pass">Pass</a> &#42;<a href="/docs/api/classes/llvm/analysisresolver/#a103386fa0d794773d859e9d29957a9e7">findImplPass</a>(<a href="/docs/api/namespaces/llvm/#af8dcbb0c9f8f0e566a07488f68418d5b">AnalysisID</a> PI) &#123;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pass">Pass</a> &#42;ResultPass = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;AnalysisImpl : AnalysisImpls) &#123;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (AnalysisImpl.first == PI) &#123;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">        ResultPass = AnalysisImpl.second;</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ResultPass;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="comment">  /// Find pass that is implementing PI. Initialize pass for Function F.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">  std::tuple&lt;Pass &#42;, bool&gt; <a href="/docs/api/classes/llvm/analysisresolver/#a103386fa0d794773d859e9d29957a9e7">findImplPass</a>(<a href="/docs/api/classes/llvm/pass">Pass</a> &#42;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="/docs/api/namespaces/llvm/#af8dcbb0c9f8f0e566a07488f68418d5b">AnalysisID</a> PI, <a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179" lineLink="/docs/api/classes/llvm/analysisresolver/#a01d493bec362b20703d57138b6873382"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/analysisresolver/#a01d493bec362b20703d57138b6873382">addAnalysisImplsPair</a>(<a href="/docs/api/namespaces/llvm/#af8dcbb0c9f8f0e566a07488f68418d5b">AnalysisID</a> PI, <a href="/docs/api/classes/llvm/pass">Pass</a> &#42;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>) &#123;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/analysisresolver/#a103386fa0d794773d859e9d29957a9e7">findImplPass</a>(PI) == <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>)</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">    std::pair&lt;AnalysisID, Pass&#42;&gt; pir = std::make&#95;pair(PI,<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>);</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">    AnalysisImpls.push&#95;back(pir);</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="comment">  /// Clear cache that is used to connect a pass to the analysis (PassInfo).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187" lineLink="/docs/api/classes/llvm/analysisresolver/#ab3cc8fe33d09260110dcf79677206591"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/analysisresolver/#ab3cc8fe33d09260110dcf79677206591">clearAnalysisImpls</a>() &#123;</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">    AnalysisImpls.clear();</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="comment">  /// Return analysis result or null if it doesn&#39;t exist.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pass">Pass</a> &#42;<a href="/docs/api/classes/llvm/analysisresolver/#af4ddf5f78bc987b43d6755fd8767e8d0">getAnalysisIfAvailable</a>(<a href="/docs/api/namespaces/llvm/#af8dcbb0c9f8f0e566a07488f68418d5b">AnalysisID</a> <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="comment">  /// This keeps track of which passes implements the interfaces that are</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="comment">  /// required by the current pass (to implement getAnalysis()).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">  std::vector&lt;std::pair&lt;AnalysisID, Pass &#42;&gt;&gt; AnalysisImpls;</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="comment">  /// PassManager that is used to resolve analysis info</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pmdatamanager">PMDataManager</a> &amp;PM;</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="comment">/// getAnalysisIfAvailable&lt;AnalysisType&gt;() - Subclasses use this function to</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="comment">/// get analysis information that might be around, for example to update it.</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="comment">/// This is different than getAnalysis in that it can fail (if the analysis</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="comment">/// results haven&#39;t been computed), so should only be used if you can handle</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="comment">/// the case when the analysis is not available.  This method is often used by</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="comment">/// transformation APIs to update analysis results for a pass automatically as</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="comment">/// the transform is performed.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal">&lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> AnalysisType&gt;</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211" lineLink="/docs/api/classes/llvm/pass/#af94c014e968489e96c7d4353a84ad7f5"><Highlight kind="normal">AnalysisType &#42;<a href="/docs/api/classes/llvm/pass/#af94c014e968489e96c7d4353a84ad7f5">Pass::getAnalysisIfAvailable</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Resolver &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Pass not resident in a PassManager object!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;PI = &amp;AnalysisType::ID;</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pass/#a16baa169d062524be5a6b67609266174">Pass</a> &#42;ResultPass = Resolver-&gt;getAnalysisIfAvailable(PI);</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!ResultPass) </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Because the AnalysisType may not be a subclass of pass (for</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// AnalysisGroups), we use getAdjustedAnalysisPointer here to potentially</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// adjust the return pointer (because the class may multiply inherit, once</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// from pass, once from AnalysisType).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (AnalysisType&#42;)ResultPass-&gt;<a href="/docs/api/classes/llvm/pass/#a03d3a81b1c46aff7c38ef3a6750ba225">getAdjustedAnalysisPointer</a>(PI);</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="comment">/// getAnalysis&lt;AnalysisType&gt;() - This function is used by subclasses to get</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="comment">/// to the analysis information that they claim to use by overriding the</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="comment">/// getAnalysisUsage function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal">&lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> AnalysisType&gt;</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230" lineLink="/docs/api/classes/llvm/pass/#a4863e5e463fb79955269fbf7fbf52b80"><Highlight kind="normal">AnalysisType &amp;<a href="/docs/api/classes/llvm/pass/#a4863e5e463fb79955269fbf7fbf52b80">Pass::getAnalysis</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Resolver &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Pass has not been inserted into a PassManager object!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pass/#a6613f29d3e54ce175ac33fb9ba264fae">getAnalysisID&lt;AnalysisType&gt;</a>(&amp;AnalysisType::ID);</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal">&lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> AnalysisType&gt;</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236" lineLink="/docs/api/classes/llvm/pass/#a6613f29d3e54ce175ac33fb9ba264fae"><Highlight kind="normal">AnalysisType &amp;<a href="/docs/api/classes/llvm/pass/#a6613f29d3e54ce175ac33fb9ba264fae">Pass::getAnalysisID</a>(<a href="/docs/api/namespaces/llvm/#af8dcbb0c9f8f0e566a07488f68418d5b">AnalysisID</a> PI)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(PI &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;getAnalysis for unregistered pass!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Resolver&amp;&amp;</Highlight><Highlight kind="stringliteral">&quot;Pass has not been inserted into a PassManager object!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// PI &#42;must&#42; appear in AnalysisImpls.  Because the number of passes used</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// should be a small number, we just do a linear search over a (dense)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// vector.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pass/#a16baa169d062524be5a6b67609266174">Pass</a> &#42;ResultPass = Resolver-&gt;findImplPass(PI);</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(ResultPass &amp;&amp;</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">         </Highlight><Highlight kind="stringliteral">&quot;getAnalysis&#42;() called on an analysis that was not &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">         </Highlight><Highlight kind="stringliteral">&quot;&#39;required&#39; by pass!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Because the AnalysisType may not be a subclass of pass (for</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// AnalysisGroups), we use getAdjustedAnalysisPointer here to potentially</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// adjust the return pointer (because the class may multiply inherit, once</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// from pass, once from AnalysisType).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;(AnalysisType&#42;)ResultPass-&gt;<a href="/docs/api/classes/llvm/pass/#a03d3a81b1c46aff7c38ef3a6750ba225">getAdjustedAnalysisPointer</a>(PI);</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="comment">/// getAnalysis&lt;AnalysisType&gt;() - This function is used by subclasses to get</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="comment">/// to the analysis information that they claim to use by overriding the</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="comment">/// getAnalysisUsage function. If as part of the dependencies, an IR</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="comment">/// transformation is triggered (e.g. because the analysis requires</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="comment">/// BreakCriticalEdges), and Changed is non null, &#42;Changed is updated.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> AnalysisType&gt;</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260" lineLink="/docs/api/classes/llvm/pass/#a560d384c0cef7f62836884fdbbd1fe66"><Highlight kind="normal">AnalysisType &amp;<a href="/docs/api/classes/llvm/pass/#a4863e5e463fb79955269fbf7fbf52b80">Pass::getAnalysis</a>(<a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>) &#123;</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Resolver &amp;&amp;</Highlight><Highlight kind="stringliteral">&quot;Pass has not been inserted into a PassManager object!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pass/#a6613f29d3e54ce175ac33fb9ba264fae">getAnalysisID&lt;AnalysisType&gt;</a>(&amp;AnalysisType::ID, <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>);</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> AnalysisType&gt;</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267" lineLink="/docs/api/classes/llvm/pass/#a2190247edbacb33b4e8a3d409fa2d99e"><Highlight kind="normal">AnalysisType &amp;<a href="/docs/api/classes/llvm/pass/#a6613f29d3e54ce175ac33fb9ba264fae">Pass::getAnalysisID</a>(<a href="/docs/api/namespaces/llvm/#af8dcbb0c9f8f0e566a07488f68418d5b">AnalysisID</a> PI, <a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>) &#123;</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(PI &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;getAnalysis for unregistered pass!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Resolver &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Pass has not been inserted into a PassManager object!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// PI &#42;must&#42; appear in AnalysisImpls.  Because the number of passes used</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// should be a small number, we just do a linear search over a (dense)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// vector.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pass/#a16baa169d062524be5a6b67609266174">Pass</a> &#42;ResultPass;</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> LocalChanged;</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">  std::tie(ResultPass, LocalChanged) = Resolver-&gt;findImplPass(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">, PI, <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(ResultPass &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Unable to find requested analysis info&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>)</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">    &#42;<a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> |= LocalChanged;</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!LocalChanged &amp;&amp;</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;A pass trigged a code update but the update status is lost&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Because the AnalysisType may not be a subclass of pass (for</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// AnalysisGroups), we use getAdjustedAnalysisPointer here to potentially</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// adjust the return pointer (because the class may multiply inherit, once</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// from pass, once from AnalysisType).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;(AnalysisType&#42;)ResultPass-&gt;<a href="/docs/api/classes/llvm/pass/#a03d3a81b1c46aff7c38ef3a6750ba225">getAdjustedAnalysisPointer</a>(PI);</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;PASSANALYSISSUPPORT&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

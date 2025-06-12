@@ -1,0 +1,90 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/switchsuccwrapper
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `SwitchSuccWrapper` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Checking whether two cases of <a href="/docs/api/namespaces/llvm/si">SI</a> are equal depends on the contents of the <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> and the incoming values of their successor PHINodes. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct SwitchSuccWrapper</CodeBlock>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;</>}
+  name={<><a href="#a0765647c64190b61909606646061c314">Dest</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/phinode">PHINode</a> &#42;, <a href="/docs/api/classes/llvm/smalldensemap">SmallDenseMap</a>&lt; <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, <a href="/docs/api/classes/llvm/value">Value</a> &#42;, 8 &gt; &gt; &#42;</>}
+  name={<><a href="#a0d0092e0f010e6f8831d0b4797f1a8d3">PhiPredIVs</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Checking whether two cases of <a href="/docs/api/namespaces/llvm/si">SI</a> are equal depends on the contents of the <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> and the incoming values of their successor PHINodes.
+
+<a href="/docs/api/classes/llvm/phinode/#ab2db7609ec72b1af2f91d47e40dc3722">PHINode::getIncomingValueForBlock</a> is O(|Preds|), so we&#39;d like to avoid calling this function on each <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> every time isEqual is called, especially since the same <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> may be passed as an argument multiple times. To do this, we can precompute a map of <a href="/docs/api/classes/llvm/phinode">PHINode</a> -&gt; Pred <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> -&gt; IncomingValue and add it in the Wrapper so isEqual can do O(1) checking of the incoming values.
+
+Definition at line 7500 of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/simplifycfg-cpp">SimplifyCFG.cpp</a>.
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### Dest {#a0765647c64190b61909606646061c314}
+
+<MemberDefinition
+  prototype={<>BasicBlock&#42; SwitchSuccWrapper::Dest</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/simplifycfg-cpp/#l07501">7501</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/simplifycfg-cpp">SimplifyCFG.cpp</a>.
+</MemberDefinition>
+
+### PhiPredIVs {#a0d0092e0f010e6f8831d0b4797f1a8d3}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;PHINode &#42;, SmallDenseMap&lt;BasicBlock &#42;, Value &#42;, 8&gt; &gt;&#42; SwitchSuccWrapper::PhiPredIVs</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/simplifycfg-cpp/#l07502">7502</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/simplifycfg-cpp">SimplifyCFG.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/simplifycfg-cpp">SimplifyCFG.cpp</a></li>
+</ul>
+
+</DoxygenPage>

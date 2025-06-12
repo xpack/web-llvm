@@ -1,0 +1,203 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/crashrecoverycontextcleanupregistrar
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `CrashRecoveryContextCleanupRegistrar` Class Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Helper class for managing resource cleanups. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;typename T, typename Cleanup = CrashRecoveryContextDeleteCleanup&lt;T&gt;&gt;
+class llvm::CrashRecoveryContextCleanupRegistrar&lt;T, Cleanup&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/CrashRecoveryContext.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/crashrecoverycontext-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt; ... &gt;</>}
+  name={<><a href="#a22b2744432d950424a79cce9424ff02e">CrashRecoveryContextCleanupRegistrar</a> (T &#42;x)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Destructor Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt; ... &gt;</>}
+  name={<><a href="#a00e5aae1b2a541afcaf103df3b4eb287">~CrashRecoveryContextCleanupRegistrar</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt; ... &gt;</>}
+  type="void"
+  name={<><a href="#a0cc8485800a00bacc1728815c0dc5220">unregister</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt; ... &gt;</>}
+  type={<><a href="/docs/api/classes/llvm/crashrecoverycontextcleanup">CrashRecoveryContextCleanup</a> &#42;</>}
+  name={<><a href="#ad04c80cc1170cb83628e552818bd177e">cleanup</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Helper class for managing resource cleanups.
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T"><a href="/docs/api/classes/llvm/type">Type</a> of resource been reclaimed.</ParametersListItem>
+<ParametersListItem name="Cleanup">Class that defines how the resource is reclaimed.</ParametersListItem>
+</ParametersList>
+Clients create objects of this type in the code executed in a crash recovery context to ensure that the resource will be reclaimed even in the case of crash. For example:
+
+
+<ProgramListing>
+
+<CodeLine><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> actual&#95;work(</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;) &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  ...</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  std::unique&#95;ptr&lt;Resource&gt; <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>(</Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> Resource());</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  <a href="#a22b2744432d950424a79cce9424ff02e">CrashRecoveryContextCleanupRegistrar</a> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a6a9f043784cf87001c84980afa76da82">D</a>(<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.get());</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  ...</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> foo() &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  CrashRecoveryContext CRC;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!CRC.RunSafely(actual&#95;work, 0)) &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">     ... a crash was detected, <a href="/docs/api/namespaces/llvm/memprof/anonymous-memprofreader-cpp-/#a5aa1da33006dea5aabda2768e34787b8">report</a> <a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/codeview/symbolrecordmapping-cpp/#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a> to user ...</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+If the code of <code>actual&#95;work</code> in the example above does not crash, the destructor of <a href="/docs/api/classes/llvm/crashrecoverycontextcleanupregistrar">CrashRecoveryContextCleanupRegistrar</a> removes cleanup code from the current <a href="/docs/api/classes/llvm/crashrecoverycontext">CrashRecoveryContext</a> and the resource is reclaimed by the destructor of std::unique&#95;ptr. If crash happens, destructors are not called and the resource is reclaimed by cleanup object registered in the recovery context by the constructor of <a href="/docs/api/classes/llvm/crashrecoverycontextcleanupregistrar">CrashRecoveryContextCleanupRegistrar</a>.
+
+Definition at line 252 of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/crashrecoverycontext-h">CrashRecoveryContext.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### CrashRecoveryContextCleanupRegistrar() {#a22b2744432d950424a79cce9424ff02e}
+
+<MemberDefinition
+  template={<>template &lt;typename T, typename Cleanup = CrashRecoveryContextDeleteCleanup&lt;T&gt;&gt;</>}
+  prototype={<>llvm::CrashRecoveryContextCleanupRegistrar&lt; T, Cleanup &gt;::CrashRecoveryContextCleanupRegistrar (T &#42; x)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/crashrecoverycontext-h/#l00256">256</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/crashrecoverycontext-h">CrashRecoveryContext.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Destructor
+
+### ~CrashRecoveryContextCleanupRegistrar() {#a00e5aae1b2a541afcaf103df3b4eb287}
+
+<MemberDefinition
+  template={<>template &lt;typename T, typename Cleanup = CrashRecoveryContextDeleteCleanup&lt;T&gt;&gt;</>}
+  prototype={<>llvm::CrashRecoveryContextCleanupRegistrar&lt; T, Cleanup &gt;::~CrashRecoveryContextCleanupRegistrar ()</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/crashrecoverycontext-h/#l00262">262</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/crashrecoverycontext-h">CrashRecoveryContext.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### unregister() {#a0cc8485800a00bacc1728815c0dc5220}
+
+<MemberDefinition
+  template={<>template &lt;typename T, typename Cleanup = CrashRecoveryContextDeleteCleanup&lt;T&gt;&gt;</>}
+  prototype={<>void llvm::CrashRecoveryContextCleanupRegistrar&lt; T, Cleanup &gt;::unregister ()</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/crashrecoverycontext-h/#l00264">264</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/crashrecoverycontext-h">CrashRecoveryContext.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### cleanup {#ad04c80cc1170cb83628e552818bd177e}
+
+<MemberDefinition
+  template={<>template &lt;typename T, typename Cleanup = CrashRecoveryContextDeleteCleanup&lt;T&gt;&gt;</>}
+  prototype={<>CrashRecoveryContextCleanup&#42; llvm::CrashRecoveryContextCleanupRegistrar&lt; T, Cleanup &gt;::cleanup</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/crashrecoverycontext-h/#l00253">253</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/crashrecoverycontext-h">CrashRecoveryContext.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/support/crashrecoverycontext-h">CrashRecoveryContext.h</a></li>
+</ul>
+
+</DoxygenPage>

@@ -1,0 +1,210 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/coverage/mcdc/tvidxbuilder
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `TVIdxBuilder` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Compute TestVector Indices &quot;TVIdx&quot; from the Conds graph. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::coverage::mcdc::TVIdxBuilder</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ProfileData/Coverage/CoverageMapping.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemapping-h"
+  isLocal="true" />
+</IncludesList>
+
+## Derived Classes
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-coveragemapping-cpp-/mcdcrecordprocessor">MCDCRecordProcessor</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a85f4860524d04ca3d92dae7f5b1a9fba">TVIdxBuilder</a> (const SmallVectorImpl&lt; ConditionIDs &gt; &amp;NextIDs, int Offset=0)</>}>
+Calculate and assign Indices. <a href="#a85f4860524d04ca3d92dae7f5b1a9fba">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; std::array&lt; int, 2 &gt; &gt;</>}
+  name={<><a href="#addab26c232972cd969580a6e8c3cdc63">Indices</a></>}>
+Output: Index for TestVectors bitmap (These are not CondIDs) <a href="#addab26c232972cd969580a6e8c3cdc63">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="int"
+  name={<><a href="#ae40a1dc93bf1f50f9198eee9cc596564">NumTestVectors</a></>}>
+Output: The number of test vectors. <a href="#ae40a1dc93bf1f50f9198eee9cc596564">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/structs/llvm/coverage/mcdc/tvidxbuilder/mcdcnode">MCDCNode</a> &gt;</>}
+  name={<><a href="#af7dba5cc9b312a8eb450ca03be0d15b9">SavedNodes</a></>}>
+This is no longer needed after the assignment. <a href="#af7dba5cc9b312a8eb450ca03be0d15b9">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="auto"
+  name={<><a href="#a6c196d9f1077f1354d73474c28e0c196">HardMaxTVs</a> =
+      std::numeric&#95;limits&lt;decltype(<a href="#ae40a1dc93bf1f50f9198eee9cc596564">NumTestVectors</a>)&gt;<a href="/docs/api/namespaces/llvm/#a003389e30c9b0ec678f95bad1f3dbc4a">::max</a>()</>}>
+Hard limit of test vectors. <a href="#a6c196d9f1077f1354d73474c28e0c196">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Compute TestVector Indices &quot;TVIdx&quot; from the Conds graph.
+
+Clang CodeGen handles the bitmap index based on TVIdx. llvm-cov reconstructs conditions from TVIdx.
+
+For each leaf &quot;The final decision&quot;,
+<ul>
+<li>TVIdx should be unique.</li>
+<li>TVIdx has the Width.
+<ul>
+<li>The width represents the number of possible paths.</li>
+<li>The minimum width is 1 &quot;deterministic&quot;.</li>
+</ul></li>
+<li>The order of leaves are sorted by Width DESC. It expects latter TVIdx(s) (with Width=1) could be pruned and altered to other simple branch conditions.</li>
+</ul>
+
+Definition at line 638 of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemapping-h">CoverageMapping.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### TVIdxBuilder() {#a85f4860524d04ca3d92dae7f5b1a9fba}
+
+<MemberDefinition
+  prototype={<>mcdc::TVIdxBuilder::TVIdxBuilder (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/namespaces/llvm/coverage/mcdc/#a9cc68f11a8ddf4b1032a53531107373d">ConditionIDs</a> &gt; &amp; NextIDs, int Offset=0)</>}>
+Calculate and assign Indices.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="NextIDs">The list of &#123;FalseID, TrueID&#125; indexed by <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> The first element &#91;0&#93; should be the root node.</ParametersListItem>
+<ParametersListItem name="Offset">Offset of index to final decisions.</ParametersListItem>
+</ParametersList>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemapping-h/#l00668">668</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemapping-h">CoverageMapping.h</a>, definition at line <a href="/docs/api/files/lib/lib/profiledata/lib/profiledata/coverage/coveragemapping-cpp/#l00283">283</a> of file <a href="/docs/api/files/lib/lib/profiledata/lib/profiledata/coverage/coveragemapping-cpp">CoverageMapping.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### Indices {#addab26c232972cd969580a6e8c3cdc63}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;std::array&lt;int, 2&gt; &gt; llvm::coverage::mcdc::TVIdxBuilder::Indices</>}>
+Output: Index for TestVectors bitmap (These are not CondIDs)
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemapping-h/#l00653">653</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemapping-h">CoverageMapping.h</a>.
+</MemberDefinition>
+
+### NumTestVectors {#ae40a1dc93bf1f50f9198eee9cc596564}
+
+<MemberDefinition
+  prototype="int llvm::coverage::mcdc::TVIdxBuilder::NumTestVectors">
+Output: The number of test vectors.
+
+<a href="/docs/api/classes/llvm/error">Error</a> with HardMaxTVs if the number has exploded.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemapping-h/#l00657">657</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemapping-h">CoverageMapping.h</a>.
+</MemberDefinition>
+
+### SavedNodes {#af7dba5cc9b312a8eb450ca03be0d15b9}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;MCDCNode&gt; llvm::coverage::mcdc::TVIdxBuilder::SavedNodes</>}>
+This is no longer needed after the assignment.
+
+It may be used in <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert()</a> for reconfirmation.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemapping-h/#l00649">649</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemapping-h">CoverageMapping.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Attributes
+
+### HardMaxTVs {#a6c196d9f1077f1354d73474c28e0c196}
+
+<MemberDefinition
+  prototype={<>auto llvm::coverage::mcdc::TVIdxBuilder::HardMaxTVs =
+      std::numeric&#95;limits&lt;decltype(<a href="#ae40a1dc93bf1f50f9198eee9cc596564">NumTestVectors</a>)&gt;<a href="/docs/api/namespaces/llvm/#a003389e30c9b0ec678f95bad1f3dbc4a">::max</a>()</>}
+  labels = {["constexpr", "static"]}>
+Hard limit of test vectors.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemapping-h/#l00660">660</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemapping-h">CoverageMapping.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/include/llvm/profiledata/coverage/coveragemapping-h">CoverageMapping.h</a></li>
+<li><a href="/docs/api/files/lib/lib/profiledata/lib/profiledata/coverage/coveragemapping-cpp">CoverageMapping.cpp</a></li>
+</ul>
+
+</DoxygenPage>

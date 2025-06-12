@@ -1,0 +1,88 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/objcopy/macho/weakbindinfo
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `WeakBindInfo` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+The location of the weak bind info inside the binary is described by LC&#95;DYLD&#95;INFO load command. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct llvm::objcopy::macho::WeakBindInfo</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="ObjCopy/MachO/MachOObject.h"
+  permalink="/docs/api/files/lib/lib/objcopy/lib/objcopy/macho/machoobject-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; uint8&#95;t &gt;</>}
+  name={<><a href="#aea259cd75b7493da0eb265b966f0bc41">Opcodes</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+The location of the weak bind info inside the binary is described by LC&#95;DYLD&#95;INFO load command.
+
+Some C++ programs require dyld to unique symbols so that all images in the process use the same copy of some code/data. This step is done after binding. The content of the weak&#95;bind info is an opcode stream like the bind&#95;info. But it is sorted alphabetically by symbol name. This enable dyld to walk all images with weak binding information in order and look for collisions. If there are no collisions, dyld does no updating. That means that some fixups are also encoded in the bind&#95;info. For instance, all calls to &quot;operator new&quot; are first bound to libstdc++.dylib using the information in bind&#95;info. Then if some image overrides operator new that is detected when the weak&#95;bind information is processed and the call to operator new is then rebound.
+
+Definition at line 246 of file <a href="/docs/api/files/lib/lib/objcopy/lib/objcopy/macho/machoobject-h">MachOObject.h</a>.
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### Opcodes {#aea259cd75b7493da0eb265b966f0bc41}
+
+<MemberDefinition
+  prototype={<>ArrayRef&lt;uint8&#95;t&gt; llvm::objcopy::macho::WeakBindInfo::Opcodes</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objcopy/lib/objcopy/macho/machoobject-h/#l00249">249</a> of file <a href="/docs/api/files/lib/lib/objcopy/lib/objcopy/macho/machoobject-h">MachOObject.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/objcopy/lib/objcopy/macho/machoobject-h">MachOObject.h</a></li>
+</ul>
+
+</DoxygenPage>

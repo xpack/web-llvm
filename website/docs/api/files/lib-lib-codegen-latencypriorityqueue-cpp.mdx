@@ -1,0 +1,239 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/codegen/latencypriorityqueue-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `LatencyPriorityQueue.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/CodeGen/LatencyPriorityQueue.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/latencypriorityqueue-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Config/llvm-config.h"
+  permalink=""
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Debug.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/debug-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/raw_ostream.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h"
+  isLocal="true" />
+</IncludesList>
+
+## Defines Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="#define"
+  name={<><a href="#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG&#95;TYPE</a>&nbsp;&nbsp;&nbsp;&quot;scheduler&quot;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Defines
+
+### DEBUG&#95;TYPE {#ad78e062f62e0d6e453941fb4ca843e4d}
+
+<MemberDefinition
+  prototype={<>#define DEBUG&#95;TYPE&nbsp;&nbsp;&nbsp;&quot;scheduler&quot;</>}>
+
+Definition at line <a href="#l00021">21</a> of file <a href="/docs/api/files/lib/lib/codegen/latencypriorityqueue-cpp">LatencyPriorityQueue.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===---- LatencyPriorityQueue.cpp - A latency-oriented priority queue ----===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements the LatencyPriorityQueue class, which is a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SchedulingPriorityQueue that schedules using latency information to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// reduce the length of the critical path through the basic block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/latencypriorityqueue-h">llvm/CodeGen/LatencyPriorityQueue.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;llvm/Config/llvm-config.h&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h">llvm/Support/Debug.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h">llvm/Support/raw&#95;ostream.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21" lineLink="#ad78e062f62e0d6e453941fb4ca843e4d"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEBUG&#95;TYPE &quot;scheduler&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23" lineLink="/docs/api/structs/llvm/latency-sort/#ac3ab067fe5477409441cf9381f3aa71d"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/latency-sort/#ac3ab067fe5477409441cf9381f3aa71d">latency&#95;sort::operator()</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;LHS, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;RHS)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The isScheduleHigh flag allows nodes with wraparound dependencies that</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// cannot easily be modeled as edges with latencies to be scheduled as</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// soon as possible in a top-down schedule.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LHS-&gt;isScheduleHigh &amp;&amp; !RHS-&gt;isScheduleHigh)</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!LHS-&gt;isScheduleHigh &amp;&amp; RHS-&gt;isScheduleHigh)</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> LHSNum = LHS-&gt;NodeNum;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> RHSNum = RHS-&gt;NodeNum;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The most important heuristic is scheduling the critical path.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> LHSLatency = <a href="/docs/api/structs/llvm/latency-sort/#a6430e50ad6f8eac9e50d147169e2742c">PQ</a>-&gt;getLatency(LHSNum);</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> RHSLatency = <a href="/docs/api/structs/llvm/latency-sort/#a6430e50ad6f8eac9e50d147169e2742c">PQ</a>-&gt;getLatency(RHSNum);</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LHSLatency &lt; RHSLatency) </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LHSLatency &gt; RHSLatency) </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// After that, if two nodes have identical latencies, look to see if one will</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// unblock more other nodes than the other.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> LHSBlocked = <a href="/docs/api/structs/llvm/latency-sort/#a6430e50ad6f8eac9e50d147169e2742c">PQ</a>-&gt;getNumSolelyBlockNodes(LHSNum);</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> RHSBlocked = <a href="/docs/api/structs/llvm/latency-sort/#a6430e50ad6f8eac9e50d147169e2742c">PQ</a>-&gt;getNumSolelyBlockNodes(RHSNum);</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LHSBlocked &lt; RHSBlocked) </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LHSBlocked &gt; RHSBlocked) </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Finally, just to provide a stable ordering, use the node number as a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// deciding factor.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> RHSNum &lt; LHSNum;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="comment">/// getSingleUnscheduledPred - If there is exactly one unscheduled predecessor</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="comment">/// of SU, return it, otherwise return null.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"><a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;LatencyPriorityQueue::getSingleUnscheduledPred(<a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;SU) &#123;</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;OnlyAvailablePred = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sdep">SDep</a> &amp;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a> : SU-&gt;<a href="/docs/api/classes/llvm/sunit/#ae2b43854b542de66eec6475adc48f56c">Preds</a>) &#123;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/sunit">SUnit</a> &amp;Pred = &#42;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>.getSUnit();</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Pred.isScheduled) &#123;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// We found an available, but not scheduled, predecessor.  If it&#39;s the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// only one we have found, keep track of it... otherwise give up.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (OnlyAvailablePred &amp;&amp; OnlyAvailablePred != &amp;Pred)</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">      OnlyAvailablePred = &amp;Pred;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OnlyAvailablePred;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72" lineLink="/docs/api/classes/llvm/latencypriorityqueue/#a2e3b6da384da19b92dc290a8051194c6"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/latencypriorityqueue/#a2e3b6da384da19b92dc290a8051194c6">LatencyPriorityQueue::push</a>(<a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;SU) &#123;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Look at all of the successors of this node.  Count the number of nodes that</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// this node is the sole unscheduled node for.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumNodesBlocking = 0;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sdep">SDep</a> &amp;Succ : SU-&gt;<a href="/docs/api/classes/llvm/sunit/#aab4a86c51e6b126c9c6ef58dbb574431">Succs</a>)</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (getSingleUnscheduledPred(Succ.<a href="/docs/api/classes/llvm/sdep/#a03a2dc5f9f321a2ce28f5c641dfe5455">getSUnit</a>()) == SU)</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">      ++NumNodesBlocking;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  NumNodesSolelyBlocking&#91;SU-&gt;<a href="/docs/api/classes/llvm/sunit/#a3f708b119627541f144d703a1d183202">NodeNum</a>&#93; = NumNodesBlocking;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  Queue.push&#95;back(SU);</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight><Highlight kind="comment">// scheduledNode - As nodes are scheduled, we look to see if there are any</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"></Highlight><Highlight kind="comment">// successor nodes that have a single unscheduled predecessor.  If so, that</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight><Highlight kind="comment">// single predecessor has a higher priority, since scheduling it will make</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight><Highlight kind="comment">// the node available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89" lineLink="/docs/api/classes/llvm/latencypriorityqueue/#a93f241795b5da8c207a88063862e2ea2"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/latencypriorityqueue/#a93f241795b5da8c207a88063862e2ea2">LatencyPriorityQueue::scheduledNode</a>(<a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;SU) &#123;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sdep">SDep</a> &amp;Succ : SU-&gt;<a href="/docs/api/classes/llvm/sunit/#aab4a86c51e6b126c9c6ef58dbb574431">Succs</a>)</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">    AdjustPriorityOfUnscheduledPreds(Succ.<a href="/docs/api/classes/llvm/sdep/#a03a2dc5f9f321a2ce28f5c641dfe5455">getSUnit</a>());</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">/// AdjustPriorityOfUnscheduledPreds - One of the predecessors of SU was just</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">/// scheduled.  If SU is not itself available, then there is at least one</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="comment">/// predecessor node that has not been scheduled yet.  If SU has exactly ONE</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">/// unscheduled predecessor, we want to increase its priority: it getting</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">/// scheduled will make this node available, so it is better than some other</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">/// node of the same priority that will not make a node available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> LatencyPriorityQueue::AdjustPriorityOfUnscheduledPreds(<a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;SU) &#123;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SU-&gt;<a href="/docs/api/classes/llvm/sunit/#a90272947a7dad8b452be533c490a5e89">isAvailable</a>) </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;  </Highlight><Highlight kind="comment">// All preds scheduled.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;OnlyAvailablePred = getSingleUnscheduledPred(SU);</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!OnlyAvailablePred || !OnlyAvailablePred-&gt;<a href="/docs/api/classes/llvm/sunit/#a90272947a7dad8b452be533c490a5e89">isAvailable</a>) </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Okay, we found a single predecessor that is available, but not scheduled.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Since it is available, it must be in the priority queue.  First remove it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/latencypriorityqueue/#a65b10a2416edce73bca7c46839268b41">remove</a>(OnlyAvailablePred);</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Reinsert the node into the priority queue, which recomputes its</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// NumNodesSolelyBlocking value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/latencypriorityqueue/#a2e3b6da384da19b92dc290a8051194c6">push</a>(OnlyAvailablePred);</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115" lineLink="/docs/api/classes/llvm/latencypriorityqueue/#a41b9cd9193a44ad6cdad06237969dca7"><Highlight kind="normal"><a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;<a href="/docs/api/classes/llvm/latencypriorityqueue/#a41b9cd9193a44ad6cdad06237969dca7">LatencyPriorityQueue::pop</a>() &#123;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/latencypriorityqueue/#ac6f348a5672184cf15cca3738e2f8df4">empty</a>()) </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">  std::vector&lt;SUnit &#42;&gt;::iterator Best = Queue.begin();</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (std::vector&lt;SUnit &#42;&gt;::iterator <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = std::next(Queue.begin()),</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">       E = Queue.end(); <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> != E; ++<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Picker(&#42;Best, &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>))</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">      Best = <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;V = &#42;Best;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Best != std::prev(Queue.end()))</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">    <a href="/docs/api/namespaces/std/#ab8424022895aee3e366fb9a32f2883cb">std::swap</a>(&#42;Best, Queue.back());</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  Queue.pop&#95;back();</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> V;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129" lineLink="/docs/api/classes/llvm/latencypriorityqueue/#a65b10a2416edce73bca7c46839268b41"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/latencypriorityqueue/#a65b10a2416edce73bca7c46839268b41">LatencyPriorityQueue::remove</a>(<a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;SU) &#123;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!Queue.empty() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Queue is empty!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">  std::vector&lt;SUnit &#42;&gt;::iterator <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = <a href="/docs/api/namespaces/llvm/#a086e9fbdb06276db7753101a08a63adf">find</a>(Queue, SU);</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> != Queue.end() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Queue doesn&#39;t contain the SU being removed!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> != std::prev(Queue.end()))</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">    <a href="/docs/api/namespaces/std/#ab8424022895aee3e366fb9a32f2883cb">std::swap</a>(&#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, Queue.back());</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  Queue.pop&#95;back();</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if !defined(NDEBUG) || defined(LLVM&#95;ENABLE&#95;DUMP)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139" lineLink="/docs/api/classes/llvm/latencypriorityqueue/#a58764f7a88212dcec140c041126b719d"><Highlight kind="normal"><a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#aa863693eef567397d9c292da5bf22d34">LLVM&#95;DUMP&#95;METHOD</a> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/latencypriorityqueue/#a58764f7a88212dcec140c041126b719d">LatencyPriorityQueue::dump</a>(<a href="/docs/api/classes/llvm/scheduledag">ScheduleDAG</a> &#42;DAG)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Latency Priority Queue\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;  Number of Queue Entries: &quot;</Highlight><Highlight kind="normal"> &lt;&lt; Queue.size() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;SU : Queue) &#123;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;    &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">    DAG-&gt;<a href="/docs/api/classes/llvm/scheduledag/#ab76956099f6e90537cfde4b7762289fb">dumpNode</a>(&#42;SU);</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

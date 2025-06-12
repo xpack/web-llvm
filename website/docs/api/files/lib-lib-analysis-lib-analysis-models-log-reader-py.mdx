@@ -1,0 +1,209 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/analysis/lib/analysis/models/log-reader-py
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `log_reader.py` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/log-reader">log_reader</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/log-reader/tensorspec">TensorSpec</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/log-reader/tensorvalue">TensorValue</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1" lineLink="/docs/api/namespaces/log-reader"><Highlight kind="stringliteral">&quot;&quot;&quot;Reader for training log.</Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="stringliteral"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="stringliteral">See lib/Analysis/TrainingLogger.cpp for a description of the format.</Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="stringliteral">&quot;&quot;&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="keyword">import</Highlight><Highlight kind="normal"> ctypes</Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="keyword">import</Highlight><Highlight kind="normal"> dataclasses</Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="keyword">import</Highlight><Highlight kind="normal"> io</Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="keyword">import</Highlight><Highlight kind="normal"> json</Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="keyword">import</Highlight><Highlight kind="normal"> math</Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="keyword">import</Highlight><Highlight kind="normal"> sys</Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="keyword">from</Highlight><Highlight kind="normal"> typing </Highlight><Highlight kind="keyword">import</Highlight><Highlight kind="normal"> List, Optional</Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13" lineLink="/docs/api/namespaces/log-reader/#a17de637376c1a53d82da117294ba2e82"><Highlight kind="normal">&#95;element&#95;types = &#123;</Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;float&quot;</Highlight><Highlight kind="normal">: ctypes.c&#95;float,</Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;double&quot;</Highlight><Highlight kind="normal">: ctypes.c&#95;double,</Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;int8&#95;t&quot;</Highlight><Highlight kind="normal">: ctypes.c&#95;int8,</Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;uint8&#95;t&quot;</Highlight><Highlight kind="normal">: ctypes.c&#95;uint8,</Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;int16&#95;t&quot;</Highlight><Highlight kind="normal">: ctypes.c&#95;int16,</Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;uint16&#95;t&quot;</Highlight><Highlight kind="normal">: ctypes.c&#95;uint16,</Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;int32&#95;t&quot;</Highlight><Highlight kind="normal">: ctypes.c&#95;int32,</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;uint32&#95;t&quot;</Highlight><Highlight kind="normal">: ctypes.c&#95;uint32,</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;int64&#95;t&quot;</Highlight><Highlight kind="normal">: ctypes.c&#95;int64,</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;uint64&#95;t&quot;</Highlight><Highlight kind="normal">: ctypes.c&#95;uint64,</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">@dataclasses.dataclass(frozen=True)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28" lineLink="/docs/api/classes/log-reader/tensorspec"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/log-reader/tensorspec">TensorSpec</a>:</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">    name: str</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal">    port: int</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31" lineLink="/docs/api/classes/log-reader/tensorspec/#ab5c9028029a0a7f87bdd1543d405421a"><Highlight kind="normal">    shape: List&#91;int&#93;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">    element&#95;type: type</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">    </Highlight><Highlight kind="preprocessor">@staticmethod</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35" lineLink="/docs/api/classes/log-reader/tensorspec/#a0ebdbee0d26434fa74fdcfc2bb5edc3b"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">def </Highlight><Highlight kind="normal"><a href="/docs/api/classes/log-reader/tensorspec/#a0ebdbee0d26434fa74fdcfc2bb5edc3b">from&#95;dict</a>(d: dict):</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">        name = d&#91;</Highlight><Highlight kind="stringliteral">&quot;name&quot;</Highlight><Highlight kind="normal">&#93;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">        port = d&#91;</Highlight><Highlight kind="stringliteral">&quot;port&quot;</Highlight><Highlight kind="normal">&#93;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">        shape = &#91;int(e) </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> e </Highlight><Highlight kind="keywordflow">in</Highlight><Highlight kind="normal"> d&#91;</Highlight><Highlight kind="stringliteral">&quot;shape&quot;</Highlight><Highlight kind="normal">&#93;&#93;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">        element&#95;type&#95;str = d&#91;</Highlight><Highlight kind="stringliteral">&quot;type&quot;</Highlight><Highlight kind="normal">&#93;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> element&#95;type&#95;str </Highlight><Highlight kind="keywordflow">not</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">in</Highlight><Highlight kind="normal"> &#95;element&#95;types:</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">            </Highlight><Highlight kind="keywordflow">raise</Highlight><Highlight kind="normal"> ValueError(f</Highlight><Highlight kind="stringliteral">&quot;uknown type: &#123;element&#95;type&#95;str&#125;&quot;</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/log-reader/tensorspec">TensorSpec</a>(</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">            name=name,</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">            port=port,</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">            shape=shape,</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">            element&#95;type=&#95;element&#95;types&#91;element&#95;type&#95;str&#93;,</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">        )</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50" lineLink="/docs/api/classes/log-reader/tensorvalue"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/log-reader/tensorvalue">TensorValue</a>:</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51" lineLink="/docs/api/classes/log-reader/tensorvalue/#afcc496977a6e3b6bc2d770a642900be1"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">def </Highlight><Highlight kind="normal"><a href="/docs/api/classes/log-reader/tensorvalue/#afcc496977a6e3b6bc2d770a642900be1">&#95;&#95;init&#95;&#95;</a>(self, spec: TensorSpec, buffer: bytes):</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52" lineLink="/docs/api/classes/log-reader/tensorvalue/#ad75472a62a7fc52cdfd94edb3f07db7b"><Highlight kind="normal">        self.<a href="/docs/api/classes/log-reader/tensorvalue/#ad75472a62a7fc52cdfd94edb3f07db7b">&#95;spec</a> = spec</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53" lineLink="/docs/api/classes/log-reader/tensorvalue/#a08963649af5fd9c164ec1a4e2567873c"><Highlight kind="normal">        self.<a href="/docs/api/classes/log-reader/tensorvalue/#a08963649af5fd9c164ec1a4e2567873c">&#95;buffer</a> = buffer</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54" lineLink="/docs/api/classes/log-reader/tensorvalue/#a0fc99d7b132a72919f095e32f437a5c7"><Highlight kind="normal">        self.<a href="/docs/api/classes/log-reader/tensorvalue/#a0fc99d7b132a72919f095e32f437a5c7">&#95;view</a> = ctypes.cast(self.<a href="/docs/api/classes/log-reader/tensorvalue/#a08963649af5fd9c164ec1a4e2567873c">&#95;buffer</a>, ctypes.POINTER(self.<a href="/docs/api/classes/log-reader/tensorvalue/#ad75472a62a7fc52cdfd94edb3f07db7b">&#95;spec</a>.element&#95;type))</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55" lineLink="/docs/api/classes/log-reader/tensorvalue/#a07f7c204d41022aeb99d9268aa303c0e"><Highlight kind="normal">        self.<a href="/docs/api/classes/log-reader/tensorvalue/#a07f7c204d41022aeb99d9268aa303c0e">&#95;len</a> = math.prod(self.<a href="/docs/api/classes/log-reader/tensorvalue/#ad75472a62a7fc52cdfd94edb3f07db7b">&#95;spec</a>.shape)</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57" lineLink="/docs/api/classes/log-reader/tensorvalue/#ab3b6b311e0b847ba5f47e820de4834d4"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">def </Highlight><Highlight kind="normal"><a href="/docs/api/classes/log-reader/tensorvalue/#ab3b6b311e0b847ba5f47e820de4834d4">spec</a>(self) -&gt; TensorSpec:</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> self.<a href="/docs/api/classes/log-reader/tensorvalue/#ad75472a62a7fc52cdfd94edb3f07db7b">&#95;spec</a></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60" lineLink="/docs/api/classes/log-reader/tensorvalue/#a8f335ccb49b7b41f58ea2d33b7e46814"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">def </Highlight><Highlight kind="normal"><a href="/docs/api/classes/log-reader/tensorvalue/#a8f335ccb49b7b41f58ea2d33b7e46814">&#95;&#95;len&#95;&#95;</a>(self) -&gt; int:</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> self.<a href="/docs/api/classes/log-reader/tensorvalue/#a07f7c204d41022aeb99d9268aa303c0e">&#95;len</a></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/classes/log-reader/tensorvalue/#a303866c5fd53e252f10c70499c55d3e6"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">def </Highlight><Highlight kind="normal"><a href="/docs/api/classes/log-reader/tensorvalue/#a303866c5fd53e252f10c70499c55d3e6">&#95;&#95;getitem&#95;&#95;</a>(self, index):</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> index &lt; 0 </Highlight><Highlight kind="keywordflow">or</Highlight><Highlight kind="normal"> index &gt;= self.<a href="/docs/api/classes/log-reader/tensorvalue/#a07f7c204d41022aeb99d9268aa303c0e">&#95;len</a>:</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">            </Highlight><Highlight kind="keywordflow">raise</Highlight><Highlight kind="normal"> IndexError(f</Highlight><Highlight kind="stringliteral">&quot;Index &#123;index&#125; out of range &#91;0..&#123;self.&#95;len&#125;)&quot;</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> self.<a href="/docs/api/classes/log-reader/tensorvalue/#a0fc99d7b132a72919f095e32f437a5c7">&#95;view</a>&#91;index&#93;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69" lineLink="/docs/api/namespaces/log-reader/#a824cd3e05f3d3094a806870ea1ea5da9"><Highlight kind="normal"></Highlight><Highlight kind="keyword">def </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/log-reader/#a824cd3e05f3d3094a806870ea1ea5da9">read&#95;tensor</a>(fs: io.BufferedReader, ts: TensorSpec) -&gt; TensorValue:</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">    size = math.prod(ts.shape) &#42; ctypes.sizeof(ts.element&#95;type)</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">    data = fs.read(size)</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/log-reader/tensorvalue">TensorValue</a>(ts, data)</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75" lineLink="/docs/api/namespaces/log-reader/#a14b90855a54de6f662b45732cb262314"><Highlight kind="normal"></Highlight><Highlight kind="keyword">def </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/log-reader/#a14b90855a54de6f662b45732cb262314">pretty&#95;print&#95;tensor&#95;value</a>(tv: TensorValue):</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/object/archivewriter-cpp/#aa9f638c7ae7fdd206a6c60e26bef9751">print</a>(f</Highlight><Highlight kind="stringliteral">&#39;&#123;tv.spec().name&#125;: &#123;&quot;,&quot;.join(&#91;str(v) for v in tv&#93;)&#125;&#39;</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/namespaces/log-reader/#ab40242c357e077a78fbfb8fd4a61cf90"><Highlight kind="normal"></Highlight><Highlight kind="keyword">def </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/log-reader/#ab40242c357e077a78fbfb8fd4a61cf90">read&#95;header</a>(f: io.BufferedReader):</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">    header = json.loads(f.readline())</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">    tensor&#95;specs = &#91;TensorSpec.from&#95;dict(ts) </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> ts </Highlight><Highlight kind="keywordflow">in</Highlight><Highlight kind="normal"> header&#91;</Highlight><Highlight kind="stringliteral">&quot;features&quot;</Highlight><Highlight kind="normal">&#93;&#93;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">    score&#95;spec = TensorSpec.from&#95;dict(header&#91;</Highlight><Highlight kind="stringliteral">&quot;score&quot;</Highlight><Highlight kind="normal">&#93;) </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="stringliteral">&quot;score&quot;</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">in</Highlight><Highlight kind="normal"> header </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">None</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">    advice&#95;spec = TensorSpec.from&#95;dict(header&#91;</Highlight><Highlight kind="stringliteral">&quot;advice&quot;</Highlight><Highlight kind="normal">&#93;) </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="stringliteral">&quot;advice&quot;</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">in</Highlight><Highlight kind="normal"> header </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">None</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> tensor&#95;specs, score&#95;spec, advice&#95;spec</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87" lineLink="/docs/api/namespaces/log-reader/#a224d6d585cf78a7b3baeaa7474fffc13"><Highlight kind="normal"></Highlight><Highlight kind="keyword">def </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/log-reader/#a224d6d585cf78a7b3baeaa7474fffc13">read&#95;one&#95;observation</a>(</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">    context: Optional&#91;str&#93;,</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">    event&#95;str: str,</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">    f: io.BufferedReader,</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">    tensor&#95;specs: List&#91;TensorSpec&#93;,</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">    score&#95;spec: Optional&#91;TensorSpec&#93;,</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">):</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">    event = json.loads(event&#95;str)</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="stringliteral">&quot;context&quot;</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">in</Highlight><Highlight kind="normal"> event:</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">        context = event&#91;</Highlight><Highlight kind="stringliteral">&quot;context&quot;</Highlight><Highlight kind="normal">&#93;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">        event = json.loads(f.readline())</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">    observation&#95;id = int(event&#91;</Highlight><Highlight kind="stringliteral">&quot;observation&quot;</Highlight><Highlight kind="normal">&#93;)</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">    features = &#91;&#93;</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> ts </Highlight><Highlight kind="keywordflow">in</Highlight><Highlight kind="normal"> tensor&#95;specs:</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">        features.append(<a href="/docs/api/namespaces/log-reader/#a824cd3e05f3d3094a806870ea1ea5da9">read&#95;tensor</a>(f, ts))</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    f.readline()</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">    score = </Highlight><Highlight kind="keywordtype">None</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> score&#95;spec </Highlight><Highlight kind="keywordflow">is</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">not</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">None</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">        score&#95;header = json.loads(f.readline())</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">assert</Highlight><Highlight kind="normal"> int(score&#95;header&#91;</Highlight><Highlight kind="stringliteral">&quot;outcome&quot;</Highlight><Highlight kind="normal">&#93;) == observation&#95;id</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">        score = <a href="/docs/api/namespaces/log-reader/#a824cd3e05f3d3094a806870ea1ea5da9">read&#95;tensor</a>(f, score&#95;spec)</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">        f.readline()</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> context, observation&#95;id, features, score</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112" lineLink="/docs/api/namespaces/log-reader/#a795f34462a51ea2794eb103b432ad61f"><Highlight kind="normal"></Highlight><Highlight kind="keyword">def </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/log-reader/#a795f34462a51ea2794eb103b432ad61f">read&#95;stream</a>(fname: str):</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">with</Highlight><Highlight kind="normal"> io.BufferedReader(io.FileIO(fname, </Highlight><Highlight kind="stringliteral">&quot;rb&quot;</Highlight><Highlight kind="normal">)) </Highlight><Highlight kind="keyword">as</Highlight><Highlight kind="normal"> f:</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">        tensor&#95;specs, score&#95;spec, &#95; = <a href="/docs/api/namespaces/log-reader/#ab40242c357e077a78fbfb8fd4a61cf90">read&#95;header</a>(f)</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">        context = </Highlight><Highlight kind="keywordtype">None</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">True</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">            event&#95;str = f.readline()</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">            </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">not</Highlight><Highlight kind="normal"> event&#95;str:</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">                </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">            context, observation&#95;id, features, score = <a href="/docs/api/namespaces/log-reader/#a224d6d585cf78a7b3baeaa7474fffc13">read&#95;one&#95;observation</a>(</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">                context, event&#95;str, f, tensor&#95;specs, score&#95;spec</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">            )</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">            </Highlight><Highlight kind="keywordflow">yield</Highlight><Highlight kind="normal"> context, observation&#95;id, features, score</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126" lineLink="/docs/api/namespaces/log-reader/#a00a10719af7fe8bd112870799e9472d1"><Highlight kind="normal"></Highlight><Highlight kind="keyword">def </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/log-reader/#a00a10719af7fe8bd112870799e9472d1">main</a>(args):</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">    last&#95;context = </Highlight><Highlight kind="keywordtype">None</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> ctx, obs&#95;id, features, score </Highlight><Highlight kind="keywordflow">in</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/log-reader/#a795f34462a51ea2794eb103b432ad61f">read&#95;stream</a>(args&#91;1&#93;):</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> last&#95;context != ctx:</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">            <a href="/docs/api/files/lib/lib/object/archivewriter-cpp/#aa9f638c7ae7fdd206a6c60e26bef9751">print</a>(f</Highlight><Highlight kind="stringliteral">&quot;context: &#123;ctx&#125;&quot;</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">            last&#95;context = ctx</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/object/archivewriter-cpp/#aa9f638c7ae7fdd206a6c60e26bef9751">print</a>(f</Highlight><Highlight kind="stringliteral">&quot;observation: &#123;obs&#95;id&#125;&quot;</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> fv </Highlight><Highlight kind="keywordflow">in</Highlight><Highlight kind="normal"> features:</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">            <a href="/docs/api/namespaces/log-reader/#a14b90855a54de6f662b45732cb262314">pretty&#95;print&#95;tensor&#95;value</a>(fv)</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> score:</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">            <a href="/docs/api/namespaces/log-reader/#a14b90855a54de6f662b45732cb262314">pretty&#95;print&#95;tensor&#95;value</a>(score)</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal"></Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> &#95;&#95;name&#95;&#95; == </Highlight><Highlight kind="stringliteral">&quot;&#95;&#95;main&#95;&#95;&quot;</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">    <a href="/docs/api/namespaces/log-reader/#a00a10719af7fe8bd112870799e9472d1">main</a>(sys.argv)</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

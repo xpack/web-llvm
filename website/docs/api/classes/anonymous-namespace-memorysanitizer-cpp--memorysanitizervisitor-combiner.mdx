@@ -1,0 +1,240 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/anonymous-namespace-memorysanitizer-cpp-/memorysanitizervisitor/combiner
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `Combiner` Class Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Default propagation of shadow and/or origin. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;bool CombineShadow&gt;
+class anonymous_namespace{MemorySanitizer.cpp}::MemorySanitizerVisitor::Combiner&lt;CombineShadow&gt;</CodeBlock>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  name={<><a href="#a6823477775469222f5d39f48ffee81e1">Combiner</a> (MemorySanitizerVisitor &#42;MSV, IRBuilder&lt;&gt; &amp;IRB)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  type={<><a href="/docs/api/classes/anonymous-namespace-memorysanitizer-cpp-/memorysanitizervisitor/combiner">Combiner</a> &amp;</>}
+  name={<><a href="#ae8b71818798cbd6a6e93e0fccbd39bfd">Add</a> (Value &#42;OpShadow, Value &#42;OpOrigin)</>}>
+Add a pair of shadow and origin values to the mix. <a href="#ae8b71818798cbd6a6e93e0fccbd39bfd">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  type={<><a href="/docs/api/classes/anonymous-namespace-memorysanitizer-cpp-/memorysanitizervisitor/combiner">Combiner</a> &amp;</>}
+  name={<><a href="#a22e4173f6da55b5ccdc4dde3f62fccd9">Add</a> (Value &#42;V)</>}>
+Add an application value to the mix. <a href="#a22e4173f6da55b5ccdc4dde3f62fccd9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  type="void"
+  name={<><a href="#a554e0a120e27e722e0f2a96930041782">Done</a> (Instruction &#42;I)</>}>
+Set the current combined values as the given instruction&#39;s shadow and origin. <a href="#a554e0a120e27e722e0f2a96930041782">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  type="void"
+  name={<><a href="#ad7b9e90211ff1f8429cfe18356dd4701">DoneAndStoreOrigin</a> (TypeSize TS, Value &#42;OriginPtr)</>}>
+Store the current combined value at the specified origin location. <a href="#ad7b9e90211ff1f8429cfe18356dd4701">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  type={<><a href="/docs/api/classes/llvm/irbuilder">IRBuilder</a> &amp;</>}
+  name={<><a href="#ae960db3cd7884c5b692e28f25f84953a">IRB</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  type={<><a href="/docs/api/structs/anonymous-namespace-memorysanitizer-cpp-/memorysanitizervisitor">MemorySanitizerVisitor</a> &#42;</>}
+  name={<><a href="#ac59467f2a490a0be9b89d197acef0055">MSV</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#ab27fc05d82e565d28d8e62df3bd0c385">Origin</a> = nullptr</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#ae8b83045b30a8628c0ed4ae574eb1ec4">Shadow</a> = nullptr</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Default propagation of shadow and/or origin.
+
+This class implements the general case of shadow propagation, used in all cases where we don&#39;t know and/or don&#39;t care about what the operation actually does. It converts all input shadow values to a common type (extending or truncating as necessary), and bitwise OR&#39;s them.
+
+This is much cheaper than inserting checks (i.e. requiring inputs to be fully initialized), and less prone to false positives.
+
+This class also implements the general case of origin propagation. For a Nary operation, result origin is set to the origin of an argument that is not entirely initialized. If there is more than one such arguments, the rightmost of them is picked. It does not matter which one is picked if all arguments are initialized.
+
+Definition at line 2469 of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp">MemorySanitizer.cpp</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### Combiner() {#a6823477775469222f5d39f48ffee81e1}
+
+<MemberDefinition
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  prototype={<>anonymous&#95;namespace&#123;MemorySanitizer.cpp&#125;::MemorySanitizerVisitor::Combiner&lt; CombineShadow &gt;::Combiner (<a href="/docs/api/structs/anonymous-namespace-memorysanitizer-cpp-/memorysanitizervisitor">MemorySanitizerVisitor</a> &#42; MSV, <a href="/docs/api/classes/llvm/irbuilder">IRBuilder</a>&lt;&gt; &amp; IRB)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp/#l02476">2476</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp">MemorySanitizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### Add() {#ae8b71818798cbd6a6e93e0fccbd39bfd}
+
+<MemberDefinition
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  prototype={<>Combiner &amp; anonymous&#95;namespace&#123;MemorySanitizer.cpp&#125;::MemorySanitizerVisitor::Combiner&lt; CombineShadow &gt;::Add (<a href="/docs/api/classes/llvm/value">Value</a> &#42; OpShadow, <a href="/docs/api/classes/llvm/value">Value</a> &#42; OpOrigin)</>}
+  labels = {["inline"]}>
+Add a pair of shadow and origin values to the mix.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp/#l02480">2480</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp">MemorySanitizer.cpp</a>.
+</MemberDefinition>
+
+### Add() {#a22e4173f6da55b5ccdc4dde3f62fccd9}
+
+<MemberDefinition
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  prototype={<>Combiner &amp; anonymous&#95;namespace&#123;MemorySanitizer.cpp&#125;::MemorySanitizerVisitor::Combiner&lt; CombineShadow &gt;::Add (<a href="/docs/api/classes/llvm/value">Value</a> &#42; V)</>}
+  labels = {["inline"]}>
+Add an application value to the mix.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp/#l02508">2508</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp">MemorySanitizer.cpp</a>.
+</MemberDefinition>
+
+### Done() {#a554e0a120e27e722e0f2a96930041782}
+
+<MemberDefinition
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  prototype={<>void anonymous&#95;namespace&#123;MemorySanitizer.cpp&#125;::MemorySanitizerVisitor::Combiner&lt; CombineShadow &gt;::Done (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I)</>}
+  labels = {["inline"]}>
+Set the current combined values as the given instruction&#39;s shadow and origin.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp/#l02516">2516</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp">MemorySanitizer.cpp</a>.
+</MemberDefinition>
+
+### DoneAndStoreOrigin() {#ad7b9e90211ff1f8429cfe18356dd4701}
+
+<MemberDefinition
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  prototype={<>void anonymous&#95;namespace&#123;MemorySanitizer.cpp&#125;::MemorySanitizerVisitor::Combiner&lt; CombineShadow &gt;::DoneAndStoreOrigin (<a href="/docs/api/classes/llvm/typesize">TypeSize</a> TS, <a href="/docs/api/classes/llvm/value">Value</a> &#42; OriginPtr)</>}
+  labels = {["inline"]}>
+Store the current combined value at the specified origin location.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp/#l02530">2530</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp">MemorySanitizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### IRB {#ae960db3cd7884c5b692e28f25f84953a}
+
+<MemberDefinition
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  prototype={<>IRBuilder&amp; anonymous&#95;namespace&#123;MemorySanitizer.cpp&#125;::MemorySanitizerVisitor::Combiner&lt; CombineShadow &gt;::IRB</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp/#l02472">2472</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp">MemorySanitizer.cpp</a>.
+</MemberDefinition>
+
+### MSV {#ac59467f2a490a0be9b89d197acef0055}
+
+<MemberDefinition
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  prototype={<>MemorySanitizerVisitor&#42; anonymous&#95;namespace&#123;MemorySanitizer.cpp&#125;::MemorySanitizerVisitor::Combiner&lt; CombineShadow &gt;::MSV</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp/#l02473">2473</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp">MemorySanitizer.cpp</a>.
+</MemberDefinition>
+
+### Origin {#ab27fc05d82e565d28d8e62df3bd0c385}
+
+<MemberDefinition
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  prototype={<>Value&#42; anonymous&#95;namespace&#123;MemorySanitizer.cpp&#125;::MemorySanitizerVisitor::Combiner&lt; CombineShadow &gt;::Origin = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp/#l02471">2471</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp">MemorySanitizer.cpp</a>.
+</MemberDefinition>
+
+### Shadow {#ae8b83045b30a8628c0ed4ae574eb1ec4}
+
+<MemberDefinition
+  template={<>template &lt;bool CombineShadow&gt;</>}
+  prototype={<>Value&#42; anonymous&#95;namespace&#123;MemorySanitizer.cpp&#125;::MemorySanitizerVisitor::Combiner&lt; CombineShadow &gt;::Shadow = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp/#l02470">2470</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp">MemorySanitizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/instrumentation/memorysanitizer-cpp">MemorySanitizer.cpp</a></li>
+</ul>
+
+</DoxygenPage>

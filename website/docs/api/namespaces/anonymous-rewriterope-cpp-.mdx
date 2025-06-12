@@ -1,0 +1,71 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/namespaces/anonymous-rewriterope-cpp-
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - namespace
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `anonymous{RewriteRope.cpp}` Namespace Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+<a href="/docs/api/classes/llvm/rewriterope">RewriteRope</a> is a &quot;strong&quot; string class, designed to make insertions and deletions in the middle of the string nearly constant time (really, they are O(log N), but with a very low constant factor). <a href="#details">More...</a>
+
+## Definition
+
+<CodeBlock>namespace &#123; ... &#125;</CodeBlock>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreeinterior">RopePieceBTreeInterior</a></>}>
+<a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreeinterior">RopePieceBTreeInterior</a> - This represents an interior node in the B+Tree, which holds up to 2&#42;WidthFactor pointers to child nodes. <a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreeinterior/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreeleaf">RopePieceBTreeLeaf</a></>}>
+<a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreeleaf">RopePieceBTreeLeaf</a> - Directly manages up to &#39;2&#42;WidthFactor&#39; <a href="/docs/api/structs/llvm/ropepiece">RopePiece</a> nodes. <a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreeleaf/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreenode">RopePieceBTreeNode</a></>}>
+<a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreenode">RopePieceBTreeNode</a> - Common base class of <a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreeleaf">RopePieceBTreeLeaf</a> and <a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreeinterior">RopePieceBTreeInterior</a>. <a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreenode/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+<a href="/docs/api/classes/llvm/rewriterope">RewriteRope</a> is a &quot;strong&quot; string class, designed to make insertions and deletions in the middle of the string nearly constant time (really, they are O(log N), but with a very low constant factor).
+
+The implementation of this datastructure is a conceptual linear sequence of <a href="/docs/api/structs/llvm/ropepiece">RopePiece</a> elements. Each <a href="/docs/api/structs/llvm/ropepiece">RopePiece</a> represents a view on a separately allocated and reference counted string. This means that splitting a very long string can be done in constant time by splitting a <a href="/docs/api/structs/llvm/ropepiece">RopePiece</a> that references the whole string into two rope pieces that reference each half. Once split, another string can be inserted in between the two halves by inserting a <a href="/docs/api/structs/llvm/ropepiece">RopePiece</a> in between the two others. All of this is very inexpensive: it takes time proportional to the number of RopePieces, not the length of the strings they represent.
+
+While a linear sequences of RopePieces is the conceptual model, the actual implementation captures them in an adapted B+ Tree. Using a B+ tree (which is a tree that keeps the values in the leaves and has where each node contains a reasonable number of pointers to children/values) allows us to maintain efficient operation when the <a href="/docs/api/classes/llvm/rewriterope">RewriteRope</a> contains a <em>huge</em> number of RopePieces. The basic idea of the B+ Tree is that it allows us to find the <a href="/docs/api/structs/llvm/ropepiece">RopePiece</a> corresponding to some offset very efficiently, and it automatically balances itself on insertions of RopePieces (which can happen for both insertions and erases of string ranges).
+
+The one wrinkle on the theory is that we don&#39;t attempt to keep the tree properly balanced when erases happen. Erases of string data can both insert new RopePieces (e.g. when the middle of some other rope piece is deleted, which results in two rope pieces, which is just like an insert) or it can reduce the number of RopePieces maintained by the B+Tree. In the case when the number of RopePieces is reduced, we don&#39;t attempt to maintain the standard &#39;invariant&#39; that each node in the tree contains at least &#39;WidthFactor&#39; children/values. For our use cases, this doesn&#39;t seem to matter.
+
+The implementation below is primarily implemented in terms of three classes: <a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreenode">RopePieceBTreeNode</a> - Common base class for:
+
+<a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreeleaf">RopePieceBTreeLeaf</a> - Directly manages up to &#39;2&#42;WidthFactor&#39; <a href="/docs/api/structs/llvm/ropepiece">RopePiece</a> nodes. This directly represents a chunk of the string with those RopePieces concatenated. <a href="/docs/api/classes/anonymous-namespace-rewriterope-cpp-/ropepiecebtreeinterior">RopePieceBTreeInterior</a> - An interior node in the B+ Tree, which manages up to &#39;2&#42;WidthFactor&#39; other nodes in the tree.
+
+</DoxygenPage>

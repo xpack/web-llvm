@@ -1,0 +1,228 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/fuzzerop/sourcepred
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `SourcePred` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+A matcher/generator for finding suitable values for the next source in an operation&#39;s partially completed argument list. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::fuzzerop::SourcePred</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/FuzzMutate/OpDescriptor.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#aa4c752eaf3b250304b7bd3ceb8f920df">MakeT</a> = std::function&lt; std::vector&lt; <a href="/docs/api/classes/llvm/constant">Constant</a> &#42; &gt;( <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt; Cur, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/type">Type</a> &#42; &gt; BaseTypes)&gt;</>}>
+Given a list of already selected operands and a set of valid base types for a fuzzer, generates a list of constants that could be used for the next operand. <a href="#aa4c752eaf3b250304b7bd3ceb8f920df">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#adefb837d00e2f45ea84e8153c5b157fe">PredT</a> = std::function&lt; bool(<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt; Cur, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/value">Value</a> &#42;New)&gt;</>}>
+Given a list of already selected operands, returns whether a given new operand is suitable for the next operand. <a href="#adefb837d00e2f45ea84e8153c5b157fe">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#aa1363e525ba49333460f4c13668ee52d">SourcePred</a> (PredT Pred, MakeT Make)</>}>
+Create a fully general source predicate. <a href="#aa1363e525ba49333460f4c13668ee52d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  name={<><a href="#ac01e1d16c27a5fb94153178d64b252c6">SourcePred</a> (PredT Pred, std::nullopt&#95;t)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::vector&lt; <a href="/docs/api/classes/llvm/constant">Constant</a> &#42; &gt;</>}
+  name={<><a href="#acc5c7c07ff94b9c89f3990134e6948e9">generate</a> (ArrayRef&lt; Value &#42; &gt; Cur, ArrayRef&lt; Type &#42; &gt; BaseTypes)</>}>
+Generates a list of potential values for the argument after <code>Cur</code>. <a href="#acc5c7c07ff94b9c89f3990134e6948e9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a3396d8b14dbd006a057abef07514d4f3">matches</a> (ArrayRef&lt; Value &#42; &gt; Cur, const Value &#42;New)</>}>
+Returns true if <code>New</code> is compatible for the argument after <code>Cur</code>. <a href="#a3396d8b14dbd006a057abef07514d4f3">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="#aa4c752eaf3b250304b7bd3ceb8f920df">MakeT</a></>}
+  name={<><a href="#a024e07b601035bb708843194b92d220e">Make</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#adefb837d00e2f45ea84e8153c5b157fe">PredT</a></>}
+  name={<><a href="#a2185f8a0bfab0a51ef0ff993c480f760">Pred</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+A matcher/generator for finding suitable values for the next source in an operation&#39;s partially completed argument list.
+
+Given that we&#39;re building some operation X and may have already filled some subset of its operands, this predicate determines if some value New is suitable for the next operand or generates a set of values that are suitable.
+
+Definition at line 43 of file <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h">OpDescriptor.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### MakeT {#aa4c752eaf3b250304b7bd3ceb8f920df}
+
+<MemberDefinition
+  prototype={<>using llvm::fuzzerop::SourcePred::MakeT =  std::function&lt;std::vector&lt;Constant &#42;&gt;(
+      ArrayRef&lt;Value &#42;&gt; Cur, ArrayRef&lt;Type &#42;&gt; BaseTypes)&gt;</>}>
+Given a list of already selected operands and a set of valid base types for a fuzzer, generates a list of constants that could be used for the next operand.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h/#l00051">51</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h">OpDescriptor.h</a>.
+</MemberDefinition>
+
+### PredT {#adefb837d00e2f45ea84e8153c5b157fe}
+
+<MemberDefinition
+  prototype={<>using llvm::fuzzerop::SourcePred::PredT =  std::function&lt;bool(ArrayRef&lt;Value &#42;&gt; Cur, const Value &#42;New)&gt;</>}>
+Given a list of already selected operands, returns whether a given new operand is suitable for the next operand.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h/#l00047">47</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h">OpDescriptor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### SourcePred() {#aa1363e525ba49333460f4c13668ee52d}
+
+<MemberDefinition
+  prototype={<>llvm::fuzzerop::SourcePred::SourcePred (<a href="#adefb837d00e2f45ea84e8153c5b157fe">PredT</a> Pred, <a href="#aa4c752eaf3b250304b7bd3ceb8f920df">MakeT</a> Make)</>}
+  labels = {["inline"]}>
+Create a fully general source predicate.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h/#l00060">60</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h">OpDescriptor.h</a>.
+</MemberDefinition>
+
+### SourcePred() {#ac01e1d16c27a5fb94153178d64b252c6}
+
+<MemberDefinition
+  prototype={<>llvm::fuzzerop::SourcePred::SourcePred (<a href="#adefb837d00e2f45ea84e8153c5b157fe">PredT</a> Pred, std::nullopt&#95;t)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h/#l00061">61</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h">OpDescriptor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### generate() {#acc5c7c07ff94b9c89f3990134e6948e9}
+
+<MemberDefinition
+  prototype={<>std::vector&lt; Constant &#42; &gt; llvm::fuzzerop::SourcePred::generate (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt; Cur, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/type">Type</a> &#42; &gt; BaseTypes)</>}
+  labels = {["inline"]}>
+Generates a list of potential values for the argument after <code>Cur</code>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h/#l00082">82</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h">OpDescriptor.h</a>.
+</MemberDefinition>
+
+### matches() {#a3396d8b14dbd006a057abef07514d4f3}
+
+<MemberDefinition
+  prototype={<>bool llvm::fuzzerop::SourcePred::matches (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt; Cur, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/value">Value</a> &#42; New)</>}
+  labels = {["inline"]}>
+Returns true if <code>New</code> is compatible for the argument after <code>Cur</code>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h/#l00077">77</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h">OpDescriptor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### Make {#a024e07b601035bb708843194b92d220e}
+
+<MemberDefinition
+  prototype="MakeT llvm::fuzzerop::SourcePred::Make">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h/#l00056">56</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h">OpDescriptor.h</a>.
+</MemberDefinition>
+
+### Pred {#a2185f8a0bfab0a51ef0ff993c480f760}
+
+<MemberDefinition
+  prototype="PredT llvm::fuzzerop::SourcePred::Pred">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h/#l00055">55</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h">OpDescriptor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/fuzzmutate/opdescriptor-h">OpDescriptor.h</a></li>
+</ul>
+
+</DoxygenPage>

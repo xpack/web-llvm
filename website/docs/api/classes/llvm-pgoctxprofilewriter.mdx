@@ -1,0 +1,277 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/pgoctxprofilewriter
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `PGOCtxProfileWriter` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Write one or more ContextNodes to the provided <a href="/docs/api/classes/llvm/raw-fd-stream">raw&#95;fd&#95;stream</a>. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::PGOCtxProfileWriter</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ProfileData/PGOCtxProfWriter.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a9e14ee9078852ac00c52462c0110b2f6">PGOCtxProfileWriter</a> (raw&#95;ostream &amp;Out, std::optional&lt; unsigned &gt; VersionOverride=std::nullopt)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Destructor Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a8219793abc9af652837cb67db88e9954">~PGOCtxProfileWriter</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aa1815eac622ceabfe9d2e6bf0288b564">write</a> (const ctx&#95;profile::ContextNode &amp;)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a6ad980cea83fd0e7cdc62a0145cf1d2d">writeCounters</a> (const ctx&#95;profile::ContextNode &amp;Node)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a2ae1a004e8e45f4b3e16a6b7fab3cca0">writeImpl</a> (std::optional&lt; uint32&#95;t &gt; CallerIndex, const ctx&#95;profile::ContextNode &amp;Node)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/bitstreamwriter">BitstreamWriter</a></>}
+  name={<><a href="#af4307771e01351eff2b94fa007b64c7c">Writer</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#aa517b7b0fff8dec01ea1d4f2a120835a">CodeLen</a> = 2</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/stringref">StringRef</a></>}
+  name={<><a href="#a655e5b7398d33b96fb414894717f2d96">ContainerMagic</a> = &quot;CTXP&quot;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>uint32&#95;t</>}
+  name={<><a href="#a5085a773e7301c23235738d9cd38ef11">CurrentVersion</a> = 1</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a4dcbfac5963074dc8c24addba3776acb">VBREncodingBits</a> = 6</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Write one or more ContextNodes to the provided <a href="/docs/api/classes/llvm/raw-fd-stream">raw&#95;fd&#95;stream</a>.
+
+The caller must destroy the <a href="/docs/api/classes/llvm/pgoctxprofilewriter">PGOCtxProfileWriter</a> object before closing the stream. The design allows serializing a bunch of contexts embedded in some other file. The overall format is:
+
+&#91;... other data written to the stream...&#93; SubBlock(ProfileMetadataBlockID) Version SubBlock(ContextNodeBlockID) &#91;RECORDS&#93; SubBlock(ContextNodeBlockID) &#91;RECORDS&#93; &#91;... more SubBlocks&#93; EndBlock EndBlock
+
+The &quot;RECORDS&quot; are bitsream records. The IDs are in CtxProfileCodes (except) for Version, which is just for metadata). All contexts will have Guid and Counters, and all but the roots have CalleeIndex. The order in which the records appear does not matter, but they must precede any subcontexts, because that helps keep the reader code simpler.
+
+Subblock containment captures the context-&gt;subcontext relationship. The &quot;next()&quot; relationship in the raw profile, between call targets of indirect calls, are just modeled as peer subblocks where the callee index is the same.
+
+Versioning: the writer may produce additional records not known by the reader. The version number indicates a more structural change. The current version, in particular, is set up to expect optional extensions like value profiling - which would appear as additional records. For example, value profiling would produce a new record with a new record <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>, containing the profiled values (much like the counters)
+
+Definition at line 63 of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h">PGOCtxProfWriter.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### PGOCtxProfileWriter() {#a9e14ee9078852ac00c52462c0110b2f6}
+
+<MemberDefinition
+  prototype={<>PGOCtxProfileWriter::PGOCtxProfileWriter (<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp; Out, std::optional&lt; unsigned &gt; VersionOverride=std::nullopt)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h/#l00071">71</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h">PGOCtxProfWriter.h</a>, definition at line <a href="/docs/api/files/lib/lib/profiledata/pgoctxprofwriter-cpp/#l00024">24</a> of file <a href="/docs/api/files/lib/lib/profiledata/pgoctxprofwriter-cpp">PGOCtxProfWriter.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Destructor
+
+### ~PGOCtxProfileWriter() {#a8219793abc9af652837cb67db88e9954}
+
+<MemberDefinition
+  prototype="llvm::PGOCtxProfileWriter::~PGOCtxProfileWriter ()"
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h/#l00073">73</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h">PGOCtxProfWriter.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### write() {#aa1815eac622ceabfe9d2e6bf0288b564}
+
+<MemberDefinition
+  prototype={<>void PGOCtxProfileWriter::write (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/ctx-profile/contextnode">ctx&#95;profile::ContextNode</a> &amp; RootNode)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h/#l00075">75</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h">PGOCtxProfWriter.h</a>, definition at line <a href="/docs/api/files/lib/lib/profiledata/pgoctxprofwriter-cpp/#l00086">86</a> of file <a href="/docs/api/files/lib/lib/profiledata/pgoctxprofwriter-cpp">PGOCtxProfWriter.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### writeCounters() {#a6ad980cea83fd0e7cdc62a0145cf1d2d}
+
+<MemberDefinition
+  prototype={<>void PGOCtxProfileWriter::writeCounters (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/ctx-profile/contextnode">ctx&#95;profile::ContextNode</a> &amp; Node)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h/#l00066">66</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h">PGOCtxProfWriter.h</a>, definition at line <a href="/docs/api/files/lib/lib/profiledata/pgoctxprofwriter-cpp/#l00058">58</a> of file <a href="/docs/api/files/lib/lib/profiledata/pgoctxprofwriter-cpp">PGOCtxProfWriter.cpp</a>.
+</MemberDefinition>
+
+### writeImpl() {#a2ae1a004e8e45f4b3e16a6b7fab3cca0}
+
+<MemberDefinition
+  prototype={<>void PGOCtxProfileWriter::writeImpl (std::optional&lt; uint32&#95;t &gt; CallerIndex, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/ctx-profile/contextnode">ctx&#95;profile::ContextNode</a> &amp; Node)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h/#l00067">67</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h">PGOCtxProfWriter.h</a>, definition at line <a href="/docs/api/files/lib/lib/profiledata/pgoctxprofwriter-cpp/#l00070">70</a> of file <a href="/docs/api/files/lib/lib/profiledata/pgoctxprofwriter-cpp">PGOCtxProfWriter.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### Writer {#af4307771e01351eff2b94fa007b64c7c}
+
+<MemberDefinition
+  prototype="BitstreamWriter llvm::PGOCtxProfileWriter::Writer">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h/#l00064">64</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h">PGOCtxProfWriter.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Attributes
+
+### CodeLen {#aa517b7b0fff8dec01ea1d4f2a120835a}
+
+<MemberDefinition
+  prototype="unsigned llvm::PGOCtxProfileWriter::CodeLen = 2"
+  labels = {["constexpr", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h/#l00078">78</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h">PGOCtxProfWriter.h</a>.
+</MemberDefinition>
+
+### ContainerMagic {#a655e5b7398d33b96fb414894717f2d96}
+
+<MemberDefinition
+  prototype={<>StringRef llvm::PGOCtxProfileWriter::ContainerMagic = &quot;CTXP&quot;</>}
+  labels = {["constexpr", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h/#l00081">81</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h">PGOCtxProfWriter.h</a>.
+</MemberDefinition>
+
+### CurrentVersion {#a5085a773e7301c23235738d9cd38ef11}
+
+<MemberDefinition
+  prototype={<>uint32&#95;t llvm::PGOCtxProfileWriter::CurrentVersion = 1</>}
+  labels = {["constexpr", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h/#l00079">79</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h">PGOCtxProfWriter.h</a>.
+</MemberDefinition>
+
+### VBREncodingBits {#a4dcbfac5963074dc8c24addba3776acb}
+
+<MemberDefinition
+  prototype="unsigned llvm::PGOCtxProfileWriter::VBREncodingBits = 6"
+  labels = {["constexpr", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h/#l00080">80</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h">PGOCtxProfWriter.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/pgoctxprofwriter-h">PGOCtxProfWriter.h</a></li>
+<li><a href="/docs/api/files/lib/lib/profiledata/pgoctxprofwriter-cpp">PGOCtxProfWriter.cpp</a></li>
+</ul>
+
+</DoxygenPage>

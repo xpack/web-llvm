@@ -1,0 +1,245 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/jitsymbolresolver
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `JITSymbolResolver` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Symbol resolution interface. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::JITSymbolResolver</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/JITSymbol.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h"
+  isLocal="true" />
+</IncludesList>
+
+## Derived Classes
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-rtdyldobjectlinkinglayer-cpp-/jitdylibsearchorderresolver">JITDylibSearchOrderResolver</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/legacyjitsymbolresolver">LegacyJITSymbolResolver</a></>}>
+Legacy symbol resolution interface. <a href="/docs/api/classes/llvm/legacyjitsymbolresolver/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a40474784a8f731d0ad49f39774a11a2a">LookupResult</a> = std::map&lt; <a href="/docs/api/classes/llvm/stringref">StringRef</a>, <a href="/docs/api/classes/llvm/jitevaluatedsymbol">JITEvaluatedSymbol</a> &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a487abfdc466598f156d5398ae986c6f9">LookupSet</a> = std::set&lt; <a href="/docs/api/classes/llvm/stringref">StringRef</a> &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a01f534cbe65344148ec2986691ff632a">OnResolvedFunction</a> = <a href="/docs/api/classes/llvm/unique-function">unique&#95;function</a>&lt; void(<a href="/docs/api/classes/llvm/expected">Expected</a>&lt; <a href="#a40474784a8f731d0ad49f39774a11a2a">LookupResult</a> &gt;)&gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Destructor Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a23b07bed0b5e0fec6e9dfee153e899a3">~JITSymbolResolver</a> ()=default</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a338af39f9777578922ab4764ac5502f5">allowsZeroSymbols</a> ()</>}>
+Specify if this resolver can return valid symbols with zero value. <a href="#a338af39f9777578922ab4764ac5502f5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/expected">Expected</a>&lt; <a href="#a487abfdc466598f156d5398ae986c6f9">LookupSet</a> &gt;</>}
+  name={<><a href="#ad8300b7889eafc1abe3b339f416ece44">getResponsibilitySet</a> (const LookupSet &amp;Symbols)=0</>}>
+Returns the subset of the given symbols that should be materialized by the caller. <a href="#ad8300b7889eafc1abe3b339f416ece44">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a189916af61c39f2c349ebbf1fdad3414">lookup</a> (const LookupSet &amp;Symbols, OnResolvedFunction OnResolved)=0</>}>
+Returns the fully resolved address and flags for each of the given symbols. <a href="#a189916af61c39f2c349ebbf1fdad3414">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a5ad71489b4c477ec3a03842f9a2a09d1">anchor</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Symbol resolution interface.
+
+Allows symbol flags and addresses to be looked up by name. Symbol queries are done in bulk (i.e. you request resolution of a set of symbols, rather than a single one) to reduce IPC overhead in the case of remote JITing, and expose opportunities for parallel compilation.
+
+Definition at line 371 of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### LookupResult {#a40474784a8f731d0ad49f39774a11a2a}
+
+<MemberDefinition
+  prototype={<>using llvm::JITSymbolResolver::LookupResult =  std::map&lt;StringRef, JITEvaluatedSymbol&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h/#l00374">374</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>.
+</MemberDefinition>
+
+### LookupSet {#a487abfdc466598f156d5398ae986c6f9}
+
+<MemberDefinition
+  prototype={<>using llvm::JITSymbolResolver::LookupSet =  std::set&lt;StringRef&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h/#l00373">373</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>.
+</MemberDefinition>
+
+### OnResolvedFunction {#a01f534cbe65344148ec2986691ff632a}
+
+<MemberDefinition
+  prototype={<>using llvm::JITSymbolResolver::OnResolvedFunction =  unique&#95;function&lt;void(Expected&lt;LookupResult&gt;)&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h/#l00375">375</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Destructor
+
+### ~JITSymbolResolver() {#a23b07bed0b5e0fec6e9dfee153e899a3}
+
+<MemberDefinition
+  prototype="virtual llvm::JITSymbolResolver::~JITSymbolResolver ()"
+  labels = {["virtual", "default"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h/#l00377">377</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### allowsZeroSymbols() {#a338af39f9777578922ab4764ac5502f5}
+
+<MemberDefinition
+  prototype="virtual bool llvm::JITSymbolResolver::allowsZeroSymbols ()"
+  labels = {["inline", "virtual"]}>
+Specify if this resolver can return valid symbols with zero value.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h/#l00394">394</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>.
+</MemberDefinition>
+
+### getResponsibilitySet() {#ad8300b7889eafc1abe3b339f416ece44}
+
+<MemberDefinition
+  prototype={<>virtual Expected&lt; LookupSet &gt; llvm::JITSymbolResolver::getResponsibilitySet (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#a487abfdc466598f156d5398ae986c6f9">LookupSet</a> &amp; Symbols)</>}>
+Returns the subset of the given symbols that should be materialized by the caller.
+
+Only weak/common symbols should be looked up, as strong definitions are implicitly always part of the caller&#39;s responsibility.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h/#l00391">391</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>.
+</MemberDefinition>
+
+### lookup() {#a189916af61c39f2c349ebbf1fdad3414}
+
+<MemberDefinition
+  prototype={<>virtual void llvm::JITSymbolResolver::lookup (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#a487abfdc466598f156d5398ae986c6f9">LookupSet</a> &amp; Symbols, <a href="#a01f534cbe65344148ec2986691ff632a">OnResolvedFunction</a> OnResolved)</>}>
+Returns the fully resolved address and flags for each of the given symbols.
+
+This method will return an error if any of the given symbols can not be resolved, or if the resolution process itself triggers an error.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h/#l00384">384</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### anchor() {#a5ad71489b4c477ec3a03842f9a2a09d1}
+
+<MemberDefinition
+  prototype="void llvm::JITSymbolResolver::anchor ()"
+  labels = {["virtual"]}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h/#l00397">397</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>, definition at line <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/runtimedyld/runtimedyld-cpp/#l01306">1306</a> of file <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/runtimedyld/runtimedyld-cpp">RuntimeDyld.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a></li>
+<li><a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/runtimedyld/runtimedyld-cpp">RuntimeDyld.cpp</a></li>
+</ul>
+
+</DoxygenPage>

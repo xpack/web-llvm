@@ -1,0 +1,264 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/codegen/windowscheduler-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `WindowScheduler.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/CodeGen/MachineLoopInfo.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/machineloopinfo-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/MachineRegisterInfo.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/machineregisterinfo-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/MachineScheduler.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/machinescheduler-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/ScheduleDAGInstrs.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/scheduledaginstrs-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/TargetSubtargetInfo.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/targetsubtargetinfo-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/windowscheduler">WindowScheduler</a></>}>
+The main class in the implementation of the target independent window scheduler. <a href="/docs/api/classes/llvm/windowscheduler/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//======----------- WindowScheduler.cpp - window scheduler -------------======//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// An implementation of the Window Scheduling software pipelining algorithm.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The concept of the window algorithm was first unveiled in Steven Muchnick&#39;s</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// book, &quot;Advanced Compiler Design And Implementation&quot;, and later elaborated</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// upon in Venkatraman Govindaraju&#39;s report, &quot;Implementation of Software</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Pipelining Using Window Scheduling&quot;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The window algorithm can be perceived as a modulo scheduling algorithm with a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">// stage count of 2 It boasts a higher scheduling success rate in targets with</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="comment">// severe resource conflicts when compared to the classic Swing Modulo</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Scheduling (SMS) algorithm. To align with the LLVM scheduling framework, we</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="comment">// have enhanced the original window algorithm. The primary steps are as</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="comment">// follows:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="comment">// 1 Instead of duplicating the original MBB twice as mentioned in the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="comment">// literature, we copy it three times, generating TripleMBB and the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="comment">// corresponding TripleDAG.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="comment">// 2 We establish a scheduling window on TripleMBB and execute list scheduling</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="comment">// within it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="comment">// 3 After multiple list scheduling, we select the best outcome and expand it</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="comment">// into the final scheduling result.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="comment">// To cater to the needs of various targets, we have developed the window</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="comment">// scheduler in a form that is easily derivable. We recommend employing this</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="comment">// algorithm in targets with severe resource conflicts, and it can be utilized</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="comment">// either before or after the Register Allocator (RA).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The default implementation provided here is before RA. If it is to be used</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="comment">// after RA, certain critical algorithm functions will need to be derived.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;CODEGEN&#95;WINDOWSCHEDULER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;CODEGEN&#95;WINDOWSCHEDULER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/machineloopinfo-h">llvm/CodeGen/MachineLoopInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/machineregisterinfo-h">llvm/CodeGen/MachineRegisterInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/machinescheduler-h">llvm/CodeGen/MachineScheduler.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/scheduledaginstrs-h">llvm/CodeGen/ScheduleDAGInstrs.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/targetsubtargetinfo-h">llvm/CodeGen/TargetSubtargetInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53" lineLink="/docs/api/namespaces/llvm/#a72daa22c9a997fec8618158cad8f5e13"><Highlight kind="normal"></Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a72daa22c9a997fec8618158cad8f5e13">WindowSchedulingFlag</a> &#123;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54" lineLink="/docs/api/namespaces/llvm/#a72daa22c9a997fec8618158cad8f5e13a928a9fffc4999e7b94132985c714f0e1"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a72daa22c9a997fec8618158cad8f5e13a928a9fffc4999e7b94132985c714f0e1">WS&#95;Off</a>,  </Highlight><Highlight kind="comment">/// Turn off window algorithm.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55" lineLink="/docs/api/namespaces/llvm/#a72daa22c9a997fec8618158cad8f5e13ae768da8e96f8d52eebd6fa9e2cf40ad3"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a72daa22c9a997fec8618158cad8f5e13ae768da8e96f8d52eebd6fa9e2cf40ad3">WS&#95;On</a>,   </Highlight><Highlight kind="comment">/// Use window algorithm after SMS algorithm fails.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56" lineLink="/docs/api/namespaces/llvm/#a72daa22c9a997fec8618158cad8f5e13a14f36bdb57b5840e63c6fae657f025c5"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a72daa22c9a997fec8618158cad8f5e13a14f36bdb57b5840e63c6fae657f025c5">WS&#95;Force</a> </Highlight><Highlight kind="comment">/// Use window algorithm instead of SMS algorithm.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">/// The main class in the implementation of the target independent window</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="comment">/// scheduler.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61" lineLink="/docs/api/classes/llvm/windowscheduler"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/windowscheduler/#af9bebcba4bcb359f1223392d9ff1e035">WindowScheduler</a> &#123;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/classes/llvm/windowscheduler/#a3a2b84c75a614343c26e3764aab963a9"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/machineschedcontext">MachineSchedContext</a> &#42;<a href="/docs/api/classes/llvm/windowscheduler/#a3a2b84c75a614343c26e3764aab963a9">Context</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64" lineLink="/docs/api/classes/llvm/windowscheduler/#abf97c807c56e072eec16eadaa1dc74e2"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42;<a href="/docs/api/classes/llvm/windowscheduler/#abf97c807c56e072eec16eadaa1dc74e2">MF</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/classes/llvm/windowscheduler/#a690d8e3b14e796b870f58d3d8f7e2a77"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/classes/llvm/windowscheduler/#a690d8e3b14e796b870f58d3d8f7e2a77">MBB</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66" lineLink="/docs/api/classes/llvm/windowscheduler/#a7c23e1051609c44baa4ba0e78a432139"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/machineloop">MachineLoop</a> &amp;<a href="/docs/api/classes/llvm/windowscheduler/#a7c23e1051609c44baa4ba0e78a432139">Loop</a>;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67" lineLink="/docs/api/classes/llvm/windowscheduler/#a99f029742c003f8a0e5db1538d07988e"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetsubtargetinfo">TargetSubtargetInfo</a> &#42;<a href="/docs/api/classes/llvm/windowscheduler/#a99f029742c003f8a0e5db1538d07988e">Subtarget</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68" lineLink="/docs/api/classes/llvm/windowscheduler/#ad8a9c20c5c819e59cd32906f691fbc2c"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;<a href="/docs/api/classes/llvm/windowscheduler/#ad8a9c20c5c819e59cd32906f691fbc2c">TII</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69" lineLink="/docs/api/classes/llvm/windowscheduler/#a9301a41a35d6aa7367def5ea6fd78db7"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &#42;<a href="/docs/api/classes/llvm/windowscheduler/#a9301a41a35d6aa7367def5ea6fd78db7">TRI</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/classes/llvm/windowscheduler/#a588faf8e1f126dc258d357b045595407"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &#42;<a href="/docs/api/classes/llvm/windowscheduler/#a588faf8e1f126dc258d357b045595407">MRI</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">  /// To innovatively identify the dependencies between MIs across two trips, we</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="comment">  /// construct a DAG for a new MBB, which is created by copying the original</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">  /// MBB three times. We refer to this new MBB as &#39;TripleMBB&#39; and the</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">  /// corresponding DAG as &#39;TripleDAG&#39;.</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">  /// If the dependencies are more than two trips, we avoid applying window</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">  /// algorithm by identifying successive phis in the old MBB.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78" lineLink="/docs/api/classes/llvm/windowscheduler/#aabfa4ddad621932351b720f8162030e8"><Highlight kind="normal">  std::unique&#95;ptr&lt;ScheduleDAGInstrs&gt; <a href="/docs/api/classes/llvm/windowscheduler/#aabfa4ddad621932351b720f8162030e8">TripleDAG</a>;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="comment">  /// OriMIs keeps the MIs removed from the original MBB.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/classes/llvm/windowscheduler/#aed4001b80ceaef38d700764e9934e054"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;MachineInstr &#42;&gt;</a> <a href="/docs/api/classes/llvm/windowscheduler/#aed4001b80ceaef38d700764e9934e054">OriMIs</a>;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// TriMIs keeps the MIs of TripleMBB, which is used to restore TripleMBB.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82" lineLink="/docs/api/classes/llvm/windowscheduler/#afbe266c442e9313e05ebffb703c2bd36"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;MachineInstr &#42;&gt;</a> <a href="/docs/api/classes/llvm/windowscheduler/#afbe266c442e9313e05ebffb703c2bd36">TriMIs</a>;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">  /// TriToOri keeps the mappings between the MI clones in TripleMBB and their</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  /// original MI.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85" lineLink="/docs/api/classes/llvm/windowscheduler/#a7e8c400b0b728b6ec230f0b487c6af44"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;MachineInstr &#42;, MachineInstr &#42;&gt;</a> <a href="/docs/api/classes/llvm/windowscheduler/#a7e8c400b0b728b6ec230f0b487c6af44">TriToOri</a>;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="comment">  /// OriToCycle keeps the mappings between the original MI and its issue cycle.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87" lineLink="/docs/api/classes/llvm/windowscheduler/#a54d52175d63bed9f3b0bd9f6317e023e"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;MachineInstr &#42;, int&gt;</a> <a href="/docs/api/classes/llvm/windowscheduler/#a54d52175d63bed9f3b0bd9f6317e023e">OriToCycle</a>;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">  /// SchedResult keeps the result of each list scheduling, and the format of</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">  /// the tuple is &lt;MI pointer, Cycle, Stage, Order ID&gt;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/classes/llvm/windowscheduler/#af3f7938e6818ec29f907451091b7fdad"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;std::tuple&lt;MachineInstr &#42;, int, int, int&gt;</a>, 256&gt; <a href="/docs/api/classes/llvm/windowscheduler/#af3f7938e6818ec29f907451091b7fdad">SchedResult</a>;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">  /// SchedPhiNum records the number of phi in the original MBB, and the</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="comment">  /// scheduling starts with MI after phis.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93" lineLink="/docs/api/classes/llvm/windowscheduler/#a1eade05b9c131318e2b1b8141cf3ef53"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a1eade05b9c131318e2b1b8141cf3ef53">SchedPhiNum</a> = 0;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">  /// SchedInstrNum records the MIs involved in scheduling in the original MBB,</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">  /// excluding debug instructions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96" lineLink="/docs/api/classes/llvm/windowscheduler/#ad4542ab1cab20715a2bc58b001a42e4b"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#ad4542ab1cab20715a2bc58b001a42e4b">SchedInstrNum</a> = 0;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">  /// BestII and BestOffset record the characteristics of the best scheduling</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">  /// result and are used together with SchedResult as the final window</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  /// scheduling result.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100" lineLink="/docs/api/classes/llvm/windowscheduler/#a6fba85773a0cf15056c4263ac69dbc80"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a6fba85773a0cf15056c4263ac69dbc80">BestII</a> = UINT&#95;MAX;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101" lineLink="/docs/api/classes/llvm/windowscheduler/#a67690feca344d36167d2f65f71653f4e"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a67690feca344d36167d2f65f71653f4e">BestOffset</a> = 0;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">  /// BaseII is the II obtained when the window offset is SchedPhiNum. This</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="comment">  /// offset is the initial position of the sliding window.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104" lineLink="/docs/api/classes/llvm/windowscheduler/#aaffbb1654d149fc4b75f0793c03cd398"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#aaffbb1654d149fc4b75f0793c03cd398">BaseII</a> = 0;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/windowscheduler/#af9bebcba4bcb359f1223392d9ff1e035">WindowScheduler</a>(<a href="/docs/api/structs/llvm/machineschedcontext">MachineSchedContext</a> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, <a href="/docs/api/classes/llvm/machineloop">MachineLoop</a> &amp;<a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3ad01fd9b01e9dde8bd3dc247afbfb7218">ML</a>);</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108" lineLink="/docs/api/classes/llvm/windowscheduler/#a7fd87a1ebb61604c4f63a0d7fe299931"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a7fd87a1ebb61604c4f63a0d7fe299931">~WindowScheduler</a>() &#123;&#125;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a40308f28207edf04d70fd884039d0b81">run</a>();</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">  /// Two types of ScheduleDAGs are needed, one for creating dependency graphs</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">  /// only, and the other for list scheduling as determined by the target.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scheduledaginstrs">ScheduleDAGInstrs</a> &#42;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/windowscheduler/#a0e34e8c324a6219e5840b893ba7f2de8">createMachineScheduler</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> OnlyBuildGraph = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">  /// Initializes the algorithm and determines if it can be executed.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#af02c395926a140c8121e0e7d16e1dfe1">initialize</a>();</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">  /// Add some related processing before running window scheduling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a30d5756e44d33e166ca0506802e578ef">preProcess</a>();</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">  /// Add some related processing after running window scheduling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a49b94106b0a74702c0cf8337eb8a6adb">postProcess</a>();</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="comment">  /// Back up the MIs in the original MBB and remove them from MBB.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a7519a939200f107386d3267bcd00c1c6">backupMBB</a>();</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">  /// Erase the MIs in current MBB and restore the original MIs.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#af94dd7df8db8b546ca9c8d29c0b31a95">restoreMBB</a>();</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="comment">  /// Make three copies of the original MBB to generate a new TripleMBB.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#ad9105d71f7a1c253dcb1afe7d120237e">generateTripleMBB</a>();</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="comment">  /// Restore the order of MIs in TripleMBB after each list scheduling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a425a27a184e7f9e226b7ba72870b19fe">restoreTripleMBB</a>();</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="comment">  /// Give the folding position in the window algorithm, where different</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">  /// heuristics can be used. It determines the performance and compilation time</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">  /// of the algorithm.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;unsigned&gt;</a> <a href="/docs/api/classes/llvm/windowscheduler/#af78f1d6e142343589981887d2a200d84">getSearchIndexes</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> SearchNum,</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">                                                 </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> SearchRatio);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">  /// Calculate MIs execution cycle after list scheduling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a5722fabe6420b0f87a3eb1160979e5f7">calculateMaxCycle</a>(<a href="/docs/api/classes/llvm/scheduledaginstrs">ScheduleDAGInstrs</a> &amp;DAG, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">  /// Calculate the stall cycle between two trips after list scheduling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#ae803ffd4decdd48471010ae2cb76d20d">calculateStallCycle</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> MaxCycle);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="comment">  /// Analyzes the II value after each list scheduling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#ac8c6acf329b4804c26c294903ae015de">analyseII</a>(<a href="/docs/api/classes/llvm/scheduledaginstrs">ScheduleDAGInstrs</a> &amp;DAG, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">  /// Phis are scheduled separately after each list scheduling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#ab595a02e4a2cbfc15add4253f222d3f1">schedulePhi</a>(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a>);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="comment">  /// Get the final issue order of all scheduled MIs including phis.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;MachineInstr &#42;, int&gt;</a> <a href="/docs/api/classes/llvm/windowscheduler/#a8be84df2dea9e89e29f856c0456ae0c3">getIssueOrder</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a>);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="comment">  /// Update the scheduling result after each list scheduling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#aec0f8a381dfe9925ec5cef351d20edb1">updateScheduleResult</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a>);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="comment">  /// Check whether the final result of window scheduling is valid.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149" lineLink="/docs/api/classes/llvm/windowscheduler/#adebaba35161e4995df328d169355e3a8"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#adebaba35161e4995df328d169355e3a8">isScheduleValid</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a67690feca344d36167d2f65f71653f4e">BestOffset</a> != <a href="/docs/api/classes/llvm/windowscheduler/#a1eade05b9c131318e2b1b8141cf3ef53">SchedPhiNum</a>; &#125;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="comment">  /// Using the scheduling infrastructure to expand the results of window</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="comment">  /// scheduling. It is usually necessary to add prologue and epilogue MBBs.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a8b546fe78d24f8c9f7d440957a37a801">expand</a>();</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="comment">  /// Update the live intervals for all registers used within MBB.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a94fa9430a250a99da03c75e55f605349">updateLiveIntervals</a>();</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="comment">  /// Estimate a II value at which all MIs will be scheduled successfully.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a8b0679e70ea74a5f5f3a7fe8060a86e6">getEstimatedII</a>(<a href="/docs/api/classes/llvm/scheduledaginstrs">ScheduleDAGInstrs</a> &amp;DAG);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="comment">  /// Gets the iterator range of MIs in the scheduling window.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/iterator-range">iterator&#95;range&lt;MachineBasicBlock::iterator&gt;</a> <a href="/docs/api/classes/llvm/windowscheduler/#adbdaac6e396c3d1dae6cee75cb2fee1f">getScheduleRange</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>,</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">                                                               </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Num);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="comment">  /// Get the issue cycle of the new MI based on the cycle of the original MI.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#ad0494bc6a8f8231640ccc225d7a86847">getOriCycle</a>(<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;NewMI);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="comment">  /// Get the original MI from which the new MI is cloned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;<a href="/docs/api/classes/llvm/windowscheduler/#a09475eec526bdf8626b3a02adad1fa28">getOriMI</a>(<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;NewMI);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="comment">  /// Get the scheduling stage, where the stage of the new MI is identical to</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="comment">  /// the original MI.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/windowscheduler/#a8f7e5d546027dc8ca8bb67c8b3f1b0cc">getOriStage</a>(<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;OriMI, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="comment">  /// Gets the register in phi which is generated from the current MBB.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/register">Register</a> <a href="/docs/api/classes/llvm/windowscheduler/#a8d55f2013c2e95d424a903ff919e8fa5">getAntiRegister</a>(<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;Phi);</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

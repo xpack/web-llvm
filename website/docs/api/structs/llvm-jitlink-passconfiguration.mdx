@@ -1,0 +1,168 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/jitlink/passconfiguration
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `PassConfiguration` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+An <a href="/docs/api/classes/llvm/jitlink/linkgraph">LinkGraph</a> pass configuration, consisting of a list of pre-prune, post-prune, and post-fixup passes. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct llvm::jitlink::PassConfiguration</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/JITLink/JITLink.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlink-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/jitlink/#ada9aea1e107a797952d4106abd7e24fd">LinkGraphPassList</a></>}
+  name={<><a href="#a084adb14a6ed485ceafa7aeb5ddcdba9">PostAllocationPasses</a></>}>
+Post-allocation passes. <a href="#a084adb14a6ed485ceafa7aeb5ddcdba9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/jitlink/#ada9aea1e107a797952d4106abd7e24fd">LinkGraphPassList</a></>}
+  name={<><a href="#a617bac95c4003dd176fa5cc119d2a919">PostFixupPasses</a></>}>
+Post-fixup passes. <a href="#a617bac95c4003dd176fa5cc119d2a919">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/jitlink/#ada9aea1e107a797952d4106abd7e24fd">LinkGraphPassList</a></>}
+  name={<><a href="#ac2b6c33f0953b534738fb8d0a02e526d">PostPrunePasses</a></>}>
+Post-prune passes. <a href="#ac2b6c33f0953b534738fb8d0a02e526d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/jitlink/#ada9aea1e107a797952d4106abd7e24fd">LinkGraphPassList</a></>}
+  name={<><a href="#a37decb1a4d14127fabb251c498274d0b">PreFixupPasses</a></>}>
+Pre-fixup passes. <a href="#a37decb1a4d14127fabb251c498274d0b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/jitlink/#ada9aea1e107a797952d4106abd7e24fd">LinkGraphPassList</a></>}
+  name={<><a href="#ad40c7648b8ad38b6d942e7194a4faa34">PrePrunePasses</a></>}>
+Pre-prune passes. <a href="#ad40c7648b8ad38b6d942e7194a4faa34">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+An <a href="/docs/api/classes/llvm/jitlink/linkgraph">LinkGraph</a> pass configuration, consisting of a list of pre-prune, post-prune, and post-fixup passes.
+
+Definition at line 1837 of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlink-h">JITLink.h</a>.
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### PostAllocationPasses {#a084adb14a6ed485ceafa7aeb5ddcdba9}
+
+<MemberDefinition
+  prototype="LinkGraphPassList llvm::jitlink::PassConfiguration::PostAllocationPasses">
+Post-allocation passes.
+
+These passes are called on the graph after memory has been allocated and defined nodes have been assigned their final addresses, but before the context has been notified of these addresses. At this point externals have not been resolved, and symbol content has not yet been copied into working memory.
+
+Notable use cases: Setting up data structures associated with addresses of defined symbols (e.g. a mapping of &#95;&#95;dso&#95;handle to JITDylib&#42; for the JIT runtime) – using a PostAllocationPass for this ensures that the data structures are in-place before any query for resolved symbols can complete.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlink-h/#l01868">1868</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlink-h">JITLink.h</a>.
+</MemberDefinition>
+
+### PostFixupPasses {#a617bac95c4003dd176fa5cc119d2a919}
+
+<MemberDefinition
+  prototype="LinkGraphPassList llvm::jitlink::PassConfiguration::PostFixupPasses">
+Post-fixup passes.
+
+These passes are called on the graph after block contents has been copied to working memory, and fixups applied. Blocks have been updated to point to their fixed up content.
+
+Notable use cases: Testing and validation.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlink-h/#l01888">1888</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlink-h">JITLink.h</a>.
+</MemberDefinition>
+
+### PostPrunePasses {#ac2b6c33f0953b534738fb8d0a02e526d}
+
+<MemberDefinition
+  prototype="LinkGraphPassList llvm::jitlink::PassConfiguration::PostPrunePasses">
+Post-prune passes.
+
+These passes are called on the graph after dead stripping, but before memory is allocated or nodes assigned their final addresses.
+
+Notable use cases: Building GOT, stub, and TLV symbols.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlink-h/#l01853">1853</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlink-h">JITLink.h</a>.
+</MemberDefinition>
+
+### PreFixupPasses {#a37decb1a4d14127fabb251c498274d0b}
+
+<MemberDefinition
+  prototype="LinkGraphPassList llvm::jitlink::PassConfiguration::PreFixupPasses">
+Pre-fixup passes.
+
+These passes are called on the graph after memory has been allocated, content copied into working memory, and all nodes (including externals) have been assigned their final addresses, but before any fixups have been applied.
+
+Notable use cases: Late link-time optimizations like GOT and stub elimination.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlink-h/#l01879">1879</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlink-h">JITLink.h</a>.
+</MemberDefinition>
+
+### PrePrunePasses {#ad40c7648b8ad38b6d942e7194a4faa34}
+
+<MemberDefinition
+  prototype="LinkGraphPassList llvm::jitlink::PassConfiguration::PrePrunePasses">
+Pre-prune passes.
+
+These passes are called on the graph after it is built, and before any symbols have been pruned. Graph nodes still have their original vmaddrs.
+
+Notable use cases: Marking symbols live or should-discard.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlink-h/#l01845">1845</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlink-h">JITLink.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlink-h">JITLink.h</a></li>
+</ul>
+
+</DoxygenPage>

@@ -1,0 +1,294 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/ir/constantfprange-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ConstantFPRange.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/APFloat.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/apfloat-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Instructions.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/instructions-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="optional"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a></>}>
+This class represents a range of floating-point values. <a href="/docs/api/classes/llvm/constantfprange/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- ConstantFPRange.h - Represent a range for floating-point -&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Represent a range of possible values that may occur when the program is run</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// for a floating-point value. This keeps track of a lower and upper bound for</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// the constant.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Range = &#91;Lower, Upper&#93; U (MayBeQNaN ? QNaN : &#123;&#125;) U (MayBeSNaN ? SNaN : &#123;&#125;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Specifically, &#91;inf, -inf&#93; represents an empty set.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Note:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">// 1 Bounds are inclusive.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">// 2 0 is considered to be less than 0 That is, range &#91;0, 0&#93; doesn&#39;t contain</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="comment">// 0</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="comment">// 3 Currently wrapping ranges are not supported.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;IR&#95;CONSTANTFPRANGE&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;IR&#95;CONSTANTFPRANGE&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/apfloat-h">llvm/ADT/APFloat.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/instructions-h">llvm/IR/Instructions.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;optional&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a>;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/knownfpclass">KnownFPClass</a>;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="comment">/// This class represents a range of floating-point values.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36" lineLink="/docs/api/classes/llvm/constantfprange"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">&#91;&#91;nodiscard&#93;&#93; ConstantFPRange &#123;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/apfloat">APFloat</a> Lower, Upper;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> MayBeQNaN : 1;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> MayBeSNaN : 1;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">  /// Create empty constant range with same semantics.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">  ConstantFPRange getEmpty()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ConstantFPRange(<a href="/docs/api/classes/llvm/constantfprange/#afda37fe68e3091ce813c4f9ab507a04d">getSemantics</a>(), </Highlight><Highlight kind="comment">/&#42;IsFullSet=&#42;/</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">  /// Create full constant range with same semantics.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  ConstantFPRange getFull()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ConstantFPRange(<a href="/docs/api/classes/llvm/constantfprange/#afda37fe68e3091ce813c4f9ab507a04d">getSemantics</a>(), </Highlight><Highlight kind="comment">/&#42;IsFullSet=&#42;/</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> makeEmpty();</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> makeFull();</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="comment">  /// Initialize a full or empty set for the specified semantics.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> ConstantFPRange(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/fltsemantics">fltSemantics</a> &amp;Sem, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsFullSet);</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">  /// Initialize a range to hold the single specified value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> ConstantFPRange(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/apfloat">APFloat</a> &amp;<a href="/docs/api/classes/llvm/value">Value</a>);</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="comment">  /// Initialize a range of values explicitly.</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="comment">  /// Note: If \\p LowerVal is greater than \\p UpperVal, please use the canonical</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="comment">  /// form &#91;Inf, -Inf&#93;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  ConstantFPRange(<a href="/docs/api/classes/llvm/apfloat">APFloat</a> LowerVal, <a href="/docs/api/classes/llvm/apfloat">APFloat</a> UpperVal, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> MayBeQNaN,</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">                  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> MayBeSNaN);</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="comment">  /// Create empty constant range with the given semantics.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68" lineLink="/docs/api/classes/llvm/constantfprange/#ad1dd0b6088a193eaccbb62d776d60587"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> ConstantFPRange <a href="/docs/api/classes/llvm/constantfprange/#ad1dd0b6088a193eaccbb62d776d60587">getEmpty</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/fltsemantics">fltSemantics</a> &amp;Sem) &#123;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ConstantFPRange(Sem, </Highlight><Highlight kind="comment">/&#42;IsFullSet=&#42;/</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">  /// Create full constant range with the given semantics.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73" lineLink="/docs/api/classes/llvm/constantfprange/#a106ff7aa37fa465de3aa36d5887b2ee5"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> ConstantFPRange <a href="/docs/api/classes/llvm/constantfprange/#a106ff7aa37fa465de3aa36d5887b2ee5">getFull</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/fltsemantics">fltSemantics</a> &amp;Sem) &#123;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ConstantFPRange(Sem, </Highlight><Highlight kind="comment">/&#42;IsFullSet=&#42;/</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">  /// Helper for (-inf, inf) to represent all finite values.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> getFinite(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/fltsemantics">fltSemantics</a> &amp;Sem);</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="comment">  /// Helper for &#91;-inf, inf&#93; to represent all non-NaN values.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> getNonNaN(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/fltsemantics">fltSemantics</a> &amp;Sem);</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">  /// Create a range which doesn&#39;t contain NaNs.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84" lineLink="/docs/api/classes/llvm/constantfprange/#ad36feb2aab4770cccf5b75fe7955d3c9"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> ConstantFPRange <a href="/docs/api/classes/llvm/constantfprange/#ad36feb2aab4770cccf5b75fe7955d3c9">getNonNaN</a>(<a href="/docs/api/classes/llvm/apfloat">APFloat</a> LowerVal, <a href="/docs/api/classes/llvm/apfloat">APFloat</a> UpperVal) &#123;</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ConstantFPRange(std::move(LowerVal), std::move(UpperVal),</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">                           </Highlight><Highlight kind="comment">/&#42;MayBeQNaN=&#42;/</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="comment">/&#42;MayBeSNaN=&#42;/</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">  /// Create a range which may contain NaNs.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/classes/llvm/constantfprange/#a06367647f909e8107f3a1bc01dddf344"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> ConstantFPRange <a href="/docs/api/classes/llvm/constantfprange/#a06367647f909e8107f3a1bc01dddf344">getMayBeNaN</a>(<a href="/docs/api/classes/llvm/apfloat">APFloat</a> LowerVal, <a href="/docs/api/classes/llvm/apfloat">APFloat</a> UpperVal) &#123;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ConstantFPRange(std::move(LowerVal), std::move(UpperVal),</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">                           </Highlight><Highlight kind="comment">/&#42;MayBeQNaN=&#42;/</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="comment">/&#42;MayBeSNaN=&#42;/</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">  /// Create a range which only contains NaNs.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> getNaNOnly(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/fltsemantics">fltSemantics</a> &amp;Sem, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> MayBeQNaN,</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">                                    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> MayBeSNaN);</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  /// Produce the smallest range such that all values that may satisfy the given</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">  /// predicate with any value contained within Other is contained in the</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="comment">  /// returned range.  Formally, this returns a superset of</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">  /// &#39;union over all y in Other . &#123; x : fcmp op x y is true &#125;&#39;.  If the exact</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="comment">  /// answer is not representable as a ConstantFPRange, the return value will be</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="comment">  /// a proper superset of the above.</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">  /// Example: Pred = ole and Other = float &#91;2, 5&#93; returns Result = &#91;-inf, 5&#93;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> makeAllowedFCmpRegion(<a href="/docs/api/classes/llvm/cmpinst/#a2be3583dac92a031fa1458d4d992c78b">FCmpInst::Predicate</a> Pred,</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">                                               </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> &amp;<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>);</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="comment">  /// Produce the largest range such that all values in the returned range</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">  /// satisfy the given predicate with all values contained within Other.</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">  /// Formally, this returns a subset of</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">  /// &#39;intersection over all y in Other . &#123; x : fcmp op x y is true &#125;&#39;.  If the</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">  /// exact answer is not representable as a ConstantFPRange, the return value</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">  /// will be a proper subset of the above.</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">  /// Example: Pred = ole and Other = float &#91;2, 5&#93; returns &#91;-inf, 2&#93;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> makeSatisfyingFCmpRegion(<a href="/docs/api/classes/llvm/cmpinst/#a2be3583dac92a031fa1458d4d992c78b">FCmpInst::Predicate</a> Pred,</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">                                                  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> &amp;<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>);</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">  /// Produce the exact range such that all values in the returned range satisfy</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="comment">  /// the given predicate with any value contained within Other. Formally, this</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="comment">  /// returns &#123; x : fcmp op x Other is true &#125;.</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">  /// Example: Pred = olt and Other = float 3 returns &#91;-inf, 3)</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="comment">  /// If the exact answer is not representable as a ConstantFPRange, returns</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="comment">  /// std::nullopt.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> std::optional&lt;ConstantFPRange&gt;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  makeExactFCmpRegion(<a href="/docs/api/classes/llvm/cmpinst/#a2be3583dac92a031fa1458d4d992c78b">FCmpInst::Predicate</a> Pred, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/apfloat">APFloat</a> &amp;<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>);</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="comment">  /// Does the predicate \\p Pred hold between ranges this and \\p Other?</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">  /// NOTE: false does not mean that inverse predicate holds!</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> fcmp(<a href="/docs/api/classes/llvm/cmpinst/#a2be3583dac92a031fa1458d4d992c78b">FCmpInst::Predicate</a> Pred, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> &amp;<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">  /// Return the lower value for this range.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136" lineLink="/docs/api/classes/llvm/constantfprange/#aecf00eeae75d39bfd560934ea6657ce3"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/apfloat">APFloat</a> &amp;<a href="/docs/api/classes/llvm/constantfprange/#aecf00eeae75d39bfd560934ea6657ce3">getLower</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Lower; &#125;</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">  /// Return the upper value for this range.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139" lineLink="/docs/api/classes/llvm/constantfprange/#aeb1ef69f315dc2f8249e020780192e3d"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/apfloat">APFloat</a> &amp;<a href="/docs/api/classes/llvm/constantfprange/#aeb1ef69f315dc2f8249e020780192e3d">getUpper</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Upper; &#125;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141" lineLink="/docs/api/classes/llvm/constantfprange/#a6f9d74b728e4f62b126c17c6970957f4"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange/#a6f9d74b728e4f62b126c17c6970957f4">containsNaN</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> MayBeQNaN || MayBeSNaN; &#125;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142" lineLink="/docs/api/classes/llvm/constantfprange/#a1280f3ee32c39f4732e88d94f62ba72d"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange/#a1280f3ee32c39f4732e88d94f62ba72d">containsQNaN</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> MayBeQNaN; &#125;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143" lineLink="/docs/api/classes/llvm/constantfprange/#a3c822545e0122b707c5953be7c06fef3"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange/#a3c822545e0122b707c5953be7c06fef3">containsSNaN</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> MayBeSNaN; &#125;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isNaNOnly() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="comment">  /// Get the semantics of this ConstantFPRange.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147" lineLink="/docs/api/classes/llvm/constantfprange/#afda37fe68e3091ce813c4f9ab507a04d"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/fltsemantics">fltSemantics</a> &amp;<a href="/docs/api/classes/llvm/constantfprange/#afda37fe68e3091ce813c4f9ab507a04d">getSemantics</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Lower.getSemantics(); &#125;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="comment">  /// Return true if this set contains all of the elements possible</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="comment">  /// for this data-type.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isFullSet() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="comment">  /// Return true if this set contains no members.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isEmptySet() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="comment">  /// Return true if the specified value is in the set.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/sandboxir/value-cpp/#a34433c37334a1cde3d58cde3099257dd">contains</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/apfloat">APFloat</a> &amp;Val) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="comment">  /// Return true if the other range is a subset of this one.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/sandboxir/value-cpp/#a34433c37334a1cde3d58cde3099257dd">contains</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> &amp;CR) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="comment">  /// If this set contains a single element, return it, otherwise return null.</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="comment">  /// If \\p ExcludesNaN is true, return the non-NaN single element.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/apfloat">APFloat</a> &#42;getSingleElement(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> ExcludesNaN = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="comment">  /// Return true if this set contains exactly one member.</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="comment">  /// If \\p ExcludesNaN is true, return true if this set contains exactly one</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="comment">  /// non-NaN member.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169" lineLink="/docs/api/classes/llvm/constantfprange/#a87a320a2d76c93e6aa347f2456a7a394"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange/#a87a320a2d76c93e6aa347f2456a7a394">isSingleElement</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> ExcludesNaN = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange/#a4c44f70a31ae4f69f7676b9499ba117b">getSingleElement</a>(ExcludesNaN) != </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="comment">  /// Return true if the sign bit of all values in this range is 1</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="comment">  /// Return false if the sign bit of all values in this range is 0</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="comment">  /// Otherwise, return std::nullopt.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">  std::optional&lt;bool&gt; getSignBit() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="comment">  /// Return true if this range is equal to another range.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/gsym/mergedfunctionsinfo-cpp/#ad5db311411b09e79fcad62e7cee12e6b">operator==</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> &amp;CR) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="comment">  /// Return true if this range is not equal to another range.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181" lineLink="/docs/api/classes/llvm/constantfprange/#aa358c3b1545898d0e7365f44e194963e"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange/#aa358c3b1545898d0e7365f44e194963e">operator!=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ConstantFPRange &amp;CR)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> !<a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/gsym/mergedfunctionsinfo-cpp/#ad5db311411b09e79fcad62e7cee12e6b">operator==</a>(CR); &#125;</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="comment">  /// Return the FPClassTest which will return true for the value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a76921eddf6329af860916f3278ef1d1d">FPClassTest</a> classify() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="comment">  /// Print out the bounds to a stream.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/object/archivewriter-cpp/#aa9f638c7ae7fdd206a6c60e26bef9751">print</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="comment">  /// Allow printing from a debugger easily.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a03503773241005f01b090b9862aad304">dump</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="comment">  /// Return the range that results from the intersection of this range with</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="comment">  /// another range.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> intersectWith(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> &amp;CR) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="comment">  /// Return the smallest range that results from the union of this range</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="comment">  /// with another range.  The resultant range is guaranteed to include the</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="comment">  /// elements of both sets, but may contain more.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> unionWith(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> &amp;CR) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202" lineLink="/docs/api/namespaces/llvm/#a59a8a9e4861e3384ff4e3cc12e45ff60"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;<a href="/docs/api/namespaces/llvm/#ab89f1db02887aa569176f0e29622eb47">operator&lt;&lt;</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constantfprange">ConstantFPRange</a> &amp;CR) &#123;</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">  CR.<a href="/docs/api/classes/llvm/constantfprange/#a951fd858f0a01fc10c5556ac31075162">print</a>(OS);</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OS;</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;IR&#95;CONSTANTFPRANGE&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

@@ -1,0 +1,98 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/llvmcexecutionengineorcee
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The ExecutionEngine-based ORC Utils Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/groups/llvmcexecutionengineorc/#gaa54913a75bd017c8cc988942cac79bad">LLVMOrcObjectLayerRef</a></>}
+  name={<><a href="#ga4aaa19f070d761e54fee2069127e8ee0">LLVMOrcCreateRTDyldObjectLinkingLayerWithMCJITMemoryManagerLikeCallbacks</a> (LLVMOrcExecutionSessionRef ES, void &#42;CreateContextCtx, LLVMMemoryManagerCreateContextCallback CreateContext, LLVMMemoryManagerNotifyTerminatingCallback NotifyTerminating, LLVMMemoryManagerAllocateCodeSectionCallback AllocateCodeSection, LLVMMemoryManagerAllocateDataSectionCallback AllocateDataSection, LLVMMemoryManagerFinalizeMemoryCallback FinalizeMemory, LLVMMemoryManagerDestroyCallback Destroy)</>}>
+Create a RTDyldObjectLinkingLayer instance using MCJIT-memory-manager-like callbacks. <a href="#ga4aaa19f070d761e54fee2069127e8ee0">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/groups/llvmcexecutionengineorc/#gaa54913a75bd017c8cc988942cac79bad">LLVMOrcObjectLayerRef</a></>}
+  name={<><a href="#gaea24c520fba0be17841bb8c022a39822">LLVMOrcCreateRTDyldObjectLinkingLayerWithSectionMemoryManager</a> (LLVMOrcExecutionSessionRef ES)</>}>
+Create a RTDyldObjectLinkingLayer instance using the standard SectionMemoryManager for memory management. <a href="#gaea24c520fba0be17841bb8c022a39822">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#gaf7055d3c420852e38b0037e7b9bba492">LLVMOrcRTDyldObjectLinkingLayerRegisterJITEventListener</a> (LLVMOrcObjectLayerRef RTDyldObjLinkingLayer, LLVMJITEventListenerRef Listener)</>}>
+Add the given listener to the given RTDyldObjectLinkingLayer. <a href="#gaf7055d3c420852e38b0037e7b9bba492">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Functions
+
+### LLVMOrcCreateRTDyldObjectLinkingLayerWithMCJITMemoryManagerLikeCallbacks() {#ga4aaa19f070d761e54fee2069127e8ee0}
+
+<MemberDefinition
+  prototype={<>LLVMOrcObjectLayerRef LLVMOrcCreateRTDyldObjectLinkingLayerWithMCJITMemoryManagerLikeCallbacks (<a href="/docs/api/groups/llvmcexecutionengineorc/#ga653c8620112eddd7c75085a0b586c97d">LLVMOrcExecutionSessionRef</a> ES, void &#42; CreateContextCtx, <a href="/docs/api/files/include/include/llvm-c/orcee-h/#a1f1ef8b8fddd2a92750f2ce99978e47e">LLVMMemoryManagerCreateContextCallback</a> CreateContext, <a href="/docs/api/files/include/include/llvm-c/orcee-h/#a68b9796c5bc7b233ab00d43212ee21c3">LLVMMemoryManagerNotifyTerminatingCallback</a> NotifyTerminating, <a href="/docs/api/groups/llvmcexecutionengine/#gad54344e18e0839b6b3f39d598c5598f0">LLVMMemoryManagerAllocateCodeSectionCallback</a> AllocateCodeSection, <a href="/docs/api/groups/llvmcexecutionengine/#gabe63644e7847066c1ac90ad487040e26">LLVMMemoryManagerAllocateDataSectionCallback</a> AllocateDataSection, <a href="/docs/api/groups/llvmcexecutionengine/#gaa3aa0817f65b3ec44e6e3b797570f05e">LLVMMemoryManagerFinalizeMemoryCallback</a> FinalizeMemory, <a href="/docs/api/groups/llvmcexecutionengine/#ga4e9770ff745f02b2bf2e473b3f5a7c58">LLVMMemoryManagerDestroyCallback</a> Destroy)</>}>
+Create a RTDyldObjectLinkingLayer instance using MCJIT-memory-manager-like callbacks.
+
+This is intended to simplify transitions for existing MCJIT clients. The callbacks used are similar (but not identical) to the callbacks for LLVMCreateSimpleMCJITMemoryManager: Unlike MCJIT, RTDyldObjectLinkingLayer will create a new memory manager for each object linked by calling the given CreateContext callback. This allows for code removal by destroying each allocator individually. Every allocator will be destroyed (if it has not been already) at RTDyldObjectLinkingLayer destruction time, and the NotifyTerminating callback will be called to indicate that no further allocation contexts will be created.
+
+To implement MCJIT-like behavior clients can implement CreateContext, NotifyTerminating, and Destroy as:
+
+void &#42;CreateContext(void &#42;CtxCtx) &#123; return CtxCtx; &#125; void NotifyTerminating(void &#42;CtxCtx) &#123; MyOriginalDestroy(CtxCtx); &#125; void Destroy(void &#42;Ctx) &#123; &#125;
+
+This scheme simply reuses the CreateContextCtx pointer as the one-and-only allocation context.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm-c/orcee-h/#l00078">78</a> of file <a href="/docs/api/files/include/include/llvm-c/orcee-h">OrcEE.h</a>, definition at line <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/orc/orcv2cbindings-cpp/#l01030">1030</a> of file <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/orc/orcv2cbindings-cpp">OrcV2CBindings.cpp</a>.
+</MemberDefinition>
+
+### LLVMOrcCreateRTDyldObjectLinkingLayerWithSectionMemoryManager() {#gaea24c520fba0be17841bb8c022a39822}
+
+<MemberDefinition
+  prototype={<>LLVMOrcObjectLayerRef LLVMOrcCreateRTDyldObjectLinkingLayerWithSectionMemoryManager (<a href="/docs/api/groups/llvmcexecutionengineorc/#ga653c8620112eddd7c75085a0b586c97d">LLVMOrcExecutionSessionRef</a> ES)</>}>
+Create a RTDyldObjectLinkingLayer instance using the standard SectionMemoryManager for memory management.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm-c/orcee-h/#l00050">50</a> of file <a href="/docs/api/files/include/include/llvm-c/orcee-h">OrcEE.h</a>, definition at line <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/orc/orcv2cbindings-cpp/#l01022">1022</a> of file <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/orc/orcv2cbindings-cpp">OrcV2CBindings.cpp</a>.
+</MemberDefinition>
+
+### LLVMOrcRTDyldObjectLinkingLayerRegisterJITEventListener() {#gaf7055d3c420852e38b0037e7b9bba492}
+
+<MemberDefinition
+  prototype={<>void LLVMOrcRTDyldObjectLinkingLayerRegisterJITEventListener (<a href="/docs/api/groups/llvmcexecutionengineorc/#gaa54913a75bd017c8cc988942cac79bad">LLVMOrcObjectLayerRef</a> RTDyldObjLinkingLayer, <a href="/docs/api/groups/llvmcsupporttypes/#gad4bf262b53178061f7b936e3d1ff43bf">LLVMJITEventListenerRef</a> Listener)</>}>
+Add the given listener to the given RTDyldObjectLinkingLayer.
+
+Note: Layer must be an RTDyldObjectLinkingLayer instance or behavior is undefined.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm-c/orcee-h/#l00093">93</a> of file <a href="/docs/api/files/include/include/llvm-c/orcee-h">OrcEE.h</a>, definition at line <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/orc/orcv2cbindings-cpp/#l01139">1139</a> of file <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/orc/orcv2cbindings-cpp">OrcV2CBindings.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+</DoxygenPage>

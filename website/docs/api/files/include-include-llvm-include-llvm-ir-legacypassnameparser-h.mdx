@@ -1,0 +1,193 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/ir/legacypassnameparser-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `LegacyPassNameParser.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/STLExtras.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/stlextras-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Pass.h"
+  permalink="/docs/api/files/include/include/llvm/pass-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/CommandLine.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/commandline-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/ErrorHandling.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/raw_ostream.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cstring"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/passnameparser">PassNameParser</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- LegacyPassNameParser.h -----------------------------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file contains the PassNameParser and FilteredPassNameParser&lt;&gt; classes,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// which are used to add command line arguments to a utility for all of the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// passes that have been registered into the system.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The PassNameParser class adds ALL passes linked into the system (that are</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">// creatable) as command line arguments to the tool (when instantiated with the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">// appropriate command line option template).  The FilteredPassNameParser&lt;&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">// template is used for the same purposes as PassNameParser, except that it only</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">// includes passes that have a PassType that are compatible with the filter</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="comment">// (which is the template argument).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Note that this is part of the legacy pass manager infrastructure and will be</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="comment">// (eventually) going away.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;IR&#95;LEGACYPASSNAMEPARSER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;IR&#95;LEGACYPASSNAMEPARSER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stlextras-h">llvm/ADT/STLExtras.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/pass-h">llvm/Pass.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/commandline-h">llvm/Support/CommandLine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h">llvm/Support/ErrorHandling.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h">llvm/Support/raw&#95;ostream.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstring&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="comment">// PassNameParser class - Make use of the pass registration mechanism to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="comment">// automatically add a command line argument to opt for each pass.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41" lineLink="/docs/api/classes/llvm/passnameparser"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/passnameparser/#a2341e96364ea048968b4ad9d1ce5aba3">PassNameParser</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/passregistrationlistener/#a84540e48b241ec1f639c4f4b0dedc564">PassRegistrationListener</a>,</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">                       </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/cl/parser">cl::parser</a>&lt;const PassInfo&#42;&gt; &#123;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/passnameparser/#a2341e96364ea048968b4ad9d1ce5aba3">PassNameParser</a>(<a href="/docs/api/classes/llvm/cl/option">cl::Option</a> &amp;O);</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45" lineLink="/docs/api/classes/llvm/passnameparser/#a8c3e54d72147be3fee07f3636844daa9"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/passnameparser/#a8c3e54d72147be3fee07f3636844daa9">~PassNameParser</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/classes/llvm/passnameparser/#a95f04ab8aa6ec4545d05f70348706704"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/passnameparser/#a95f04ab8aa6ec4545d05f70348706704">initialize</a>() &#123;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/cl/generic-parser-base/#a2fb37938d38dab1c7762a16d9745db81">cl::parser&lt;const PassInfo&#42;&gt;::initialize</a>();</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Add all of the passes to the map that got initialized before &#39;this&#39; did.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/passregistrationlistener/#aeb9dad021ab08bbb8c51576841ddc7bd">enumeratePasses</a>();</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// ignorablePassImpl - Can be overriden in subclasses to refine the list of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// which passes we want to include.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57" lineLink="/docs/api/classes/llvm/passnameparser/#aa4191713ed0ddbdfc5f011590f3f9472"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/passnameparser/#aa4191713ed0ddbdfc5f011590f3f9472">ignorablePassImpl</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/passinfo">PassInfo</a> &#42;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59" lineLink="/docs/api/classes/llvm/passnameparser/#a97139a60ae70afe37e86fc9ce1860ccc"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/passnameparser/#a97139a60ae70afe37e86fc9ce1860ccc">ignorablePass</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/passinfo">PassInfo</a> &#42;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Ignore non-selectable and non-constructible passes!  Ignore</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// non-optimizations.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>-&gt;getPassArgument().empty() || <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>-&gt;getNormalCtor() == </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal"> ||</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">           <a href="/docs/api/classes/llvm/passnameparser/#aa4191713ed0ddbdfc5f011590f3f9472">ignorablePassImpl</a>(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>);</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Implement the PassRegistrationListener callbacks used to populate our map</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68" lineLink="/docs/api/classes/llvm/passnameparser/#a59e76c4af67fb412861bdfcf6cc85919"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/passnameparser/#a59e76c4af67fb412861bdfcf6cc85919">passRegistered</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/passinfo">PassInfo</a> &#42;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>)</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/passnameparser/#a97139a60ae70afe37e86fc9ce1860ccc">ignorablePass</a>(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>)) </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/cl/generic-parser-base/#a85cae0a558fa101b49d7e4dff6874f91">findOption</a>(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>-&gt;getPassArgument().data()) != <a href="/docs/api/classes/llvm/cl/parser/#aefde0656d9141070d5546094e51365f1">getNumOptions</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a9a7b5c68c90f85baaedaa854cc5002cc">errs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Two passes with the same argument (-&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">           &lt;&lt; <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>-&gt;getPassArgument() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;) attempted to be registered!\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">      <a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm&#95;unreachable</a>(</Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/cl/parser/#aaac324ffab0b82b56ecef773f3531d02">addLiteralOption</a>(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>-&gt;getPassArgument().data(), <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>-&gt;getPassName().data());</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77" lineLink="/docs/api/classes/llvm/passnameparser/#a663bda3b44602d1a61fb7e6a61cce6f9"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/passnameparser/#a663bda3b44602d1a61fb7e6a61cce6f9">passEnumerate</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/passinfo">PassInfo</a> &#42;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>)</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123; <a href="/docs/api/classes/llvm/passnameparser/#a59e76c4af67fb412861bdfcf6cc85919">passRegistered</a>(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>); &#125;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// printOptionInfo - Print out information about this option.  Override the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// default implementation to sort the table before we print...</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81" lineLink="/docs/api/classes/llvm/passnameparser/#a11f1f134dd25fb643ccfbf6f7a57cf98"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/passnameparser/#a11f1f134dd25fb643ccfbf6f7a57cf98">printOptionInfo</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/cl/option">cl::Option</a> &amp;O, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> GlobalWidth)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/passnameparser/#a2341e96364ea048968b4ad9d1ce5aba3">PassNameParser</a> &#42;PNP = </Highlight><Highlight kind="keyword">const&#95;cast&lt;</Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/passnameparser/#a2341e96364ea048968b4ad9d1ce5aba3">PassNameParser</a>&#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#add1eb5637dd671428b6f138ed3db6428">array&#95;pod&#95;sort</a>(PNP-&gt;<a href="/docs/api/classes/llvm/cl/parser/#a4b43ceecbf6b78963fd0ff4fce293bdf">Values</a>.begin(), PNP-&gt;<a href="/docs/api/classes/llvm/cl/parser/#a4b43ceecbf6b78963fd0ff4fce293bdf">Values</a>.end(), ValCompare);</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/cl/generic-parser-base/#a84230421edc594e09adc8a9a743823de">cl::parser&lt;const PassInfo&#42;&gt;::printOptionInfo</a>(O, GlobalWidth);</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// ValCompare - Provide a sorting comparator for Values elements...</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> ValCompare(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> PassNameParser::OptionInfo &#42;VT1,</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">                        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> PassNameParser::OptionInfo &#42;VT2) &#123;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> VT1-&gt;Name.compare(VT2-&gt;Name);</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// End llvm namespace</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

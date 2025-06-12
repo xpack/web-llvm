@@ -1,0 +1,330 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/support/specialcaselist-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `SpecialCaseList.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/SpecialCaseList.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/specialcaselist-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/LineIterator.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/lineiterator-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/MemoryBuffer.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/memorybuffer-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/VirtualFileSystem.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/virtualfilesystem-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="stdio.h"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="string"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="system_error"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="utility"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- SpecialCaseList.cpp - special case list for sanitizers ------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This is a utility class for instrumentation passes (like AddressSanitizer</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// or ThreadSanitizer) to avoid instrumenting some functions or global</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// variables, or to instrument some functions or global variables in a specific</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// way, based on a user-supplied list.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/specialcaselist-h">llvm/Support/SpecialCaseList.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/lineiterator-h">llvm/Support/LineIterator.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/memorybuffer-h">llvm/Support/MemoryBuffer.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/virtualfilesystem-h">llvm/Support/VirtualFileSystem.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;stdio.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;string&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;system&#95;error&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;utility&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27" lineLink="/docs/api/classes/llvm/specialcaselist/matcher/#aeddf3282ade6b3f5d5bd98297ae8300a"><Highlight kind="normal"><a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/classes/llvm/specialcaselist/matcher/#aeddf3282ade6b3f5d5bd98297ae8300a">SpecialCaseList::Matcher::insert</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/classes/llvm/pattern">Pattern</a>, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> LineNumber,</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">                                       </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UseGlobs) &#123;</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/pattern">Pattern</a>.empty())</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">createStringError</a>(<a href="/docs/api/namespaces/llvm/#a59739a4f15fb2ec57a6b7fcfe938546bae55d43eabeefe5a8271b4a3c898bd18f">errc::invalid&#95;argument</a>,</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">                             <a href="/docs/api/classes/llvm/twine">Twine</a>(</Highlight><Highlight kind="stringliteral">&quot;Supplied &quot;</Highlight><Highlight kind="normal">) +</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">                                 (UseGlobs ? </Highlight><Highlight kind="stringliteral">&quot;glob&quot;</Highlight><Highlight kind="normal"> : </Highlight><Highlight kind="stringliteral">&quot;regex&quot;</Highlight><Highlight kind="normal">) + </Highlight><Highlight kind="stringliteral">&quot; was blank&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!UseGlobs) &#123;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Replace &#42; with .&#42;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Regexp = <a href="/docs/api/classes/llvm/pattern">Pattern</a>.str();</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> pos = 0; (pos = Regexp.find(</Highlight><Highlight kind="charliteral">&#39;&#42;&#39;</Highlight><Highlight kind="normal">, pos)) != std::string::npos;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">         pos += strlen(</Highlight><Highlight kind="stringliteral">&quot;.&#42;&quot;</Highlight><Highlight kind="normal">)) &#123;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">      Regexp.replace(pos, strlen(</Highlight><Highlight kind="stringliteral">&quot;&#42;&quot;</Highlight><Highlight kind="normal">), </Highlight><Highlight kind="stringliteral">&quot;.&#42;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">    Regexp = (<a href="/docs/api/classes/llvm/twine">Twine</a>(</Highlight><Highlight kind="stringliteral">&quot;^(&quot;</Highlight><Highlight kind="normal">) + <a href="/docs/api/classes/llvm/stringref">StringRef</a>(Regexp) + </Highlight><Highlight kind="stringliteral">&quot;)$&quot;</Highlight><Highlight kind="normal">).str();</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Check that the regexp is valid.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/regex">Regex</a> CheckRE(Regexp);</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">    std::string REError;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!CheckRE.<a href="/docs/api/classes/llvm/regex/#ab0ec0a13edce115b90710387e246519f">isValid</a>(REError))</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">createStringError</a>(<a href="/docs/api/namespaces/llvm/#a59739a4f15fb2ec57a6b7fcfe938546bae55d43eabeefe5a8271b4a3c898bd18f">errc::invalid&#95;argument</a>, REError);</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/specialcaselist/matcher/#a41662b43e15a55b4bf5b76108b30986d">RegExes</a>.emplace&#95;back(std::make&#95;pair(</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">        std::make&#95;unique&lt;Regex&gt;(std::move(CheckRE)), LineNumber));</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#91;It, DidEmplace&#93; = <a href="/docs/api/classes/llvm/specialcaselist/matcher/#a8f1a81bab8c7a1b33415bebad5a9d904">Globs</a>.try&#95;emplace(<a href="/docs/api/classes/llvm/pattern">Pattern</a>);</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DidEmplace) &#123;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// We must be sure to use the string in the map rather than the provided</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// reference which could be destroyed before match() is called</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pattern">Pattern</a> = It-&gt;getKey();</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Pair = It-&gt;getValue();</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = <a href="/docs/api/classes/llvm/globpattern/#ad853cb6a2e5807ae5006c0f5ba1e7b49">GlobPattern::create</a>(<a href="/docs/api/classes/llvm/pattern">Pattern</a>, </Highlight><Highlight kind="comment">/&#42;MaxSubPatterns=&#42;/</Highlight><Highlight kind="normal">1024)</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">                       .moveInto(Pair.first))</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Err;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">    Pair.second = LineNumber;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/classes/llvm/specialcaselist/matcher/#a95c112003d4b27780538553f72b0d7c0"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/specialcaselist/matcher/#a95c112003d4b27780538553f72b0d7c0">SpecialCaseList::Matcher::match</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Query)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;&#91;<a href="/docs/api/classes/llvm/pattern">Pattern</a>, Pair&#93; : <a href="/docs/api/classes/llvm/specialcaselist/matcher/#a8f1a81bab8c7a1b33415bebad5a9d904">Globs</a>)</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Pair.first.match(Query))</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Pair.second;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;&#91;<a href="/docs/api/classes/llvm/regex">Regex</a>, LineNumber&#93; : <a href="/docs/api/classes/llvm/specialcaselist/matcher/#a41662b43e15a55b4bf5b76108b30986d">RegExes</a>)</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/regex">Regex</a>-&gt;<a href="/docs/api/classes/llvm/regex/#ae787b71e8d775a2b662d04e913489d8d">match</a>(Query))</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> LineNumber;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight><Highlight kind="comment">// TODO: Refactor this to return Expected&lt;...&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">std::unique&#95;ptr&lt;SpecialCaseList&gt;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82" lineLink="/docs/api/classes/llvm/specialcaselist/#a86af60e718692f43fa3a22b94bbbc4a8"><Highlight kind="normal"><a href="/docs/api/classes/llvm/specialcaselist/#a86af60e718692f43fa3a22b94bbbc4a8">SpecialCaseList::create</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::vector&lt;std::string&gt; &amp;Paths,</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">                        <a href="/docs/api/classes/llvm/vfs/filesystem">llvm::vfs::FileSystem</a> &amp;FS, std::string &amp;<a href="/docs/api/classes/llvm/error">Error</a>) &#123;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">  std::unique&#95;ptr&lt;SpecialCaseList&gt; SCL(</Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/specialcaselist/#a96b799c5b8a9865e51dfb44b0c8498a1">SpecialCaseList</a>());</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SCL-&gt;createInternal(Paths, FS, <a href="/docs/api/classes/llvm/error">Error</a>))</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> SCL;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/classes/llvm/specialcaselist/#a81ab77fdd72977bc4b930a7e6c5570e8"><Highlight kind="normal">std::unique&#95;ptr&lt;SpecialCaseList&gt; <a href="/docs/api/classes/llvm/specialcaselist/#a86af60e718692f43fa3a22b94bbbc4a8">SpecialCaseList::create</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memorybuffer">MemoryBuffer</a> &#42;<a href="/docs/api/classes/mb">MB</a>,</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">                                                         std::string &amp;<a href="/docs/api/classes/llvm/error">Error</a>) &#123;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  std::unique&#95;ptr&lt;SpecialCaseList&gt; SCL(</Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/specialcaselist/#a96b799c5b8a9865e51dfb44b0c8498a1">SpecialCaseList</a>());</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SCL-&gt;createInternal(<a href="/docs/api/classes/mb">MB</a>, <a href="/docs/api/classes/llvm/error">Error</a>))</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> SCL;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">std::unique&#95;ptr&lt;SpecialCaseList&gt;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99" lineLink="/docs/api/classes/llvm/specialcaselist/#a6c0343ae2b29d3a9882c0cfc4bee8c03"><Highlight kind="normal"><a href="/docs/api/classes/llvm/specialcaselist/#a6c0343ae2b29d3a9882c0cfc4bee8c03">SpecialCaseList::createOrDie</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::vector&lt;std::string&gt; &amp;Paths,</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">                             <a href="/docs/api/classes/llvm/vfs/filesystem">llvm::vfs::FileSystem</a> &amp;FS) &#123;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  std::string <a href="/docs/api/classes/llvm/error">Error</a>;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> SCL = <a href="/docs/api/classes/llvm/specialcaselist/#a86af60e718692f43fa3a22b94bbbc4a8">create</a>(Paths, FS, <a href="/docs/api/classes/llvm/error">Error</a>))</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> SCL;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">report&#95;fatal&#95;error</a>(<a href="/docs/api/classes/llvm/twine">Twine</a>(<a href="/docs/api/classes/llvm/error">Error</a>));</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107" lineLink="/docs/api/classes/llvm/specialcaselist/#a5e125454a7bbe1568bddd90a3045bade"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/specialcaselist/#a5e125454a7bbe1568bddd90a3045bade">SpecialCaseList::createInternal</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::vector&lt;std::string&gt; &amp;Paths,</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">                                     <a href="/docs/api/classes/llvm/vfs/filesystem">vfs::FileSystem</a> &amp;VFS, std::string &amp;<a href="/docs/api/classes/llvm/error">Error</a>) &#123;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Path : Paths) &#123;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/erroror">ErrorOr&lt;std::unique&#95;ptr&lt;MemoryBuffer&gt;</a>&gt; FileOrErr =</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">        VFS.<a href="/docs/api/classes/llvm/vfs/filesystem/#ac2998b305007e6726aead7b5bdd8346d">getBufferForFile</a>(Path);</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (std::error&#95;code EC = FileOrErr.<a href="/docs/api/classes/llvm/erroror/#a8300c72908f1845c931951ed4b2a2375">getError</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/error">Error</a> = (<a href="/docs/api/classes/llvm/twine">Twine</a>(</Highlight><Highlight kind="stringliteral">&quot;can&#39;t open file &#39;&quot;</Highlight><Highlight kind="normal">) + Path + </Highlight><Highlight kind="stringliteral">&quot;&#39;: &quot;</Highlight><Highlight kind="normal"> + EC.message()).str();</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">    std::string ParseError;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/classes/llvm/specialcaselist/#afd812a66cf342fb3cd2e392ec9c7a0b0">parse</a>(FileOrErr.<a href="/docs/api/classes/llvm/erroror/#a7903f14c3b4fb5b4f9f9fa8b4ee0b4eb">get</a>().get(), ParseError)) &#123;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/error">Error</a> = (<a href="/docs/api/classes/llvm/twine">Twine</a>(</Highlight><Highlight kind="stringliteral">&quot;error parsing file &#39;&quot;</Highlight><Highlight kind="normal">) + Path + </Highlight><Highlight kind="stringliteral">&quot;&#39;: &quot;</Highlight><Highlight kind="normal"> + ParseError).str();</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125" lineLink="/docs/api/classes/llvm/specialcaselist/#acb50180bcc2a385ee38e2f7400c1c983"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/specialcaselist/#a5e125454a7bbe1568bddd90a3045bade">SpecialCaseList::createInternal</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memorybuffer">MemoryBuffer</a> &#42;<a href="/docs/api/classes/mb">MB</a>,</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">                                     std::string &amp;<a href="/docs/api/classes/llvm/error">Error</a>) &#123;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/classes/llvm/specialcaselist/#afd812a66cf342fb3cd2e392ec9c7a0b0">parse</a>(<a href="/docs/api/classes/mb">MB</a>, <a href="/docs/api/classes/llvm/error">Error</a>))</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal"><a href="/docs/api/classes/llvm/expected">Expected&lt;SpecialCaseList::Section &#42;&gt;</a></Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133" lineLink="/docs/api/classes/llvm/specialcaselist/#acddee90812e74127ce6b0d59780166f0"><Highlight kind="normal"><a href="/docs/api/classes/llvm/specialcaselist/#acddee90812e74127ce6b0d59780166f0">SpecialCaseList::addSection</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> SectionStr, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> LineNo,</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">                            </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UseGlobs) &#123;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#91;It, DidEmplace&#93; = <a href="/docs/api/classes/llvm/specialcaselist/#a87a37a162a6f093f0ba2fed20f7c6a04">Sections</a>.try&#95;emplace(SectionStr);</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/structs/llvm/specialcaselist/section">Section</a> = It-&gt;getValue();</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DidEmplace)</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = <a href="/docs/api/structs/llvm/specialcaselist/section">Section</a>.<a href="/docs/api/structs/llvm/specialcaselist/section/#a91cff40f296053ff15e49819d7675df6">SectionMatcher</a>-&gt;insert(SectionStr, LineNo, UseGlobs))</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">createStringError</a>(<a href="/docs/api/namespaces/llvm/#a59739a4f15fb2ec57a6b7fcfe938546bae55d43eabeefe5a8271b4a3c898bd18f">errc::invalid&#95;argument</a>,</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">                               </Highlight><Highlight kind="stringliteral">&quot;malformed section at line &quot;</Highlight><Highlight kind="normal"> + <a href="/docs/api/classes/llvm/twine">Twine</a>(LineNo) +</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">                                   </Highlight><Highlight kind="stringliteral">&quot;: &#39;&quot;</Highlight><Highlight kind="normal"> + SectionStr +</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">                                   </Highlight><Highlight kind="stringliteral">&quot;&#39;: &quot;</Highlight><Highlight kind="normal"> + <a href="/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">toString</a>(std::move(Err)));</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/structs/llvm/specialcaselist/section">Section</a>;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146" lineLink="/docs/api/classes/llvm/specialcaselist/#afd812a66cf342fb3cd2e392ec9c7a0b0"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/specialcaselist/#afd812a66cf342fb3cd2e392ec9c7a0b0">SpecialCaseList::parse</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memorybuffer">MemoryBuffer</a> &#42;<a href="/docs/api/classes/mb">MB</a>, std::string &amp;<a href="/docs/api/classes/llvm/error">Error</a>) &#123;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/specialcaselist/section">Section</a> &#42;CurrentSection;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = <a href="/docs/api/classes/llvm/specialcaselist/#acddee90812e74127ce6b0d59780166f0">addSection</a>(</Highlight><Highlight kind="stringliteral">&quot;&#42;&quot;</Highlight><Highlight kind="normal">, 1).moveInto(CurrentSection)) &#123;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/error">Error</a> = <a href="/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">toString</a>(std::move(Err));</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// In https://reviews.llvm.org/D154014 we added glob support and planned to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// remove regex support in patterns. We temporarily support the original</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// behavior using regexes if &quot;#!special-case-list-v1&quot; is the first line of the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// file. For more details, see</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// https://discourse.llvm.org/t/use-glob-instead-of-regex-for-specialcaselists/71666</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UseGlobs = !<a href="/docs/api/classes/mb">MB</a>-&gt;getBuffer().starts&#95;with(</Highlight><Highlight kind="stringliteral">&quot;#!special-case-list-v1\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/line-iterator">line&#95;iterator</a> LineIt(&#42;<a href="/docs/api/classes/mb">MB</a>, </Highlight><Highlight kind="comment">/&#42;SkipBlanks=&#42;/</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="comment">/&#42;CommentMarker=&#42;/</Highlight><Highlight kind="charliteral">&#39;#&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">       !LineIt.<a href="/docs/api/classes/llvm/line-iterator/#a617941704a472090ba3304c9daf1c37f">is&#95;at&#95;eof</a>(); LineIt++) &#123;</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> LineNo = LineIt.line&#95;number();</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/stringref">StringRef</a> Line = LineIt-&gt;trim();</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Line.empty())</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Save section names</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Line.starts&#95;with(</Highlight><Highlight kind="stringliteral">&quot;&#91;&quot;</Highlight><Highlight kind="normal">)) &#123;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Line.ends&#95;with(</Highlight><Highlight kind="stringliteral">&quot;&#93;&quot;</Highlight><Highlight kind="normal">)) &#123;</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/error">Error</a> =</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">            (</Highlight><Highlight kind="stringliteral">&quot;malformed section header on line &quot;</Highlight><Highlight kind="normal"> + <a href="/docs/api/classes/llvm/twine">Twine</a>(LineNo) + </Highlight><Highlight kind="stringliteral">&quot;: &quot;</Highlight><Highlight kind="normal"> + Line)</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">                .str();</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = <a href="/docs/api/classes/llvm/specialcaselist/#acddee90812e74127ce6b0d59780166f0">addSection</a>(Line.drop&#95;front().drop&#95;back(), LineNo, UseGlobs)</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">                         .moveInto(CurrentSection)) &#123;</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/error">Error</a> = <a href="/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">toString</a>(std::move(Err));</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Get our prefix and unparsed glob.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#91;Prefix, Postfix&#93; = Line.split(</Highlight><Highlight kind="stringliteral">&quot;:&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Postfix.empty()) &#123;</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Missing &#39;:&#39; in the line.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/error">Error</a> = (</Highlight><Highlight kind="stringliteral">&quot;malformed line &quot;</Highlight><Highlight kind="normal"> + <a href="/docs/api/classes/llvm/twine">Twine</a>(LineNo) + </Highlight><Highlight kind="stringliteral">&quot;: &#39;&quot;</Highlight><Highlight kind="normal"> + Line + </Highlight><Highlight kind="stringliteral">&quot;&#39;&quot;</Highlight><Highlight kind="normal">).str();</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#91;<a href="/docs/api/classes/llvm/pattern">Pattern</a>, Category&#93; = Postfix.split(</Highlight><Highlight kind="stringliteral">&quot;=&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Entry = CurrentSection-&gt;<a href="/docs/api/structs/llvm/specialcaselist/section/#a873ad17053480f9b05bb351a90cfeef5">Entries</a>&#91;Prefix&#93;&#91;Category&#93;;</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = Entry.insert(<a href="/docs/api/classes/llvm/pattern">Pattern</a>, LineNo, UseGlobs)) &#123;</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/error">Error</a> =</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">          (<a href="/docs/api/classes/llvm/twine">Twine</a>(</Highlight><Highlight kind="stringliteral">&quot;malformed &quot;</Highlight><Highlight kind="normal">) + (UseGlobs ? </Highlight><Highlight kind="stringliteral">&quot;glob&quot;</Highlight><Highlight kind="normal"> : </Highlight><Highlight kind="stringliteral">&quot;regex&quot;</Highlight><Highlight kind="normal">) + </Highlight><Highlight kind="stringliteral">&quot; in line &quot;</Highlight><Highlight kind="normal"> +</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">           <a href="/docs/api/classes/llvm/twine">Twine</a>(LineNo) + </Highlight><Highlight kind="stringliteral">&quot;: &#39;&quot;</Highlight><Highlight kind="normal"> + <a href="/docs/api/classes/llvm/pattern">Pattern</a> + </Highlight><Highlight kind="stringliteral">&quot;&#39;: &quot;</Highlight><Highlight kind="normal"> + <a href="/docs/api/namespaces/llvm/#aba83a013c55b19255697393a10d9165e">toString</a>(std::move(Err)))</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">              .str();</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal"><a href="/docs/api/classes/llvm/specialcaselist/#a973602c10952d42c1862f2e745280ec8">SpecialCaseList::~SpecialCaseList</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207" lineLink="/docs/api/classes/llvm/specialcaselist/#af394caf58f7cb160c839f71cdf6697ca"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/specialcaselist/#af394caf58f7cb160c839f71cdf6697ca">SpecialCaseList::inSection</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/structs/llvm/specialcaselist/section">Section</a>, <a href="/docs/api/classes/llvm/stringref">StringRef</a> Prefix,</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">                                <a href="/docs/api/classes/llvm/stringref">StringRef</a> Query, <a href="/docs/api/classes/llvm/stringref">StringRef</a> Category)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/specialcaselist/#ab2861cf6102d164cff830ba0b31e9e38">inSectionBlame</a>(<a href="/docs/api/structs/llvm/specialcaselist/section">Section</a>, Prefix, Query, Category);</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212" lineLink="/docs/api/classes/llvm/specialcaselist/#ab2861cf6102d164cff830ba0b31e9e38"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/specialcaselist/#ab2861cf6102d164cff830ba0b31e9e38">SpecialCaseList::inSectionBlame</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/structs/llvm/specialcaselist/section">Section</a>, <a href="/docs/api/classes/llvm/stringref">StringRef</a> Prefix,</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">                                         <a href="/docs/api/classes/llvm/stringref">StringRef</a> Query,</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">                                         <a href="/docs/api/classes/llvm/stringref">StringRef</a> Category)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;It : <a href="/docs/api/classes/llvm/specialcaselist/#a87a37a162a6f093f0ba2fed20f7c6a04">Sections</a>) &#123;</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;S = It.getValue();</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (S.SectionMatcher-&gt;match(<a href="/docs/api/structs/llvm/specialcaselist/section">Section</a>)) &#123;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Blame = <a href="/docs/api/classes/llvm/specialcaselist/#ab2861cf6102d164cff830ba0b31e9e38">inSectionBlame</a>(S.Entries, Prefix, Query, Category);</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Blame)</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Blame;</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226" lineLink="/docs/api/classes/llvm/specialcaselist/#a9e1e1d8f6e061aee93a507c395ac2c9f"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/specialcaselist/#ab2861cf6102d164cff830ba0b31e9e38">SpecialCaseList::inSectionBlame</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/specialcaselist/#aecbe1059ebccc9ee4b8e8b43e6d026a8">SectionEntries</a> &amp;Entries,</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">                                         <a href="/docs/api/classes/llvm/stringref">StringRef</a> Prefix, <a href="/docs/api/classes/llvm/stringref">StringRef</a> Query,</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">                                         <a href="/docs/api/classes/llvm/stringref">StringRef</a> Category)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringmap/#a075230b87e113348fc39b4f5c30ffaa6">SectionEntries::const&#95;iterator</a> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = Entries.<a href="/docs/api/classes/llvm/stringmap/#a49e68e4c86fe0b96c633adea0c366d74">find</a>(Prefix);</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> == Entries.<a href="/docs/api/classes/llvm/stringmap/#a16e5eaf2df56249e87019be23ee07695">end</a>()) </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringmap/#a075230b87e113348fc39b4f5c30ffaa6">StringMap&lt;Matcher&gt;::const&#95;iterator</a> <a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a> = <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;second.find(Category);</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a> == <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;second.end()) </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a>-&gt;getValue().match(Query);</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

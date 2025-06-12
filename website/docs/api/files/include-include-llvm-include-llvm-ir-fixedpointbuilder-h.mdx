@@ -1,0 +1,583 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/ir/fixedpointbuilder-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `FixedPointBuilder.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/APFixedPoint.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/apfixedpoint-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Constant.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/constant-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Constants.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/constants-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/IRBuilder.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/irbuilder-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/InstrTypes.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/instrtypes-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Instruction.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/instruction-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/IntrinsicInst.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/intrinsicinst-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Intrinsics.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/intrinsics-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Type.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/type-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Value.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/value-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cmath"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/fixedpointbuilder">FixedPointBuilder&lt;IRBuilderTy&gt;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/FixedPointBuilder.h - Builder for fixed-point ops ---&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file defines the FixedPointBuilder class, which is used as a convenient</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// way to lower fixed-point arithmetic operations to LLVM IR.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;IR&#95;FIXEDPOINTBUILDER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;IR&#95;FIXEDPOINTBUILDER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/apfixedpoint-h">llvm/ADT/APFixedPoint.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/constant-h">llvm/IR/Constant.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/constants-h">llvm/IR/Constants.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/irbuilder-h">llvm/IR/IRBuilder.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/instrtypes-h">llvm/IR/InstrTypes.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/instruction-h">llvm/IR/Instruction.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/intrinsicinst-h">llvm/IR/IntrinsicInst.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/intrinsics-h">llvm/IR/Intrinsics.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/type-h">llvm/IR/Type.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/value-h">llvm/IR/Value.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cmath&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32" lineLink="/docs/api/classes/llvm/fixedpointbuilder"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> IRBuilderTy&gt; </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/fixedpointbuilder/#a3a93870678b48fd7dda605b92fe5584e">FixedPointBuilder</a> &#123;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">  IRBuilderTy &amp;B;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;Convert(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Src, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;SrcSema,</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">                 </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;DstSema, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> DstIsInteger) &#123;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> SrcWidth = SrcSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a2f3dab29dd773a1faa002a701261db99">getWidth</a>();</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> DstWidth = DstSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a2f3dab29dd773a1faa002a701261db99">getWidth</a>();</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> SrcScale = SrcSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a5eb21a8a338a43390965253fb71d152d">getScale</a>();</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> DstScale = DstSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a5eb21a8a338a43390965253fb71d152d">getScale</a>();</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> SrcIsSigned = SrcSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a05ad0838e692b5cdc021f49da8343187">isSigned</a>();</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> DstIsSigned = DstSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a05ad0838e692b5cdc021f49da8343187">isSigned</a>();</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/type">Type</a> &#42;DstIntTy = B.<a href="/docs/api/classes/llvm/type/#acaf8e4c3e40e01e848c1fad5f05b81cd">getIntNTy</a>(DstWidth);</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;Result = Src;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> ResultWidth = SrcWidth;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Downscale.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DstScale &lt; SrcScale) &#123;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// When converting to integers, we round towards zero. For negative</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// numbers, right shifting rounds towards negative infinity. In this case,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// we can just round up before shifting.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DstIsInteger &amp;&amp; SrcIsSigned) &#123;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/value">Value</a> &#42;Zero = <a href="/docs/api/classes/llvm/constant/#aa6574d526b3e38a28f688a7bb4325c2c">Constant::getNullValue</a>(Result-&gt;getType());</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/value">Value</a> &#42;IsNegative = B.CreateICmpSLT(Result, Zero);</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/value">Value</a> &#42;LowBits = ConstantInt::get(</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">            B.getContext(), <a href="/docs/api/classes/llvm/apint/#ad960e1ff48d25c382b6d28e7961f074e">APInt::getLowBitsSet</a>(ResultWidth, SrcScale));</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/value">Value</a> &#42;Rounded = B.CreateAdd(Result, LowBits);</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">        Result = B.CreateSelect(IsNegative, Rounded, Result);</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">      Result = SrcIsSigned</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">                   ? B.CreateAShr(Result, SrcScale - DstScale, </Highlight><Highlight kind="stringliteral">&quot;downscale&quot;</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">                   : B.CreateLShr(Result, SrcScale - DstScale, </Highlight><Highlight kind="stringliteral">&quot;downscale&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!DstSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a56da39babaf07b5638145d232de64949">isSaturated</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Resize.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">      Result = B.CreateIntCast(Result, DstIntTy, SrcIsSigned, </Highlight><Highlight kind="stringliteral">&quot;resize&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Upscale.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DstScale &gt; SrcScale)</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">        Result = B.CreateShl(Result, DstScale - SrcScale, </Highlight><Highlight kind="stringliteral">&quot;upscale&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Adjust the number of fractional bits.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DstScale &gt; SrcScale) &#123;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Compare to DstWidth to prevent resizing twice.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">        ResultWidth = std::max(SrcWidth + DstScale - SrcScale, DstWidth);</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/type">Type</a> &#42;UpscaledTy = B.<a href="/docs/api/classes/llvm/type/#acaf8e4c3e40e01e848c1fad5f05b81cd">getIntNTy</a>(ResultWidth);</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">        Result = B.CreateIntCast(Result, UpscaledTy, SrcIsSigned, </Highlight><Highlight kind="stringliteral">&quot;resize&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">        Result = B.CreateShl(Result, DstScale - SrcScale, </Highlight><Highlight kind="stringliteral">&quot;upscale&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Handle saturation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> LessIntBits = DstSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a60827722079f839f42712dacafce3695">getIntegralBits</a>() &lt; SrcSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a60827722079f839f42712dacafce3695">getIntegralBits</a>();</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LessIntBits) &#123;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/value">Value</a> &#42;Max = ConstantInt::get(</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">            B.getContext(),</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">            <a href="/docs/api/classes/llvm/apfixedpoint/#ae7ca9ff56521cc2e2c51d96ad9a6005c">APFixedPoint::getMax</a>(DstSema).getValue().extOrTrunc(ResultWidth));</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/value">Value</a> &#42;TooHigh = SrcIsSigned ? B.CreateICmpSGT(Result, Max)</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">                                     : B.CreateICmpUGT(Result, Max);</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">        Result = B.CreateSelect(TooHigh, Max, Result, </Highlight><Highlight kind="stringliteral">&quot;satmax&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Cannot overflow min to dest type if src is unsigned since all fixed</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// point types can cover the unsigned min of 0</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SrcIsSigned &amp;&amp; (LessIntBits || !DstIsSigned)) &#123;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/value">Value</a> &#42;Min = ConstantInt::get(</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">            B.getContext(),</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">            <a href="/docs/api/classes/llvm/apfixedpoint/#a1c4398afd568f2c31f81dcecad35ef7b">APFixedPoint::getMin</a>(DstSema).getValue().extOrTrunc(ResultWidth));</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/value">Value</a> &#42;TooLow = B.CreateICmpSLT(Result, Min);</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">        Result = B.CreateSelect(TooLow, Min, Result, </Highlight><Highlight kind="stringliteral">&quot;satmin&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Resize the integer part to get the final destination size.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ResultWidth != DstWidth)</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">        Result = B.CreateIntCast(Result, DstIntTy, SrcIsSigned, </Highlight><Highlight kind="stringliteral">&quot;resize&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Result;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">  /// Get the common semantic for two semantics, with the added imposition that</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">  /// saturated padded types retain the padding bit.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a></Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  getCommonBinopSemantic(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;LHSSema,</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">                         </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;RHSSema) &#123;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a> = LHSSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a6e44daa940bc6479c419855e43d5f765">getCommonSemantics</a>(RHSSema);</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> BothPadded =</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">        LHSSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a516540ad4950d71de2266507041b9c6e">hasUnsignedPadding</a>() &amp;&amp; RHSSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a516540ad4950d71de2266507041b9c6e">hasUnsignedPadding</a>();</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a>(</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">        <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>.getWidth() + (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal">)(BothPadded &amp;&amp; <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>.isSaturated()), <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>.getScale(),</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">        <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>.isSigned(), <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>.isSaturated(), BothPadded);</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">  /// Given a floating point type and a fixed-point semantic, return a floating</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="comment">  /// point type which can accommodate the fixed-point semantic. This is either</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="comment">  /// \\p Ty, or a floating point type with a larger exponent than Ty.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/type">Type</a> &#42;getAccommodatingFloatType(<a href="/docs/api/classes/llvm/type">Type</a> &#42;Ty, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;Sema) &#123;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/fltsemantics">fltSemantics</a> &#42;FloatSema = &amp;Ty-&gt;getFltSemantics();</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (!Sema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#ab30aaf95486d0b2aac87f3d9e1e450e3">fitsInFloatSemantics</a>(&#42;FloatSema))</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">      FloatSema = <a href="/docs/api/classes/llvm/apfixedpoint/#aca508af3c3b25de78d97741420a9ff9e">APFixedPoint::promoteFloatSemantics</a>(FloatSema);</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/type/#a79b425d59c7bc28a4a599cee0b9ed338">Type::getFloatingPointTy</a>(Ty-&gt;getContext(), &#42;FloatSema);</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#a3a93870678b48fd7dda605b92fe5584e"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/fixedpointbuilder/#a3a93870678b48fd7dda605b92fe5584e">FixedPointBuilder</a>(IRBuilderTy &amp;Builder) : B(Builder) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">  /// Convert an integer value representing a fixed-point number from one</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="comment">  /// fixed-point semantic to another fixed-point semantic.</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="comment">  /// \\p Src     - The source value</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="comment">  /// \\p SrcSema - The fixed-point semantic of the source value</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">  /// \\p DstSema - The resulting fixed-point semantic</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Src, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;SrcSema,</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">                            </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;DstSema) &#123;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Convert(Src, SrcSema, DstSema, </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="comment">  /// Convert an integer value representing a fixed-point number to an integer</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="comment">  /// with the given bit width and signedness.</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="comment">  /// \\p Src         - The source value</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="comment">  /// \\p SrcSema     - The fixed-point semantic of the source value</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="comment">  /// \\p DstWidth    - The bit width of the result value</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="comment">  /// \\p DstIsSigned - The signedness of the result value</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#a1d99db3b205c5c656e11e25cc98b9917"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#a1d99db3b205c5c656e11e25cc98b9917">CreateFixedToInteger</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Src, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;SrcSema,</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">                              </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> DstWidth, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> DstIsSigned) &#123;</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Convert(</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">        Src, SrcSema,</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/fixedpointsemantics/#aebc9b19a86db06690ffcc4904907e8be">FixedPointSemantics::GetIntegerSemantics</a>(DstWidth, DstIsSigned), </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="comment">  /// Convert an integer value with the given signedness to an integer value</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="comment">  /// representing the given fixed-point semantic.</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="comment">  /// \\p Src         - The source value</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="comment">  /// \\p SrcIsSigned - The signedness of the source value</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="comment">  /// \\p DstSema     - The resulting fixed-point semantic</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#ac2cb8d79fa94ae788233f1af991fd9c4"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#ac2cb8d79fa94ae788233f1af991fd9c4">CreateIntegerToFixed</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Src, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> SrcIsSigned,</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">                              </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;DstSema) &#123;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Convert(Src,</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">                   <a href="/docs/api/classes/llvm/fixedpointsemantics/#aebc9b19a86db06690ffcc4904907e8be">FixedPointSemantics::GetIntegerSemantics</a>(</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">                       Src-&gt;getType()-&gt;getScalarSizeInBits(), SrcIsSigned),</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">                   DstSema, </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#a00109923471ab72b20f0959d8eb230b9"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#a00109923471ab72b20f0959d8eb230b9">CreateFixedToFloating</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Src, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;SrcSema,</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/type">Type</a> &#42;DstTy) &#123;</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;Result;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/type">Type</a> &#42;OpTy = getAccommodatingFloatType(DstTy, SrcSema);</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Convert the raw fixed-point value directly to floating point. If the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// value is too large to fit, it will be rounded, not truncated.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">    Result = SrcSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a05ad0838e692b5cdc021f49da8343187">isSigned</a>() ? B.CreateSIToFP(Src, OpTy)</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">                                : B.CreateUIToFP(Src, OpTy);</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Rescale the integral-in-floating point by the scaling factor. This is</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// lossless, except for overflow to infinity which is unlikely.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">    Result = B.CreateFMul(Result,</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">        ConstantFP::get(OpTy, std::pow(2, -(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">)SrcSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a5eb21a8a338a43390965253fb71d152d">getScale</a>())));</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (OpTy != DstTy)</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">      Result = B.CreateFPTrunc(Result, DstTy);</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Result;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#a0a1c9934f39747a96a2b6b42d0bec03e"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#a0a1c9934f39747a96a2b6b42d0bec03e">CreateFloatingToFixed</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Src, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;DstSema) &#123;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UseSigned = DstSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a05ad0838e692b5cdc021f49da8343187">isSigned</a>() || DstSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a516540ad4950d71de2266507041b9c6e">hasUnsignedPadding</a>();</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;Result = Src;</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/type">Type</a> &#42;OpTy = getAccommodatingFloatType(Src-&gt;getType(), DstSema);</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (OpTy != Src-&gt;getType())</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">      Result = B.CreateFPExt(Result, OpTy);</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Rescale the floating point value so that its significant bits (for the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// purposes of the conversion) are in the integral range.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">    Result = B.CreateFMul(Result,</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">        ConstantFP::get(OpTy, std::pow(2, DstSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a5eb21a8a338a43390965253fb71d152d">getScale</a>())));</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/type">Type</a> &#42;ResultTy = B.<a href="/docs/api/classes/llvm/type/#acaf8e4c3e40e01e848c1fad5f05b81cd">getIntNTy</a>(DstSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a2f3dab29dd773a1faa002a701261db99">getWidth</a>());</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DstSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a56da39babaf07b5638145d232de64949">isSaturated</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/intrinsic/#a80add6b3b1cdaec560907995127adc16">Intrinsic::ID</a> IID =</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">          UseSigned ? Intrinsic::fptosi&#95;sat : Intrinsic::fptoui&#95;sat;</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">      Result = B.CreateIntrinsic(IID, &#123;ResultTy, OpTy&#125;, &#123;Result&#125;);</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">      Result = UseSigned ? B.CreateFPToSI(Result, ResultTy)</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">                         : B.CreateFPToUI(Result, ResultTy);</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// When saturating unsigned-with-padding using signed operations, we may</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// get negative values. Emit an extra clamp to zero.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DstSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a56da39babaf07b5638145d232de64949">isSaturated</a>() &amp;&amp; DstSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a516540ad4950d71de2266507041b9c6e">hasUnsignedPadding</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;Zero = <a href="/docs/api/classes/llvm/constant/#aa6574d526b3e38a28f688a7bb4325c2c">Constant::getNullValue</a>(Result-&gt;getType());</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">      Result =</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">          B.CreateSelect(B.CreateICmpSLT(Result, Zero), Zero, Result, </Highlight><Highlight kind="stringliteral">&quot;satmin&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Result;</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="comment">  /// Add two fixed-point values and return the result in their common semantic.</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="comment">  /// \\p LHS     - The left hand side</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="comment">  /// \\p LHSSema - The semantic of the left hand side</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="comment">  /// \\p RHS     - The right hand side</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="comment">  /// \\p RHSSema - The semantic of the right hand side</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#aa663208669ad36fe54f6eb540b5bbf9b"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#aa663208669ad36fe54f6eb540b5bbf9b">CreateAdd</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;LHSSema,</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">                   <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;RHSSema) &#123;</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> CommonSema = getCommonBinopSemantic(LHSSema, RHSSema);</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UseSigned = CommonSema.isSigned() || CommonSema.hasUnsignedPadding();</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideLHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, LHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideRHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, RHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;Result;</Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CommonSema.isSaturated()) &#123;</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/intrinsic/#a80add6b3b1cdaec560907995127adc16">Intrinsic::ID</a> IID = UseSigned ? Intrinsic::sadd&#95;sat : Intrinsic::uadd&#95;sat;</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">      Result = B.CreateBinaryIntrinsic(IID, WideLHS, WideRHS);</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">      Result = B.CreateAdd(WideLHS, WideRHS);</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(Result, CommonSema,</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">                              LHSSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a6e44daa940bc6479c419855e43d5f765">getCommonSemantics</a>(RHSSema));</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="comment">  /// Subtract two fixed-point values and return the result in their common</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="comment">  /// semantic.</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="comment">  /// \\p LHS     - The left hand side</Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="comment">  /// \\p LHSSema - The semantic of the left hand side</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="comment">  /// \\p RHS     - The right hand side</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="comment">  /// \\p RHSSema - The semantic of the right hand side</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#ae314a9eee47df21fd46102d80f666b4d"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#ae314a9eee47df21fd46102d80f666b4d">CreateSub</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;LHSSema,</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">                   <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;RHSSema) &#123;</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> CommonSema = getCommonBinopSemantic(LHSSema, RHSSema);</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UseSigned = CommonSema.isSigned() || CommonSema.hasUnsignedPadding();</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideLHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, LHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideRHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, RHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;Result;</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CommonSema.isSaturated()) &#123;</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/intrinsic/#a80add6b3b1cdaec560907995127adc16">Intrinsic::ID</a> IID = UseSigned ? Intrinsic::ssub&#95;sat : Intrinsic::usub&#95;sat;</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">      Result = B.CreateBinaryIntrinsic(IID, WideLHS, WideRHS);</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">      Result = B.CreateSub(WideLHS, WideRHS);</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Subtraction can end up below 0 for padded unsigned operations, so emit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// an extra clamp in that case.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CommonSema.isSaturated() &amp;&amp; CommonSema.hasUnsignedPadding()) &#123;</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;Zero = <a href="/docs/api/classes/llvm/constant/#aa6574d526b3e38a28f688a7bb4325c2c">Constant::getNullValue</a>(Result-&gt;getType());</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">      Result =</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">          B.CreateSelect(B.CreateICmpSLT(Result, Zero), Zero, Result, </Highlight><Highlight kind="stringliteral">&quot;satmin&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(Result, CommonSema,</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">                              LHSSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a6e44daa940bc6479c419855e43d5f765">getCommonSemantics</a>(RHSSema));</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="comment">  /// Multiply two fixed-point values and return the result in their common</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="comment">  /// semantic.</Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="comment">  /// \\p LHS     - The left hand side</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="comment">  /// \\p LHSSema - The semantic of the left hand side</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="comment">  /// \\p RHS     - The right hand side</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="comment">  /// \\p RHSSema - The semantic of the right hand side</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#ac1e07222d14c1bc6e996ca85ca126e93"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#ac1e07222d14c1bc6e996ca85ca126e93">CreateMul</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;LHSSema,</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">                   <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;RHSSema) &#123;</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> CommonSema = getCommonBinopSemantic(LHSSema, RHSSema);</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UseSigned = CommonSema.isSigned() || CommonSema.hasUnsignedPadding();</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideLHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, LHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideRHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, RHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/intrinsic/#a80add6b3b1cdaec560907995127adc16">Intrinsic::ID</a> IID;</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CommonSema.isSaturated()) &#123;</Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal">      IID = UseSigned ? Intrinsic::smul&#95;fix&#95;sat : Intrinsic::umul&#95;fix&#95;sat;</Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">      IID = UseSigned ? Intrinsic::smul&#95;fix : Intrinsic::umul&#95;fix;</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;Result = B.CreateIntrinsic(</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal">        IID, &#123;WideLHS-&gt;<a href="/docs/api/classes/llvm/value/#a0344a49526443edf90cc0aef3abd3337">getType</a>()&#125;,</Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal">        &#123;WideLHS, WideRHS, B.getInt32(CommonSema.getScale())&#125;);</Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(Result, CommonSema,</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal">                              LHSSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a6e44daa940bc6479c419855e43d5f765">getCommonSemantics</a>(RHSSema));</Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="comment">  /// Divide two fixed-point values and return the result in their common</Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="comment">  /// semantic.</Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="comment">  /// \\p LHS     - The left hand side</Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="comment">  /// \\p LHSSema - The semantic of the left hand side</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="comment">  /// \\p RHS     - The right hand side</Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="comment">  /// \\p RHSSema - The semantic of the right hand side</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#a05b24458637907fb6e27a842cc8dc0fc"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#a05b24458637907fb6e27a842cc8dc0fc">CreateDiv</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;LHSSema,</Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal">                   <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;RHSSema) &#123;</Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> CommonSema = getCommonBinopSemantic(LHSSema, RHSSema);</Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UseSigned = CommonSema.isSigned() || CommonSema.hasUnsignedPadding();</Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideLHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, LHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideRHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, RHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/intrinsic/#a80add6b3b1cdaec560907995127adc16">Intrinsic::ID</a> IID;</Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CommonSema.isSaturated()) &#123;</Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">      IID = UseSigned ? Intrinsic::sdiv&#95;fix&#95;sat : Intrinsic::udiv&#95;fix&#95;sat;</Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal">      IID = UseSigned ? Intrinsic::sdiv&#95;fix : Intrinsic::udiv&#95;fix;</Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;Result = B.CreateIntrinsic(</Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal">        IID, &#123;WideLHS-&gt;<a href="/docs/api/classes/llvm/value/#a0344a49526443edf90cc0aef3abd3337">getType</a>()&#125;,</Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal">        &#123;WideLHS, WideRHS, B.getInt32(CommonSema.getScale())&#125;);</Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(Result, CommonSema,</Highlight></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">                              LHSSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a6e44daa940bc6479c419855e43d5f765">getCommonSemantics</a>(RHSSema));</Highlight></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="comment">  /// Left shift a fixed-point value by an unsigned integer value. The integer</Highlight></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="comment">  /// value can be any bit width.</Highlight></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="comment">  /// \\p LHS     - The left hand side</Highlight></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="comment">  /// \\p LHSSema - The semantic of the left hand side</Highlight></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="comment">  /// \\p RHS     - The right hand side</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#a27e29ec6d1cfc7d82adcefe7fef1cf56"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#a27e29ec6d1cfc7d82adcefe7fef1cf56">CreateShl</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;LHSSema, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>) &#123;</Highlight></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UseSigned = LHSSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a05ad0838e692b5cdc021f49da8343187">isSigned</a>() || LHSSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a516540ad4950d71de2266507041b9c6e">hasUnsignedPadding</a>();</Highlight></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a> = B.CreateIntCast(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>-&gt;getType(), </Highlight><Highlight kind="comment">/&#42;IsSigned=&#42;/</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;Result;</Highlight></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LHSSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a56da39babaf07b5638145d232de64949">isSaturated</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/intrinsic/#a80add6b3b1cdaec560907995127adc16">Intrinsic::ID</a> IID = UseSigned ? Intrinsic::sshl&#95;sat : Intrinsic::ushl&#95;sat;</Highlight></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="normal">      Result = B.CreateBinaryIntrinsic(IID, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>);</Highlight></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal">      Result = B.CreateShl(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>);</Highlight></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Result;</Highlight></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="comment">  /// Right shift a fixed-point value by an unsigned integer value. The integer</Highlight></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="comment">  /// value can be any bit width.</Highlight></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="comment">  /// \\p LHS     - The left hand side</Highlight></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="comment">  /// \\p LHSSema - The semantic of the left hand side</Highlight></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="comment">  /// \\p RHS     - The right hand side</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#a5dce930d90c103945d94b3aff2ea5653"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#a5dce930d90c103945d94b3aff2ea5653">CreateShr</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;LHSSema, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>) &#123;</Highlight></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a> = B.CreateIntCast(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>-&gt;getType(), </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> LHSSema.<a href="/docs/api/classes/llvm/fixedpointsemantics/#a05ad0838e692b5cdc021f49da8343187">isSigned</a>() ? B.CreateAShr(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>) : B.CreateLShr(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>);</Highlight></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="comment">  /// Compare two fixed-point values for equality.</Highlight></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="comment">  /// \\p LHS     - The left hand side</Highlight></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="comment">  /// \\p LHSSema - The semantic of the left hand side</Highlight></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="comment">  /// \\p RHS     - The right hand side</Highlight></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="comment">  /// \\p RHSSema - The semantic of the right hand side</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#a47c75914368b0b4f257b3c360234e2c1"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#a47c75914368b0b4f257b3c360234e2c1">CreateEQ</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;LHSSema,</Highlight></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal">                  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;RHSSema) &#123;</Highlight></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> CommonSema = getCommonBinopSemantic(LHSSema, RHSSema);</Highlight></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideLHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, LHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideRHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, RHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> B.CreateICmpEQ(WideLHS, WideRHS);</Highlight></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="comment">  /// Compare two fixed-point values for inequality.</Highlight></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386"><Highlight kind="comment">  /// \\p LHS     - The left hand side</Highlight></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="comment">  /// \\p LHSSema - The semantic of the left hand side</Highlight></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388"><Highlight kind="comment">  /// \\p RHS     - The right hand side</Highlight></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="comment">  /// \\p RHSSema - The semantic of the right hand side</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#a29cb4d018a186719bafb7def86c1a6c9"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#a29cb4d018a186719bafb7def86c1a6c9">CreateNE</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;LHSSema,</Highlight></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391"><Highlight kind="normal">                  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;RHSSema) &#123;</Highlight></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> CommonSema = getCommonBinopSemantic(LHSSema, RHSSema);</Highlight></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideLHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, LHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideRHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, RHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> B.CreateICmpNE(WideLHS, WideRHS);</Highlight></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="comment">  /// Compare two fixed-point values as LHS &lt; RHS.</Highlight></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="comment">  /// \\p LHS     - The left hand side</Highlight></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="comment">  /// \\p LHSSema - The semantic of the left hand side</Highlight></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="comment">  /// \\p RHS     - The right hand side</Highlight></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="comment">  /// \\p RHSSema - The semantic of the right hand side</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#a353b3d0c354bb60b1c99949f1609a3be"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#a353b3d0c354bb60b1c99949f1609a3be">CreateLT</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;LHSSema,</Highlight></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="normal">                  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;RHSSema) &#123;</Highlight></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> CommonSema = getCommonBinopSemantic(LHSSema, RHSSema);</Highlight></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideLHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, LHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideRHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, RHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CommonSema.isSigned() ? B.CreateICmpSLT(WideLHS, WideRHS)</Highlight></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="normal">                                 : B.CreateICmpULT(WideLHS, WideRHS);</Highlight></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="comment">  /// Compare two fixed-point values as LHS &lt;= RHS.</Highlight></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417"><Highlight kind="comment">  /// \\p LHS     - The left hand side</Highlight></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="comment">  /// \\p LHSSema - The semantic of the left hand side</Highlight></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="comment">  /// \\p RHS     - The right hand side</Highlight></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420"><Highlight kind="comment">  /// \\p RHSSema - The semantic of the right hand side</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#a789c837fb34aac813ffa033c82d85a1d"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#a789c837fb34aac813ffa033c82d85a1d">CreateLE</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;LHSSema,</Highlight></CodeLine>
+<Link id="l00422" /><CodeLine lineNumber="422"><Highlight kind="normal">                  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;RHSSema) &#123;</Highlight></CodeLine>
+<Link id="l00423" /><CodeLine lineNumber="423"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> CommonSema = getCommonBinopSemantic(LHSSema, RHSSema);</Highlight></CodeLine>
+<Link id="l00424" /><CodeLine lineNumber="424"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00425" /><CodeLine lineNumber="425"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideLHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, LHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00426" /><CodeLine lineNumber="426"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideRHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, RHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00427" /><CodeLine lineNumber="427"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00428" /><CodeLine lineNumber="428"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CommonSema.isSigned() ? B.CreateICmpSLE(WideLHS, WideRHS)</Highlight></CodeLine>
+<Link id="l00429" /><CodeLine lineNumber="429"><Highlight kind="normal">                                 : B.CreateICmpULE(WideLHS, WideRHS);</Highlight></CodeLine>
+<Link id="l00430" /><CodeLine lineNumber="430"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00431" /><CodeLine lineNumber="431"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00432" /><CodeLine lineNumber="432"><Highlight kind="comment">  /// Compare two fixed-point values as LHS &gt; RHS.</Highlight></CodeLine>
+<Link id="l00433" /><CodeLine lineNumber="433"><Highlight kind="comment">  /// \\p LHS     - The left hand side</Highlight></CodeLine>
+<Link id="l00434" /><CodeLine lineNumber="434"><Highlight kind="comment">  /// \\p LHSSema - The semantic of the left hand side</Highlight></CodeLine>
+<Link id="l00435" /><CodeLine lineNumber="435"><Highlight kind="comment">  /// \\p RHS     - The right hand side</Highlight></CodeLine>
+<Link id="l00436" /><CodeLine lineNumber="436"><Highlight kind="comment">  /// \\p RHSSema - The semantic of the right hand side</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00437" /><CodeLine lineNumber="437" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#a19ea93f686819dec71fd4bd02ceaee58"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#a19ea93f686819dec71fd4bd02ceaee58">CreateGT</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;LHSSema,</Highlight></CodeLine>
+<Link id="l00438" /><CodeLine lineNumber="438"><Highlight kind="normal">                  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;RHSSema) &#123;</Highlight></CodeLine>
+<Link id="l00439" /><CodeLine lineNumber="439"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> CommonSema = getCommonBinopSemantic(LHSSema, RHSSema);</Highlight></CodeLine>
+<Link id="l00440" /><CodeLine lineNumber="440"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00441" /><CodeLine lineNumber="441"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideLHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, LHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00442" /><CodeLine lineNumber="442"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideRHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, RHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00443" /><CodeLine lineNumber="443"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00444" /><CodeLine lineNumber="444"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CommonSema.isSigned() ? B.CreateICmpSGT(WideLHS, WideRHS)</Highlight></CodeLine>
+<Link id="l00445" /><CodeLine lineNumber="445"><Highlight kind="normal">                                 : B.CreateICmpUGT(WideLHS, WideRHS);</Highlight></CodeLine>
+<Link id="l00446" /><CodeLine lineNumber="446"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00447" /><CodeLine lineNumber="447"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00448" /><CodeLine lineNumber="448"><Highlight kind="comment">  /// Compare two fixed-point values as LHS &gt;= RHS.</Highlight></CodeLine>
+<Link id="l00449" /><CodeLine lineNumber="449"><Highlight kind="comment">  /// \\p LHS     - The left hand side</Highlight></CodeLine>
+<Link id="l00450" /><CodeLine lineNumber="450"><Highlight kind="comment">  /// \\p LHSSema - The semantic of the left hand side</Highlight></CodeLine>
+<Link id="l00451" /><CodeLine lineNumber="451"><Highlight kind="comment">  /// \\p RHS     - The right hand side</Highlight></CodeLine>
+<Link id="l00452" /><CodeLine lineNumber="452"><Highlight kind="comment">  /// \\p RHSSema - The semantic of the right hand side</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00453" /><CodeLine lineNumber="453" lineLink="/docs/api/classes/llvm/fixedpointbuilder/#ab1dc5bdd56ea4c643f7137cbec3708ed"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/fixedpointbuilder/#ab1dc5bdd56ea4c643f7137cbec3708ed">CreateGE</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;LHSSema,</Highlight></CodeLine>
+<Link id="l00454" /><CodeLine lineNumber="454"><Highlight kind="normal">                  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/fixedpointsemantics">FixedPointSemantics</a> &amp;RHSSema) &#123;</Highlight></CodeLine>
+<Link id="l00455" /><CodeLine lineNumber="455"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> CommonSema = getCommonBinopSemantic(LHSSema, RHSSema);</Highlight></CodeLine>
+<Link id="l00456" /><CodeLine lineNumber="456"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00457" /><CodeLine lineNumber="457"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideLHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, LHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00458" /><CodeLine lineNumber="458"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> &#42;WideRHS = <a href="/docs/api/classes/llvm/fixedpointbuilder/#aea8a3d9cdba1bf31cb6ddc51e7d77012">CreateFixedToFixed</a>(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, RHSSema, CommonSema);</Highlight></CodeLine>
+<Link id="l00459" /><CodeLine lineNumber="459"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00460" /><CodeLine lineNumber="460"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CommonSema.isSigned() ? B.CreateICmpSGE(WideLHS, WideRHS)</Highlight></CodeLine>
+<Link id="l00461" /><CodeLine lineNumber="461"><Highlight kind="normal">                                 : B.CreateICmpUGE(WideLHS, WideRHS);</Highlight></CodeLine>
+<Link id="l00462" /><CodeLine lineNumber="462"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00463" /><CodeLine lineNumber="463"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00464" /><CodeLine lineNumber="464"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00465" /><CodeLine lineNumber="465"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00466" /><CodeLine lineNumber="466"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00467" /><CodeLine lineNumber="467"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;IR&#95;FIXEDPOINTBUILDER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

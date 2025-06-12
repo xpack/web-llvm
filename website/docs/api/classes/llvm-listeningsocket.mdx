@@ -1,0 +1,339 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/listeningsocket
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ListeningSocket` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Manages a passive (i.e., listening) UNIX domain socket. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::ListeningSocket</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/raw_socket_stream.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a00e7ab1ab38cc68f656ce8a425d536bf">ListeningSocket</a> (ListeningSocket &amp;&amp;LS)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  name={<><a href="#a3e74f90491fae9cdd0088d3f9718c561">ListeningSocket</a> (const ListeningSocket &amp;LS)=delete</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a6aa35ac319fb45c790661ac10d5d1ca7">ListeningSocket</a> (int SocketFD, StringRef SocketPath, int PipeFD&#91;2&#93;)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Destructor Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#aab6af2845a3e2eacf99fe9a593660142">~ListeningSocket</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Operators Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/listeningsocket">ListeningSocket</a> &amp;</>}
+  name={<><a href="#a5e7b840e64fa22c48b1be27826bfe843">operator=</a> (const ListeningSocket &amp;)=delete</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/expected">Expected</a>&lt; std::unique&#95;ptr&lt; <a href="/docs/api/classes/llvm/raw-socket-stream">raw&#95;socket&#95;stream</a> &gt; &gt;</>}
+  name={<><a href="#ac080084a7f9f9a2d530621e41a309967">accept</a> (const std::chrono::milliseconds &amp;Timeout=std::chrono::milliseconds(-1))</>}>
+Accepts an incoming connection on the listening socket. <a href="#ac080084a7f9f9a2d530621e41a309967">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a682299af2a92a43ba340ce4a0ce736ba">shutdown</a> ()</>}>
+Closes the FD, unlinks the socket file, and writes to PipeFD. <a href="#a682299af2a92a43ba340ce4a0ce736ba">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::atomic&lt; int &gt;</>}
+  name={<><a href="#a558f10cb44ab6fee366ae1c7daa44e9f">FD</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="int"
+  name={<><a href="#a0a6a79b58c1c9217b7d5f049ec67e478">PipeFD</a></>}>
+If a separate thread calls <a href="#a682299af2a92a43ba340ce4a0ce736ba">ListeningSocket::shutdown</a>, the <a href="/docs/api/classes/llvm/listeningsocket">ListeningSocket</a> file descriptor (FD) could be closed while ::poll is waiting for it to be ready to perform a I/O operations. <a href="#a0a6a79b58c1c9217b7d5f049ec67e478">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="std::string"
+  name={<><a href="#afe93f0a026bd14fb4a68e8dc0cf04b3d">SocketPath</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/expected">Expected</a>&lt; <a href="/docs/api/classes/llvm/listeningsocket">ListeningSocket</a> &gt;</>}
+  name={<><a href="#a22cd57e089541409aa05153237a44729">createUnix</a> (StringRef SocketPath, int MaxBacklog=llvm::hardware&#95;concurrency().compute&#95;thread&#95;count())</>}>
+Creates a listening socket bound to the specified file system path. <a href="#a22cd57e089541409aa05153237a44729">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Manages a passive (i.e., listening) UNIX domain socket.
+
+The <a href="/docs/api/classes/llvm/listeningsocket">ListeningSocket</a> class encapsulates a UNIX domain socket that can listen and accept incoming connections. <a href="/docs/api/classes/llvm/listeningsocket">ListeningSocket</a> is portable and supports Windows builds begining with Insider Build 17063. <a href="/docs/api/classes/llvm/listeningsocket">ListeningSocket</a> is designed for server-side operations, working alongside <code>raw&#95;socket&#95;streams</code> that function as client connections.
+
+Usage example: 
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="normal">std::string <a href="/docs/api/namespaces/llvm/pdb/#ac10322dc19a928c2dbb83ec9689dc23caac70412e939d72a9234cdebb1af5867b">Path</a> = </Highlight><Highlight kind="stringliteral">&quot;/path/to/socket&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">Expected&lt;ListeningSocket&gt; S = <a href="#a22cd57e089541409aa05153237a44729">ListeningSocket::createUnix</a>(Path);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (S) &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  Expected&lt;std::unique&#95;ptr&lt;raw&#95;socket&#95;stream&gt;&gt; connection = S-&gt;accept();</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (connection) &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Use the accepted raw&#95;socket&#95;stream for communication.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+Definition at line 59 of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">raw&#95;socket&#95;stream.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### ListeningSocket() {#a00e7ab1ab38cc68f656ce8a425d536bf}
+
+<MemberDefinition
+  prototype={<>ListeningSocket::ListeningSocket (<a href="/docs/api/classes/llvm/listeningsocket">ListeningSocket</a> &amp;&amp; LS)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h/#l00078">78</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">raw&#95;socket&#95;stream.h</a>, definition at line <a href="/docs/api/files/lib/lib/support/raw-socket-stream-cpp/#l00100">100</a> of file <a href="/docs/api/files/lib/lib/support/raw-socket-stream-cpp">raw&#95;socket&#95;stream.cpp</a>.
+</MemberDefinition>
+
+### ListeningSocket() {#a3e74f90491fae9cdd0088d3f9718c561}
+
+<MemberDefinition
+  prototype={<>llvm::ListeningSocket::ListeningSocket (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/listeningsocket">ListeningSocket</a> &amp; LS)</>}
+  labels = {["delete"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h/#l00079">79</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">raw&#95;socket&#95;stream.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Constructors
+
+### ListeningSocket() {#a6aa35ac319fb45c790661ac10d5d1ca7}
+
+<MemberDefinition
+  prototype={<>ListeningSocket::ListeningSocket (int SocketFD, <a href="/docs/api/classes/llvm/stringref">StringRef</a> SocketPath, int PipeFD=[2])</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h/#l00070">70</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">raw&#95;socket&#95;stream.h</a>, definition at line <a href="/docs/api/files/lib/lib/support/raw-socket-stream-cpp/#l00096">96</a> of file <a href="/docs/api/files/lib/lib/support/raw-socket-stream-cpp">raw&#95;socket&#95;stream.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Destructor
+
+### ~ListeningSocket() {#aab6af2845a3e2eacf99fe9a593660142}
+
+<MemberDefinition
+  prototype="ListeningSocket::~ListeningSocket ()">
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h/#l00077">77</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">raw&#95;socket&#95;stream.h</a>, definition at line <a href="/docs/api/files/lib/lib/support/raw-socket-stream-cpp/#l00296">296</a> of file <a href="/docs/api/files/lib/lib/support/raw-socket-stream-cpp">raw&#95;socket&#95;stream.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Operators
+
+### operator=() {#a5e7b840e64fa22c48b1be27826bfe843}
+
+<MemberDefinition
+  prototype={<>ListeningSocket &amp; llvm::ListeningSocket::operator= (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/listeningsocket">ListeningSocket</a> &amp;)</>}
+  labels = {["delete"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h/#l00080">80</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">raw&#95;socket&#95;stream.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### accept() {#ac080084a7f9f9a2d530621e41a309967}
+
+<MemberDefinition
+  prototype={<>Expected&lt; std::unique&#95;ptr&lt; raw&#95;socket&#95;stream &gt; &gt; ListeningSocket::accept (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> std::chrono::milliseconds &amp; Timeout=std::chrono::milliseconds(-1))</>}>
+Accepts an incoming connection on the listening socket.
+
+This method can optionally either block until a connection is available or timeout after a specified amount of time has passed. By default the method will block until the socket has recieved a connection. If the accept timesout this method will return std::errc:timed&#95;out
+
+
+<ParametersList title="Parameters">
+<ParametersListItem name="Timeout">An optional timeout duration in milliseconds. Setting Timeout to a negative number causes <a href="#ac080084a7f9f9a2d530621e41a309967">accept</a> to block indefinitely</ParametersListItem>
+</ParametersList>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h/#l00101">101</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">raw&#95;socket&#95;stream.h</a>, definition at line <a href="/docs/api/files/lib/lib/support/raw-socket-stream-cpp/#l00254">254</a> of file <a href="/docs/api/files/lib/lib/support/raw-socket-stream-cpp">raw&#95;socket&#95;stream.cpp</a>.
+</MemberDefinition>
+
+### shutdown() {#a682299af2a92a43ba340ce4a0ce736ba}
+
+<MemberDefinition
+  prototype="void ListeningSocket::shutdown ()">
+Closes the FD, unlinks the socket file, and writes to PipeFD.
+
+After the construction of the <a href="/docs/api/classes/llvm/listeningsocket">ListeningSocket</a>, shutdown is signal safe if it is called during the lifetime of the object. shutdown can be called concurrently with <a href="#ac080084a7f9f9a2d530621e41a309967">ListeningSocket::accept</a> as writing to PipeFD will cause a blocking call to ::poll to return.
+
+Once shutdown is called there is no way to reinitialize <a href="/docs/api/classes/llvm/listeningsocket">ListeningSocket</a>.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h/#l00090">90</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">raw&#95;socket&#95;stream.h</a>, definition at line <a href="/docs/api/files/lib/lib/support/raw-socket-stream-cpp/#l00274">274</a> of file <a href="/docs/api/files/lib/lib/support/raw-socket-stream-cpp">raw&#95;socket&#95;stream.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### FD {#a558f10cb44ab6fee366ae1c7daa44e9f}
+
+<MemberDefinition
+  prototype={<>std::atomic&lt;int&gt; llvm::ListeningSocket::FD</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h/#l00061">61</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">raw&#95;socket&#95;stream.h</a>.
+</MemberDefinition>
+
+### PipeFD {#a0a6a79b58c1c9217b7d5f049ec67e478}
+
+<MemberDefinition
+  prototype={<>int llvm::ListeningSocket::PipeFD&#91;2&#93;</>}>
+If a separate thread calls <a href="#a682299af2a92a43ba340ce4a0ce736ba">ListeningSocket::shutdown</a>, the <a href="/docs/api/classes/llvm/listeningsocket">ListeningSocket</a> file descriptor (FD) could be closed while ::poll is waiting for it to be ready to perform a I/O operations.
+
+::poll will continue to block even after FD is closed so use a self-pipe mechanism to get ::poll to return
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h/#l00068">68</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">raw&#95;socket&#95;stream.h</a>.
+</MemberDefinition>
+
+### SocketPath {#afe93f0a026bd14fb4a68e8dc0cf04b3d}
+
+<MemberDefinition
+  prototype="std::string llvm::ListeningSocket::SocketPath">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h/#l00062">62</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">raw&#95;socket&#95;stream.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Functions
+
+### createUnix() {#a22cd57e089541409aa05153237a44729}
+
+<MemberDefinition
+  prototype={<>Expected&lt; ListeningSocket &gt; ListeningSocket::createUnix (<a href="/docs/api/classes/llvm/stringref">StringRef</a> SocketPath, int MaxBacklog=<a href="/docs/api/namespaces/llvm/#a00440f10281348fd9f7be52e23c7c874">llvm::hardware&#95;concurrency</a>().compute&#95;thread&#95;count())</>}
+  labels = {["static"]}>
+Creates a listening socket bound to the specified file system path.
+
+Handles the socket creation, binding, and immediately starts listening for incoming connections.
+
+
+<ParametersList title="Parameters">
+<ParametersListItem name="SocketPath">The file system path where the socket will be created</ParametersListItem>
+<ParametersListItem name="MaxBacklog">The max number of connections in a socket&#39;s backlog</ParametersListItem>
+</ParametersList>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h/#l00111">111</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">raw&#95;socket&#95;stream.h</a>, definition at line <a href="/docs/api/files/lib/lib/support/raw-socket-stream-cpp/#l00110">110</a> of file <a href="/docs/api/files/lib/lib/support/raw-socket-stream-cpp">raw&#95;socket&#95;stream.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">raw_socket_stream.h</a></li>
+<li><a href="/docs/api/files/lib/lib/support/raw-socket-stream-cpp">raw_socket_stream.cpp</a></li>
+</ul>
+
+</DoxygenPage>

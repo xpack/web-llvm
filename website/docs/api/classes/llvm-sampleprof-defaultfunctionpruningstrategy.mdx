@@ -1,0 +1,150 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/sampleprof/defaultfunctionpruningstrategy
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `DefaultFunctionPruningStrategy` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Declaration
+
+<CodeBlock>class llvm::sampleprof::DefaultFunctionPruningStrategy</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ProfileData/SampleProfWriter.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/profiledata/sampleprofwriter-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/sampleprof/functionpruningstrategy">FunctionPruningStrategy</a></>}>
+When writing a profile with size limit, user may want to use a different strategy to reduce function count other than dropping functions with fewest samples first. <a href="/docs/api/classes/llvm/sampleprof/functionpruningstrategy/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a064d283609c9be796770a8a411b0ddb1">DefaultFunctionPruningStrategy</a> (SampleProfileMap &amp;ProfileMap, size&#95;t OutputSizeLimit)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a8abb143feff2f640ccc483ba91019c1b">Erase</a> (size&#95;t CurrentOutputSize) override</>}>
+In this default implementation, functions with fewest samples are dropped first. <a href="#a8abb143feff2f640ccc483ba91019c1b">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::vector&lt; <a href="/docs/api/namespaces/llvm/sampleprof/#a8418041ee57fb1966c79fb7d54643d90">NameFunctionSamples</a> &gt;</>}
+  name={<><a href="#a764465285e52f0e65df8c30cd6ad64a0">SortedFunctions</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+Definition at line 68 of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/sampleprofwriter-h">SampleProfWriter.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### DefaultFunctionPruningStrategy() {#a064d283609c9be796770a8a411b0ddb1}
+
+<MemberDefinition
+  prototype={<>DefaultFunctionPruningStrategy::DefaultFunctionPruningStrategy (<a href="/docs/api/classes/llvm/sampleprof/sampleprofilemap">SampleProfileMap</a> &amp; ProfileMap, size&#95;t OutputSizeLimit)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/sampleprofwriter-h/#l00072">72</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/sampleprofwriter-h">SampleProfWriter.h</a>, definition at line <a href="/docs/api/files/lib/lib/profiledata/sampleprofwriter-cpp/#l00070">70</a> of file <a href="/docs/api/files/lib/lib/profiledata/sampleprofwriter-cpp">SampleProfWriter.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### Erase() {#a8abb143feff2f640ccc483ba91019c1b}
+
+<MemberDefinition
+  prototype={<>void DefaultFunctionPruningStrategy::Erase (size&#95;t CurrentOutputSize)</>}
+  labels = {["virtual"]}>
+In this default implementation, functions with fewest samples are dropped first.
+
+Since the exact size of the output cannot be easily calculated due to compression, we use a heuristic to remove as many functions as necessary but not too many, aiming to minimize the number of write iterations. Empirically, functions with larger total sample count contain linearly more sample entries, meaning it takes linearly more space to write them. The cumulative length is therefore quadratic if all functions are sorted by total sample count. TODO: Find better heuristic.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/sampleprofwriter-h/#l00085">85</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/sampleprofwriter-h">SampleProfWriter.h</a>, definition at line <a href="/docs/api/files/lib/lib/profiledata/sampleprofwriter-cpp/#l00076">76</a> of file <a href="/docs/api/files/lib/lib/profiledata/sampleprofwriter-cpp">SampleProfWriter.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### SortedFunctions {#a764465285e52f0e65df8c30cd6ad64a0}
+
+<MemberDefinition
+  prototype={<>std::vector&lt;NameFunctionSamples&gt; llvm::sampleprof::DefaultFunctionPruningStrategy::SortedFunctions</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/sampleprofwriter-h/#l00069">69</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/sampleprofwriter-h">SampleProfWriter.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/profiledata/sampleprofwriter-h">SampleProfWriter.h</a></li>
+<li><a href="/docs/api/files/lib/lib/profiledata/sampleprofwriter-cpp">SampleProfWriter.cpp</a></li>
+</ul>
+
+</DoxygenPage>

@@ -1,0 +1,230 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/inlinerpass
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `InlinerPass` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+The inliner pass for the new pass manager. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::InlinerPass</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Transforms/IPO/Inliner.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/passinfomixin">PassInfoMixin&lt;DerivedT&gt;</a></>}>
+A CRTP mix-in to automatically provide informational APIs needed for passes. <a href="/docs/api/structs/llvm/passinfomixin/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a1c58fdde44c81bcabb4813490ef574b7">InlinerPass</a> (bool OnlyMandatory=false, ThinOrFullLTOPhase LTOPhase=ThinOrFullLTOPhase::None)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  name={<><a href="#aa6f227fc16925fab1dac5812dc6d0cd6">InlinerPass</a> (InlinerPass &amp;&amp;Arg)=default</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a22a5236247032aa0edf86322b77a7fbd">printPipeline</a> (raw&#95;ostream &amp;OS, function&#95;ref&lt; StringRef(StringRef)&gt; MapClassName2PassName)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></>}
+  name={<><a href="#a78e09cea341cfdf58869920175c52d82">run</a> (LazyCallGraph::SCC &amp;C, CGSCCAnalysisManager &amp;AM, LazyCallGraph &amp;CG, CGSCCUpdateResult &amp;UR)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/inlineadvisor">InlineAdvisor</a> &amp;</>}
+  name={<><a href="#a48fcc97546b9f42f666a03c68cf9b117">getAdvisor</a> (const ModuleAnalysisManagerCGSCCProxy::Result &amp;MAM, FunctionAnalysisManager &amp;FAM, Module &amp;M)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/namespaces/llvm/#a5d737fb4258bb27586a1bffd557fbb49">ThinOrFullLTOPhase</a></>}
+  name={<><a href="#a6ef80d8c62e6cdd38ae2d07780ed213a">LTOPhase</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> bool</>}
+  name={<><a href="#a75701cbe7ec594e89d0909ef1bf5d906">OnlyMandatory</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::unique&#95;ptr&lt; <a href="/docs/api/classes/llvm/inlineadvisor">InlineAdvisor</a> &gt;</>}
+  name={<><a href="#ad5233215613286495fabc798cf8bfed0">OwnedAdvisor</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+The inliner pass for the new pass manager.
+
+This pass wires together the inlining utilities and the inline cost analysis into a CGSCC pass. It considers every call in every function in the SCC and tries to inline if profitable. It can be tuned with a number of parameters to control what cost model is used and what tradeoffs are made when making the decision.
+
+It should be noted that the legacy inliners do considerably more than this inliner pass does. They provide logic for manually merging allocas, and doing considerable DCE including the DCE of dead functions. This pass makes every attempt to be simpler. DCE of functions requires complex reasoning about comdat groups, etc. Instead, it is expected that other more focused passes be composed to achieve the same end result.
+
+Definition at line 35 of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h">Inliner.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### InlinerPass() {#a1c58fdde44c81bcabb4813490ef574b7}
+
+<MemberDefinition
+  prototype={<>llvm::InlinerPass::InlinerPass (bool OnlyMandatory=false, <a href="/docs/api/namespaces/llvm/#a5d737fb4258bb27586a1bffd557fbb49">ThinOrFullLTOPhase</a> LTOPhase=<a href="/docs/api/namespaces/llvm/#a5d737fb4258bb27586a1bffd557fbb49a6adf97f83acf6453d4a6a4b1070f3754">ThinOrFullLTOPhase::None</a>)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h/#l00037">37</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h">Inliner.h</a>.
+</MemberDefinition>
+
+### InlinerPass() {#aa6f227fc16925fab1dac5812dc6d0cd6}
+
+<MemberDefinition
+  prototype={<>llvm::InlinerPass::InlinerPass (<a href="/docs/api/classes/llvm/inlinerpass">InlinerPass</a> &amp;&amp; Arg)</>}
+  labels = {["default"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h/#l00040">40</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h">Inliner.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### printPipeline() {#a22a5236247032aa0edf86322b77a7fbd}
+
+<MemberDefinition
+  prototype={<>void InlinerPass::printPipeline (<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp; OS, <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; <a href="/docs/api/classes/llvm/stringref">StringRef</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a>)&gt; MapClassName2PassName)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h/#l00045">45</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h">Inliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/inliner-cpp/#l00638">638</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/inliner-cpp">Inliner.cpp</a>.
+</MemberDefinition>
+
+### run() {#a78e09cea341cfdf58869920175c52d82}
+
+<MemberDefinition
+  prototype={<>PreservedAnalyses InlinerPass::run (<a href="/docs/api/classes/llvm/lazycallgraph/scc">LazyCallGraph::SCC</a> &amp; C, <a href="/docs/api/namespaces/llvm/#a571b2bbf074b46c75300bd8f14c5ab72">CGSCCAnalysisManager</a> &amp; AM, <a href="/docs/api/classes/llvm/lazycallgraph">LazyCallGraph</a> &amp; CG, <a href="/docs/api/structs/llvm/cgsccupdateresult">CGSCCUpdateResult</a> &amp; UR)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h/#l00042">42</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h">Inliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/inliner-cpp/#l00205">205</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/inliner-cpp">Inliner.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### getAdvisor() {#a48fcc97546b9f42f666a03c68cf9b117}
+
+<MemberDefinition
+  prototype={<>InlineAdvisor &amp; InlinerPass::getAdvisor (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> ModuleAnalysisManagerCGSCCProxy::Result &amp; MAM, <a href="/docs/api/namespaces/llvm/#adce09a5a0de0e3177eb00e932734af2f">FunctionAnalysisManager</a> &amp; FAM, <a href="/docs/api/classes/llvm/module">Module</a> &amp; M)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h/#l00049">49</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h">Inliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/inliner-cpp/#l00160">160</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/inliner-cpp">Inliner.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### LTOPhase {#a6ef80d8c62e6cdd38ae2d07780ed213a}
+
+<MemberDefinition
+  prototype="const ThinOrFullLTOPhase llvm::InlinerPass::LTOPhase">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h/#l00053">53</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h">Inliner.h</a>.
+</MemberDefinition>
+
+### OnlyMandatory {#a75701cbe7ec594e89d0909ef1bf5d906}
+
+<MemberDefinition
+  prototype="const bool llvm::InlinerPass::OnlyMandatory">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h/#l00052">52</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h">Inliner.h</a>.
+</MemberDefinition>
+
+### OwnedAdvisor {#ad5233215613286495fabc798cf8bfed0}
+
+<MemberDefinition
+  prototype={<>std::unique&#95;ptr&lt;InlineAdvisor&gt; llvm::InlinerPass::OwnedAdvisor</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h/#l00051">51</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h">Inliner.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/inliner-h">Inliner.h</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/inliner-cpp">Inliner.cpp</a></li>
+</ul>
+
+</DoxygenPage>

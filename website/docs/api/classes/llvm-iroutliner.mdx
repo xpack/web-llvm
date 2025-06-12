@@ -1,0 +1,557 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/iroutliner
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `IROutliner` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This class is a pass that identifies similarity in a <a href="/docs/api/classes/llvm/module">Module</a>, extracts instances of the similarity, and then consolidating the similar regions in an effort to reduce code size. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::IROutliner</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Transforms/IPO/IROutliner.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a4dfb1b9b4add772840b18038df972d59">IROutliner</a> (function&#95;ref&lt; TargetTransformInfo &amp;(Function &amp;)&gt; GTTI, function&#95;ref&lt; IRSimilarityIdentifier &amp;(Module &amp;)&gt; GIRSI, function&#95;ref&lt; OptimizationRemarkEmitter &amp;(Function &amp;)&gt; GORE)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#adc7588dad82317423eb5949ca4bac107">run</a> (Module &amp;M)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/function">Function</a> &#42;</>}
+  name={<><a href="#aabf3efc0bd728a533caeebeee17bff6b">createFunction</a> (Module &amp;M, OutlinableGroup &amp;CG, unsigned FunctionNameSuffix)</>}>
+Create the function based on the overall types found in the current regions being outlined. <a href="#aabf3efc0bd728a533caeebeee17bff6b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a53a98d3c5abcb4f9ea22b1b688681da5">deduplicateExtractedSections</a> (Module &amp;M, OutlinableGroup &amp;CurrentGroup, std::vector&lt; Function &#42; &gt; &amp;FuncsToRemove, unsigned &amp;OutlinedFunctionNum)</>}>
+For the similarities found, and the extracted sections, create a single outlined function with appropriate output blocks as necessary. <a href="#a53a98d3c5abcb4f9ea22b1b688681da5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a2c8e647be2f0b5d2efe1241cc288e6fa">doOutline</a> (Module &amp;M)</>}>
+Find repeated similar code sequences in <code>M</code> and outline them into new Functions. <a href="#a2c8e647be2f0b5d2efe1241cc288e6fa">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a364079371163c9d5daf4edad11f9357b">extractSection</a> (OutlinableRegion &amp;Region)</>}>
+Extract <code><a href="/docs/api/classes/llvm/region">Region</a></code> into its own function. <a href="#a364079371163c9d5daf4edad11f9357b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ac7d3729a389ea80fc6da20686dc12049">findAddInputsOutputs</a> (Module &amp;M, OutlinableRegion &amp;Region, DenseSet&lt; unsigned &gt; &amp;NotSame)</>}>
+Identify the needed extracted inputs in a section, and add to the overall function if needed. <a href="#ac7d3729a389ea80fc6da20686dc12049">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/instructioncost">InstructionCost</a></>}
+  name={<><a href="#acfe342420c2f533448508bf5c75a31c1">findBenefitFromAllRegions</a> (OutlinableGroup &amp;CurrentGroup)</>}>
+Find the number of instructions that will be removed by extracting the OutlinableRegions in <code>CurrentGroup</code>. <a href="#acfe342420c2f533448508bf5c75a31c1">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a9667df89d348ad2b31d37699743fc694">findCostBenefit</a> (Module &amp;M, OutlinableGroup &amp;CurrentGroup)</>}>
+Find the cost and the benefit of <code>CurrentGroup</code> and save it back to <code>CurrentGroup</code>. <a href="#a9667df89d348ad2b31d37699743fc694">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/instructioncost">InstructionCost</a></>}
+  name={<><a href="#ada668b50e24e19eb5489c84afd53c13c">findCostOutputReloads</a> (OutlinableGroup &amp;CurrentGroup)</>}>
+Find the number of instructions that will be added by reloading arguments. <a href="#ada668b50e24e19eb5489c84afd53c13c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ac16fb7a3ce7c2dc2f6de30a354558937">isCompatibleWithAlreadyOutlinedCode</a> (const OutlinableRegion &amp;Region)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> whether an <a href="/docs/api/structs/llvm/outlinableregion">OutlinableRegion</a> is incompatible with code already outlined. <a href="#ac16fb7a3ce7c2dc2f6de30a354558937">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a33eec4f23ed70e97a15aeab286c9a139">pruneIncompatibleRegions</a> (std::vector&lt; IRSimilarityCandidate &gt; &amp;CandidateVec, OutlinableGroup &amp;CurrentGroup)</>}>
+Remove all the IRSimilarityCandidates from <code>CandidateVec</code> that have instructions contained in a previously outlined region and put the remaining regions in <code>CurrentGroup</code>. <a href="#a33eec4f23ed70e97a15aeab286c9a139">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ae72068274b82e22d746d4b039d2a842e">updateOutputMapping</a> (OutlinableRegion &amp;Region, ArrayRef&lt; Value &#42; &gt; Outputs, LoadInst &#42;LI)</>}>
+Update the output mapping based on the load instruction, and the outputs of the extracted function. <a href="#ae72068274b82e22d746d4b039d2a842e">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#aa875337f62c7fc51a5ec11eebf47f0df">CostModel</a> = <a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a></>}>
+If false, we do not worry if the cost is greater than the benefit. <a href="#aa875337f62c7fc51a5ec11eebf47f0df">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/specificbumpptrallocator">SpecificBumpPtrAllocator</a>&lt; <a href="/docs/api/classes/llvm/codeextractor">CodeExtractor</a> &gt;</>}
+  name={<><a href="#a7d939a73571c6d16cb579c2f2d18331c">ExtractorAllocator</a></>}>
+The memory allocator used to allocate the CodeExtractors. <a href="#a7d939a73571c6d16cb579c2f2d18331c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; <a href="/docs/api/classes/llvm/irsimilarity/irsimilarityidentifier">IRSimilarityIdentifier</a> &amp;(<a href="/docs/api/classes/llvm/module">Module</a> &amp;)&gt;</>}
+  name={<><a href="#ab85476e0fa1ff28fc071d308877a5569">getIRSI</a></>}>
+<a href="/docs/api/classes/llvm/irsimilarity/irsimilarityidentifier">IRSimilarityIdentifier</a> lambda to retrieve <a href="/docs/api/classes/llvm/irsimilarity/irsimilarityidentifier">IRSimilarityIdentifier</a>. <a href="#ab85476e0fa1ff28fc071d308877a5569">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; <a href="/docs/api/classes/llvm/optimizationremarkemitter">OptimizationRemarkEmitter</a> &amp;(<a href="/docs/api/classes/llvm/function">Function</a> &amp;)&gt;</>}
+  name={<><a href="#ae2681979717de9e17c318eb2b4ec30d7">getORE</a></>}>
+The optimization remark emitter for the pass. <a href="#ae2681979717de9e17c318eb2b4ec30d7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; <a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> &amp;(<a href="/docs/api/classes/llvm/function">Function</a> &amp;)&gt;</>}
+  name={<><a href="#aacb55c75e23073b0e5ca05a6d9addf2c">getTTI</a></>}>
+<a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> lambda for target specific information. <a href="#aacb55c75e23073b0e5ca05a6d9addf2c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/specificbumpptrallocator">SpecificBumpPtrAllocator</a>&lt; <a href="/docs/api/structs/llvm/irsimilarity/irinstructiondata">IRInstructionData</a> &gt;</>}
+  name={<><a href="#aabf5b8081c2017ad2aa57c333e256b1d">InstDataAllocator</a></>}>
+The memory allocator used to allocate new <a href="/docs/api/structs/llvm/irsimilarity/irinstructiondata">IRInstructionData</a>. <a href="#aabf5b8081c2017ad2aa57c333e256b1d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="InstructionAllowed"
+  name={<><a href="#a410fe16b0a243b46ba902cb9a5c9ad3e">InstructionClassifier</a></>}>
+A <a href="/docs/api/classes/llvm/instvisitor">InstVisitor</a> used to exclude certain instructions from being outlined. <a href="#a410fe16b0a243b46ba902cb9a5c9ad3e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/denseset">DenseSet</a>&lt; unsigned &gt;</>}
+  name={<><a href="#af245aff2ce32c3502c60297f833938f8">Outlined</a></>}>
+The set of outlined Instructions, identified by their location in the sequential ordering of instructions in a <a href="/docs/api/classes/llvm/module">Module</a>. <a href="#af245aff2ce32c3502c60297f833938f8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a717a443b3e21b0442a79b4677d2b0d5d">OutlineFromLinkODRs</a> = false</>}>
+If true, enables us to outline from functions that have LinkOnceFromODR linkages. <a href="#a717a443b3e21b0442a79b4677d2b0d5d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42;, <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt;</>}
+  name={<><a href="#a9e197a45c8d9c6f5bcdf6b1bf8fef36c">OutputMappings</a></>}>
+A mapping from newly created reloaded output values to the original value. <a href="#a9e197a45c8d9c6f5bcdf6b1bf8fef36c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/specificbumpptrallocator">SpecificBumpPtrAllocator</a>&lt; <a href="/docs/api/structs/llvm/outlinableregion">OutlinableRegion</a> &gt;</>}
+  name={<><a href="#a430ba6ec6814dc27841b18730191a783">RegionAllocator</a></>}>
+The memory allocator used to allocate the OutlinableRegions. <a href="#a430ba6ec6814dc27841b18730191a783">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This class is a pass that identifies similarity in a <a href="/docs/api/classes/llvm/module">Module</a>, extracts instances of the similarity, and then consolidating the similar regions in an effort to reduce code size.
+
+It uses the <a href="/docs/api/classes/llvm/irsimilarity/irsimilarityidentifier">IRSimilarityIdentifier</a> pass to identify the similar regions of code, and then extracts the similar sections into a single function. See the above for an example as to how code is extracted and consolidated into a single function.
+
+Definition at line 199 of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### IROutliner() {#a4dfb1b9b4add772840b18038df972d59}
+
+<MemberDefinition
+  prototype={<>llvm::IROutliner::IROutliner (<a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; <a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> &amp;(<a href="/docs/api/classes/llvm/function">Function</a> &amp;)&gt; GTTI, <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; <a href="/docs/api/classes/llvm/irsimilarity/irsimilarityidentifier">IRSimilarityIdentifier</a> &amp;(<a href="/docs/api/classes/llvm/module">Module</a> &amp;)&gt; GIRSI, <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; <a href="/docs/api/classes/llvm/optimizationremarkemitter">OptimizationRemarkEmitter</a> &amp;(<a href="/docs/api/classes/llvm/function">Function</a> &amp;)&gt; GORE)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00201">201</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### run() {#adc7588dad82317423eb5949ca4bac107}
+
+<MemberDefinition
+  prototype={<>bool IROutliner::run (<a href="/docs/api/classes/llvm/module">Module</a> &amp; M)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00212">212</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp/#l03013">3013</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp">IROutliner.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### createFunction() {#aabf3efc0bd728a533caeebeee17bff6b}
+
+<MemberDefinition
+  prototype={<>Function &#42; IROutliner::createFunction (<a href="/docs/api/classes/llvm/module">Module</a> &amp; M, <a href="/docs/api/structs/outlinablegroup">OutlinableGroup</a> &amp; CG, unsigned FunctionNameSuffix)</>}>
+Create the function based on the overall types found in the current regions being outlined.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="M">- The module to outline from.</ParametersListItem>
+<ParametersListItem name="[inout] CG">- The <a href="/docs/api/structs/outlinablegroup">OutlinableGroup</a> for the regions to be outlined.</ParametersListItem>
+<ParametersListItem name="[in] FunctionNameSuffix">- How many functions have we previously created.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+the newly created function.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00252">252</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp/#l00629">629</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp">IROutliner.cpp</a>.
+</MemberDefinition>
+
+### deduplicateExtractedSections() {#a53a98d3c5abcb4f9ea22b1b688681da5}
+
+<MemberDefinition
+  prototype={<>void IROutliner::deduplicateExtractedSections (<a href="/docs/api/classes/llvm/module">Module</a> &amp; M, <a href="/docs/api/structs/outlinablegroup">OutlinableGroup</a> &amp; CurrentGroup, std::vector&lt; <a href="/docs/api/classes/llvm/function">Function</a> &#42; &gt; &amp; FuncsToRemove, unsigned &amp; OutlinedFunctionNum)</>}>
+For the similarities found, and the extracted sections, create a single outlined function with appropriate output blocks as necessary.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] M">- The module to outline from</ParametersListItem>
+<ParametersListItem name="[in] CurrentGroup">- The set of extracted sections to consolidate.</ParametersListItem>
+<ParametersListItem name="[inout] FuncsToRemove">- List of functions to remove from the module after outlining is completed.</ParametersListItem>
+<ParametersListItem name="[inout] OutlinedFunctionNum">- the number of new outlined functions.</ParametersListItem>
+</ParametersList>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00311">311</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp/#l02292">2292</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp">IROutliner.cpp</a>.
+</MemberDefinition>
+
+### doOutline() {#a2c8e647be2f0b5d2efe1241cc288e6fa}
+
+<MemberDefinition
+  prototype={<>unsigned IROutliner::doOutline (<a href="/docs/api/classes/llvm/module">Module</a> &amp; M)</>}>
+Find repeated similar code sequences in <code>M</code> and outline them into new Functions.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] M">- The module to outline from.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+The number of Functions created.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00220">220</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp/#l02783">2783</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp">IROutliner.cpp</a>.
+</MemberDefinition>
+
+### extractSection() {#a364079371163c9d5daf4edad11f9357b}
+
+<MemberDefinition
+  prototype={<>bool IROutliner::extractSection (<a href="/docs/api/structs/llvm/outlinableregion">OutlinableRegion</a> &amp; Region)</>}>
+Extract <code><a href="/docs/api/classes/llvm/region">Region</a></code> into its own function.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="<a href=&quot;/docs/api/classes/llvm/region&quot;>Region</a>">- The region to be extracted into its own function.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+True if it was successfully outlined.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00300">300</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp/#l02708">2708</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp">IROutliner.cpp</a>.
+</MemberDefinition>
+
+### findAddInputsOutputs() {#ac7d3729a389ea80fc6da20686dc12049}
+
+<MemberDefinition
+  prototype={<>void IROutliner::findAddInputsOutputs (<a href="/docs/api/classes/llvm/module">Module</a> &amp; M, <a href="/docs/api/structs/llvm/outlinableregion">OutlinableRegion</a> &amp; Region, <a href="/docs/api/classes/llvm/denseset">DenseSet</a>&lt; unsigned &gt; &amp; NotSame)</>}>
+Identify the needed extracted inputs in a section, and add to the overall function if needed.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] M">- The module to outline from.</ParametersListItem>
+<ParametersListItem name="<a href=&quot;/docs/api/classes/llvm/region&quot;>Region</a>">- The region to be extracted.</ParametersListItem>
+<ParametersListItem name="[in] NotSame">- The global value numbers of the Values in the region that do not have the same <a href="/docs/api/classes/llvm/constant">Constant</a> in each strucutrally similar region.</ParametersListItem>
+</ParametersList>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00262">262</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp/#l01400">1400</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp">IROutliner.cpp</a>.
+</MemberDefinition>
+
+### findBenefitFromAllRegions() {#acfe342420c2f533448508bf5c75a31c1}
+
+<MemberDefinition
+  prototype={<>InstructionCost IROutliner::findBenefitFromAllRegions (<a href="/docs/api/structs/outlinablegroup">OutlinableGroup</a> &amp; CurrentGroup)</>}>
+Find the number of instructions that will be removed by extracting the OutlinableRegions in <code>CurrentGroup</code>.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] CurrentGroup">- The collection of OutlinableRegions to be analyzed.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+the number of outlined instructions across all regions.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00271">271</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp/#l02482">2482</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp">IROutliner.cpp</a>.
+</MemberDefinition>
+
+### findCostBenefit() {#a9667df89d348ad2b31d37699743fc694}
+
+<MemberDefinition
+  prototype={<>void IROutliner::findCostBenefit (<a href="/docs/api/classes/llvm/module">Module</a> &amp; M, <a href="/docs/api/structs/outlinablegroup">OutlinableGroup</a> &amp; CurrentGroup)</>}>
+Find the cost and the benefit of <code>CurrentGroup</code> and save it back to <code>CurrentGroup</code>.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] M">- The module being analyzed</ParametersListItem>
+<ParametersListItem name="[inout] CurrentGroup">- The overall outlined section</ParametersListItem>
+</ParametersList>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00285">285</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp/#l02629">2629</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp">IROutliner.cpp</a>.
+</MemberDefinition>
+
+### findCostOutputReloads() {#ada668b50e24e19eb5489c84afd53c13c}
+
+<MemberDefinition
+  prototype={<>InstructionCost IROutliner::findCostOutputReloads (<a href="/docs/api/structs/outlinablegroup">OutlinableGroup</a> &amp; CurrentGroup)</>}>
+Find the number of instructions that will be added by reloading arguments.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] CurrentGroup">- The collection of OutlinableRegions to be analyzed.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+the number of added reload instructions across all regions.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00278">278</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp/#l02526">2526</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp">IROutliner.cpp</a>.
+</MemberDefinition>
+
+### isCompatibleWithAlreadyOutlinedCode() {#ac16fb7a3ce7c2dc2f6de30a354558937}
+
+<MemberDefinition
+  prototype={<>bool IROutliner::isCompatibleWithAlreadyOutlinedCode (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/outlinableregion">OutlinableRegion</a> &amp; Region)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> whether an <a href="/docs/api/structs/llvm/outlinableregion">OutlinableRegion</a> is incompatible with code already outlined.
+
+OutlinableRegions are incomptaible when there are overlapping instructions, or code that has not been recorded has been added to the instructions.
+
+
+<ParametersList title="Parameters">
+<ParametersListItem name="<a href=&quot;/docs/api/classes/llvm/region&quot;>Region</a>">- The <a href="/docs/api/structs/llvm/outlinableregion">OutlinableRegion</a> to check for conflicts with already outlined code.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+whether the region can safely be outlined.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00230">230</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp/#l02360">2360</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp">IROutliner.cpp</a>.
+</MemberDefinition>
+
+### pruneIncompatibleRegions() {#a33eec4f23ed70e97a15aeab286c9a139}
+
+<MemberDefinition
+  prototype={<>void IROutliner::pruneIncompatibleRegions (std::vector&lt; <a href="/docs/api/classes/llvm/irsimilarity/irsimilaritycandidate">IRSimilarityCandidate</a> &gt; &amp; CandidateVec, <a href="/docs/api/structs/outlinablegroup">OutlinableGroup</a> &amp; CurrentGroup)</>}>
+Remove all the IRSimilarityCandidates from <code>CandidateVec</code> that have instructions contained in a previously outlined region and put the remaining regions in <code>CurrentGroup</code>.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] CandidateVec">- List of similarity candidates for regions with the same similarity structure.</ParametersListItem>
+<ParametersListItem name="[inout] CurrentGroup">- Contains the potential sections to be outlined.</ParametersListItem>
+</ParametersList>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00241">241</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp/#l02398">2398</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp">IROutliner.cpp</a>.
+</MemberDefinition>
+
+### updateOutputMapping() {#ae72068274b82e22d746d4b039d2a842e}
+
+<MemberDefinition
+  prototype={<>void IROutliner::updateOutputMapping (<a href="/docs/api/structs/llvm/outlinableregion">OutlinableRegion</a> &amp; Region, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt; Outputs, <a href="/docs/api/classes/llvm/loadinst">LoadInst</a> &#42; LI)</>}>
+Update the output mapping based on the load instruction, and the outputs of the extracted function.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="<a href=&quot;/docs/api/classes/llvm/region&quot;>Region</a>">- The region extracted</ParametersListItem>
+<ParametersListItem name="Outputs">- The outputs from the extracted function.</ParametersListItem>
+<ParametersListItem name="LI">- The load instruction used to update the mapping.</ParametersListItem>
+</ParametersList>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00293">293</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp/#l02676">2676</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp">IROutliner.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### CostModel {#aa875337f62c7fc51a5ec11eebf47f0df}
+
+<MemberDefinition
+  prototype={<>bool llvm::IROutliner::CostModel = <a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a></>}>
+If false, we do not worry if the cost is greater than the benefit.
+
+This is for debugging and testing, so that we can test small cases to ensure that the outlining is being done correctly.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00322">322</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>.
+</MemberDefinition>
+
+### ExtractorAllocator {#a7d939a73571c6d16cb579c2f2d18331c}
+
+<MemberDefinition
+  prototype={<>SpecificBumpPtrAllocator&lt;CodeExtractor&gt; llvm::IROutliner::ExtractorAllocator</>}>
+The memory allocator used to allocate the CodeExtractors.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00343">343</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>.
+</MemberDefinition>
+
+### getIRSI {#ab85476e0fa1ff28fc071d308877a5569}
+
+<MemberDefinition
+  prototype={<>function&#95;ref&lt;IRSimilarityIdentifier &amp;(Module &amp;)&gt; llvm::IROutliner::getIRSI</>}>
+<a href="/docs/api/classes/llvm/irsimilarity/irsimilarityidentifier">IRSimilarityIdentifier</a> lambda to retrieve <a href="/docs/api/classes/llvm/irsimilarity/irsimilarityidentifier">IRSimilarityIdentifier</a>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00337">337</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>.
+</MemberDefinition>
+
+### getORE {#ae2681979717de9e17c318eb2b4ec30d7}
+
+<MemberDefinition
+  prototype={<>function&#95;ref&lt;OptimizationRemarkEmitter &amp;(Function &amp;)&gt; llvm::IROutliner::getORE</>}>
+The optimization remark emitter for the pass.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00340">340</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>.
+</MemberDefinition>
+
+### getTTI {#aacb55c75e23073b0e5ca05a6d9addf2c}
+
+<MemberDefinition
+  prototype={<>function&#95;ref&lt;TargetTransformInfo &amp;(Function &amp;)&gt; llvm::IROutliner::getTTI</>}>
+<a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> lambda for target specific information.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00329">329</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>.
+</MemberDefinition>
+
+### InstDataAllocator {#aabf5b8081c2017ad2aa57c333e256b1d}
+
+<MemberDefinition
+  prototype={<>SpecificBumpPtrAllocator&lt;IRInstructionData&gt; llvm::IROutliner::InstDataAllocator</>}>
+The memory allocator used to allocate new <a href="/docs/api/structs/llvm/irsimilarity/irinstructiondata">IRInstructionData</a>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00349">349</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>.
+</MemberDefinition>
+
+### InstructionClassifier {#a410fe16b0a243b46ba902cb9a5c9ad3e}
+
+<MemberDefinition
+  prototype="InstructionAllowed llvm::IROutliner::InstructionClassifier">
+A <a href="/docs/api/classes/llvm/instvisitor">InstVisitor</a> used to exclude certain instructions from being outlined.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00440">440</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>.
+</MemberDefinition>
+
+### Outlined {#af245aff2ce32c3502c60297f833938f8}
+
+<MemberDefinition
+  prototype={<>DenseSet&lt;unsigned&gt; llvm::IROutliner::Outlined</>}>
+The set of outlined Instructions, identified by their location in the sequential ordering of instructions in a <a href="/docs/api/classes/llvm/module">Module</a>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00326">326</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>.
+</MemberDefinition>
+
+### OutlineFromLinkODRs {#a717a443b3e21b0442a79b4677d2b0d5d}
+
+<MemberDefinition
+  prototype="bool llvm::IROutliner::OutlineFromLinkODRs = false">
+If true, enables us to outline from functions that have LinkOnceFromODR linkages.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00317">317</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>.
+</MemberDefinition>
+
+### OutputMappings {#a9e197a45c8d9c6f5bcdf6b1bf8fef36c}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;Value &#42;, Value &#42;&gt; llvm::IROutliner::OutputMappings</>}>
+A mapping from newly created reloaded output values to the original value.
+
+If an value is replace by an output from an outlined region, this maps that <a href="/docs/api/classes/llvm/value">Value</a>, back to its original <a href="/docs/api/classes/llvm/value">Value</a>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00334">334</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>.
+</MemberDefinition>
+
+### RegionAllocator {#a430ba6ec6814dc27841b18730191a783}
+
+<MemberDefinition
+  prototype={<>SpecificBumpPtrAllocator&lt;OutlinableRegion&gt; llvm::IROutliner::RegionAllocator</>}>
+The memory allocator used to allocate the OutlinableRegions.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h/#l00346">346</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/iroutliner-h">IROutliner.h</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/iroutliner-cpp">IROutliner.cpp</a></li>
+</ul>
+
+</DoxygenPage>

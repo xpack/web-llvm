@@ -1,0 +1,212 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/analysis/domtreeupdater-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `DomTreeUpdater.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Analysis/DomTreeUpdater.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/domtreeupdater-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Analysis/GenericDomTreeUpdaterImpl.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/genericdomtreeupdaterimpl-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Analysis/PostDominators.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/postdominators-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Constants.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/constants-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Instructions.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/instructions-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/GenericDomTree.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/genericdomtree-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="functional"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- DomTreeUpdater.cpp - DomTree/Post DomTree Updater --------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements the DomTreeUpdater class, which provides a uniform way</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// to update dominator tree related data structures.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/domtreeupdater-h">llvm/Analysis/DomTreeUpdater.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/genericdomtreeupdaterimpl-h">llvm/Analysis/GenericDomTreeUpdaterImpl.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/postdominators-h">llvm/Analysis/PostDominators.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/constants-h">llvm/IR/Constants.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/instructions-h">llvm/IR/Instructions.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/genericdomtree-h">llvm/Support/GenericDomTree.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;functional&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/genericdomtreeupdater">GenericDomTreeUpdater</a>&lt;<a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a>, <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a>,</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal">                                     <a href="/docs/api/classes/llvm/postdominatortree">PostDominatorTree</a>&gt;;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"><a href="/docs/api/classes/llvm/genericdomtreeupdater">GenericDomTreeUpdater</a>&lt;<a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a>, <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a>,</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">                      <a href="/docs/api/classes/llvm/postdominatortree">PostDominatorTree</a>&gt;::recalculate(<a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"><a href="/docs/api/classes/llvm/genericdomtreeupdater">GenericDomTreeUpdater&lt;DomTreeUpdater, DominatorTree, PostDominatorTree&gt;</a>::</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">    applyUpdatesImpl&lt;</Highlight><Highlight kind="comment">/&#42;IsForward=&#42;/</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">&gt;();</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"><a href="/docs/api/classes/llvm/genericdomtreeupdater">GenericDomTreeUpdater&lt;DomTreeUpdater, DominatorTree, PostDominatorTree&gt;</a>::</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">    applyUpdatesImpl&lt;</Highlight><Highlight kind="comment">/&#42;IsForward=&#42;/</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">&gt;();</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> DomTreeUpdater::forceFlushDeletedBB() &#123;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/genericdomtreeupdater/#a03640c958debd0b9a525cff8fe5a11ed">DeletedBBs</a>.empty())</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;BB : <a href="/docs/api/classes/llvm/genericdomtreeupdater/#a03640c958debd0b9a525cff8fe5a11ed">DeletedBBs</a>) &#123;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// After calling deleteBB or callbackDeleteBB under Lazy UpdateStrategy,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// validateDeleteBB() removes all instructions of DelBB and adds an</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// UnreachableInst as its terminator. So we check whether the BasicBlock to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// delete only has an UnreachableInst inside.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(BB-&gt;size() == 1 &amp;&amp; <a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa&lt;UnreachableInst&gt;</a>(BB-&gt;getTerminator()) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;DelBB has been modified while awaiting deletion.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/genericdomtreeupdater/#a42eae544363676292b0d6a03d06ba9df">eraseDelBBNode</a>(BB);</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">    BB-&gt;eraseFromParent();</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/genericdomtreeupdater/#a03640c958debd0b9a525cff8fe5a11ed">DeletedBBs</a>.clear();</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">  Callbacks.clear();</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The DT and PDT require the nodes related to updates</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="comment">// are not deleted when update functions are called.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight><Highlight kind="comment">// So BasicBlock deletions must be pended when the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight><Highlight kind="comment">// UpdateStrategy is Lazy. When the UpdateStrategy is</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Eager, the BasicBlock will be deleted immediately.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62" lineLink="/docs/api/classes/llvm/domtreeupdater/#adcca375fa8086f6844e863abbf58f83b"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/domtreeupdater/#adcca375fa8086f6844e863abbf58f83b">DomTreeUpdater::deleteBB</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;DelBB) &#123;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">  validateDeleteBB(DelBB);</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/genericdomtreeupdater/#a6c1229274a768152e5ed6af3872af602">Strategy</a> == UpdateStrategy::Lazy) &#123;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/genericdomtreeupdater/#a03640c958debd0b9a525cff8fe5a11ed">DeletedBBs</a>.insert(DelBB);</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/genericdomtreeupdater/#a42eae544363676292b0d6a03d06ba9df">eraseDelBBNode</a>(DelBB);</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">  DelBB-&gt;<a href="/docs/api/classes/llvm/basicblock/#a8dd327a937563afdb08250abc43820b0">eraseFromParent</a>();</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73" lineLink="/docs/api/classes/llvm/domtreeupdater/#aa22a66bf381f2b0a994b4e00cca5eac4"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/domtreeupdater/#aa22a66bf381f2b0a994b4e00cca5eac4">DomTreeUpdater::callbackDeleteBB</a>(</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;DelBB, std::function&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;)&gt; Callback) &#123;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  validateDeleteBB(DelBB);</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/genericdomtreeupdater/#a6c1229274a768152e5ed6af3872af602">Strategy</a> == UpdateStrategy::Lazy) &#123;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">    Callbacks.push&#95;back(CallBackOnDeletion(DelBB, Callback));</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/genericdomtreeupdater/#a03640c958debd0b9a525cff8fe5a11ed">DeletedBBs</a>.insert(DelBB);</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/genericdomtreeupdater/#a42eae544363676292b0d6a03d06ba9df">eraseDelBBNode</a>(DelBB);</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">  DelBB-&gt;<a href="/docs/api/classes/llvm/basicblock/#a629adad5a5d84929eac0f0b00132af1b">removeFromParent</a>();</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">  Callback(DelBB);</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal"> DelBB;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> DomTreeUpdater::validateDeleteBB(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;DelBB) &#123;</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(DelBB &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Invalid push&#95;back of nullptr DelBB.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/#ad66c4759666aab78529658362b498c74">pred&#95;empty</a>(DelBB) &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;DelBB has one or more predecessors.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// DelBB is unreachable and all its instructions are dead.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (!DelBB-&gt;<a href="/docs/api/classes/llvm/basicblock/#a266367eb01c634406b32f816d2d9c6bf">empty</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = DelBB-&gt;<a href="/docs/api/classes/llvm/basicblock/#a2d071e661a02790177ba05f62c7c27d1">back</a>();</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Replace used instructions with an arbitrary value (poison).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.use&#95;empty())</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.replaceAllUsesWith(<a href="/docs/api/classes/llvm/poisonvalue/#a1bf08613fb664a2e377a9a72c59a6b66">PoisonValue::get</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.getType()));</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">    DelBB-&gt;<a href="/docs/api/classes/llvm/basicblock/#a2d071e661a02790177ba05f62c7c27d1">back</a>().<a href="/docs/api/classes/llvm/instruction/#a601ee49a4c4e0babf29bd1cf09036570">eraseFromParent</a>();</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Make sure DelBB has a valid terminator instruction. As long as DelBB is a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Child of Function F it must contain valid IR.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> UnreachableInst(DelBB-&gt;<a href="/docs/api/classes/llvm/basicblock/#aa286a0f7f5d38488d593bb7ef0ba183e">getContext</a>(), DelBB);</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"><a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#aa863693eef567397d9c292da5bf22d34">LLVM&#95;DUMP&#95;METHOD</a></Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105" lineLink="/docs/api/classes/llvm/domtreeupdater/#a5b547854a7f9e418222c9823b2602314"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/domtreeupdater/#a5b547854a7f9e418222c9823b2602314">DomTreeUpdater::dump</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/genericdomtreeupdater/#aefa1d7d67dd758fb993876e62c56890d">Base::dump</a>();</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if !defined(NDEBUG) || defined(LLVM&#95;ENABLE&#95;DUMP)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS = <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>();</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">  OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Pending Callbacks:\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> Index = 0;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;BB : Callbacks) &#123;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;  &quot;</Highlight><Highlight kind="normal"> &lt;&lt; Index &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; : &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">    ++Index;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (BB-&gt;hasName())</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">      OS &lt;&lt; BB-&gt;getName() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;(&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">      OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;(no&#95;name)(&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">    OS &lt;&lt; BB &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;)\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

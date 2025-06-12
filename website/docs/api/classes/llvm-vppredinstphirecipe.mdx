@@ -1,0 +1,220 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/vppredinstphirecipe
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `VPPredInstPHIRecipe` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+<a href="/docs/api/classes/llvm/vppredinstphirecipe">VPPredInstPHIRecipe</a> is a recipe for generating the phi nodes needed when control converges back from a Branch-on-Mask. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::VPPredInstPHIRecipe</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="Transforms/Vectorize/VPlan.h"
+  permalink="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/vpsingledefrecipe">VPSingleDefRecipe</a></>}>
+VPSingleDef is a base class for recipes for modeling a sequence of one or more output IR that define a single result <a href="/docs/api/classes/llvm/vpvalue">VPValue</a>. <a href="/docs/api/classes/llvm/vpsingledefrecipe/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#af302e02cde29c699974704e1b872fa33">VPPredInstPHIRecipe</a> (VPValue &#42;PredV, DebugLoc DL)</>}>
+Construct a <a href="/docs/api/classes/llvm/vppredinstphirecipe">VPPredInstPHIRecipe</a> given <code>PredInst</code> whose value needs a phi nodes after merging back from a Branch-on-Mask. <a href="#af302e02cde29c699974704e1b872fa33">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Destructor Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a0b8ae2ff0c66128f19bcda7468cf70c1">~VPPredInstPHIRecipe</a> () override=default</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/vppredinstphirecipe">VPPredInstPHIRecipe</a> &#42;</>}
+  name={<><a href="#a9819963ec9063787a1face68ae70a3ed">clone</a> () override</>}>
+Clone the current recipe. <a href="#a9819963ec9063787a1face68ae70a3ed">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/instructioncost">InstructionCost</a></>}
+  name={<><a href="#aca804b2ffd7a26bf789226ce7bf404a6">computeCost</a> (ElementCount VF, VPCostContext &amp;Ctx) const override</>}>
+Return the cost of this <a href="/docs/api/classes/llvm/vppredinstphirecipe">VPPredInstPHIRecipe</a>. <a href="#aca804b2ffd7a26bf789226ce7bf404a6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a3e63796e123d5ba9cbfa023983328c37">execute</a> (VPTransformState &amp;State) override</>}>
+Generates phi nodes for live-outs (from a replicate region) as needed to retain SSA form. <a href="#a3e63796e123d5ba9cbfa023983328c37">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ac2926669bdf000e31cf50efdab898bac">print</a> (raw&#95;ostream &amp;O, const Twine &amp;Indent, VPSlotTracker &amp;SlotTracker) const override</>}>
+Print the recipe. <a href="#ac2926669bdf000e31cf50efdab898bac">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a18022e503aa4aa7c84e141d40031531d">usesScalars</a> (const VPValue &#42;Op) const override</>}>
+Returns true if the recipe uses scalars of operand <code><a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a></code>. <a href="#a18022e503aa4aa7c84e141d40031531d">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+<a href="/docs/api/classes/llvm/vppredinstphirecipe">VPPredInstPHIRecipe</a> is a recipe for generating the phi nodes needed when control converges back from a Branch-on-Mask.
+
+The phi nodes are needed in order to merge values that are set under such a branch and feed their uses. The phi nodes can be scalar or vector depending on the users of the value. This recipe works in concert with <a href="/docs/api/classes/llvm/vpbranchonmaskrecipe">VPBranchOnMaskRecipe</a>.
+
+Definition at line 2912 of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### VPPredInstPHIRecipe() {#af302e02cde29c699974704e1b872fa33}
+
+<MemberDefinition
+  prototype={<>llvm::VPPredInstPHIRecipe::VPPredInstPHIRecipe (<a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42; PredV, <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> DL)</>}
+  labels = {["inline"]}>
+Construct a <a href="/docs/api/classes/llvm/vppredinstphirecipe">VPPredInstPHIRecipe</a> given <code>PredInst</code> whose value needs a phi nodes after merging back from a Branch-on-Mask.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02916">2916</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Destructor
+
+### ~VPPredInstPHIRecipe() {#a0b8ae2ff0c66128f19bcda7468cf70c1}
+
+<MemberDefinition
+  prototype="llvm::VPPredInstPHIRecipe::~VPPredInstPHIRecipe ()"
+  labels = {["default"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02918">2918</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### clone() {#a9819963ec9063787a1face68ae70a3ed}
+
+<MemberDefinition
+  prototype={<>VPPredInstPHIRecipe &#42; llvm::VPPredInstPHIRecipe::clone ()</>}
+  labels = {["inline", "virtual"]}>
+Clone the current recipe.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02920">2920</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+### computeCost() {#aca804b2ffd7a26bf789226ce7bf404a6}
+
+<MemberDefinition
+  prototype={<>InstructionCost llvm::VPPredInstPHIRecipe::computeCost (<a href="/docs/api/classes/llvm/elementcount">ElementCount</a> VF, <a href="/docs/api/structs/llvm/vpcostcontext">VPCostContext</a> &amp; Ctx) const</>}
+  labels = {["inline", "virtual"]}>
+Return the cost of this <a href="/docs/api/classes/llvm/vppredinstphirecipe">VPPredInstPHIRecipe</a>.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02931">2931</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+### execute() {#a3e63796e123d5ba9cbfa023983328c37}
+
+<MemberDefinition
+  prototype={<>void VPPredInstPHIRecipe::execute (<a href="/docs/api/structs/llvm/vptransformstate">VPTransformState</a> &amp; State)</>}
+  labels = {["virtual"]}>
+Generates phi nodes for live-outs (from a replicate region) as needed to retain SSA form.
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02928">2928</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp/#l02497">2497</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp">VPlanRecipes.cpp</a>.
+</MemberDefinition>
+
+### print() {#ac2926669bdf000e31cf50efdab898bac}
+
+<MemberDefinition
+  prototype={<>void VPPredInstPHIRecipe::print (<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp; O, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp; Indent, <a href="/docs/api/classes/llvm/vpslottracker">VPSlotTracker</a> &amp; SlotTracker) const</>}
+  labels = {["virtual"]}>
+Print the recipe.
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02939">2939</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp/#l02547">2547</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp">VPlanRecipes.cpp</a>.
+</MemberDefinition>
+
+### usesScalars() {#a18022e503aa4aa7c84e141d40031531d}
+
+<MemberDefinition
+  prototype={<>bool llvm::VPPredInstPHIRecipe::usesScalars (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42; Op) const</>}
+  labels = {["inline", "virtual"]}>
+Returns true if the recipe uses scalars of operand <code><a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a></code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02944">2944</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp">VPlanRecipes.cpp</a></li>
+</ul>
+
+</DoxygenPage>

@@ -1,0 +1,243 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/support/optimizedstructlayout-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `OptimizedStructLayout.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This file provides an interface for laying out a sequence of fields as a struct in a way that attempts to minimizes the total space requirements of the struct while still satisfying the layout requirements of the individual fields. <a href="#details">More...</a>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/Alignment.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/alignment-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/ArrayRef.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="utility"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/optimizedstructlayoutfield">OptimizedStructLayoutField</a></>}>
+A field in a structure. <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This file provides an interface for laying out a sequence of fields as a struct in a way that attempts to minimizes the total space requirements of the struct while still satisfying the layout requirements of the individual fields.
+
+The resulting layout may be substantially more compact than simply laying out the fields in their original order.
+
+Fields may be pre-assigned fixed offsets. They may also be given sizes that are not multiples of their alignments. There is no currently no way to describe that a field has interior padding that other fields may be allocated into.
+
+This algorithm does not claim to be &quot;optimal&quot; for several reasons:
+
+
+<ul>
+<li>First, it does not guarantee that the result is minimal in size. There is no known efficient algoorithm to achieve minimality for unrestricted inputs. Nonetheless, this algorithm</li>
+<li>Second, there are other ways that a struct layout could be optimized besides space usage, such as locality. This layout may have a mixed impact on locality: less overall memory may be used, but adjacent fields in the original array may be moved further from one another.</li>
+</ul>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- OptimizedStructLayout.h - Struct layout algorithm ---------&#42;- C++ -&#42;-=//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="comment">/// \\file</Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="comment">/// This file provides an interface for laying out a sequence of fields</Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="comment">/// as a struct in a way that attempts to minimizes the total space</Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="comment">/// requirements of the struct while still satisfying the layout</Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="comment">/// requirements of the individual fields.  The resulting layout may be</Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="comment">/// substantially more compact than simply laying out the fields in their</Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="comment">/// original order.</Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="comment">/// Fields may be pre-assigned fixed offsets.  They may also be given sizes</Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="comment">/// that are not multiples of their alignments.  There is no currently no</Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="comment">/// way to describe that a field has interior padding that other fields may</Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="comment">/// be allocated into.</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="comment">/// This algorithm does not claim to be &quot;optimal&quot; for several reasons:</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="comment">/// - First, it does not guarantee that the result is minimal in size.</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="comment">///   There is no known efficient algoorithm to achieve minimality for</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="comment">///   unrestricted inputs.  Nonetheless, this algorithm</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="comment">/// - Second, there are other ways that a struct layout could be optimized</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="comment">///   besides space usage, such as locality.  This layout may have a mixed</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="comment">///   impact on locality: less overall memory may be used, but adjacent</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="comment">///   fields in the original array may be moved further from one another.</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;SUPPORT&#95;OPTIMIZEDSTRUCTLAYOUT&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;SUPPORT&#95;OPTIMIZEDSTRUCTLAYOUT&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/alignment-h">llvm/Support/Alignment.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h">llvm/ADT/ArrayRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;utility&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">/// A field in a structure.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45" lineLink="/docs/api/structs/llvm/optimizedstructlayoutfield"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#add77194e307eeb1f4ac9099ea63ef922">OptimizedStructLayoutField</a> &#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">  /// A special value for Offset indicating that the field can be moved</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="comment">  /// anywhere.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48" lineLink="/docs/api/structs/llvm/optimizedstructlayoutfield/#afd2b6f2791d97f9d64eb5ad7972cd28b"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> uint64&#95;t <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#afd2b6f2791d97f9d64eb5ad7972cd28b">FlexibleOffset</a> = ~(uint64&#95;t)0;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50" lineLink="/docs/api/structs/llvm/optimizedstructlayoutfield/#add77194e307eeb1f4ac9099ea63ef922"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#add77194e307eeb1f4ac9099ea63ef922">OptimizedStructLayoutField</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#a2950e642905cbcf7104abd58ab797e26">Id</a>, uint64&#95;t <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#ae472b245af5bd4a76bea7581ea772185">Size</a>, <a href="/docs/api/structs/llvm/align">Align</a> <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#a31b084098ebbf47988d1817a597b52d2">Alignment</a>,</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">                             uint64&#95;t FixedOffset = <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#afd2b6f2791d97f9d64eb5ad7972cd28b">FlexibleOffset</a>)</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">      : <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#adae4afc395aed3ab340d695de637dd11">Offset</a>(FixedOffset), <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#ae472b245af5bd4a76bea7581ea772185">Size</a>(<a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#ae472b245af5bd4a76bea7581ea772185">Size</a>), <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#a2950e642905cbcf7104abd58ab797e26">Id</a>(<a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#a2950e642905cbcf7104abd58ab797e26">Id</a>), <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#a31b084098ebbf47988d1817a597b52d2">Alignment</a>(<a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#a31b084098ebbf47988d1817a597b52d2">Alignment</a>) &#123;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#ae472b245af5bd4a76bea7581ea772185">Size</a> &gt; 0 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;adding an empty field to the layout&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="comment">  /// The offset of this field in the final layout.  If this is</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="comment">  /// initialized to FlexibleOffset, layout will overwrite it with</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">  /// the assigned offset of the field.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59" lineLink="/docs/api/structs/llvm/optimizedstructlayoutfield/#adae4afc395aed3ab340d695de637dd11"><Highlight kind="normal">  uint64&#95;t <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#adae4afc395aed3ab340d695de637dd11">Offset</a>;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="comment">  /// The required size of this field in bytes.  Does not have to be</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="comment">  /// a multiple of Alignment.  Must be non-zero.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/structs/llvm/optimizedstructlayoutfield/#ae472b245af5bd4a76bea7581ea772185"><Highlight kind="normal">  uint64&#95;t <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#ae472b245af5bd4a76bea7581ea772185">Size</a>;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="comment">  /// A opaque value which uniquely identifies this field.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66" lineLink="/docs/api/structs/llvm/optimizedstructlayoutfield/#a2950e642905cbcf7104abd58ab797e26"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#a2950e642905cbcf7104abd58ab797e26">Id</a>;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="comment">  /// Private scratch space for the algorithm.  The implementation</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="comment">  /// must treat this as uninitialized memory on entry.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/structs/llvm/optimizedstructlayoutfield/#a432caecc9417394c69f599b6476febdb"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#a432caecc9417394c69f599b6476febdb">Scratch</a>;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">  /// The required alignment of this field.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73" lineLink="/docs/api/structs/llvm/optimizedstructlayoutfield/#a31b084098ebbf47988d1817a597b52d2"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/align">Align</a> <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#a31b084098ebbf47988d1817a597b52d2">Alignment</a>;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">  /// Return true if this field has been assigned a fixed offset.</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">  /// After layout, this will be true of all the fields.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77" lineLink="/docs/api/structs/llvm/optimizedstructlayoutfield/#acf43399e1cbcadbb63dd9b33a3eac938"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#acf43399e1cbcadbb63dd9b33a3eac938">hasFixedOffset</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (<a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#adae4afc395aed3ab340d695de637dd11">Offset</a> != <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#afd2b6f2791d97f9d64eb5ad7972cd28b">FlexibleOffset</a>);</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// Given that this field has a fixed offset, return the offset</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">  /// of the first byte following it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/structs/llvm/optimizedstructlayoutfield/#a33aaa97d3e6098e4106d1fdecee2dc1d"><Highlight kind="normal">  uint64&#95;t <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#a33aaa97d3e6098e4106d1fdecee2dc1d">getEndOffset</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#acf43399e1cbcadbb63dd9b33a3eac938">hasFixedOffset</a>());</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#adae4afc395aed3ab340d695de637dd11">Offset</a> + <a href="/docs/api/structs/llvm/optimizedstructlayoutfield/#ae472b245af5bd4a76bea7581ea772185">Size</a>;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">/// Compute a layout for a struct containing the given fields, making a</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">/// best-effort attempt to minimize the amount of space required.</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="comment">/// Two features are supported which require a more careful solution</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="comment">/// than the well-known &quot;sort by decreasing alignment&quot; solution:</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">/// - Fields may be assigned a fixed offset in the layout.  If there are</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="comment">///   gaps among the fixed-offset fields, the algorithm may attempt</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">///   to allocate flexible-offset fields into those gaps.  If that&#39;s</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">///   undesirable, the caller should &quot;block out&quot; those gaps by e.g.</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">///   just creating a single fixed-offset field that represents the</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">///   entire &quot;header&quot;.</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">/// - The size of a field is not required to be a multiple of, or even</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="comment">///   greater than, the field&#39;s required alignment.  The only constraint</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="comment">///   on fields is that they must not be zero-sized.</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">/// To simplify the implementation, any fixed-offset fields in the</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="comment">/// layout must appear at the start of the field array, and they must</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="comment">/// be ordered by increasing offset.</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="comment">/// The algorithm will produce a guaranteed-minimal layout with no</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">/// interior padding in the following &quot;C-style&quot; case:</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">/// - every field&#39;s size is a multiple of its required alignment and</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">/// - either no fields have initially fixed offsets, or the fixed-offset</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">///   fields have no interior padding and end at an offset that is at</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">///   least as aligned as all the flexible-offset fields.</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="comment">/// Otherwise, while the algorithm will make a best-effort attempt to</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">/// avoid padding, it cannot guarantee a minimal layout, as there is</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">/// no known efficient algorithm for doing so.</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="comment">/// The layout produced by this algorithm may not be stable across LLVM</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="comment">/// releases.  Do not use this anywhere where ABI stability is required.</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">/// Flexible-offset fields with the same size and alignment will be ordered</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="comment">/// the same way they were in the initial array.  Otherwise the current</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="comment">/// algorithm makes no effort to preserve the initial order of</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="comment">/// flexible-offset fields.</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="comment">/// On return, all fields will have been assigned a fixed offset, and the</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="comment">/// array will be sorted in order of ascending offsets.  Note that this</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">/// means that the fixed-offset fields may no longer form a strict prefix</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">/// if there&#39;s any padding before they end.</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">/// The return value is the total size of the struct and its required</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">/// alignment.  Note that the total size is not rounded up to a multiple</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="comment">/// of the required alignment; clients which require this can do so easily.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">std::pair&lt;uint64&#95;t, Align&gt; <a href="/docs/api/namespaces/llvm/#aae35ec9b920ff3bb892cd872877a89fe">performOptimizedStructLayout</a>(</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">                        <a href="/docs/api/namespaces/llvm/#a99416758c13252bef45320a6ba6aa09c">MutableArrayRef&lt;OptimizedStructLayoutField&gt;</a> Fields);</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

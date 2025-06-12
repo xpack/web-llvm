@@ -1,0 +1,67 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/trailingobjects/fixedsizestorage
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `FixedSizeStorage` Struct Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+A type where its <a href="/docs/api/structs/llvm/trailingobjects/fixedsizestorage/with-counts">with&#95;counts</a> template member has a ::type member suitable for use as uninitialized storage for an object with the given trailing object counts. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;typename... Tys&gt;
+struct llvm::TrailingObjects::FixedSizeStorage&lt;Tys&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/TrailingObjects.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/trailingobjects-h"
+  isLocal="true" />
+</IncludesList>
+
+## Description {#details}
+
+A type where its <a href="/docs/api/structs/llvm/trailingobjects/fixedsizestorage/with-counts">with&#95;counts</a> template member has a ::type member suitable for use as uninitialized storage for an object with the given trailing object counts.
+
+The template arguments are similar to those of additionalSizeToAlloc.
+
+<a href="/docs/api/classes/llvm/use">Use</a> with <a href="/docs/api/classes/llvm/trailingobjects/fixedsizestorageowner">FixedSizeStorageOwner</a>, e.g.:
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="normal">MyObj::FixedSizeStorage&lt;void &#42;&gt;::with&#95;counts&lt;1u&gt;::type myStackObjStorage;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">MyObj::FixedSizeStorageOwner</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    myStackObjOwner(</Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> ((</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;)&amp;myStackObjStorage) MyObj);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">MyObj &#42;</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> myStackObjPtr = myStackObjOwner.get();</Highlight></CodeLine>
+
+</ProgramListing>
+
+Definition at line 352 of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/trailingobjects-h">TrailingObjects.h</a>.
+
+</DoxygenPage>

@@ -1,0 +1,434 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/support/balancedpartitioning-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `BalancedPartitioning.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/BalancedPartitioning.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/balancedpartitioning-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Config/llvm-config.h"
+  permalink=""
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Debug.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/debug-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Format.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/format-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/FormatVariadic.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/formatvariadic-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/ThreadPool.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/threadpool-h"
+  isLocal="true" />
+</IncludesList>
+
+## Defines Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="#define"
+  name={<><a href="#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG&#95;TYPE</a>&nbsp;&nbsp;&nbsp;&quot;balanced-partitioning&quot;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Defines
+
+### DEBUG&#95;TYPE {#ad78e062f62e0d6e453941fb4ca843e4d}
+
+<MemberDefinition
+  prototype={<>#define DEBUG&#95;TYPE&nbsp;&nbsp;&nbsp;&quot;balanced-partitioning&quot;</>}>
+
+Definition at line <a href="#l00022">22</a> of file <a href="/docs/api/files/lib/lib/support/balancedpartitioning-cpp">BalancedPartitioning.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- BalancedPartitioning.cpp -------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements BalancedPartitioning, a recursive balanced graph</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// partitioning algorithm.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/balancedpartitioning-h">llvm/Support/BalancedPartitioning.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;llvm/Config/llvm-config.h&quot;</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="comment">// for LLVM&#95;ENABLE&#95;THREADS</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h">llvm/Support/Debug.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/format-h">llvm/Support/Format.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/formatvariadic-h">llvm/Support/FormatVariadic.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/threadpool-h">llvm/Support/ThreadPool.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22" lineLink="#ad78e062f62e0d6e453941fb4ca843e4d"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEBUG&#95;TYPE &quot;balanced-partitioning&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24" lineLink="/docs/api/classes/llvm/bpfunctionnode/#af784c54782fa5138513c227e0fbc578d"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bpfunctionnode/#af784c54782fa5138513c227e0fbc578d">BPFunctionNode::dump</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal">  OS &lt;&lt; <a href="/docs/api/namespaces/llvm/#a653cce37b80c03eebe7a00520a8eabb6">formatv</a>(</Highlight><Highlight kind="stringliteral">&quot;&#123;&#123;ID=&#123;0&#125; Utilities=&#123;&#123;&#123;1:$&#91;,&#93;&#125;&#125; Bucket=&#123;2&#125;&#125;&quot;</Highlight><Highlight kind="normal">, <a href="/docs/api/classes/llvm/bpfunctionnode/#a3d90e99c1d3fa2cb1f6d0ba9884e208b">Id</a>,</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal">                <a href="/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">make&#95;range</a>(<a href="/docs/api/classes/llvm/bpfunctionnode/#aa42fe685455d68a6deb4ea09a49223c3">UtilityNodes</a>.begin(), <a href="/docs/api/classes/llvm/bpfunctionnode/#aa42fe685455d68a6deb4ea09a49223c3">UtilityNodes</a>.end()), <a href="/docs/api/classes/llvm/bpfunctionnode/#abfa3c93a4041cd593659754e88a4d553">Bucket</a>);</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Func&gt;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> BalancedPartitioning::BPThreadPool::async(Func &amp;&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>) &#123;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if LLVM&#95;ENABLE&#95;THREADS</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// This new thread could spawn more threads, so mark it as active</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">  ++NumActiveThreads;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">  TheThreadPool.<a href="/docs/api/classes/llvm/threadpoolinterface/#ad43d0052f680e6ac08426d8821df178d">async</a>(&#91;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">, <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>&#93;() &#123;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Run the task</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>();</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// This thread will no longer spawn new threads, so mark it as inactive</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (--NumActiveThreads == 0) &#123;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// There are no more active threads, so mark as finished and notify</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">        std::unique&#95;lock&lt;std::mutex&gt; lock(mtx);</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!IsFinishedSpawning);</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">        IsFinishedSpawning = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">      cv.notify&#95;one();</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  &#125;);</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm&#95;unreachable</a>(</Highlight><Highlight kind="stringliteral">&quot;threads are disabled&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> BalancedPartitioning::BPThreadPool::wait() &#123;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if LLVM&#95;ENABLE&#95;THREADS</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// TODO: We could remove the mutex and condition variable and use</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// std::atomic::wait() instead, but that isn&#39;t available until C++20</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">    std::unique&#95;lock&lt;std::mutex&gt; lock(mtx);</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    cv.wait(lock, &#91;&amp;&#93;() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> IsFinishedSpawning; &#125;);</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(IsFinishedSpawning &amp;&amp; NumActiveThreads == 0);</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Now we can call ThreadPool::wait() since all tasks have been submitted</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  TheThreadPool.wait();</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm&#95;unreachable</a>(</Highlight><Highlight kind="stringliteral">&quot;threads are disabled&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/classes/llvm/balancedpartitioning/#ae696c5201cce93195993231c207665e2"><Highlight kind="normal"><a href="/docs/api/classes/llvm/balancedpartitioning/#ae696c5201cce93195993231c207665e2">BalancedPartitioning::BalancedPartitioning</a>(</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/balancedpartitioningconfig">BalancedPartitioningConfig</a> &amp;Config)</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    : Config(Config) &#123;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Pre-computing log2 values</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  Log2Cache&#91;0&#93; = 0.0;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = 1; <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> &lt; LOG&#95;CACHE&#95;SIZE; <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>++)</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">    Log2Cache&#91;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>&#93; = std::log2(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/classes/llvm/balancedpartitioning/#a279d13f4cbd5c771960ef6aadd6b4cda"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/balancedpartitioning/#a279d13f4cbd5c771960ef6aadd6b4cda">BalancedPartitioning::run</a>(std::vector&lt;BPFunctionNode&gt; &amp;Nodes)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; <a href="/docs/api/namespaces/llvm/#a939bc2108d47080767f0c06ba56caec7">format</a>(</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Partitioning %d nodes using depth %d and %d iterations per split\\n&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">          Nodes.size(), Config.SplitDepth, Config.IterationsPerSplit));</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">  std::optional&lt;BPThreadPool&gt; TP;</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if LLVM&#95;ENABLE&#95;THREADS</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#ab2b4a8794a239fc36c52ec91b23c0296">DefaultThreadPool</a> TheThreadPool;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Config.TaskSplitDepth &gt; 1)</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">    TP.emplace(TheThreadPool);</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Record the input order</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = 0; <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> &lt; Nodes.size(); <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>++)</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">    Nodes&#91;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>&#93;.InputOrderIndex = <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> NodesRange = <a href="/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">llvm::make&#95;range</a>(Nodes.begin(), Nodes.end());</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> BisectTask = &#91;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">, NodesRange, &amp;TP&#93;() &#123;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">    bisect(NodesRange, </Highlight><Highlight kind="comment">/&#42;RecDepth=&#42;/</Highlight><Highlight kind="normal">0, </Highlight><Highlight kind="comment">/&#42;RootBucket=&#42;/</Highlight><Highlight kind="normal">1, </Highlight><Highlight kind="comment">/&#42;Offset=&#42;/</Highlight><Highlight kind="normal">0, TP);</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TP) &#123;</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">    TP-&gt;async(std::move(BisectTask));</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">    TP-&gt;wait();</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">    BisectTask();</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a076f93c387f454f0db13d4bc7d4e7f9c">llvm::stable&#95;sort</a>(NodesRange, &#91;&#93;(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;L, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;R) &#123;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> L.Bucket &lt; R.Bucket;</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  &#125;);</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Balanced partitioning completed\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> BalancedPartitioning::bisect(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> FunctionNodeRange Nodes,</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">                                  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> RecDepth, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> RootBucket,</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">                                  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>,</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">                                  std::optional&lt;BPThreadPool&gt; &amp;TP)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumNodes = std::distance(Nodes.begin(), Nodes.end());</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (NumNodes &lt;= 1 || RecDepth &gt;= Config.<a href="/docs/api/structs/llvm/balancedpartitioningconfig/#a4a70535c05f2cf437b788d7e02a59d76">SplitDepth</a>) &#123;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// We&#39;ve reach the lowest level of the recursion tree. Fall back to the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// original order and assign to buckets.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a74cdbd1e4f731e7d7cd83461b8b1de0b">llvm::sort</a>(Nodes, &#91;&#93;(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;L, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;R) &#123;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> L.InputOrderIndex &lt; R.InputOrderIndex;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    &#125;);</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> : Nodes)</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.Bucket = <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>++;</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; <a href="/docs/api/namespaces/llvm/#a939bc2108d47080767f0c06ba56caec7">format</a>(</Highlight><Highlight kind="stringliteral">&quot;Bisect with %d nodes and root bucket %d\\n&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">                              NumNodes, RootBucket));</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">  std::mt19937 RNG(RootBucket);</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> LeftBucket = 2 &#42; RootBucket;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> RightBucket = 2 &#42; RootBucket + 1;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Split into two and assign to the left and right buckets</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  split(Nodes, LeftBucket);</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">  runIterations(Nodes, LeftBucket, RightBucket, RNG);</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Split nodes wrt the resulting buckets</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> NodesMid =</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#abc14fa925bdbae07ef7bbd16ca82ce3d">llvm::partition</a>(Nodes, &#91;&amp;&#93;(</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.Bucket == LeftBucket; &#125;);</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> MidOffset = <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a> + std::distance(Nodes.begin(), NodesMid);</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> LeftNodes = <a href="/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">llvm::make&#95;range</a>(Nodes.begin(), NodesMid);</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> RightNodes = <a href="/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">llvm::make&#95;range</a>(NodesMid, Nodes.end());</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> LeftRecTask = &#91;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">, LeftNodes, RecDepth, LeftBucket, <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>, &amp;TP&#93;() &#123;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">    bisect(LeftNodes, RecDepth + 1, LeftBucket, <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>, TP);</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> RightRecTask = &#91;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">, RightNodes, RecDepth, RightBucket, MidOffset,</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">                       &amp;TP&#93;() &#123;</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">    bisect(RightNodes, RecDepth + 1, RightBucket, MidOffset, TP);</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TP &amp;&amp; RecDepth &lt; Config.TaskSplitDepth &amp;&amp; NumNodes &gt;= 4) &#123;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">    TP-&gt;async(std::move(LeftRecTask));</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">    TP-&gt;async(std::move(RightRecTask));</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">    LeftRecTask();</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">    RightRecTask();</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> BalancedPartitioning::runIterations(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> FunctionNodeRange Nodes,</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">                                         </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> LeftBucket,</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">                                         </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> RightBucket,</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">                                         std::mt19937 &amp;RNG)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumNodes = std::distance(Nodes.begin(), Nodes.end());</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">  DenseMap&lt;BPFunctionNode::UtilityNodeT, unsigned&gt; UtilityNodeIndex;</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> : Nodes)</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;UN : <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.UtilityNodes)</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">      ++UtilityNodeIndex&#91;UN&#93;;</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Remove utility nodes if they have just one edge or are connected to all</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// functions</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> : Nodes)</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#ac9a7de5a04920954ac964059cfc428ad">llvm::erase&#95;if</a>(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.UtilityNodes, &#91;&amp;&#93;(</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;UN) &#123;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">      return UtilityNodeIndex&#91;UN&#93; == 1 || UtilityNodeIndex&#91;UN&#93; == NumNodes;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">    &#125;);</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Renumber utility nodes so they can be used to index into Signatures</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  UtilityNodeIndex.<a href="/docs/api/classes/llvm/densemapbase/#adf4e7878fc0b3b8dcde545178564190d">clear</a>();</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> : Nodes)</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;UN : <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.UtilityNodes)</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">      UN = UtilityNodeIndex.<a href="/docs/api/classes/llvm/densemapbase/#adb33f3ede2f5bfc9b3ee658aaf648492">insert</a>(&#123;UN, UtilityNodeIndex.<a href="/docs/api/classes/llvm/densemapbase/#a3d95cc2d359b8d9ed5bd9504b44930b5">size</a>()&#125;).first-&gt;second;</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Initialize signatures</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">  SignaturesT <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>(</Highlight><Highlight kind="comment">/&#42;Size=&#42;/</Highlight><Highlight kind="normal">UtilityNodeIndex.<a href="/docs/api/classes/llvm/densemapbase/#a3d95cc2d359b8d9ed5bd9504b44930b5">size</a>());</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> : Nodes) &#123;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;UN : <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.UtilityNodes) &#123;</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(UN &lt; <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>.size());</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.Bucket == LeftBucket) &#123;</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>&#91;UN&#93;.LeftCount++;</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">      &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>&#91;UN&#93;.RightCount++;</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = 0; <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> &lt; Config.IterationsPerSplit; <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>++) &#123;</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumMovedNodes =</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">        runIteration(Nodes, LeftBucket, RightBucket, <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>, RNG);</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (NumMovedNodes == 0)</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> BalancedPartitioning::runIteration(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> FunctionNodeRange Nodes,</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">                                            </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> LeftBucket,</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">                                            </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> RightBucket,</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">                                            SignaturesT &amp;<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>,</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">                                            std::mt19937 &amp;RNG)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Init signature cost caches</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Signature : <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>) &#123;</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Signature.CachedGainIsValid)</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587">L</a> = Signature.LeftCount;</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a> = Signature.RightCount;</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((L &gt; 0 || R &gt; 0) &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;incorrect signature&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">float</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a19921a3ceb99548f498d3df118eda9ed">Cost</a> = logCost(L, R);</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">    Signature.CachedGainLR = 0.f;</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">    Signature.CachedGainRL = 0.f;</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (L &gt; 0)</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">      Signature.CachedGainLR = <a href="/docs/api/namespaces/llvm/#a19921a3ceb99548f498d3df118eda9ed">Cost</a> - logCost(L - 1, R + 1);</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (R &gt; 0)</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">      Signature.CachedGainRL = <a href="/docs/api/namespaces/llvm/#a19921a3ceb99548f498d3df118eda9ed">Cost</a> - logCost(L + 1, R - 1);</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">    Signature.CachedGainIsValid = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Compute move gains</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal"> std::pair&lt;float, BPFunctionNode &#42;&gt; GainPair;</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">  std::vector&lt;GainPair&gt; Gains;</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> : Nodes) &#123;</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> FromLeftToRight = (<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.Bucket == LeftBucket);</Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">float</Highlight><Highlight kind="normal"> Gain = <a href="/docs/api/classes/llvm/balancedpartitioning/#a238d245e46593cc4a4f912a2bc53984f">moveGain</a>(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>, FromLeftToRight, <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>);</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">    Gains.push&#95;back(std::make&#95;pair(Gain, &amp;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>));</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Collect left and right gains</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> LeftEnd = <a href="/docs/api/namespaces/llvm/#abc14fa925bdbae07ef7bbd16ca82ce3d">llvm::partition</a>(</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">      Gains, &#91;&amp;&#93;(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;GP) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> GP.second-&gt;Bucket == LeftBucket; &#125;);</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> LeftRange = <a href="/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">llvm::make&#95;range</a>(Gains.begin(), LeftEnd);</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> RightRange = <a href="/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">llvm::make&#95;range</a>(LeftEnd, Gains.end());</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Sort gains in descending order</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> LargerGain = &#91;&#93;(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587">L</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>) &#123;</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587">L</a>.first &gt; <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.first;</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a076f93c387f454f0db13d4bc7d4e7f9c">llvm::stable&#95;sort</a>(LeftRange, LargerGain);</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a076f93c387f454f0db13d4bc7d4e7f9c">llvm::stable&#95;sort</a>(RightRange, LargerGain);</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumMovedDataVertices = 0;</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#91;LeftPair, RightPair&#93; : <a href="/docs/api/namespaces/llvm/#a06041e3bf4b0a9e8984809413ddd9506">llvm::zip</a>(LeftRange, RightRange)) &#123;</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;&#91;LeftGain, LeftNode&#93; = LeftPair;</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;&#91;RightGain, RightNode&#93; = RightPair;</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Stop when the gain is no longer beneficial</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LeftGain + RightGain &lt;= 0.f)</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Try to exchange the nodes between buckets</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (moveFunctionNode(&#42;LeftNode, LeftBucket, RightBucket, <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>, RNG))</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">      ++NumMovedDataVertices;</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (moveFunctionNode(&#42;RightNode, LeftBucket, RightBucket, <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>, RNG))</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">      ++NumMovedDataVertices;</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> NumMovedDataVertices;</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> BalancedPartitioning::moveFunctionNode(<a href="/docs/api/classes/llvm/bpfunctionnode">BPFunctionNode</a> &amp;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>,</Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">                                            </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> LeftBucket,</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">                                            </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> RightBucket,</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">                                            SignaturesT &amp;<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>,</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">                                            std::mt19937 &amp;RNG)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Sometimes we skip the move. This helps to escape local optima</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (std::uniform&#95;real&#95;distribution&lt;float&gt;(0.f, 1.f)(RNG) &lt;=</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">      Config.SkipProbability)</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> FromLeftToRight = (<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.Bucket == LeftBucket);</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Update the current bucket</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.Bucket = (FromLeftToRight ? RightBucket : LeftBucket);</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Update signatures and invalidate gain cache</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (FromLeftToRight) &#123;</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;UN : <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.UtilityNodes) &#123;</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Signature = <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>&#91;UN&#93;;</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">      Signature.LeftCount--;</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">      Signature.RightCount++;</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">      Signature.CachedGainIsValid = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;UN : <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.UtilityNodes) &#123;</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Signature = <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>&#91;UN&#93;;</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">      Signature.LeftCount++;</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">      Signature.RightCount--;</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal">      Signature.CachedGainIsValid = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> BalancedPartitioning::split(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> FunctionNodeRange Nodes,</Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal">                                 </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> StartBucket)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumNodes = std::distance(Nodes.begin(), Nodes.end());</Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> NodesMid = Nodes.begin() + (NumNodes + 1) / 2;</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">  std::nth&#95;element(Nodes.begin(), NodesMid, Nodes.end(), &#91;&#93;(</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;L, </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;R) &#123;</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal">    return L.InputOrderIndex &lt; R.InputOrderIndex;</Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal">  &#125;);</Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> : <a href="/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">llvm::make&#95;range</a>(Nodes.begin(), NodesMid))</Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.Bucket = StartBucket;</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> : <a href="/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">llvm::make&#95;range</a>(NodesMid, Nodes.end()))</Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.Bucket = StartBucket + 1;</Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318" lineLink="/docs/api/classes/llvm/balancedpartitioning/#a238d245e46593cc4a4f912a2bc53984f"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">float</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/balancedpartitioning/#a238d245e46593cc4a4f912a2bc53984f">BalancedPartitioning::moveGain</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bpfunctionnode">BPFunctionNode</a> &amp;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>,</Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal">                                     </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> FromLeftToRight,</Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal">                                     </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> SignaturesT &amp;<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>) &#123;</Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">float</Highlight><Highlight kind="normal"> Gain = 0.f;</Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;UN : <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.UtilityNodes)</Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal">    Gain += (FromLeftToRight ? <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>&#91;UN&#93;.CachedGainLR</Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">                             : <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a8efadc1e398432637936757b43272daa">Signatures</a>&#91;UN&#93;.CachedGainRL);</Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Gain;</Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">float</Highlight><Highlight kind="normal"> BalancedPartitioning::logCost(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#a262774d3e5186511427e5b2414a85f7f">Y</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> -(<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a> &#42; log2Cached(<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a> + 1) + <a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#a262774d3e5186511427e5b2414a85f7f">Y</a> &#42; log2Cached(<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#a262774d3e5186511427e5b2414a85f7f">Y</a> + 1));</Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">float</Highlight><Highlight kind="normal"> BalancedPartitioning::log2Cached(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (i &lt; LOG&#95;CACHE&#95;SIZE) ? Log2Cache&#91;i&#93; : std::log2(i);</Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

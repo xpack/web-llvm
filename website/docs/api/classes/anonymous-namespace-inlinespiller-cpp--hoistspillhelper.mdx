@@ -1,0 +1,454 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/anonymous-namespace-inlinespiller-cpp-/hoistspillhelper
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `HoistSpillHelper` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Declaration
+
+<CodeBlock>class anonymous_namespace{InlineSpiller.cpp}::HoistSpillHelper</CodeBlock>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/liverangeedit/delegate">Delegate</a></>}>
+Callback methods for <a href="/docs/api/classes/llvm/liverangeedit">LiveRangeEdit</a> owners. <a href="/docs/api/classes/llvm/liverangeedit/delegate/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a6eddf452a261acf792516aa3e6cc4ab9">MergeableSpillsMap</a> = <a href="/docs/api/classes/llvm/mapvector">MapVector</a>&lt; std::pair&lt; int, <a href="/docs/api/classes/llvm/vninfo">VNInfo</a> &#42; &gt;, <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;, 16 &gt; &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a9060125be37c7bf45b516967b013f94c">HoistSpillHelper</a> (const Spiller::RequiredAnalyses &amp;Analyses, MachineFunction &amp;mf, VirtRegMap &amp;vrm)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a802b241b8cfc1f00f85b1d4da7eeed73">addToMergeableSpills</a> (MachineInstr &amp;Spill, int StackSlot, unsigned Original)</>}>
+When a spill is inserted, add the spill to MergeableSpills map. <a href="#a802b241b8cfc1f00f85b1d4da7eeed73">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a597bb5d7ef9a22f44dbe867d8eaa7fd6">hoistAllSpills</a> ()</>}>
+For spills with equal values, remove redundant spills and hoist those left to less hot spots. <a href="#a597bb5d7ef9a22f44dbe867d8eaa7fd6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ad395a85b9e11855611ae547a3d332b8f">LRE&#95;DidCloneVirtReg</a> (Register, Register) override</>}>
+For VirtReg clone, the <code>New</code> register should have the same physreg or stackslot as the <code>old</code> register. <a href="#ad395a85b9e11855611ae547a3d332b8f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a4bed72d6ec635da0c0a6c57442012e6e">rmFromMergeableSpills</a> (MachineInstr &amp;Spill, int StackSlot)</>}>
+When a spill is removed, remove the spill from MergeableSpills map. <a href="#a4bed72d6ec635da0c0a6c57442012e6e">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a340502b165cdaf9a02be2dbb873f1d04">getVisitOrders</a> (MachineBasicBlock &#42;Root, SmallPtrSet&lt; MachineInstr &#42;, 16 &gt; &amp;Spills, SmallVectorImpl&lt; MachineDomTreeNode &#42; &gt; &amp;Orders, SmallVectorImpl&lt; MachineInstr &#42; &gt; &amp;SpillsToRm, DenseMap&lt; MachineDomTreeNode &#42;, unsigned &gt; &amp;SpillsToKeep, DenseMap&lt; MachineDomTreeNode &#42;, MachineInstr &#42; &gt; &amp;SpillBBToSpill)</>}>
+Starting from <code>Root</code> find a top-down traversal order of the dominator tree to visit all basic blocks containing the elements of <code>Spills</code>. <a href="#a340502b165cdaf9a02be2dbb873f1d04">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af0a515c8f5f551759ff3b06476ec7ba9">isSpillCandBB</a> (LiveInterval &amp;OrigLI, VNInfo &amp;OrigVNI, MachineBasicBlock &amp;BB, Register &amp;LiveReg)</>}>
+Check BB to see if it is a possible target BB to place a hoisted spill, i.e., there should be a living sibling of OrigReg at the insert point. <a href="#af0a515c8f5f551759ff3b06476ec7ba9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a0216a7efb7d1d151d9e7547af0875a5a">rmRedundantSpills</a> (SmallPtrSet&lt; MachineInstr &#42;, 16 &gt; &amp;Spills, SmallVectorImpl&lt; MachineInstr &#42; &gt; &amp;SpillsToRm, DenseMap&lt; MachineDomTreeNode &#42;, MachineInstr &#42; &gt; &amp;SpillBBToSpill)</>}>
+Remove redundant spills in the same BB. <a href="#a0216a7efb7d1d151d9e7547af0875a5a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ac5f7ed1a22c4d2a891cd66441f5ff73a">runHoistSpills</a> (LiveInterval &amp;OrigLI, VNInfo &amp;OrigVNI, SmallPtrSet&lt; MachineInstr &#42;, 16 &gt; &amp;Spills, SmallVectorImpl&lt; MachineInstr &#42; &gt; &amp;SpillsToRm, DenseMap&lt; MachineBasicBlock &#42;, unsigned &gt; &amp;SpillsToIns)</>}>
+Try to hoist spills according to BB hotness. <a href="#ac5f7ed1a22c4d2a891cd66441f5ff73a">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/insertpointanalysis">InsertPointAnalysis</a></>}
+  name={<><a href="#ae89f60e383c1fc26b1afdde5ae09276d">IPA</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/liveintervals">LiveIntervals</a> &amp;</>}
+  name={<><a href="#a2ad508b3a4696f929c0ec9966819b756">LIS</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/livestacks">LiveStacks</a> &amp;</>}
+  name={<><a href="#a046b6338e408734a118f6d14322be766">LSS</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineblockfrequencyinfo">MachineBlockFrequencyInfo</a> &amp;</>}
+  name={<><a href="#ad944096f6192c11034423589e6369bfb">MBFI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a> &amp;</>}
+  name={<><a href="#aa26c89d59615075ff75e376a7f232761">MDT</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/mapvector">MergeableSpillsMap</a></>}
+  name={<><a href="#af7002e5075b2f2e71774e15ae3ab5dcc">MergeableSpills</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;</>}
+  name={<><a href="#a7590148f139a9e6c54b135b38167206c">MF</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &amp;</>}
+  name={<><a href="#a96d04c556e575fd6f867c8e457f3cfac">MRI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; int, std::unique&#95;ptr&lt; <a href="/docs/api/classes/llvm/liveinterval">LiveInterval</a> &gt; &gt;</>}
+  name={<><a href="#a4d6eb463f146cba734fbb2136e747f45">StackSlotToOrigLI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &amp;</>}
+  name={<><a href="#a950195c4956976283fa918b08f6e1d2a">TII</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &amp;</>}
+  name={<><a href="#a13b1eae2b83a10fd0667402188ad1b6d">TRI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/register">Register</a>, <a href="/docs/api/classes/llvm/smallsetvector">SmallSetVector</a>&lt; <a href="/docs/api/classes/llvm/register">Register</a>, 16 &gt; &gt;</>}
+  name={<><a href="#a52ba090f7be4ecd8bd113a72cd3ff675">Virt2SiblingsMap</a></>}>
+This is the map from original register to a set containing all its siblings. <a href="#a52ba090f7be4ecd8bd113a72cd3ff675">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/virtregmap">VirtRegMap</a> &amp;</>}
+  name={<><a href="#af36b0b08206669e87bb857841c008cba">VRM</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+Definition at line 78 of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### MergeableSpillsMap {#a6eddf452a261acf792516aa3e6cc4ab9}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::MergeableSpillsMap = 
+      MapVector&lt;std::pair&lt;int, VNInfo &#42;&gt;, SmallPtrSet&lt;MachineInstr &#42;, 16&gt;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00100">100</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### HoistSpillHelper() {#a9060125be37c7bf45b516967b013f94c}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::HoistSpillHelper (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/spiller/requiredanalyses">Spiller::RequiredAnalyses</a> &amp; Analyses, <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; mf, <a href="/docs/api/classes/llvm/virtregmap">VirtRegMap</a> &amp; vrm)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00130">130</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### addToMergeableSpills() {#a802b241b8cfc1f00f85b1d4da7eeed73}
+
+<MemberDefinition
+  prototype={<>void HoistSpillHelper::addToMergeableSpills (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; Spill, int StackSlot, unsigned Original)</>}>
+When a spill is inserted, add the spill to MergeableSpills map.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00137">137</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### hoistAllSpills() {#a597bb5d7ef9a22f44dbe867d8eaa7fd6}
+
+<MemberDefinition
+  prototype="void HoistSpillHelper::hoistAllSpills ()">
+For spills with equal values, remove redundant spills and hoist those left to less hot spots.
+
+Spills with equal values will be collected into the same set in MergeableSpills when spill is inserted. These equal spills are originated from the same defining instruction and are dominated by the instruction. Before hoisting all the equal spills, redundant spills inside in the same BB are first marked to be deleted. Then starting from the spills left, walk up on the dominator tree towards the Root node where the define instruction is located, mark the dominated spills to be deleted along the way and collect the BB nodes on the path from non-dominated spills to the define instruction into a WorkSet. The nodes in WorkSet are the candidate places where we are considering to hoist the spills. We iterate the WorkSet in bottom-up order, and for each node, we will decide whether to hoist spills inside its subtree to that node. In this way, we can get benefit locally even if hoisting all the equal spills to one cold place is impossible.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00140">140</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### LRE&#95;DidCloneVirtReg() {#ad395a85b9e11855611ae547a3d332b8f}
+
+<MemberDefinition
+  prototype={<>void HoistSpillHelper::LRE&#95;DidCloneVirtReg (<a href="/docs/api/classes/llvm/register">Register</a> New, <a href="/docs/api/classes/llvm/register">Register</a> Old)</>}
+  labels = {["virtual"]}>
+For VirtReg clone, the <code>New</code> register should have the same physreg or stackslot as the <code>old</code> register.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00141">141</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### rmFromMergeableSpills() {#a4bed72d6ec635da0c0a6c57442012e6e}
+
+<MemberDefinition
+  prototype={<>bool HoistSpillHelper::rmFromMergeableSpills (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; Spill, int StackSlot)</>}>
+When a spill is removed, remove the spill from MergeableSpills map.
+
+Return true if the spill is removed successfully.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00139">139</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### getVisitOrders() {#a340502b165cdaf9a02be2dbb873f1d04}
+
+<MemberDefinition
+  prototype={<>void HoistSpillHelper::getVisitOrders (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; Root, <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;, 16 &gt; &amp; Spills, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/namespaces/llvm/#a94b65b831ad8756f7d3a029a1e599f75">MachineDomTreeNode</a> &#42; &gt; &amp; Orders, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt; &amp; SpillsToRm, <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/namespaces/llvm/#a94b65b831ad8756f7d3a029a1e599f75">MachineDomTreeNode</a> &#42;, unsigned &gt; &amp; SpillsToKeep, <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/namespaces/llvm/#a94b65b831ad8756f7d3a029a1e599f75">MachineDomTreeNode</a> &#42;, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt; &amp; SpillBBToSpill)</>}>
+Starting from <code>Root</code> find a top-down traversal order of the dominator tree to visit all basic blocks containing the elements of <code>Spills</code>.
+
+Redundant spills will be found and put into <code>SpillsToRm</code> at the same time. <code>SpillBBToSpill</code> will be populated as part of the process and maps a basic block to the first store occurring in the basic block. 
+<SectionUser title="Postcondition">
+SpillsToRm.union(Spills@post) == Spills@pre
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00117">117</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### isSpillCandBB() {#af0a515c8f5f551759ff3b06476ec7ba9}
+
+<MemberDefinition
+  prototype={<>bool HoistSpillHelper::isSpillCandBB (<a href="/docs/api/classes/llvm/liveinterval">LiveInterval</a> &amp; OrigLI, <a href="/docs/api/classes/llvm/vninfo">VNInfo</a> &amp; OrigVNI, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; BB, <a href="/docs/api/classes/llvm/register">Register</a> &amp; LiveReg)</>}>
+Check BB to see if it is a possible target BB to place a hoisted spill, i.e., there should be a living sibling of OrigReg at the insert point.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00109">109</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### rmRedundantSpills() {#a0216a7efb7d1d151d9e7547af0875a5a}
+
+<MemberDefinition
+  prototype={<>void HoistSpillHelper::rmRedundantSpills (<a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;, 16 &gt; &amp; Spills, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt; &amp; SpillsToRm, <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/namespaces/llvm/#a94b65b831ad8756f7d3a029a1e599f75">MachineDomTreeNode</a> &#42;, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt; &amp; SpillBBToSpill)</>}>
+Remove redundant spills in the same BB.
+
+Save those redundant spills in SpillsToRm, and save the spill to keep and its BB in SpillBBToSpill map.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00112">112</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### runHoistSpills() {#ac5f7ed1a22c4d2a891cd66441f5ff73a}
+
+<MemberDefinition
+  prototype={<>void HoistSpillHelper::runHoistSpills (<a href="/docs/api/classes/llvm/liveinterval">LiveInterval</a> &amp; OrigLI, <a href="/docs/api/classes/llvm/vninfo">VNInfo</a> &amp; OrigVNI, <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;, 16 &gt; &amp; Spills, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt; &amp; SpillsToRm, <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;, unsigned &gt; &amp; SpillsToIns)</>}>
+Try to hoist spills according to BB hotness.
+
+The spills to removed will be saved in <code>SpillsToRm</code>. The spills to be inserted will be saved in <code>SpillsToIns</code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00124">124</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### IPA {#ae89f60e383c1fc26b1afdde5ae09276d}
+
+<MemberDefinition
+  prototype={<>InsertPointAnalysis anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::IPA</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00089">89</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### LIS {#a2ad508b3a4696f929c0ec9966819b756}
+
+<MemberDefinition
+  prototype={<>LiveIntervals&amp; anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::LIS</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00080">80</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### LSS {#a046b6338e408734a118f6d14322be766}
+
+<MemberDefinition
+  prototype={<>LiveStacks&amp; anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::LSS</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00081">81</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### MBFI {#ad944096f6192c11034423589e6369bfb}
+
+<MemberDefinition
+  prototype={<>const MachineBlockFrequencyInfo&amp; anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::MBFI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00087">87</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### MDT {#aa26c89d59615075ff75e376a7f232761}
+
+<MemberDefinition
+  prototype={<>MachineDominatorTree&amp; anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::MDT</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00082">82</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### MergeableSpills {#af7002e5075b2f2e71774e15ae3ab5dcc}
+
+<MemberDefinition
+  prototype={<>MergeableSpillsMap anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::MergeableSpills</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00102">102</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### MF {#a7590148f139a9e6c54b135b38167206c}
+
+<MemberDefinition
+  prototype={<>MachineFunction&amp; anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::MF</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00079">79</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### MRI {#a96d04c556e575fd6f867c8e457f3cfac}
+
+<MemberDefinition
+  prototype={<>MachineRegisterInfo&amp; anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::MRI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00084">84</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### StackSlotToOrigLI {#a4d6eb463f146cba734fbb2136e747f45}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;int, std::unique&#95;ptr&lt;LiveInterval&gt; &gt; anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::StackSlotToOrigLI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00095">95</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### TII {#a950195c4956976283fa918b08f6e1d2a}
+
+<MemberDefinition
+  prototype={<>const TargetInstrInfo&amp; anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::TII</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00085">85</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### TRI {#a13b1eae2b83a10fd0667402188ad1b6d}
+
+<MemberDefinition
+  prototype={<>const TargetRegisterInfo&amp; anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::TRI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00086">86</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### Virt2SiblingsMap {#a52ba090f7be4ecd8bd113a72cd3ff675}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;Register, SmallSetVector&lt;Register, 16&gt; &gt; anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::Virt2SiblingsMap</>}>
+This is the map from original register to a set containing all its siblings.
+
+To hoist a spill to another BB, we need to find out a live sibling there and use it as the source of the new spill.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00107">107</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+### VRM {#af36b0b08206669e87bb857841c008cba}
+
+<MemberDefinition
+  prototype={<>VirtRegMap&amp; anonymous&#95;namespace&#123;InlineSpiller.cpp&#125;::HoistSpillHelper::VRM</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp/#l00083">83</a> of file <a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/codegen/inlinespiller-cpp">InlineSpiller.cpp</a></li>
+</ul>
+
+</DoxygenPage>

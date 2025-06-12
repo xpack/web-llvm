@@ -1,0 +1,273 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/executionengine/rtdyldmemorymanager-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `RTDyldMemoryManager.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm-c/ExecutionEngine.h"
+  permalink="/docs/api/files/include/include/llvm-c/executionengine-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/JITSymbol.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/RuntimeDyld.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/runtimedyld-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/CBindingWrapping.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/cbindingwrapping-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cstddef"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="cstdint"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="string"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/object">llvm::object</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/mcjitmemorymanager">MCJITMemoryManager</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/rtdyldmemorymanager">RTDyldMemoryManager</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/rtdyldmemorymanager/ehframe">EHFrame</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- RTDyldMemoryManager.cpp - Memory manager for MC-JIT -----&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Interface of the runtime dynamic memory manager base class.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;EXECUTIONENGINE&#95;RTDYLDMEMORYMANAGER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;EXECUTIONENGINE&#95;RTDYLDMEMORYMANAGER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm-c/executionengine-h">llvm-c/ExecutionEngine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">llvm/ExecutionEngine/JITSymbol.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/runtimedyld-h">llvm/ExecutionEngine/RuntimeDyld.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/cbindingwrapping-h">llvm/Support/CBindingWrapping.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstddef&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstdint&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;string&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/executionengine">ExecutionEngine</a>;</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/object">object</a> &#123;</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/object/objectfile">ObjectFile</a>;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace object</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32" lineLink="/docs/api/classes/llvm/mcjitmemorymanager"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/mcjitmemorymanager">MCJITMemoryManager</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/runtimedyld/memorymanager">RuntimeDyld::MemoryManager</a> &#123;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Don&#39;t hide the notifyObjectLoaded method from RuntimeDyld::MemoryManager.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/runtimedyld/memorymanager/#a756f07a293e917107262ff4ee2bb64e0">RuntimeDyld::MemoryManager::notifyObjectLoaded</a>;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">  /// This method is called after an object has been loaded into memory but</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">  /// before relocations are applied to the loaded sections.  The object load</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">  /// may have been initiated by MCJIT to resolve an external symbol for another</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">  /// object that is being finalized.  In that case, the object about which</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">  /// the memory manager is being notified will be finalized immediately after</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">  /// the memory manager returns from this call.</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">  /// Memory managers which are preparing code for execution in an external</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="comment">  /// address space can use this call to remap the section addresses for the</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">  /// newly loaded object.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/classes/llvm/mcjitmemorymanager/#a20044c6b32c19b606470dba740867e18"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcjitmemorymanager/#a20044c6b32c19b606470dba740867e18">notifyObjectLoaded</a>(<a href="/docs/api/classes/llvm/executionengine">ExecutionEngine</a> &#42;EE,</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">                                  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/object/objectfile">object::ObjectFile</a> &amp;) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> anchor() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight><Highlight kind="comment">// RuntimeDyld clients often want to handle the memory management of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="comment">// what gets placed where. For JIT clients, this is the subset of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight><Highlight kind="comment">// JITMemoryManager required for dynamic loading of binaries.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="comment">// FIXME: As the RuntimeDyld fills out, additional routines will be needed</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight><Highlight kind="comment">//        for the varying types of objects to be allocated.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60" lineLink="/docs/api/classes/llvm/rtdyldmemorymanager"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a741baee07db1228a893824c9f6e5c683">RTDyldMemoryManager</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcjitmemorymanager">MCJITMemoryManager</a>,</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">                            </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/legacyjitsymbolresolver">LegacyJITSymbolResolver</a> &#123;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/classes/llvm/rtdyldmemorymanager/#a741baee07db1228a893824c9f6e5c683"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a741baee07db1228a893824c9f6e5c683">RTDyldMemoryManager</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64" lineLink="/docs/api/classes/llvm/rtdyldmemorymanager/#af5b16c0df8d0b491a2894d1def776f03"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#af5b16c0df8d0b491a2894d1def776f03">RTDyldMemoryManager</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a741baee07db1228a893824c9f6e5c683">RTDyldMemoryManager</a>&amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/classes/llvm/rtdyldmemorymanager/#a4e1b00fbf0137aa4204f1bb70093dace"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a4e1b00fbf0137aa4204f1bb70093dace">operator=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a741baee07db1228a893824c9f6e5c683">RTDyldMemoryManager</a>&amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66" lineLink="/docs/api/classes/llvm/rtdyldmemorymanager/#a9949eb6347bb952afdc191a477653f68"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a9949eb6347bb952afdc191a477653f68">~RTDyldMemoryManager</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="comment">  /// Register EH frames in the current process.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a8ac6930aa3a1623791ffe9853ba9bc3b">registerEHFramesInProcess</a>(uint8&#95;t &#42;Addr, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>);</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">  /// Deregister EH frames in the current process.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a1139b71b9b451e2e0417dcd25350827c">deregisterEHFramesInProcess</a>(uint8&#95;t &#42;Addr, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>);</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a34aa575afca6c18d934c5fd87da71043">registerEHFrames</a>(uint8&#95;t &#42;Addr, uint64&#95;t LoadAddr, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#ad0eeea7300381c326cc3bd5e93fbcbf0">deregisterEHFrames</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">  /// This method returns the address of the specified function or variable in</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="comment">  /// the current process.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> uint64&#95;t <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a5fee247bdc0c5af393b66bfd73a0a347">getSymbolAddressInProcess</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;Name);</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// Legacy symbol lookup - DEPRECATED! Please override findSymbol instead.</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">  /// This method returns the address of the specified function or variable.</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  /// It is used to resolve symbols during module linking.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85" lineLink="/docs/api/classes/llvm/rtdyldmemorymanager/#a5275cacbaa1ca16fc934fb65171e8fe2"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> uint64&#95;t <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a5275cacbaa1ca16fc934fb65171e8fe2">getSymbolAddress</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;Name) &#123;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a5fee247bdc0c5af393b66bfd73a0a347">getSymbolAddressInProcess</a>(Name);</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">  /// This method returns a RuntimeDyld::SymbolInfo for the specified function</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">  /// or variable. It is used to resolve symbols during module linking.</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="comment">  /// By default this falls back on the legacy lookup method:</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="comment">  /// &#39;getSymbolAddress&#39;. The address returned by getSymbolAddress is treated as</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">  /// a strong, exported symbol, consistent with historical treatment by</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">  /// RuntimeDyld.</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">  /// Clients writing custom RTDyldMemoryManagers are encouraged to override</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">  /// this method and return a SymbolInfo with the flags set correctly. This is</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  /// necessary for RuntimeDyld to correctly handle weak and non-exported symbols.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100" lineLink="/docs/api/classes/llvm/rtdyldmemorymanager/#a8306f5406b637ac0257f674839a58859"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/jitsymbol">JITSymbol</a> <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a8306f5406b637ac0257f674839a58859">findSymbol</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;Name)</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/jitsymbol">JITSymbol</a>(<a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a5275cacbaa1ca16fc934fb65171e8fe2">getSymbolAddress</a>(Name), <a href="/docs/api/classes/llvm/jitsymbolflags/#ad509c6d010720c4f71aeac1fba93f8cbaeb59403a31ee3f63734a411e9e42ddd8">JITSymbolFlags::Exported</a>);</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="comment">  /// Legacy symbol lookup -- DEPRECATED! Please override</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">  /// findSymbolInLogicalDylib instead.</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="comment">  /// Default to treating all modules as separate.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108" lineLink="/docs/api/classes/llvm/rtdyldmemorymanager/#abb87ff0ecf55f84ec9306f54bfb25241"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> uint64&#95;t <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#abb87ff0ecf55f84ec9306f54bfb25241">getSymbolAddressInLogicalDylib</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;Name) &#123;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">  /// Default to treating all modules as separate.</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">  /// By default this falls back on the legacy lookup method:</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">  /// &#39;getSymbolAddressInLogicalDylib&#39;. The address returned by</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">  /// getSymbolAddressInLogicalDylib is treated as a strong, exported symbol,</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">  /// consistent with historical treatment by RuntimeDyld.</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">  /// Clients writing custom RTDyldMemoryManagers are encouraged to override</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">  /// this method and return a SymbolInfo with the flags set correctly. This is</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">  /// necessary for RuntimeDyld to correctly handle weak and non-exported symbols.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/jitsymbol">JITSymbol</a></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123" lineLink="/docs/api/classes/llvm/rtdyldmemorymanager/#a2f54c196c4be75015b4edb4f4ac1a92d"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a2f54c196c4be75015b4edb4f4ac1a92d">findSymbolInLogicalDylib</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;Name)</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/jitsymbol">JITSymbol</a>(<a href="/docs/api/classes/llvm/rtdyldmemorymanager/#abb87ff0ecf55f84ec9306f54bfb25241">getSymbolAddressInLogicalDylib</a>(Name),</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">                          <a href="/docs/api/classes/llvm/jitsymbolflags/#ad509c6d010720c4f71aeac1fba93f8cbaeb59403a31ee3f63734a411e9e42ddd8">JITSymbolFlags::Exported</a>);</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="comment">  /// This method returns the address of the specified function. As such it is</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="comment">  /// only useful for resolving library symbols, not code generated symbols.</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="comment">  /// If \\p AbortOnFailure is false and no function with the given name is</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">  /// found, this function returns a null pointer. Otherwise, it prints a</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">  /// message to stderr and aborts.</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">  /// This function is deprecated for memory managers to be used with</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">  /// MCJIT or RuntimeDyld.  Use getSymbolAddress instead.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a4e5d745e695dc62ebaec15f537af9fed">getPointerToNamedFunction</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;Name,</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">                                          </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> AbortOnFailure = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141" lineLink="/docs/api/structs/llvm/rtdyldmemorymanager/ehframe"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/rtdyldmemorymanager/ehframe">EHFrame</a> &#123;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142" lineLink="/docs/api/structs/llvm/rtdyldmemorymanager/ehframe/#a1647fe314e5b5aa46c03bc0138912c10"><Highlight kind="normal">    uint8&#95;t &#42;<a href="/docs/api/structs/llvm/rtdyldmemorymanager/ehframe/#a1647fe314e5b5aa46c03bc0138912c10">Addr</a>;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143" lineLink="/docs/api/structs/llvm/rtdyldmemorymanager/ehframe/#a0af35a2bd759535e5439a120796d95d1"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/rtdyldmemorymanager/ehframe/#a0af35a2bd759535e5439a120796d95d1">Size</a>;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145" lineLink="/docs/api/classes/llvm/rtdyldmemorymanager/#afef7b6b491070bc84282122902b38fa0"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal"> std::vector&lt;EHFrame&gt; <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#afef7b6b491070bc84282122902b38fa0">EHFrameInfos</a>;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146" lineLink="/docs/api/classes/llvm/rtdyldmemorymanager/#a30fa2ff7609ea9b2e5490eb1ea79ff02"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#afef7b6b491070bc84282122902b38fa0">EHFrameInfos</a> <a href="/docs/api/classes/llvm/rtdyldmemorymanager/#a30fa2ff7609ea9b2e5490eb1ea79ff02">EHFrames</a>;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> anchor() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Create wrappers for C Binding types (see CBindingWrapping.h).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal"><a href="/docs/api/files/include/include/llvm/include/llvm/support/cbindingwrapping-h/#a65c769c08fa9fee7f298ad9c9eee5e05">DEFINE&#95;SIMPLE&#95;CONVERSION&#95;FUNCTIONS</a>(</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/rtdyldmemorymanager">RTDyldMemoryManager</a>, <a href="/docs/api/groups/llvmcexecutionengine/#ga47d080c636e2513b2a5f6df4e5089331">LLVMMCJITMemoryManagerRef</a>)</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;EXECUTIONENGINE&#95;RTDYLDMEMORYMANAGER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

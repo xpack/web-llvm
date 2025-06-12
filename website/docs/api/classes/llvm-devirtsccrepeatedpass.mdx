@@ -1,0 +1,209 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/devirtsccrepeatedpass
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `DevirtSCCRepeatedPass` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+A helper that repeats an SCC pass each time an indirect call is refined to a direct call by that pass. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::DevirtSCCRepeatedPass</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Analysis/CGSCCPassManager.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/passinfomixin">PassInfoMixin&lt;DerivedT&gt;</a></>}>
+A CRTP mix-in to automatically provide informational APIs needed for passes. <a href="/docs/api/structs/llvm/passinfomixin/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#aca94cb07dc74736a1472ed8ab1159726">PassConceptT</a> = <a href="/docs/api/structs/llvm/detail/passconcept">detail::PassConcept</a>&lt; <a href="/docs/api/classes/llvm/lazycallgraph/scc">LazyCallGraph::SCC</a>, <a href="/docs/api/namespaces/llvm/#a571b2bbf074b46c75300bd8f14c5ab72">CGSCCAnalysisManager</a>, <a href="/docs/api/classes/llvm/lazycallgraph">LazyCallGraph</a> &amp;, <a href="/docs/api/structs/llvm/cgsccupdateresult">CGSCCUpdateResult</a> &amp; &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#acd0c0040e438fabaa258412cec4ddbfb">DevirtSCCRepeatedPass</a> (std::unique&#95;ptr&lt; PassConceptT &gt; Pass, int MaxIterations)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a00a03c859c7c6d5e3940ed30642b3e9b">printPipeline</a> (raw&#95;ostream &amp;OS, function&#95;ref&lt; StringRef(StringRef)&gt; MapClassName2PassName)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a></>}
+  name={<><a href="#a11597e1847c3156c4866aa0a43a1b71b">run</a> (LazyCallGraph::SCC &amp;InitialC, CGSCCAnalysisManager &amp;AM, LazyCallGraph &amp;CG, CGSCCUpdateResult &amp;UR)</>}>
+Runs the wrapped pass up to <code>MaxIterations</code> on the SCC, iterating whenever an indirect call is refined. <a href="#a11597e1847c3156c4866aa0a43a1b71b">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="int"
+  name={<><a href="#a2469e98ad61d136dbf8628ad6000e751">MaxIterations</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::unique&#95;ptr&lt; <a href="#aca94cb07dc74736a1472ed8ab1159726">PassConceptT</a> &gt;</>}
+  name={<><a href="#a2dd8cec16ce2c8c4963040924d00761f">Pass</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+A helper that repeats an SCC pass each time an indirect call is refined to a direct call by that pass.
+
+While the CGSCC pass manager works to re-visit SCCs and RefSCCs as they change shape, we may also want to repeat an SCC pass if it simply refines an indirect call to a direct call, even if doing so does not alter the shape of the graph. Note that this only pertains to direct calls to functions where IPO across the SCC may be able to compute more precise results. For intrinsics, we assume scalar optimizations already can fully reason about them.
+
+This repetition has the potential to be very large however, as each one might refine a single call site. As a consequence, in practice we use an upper bound on the number of repetitions to limit things.
+
+Definition at line 542 of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h">CGSCCPassManager.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### PassConceptT {#aca94cb07dc74736a1472ed8ab1159726}
+
+<MemberDefinition
+  prototype={<>using llvm::DevirtSCCRepeatedPass::PassConceptT = 
+      detail::PassConcept&lt;LazyCallGraph::SCC, CGSCCAnalysisManager,
+                          LazyCallGraph &amp;, CGSCCUpdateResult &amp;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h/#l00544">544</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h">CGSCCPassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### DevirtSCCRepeatedPass() {#acd0c0040e438fabaa258412cec4ddbfb}
+
+<MemberDefinition
+  prototype={<>llvm::DevirtSCCRepeatedPass::DevirtSCCRepeatedPass (std::unique&#95;ptr&lt; <a href="#aca94cb07dc74736a1472ed8ab1159726">PassConceptT</a> &gt; Pass, int MaxIterations)</>}
+  labels = {["inline", "explicit"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h/#l00548">548</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h">CGSCCPassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### printPipeline() {#a00a03c859c7c6d5e3940ed30642b3e9b}
+
+<MemberDefinition
+  prototype={<>void llvm::DevirtSCCRepeatedPass::printPipeline (<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp; OS, <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; <a href="/docs/api/classes/llvm/stringref">StringRef</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a>)&gt; MapClassName2PassName)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h/#l00557">557</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h">CGSCCPassManager.h</a>.
+</MemberDefinition>
+
+### run() {#a11597e1847c3156c4866aa0a43a1b71b}
+
+<MemberDefinition
+  prototype={<>PreservedAnalyses llvm::DevirtSCCRepeatedPass::run (<a href="/docs/api/classes/llvm/lazycallgraph/scc">LazyCallGraph::SCC</a> &amp; InitialC, <a href="/docs/api/namespaces/llvm/#a571b2bbf074b46c75300bd8f14c5ab72">CGSCCAnalysisManager</a> &amp; AM, <a href="/docs/api/classes/llvm/lazycallgraph">LazyCallGraph</a> &amp; CG, <a href="/docs/api/structs/llvm/cgsccupdateresult">CGSCCUpdateResult</a> &amp; UR)</>}>
+Runs the wrapped pass up to <code>MaxIterations</code> on the SCC, iterating whenever an indirect call is refined.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h/#l00554">554</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h">CGSCCPassManager.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/cgsccpassmanager-cpp/#l00358">358</a> of file <a href="/docs/api/files/lib/lib/analysis/cgsccpassmanager-cpp">CGSCCPassManager.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### MaxIterations {#a2469e98ad61d136dbf8628ad6000e751}
+
+<MemberDefinition
+  prototype="int llvm::DevirtSCCRepeatedPass::MaxIterations">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h/#l00566">566</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h">CGSCCPassManager.h</a>.
+</MemberDefinition>
+
+### Pass {#a2dd8cec16ce2c8c4963040924d00761f}
+
+<MemberDefinition
+  prototype={<>std::unique&#95;ptr&lt;PassConceptT&gt; llvm::DevirtSCCRepeatedPass::Pass</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h/#l00565">565</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h">CGSCCPassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/analysis/cgsccpassmanager-h">CGSCCPassManager.h</a></li>
+<li><a href="/docs/api/files/lib/lib/analysis/cgsccpassmanager-cpp">CGSCCPassManager.cpp</a></li>
+</ul>
+
+</DoxygenPage>

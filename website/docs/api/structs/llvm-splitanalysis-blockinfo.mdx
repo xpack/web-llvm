@@ -1,0 +1,233 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/splitanalysis/blockinfo
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `BlockInfo` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Additional information about basic blocks where the current variable is live. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct llvm::SplitAnalysis::BlockInfo</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="CodeGen/SplitKit.h"
+  permalink="/docs/api/files/lib/lib/codegen/splitkit-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aca5dd3ea2419809d03649646c75d5ed4">dump</a> () const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a5a04f02eff679552af69729e22e8f1a2">isOneInstr</a> () const</>}>
+isOneInstr - Returns true when this <a href="/docs/api/structs/llvm/splitanalysis/blockinfo">BlockInfo</a> describes a single instruction. <a href="#a5a04f02eff679552af69729e22e8f1a2">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ab4bb4af61621d0136db231e398d23ff1">print</a> (raw&#95;ostream &amp;OS) const</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/slotindex">SlotIndex</a></>}
+  name={<><a href="#a2ef80e68e8ebc6f8e778d811cc48f67f">FirstDef</a></>}>
+First non-phi valno-&gt;def, or SlotIndex(). <a href="#a2ef80e68e8ebc6f8e778d811cc48f67f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/slotindex">SlotIndex</a></>}
+  name={<><a href="#afc1d576ff2321f8f3a604808be1b6f5b">FirstInstr</a></>}>
+First instr accessing current reg. <a href="#afc1d576ff2321f8f3a604808be1b6f5b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/slotindex">SlotIndex</a></>}
+  name={<><a href="#abaae5e7f00635019260dd4d2506e2b58">LastInstr</a></>}>
+Last instr accessing current reg. <a href="#abaae5e7f00635019260dd4d2506e2b58">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a4c7b9375634dd9b55f130ae4c428475c">LiveIn</a></>}>
+Current reg is live in. <a href="#a4c7b9375634dd9b55f130ae4c428475c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a42e9b38c4f9bc0c0aca6f0c8c5cd1f80">LiveOut</a></>}>
+Current reg is live out. <a href="#a42e9b38c4f9bc0c0aca6f0c8c5cd1f80">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;</>}
+  name={<><a href="#a6d25ab70a5fda1310dad85ddb8ecaa22">MBB</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Additional information about basic blocks where the current variable is live.
+
+Such a block will look like one of these templates:
+
+
+<ul>
+<li>| o—x | Internal to block. Variable is only live in this block.</li>
+<li>|—x | Live-in, kill.</li>
+<li>| o—| Def, live-out.</li>
+<li>|—x o—| Live-in, kill, def, live-out. Counted by NumGapBlocks.</li>
+<li>|—o—o—| Live-through with uses or defs.</li>
+<li>|--------—| Live-through without uses. Counted by NumThroughBlocks.</li>
+</ul>
+
+
+Two <a href="/docs/api/structs/llvm/splitanalysis/blockinfo">BlockInfo</a> entries are created for template 4. One for the live-in segment, and one for the live-out segment. These entries look as if the block were split in the middle where the live range isn&#39;t live.
+
+Live-through blocks without any uses don&#39;t get <a href="/docs/api/structs/llvm/splitanalysis/blockinfo">BlockInfo</a> entries. They are simply listed in ThroughBlocks instead.
+
+Definition at line 121 of file <a href="/docs/api/files/lib/lib/codegen/splitkit-h">SplitKit.h</a>.
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### dump() {#aca5dd3ea2419809d03649646c75d5ed4}
+
+<MemberDefinition
+  prototype="void SplitAnalysis::BlockInfo::dump () const">
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/splitkit-h/#l00136">136</a> of file <a href="/docs/api/files/lib/lib/codegen/splitkit-h">SplitKit.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/splitkit-cpp/#l01899">1899</a> of file <a href="/docs/api/files/lib/lib/codegen/splitkit-cpp">SplitKit.cpp</a>.
+</MemberDefinition>
+
+### isOneInstr() {#a5a04f02eff679552af69729e22e8f1a2}
+
+<MemberDefinition
+  prototype="bool llvm::SplitAnalysis::BlockInfo::isOneInstr () const"
+  labels = {["inline"]}>
+isOneInstr - Returns true when this <a href="/docs/api/structs/llvm/splitanalysis/blockinfo">BlockInfo</a> describes a single instruction.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/splitkit-h/#l00131">131</a> of file <a href="/docs/api/files/lib/lib/codegen/splitkit-h">SplitKit.h</a>.
+</MemberDefinition>
+
+### print() {#ab4bb4af61621d0136db231e398d23ff1}
+
+<MemberDefinition
+  prototype={<>void SplitAnalysis::BlockInfo::print (<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp; OS) const</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/splitkit-h/#l00135">135</a> of file <a href="/docs/api/files/lib/lib/codegen/splitkit-h">SplitKit.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/splitkit-cpp/#l01891">1891</a> of file <a href="/docs/api/files/lib/lib/codegen/splitkit-cpp">SplitKit.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### FirstDef {#a2ef80e68e8ebc6f8e778d811cc48f67f}
+
+<MemberDefinition
+  prototype="SlotIndex llvm::SplitAnalysis::BlockInfo::FirstDef">
+First non-phi valno-&gt;def, or SlotIndex().
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/splitkit-h/#l00125">125</a> of file <a href="/docs/api/files/lib/lib/codegen/splitkit-h">SplitKit.h</a>.
+</MemberDefinition>
+
+### FirstInstr {#afc1d576ff2321f8f3a604808be1b6f5b}
+
+<MemberDefinition
+  prototype="SlotIndex llvm::SplitAnalysis::BlockInfo::FirstInstr">
+First instr accessing current reg.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/splitkit-h/#l00123">123</a> of file <a href="/docs/api/files/lib/lib/codegen/splitkit-h">SplitKit.h</a>.
+</MemberDefinition>
+
+### LastInstr {#abaae5e7f00635019260dd4d2506e2b58}
+
+<MemberDefinition
+  prototype="SlotIndex llvm::SplitAnalysis::BlockInfo::LastInstr">
+Last instr accessing current reg.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/splitkit-h/#l00124">124</a> of file <a href="/docs/api/files/lib/lib/codegen/splitkit-h">SplitKit.h</a>.
+</MemberDefinition>
+
+### LiveIn {#a4c7b9375634dd9b55f130ae4c428475c}
+
+<MemberDefinition
+  prototype="bool llvm::SplitAnalysis::BlockInfo::LiveIn">
+Current reg is live in.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/splitkit-h/#l00126">126</a> of file <a href="/docs/api/files/lib/lib/codegen/splitkit-h">SplitKit.h</a>.
+</MemberDefinition>
+
+### LiveOut {#a42e9b38c4f9bc0c0aca6f0c8c5cd1f80}
+
+<MemberDefinition
+  prototype="bool llvm::SplitAnalysis::BlockInfo::LiveOut">
+Current reg is live out.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/splitkit-h/#l00127">127</a> of file <a href="/docs/api/files/lib/lib/codegen/splitkit-h">SplitKit.h</a>.
+</MemberDefinition>
+
+### MBB {#a6d25ab70a5fda1310dad85ddb8ecaa22}
+
+<MemberDefinition
+  prototype={<>MachineBasicBlock&#42; llvm::SplitAnalysis::BlockInfo::MBB</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/splitkit-h/#l00122">122</a> of file <a href="/docs/api/files/lib/lib/codegen/splitkit-h">SplitKit.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/codegen/splitkit-cpp">SplitKit.cpp</a></li>
+<li><a href="/docs/api/files/lib/lib/codegen/splitkit-h">SplitKit.h</a></li>
+</ul>
+
+</DoxygenPage>

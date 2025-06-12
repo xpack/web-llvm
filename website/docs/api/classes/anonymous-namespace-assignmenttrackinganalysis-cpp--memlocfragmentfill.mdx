@@ -1,0 +1,567 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/anonymous-namespace-assignmenttrackinganalysis-cpp-/memlocfragmentfill
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `MemLocFragmentFill` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+In dwarf emission, the following sequence. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class anonymous_namespace{AssignmentTrackingAnalysis.cpp}::MemLocFragmentFill</CodeBlock>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a0fb041ad172d337903cda119ef632ad0">BaseAddress</a> = unsigned</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#aae35db1e01fcd4fe94836729e70d6590">FragsInMemMap</a> = <a href="/docs/api/classes/llvm/intervalmap">IntervalMap</a>&lt; OffsetInBitsTy, BaseAddress, <a href="/docs/api/structs/llvm/intervalmapimpl/nodesizer">IntervalMapImpl::NodeSizer</a>&lt; OffsetInBitsTy, BaseAddress &gt;::LeafSize, <a href="/docs/api/structs/llvm/intervalmaphalfopeninfo">FragTraits</a> &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a62d8e78334189436c4371703fa3e6e6b">FragTraits</a> = <a href="/docs/api/structs/llvm/intervalmaphalfopeninfo">IntervalMapHalfOpenInfo</a>&lt; OffsetInBitsTy &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#ab3517dbcbb12de6e1965efaabc9356c0">InsertMap</a> = <a href="/docs/api/classes/llvm/mapvector">MapVector</a>&lt; <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a6c7f6b65820380603c12c83d4d3b620c">VarLocInsertPt</a>, <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; FragMemLoc &gt; &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#adb321bfa0fb8bfd2bd02284f5e45ceef">OffsetInBitsTy</a> = unsigned</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#ad0b8108f17e10054d516b26228b05f41">VarFragMap</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; unsigned, <a href="/docs/api/classes/llvm/intervalmap">FragsInMemMap</a> &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#ac8e70b24327081637cbe0014696000a7">MemLocFragmentFill</a> (Function &amp;Fn, const DenseSet&lt; DebugAggregate &gt; &#42;VarsWithStackSlot, bool CoalesceAdjacentFragments)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a8c0e38f8e7530ce5863d73acc50d25ff">run</a> (FunctionVarLocsBuilder &#42;FnVarLocs)</>}>
+Add variable locations to <code>FnVarLocs</code> so that any bits of a variable with a memory location have that location explicitly reinstated at each subsequent variable location definition that that doesn&#39;t overwrite those bits. <a href="#a8c0e38f8e7530ce5863d73acc50d25ff">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a6c0f803a283b4d49bda40f4cea189b80">addDef</a> (const VarLocInfo &amp;VarLoc, VarLocInsertPt Before, BasicBlock &amp;BB, VarFragMap &amp;LiveSet)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a7c3e4c280fe957b6e135f002ff04550a">coalesceFragments</a> (BasicBlock &amp;BB, VarLocInsertPt Before, unsigned Var, unsigned StartBit, unsigned EndBit, unsigned Base, DebugLoc DL, const FragsInMemMap &amp;FragMap)</>}>
+Inserts a new dbg def if the interval found when looking up <code>StartBit</code> in <code>FragMap</code> starts before <code>StartBit</code> or ends after <code>EndBit</code> (which indicates - assuming StartBit-&gt;EndBit has just been inserted - that the slice has been coalesced in the map). <a href="#a7c3e4c280fe957b6e135f002ff04550a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a5d5bba8666381516c52abbb493ad8d7e">insertMemLoc</a> (BasicBlock &amp;BB, VarLocInsertPt Before, unsigned Var, unsigned StartBit, unsigned EndBit, unsigned Base, DebugLoc DL)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a26dddbbbf44d17678c2dccb42b4e0090">meet</a> (const BasicBlock &amp;BB, const SmallPtrSet&lt; BasicBlock &#42;, 16 &gt; &amp;Visited)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/intervalmap">FragsInMemMap</a></>}
+  name={<><a href="#a7ffb2678bdc36661d61dc9cf8d63f2a7">meetFragments</a> (const FragsInMemMap &amp;A, const FragsInMemMap &amp;B)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aceb27408dcc68fa9521d4c020772825e">meetVars</a> (VarFragMap &amp;A, const VarFragMap &amp;B)</>}>
+Meet <code>A</code> and <code>B</code>, storing the result in <code>A</code>. <a href="#aceb27408dcc68fa9521d4c020772825e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a99e42ab3c9b5ee66d825398d37040c44">process</a> (BasicBlock &amp;BB, VarFragMap &amp;LiveSet)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ac954716469102710707fd37d4bc8b2da">skipVariable</a> (const DILocalVariable &#42;V)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="std::string"
+  name={<><a href="#a633c5f2fd9cae8270e45a524e1c3a961">toString</a> (unsigned BaseID)</>}>
+Return a string for the value that <code>BaseID</code> represents. <a href="#a633c5f2fd9cae8270e45a524e1c3a961">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="std::string"
+  name={<><a href="#a3e84a9c9cd09a723d28bd4dccc7d7e14">toString</a> (FragsInMemMap::const&#95;iterator It, bool Newline=true)</>}>
+Format string describing an FragsInMemMap (<a href="/docs/api/classes/llvm/intervalmap">IntervalMap</a>) interval. <a href="#a3e84a9c9cd09a723d28bd4dccc7d7e14">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/uniquevector">UniqueVector</a>&lt; <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a05c5b2328f38cb1affebb8ad4ab6fe40">DebugAggregate</a> &gt;</>}
+  name={<><a href="#a1d93048b7c8db5f74663b7f875af6573">Aggregates</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/uniquevector">UniqueVector</a>&lt; <a href="/docs/api/classes/llvm/rawlocationwrapper">RawLocationWrapper</a> &gt;</>}
+  name={<><a href="#aa58050f036fe5dcaf7e7fb5d2eefdb51">Bases</a></>}>
+IDs for memory location base addresses in maps. <a href="#aa58050f036fe5dcaf7e7fb5d2eefdb51">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, <a href="/docs/api/classes/llvm/mapvector">InsertMap</a> &gt;</>}
+  name={<><a href="#afe9a081db8c63d994401cb170c238b78">BBInsertBeforeMap</a></>}>
+BBInsertBeforeMap holds a description for the set of location defs to be inserted after the analysis is complete. <a href="#afe9a081db8c63d994401cb170c238b78">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a67d61811b7d622c133dd5b4f75e27905">CoalesceAdjacentFragments</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/function">Function</a> &amp;</>}
+  name={<><a href="#adaebaf39ce77072b4246fed62509ac8f">Fn</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/functionvarlocsbuilder">FunctionVarLocsBuilder</a> &#42;</>}
+  name={<><a href="#a95809644010144bd76684279dd0f4f65">FnVarLocs</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/intervalmap/#a6b645fcc5ae44b9a8e2fef275890ae4b">FragsInMemMap::Allocator</a></>}
+  name={<><a href="#af5b6636b851f14594ee6b8833b2200e6">IntervalMapAlloc</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, <a href="/docs/api/classes/llvm/densemap">VarFragMap</a> &gt;</>}
+  name={<><a href="#ad86d42396c26e9b98dda51d52072aa0b">LiveIn</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, <a href="/docs/api/classes/llvm/densemap">VarFragMap</a> &gt;</>}
+  name={<><a href="#ac3fb1bb070b5d36e6b8985bba4bb0e99">LiveOut</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a05c5b2328f38cb1affebb8ad4ab6fe40">DebugAggregate</a> &gt; &#42;</>}
+  name={<><a href="#ab5be9c12855bebcb45a277f0f10f443c">VarsWithStackSlot</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af9583203ffeba36acb980b5350c47699">intervalMapsAreEqual</a> (const FragsInMemMap &amp;A, const FragsInMemMap &amp;B)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ab6ffbd440eb775123c4c8982ec21d51a">varFragMapsAreEqual</a> (const VarFragMap &amp;A, const VarFragMap &amp;B)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+In dwarf emission, the following sequence.
+
+<ul>
+<li>dbg.value ... Fragment(0, 64)</li>
+<li>dbg.value ... Fragment(0, 32) effectively sets Fragment(32, 32) to undef (each def sets all bits not in the intersection of the fragments to having &quot;no location&quot;). This makes sense for implicit location values because splitting the computed values could be troublesome, and is probably quite uncommon. When we convert dbg.assigns to dbg.value+deref this kind of thing is common, and describing a location (memory) rather than a value means we don&#39;t need to worry about splitting any values, so we try to recover the rest of the fragment location here. This class performs a(nother) dataflow analysis over the function, adding variable locations so that any bits of a variable with a memory location have that location explicitly reinstated at each subsequent variable location definition that that doesn&#39;t overwrite those bits. i.e. after a variable location def, insert new defs for the memory location with fragments for the difference of &quot;all bits currently in memory&quot; and &quot;the
+fragment of the second def&quot;.</li>
+</ul>
+
+Definition at line 374 of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### BaseAddress {#a0fb041ad172d337903cda119ef632ad0}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::BaseAddress =  unsigned</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00381">381</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### FragsInMemMap {#aae35db1e01fcd4fe94836729e70d6590}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::FragsInMemMap =  IntervalMap&lt;
+      OffsetInBitsTy, BaseAddress,
+      IntervalMapImpl::NodeSizer&lt;OffsetInBitsTy, BaseAddress&gt;::LeafSize,
+      FragTraits&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00384">384</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### FragTraits {#a62d8e78334189436c4371703fa3e6e6b}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::FragTraits =  IntervalMapHalfOpenInfo&lt;OffsetInBitsTy&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00383">383</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### InsertMap {#ab3517dbcbb12de6e1965efaabc9356c0}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::InsertMap =  MapVector&lt;VarLocInsertPt, SmallVector&lt;FragMemLoc&gt;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00405">405</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### OffsetInBitsTy {#adb321bfa0fb8bfd2bd02284f5e45ceef}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::OffsetInBitsTy =  unsigned</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00382">382</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### VarFragMap {#ad0b8108f17e10054d516b26228b05f41}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::VarFragMap =  DenseMap&lt;unsigned, FragsInMemMap&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00389">389</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### MemLocFragmentFill() {#ac8e70b24327081637cbe0014696000a7}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::MemLocFragmentFill (<a href="/docs/api/classes/llvm/function">Function</a> &amp; Fn, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a05c5b2328f38cb1affebb8ad4ab6fe40">DebugAggregate</a> &gt; &#42; VarsWithStackSlot, bool CoalesceAdjacentFragments)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00850">850</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### run() {#a8c0e38f8e7530ce5863d73acc50d25ff}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::run (<a href="/docs/api/classes/functionvarlocsbuilder">FunctionVarLocsBuilder</a> &#42; FnVarLocs)</>}
+  labels = {["inline"]}>
+Add variable locations to <code>FnVarLocs</code> so that any bits of a variable with a memory location have that location explicitly reinstated at each subsequent variable location definition that that doesn&#39;t overwrite those bits.
+
+i.e. after a variable location def, insert new defs for the memory location with fragments for the difference of &quot;all bits currently in
+memory&quot; and &quot;the fragment of the second def&quot;. e.g. <CodeBlock>Before:
+
+var x bits 0 to 63:  value in memory
+more instructions
+var x bits 0 to 31:  value is %0
+
+After:
+
+var x bits 0 to 63:  value in memory
+more instructions
+var x bits 0 to 31:  value is %0
+var x bits 32 to 61: value in memory ; &lt;-- new loc def
+</CodeBlock>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00876">876</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### addDef() {#a6c0f803a283b4d49bda40f4cea189b80}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::addDef (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/varlocinfo">VarLocInfo</a> &amp; VarLoc, <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a6c7f6b65820380603c12c83d4d3b620c">VarLocInsertPt</a> Before, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; BB, <a href="/docs/api/classes/llvm/densemap">VarFragMap</a> &amp; LiveSet)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00667">667</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### coalesceFragments() {#a7c3e4c280fe957b6e135f002ff04550a}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::coalesceFragments (<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; BB, <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a6c7f6b65820380603c12c83d4d3b620c">VarLocInsertPt</a> Before, unsigned Var, unsigned StartBit, unsigned EndBit, unsigned Base, <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> DL, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/intervalmap">FragsInMemMap</a> &amp; FragMap)</>}
+  labels = {["inline"]}>
+Inserts a new dbg def if the interval found when looking up <code>StartBit</code> in <code>FragMap</code> starts before <code>StartBit</code> or ends after <code>EndBit</code> (which indicates - assuming StartBit-&gt;EndBit has just been inserted - that the slice has been coalesced in the map).
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00646">646</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### insertMemLoc() {#a5d5bba8666381516c52abbb493ad8d7e}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::insertMemLoc (<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; BB, <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#a6c7f6b65820380603c12c83d4d3b620c">VarLocInsertPt</a> Before, unsigned Var, unsigned StartBit, unsigned EndBit, unsigned Base, <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> DL)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00624">624</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### meet() {#a26dddbbbf44d17678c2dccb42b4e0090}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::meet (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; BB, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, 16 &gt; &amp; Visited)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00567">567</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### meetFragments() {#a7ffb2678bdc36661d61dc9cf8d63f2a7}
+
+<MemberDefinition
+  prototype={<>FragsInMemMap anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::meetFragments (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/intervalmap">FragsInMemMap</a> &amp; A, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/intervalmap">FragsInMemMap</a> &amp; B)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00466">466</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### meetVars() {#aceb27408dcc68fa9521d4c020772825e}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::meetVars (<a href="/docs/api/classes/llvm/densemap">VarFragMap</a> &amp; A, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/densemap">VarFragMap</a> &amp; B)</>}
+  labels = {["inline"]}>
+Meet <code>A</code> and <code>B</code>, storing the result in <code>A</code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00549">549</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### process() {#a99e42ab3c9b5ee66d825398d37040c44}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::process (<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; BB, <a href="/docs/api/classes/llvm/densemap">VarFragMap</a> &amp; LiveSet)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00831">831</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### skipVariable() {#ac954716469102710707fd37d4bc8b2da}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::skipVariable (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/dilocalvariable">DILocalVariable</a> &#42; V)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00829">829</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### toString() {#a633c5f2fd9cae8270e45a524e1c3a961}
+
+<MemberDefinition
+  prototype={<>std::string anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::toString (unsigned BaseID)</>}
+  labels = {["inline"]}>
+Return a string for the value that <code>BaseID</code> represents.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00444">444</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### toString() {#a3e84a9c9cd09a723d28bd4dccc7d7e14}
+
+<MemberDefinition
+  prototype={<>std::string anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::toString (<a href="/docs/api/classes/llvm/intervalmap/const-iterator">FragsInMemMap::const&#95;iterator</a> It, bool Newline=<a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>)</>}
+  labels = {["inline"]}>
+Format string describing an FragsInMemMap (<a href="/docs/api/classes/llvm/intervalmap">IntervalMap</a>) interval.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00452">452</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### Aggregates {#a1d93048b7c8db5f74663b7f875af6573}
+
+<MemberDefinition
+  prototype={<>UniqueVector&lt;DebugAggregate&gt; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::Aggregates</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00394">394</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### Bases {#aa58050f036fe5dcaf7e7fb5d2eefdb51}
+
+<MemberDefinition
+  prototype={<>UniqueVector&lt;RawLocationWrapper&gt; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::Bases</>}>
+IDs for memory location base addresses in maps.
+
+<a href="/docs/api/classes/llvm/use">Use</a> 0 to indicate that there&#39;s no memory location.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00393">393</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### BBInsertBeforeMap {#afe9a081db8c63d994401cb170c238b78}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;const BasicBlock &#42;, InsertMap&gt; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::BBInsertBeforeMap</>}>
+BBInsertBeforeMap holds a description for the set of location defs to be inserted after the analysis is complete.
+
+It is updated during the dataflow and the entry for a block is CLEARED each time it is (re-)visited. After the dataflow is complete, each block entry will contain the set of defs calculated during the final (fixed-point) iteration.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00412">412</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### CoalesceAdjacentFragments {#a67d61811b7d622c133dd5b4f75e27905}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::CoalesceAdjacentFragments</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00378">378</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### Fn {#adaebaf39ce77072b4246fed62509ac8f}
+
+<MemberDefinition
+  prototype={<>Function&amp; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::Fn</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00375">375</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### FnVarLocs {#a95809644010144bd76684279dd0f4f65}
+
+<MemberDefinition
+  prototype={<>FunctionVarLocsBuilder&#42; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::FnVarLocs</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00376">376</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### IntervalMapAlloc {#af5b6636b851f14594ee6b8833b2200e6}
+
+<MemberDefinition
+  prototype={<>FragsInMemMap::Allocator anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::IntervalMapAlloc</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00388">388</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### LiveIn {#ad86d42396c26e9b98dda51d52072aa0b}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;const BasicBlock &#42;, VarFragMap&gt; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::LiveIn</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00395">395</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### LiveOut {#ac3fb1bb070b5d36e6b8985bba4bb0e99}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;const BasicBlock &#42;, VarFragMap&gt; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::LiveOut</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00396">396</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### VarsWithStackSlot {#ab5be9c12855bebcb45a277f0f10f443c}
+
+<MemberDefinition
+  prototype={<>const DenseSet&lt;DebugAggregate&gt;&#42; anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::VarsWithStackSlot</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00377">377</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Static Functions
+
+### intervalMapsAreEqual() {#af9583203ffeba36acb980b5350c47699}
+
+<MemberDefinition
+  prototype={<>static bool anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::intervalMapsAreEqual (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/intervalmap">FragsInMemMap</a> &amp; A, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/intervalmap">FragsInMemMap</a> &amp; B)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00414">414</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+### varFragMapsAreEqual() {#ab6ffbd440eb775123c4c8982ec21d51a}
+
+<MemberDefinition
+  prototype={<>static bool anonymous&#95;namespace&#123;AssignmentTrackingAnalysis.cpp&#125;::MemLocFragmentFill::varFragMapsAreEqual (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/densemap">VarFragMap</a> &amp; A, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/densemap">VarFragMap</a> &amp; B)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp/#l00430">430</a> of file <a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/codegen/assignmenttrackinganalysis-cpp">AssignmentTrackingAnalysis.cpp</a></li>
+</ul>
+
+</DoxygenPage>

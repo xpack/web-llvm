@@ -1,0 +1,307 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/anonymous-namespace-dagcombiner-cpp-/loadedslice
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `LoadedSlice` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Helper structure used to slice a load in smaller loads. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct anonymous_namespace{DAGCombiner.cpp}::LoadedSlice</CodeBlock>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#adf78f2cdf71d35423c85759c3cfc1dab">LoadedSlice</a> (SDNode &#42;Inst=nullptr, LoadSDNode &#42;Origin=nullptr, unsigned Shift=0, SelectionDAG &#42;DAG=nullptr)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a3359f38a412c6b9685e8fd39bd81b6a7">canMergeExpensiveCrossRegisterBankCopy</a> () const</>}>
+Check if this slice can be merged with an expensive cross register bank copy. <a href="#a3359f38a412c6b9685e8fd39bd81b6a7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/structs/llvm/align">Align</a></>}
+  name={<><a href="#a44391e7c48a75eb286fba96cde238ca9">getAlign</a> () const</>}>
+Get the alignment of the load used for this slice. <a href="#a44391e7c48a75eb286fba96cde238ca9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#aee19053815830c5e2ae9a61c2944319b">getLoadedSize</a> () const</>}>
+Get the size of the slice to be loaded in bytes. <a href="#aee19053815830c5e2ae9a61c2944319b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/structs/llvm/evt">EVT</a></>}
+  name={<><a href="#a194d0b24bfe82015617637c7feafd34f">getLoadedType</a> () const</>}>
+Get the type that will be loaded for this slice. <a href="#a194d0b24bfe82015617637c7feafd34f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>uint64&#95;t</>}
+  name={<><a href="#a6d14121fe4268a2a96c2107adfd49d17">getOffsetFromBase</a> () const</>}>
+Get the offset in bytes of this slice in the original chunk of bits. <a href="#a6d14121fe4268a2a96c2107adfd49d17">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/apint">APInt</a></>}
+  name={<><a href="#af4baa77e580192624b604fa2192ff41b">getUsedBits</a> () const</>}>
+Get the bits used in a chunk of bits <code>BitWidth</code> large. <a href="#af4baa77e580192624b604fa2192ff41b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#aa8b06263dc30cdbef2780acdf3e73c69">isLegal</a> () const</>}>
+Check if this slice can be rewritten with legal operations. <a href="#aa8b06263dc30cdbef2780acdf3e73c69">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/sdvalue">SDValue</a></>}
+  name={<><a href="#aa9a4f93bd21587fb8d5a9b6260ee7207">loadSlice</a> () const</>}>
+Generate the sequence of instructions to load the slice represented by this object and redirect the uses of this slice to this new sequence of instructions. <a href="#aa9a4f93bd21587fb8d5a9b6260ee7207">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/selectiondag">SelectionDAG</a> &#42;</>}
+  name={<><a href="#a7f463f043a6be9a1851d95387217a272">DAG</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/sdnode">SDNode</a> &#42;</>}
+  name={<><a href="#afe30281b52ba48dad1465288c71a7a12">Inst</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/loadsdnode">LoadSDNode</a> &#42;</>}
+  name={<><a href="#adfb1fd0c5e3757fe133c9b55e0d15a69">Origin</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#aca0f4d62fea425484c4b37fff2088ecb">Shift</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Helper structure used to slice a load in smaller loads.
+
+Basically a slice is obtained from the following sequence: Origin = load Ty1, Base Shift = srl Ty1 Origin, CstTy Amount Inst = trunc Shift to Ty2
+
+Then, it will be rewritten into: Slice = load SliceTy, Base + SliceOffset &#91;Inst = zext Slice to Ty2&#93;, only if SliceTy &lt;&gt; Ty2
+
+SliceTy is deduced from the number of bits that are actually used to build Inst.
+
+Definition at line 19624 of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### LoadedSlice() {#adf78f2cdf71d35423c85759c3cfc1dab}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;DAGCombiner.cpp&#125;::LoadedSlice::LoadedSlice (<a href="/docs/api/classes/llvm/sdnode">SDNode</a> &#42; Inst=nullptr, <a href="/docs/api/classes/llvm/loadsdnode">LoadSDNode</a> &#42; Origin=nullptr, unsigned Shift=0, <a href="/docs/api/classes/llvm/selectiondag">SelectionDAG</a> &#42; DAG=nullptr)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#l19717">19717</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### canMergeExpensiveCrossRegisterBankCopy() {#a3359f38a412c6b9685e8fd39bd81b6a7}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;DAGCombiner.cpp&#125;::LoadedSlice::canMergeExpensiveCrossRegisterBankCopy () const</>}
+  labels = {["inline"]}>
+Check if this slice can be merged with an expensive cross register bank copy.
+
+E.g., i = load i32 f = bitcast i32 i to float
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#l19872">19872</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+</MemberDefinition>
+
+### getAlign() {#a44391e7c48a75eb286fba96cde238ca9}
+
+<MemberDefinition
+  prototype={<>Align anonymous&#95;namespace&#123;DAGCombiner.cpp&#125;::LoadedSlice::getAlign () const</>}
+  labels = {["inline"]}>
+Get the alignment of the load used for this slice.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#l19757">19757</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+</MemberDefinition>
+
+### getLoadedSize() {#aee19053815830c5e2ae9a61c2944319b}
+
+<MemberDefinition
+  prototype={<>unsigned anonymous&#95;namespace&#123;DAGCombiner.cpp&#125;::LoadedSlice::getLoadedSize () const</>}
+  labels = {["inline"]}>
+Get the size of the slice to be loaded in bytes.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#l19742">19742</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+</MemberDefinition>
+
+### getLoadedType() {#a194d0b24bfe82015617637c7feafd34f}
+
+<MemberDefinition
+  prototype={<>EVT anonymous&#95;namespace&#123;DAGCombiner.cpp&#125;::LoadedSlice::getLoadedType () const</>}
+  labels = {["inline"]}>
+Get the type that will be loaded for this slice.
+
+Note: This may not be the final type for the slice.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#l19750">19750</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+</MemberDefinition>
+
+### getOffsetFromBase() {#a6d14121fe4268a2a96c2107adfd49d17}
+
+<MemberDefinition
+  prototype={<>uint64&#95;t anonymous&#95;namespace&#123;DAGCombiner.cpp&#125;::LoadedSlice::getOffsetFromBase () const</>}
+  labels = {["inline"]}>
+Get the offset in bytes of this slice in the original chunk of bits.
+
+<SectionUser title="Precondition">
+DAG != nullptr.
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#l19812">19812</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+</MemberDefinition>
+
+### getUsedBits() {#af4baa77e580192624b604fa2192ff41b}
+
+<MemberDefinition
+  prototype={<>APInt anonymous&#95;namespace&#123;DAGCombiner.cpp&#125;::LoadedSlice::getUsedBits () const</>}
+  labels = {["inline"]}>
+Get the bits used in a chunk of bits <code>BitWidth</code> large.
+
+<SectionUser title="Returns">
+Result is <code>BitWidth</code> and has used bits set to 1 and not used bits set to 0.
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#l19724">19724</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+</MemberDefinition>
+
+### isLegal() {#aa8b06263dc30cdbef2780acdf3e73c69}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;DAGCombiner.cpp&#125;::LoadedSlice::isLegal () const</>}
+  labels = {["inline"]}>
+Check if this slice can be rewritten with legal operations.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#l19766">19766</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+</MemberDefinition>
+
+### loadSlice() {#aa9a4f93bd21587fb8d5a9b6260ee7207}
+
+<MemberDefinition
+  prototype={<>SDValue anonymous&#95;namespace&#123;DAGCombiner.cpp&#125;::LoadedSlice::loadSlice () const</>}
+  labels = {["inline"]}>
+Generate the sequence of instructions to load the slice represented by this object and redirect the uses of this slice to this new sequence of instructions.
+
+<SectionUser title="Precondition">
+this-&gt;Inst &amp;&amp; this-&gt;Origin are valid Instructions and this object passed the legal check: <a href="#aa8b06263dc30cdbef2780acdf3e73c69">LoadedSlice::isLegal</a> returned true.
+</SectionUser>
+
+
+<SectionUser title="Returns">
+The last instruction of the sequence used to load the slice.
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#l19836">19836</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### DAG {#a7f463f043a6be9a1851d95387217a272}
+
+<MemberDefinition
+  prototype={<>SelectionDAG&#42; anonymous&#95;namespace&#123;DAGCombiner.cpp&#125;::LoadedSlice::DAG</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#l19715">19715</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+</MemberDefinition>
+
+### Inst {#afe30281b52ba48dad1465288c71a7a12}
+
+<MemberDefinition
+  prototype={<>SDNode&#42; anonymous&#95;namespace&#123;DAGCombiner.cpp&#125;::LoadedSlice::Inst</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#l19705">19705</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+</MemberDefinition>
+
+### Origin {#adfb1fd0c5e3757fe133c9b55e0d15a69}
+
+<MemberDefinition
+  prototype={<>LoadSDNode&#42; anonymous&#95;namespace&#123;DAGCombiner.cpp&#125;::LoadedSlice::Origin</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#l19708">19708</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+</MemberDefinition>
+
+### Shift {#aca0f4d62fea425484c4b37fff2088ecb}
+
+<MemberDefinition
+  prototype={<>unsigned anonymous&#95;namespace&#123;DAGCombiner.cpp&#125;::LoadedSlice::Shift</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp/#l19711">19711</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/codegen/lib/codegen/selectiondag/dagcombiner-cpp">DAGCombiner.cpp</a></li>
+</ul>
+
+</DoxygenPage>

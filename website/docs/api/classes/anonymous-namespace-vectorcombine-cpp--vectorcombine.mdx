@@ -1,0 +1,695 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/anonymous-namespace-vectorcombine-cpp-/vectorcombine
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `VectorCombine` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Declaration
+
+<CodeBlock>class anonymous_namespace{VectorCombine.cpp}::VectorCombine</CodeBlock>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#af42fdde83649e9fea3122b691d19fa54">VectorCombine</a> (Function &amp;F, const TargetTransformInfo &amp;TTI, const DominatorTree &amp;DT, AAResults &amp;AA, AssumptionCache &amp;AC, const DataLayout &#42;DL, TTI::TargetCostKind CostKind, bool TryEarlyFoldsOnly)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a72026c9724b6de144a788bfb35de1642">run</a> ()</>}>
+This is the entry point for all transforms. <a href="#a72026c9724b6de144a788bfb35de1642">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a7641ed3f636b8199715561ac85d5a467">eraseInstruction</a> (Instruction &amp;I)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ac4dbd2bd1a05d3b9960d5a5a260a3390">foldBitcastShuffle</a> (Instruction &amp;I)</>}>
+If this is a bitcast of a shuffle, try to bitcast the source vector to the destination type followed by shuffle. <a href="#ac4dbd2bd1a05d3b9960d5a5a260a3390">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ad81e1c39051bd6205c85dc4fde1b1bcb">foldCastFromReductions</a> (Instruction &amp;I)</>}>
+Determine if its more efficient to fold: <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loopstrengthreduce-cpp/#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce(trunc(x))</a> -&gt; trunc(reduce(x)). <a href="#ad81e1c39051bd6205c85dc4fde1b1bcb">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#adcddbe46742d0b648c69f829ecbffce0">foldConcatOfBoolMasks</a> (Instruction &amp;I)</>}>
+Try to fold &quot;(or (zext (bitcast X)), (shl (zext (bitcast Y)), C))&quot; to &quot;(bitcast (concat X, Y))&quot; where X/Y are bitcasted from i1 mask vectors. <a href="#adcddbe46742d0b648c69f829ecbffce0">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#acc6c9ec1b69d7138df20488ef39ba949">foldExtExtBinop</a> (ExtractElementInst &#42;Ext0, ExtractElementInst &#42;Ext1, Instruction &amp;I)</>}>
+Try to reduce extract element costs by converting scalar binops to vector binops followed by extract. <a href="#acc6c9ec1b69d7138df20488ef39ba949">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a781c60411491273eafa07c5e0de414c9">foldExtExtCmp</a> (ExtractElementInst &#42;Ext0, ExtractElementInst &#42;Ext1, Instruction &amp;I)</>}>
+Try to reduce extract element costs by converting scalar compares to vector compares followed by extract. <a href="#a781c60411491273eafa07c5e0de414c9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ab5c1bf9119242530f184c8a6b92b92b8">foldExtractedCmps</a> (Instruction &amp;I)</>}>
+Try to combine a scalar binop + 2 scalar compares of extracted elements of a vector into vector operations followed by extract. <a href="#ab5c1bf9119242530f184c8a6b92b92b8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a5ef87097f7382ae9c2a7502441b33760">foldExtractExtract</a> (Instruction &amp;I)</>}>
+Match an instruction with extracted vector operands. <a href="#a5ef87097f7382ae9c2a7502441b33760">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#addb03cda40129caee518274dfee2fc33">foldInsExtFNeg</a> (Instruction &amp;I)</>}>
+Try to replace an extract + scalar fneg + insert with a vector fneg + shuffle. <a href="#addb03cda40129caee518274dfee2fc33">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a969f57831317b0b1022f2887cb2e2115">foldInsExtVectorToShuffle</a> (Instruction &amp;I)</>}>
+insert (DstVec, (extract SrcVec, ExtIdx), InsIdx) --&gt; shuffle (DstVec, SrcVec, Mask) <a href="#a969f57831317b0b1022f2887cb2e2115">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a29849e0d6bfbca896837faa2c71640d0">foldPermuteOfBinops</a> (Instruction &amp;I)</>}>
+Try to convert &quot;shuffle (binop (shuffle, shuffle)), undef&quot; --&gt; &quot;binop (shuffle), (shuffle)&quot;. <a href="#a29849e0d6bfbca896837faa2c71640d0">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a677c8593b8bac0375c5103296157e132">foldSelectShuffle</a> (Instruction &amp;I, bool FromReduction=false)</>}>
+This method looks for groups of shuffles acting on binops, of the form: x = shuffle ... y = shuffle ... a = binop x, y b = binop x, y shuffle a, b, selectmask We may, especially if the shuffle is wider than legal, be able to convert the shuffle to a form where only parts of a and b need to be computed. <a href="#a677c8593b8bac0375c5103296157e132">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a92a1ee1e167587efe0221073af07b842">foldShuffleFromReductions</a> (Instruction &amp;I)</>}>
+Given a commutative reduction, the order of the input lanes does not alter the results. <a href="#a92a1ee1e167587efe0221073af07b842">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a382b91de59f68c1b5e589fc705feaed8">foldShuffleOfBinops</a> (Instruction &amp;I)</>}>
+Try to convert &quot;shuffle (binop), (binop)&quot; into &quot;binop (shuffle), (shuffle)&quot;. <a href="#a382b91de59f68c1b5e589fc705feaed8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a1fcfd40343d001e0564c27f6cef6f1f6">foldShuffleOfCastops</a> (Instruction &amp;I)</>}>
+Try to convert &quot;shuffle (castop), (castop)&quot; with a shared castop operand into &quot;castop (shuffle)&quot;. <a href="#a1fcfd40343d001e0564c27f6cef6f1f6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#afeb9524045958fbd2978a1f4e7483513">foldShuffleOfIntrinsics</a> (Instruction &amp;I)</>}>
+Try to convert &quot;shuffle (intrinsic), (intrinsic)&quot; into &quot;intrinsic (shuffle), (shuffle)&quot;. <a href="#afeb9524045958fbd2978a1f4e7483513">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a0ebf659d7bd1831a388edf34050b0055">foldShuffleOfShuffles</a> (Instruction &amp;I)</>}>
+Try to convert any of: &quot;shuffle (shuffle x, y), (shuffle y, x)&quot; &quot;shuffle (shuffle x, undef), (shuffle y, undef)&quot; &quot;shuffle (shuffle x, undef), y&quot; &quot;shuffle x, (shuffle y, undef)&quot; into &quot;shuffle x, y&quot;. <a href="#a0ebf659d7bd1831a388edf34050b0055">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ac30405f43b6227bf3a140d5574ab1c2d">foldShuffleToIdentity</a> (Instruction &amp;I)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#adce4786d27c1966beb70bd65b01ae2b2">foldSingleElementStore</a> (Instruction &amp;I)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/extractelementinst">ExtractElementInst</a> &#42;</>}
+  name={<><a href="#a3a076acec5eb8e5a577e0312c628718b">getShuffleExtract</a> (ExtractElementInst &#42;Ext0, ExtractElementInst &#42;Ext1, unsigned PreferredExtractIndex) const</>}>
+Determine which, if any, of the inputs should be replaced by a shuffle followed by extract from a different index. <a href="#a3a076acec5eb8e5a577e0312c628718b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a9094fe5f9bdd5306a70e2939ecb28630">isExtractExtractCheap</a> (ExtractElementInst &#42;Ext0, ExtractElementInst &#42;Ext1, const Instruction &amp;I, ExtractElementInst &#42;&amp;ConvertToShuffle, unsigned PreferredExtractIndex)</>}>
+Compare the relative costs of 2 extracts followed by scalar operation vs. <a href="#a9094fe5f9bdd5306a70e2939ecb28630">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ab329053cbdf161a6aeb628e0f604d842">replaceValue</a> (Value &amp;Old, Value &amp;New)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a293fe37b40bf3918d2da556c3cfb013f">scalarizeBinopOrCmp</a> (Instruction &amp;I)</>}>
+Match a vector binop or compare instruction with at least one inserted scalar operand and convert to scalar binop/cmp followed by insertelement. <a href="#a293fe37b40bf3918d2da556c3cfb013f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a86fff2d788edd37f9ba0629a7217b04e">scalarizeLoadExtract</a> (Instruction &amp;I)</>}>
+Try to scalarize vector loads feeding extractelement instructions. <a href="#a86fff2d788edd37f9ba0629a7217b04e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ac5bb7b28a64c29cc230180a592f9e8d5">scalarizeVPIntrinsic</a> (Instruction &amp;I)</>}>
+VP Intrinsics whose vector operands are both splat values may be simplified into the scalar version of the operation and the result splatted. <a href="#ac5bb7b28a64c29cc230180a592f9e8d5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a37161c0307410e3c67bbca148756c039">shrinkType</a> (Instruction &amp;I)</>}>
+Check if instruction depends on ZExt and this ZExt can be moved after the instruction. <a href="#a37161c0307410e3c67bbca148756c039">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a38adeea97a607967503cb7f1f309eb33">vectorizeLoadInsert</a> (Instruction &amp;I)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a77a62d14e3ebb1561628486684bc9f4f">widenSubvectorLoad</a> (Instruction &amp;I)</>}>
+If we are loading a vector and then inserting it into a larger vector with undefined elements, try to load the larger vector and eliminate the insert. <a href="#a77a62d14e3ebb1561628486684bc9f4f">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/aaresults">AAResults</a> &amp;</>}
+  name={<><a href="#a240fde8d62f16480acbac3a8b1041447">AA</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &amp;</>}
+  name={<><a href="#ae1c2e109f2b0f8bf9c99e91effd6c314">AC</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/irbuilder">IRBuilder</a></>}
+  name={<><a href="#a941cdd2cd4957e5d60c17807518bf0ba">Builder</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/targettransforminfo/#a706f223f760b55668fbae74202b816bb">TTI::TargetCostKind</a></>}
+  name={<><a href="#a2633360d200b9c4d68e39861d49b3817">CostKind</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/datalayout">DataLayout</a> &#42;</>}
+  name={<><a href="#a9a9220a292918c1a11f0b95880aaea7d">DL</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &amp;</>}
+  name={<><a href="#addc4d97da4f076c7f791b9b1eaca44d8">DT</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/function">Function</a> &amp;</>}
+  name={<><a href="#ab0be67aae39318544352d6f27e794225">F</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a5eda4e8641a59a32d0f0628e0c890960">TryEarlyFoldsOnly</a></>}>
+If true, only perform beneficial early IR transforms. <a href="#a5eda4e8641a59a32d0f0628e0c890960">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> &amp;</>}
+  name={<><a href="#a74a6b5fbb66c61103f989dc7afb3c219">TTI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/instructionworklist">InstructionWorklist</a></>}
+  name={<><a href="#afd6deaf09c48e15368e889ac014d34b5">Worklist</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+Definition at line 66 of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### VectorCombine() {#af42fdde83649e9fea3122b691d19fa54}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;VectorCombine.cpp&#125;::VectorCombine::VectorCombine (<a href="/docs/api/classes/llvm/function">Function</a> &amp; F, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> &amp; TTI, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &amp; DT, <a href="/docs/api/classes/llvm/aaresults">AAResults</a> &amp; AA, <a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &amp; AC, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/datalayout">DataLayout</a> &#42; DL, <a href="/docs/api/classes/llvm/targettransforminfo/#a706f223f760b55668fbae74202b816bb">TTI::TargetCostKind</a> CostKind, bool TryEarlyFoldsOnly)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00068">68</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### run() {#a72026c9724b6de144a788bfb35de1642}
+
+<MemberDefinition
+  prototype="bool VectorCombine::run ()">
+This is the entry point for all transforms.
+
+<a href="/docs/api/classes/llvm/pass">Pass</a> manager differences are handled in the callers of this function.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00075">75</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### eraseInstruction() {#a7641ed3f636b8199715561ac85d5a467}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;VectorCombine.cpp&#125;::VectorCombine::eraseInstruction (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00142">142</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldBitcastShuffle() {#ac4dbd2bd1a05d3b9960d5a5a260a3390}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldBitcastShuffle (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+If this is a bitcast of a shuffle, try to bitcast the source vector to the destination type followed by shuffle.
+
+This can enable further transforms by moving bitcasts or shuffles together.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00112">112</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldCastFromReductions() {#ad81e1c39051bd6205c85dc4fde1b1bcb}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldCastFromReductions (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Determine if its more efficient to fold: <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loopstrengthreduce-cpp/#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce(trunc(x))</a> -&gt; trunc(reduce(x)).
+
+<a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loopstrengthreduce-cpp/#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce(sext(x))</a> -&gt; sext(reduce(x)). <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loopstrengthreduce-cpp/#a6d827fc34f1b4371a0b7183d3ca5bcac">reduce(zext(x))</a> -&gt; zext(reduce(x)).
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00126">126</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldConcatOfBoolMasks() {#adcddbe46742d0b648c69f829ecbffce0}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldConcatOfBoolMasks (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Try to fold &quot;(or (zext (bitcast X)), (shl (zext (bitcast Y)), C))&quot; to &quot;(bitcast (concat X, Y))&quot; where X/Y are bitcasted from i1 mask vectors.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00118">118</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldExtExtBinop() {#acc6c9ec1b69d7138df20488ef39ba949}
+
+<MemberDefinition
+  prototype={<>void VectorCombine::foldExtExtBinop (<a href="/docs/api/classes/llvm/extractelementinst">ExtractElementInst</a> &#42; Ext0, <a href="/docs/api/classes/llvm/extractelementinst">ExtractElementInst</a> &#42; Ext1, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Try to reduce extract element costs by converting scalar binops to vector binops followed by extract.
+
+bo (ext0 V0, C), (ext1 V1, C)
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00107">107</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldExtExtCmp() {#a781c60411491273eafa07c5e0de414c9}
+
+<MemberDefinition
+  prototype={<>void VectorCombine::foldExtExtCmp (<a href="/docs/api/classes/llvm/extractelementinst">ExtractElementInst</a> &#42; Ext0, <a href="/docs/api/classes/llvm/extractelementinst">ExtractElementInst</a> &#42; Ext1, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Try to reduce extract element costs by converting scalar compares to vector compares followed by extract.
+
+cmp (ext0 V0, C), (ext1 V1, C)
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00105">105</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldExtractedCmps() {#ab5c1bf9119242530f184c8a6b92b92b8}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldExtractedCmps (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Try to combine a scalar binop + 2 scalar compares of extracted elements of a vector into vector operations followed by extract.
+
+Note: The SLP pass may miss this pattern because of implementation problems.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00115">115</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldExtractExtract() {#a5ef87097f7382ae9c2a7502441b33760}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldExtractExtract (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Match an instruction with extracted vector operands.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00109">109</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldInsExtFNeg() {#addb03cda40129caee518274dfee2fc33}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldInsExtFNeg (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Try to replace an extract + scalar fneg + insert with a vector fneg + shuffle.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00110">110</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldInsExtVectorToShuffle() {#a969f57831317b0b1022f2887cb2e2115}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldInsExtVectorToShuffle (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+insert (DstVec, (extract SrcVec, ExtIdx), InsIdx) --&gt; shuffle (DstVec, SrcVec, Mask)
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00111">111</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldPermuteOfBinops() {#a29849e0d6bfbca896837faa2c71640d0}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldPermuteOfBinops (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Try to convert &quot;shuffle (binop (shuffle, shuffle)), undef&quot; --&gt; &quot;binop (shuffle), (shuffle)&quot;.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00119">119</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldSelectShuffle() {#a677c8593b8bac0375c5103296157e132}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldSelectShuffle (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I, bool FromReduction=false)</>}>
+This method looks for groups of shuffles acting on binops, of the form: x = shuffle ... y = shuffle ... a = binop x, y b = binop x, y shuffle a, b, selectmask We may, especially if the shuffle is wider than legal, be able to convert the shuffle to a form where only parts of a and b need to be computed.
+
+On architectures with no obvious &quot;select&quot; shuffle, this can reduce the total number of operations if the target reports them as cheaper.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00127">127</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldShuffleFromReductions() {#a92a1ee1e167587efe0221073af07b842}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldShuffleFromReductions (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Given a commutative reduction, the order of the input lanes does not alter the results.
+
+We can use this to remove certain shuffles feeding the reduction, removing the need to shuffle at all.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00125">125</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldShuffleOfBinops() {#a382b91de59f68c1b5e589fc705feaed8}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldShuffleOfBinops (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Try to convert &quot;shuffle (binop), (binop)&quot; into &quot;binop (shuffle), (shuffle)&quot;.
+
+Try to convert &quot;shuffle (cmpop), (cmpop)&quot; into &quot;cmpop (shuffle), (shuffle)&quot;.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00120">120</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldShuffleOfCastops() {#a1fcfd40343d001e0564c27f6cef6f1f6}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldShuffleOfCastops (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Try to convert &quot;shuffle (castop), (castop)&quot; with a shared castop operand into &quot;castop (shuffle)&quot;.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00121">121</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldShuffleOfIntrinsics() {#afeb9524045958fbd2978a1f4e7483513}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldShuffleOfIntrinsics (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Try to convert &quot;shuffle (intrinsic), (intrinsic)&quot; into &quot;intrinsic (shuffle), (shuffle)&quot;.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00123">123</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldShuffleOfShuffles() {#a0ebf659d7bd1831a388edf34050b0055}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldShuffleOfShuffles (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Try to convert any of: &quot;shuffle (shuffle x, y), (shuffle y, x)&quot; &quot;shuffle (shuffle x, undef), (shuffle y, undef)&quot; &quot;shuffle (shuffle x, undef), y&quot; &quot;shuffle x, (shuffle y, undef)&quot; into &quot;shuffle x, y&quot;.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00122">122</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldShuffleToIdentity() {#ac30405f43b6227bf3a140d5574ab1c2d}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldShuffleToIdentity (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00124">124</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### foldSingleElementStore() {#adce4786d27c1966beb70bd65b01ae2b2}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::foldSingleElementStore (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00116">116</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### getShuffleExtract() {#a3a076acec5eb8e5a577e0312c628718b}
+
+<MemberDefinition
+  prototype={<>ExtractElementInst &#42; VectorCombine::getShuffleExtract (<a href="/docs/api/classes/llvm/extractelementinst">ExtractElementInst</a> &#42; Ext0, <a href="/docs/api/classes/llvm/extractelementinst">ExtractElementInst</a> &#42; Ext1, unsigned PreferredExtractIndex) const</>}>
+Determine which, if any, of the inputs should be replaced by a shuffle followed by extract from a different index.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00098">98</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### isExtractExtractCheap() {#a9094fe5f9bdd5306a70e2939ecb28630}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::isExtractExtractCheap (<a href="/docs/api/classes/llvm/extractelementinst">ExtractElementInst</a> &#42; Ext0, <a href="/docs/api/classes/llvm/extractelementinst">ExtractElementInst</a> &#42; Ext1, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I, <a href="/docs/api/classes/llvm/extractelementinst">ExtractElementInst</a> &#42;&amp; ConvertToShuffle, unsigned PreferredExtractIndex)</>}>
+Compare the relative costs of 2 extracts followed by scalar operation vs.
+
+vector operation(s) followed by extract. Return true if the existing instructions are cheaper than a vector alternative. Otherwise, return false and if one of the extracts should be transformed to a shufflevector, set <code>ConvertToShuffle</code> to that extract instruction.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00101">101</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### replaceValue() {#ab329053cbdf161a6aeb628e0f604d842}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;VectorCombine.cpp&#125;::VectorCombine::replaceValue (<a href="/docs/api/classes/llvm/value">Value</a> &amp; Old, <a href="/docs/api/classes/llvm/value">Value</a> &amp; New)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00130">130</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### scalarizeBinopOrCmp() {#a293fe37b40bf3918d2da556c3cfb013f}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::scalarizeBinopOrCmp (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Match a vector binop or compare instruction with at least one inserted scalar operand and convert to scalar binop/cmp followed by insertelement.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00113">113</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### scalarizeLoadExtract() {#a86fff2d788edd37f9ba0629a7217b04e}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::scalarizeLoadExtract (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Try to scalarize vector loads feeding extractelement instructions.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00117">117</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### scalarizeVPIntrinsic() {#ac5bb7b28a64c29cc230180a592f9e8d5}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::scalarizeVPIntrinsic (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+VP Intrinsics whose vector operands are both splat values may be simplified into the scalar version of the operation and the result splatted.
+
+This can lead to scalarization down the line.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00114">114</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### shrinkType() {#a37161c0307410e3c67bbca148756c039}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::shrinkType (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+Check if instruction depends on ZExt and this ZExt can be moved after the instruction.
+
+Move ZExt if it is profitable. For example: logic(zext(x),y) -&gt; zext(logic(x,trunc(y))) lshr((zext(x),y) -&gt; zext(lshr(x,trunc(y))) <a href="/docs/api/namespaces/llvm/#a19921a3ceb99548f498d3df118eda9ed">Cost</a> model calculations takes into account if zext(x) has other users and whether it can be propagated through them too.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00128">128</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### vectorizeLoadInsert() {#a38adeea97a607967503cb7f1f309eb33}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::vectorizeLoadInsert (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00096">96</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### widenSubvectorLoad() {#a77a62d14e3ebb1561628486684bc9f4f}
+
+<MemberDefinition
+  prototype={<>bool VectorCombine::widenSubvectorLoad (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}>
+If we are loading a vector and then inserting it into a larger vector with undefined elements, try to load the larger vector and eliminate the insert.
+
+This removes a shuffle in IR and may allow combining of other loaded values.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00097">97</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### AA {#a240fde8d62f16480acbac3a8b1041447}
+
+<MemberDefinition
+  prototype={<>AAResults&amp; anonymous&#95;namespace&#123;VectorCombine.cpp&#125;::VectorCombine::AA</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00082">82</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### AC {#ae1c2e109f2b0f8bf9c99e91effd6c314}
+
+<MemberDefinition
+  prototype={<>AssumptionCache&amp; anonymous&#95;namespace&#123;VectorCombine.cpp&#125;::VectorCombine::AC</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00083">83</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### Builder {#a941cdd2cd4957e5d60c17807518bf0ba}
+
+<MemberDefinition
+  prototype={<>IRBuilder anonymous&#95;namespace&#123;VectorCombine.cpp&#125;::VectorCombine::Builder</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00079">79</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### CostKind {#a2633360d200b9c4d68e39861d49b3817}
+
+<MemberDefinition
+  prototype={<>TTI::TargetCostKind anonymous&#95;namespace&#123;VectorCombine.cpp&#125;::VectorCombine::CostKind</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00085">85</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### DL {#a9a9220a292918c1a11f0b95880aaea7d}
+
+<MemberDefinition
+  prototype={<>const DataLayout&#42; anonymous&#95;namespace&#123;VectorCombine.cpp&#125;::VectorCombine::DL</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00084">84</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### DT {#addc4d97da4f076c7f791b9b1eaca44d8}
+
+<MemberDefinition
+  prototype={<>const DominatorTree&amp; anonymous&#95;namespace&#123;VectorCombine.cpp&#125;::VectorCombine::DT</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00081">81</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### F {#ab0be67aae39318544352d6f27e794225}
+
+<MemberDefinition
+  prototype={<>Function&amp; anonymous&#95;namespace&#123;VectorCombine.cpp&#125;::VectorCombine::F</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00078">78</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### TryEarlyFoldsOnly {#a5eda4e8641a59a32d0f0628e0c890960}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;VectorCombine.cpp&#125;::VectorCombine::TryEarlyFoldsOnly</>}>
+If true, only perform beneficial early IR transforms.
+
+Do not introduce new vector operations.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00089">89</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### TTI {#a74a6b5fbb66c61103f989dc7afb3c219}
+
+<MemberDefinition
+  prototype={<>const TargetTransformInfo&amp; anonymous&#95;namespace&#123;VectorCombine.cpp&#125;::VectorCombine::TTI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00080">80</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+### Worklist {#afd6deaf09c48e15368e889ac014d34b5}
+
+<MemberDefinition
+  prototype={<>InstructionWorklist anonymous&#95;namespace&#123;VectorCombine.cpp&#125;::VectorCombine::Worklist</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp/#l00091">91</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vectorcombine-cpp">VectorCombine.cpp</a></li>
+</ul>
+
+</DoxygenPage>

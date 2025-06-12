@@ -1,0 +1,262 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/anonymous-namespace-gdbregistrationlistener-cpp-/gdbjitregistrationlistener
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `GDBJITRegistrationListener` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Global access point for the JIT debugging interface designed for use with a singleton toolbox. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class anonymous_namespace{GDBRegistrationListener.cpp}::GDBJITRegistrationListener</CodeBlock>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/jiteventlistener">JITEventListener</a></>}>
+<a href="/docs/api/classes/llvm/jiteventlistener">JITEventListener</a> - Abstract interface for use by the JIT to notify clients about significant events during compilation. <a href="/docs/api/classes/llvm/jiteventlistener/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#abfc8b002958ca498ceaeb864ee156dd3">GDBJITRegistrationListener</a> ()=default</>}>
+Instantiates the JIT service. <a href="#abfc8b002958ca498ceaeb864ee156dd3">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Destructor Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a4fe8ec178b276bf2cc56801053e83143">~GDBJITRegistrationListener</a> () override</>}>
+Unregisters each object that was previously registered and releases all internal resources. <a href="#a4fe8ec178b276bf2cc56801053e83143">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a46a08fb4e12d95ae18f3a656f1210d0b">notifyFreeingObject</a> (ObjectKey K) override</>}>
+Removes the internal registration of <code>Object</code>, and frees associated resources. <a href="#a46a08fb4e12d95ae18f3a656f1210d0b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ae41608a898388d10b4a7d39b4f94e32e">notifyObjectLoaded</a> (ObjectKey K, const ObjectFile &amp;Obj, const RuntimeDyld::LoadedObjectInfo &amp;L) override</>}>
+Creates an entry in the JIT registry for the buffer <code>Object</code>, which must contain an object file in executable memory with any debug information for the debugger. <a href="#ae41608a898388d10b4a7d39b4f94e32e">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a07a7f51743d4d481fc59a2cce24c9d6f">deregisterObjectInternal</a> (RegisteredObjectBufferMap::iterator I)</>}>
+Deregister the debug info for the given object file from the debugger and delete any temporary copies. <a href="#a07a7f51743d4d481fc59a2cce24c9d6f">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/sys/#a52d48084c5b60251870b6118e4670fee">sys::Mutex</a></>}
+  name={<><a href="#a880da7403e190a8d68234ffd1ba19825">JITDebugLock</a></>}>
+Lock used to serialize all jit registration events, since they modify global variables. <a href="#a880da7403e190a8d68234ffd1ba19825">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/anonymous-gdbregistrationlistener-cpp-/#ad24beec920a5d33ddb8f0d2af143b376">RegisteredObjectBufferMap</a></>}
+  name={<><a href="#abd444151e9d80786fd5ad31619bade7b">ObjectBufferMap</a></>}>
+A map of in-memory object files that have been registered with the JIT interface. <a href="#abd444151e9d80786fd5ad31619bade7b">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/anonymous-namespace-gdbregistrationlistener-cpp-/gdbjitregistrationlistener">GDBJITRegistrationListener</a> &amp;</>}
+  name={<><a href="#a02ab9f0e6bafa6a158c61ca0a442f1cd">instance</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Global access point for the JIT debugging interface designed for use with a singleton toolbox.
+
+Handles thread-safe registration and deregistration of object files that are in executable memory managed by the client of this class.
+
+Definition at line 91 of file <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp">GDBRegistrationListener.cpp</a>.
+
+<SectionDefinition>
+
+## Private Constructors
+
+### GDBJITRegistrationListener() {#abfc8b002958ca498ceaeb864ee156dd3}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;GDBRegistrationListener.cpp&#125;::GDBJITRegistrationListener::GDBJITRegistrationListener ()</>}
+  labels = {["default"]}>
+Instantiates the JIT service.
+
+Definition at line <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp/#l00105">105</a> of file <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp">GDBRegistrationListener.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Destructor
+
+### ~GDBJITRegistrationListener() {#a4fe8ec178b276bf2cc56801053e83143}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;GDBRegistrationListener.cpp&#125;::GDBJITRegistrationListener::~GDBJITRegistrationListener ()</>}>
+Unregisters each object that was previously registered and releases all internal resources.
+
+Definition at line <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp/#l00109">109</a> of file <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp">GDBRegistrationListener.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### notifyFreeingObject() {#a46a08fb4e12d95ae18f3a656f1210d0b}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;GDBRegistrationListener.cpp&#125;::GDBJITRegistrationListener::notifyFreeingObject (<a href="/docs/api/classes/llvm/jiteventlistener/#aefc8c6bb6d8f5a09e48f4b9db9c10024">ObjectKey</a> K)</>}
+  labels = {["virtual"]}>
+Removes the internal registration of <code>Object</code>, and frees associated resources.
+
+Returns true if <code>Object</code> was found in ObjectBufferMap.
+
+Definition at line <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp/#l00126">126</a> of file <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp">GDBRegistrationListener.cpp</a>.
+</MemberDefinition>
+
+### notifyObjectLoaded() {#ae41608a898388d10b4a7d39b4f94e32e}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;GDBRegistrationListener.cpp&#125;::GDBJITRegistrationListener::notifyObjectLoaded (<a href="/docs/api/classes/llvm/jiteventlistener/#aefc8c6bb6d8f5a09e48f4b9db9c10024">ObjectKey</a> K, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/object/objectfile">ObjectFile</a> &amp; Obj, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/runtimedyld/loadedobjectinfo">RuntimeDyld::LoadedObjectInfo</a> &amp; L)</>}
+  labels = {["virtual"]}>
+Creates an entry in the JIT registry for the buffer <code>Object</code>, which must contain an object file in executable memory with any debug information for the debugger.
+
+Definition at line <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp/#l00120">120</a> of file <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp">GDBRegistrationListener.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### deregisterObjectInternal() {#a07a7f51743d4d481fc59a2cce24c9d6f}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;GDBRegistrationListener.cpp&#125;::GDBJITRegistrationListener::deregisterObjectInternal (<a href="/docs/api/classes/llvm/densemapbase/#a214e872d61db2ea8cb023f127cafd0b9">RegisteredObjectBufferMap::iterator</a> I)</>}>
+Deregister the debug info for the given object file from the debugger and delete any temporary copies.
+
+This private method does not remove the function from Map so that it can be called while iterating over Map.
+
+Definition at line <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp/#l00132">132</a> of file <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp">GDBRegistrationListener.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### JITDebugLock {#a880da7403e190a8d68234ffd1ba19825}
+
+<MemberDefinition
+  prototype={<>sys::Mutex anonymous&#95;namespace&#123;GDBRegistrationListener.cpp&#125;::GDBJITRegistrationListener::JITDebugLock</>}>
+Lock used to serialize all jit registration events, since they modify global variables.
+
+Only a single instance of <a href="/docs/api/classes/anonymous-namespace-gdbregistrationlistener-cpp-/gdbjitregistrationlistener">GDBJITRegistrationListener</a> is ever created, and so the lock can be a member variable of that instance. This ensures destructors are run in the correct order.
+
+Definition at line <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp/#l00098">98</a> of file <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp">GDBRegistrationListener.cpp</a>.
+</MemberDefinition>
+
+### ObjectBufferMap {#abd444151e9d80786fd5ad31619bade7b}
+
+<MemberDefinition
+  prototype={<>RegisteredObjectBufferMap anonymous&#95;namespace&#123;GDBRegistrationListener.cpp&#125;::GDBJITRegistrationListener::ObjectBufferMap</>}>
+A map of in-memory object files that have been registered with the JIT interface.
+
+Definition at line <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp/#l00102">102</a> of file <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp">GDBRegistrationListener.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Functions
+
+### instance() {#a02ab9f0e6bafa6a158c61ca0a442f1cd}
+
+<MemberDefinition
+  prototype={<>static GDBJITRegistrationListener &amp; anonymous&#95;namespace&#123;GDBRegistrationListener.cpp&#125;::GDBJITRegistrationListener::instance ()</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp/#l00112">112</a> of file <a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp">GDBRegistrationListener.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/executionengine/gdbregistrationlistener-cpp">GDBRegistrationListener.cpp</a></li>
+</ul>
+
+</DoxygenPage>

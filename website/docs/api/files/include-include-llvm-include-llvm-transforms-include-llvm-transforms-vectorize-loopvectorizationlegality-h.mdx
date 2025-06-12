@@ -1,0 +1,781 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/loopvectorizationlegality-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `LoopVectorizationLegality.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This file defines the LoopVectorizationLegality class. <a href="#details">More...</a>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/MapVector.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/mapvector-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Analysis/LoopAccessAnalysis.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/loopaccessanalysis-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/TypeSize.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/typesize-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Transforms/Utils/LoopUtils.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/looputils-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/loopvectorizehints">LoopVectorizeHints</a></>}>
+Utility class for getting and setting loop vectorizer hints in the form of loop metadata. <a href="/docs/api/classes/llvm/loopvectorizehints/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/loopvectorizehints/hint">Hint</a></>}>
+Hint - associates name and validation with the hint value. <a href="/docs/api/structs/llvm/loopvectorizehints/hint/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/loopvectorizationrequirements">LoopVectorizationRequirements</a></>}>
+This holds vectorization requirements that must be verified late in the process. <a href="/docs/api/classes/llvm/loopvectorizationrequirements/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/histograminfo">HistogramInfo</a></>}>
+This holds details about a histogram operation – a load -&gt; update -&gt; store sequence where each lane in a vector might be updating the same element as another lane. <a href="/docs/api/structs/llvm/histograminfo/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/loopvectorizationlegality">LoopVectorizationLegality</a></>}>
+<a href="/docs/api/classes/llvm/loopvectorizationlegality">LoopVectorizationLegality</a> checks if it is legal to vectorize a loop, and to what vectorization factor. <a href="/docs/api/classes/llvm/loopvectorizationlegality/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This file defines the LoopVectorizationLegality class.
+
+Original code in Loop Vectorizer has been moved out to its own file for modularity and reusability.
+
+Currently, it works for innermost loop vectorization. Extending this to outer loop vectorization is a TODO item.
+
+Also provides: 1) LoopVectorizeHints class which keeps a number of loop annotations locally for easy look up. It has the ability to write them back as loop metadata, upon request. 2) LoopVectorizationRequirements class for lazy bail out for the purpose of reporting useful failure to vectorize message.
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/Transforms/Vectorize/LoopVectorizationLegality.h ----&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="comment">/// \\file</Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="comment">/// This file defines the LoopVectorizationLegality class. Original code</Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="comment">/// in Loop Vectorizer has been moved out to its own file for modularity</Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="comment">/// and reusability.</Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="comment">/// Currently, it works for innermost loop vectorization. Extending this to</Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="comment">/// outer loop vectorization is a TODO item.</Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="comment">/// Also provides:</Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="comment">/// 1) LoopVectorizeHints class which keeps a number of loop annotations</Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="comment">/// locally for easy look up. It has the ability to write them back as</Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="comment">/// loop metadata, upon request.</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="comment">/// 2) LoopVectorizationRequirements class for lazy bail out for the purpose</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="comment">/// of reporting useful failure to vectorize message.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;TRANSFORMS&#95;VECTORIZE&#95;LOOPVECTORIZATIONLEGALITY&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;TRANSFORMS&#95;VECTORIZE&#95;LOOPVECTORIZATIONLEGALITY&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/mapvector-h">llvm/ADT/MapVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/loopaccessanalysis-h">llvm/Analysis/LoopAccessAnalysis.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/typesize-h">llvm/Support/TypeSize.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/looputils-h">llvm/Transforms/Utils/LoopUtils.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a>;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/basicblock">BasicBlock</a>;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a>;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/demandedbits">DemandedBits</a>;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a>;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/function">Function</a>;</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/loop">Loop</a>;</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a>;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/metadata">Metadata</a>;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/optimizationremarkemitter">OptimizationRemarkEmitter</a>;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/predicatedscalarevolution">PredicatedScalarEvolution</a>;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a>;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/targetlibraryinfo">TargetLibraryInfo</a>;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a>;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/type">Type</a>;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="comment">/// Utility class for getting and setting loop vectorizer hints in the form</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">/// of loop metadata.</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">/// This class keeps a number of loop annotations locally (as member variables)</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="comment">/// and can, upon request, write them back as metadata on the loop. It will</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="comment">/// initially scan the loop for existing metadata, and will update the local</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="comment">/// values based on information in the loop.</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="comment">/// We cannot write all values to metadata, as the mere presence of some info,</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">/// for example &#39;force&#39;, means a decision has been made. So, we need to be</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">/// careful NOT to add them if the user hasn&#39;t specifically asked so.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60" lineLink="/docs/api/classes/llvm/loopvectorizehints"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/loopvectorizehints/#aa68245d8ed8fafd80a06d5092f434093">LoopVectorizeHints</a> &#123;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> HintKind &#123;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">    HK&#95;WIDTH,</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">    HK&#95;INTERLEAVE,</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">    HK&#95;FORCE,</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">    HK&#95;ISVECTORIZED,</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">    HK&#95;PREDICATE,</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">    HK&#95;SCALABLE</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="comment">  /// Hint - associates name and validation with the hint value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">Hint &#123;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;Name;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a>; </Highlight><Highlight kind="comment">// This may have to change for non-numeric values.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">    HintKind Kind;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">    Hint(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;Name, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a>, HintKind Kind)</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">        : Name(Name), <a href="/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>(<a href="/docs/api/classes/llvm/value">Value</a>), Kind(Kind) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> validate(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Val);</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">  /// Vectorization width.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">  Hint Width;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="comment">  /// Vectorization interleave factor.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  Hint Interleave;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">  /// Vectorization forced</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  Hint Force;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">  /// Already Vectorized</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  Hint IsVectorized;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">  /// Vector Predicate</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  Hint Predicate;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">  /// Says whether we should use fixed width or scalable vectorization.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  Hint Scalable;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">  /// Return the loop metadata prefix.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/stringref">StringRef</a> Prefix() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="stringliteral">&quot;llvm.loop.&quot;</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="comment">  /// True if there is any unsafe math in the loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> PotentiallyUnsafe = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107" lineLink="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33e"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33e">ForceKind</a> &#123;</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108" lineLink="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33ea8914fe2dbf82d457456e8e4faa201b87"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33ea8914fe2dbf82d457456e8e4faa201b87">FK&#95;Undefined</a> = -1, </Highlight><Highlight kind="comment">///&lt; Not selected.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109" lineLink="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33ea980c2c6e59ca5dcf413baa325d8bc385"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33ea980c2c6e59ca5dcf413baa325d8bc385">FK&#95;Disabled</a> = 0,   </Highlight><Highlight kind="comment">///&lt; Forcing disabled.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110" lineLink="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33ea278ca681847fb2bad9707f76d899b231"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33ea278ca681847fb2bad9707f76d899b231">FK&#95;Enabled</a> = 1,    </Highlight><Highlight kind="comment">///&lt; Forcing enabled.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113" lineLink="/docs/api/classes/llvm/loopvectorizehints/#a041ce1f90aff1772f662dd0c8e3ec4f4"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#a041ce1f90aff1772f662dd0c8e3ec4f4">ScalableForceKind</a> &#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">    /// Not selected.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115" lineLink="/docs/api/classes/llvm/loopvectorizehints/#a041ce1f90aff1772f662dd0c8e3ec4f4a99f04f3a0c3cb69e39acbc12c93b49da"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/loopvectorizehints/#a041ce1f90aff1772f662dd0c8e3ec4f4a99f04f3a0c3cb69e39acbc12c93b49da">SK&#95;Unspecified</a> = -1,</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">    /// Disables vectorization with scalable vectors.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117" lineLink="/docs/api/classes/llvm/loopvectorizehints/#a041ce1f90aff1772f662dd0c8e3ec4f4ac46ef7a95288338ce20df95d296898f4"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/loopvectorizehints/#a041ce1f90aff1772f662dd0c8e3ec4f4ac46ef7a95288338ce20df95d296898f4">SK&#95;FixedWidthOnly</a> = 0,</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="comment">    /// Vectorize loops using scalable vectors or fixed-width vectors, but favor</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">    /// scalable vectors when the cost-model is inconclusive. This is the</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">    /// default when the scalable.enable hint is enabled through a pragma.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121" lineLink="/docs/api/classes/llvm/loopvectorizehints/#a041ce1f90aff1772f662dd0c8e3ec4f4a7d9d22c5375d2c00b79a4a897967a2f6"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/loopvectorizehints/#a041ce1f90aff1772f662dd0c8e3ec4f4a7d9d22c5375d2c00b79a4a897967a2f6">SK&#95;PreferScalable</a> = 1</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loopvectorizehints/#aa68245d8ed8fafd80a06d5092f434093">LoopVectorizeHints</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loop">Loop</a> &#42;L, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> InterleaveOnlyWhenForced,</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">                     <a href="/docs/api/classes/llvm/optimizationremarkemitter">OptimizationRemarkEmitter</a> &amp;ORE,</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">                     </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> &#42;<a href="/docs/api/namespaces/llvm/#aa0d69e81725c10fa5407f0bf34462068">TTI</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="comment">  /// Mark the loop L as already vectorized by setting the width to 1</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#aa2f5ef2d522fb80de283a23d5bed6d86">setAlreadyVectorized</a>();</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#a21b6d9e2aa12c8c68d8e2f122ec7ecec">allowVectorization</a>(<a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/docs/api/classes/llvm/loop">Loop</a> &#42;L,</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">                          </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> VectorizeOnlyWhenForced) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">  /// Dumps all the hint information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#a440979b6103588bef39bd2d62065d5ff">emitRemarkWithHints</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137" lineLink="/docs/api/classes/llvm/loopvectorizehints/#a50cae5c2df432357d50f182d310ce7b7"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/elementcount">ElementCount</a> <a href="/docs/api/classes/llvm/loopvectorizehints/#a50cae5c2df432357d50f182d310ce7b7">getWidth</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/elementcount/#a79ea372f9aa69492fccfafc0e5a1589c">ElementCount::get</a>(Width.Value, (<a href="/docs/api/classes/llvm/loopvectorizehints/#a041ce1f90aff1772f662dd0c8e3ec4f4">ScalableForceKind</a>)Scalable.Value ==</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">                                              <a href="/docs/api/classes/llvm/loopvectorizehints/#a041ce1f90aff1772f662dd0c8e3ec4f4a7d9d22c5375d2c00b79a4a897967a2f6">SK&#95;PreferScalable</a>);</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142" lineLink="/docs/api/classes/llvm/loopvectorizehints/#ad98353127dbeb649d41ca07da5074b49"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#ad98353127dbeb649d41ca07da5074b49">getInterleave</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Interleave.Value)</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Interleave.Value;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// If interleaving is not explicitly set, assume that if we do not want</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// unrolling, we also don&#39;t want any interleaving.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#a868145c1795173f9642f99c354f91a7d">llvm::hasUnrollTransformation</a>(TheLoop) &amp; <a href="/docs/api/namespaces/llvm/#aa3e837c0d2a0521b4a4680071cac0dcbaa70bd8f3da4232ad809b2ffdcc1254bd">TM&#95;Disable</a>)</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 1;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151" lineLink="/docs/api/classes/llvm/loopvectorizehints/#af0277f27ebe0f8317170a739b2080d0c"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#af0277f27ebe0f8317170a739b2080d0c">getIsVectorized</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> IsVectorized.Value; &#125;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152" lineLink="/docs/api/classes/llvm/loopvectorizehints/#a7592f6d851162d7f66f26408f40e9388"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#a7592f6d851162d7f66f26408f40e9388">getPredicate</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Predicate.Value; &#125;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153" lineLink="/docs/api/classes/llvm/loopvectorizehints/#a20ecacbd54e401685d798d86161af6cf"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33e">ForceKind</a> <a href="/docs/api/classes/llvm/loopvectorizehints/#a20ecacbd54e401685d798d86161af6cf">getForce</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((<a href="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33e">ForceKind</a>)Force.Value == <a href="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33ea8914fe2dbf82d457456e8e4faa201b87">FK&#95;Undefined</a> &amp;&amp;</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">        <a href="/docs/api/namespaces/llvm/#a7d25a8a9d14a556b1ca44f8fe0dfdd8b">hasDisableAllTransformsHint</a>(TheLoop))</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33ea980c2c6e59ca5dcf413baa325d8bc385">FK&#95;Disabled</a>;</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33e">ForceKind</a>)Force.Value;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="comment">  /// \\return true if scalable vectorization has been explicitly disabled.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161" lineLink="/docs/api/classes/llvm/loopvectorizehints/#a1289a2ba34766f399d81f71c0f6b3a94"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#a1289a2ba34766f399d81f71c0f6b3a94">isScalableVectorizationDisabled</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/loopvectorizehints/#a041ce1f90aff1772f662dd0c8e3ec4f4">ScalableForceKind</a>)Scalable.Value == <a href="/docs/api/classes/llvm/loopvectorizehints/#a041ce1f90aff1772f662dd0c8e3ec4f4ac46ef7a95288338ce20df95d296898f4">SK&#95;FixedWidthOnly</a>;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="comment">  /// If hints are provided that force vectorization, use the AlwaysPrint</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="comment">  /// pass name to force the frontend to print the diagnostic.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/classes/llvm/loopvectorizehints/#abcf8c2b35316773f1ab0ba70aeb2a6de">vectorizeAnalysisPassName</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="comment">  /// When enabling loop hints are provided we allow the vectorizer to change</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="comment">  /// the order of operations that is given by the scalar loop. This is not</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="comment">  /// enabled by default because can be unsafe or inefficient. For example,</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="comment">  /// reordering floating-point operations will change the way round-off</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="comment">  /// error accumulates in the loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#a2b74e08f930d32c0d31482179fd0a805">allowReordering</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176" lineLink="/docs/api/classes/llvm/loopvectorizehints/#a475b1d2223ddab6c0ab44dfcea7dcba7"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#a475b1d2223ddab6c0ab44dfcea7dcba7">isPotentiallyUnsafe</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Avoid FP vectorization if the target is unsure about proper support.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// This may be related to the SIMD unit in the target not handling</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// IEEE 754 FP ops properly, or bad single-to-double promotions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Otherwise, a sequence of vectorized loops, even without reduction,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// could lead to different end results on the destination vectors.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#a20ecacbd54e401685d798d86161af6cf">getForce</a>() != <a href="/docs/api/classes/llvm/loopvectorizehints/#a55ab1072c44295ad279535d714a0f33ea278ca681847fb2bad9707f76d899b231">LoopVectorizeHints::FK&#95;Enabled</a> &amp;&amp; PotentiallyUnsafe;</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185" lineLink="/docs/api/classes/llvm/loopvectorizehints/#af611ab8bb7005d705fe61049bf572524"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizehints/#af611ab8bb7005d705fe61049bf572524">setPotentiallyUnsafe</a>() &#123; PotentiallyUnsafe = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="comment">  /// Find hints specified in the loop metadata and update local values.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> getHintsFromMetadata();</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="comment">  /// Checks string hint with one operand and set value if valid.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> setHint(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Name, <a href="/docs/api/classes/llvm/metadata">Metadata</a> &#42;Arg);</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="comment">  /// The loop these hints belong to.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loop">Loop</a> &#42;TheLoop;</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="comment">  /// Interface to emit optimization remarks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/optimizationremarkemitter">OptimizationRemarkEmitter</a> &amp;ORE;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="comment">/// This holds vectorization requirements that must be verified late in</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="comment">/// the process. The requirements are set by legalize and costmodel. Once</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="comment">/// vectorization has been determined to be possible and profitable the</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="comment">/// requirements can be verified by looking for metadata or compiler options.</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="comment">/// For example, some loops require FP commutativity which is only allowed if</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="comment">/// vectorization is explicitly specified or if the fast-math compiler option</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="comment">/// has been provided.</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="comment">/// Late evaluation of these requirements allows helpful diagnostics to be</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="comment">/// composed that tells the user what need to be done to vectorize the loop. For</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="comment">/// example, by specifying #pragma clang loop vectorize or -ffast-math. Late</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="comment">/// evaluation should be used only when diagnostics can generated that can be</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="comment">/// followed by a non-expert user.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213" lineLink="/docs/api/classes/llvm/loopvectorizationrequirements"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/loopvectorizationrequirements">LoopVectorizationRequirements</a> &#123;</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="comment">  /// Track the 1st floating-point instruction that can not be reassociated.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216" lineLink="/docs/api/classes/llvm/loopvectorizationrequirements/#aa8ac08a48fb7e083c5adf9a1cb6091bc"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationrequirements/#aa8ac08a48fb7e083c5adf9a1cb6091bc">addExactFPMathInst</a>(<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>) &#123;</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> &amp;&amp; !ExactFPMathInst)</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">      ExactFPMathInst = <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>;</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221" lineLink="/docs/api/classes/llvm/loopvectorizationrequirements/#a2bb8d6e55fae2cbc8eead3d7d4d3af09"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationrequirements/#a2bb8d6e55fae2cbc8eead3d7d4d3af09">getExactFPInst</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ExactFPMathInst; &#125;</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;ExactFPMathInst = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="comment">/// This holds details about a histogram operation -- a load -&gt; update -&gt; store</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="comment">/// sequence where each lane in a vector might be updating the same element as</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="comment">/// another lane.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230" lineLink="/docs/api/structs/llvm/histograminfo"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/histograminfo/#a8213afd30f1a9b2536bf2cc0b129bb23">HistogramInfo</a> &#123;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231" lineLink="/docs/api/structs/llvm/histograminfo/#a18ad617fc2ebb0c359d7a7364a226926"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loadinst">LoadInst</a> &#42;<a href="/docs/api/structs/llvm/histograminfo/#a18ad617fc2ebb0c359d7a7364a226926">Load</a>;</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232" lineLink="/docs/api/structs/llvm/histograminfo/#ada10f4396228d449b6060083e64e969e"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/structs/llvm/histograminfo/#ada10f4396228d449b6060083e64e969e">Update</a>;</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233" lineLink="/docs/api/structs/llvm/histograminfo/#a49f6a198c64dd3637b84dba9fcdb8ed8"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/storeinst">StoreInst</a> &#42;<a href="/docs/api/structs/llvm/histograminfo/#a49f6a198c64dd3637b84dba9fcdb8ed8">Store</a>;</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235" lineLink="/docs/api/structs/llvm/histograminfo/#a8213afd30f1a9b2536bf2cc0b129bb23"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/histograminfo/#a8213afd30f1a9b2536bf2cc0b129bb23">HistogramInfo</a>(<a href="/docs/api/classes/llvm/loadinst">LoadInst</a> &#42;<a href="/docs/api/structs/llvm/histograminfo/#a18ad617fc2ebb0c359d7a7364a226926">Load</a>, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/structs/llvm/histograminfo/#ada10f4396228d449b6060083e64e969e">Update</a>, <a href="/docs/api/classes/llvm/storeinst">StoreInst</a> &#42;<a href="/docs/api/structs/llvm/histograminfo/#a49f6a198c64dd3637b84dba9fcdb8ed8">Store</a>)</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">      : <a href="/docs/api/structs/llvm/histograminfo/#a18ad617fc2ebb0c359d7a7364a226926">Load</a>(<a href="/docs/api/structs/llvm/histograminfo/#a18ad617fc2ebb0c359d7a7364a226926">Load</a>), <a href="/docs/api/structs/llvm/histograminfo/#ada10f4396228d449b6060083e64e969e">Update</a>(<a href="/docs/api/structs/llvm/histograminfo/#ada10f4396228d449b6060083e64e969e">Update</a>), <a href="/docs/api/structs/llvm/histograminfo/#a49f6a198c64dd3637b84dba9fcdb8ed8">Store</a>(<a href="/docs/api/structs/llvm/histograminfo/#a49f6a198c64dd3637b84dba9fcdb8ed8">Store</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="comment">/// LoopVectorizationLegality checks if it is legal to vectorize a loop, and</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="comment">/// to what vectorization factor.</Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="comment">/// This class does not look at the profitability of vectorization, only the</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="comment">/// legality. This class has two main kinds of checks:</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="comment">/// &#42; Memory checks - The code in canVectorizeMemory checks if vectorization</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="comment">///   will change the order of memory accesses in a way that will change the</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="comment">///   correctness of the program.</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="comment">/// &#42; Scalars checks - The code in canVectorizeInstrs and canVectorizeMemory</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="comment">/// checks for a number of different conditions, such as the availability of a</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="comment">/// single induction variable, that all types are supported and vectorize-able,</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="comment">/// etc. This code reflects the capabilities of InnerLoopVectorizer.</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="comment">/// This class is also used by InnerLoopVectorizer for identifying</Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="comment">/// induction variable and the different reduction variables.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252" lineLink="/docs/api/classes/llvm/loopvectorizationlegality"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/loopvectorizationlegality/#a57ee5ed437953ba182781372d6a03fb3">LoopVectorizationLegality</a> &#123;</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a57ee5ed437953ba182781372d6a03fb3"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a57ee5ed437953ba182781372d6a03fb3">LoopVectorizationLegality</a>(</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/loop">Loop</a> &#42;L, <a href="/docs/api/classes/llvm/predicatedscalarevolution">PredicatedScalarEvolution</a> &amp;PSE, <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &#42;DT,</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> &#42;TTI, <a href="/docs/api/classes/llvm/targetlibraryinfo">TargetLibraryInfo</a> &#42;TLI, <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>,</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/loopaccessinfomanager">LoopAccessInfoManager</a> &amp;LAIs, <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;LI, <a href="/docs/api/classes/llvm/optimizationremarkemitter">OptimizationRemarkEmitter</a> &#42;ORE,</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/loopvectorizationrequirements">LoopVectorizationRequirements</a> &#42;R, <a href="/docs/api/classes/llvm/loopvectorizehints">LoopVectorizeHints</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>, <a href="/docs/api/classes/llvm/demandedbits">DemandedBits</a> &#42;DB,</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &#42;AC, <a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> &#42;BFI, <a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42;PSI)</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">      : TheLoop(L), LI(LI), PSE(PSE), TTI(TTI), TLI(TLI), DT(DT), LAIs(LAIs),</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">        ORE(ORE), Requirements(R), Hints(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>), DB(DB), AC(AC), BFI(BFI),</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">        PSI(PSI) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="comment">  /// ReductionList contains the reduction descriptors for all</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="comment">  /// of the reductions that were found in the loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#abe830a64fea7dbeee20cdda3726b0120"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/loopvectorizationlegality/#abe830a64fea7dbeee20cdda3726b0120">ReductionList</a> = <a href="/docs/api/classes/llvm/mapvector">MapVector&lt;PHINode &#42;, RecurrenceDescriptor&gt;</a>;</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="comment">  /// InductionList saves induction variables and maps them to the</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="comment">  /// induction descriptor.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a063c4d98febe7ef90dddbfedcfc59d16"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/loopvectorizationlegality/#a063c4d98febe7ef90dddbfedcfc59d16">InductionList</a> = <a href="/docs/api/classes/llvm/mapvector">MapVector&lt;PHINode &#42;, InductionDescriptor&gt;</a>;</Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="comment">  /// RecurrenceSet contains the phi nodes that are recurrences other than</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="comment">  /// inductions and reductions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a543d30d3a2b289aaa6b363be25d2b295"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/loopvectorizationlegality/#a543d30d3a2b289aaa6b363be25d2b295">RecurrenceSet</a> = <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet&lt;const PHINode &#42;, 8&gt;</a>;</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="comment">  /// Returns true if it is legal to vectorize this loop.</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="comment">  /// This does not mean that it is profitable to vectorize this</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="comment">  /// loop, only that it is legal to do so.</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="comment">  /// Temporarily taking UseVPlanNativePath parameter. If true, take</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="comment">  /// the new code path being implemented for outer loop vectorization</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="comment">  /// (should be functional for inner loop vectorization) based on VPlan.</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="comment">  /// If false, good old LV code.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a3ce10d1174bdfcac2b73ed7efa352b7f">canVectorize</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UseVPlanNativePath);</Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="comment">  /// Returns true if it is legal to vectorize the FP math operations in this</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="comment">  /// loop. Vectorizing is legal if we allow reordering of FP operations, or if</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="comment">  /// we can use in-order reductions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a552a158f5a673da0a26461d1471cea41">canVectorizeFPMath</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> EnableStrictReductions);</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="comment">  /// Return true if we can vectorize this loop while folding its tail by</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="comment">  /// masking.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#aafa8144325b3c584e828b07d73a8cb25">canFoldTailByMasking</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="comment">  /// Mark all respective loads/stores for masking. Must only be called when</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="comment">  /// tail-folding is possible.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#ab0b7c658c190bc113272ef4257a47659">prepareToFoldTailByMasking</a>();</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="comment">  /// Returns the primary induction variable.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a78dab1aa1facf4bf6300b3275490fa11"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/phinode">PHINode</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#a78dab1aa1facf4bf6300b3275490fa11">getPrimaryInduction</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> PrimaryInduction; &#125;</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="comment">  /// Returns the reduction variables found in the loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#aa31c04881c640716da40ae22ddda69ad"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#abe830a64fea7dbeee20cdda3726b0120">ReductionList</a> &amp;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#aa31c04881c640716da40ae22ddda69ad">getReductionVars</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Reductions; &#125;</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="comment">  /// Returns the induction variables found in the loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a8dffddf3feec953bba0425b324b380dc"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a063c4d98febe7ef90dddbfedcfc59d16">InductionList</a> &amp;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#a8dffddf3feec953bba0425b324b380dc">getInductionVars</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Inductions; &#125;</Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="comment">  /// Return the fixed-order recurrences found in the loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a317c5bedc82363ee7513fe56790878e7"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a543d30d3a2b289aaa6b363be25d2b295">RecurrenceSet</a> &amp;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#a317c5bedc82363ee7513fe56790878e7">getFixedOrderRecurrences</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> FixedOrderRecurrences; &#125;</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="comment">  /// Returns the widest induction type.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#ab1bbdeff3d286d3cd7a6e1f67a7e43ea"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/type">Type</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#ab1bbdeff3d286d3cd7a6e1f67a7e43ea">getWidestInductionType</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> WidestIndTy; &#125;</Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="comment">  /// Returns True if given store is a final invariant store of one of the</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="comment">  /// reductions found in the loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a1c9fd1c0627dfa3e013a1b2c7416ae90">isInvariantStoreOfReduction</a>(<a href="/docs/api/classes/llvm/storeinst">StoreInst</a> &#42;<a href="/docs/api/namespaces/llvm/si">SI</a>);</Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="comment">  /// Returns True if given address is invariant and is used to store recurrent</Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="comment">  /// expression</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a34f384c7ff8e4b23cc79156daf2a5c11">isInvariantAddressOfReduction</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;V);</Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="comment">  /// Returns True if V is a Phi node of an induction variable in this loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a7803d6f1162773c3b1a61e3ff441fcb8">isInductionPhi</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;V) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="comment">  /// Returns a pointer to the induction descriptor, if \\p Phi is an integer or</Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="comment">  /// floating point induction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/inductiondescriptor">InductionDescriptor</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#a74bcb5c6d80d9d7fb0eeb1131eeef2dc">getIntOrFpInductionDescriptor</a>(<a href="/docs/api/classes/llvm/phinode">PHINode</a> &#42;Phi) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="comment">  /// Returns a pointer to the induction descriptor, if \\p Phi is pointer</Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="comment">  /// induction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/inductiondescriptor">InductionDescriptor</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#a728069d0bcacf976cbb3764bad749562">getPointerInductionDescriptor</a>(<a href="/docs/api/classes/llvm/phinode">PHINode</a> &#42;Phi) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="comment">  /// Returns True if V is a cast that is part of an induction def-use chain,</Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="comment">  /// and had been proven to be redundant under a runtime guard (in other</Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="comment">  /// words, the cast has the same SCEV expression as the induction phi).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#afd0c0e675aff7e870f18b9c911977b7a">isCastedInductionVariable</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;V) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="comment">  /// Returns True if V can be considered as an induction variable in this</Highlight></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="comment">  /// loop. V can be the induction phi, or some redundant cast in the def-use</Highlight></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="comment">  /// chain of the inducion phi.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#af9f3d6495086eb1a43e829bf045fd073">isInductionVariable</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;V) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="comment">  /// Returns True if PN is a reduction variable in this loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a5c26e54d871c42c42dc62f9d449c633a"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a5c26e54d871c42c42dc62f9d449c633a">isReductionVariable</a>(<a href="/docs/api/classes/llvm/phinode">PHINode</a> &#42;PN)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Reductions.count(PN); &#125;</Highlight></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="comment">  /// Returns True if Phi is a fixed-order recurrence in this loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a5d6b8f1a562e7d26404946de46d3045b">isFixedOrderRecurrence</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/phinode">PHINode</a> &#42;Phi) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="comment">  /// Return true if the block BB needs to be predicated in order for the loop</Highlight></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="comment">  /// to be vectorized.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a3b78b24a3c241e611957b82cd12640da">blockNeedsPredication</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="comment">  /// Check if this pointer is consecutive when vectorizing. This happens</Highlight></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="comment">  /// when the last index of the GEP is the induction variable, or that the</Highlight></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="comment">  /// pointer itself is an induction variable.</Highlight></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="comment">  /// This check allows us to vectorize A&#91;idx&#93; into a wide load/store.</Highlight></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="comment">  /// Returns:</Highlight></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="comment">  /// 0 - Stride is unknown or non-consecutive.</Highlight></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="comment">  /// 1 - Address is consecutive.</Highlight></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="comment">  /// -1 - Address is consecutive, and decreasing.</Highlight></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="comment">  /// NOTE: This method must only be used before modifying the original scalar</Highlight></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="comment">  /// loop. Do not use after invoking &#39;createVectorizedLoopSkeleton&#39; (PR34965).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a4589ea484ebe1919b451fff3948a17cc">isConsecutivePtr</a>(<a href="/docs/api/classes/llvm/type">Type</a> &#42;AccessTy, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="comment">  /// Returns true if \\p V is invariant across all loop iterations according to</Highlight></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="comment">  /// SCEV.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#aa10b9dac96a36c8b4da25fc6fa1d4352">isInvariant</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;V) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="comment">  /// Returns true if value V is uniform across \\p VF lanes, when \\p VF is</Highlight></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="comment">  /// provided, and otherwise if \\p V is invariant across all loop iterations.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a86e581cb8e98cb0649e8b524eed5c9c0">isUniform</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;V, <a href="/docs/api/classes/llvm/elementcount">ElementCount</a> VF) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="comment">  /// A uniform memory op is a load or store which accesses the same memory</Highlight></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="comment">  /// location on all \\p VF lanes, if \\p VF is provided and otherwise if the</Highlight></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="comment">  /// memory location is invariant.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#ac562402715584ed9e836026bae1ac150">isUniformMemOp</a>(<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/docs/api/classes/llvm/elementcount">ElementCount</a> VF) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="comment">  /// Returns the information that we collected about runtime memory check.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#af15a090796e9a873af5163ba057f4c85"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/runtimepointerchecking">RuntimePointerChecking</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#af15a090796e9a873af5163ba057f4c85">getRuntimePointerChecking</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> LAI-&gt;getRuntimePointerChecking();</Highlight></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#ab5632546144c4db5bbe1f975aeebd9d2"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopaccessinfo">LoopAccessInfo</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#ab5632546144c4db5bbe1f975aeebd9d2">getLAI</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> LAI; &#125;</Highlight></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#aa6717c9edc2614476ebb19bd73e8bcb8"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#aa6717c9edc2614476ebb19bd73e8bcb8">isSafeForAnyVectorWidth</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> LAI-&gt;getDepChecker().isSafeForAnyVectorWidth();</Highlight></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a2551d678f358fcb0f498224876f58673"><Highlight kind="normal">  uint64&#95;t <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a2551d678f358fcb0f498224876f58673">getMaxSafeVectorWidthInBits</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> LAI-&gt;getDepChecker().getMaxSafeVectorWidthInBits();</Highlight></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="comment">  /// Returns true if the loop has exactly one uncountable early exit, i.e. an</Highlight></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="comment">  /// uncountable exit that isn&#39;t the latch block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#ab22ff9e23f7f27234c8f6ec76db0c1f3"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#ab22ff9e23f7f27234c8f6ec76db0c1f3">hasUncountableEarlyExit</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#ad9e8b4a71d2eb63862cf0dfcb0e7d786">getUncountableEdge</a>().has&#95;value();</Highlight></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="comment">  /// Returns the uncountable early exiting block, if there is exactly one.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#ae1727fd1036f0c932cae65a5b5db5a0d"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#ae1727fd1036f0c932cae65a5b5db5a0d">getUncountableEarlyExitingBlock</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#ab22ff9e23f7f27234c8f6ec76db0c1f3">hasUncountableEarlyExit</a>() ? <a href="/docs/api/classes/llvm/loopvectorizationlegality/#ad9e8b4a71d2eb63862cf0dfcb0e7d786">getUncountableEdge</a>()-&gt;first : </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="comment">  /// Returns the destination of the uncountable early exiting block, if there</Highlight></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="comment">  /// is exactly one.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a64fd596d86681aff77584c0fd661f18a"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#a64fd596d86681aff77584c0fd661f18a">getUncountableEarlyExitBlock</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#ab22ff9e23f7f27234c8f6ec76db0c1f3">hasUncountableEarlyExit</a>() ? <a href="/docs/api/classes/llvm/loopvectorizationlegality/#ad9e8b4a71d2eb63862cf0dfcb0e7d786">getUncountableEdge</a>()-&gt;second : </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="comment">  /// Returns true if vector representation of the instruction \\p I</Highlight></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="comment">  /// requires mask.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#af0ced1e23ba4d4a56286b5f17f448ed7"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#af0ced1e23ba4d4a56286b5f17f448ed7">isMaskRequired</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> MaskedOp.<a href="/docs/api/classes/llvm/smallptrsetimpl/#af74676a3c7447be34bd2c1da76ec0c48">contains</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</Highlight></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="comment">  /// Returns true if there is at least one function call in the loop which</Highlight></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="comment">  /// has a vectorized variant available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a23ba553cf7c1e1b64bbf9d30eb540234"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a23ba553cf7c1e1b64bbf9d30eb540234">hasVectorCallVariants</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> VecCallVariantsFound; &#125;</Highlight></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="comment">  /// Returns true if there is at least one function call in the loop which</Highlight></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420"><Highlight kind="comment">  /// returns a struct type and needs to be vectorized.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a9ede4d70a86b91ae038a77c86b3f4aaa"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a9ede4d70a86b91ae038a77c86b3f4aaa">hasStructVectorCall</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> StructVecCallFound; &#125;</Highlight></CodeLine>
+<Link id="l00422" /><CodeLine lineNumber="422"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00423" /><CodeLine lineNumber="423" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a0f59a9c87ede76fde54388f16562a930"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a0f59a9c87ede76fde54388f16562a930">getNumStores</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> LAI-&gt;getNumStores(); &#125;</Highlight></CodeLine>
+<Link id="l00424" /><CodeLine lineNumber="424" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#aa9d35bb02e49c20fcafc8d179559da10"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#aa9d35bb02e49c20fcafc8d179559da10">getNumLoads</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> LAI-&gt;getNumLoads(); &#125;</Highlight></CodeLine>
+<Link id="l00425" /><CodeLine lineNumber="425"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00426" /><CodeLine lineNumber="426"><Highlight kind="comment">  /// Returns a HistogramInfo&#42; for the given instruction if it was determined</Highlight></CodeLine>
+<Link id="l00427" /><CodeLine lineNumber="427"><Highlight kind="comment">  /// to be part of a load -&gt; update -&gt; store sequence where multiple lanes</Highlight></CodeLine>
+<Link id="l00428" /><CodeLine lineNumber="428"><Highlight kind="comment">  /// may be working on the same memory address.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00429" /><CodeLine lineNumber="429" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a4f5c51eb16a87d311cfebdceb7b04ea7"><Highlight kind="normal">  std::optional&lt;const HistogramInfo &#42;&gt; <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a4f5c51eb16a87d311cfebdceb7b04ea7">getHistogramInfo</a>(<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00430" /><CodeLine lineNumber="430"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/histograminfo">HistogramInfo</a> &amp;HGram : Histograms)</Highlight></CodeLine>
+<Link id="l00431" /><CodeLine lineNumber="431"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (HGram.Load == <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> || HGram.Update == <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> || HGram.Store == <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</Highlight></CodeLine>
+<Link id="l00432" /><CodeLine lineNumber="432"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &amp;HGram;</Highlight></CodeLine>
+<Link id="l00433" /><CodeLine lineNumber="433"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00434" /><CodeLine lineNumber="434"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::nullopt;</Highlight></CodeLine>
+<Link id="l00435" /><CodeLine lineNumber="435"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00436" /><CodeLine lineNumber="436"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00437" /><CodeLine lineNumber="437"><Highlight kind="comment">  /// Returns a list of all known histogram operations in the loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00438" /><CodeLine lineNumber="438" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#ab306c8094bdb8c7cbdbdfb9a05800007"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopvectorizationlegality/#ab306c8094bdb8c7cbdbdfb9a05800007">hasHistograms</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> !Histograms.empty(); &#125;</Highlight></CodeLine>
+<Link id="l00439" /><CodeLine lineNumber="439"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00440" /><CodeLine lineNumber="440" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a3ecfb3b35e9665ce1444966f8ae0930f"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/predicatedscalarevolution">PredicatedScalarEvolution</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#a3ecfb3b35e9665ce1444966f8ae0930f">getPredicatedScalarEvolution</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00441" /><CodeLine lineNumber="441"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &amp;PSE;</Highlight></CodeLine>
+<Link id="l00442" /><CodeLine lineNumber="442"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00443" /><CodeLine lineNumber="443"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00444" /><CodeLine lineNumber="444" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#ae2bbeec474957c61045c6cb37f2d8379"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loop">Loop</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#ae2bbeec474957c61045c6cb37f2d8379">getLoop</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> TheLoop; &#125;</Highlight></CodeLine>
+<Link id="l00445" /><CodeLine lineNumber="445"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00446" /><CodeLine lineNumber="446" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a13545e37bc06efcf7642cfda97c65bd3"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#a13545e37bc06efcf7642cfda97c65bd3">getLoopInfo</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> LI; &#125;</Highlight></CodeLine>
+<Link id="l00447" /><CodeLine lineNumber="447"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00448" /><CodeLine lineNumber="448" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a4b011656b75317bd3e291ef771491f10"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#a4b011656b75317bd3e291ef771491f10">getAssumptionCache</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> AC; &#125;</Highlight></CodeLine>
+<Link id="l00449" /><CodeLine lineNumber="449"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00450" /><CodeLine lineNumber="450" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#abf6b349a0e6598527d2ea3ef89dba230"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/scalarevolution">ScalarEvolution</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#abf6b349a0e6598527d2ea3ef89dba230">getScalarEvolution</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> PSE.<a href="/docs/api/classes/llvm/predicatedscalarevolution/#a10ca5eacc61b5669880de2f8b0cff33c">getSE</a>(); &#125;</Highlight></CodeLine>
+<Link id="l00451" /><CodeLine lineNumber="451"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00452" /><CodeLine lineNumber="452" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a3add6f3f23fa2ec67277682de9acef7f"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &#42;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#a3add6f3f23fa2ec67277682de9acef7f">getDominatorTree</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> DT; &#125;</Highlight></CodeLine>
+<Link id="l00453" /><CodeLine lineNumber="453"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00454" /><CodeLine lineNumber="454"><Highlight kind="comment">  /// Returns all exiting blocks with a countable exit, i.e. the</Highlight></CodeLine>
+<Link id="l00455" /><CodeLine lineNumber="455"><Highlight kind="comment">  /// exit-not-taken count is known exactly at compile time.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00456" /><CodeLine lineNumber="456" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#a7a32abdcf9e80b2483aa55bc36f2840e"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;BasicBlock &#42;, 4&gt;</a> &amp;<a href="/docs/api/classes/llvm/loopvectorizationlegality/#a7a32abdcf9e80b2483aa55bc36f2840e">getCountableExitingBlocks</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00457" /><CodeLine lineNumber="457"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CountableExitingBlocks;</Highlight></CodeLine>
+<Link id="l00458" /><CodeLine lineNumber="458"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00459" /><CodeLine lineNumber="459"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00460" /><CodeLine lineNumber="460"><Highlight kind="comment">  /// Returns the loop edge to an uncountable exit, or std::nullopt if there</Highlight></CodeLine>
+<Link id="l00461" /><CodeLine lineNumber="461"><Highlight kind="comment">  /// isn&#39;t a single such edge.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00462" /><CodeLine lineNumber="462"><Highlight kind="normal">  std::optional&lt;std::pair&lt;BasicBlock &#42;, BasicBlock &#42;&gt;&gt;</Highlight></CodeLine>
+<Link id="l00463" /><CodeLine lineNumber="463" lineLink="/docs/api/classes/llvm/loopvectorizationlegality/#ad9e8b4a71d2eb63862cf0dfcb0e7d786"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loopvectorizationlegality/#ad9e8b4a71d2eb63862cf0dfcb0e7d786">getUncountableEdge</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00464" /><CodeLine lineNumber="464"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> UncountableEdge;</Highlight></CodeLine>
+<Link id="l00465" /><CodeLine lineNumber="465"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00466" /><CodeLine lineNumber="466"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00467" /><CodeLine lineNumber="467"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00468" /><CodeLine lineNumber="468"><Highlight kind="comment">  /// Return true if the pre-header, exiting and latch blocks of \\p Lp and all</Highlight></CodeLine>
+<Link id="l00469" /><CodeLine lineNumber="469"><Highlight kind="comment">  /// its nested loops are considered legal for vectorization. These legal</Highlight></CodeLine>
+<Link id="l00470" /><CodeLine lineNumber="470"><Highlight kind="comment">  /// checks are common for inner and outer loop vectorization.</Highlight></CodeLine>
+<Link id="l00471" /><CodeLine lineNumber="471"><Highlight kind="comment">  /// Temporarily taking UseVPlanNativePath parameter. If true, take</Highlight></CodeLine>
+<Link id="l00472" /><CodeLine lineNumber="472"><Highlight kind="comment">  /// the new code path being implemented for outer loop vectorization</Highlight></CodeLine>
+<Link id="l00473" /><CodeLine lineNumber="473"><Highlight kind="comment">  /// (should be functional for inner loop vectorization) based on VPlan.</Highlight></CodeLine>
+<Link id="l00474" /><CodeLine lineNumber="474"><Highlight kind="comment">  /// If false, good old LV code.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00475" /><CodeLine lineNumber="475"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> canVectorizeLoopNestCFG(<a href="/docs/api/classes/llvm/loop">Loop</a> &#42;Lp, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UseVPlanNativePath);</Highlight></CodeLine>
+<Link id="l00476" /><CodeLine lineNumber="476"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00477" /><CodeLine lineNumber="477"><Highlight kind="comment">  /// Set up outer loop inductions by checking Phis in outer loop header for</Highlight></CodeLine>
+<Link id="l00478" /><CodeLine lineNumber="478"><Highlight kind="comment">  /// supported inductions (int inductions). Return false if any of these Phis</Highlight></CodeLine>
+<Link id="l00479" /><CodeLine lineNumber="479"><Highlight kind="comment">  /// is not a supported induction or if we fail to find an induction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00480" /><CodeLine lineNumber="480"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> setupOuterLoopInductions();</Highlight></CodeLine>
+<Link id="l00481" /><CodeLine lineNumber="481"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00482" /><CodeLine lineNumber="482"><Highlight kind="comment">  /// Return true if the pre-header, exiting and latch blocks of \\p Lp</Highlight></CodeLine>
+<Link id="l00483" /><CodeLine lineNumber="483"><Highlight kind="comment">  /// (non-recursive) are considered legal for vectorization.</Highlight></CodeLine>
+<Link id="l00484" /><CodeLine lineNumber="484"><Highlight kind="comment">  /// Temporarily taking UseVPlanNativePath parameter. If true, take</Highlight></CodeLine>
+<Link id="l00485" /><CodeLine lineNumber="485"><Highlight kind="comment">  /// the new code path being implemented for outer loop vectorization</Highlight></CodeLine>
+<Link id="l00486" /><CodeLine lineNumber="486"><Highlight kind="comment">  /// (should be functional for inner loop vectorization) based on VPlan.</Highlight></CodeLine>
+<Link id="l00487" /><CodeLine lineNumber="487"><Highlight kind="comment">  /// If false, good old LV code.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00488" /><CodeLine lineNumber="488"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> canVectorizeLoopCFG(<a href="/docs/api/classes/llvm/loop">Loop</a> &#42;Lp, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UseVPlanNativePath);</Highlight></CodeLine>
+<Link id="l00489" /><CodeLine lineNumber="489"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00490" /><CodeLine lineNumber="490"><Highlight kind="comment">  /// Check if a single basic block loop is vectorizable.</Highlight></CodeLine>
+<Link id="l00491" /><CodeLine lineNumber="491"><Highlight kind="comment">  /// At this point we know that this is a loop with a constant trip count</Highlight></CodeLine>
+<Link id="l00492" /><CodeLine lineNumber="492"><Highlight kind="comment">  /// and we only need to check individual instructions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00493" /><CodeLine lineNumber="493"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> canVectorizeInstrs();</Highlight></CodeLine>
+<Link id="l00494" /><CodeLine lineNumber="494"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00495" /><CodeLine lineNumber="495"><Highlight kind="comment">  /// When we vectorize loops we may change the order in which</Highlight></CodeLine>
+<Link id="l00496" /><CodeLine lineNumber="496"><Highlight kind="comment">  /// we read and write from memory. This method checks if it is</Highlight></CodeLine>
+<Link id="l00497" /><CodeLine lineNumber="497"><Highlight kind="comment">  /// legal to vectorize the code, considering only memory constrains.</Highlight></CodeLine>
+<Link id="l00498" /><CodeLine lineNumber="498"><Highlight kind="comment">  /// Returns true if the loop is vectorizable</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00499" /><CodeLine lineNumber="499"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> canVectorizeMemory();</Highlight></CodeLine>
+<Link id="l00500" /><CodeLine lineNumber="500"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00501" /><CodeLine lineNumber="501"><Highlight kind="comment">  /// If LAA cannot determine whether all dependences are safe, we may be able</Highlight></CodeLine>
+<Link id="l00502" /><CodeLine lineNumber="502"><Highlight kind="comment">  /// to further analyse some IndirectUnsafe dependences and if they match a</Highlight></CodeLine>
+<Link id="l00503" /><CodeLine lineNumber="503"><Highlight kind="comment">  /// certain pattern (like a histogram) then we may still be able to vectorize.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00504" /><CodeLine lineNumber="504"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> canVectorizeIndirectUnsafeDependences();</Highlight></CodeLine>
+<Link id="l00505" /><CodeLine lineNumber="505"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00506" /><CodeLine lineNumber="506"><Highlight kind="comment">  /// Return true if we can vectorize this loop using the IF-conversion</Highlight></CodeLine>
+<Link id="l00507" /><CodeLine lineNumber="507"><Highlight kind="comment">  /// transformation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00508" /><CodeLine lineNumber="508"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> canVectorizeWithIfConvert();</Highlight></CodeLine>
+<Link id="l00509" /><CodeLine lineNumber="509"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00510" /><CodeLine lineNumber="510"><Highlight kind="comment">  /// Return true if we can vectorize this outer loop. The method performs</Highlight></CodeLine>
+<Link id="l00511" /><CodeLine lineNumber="511"><Highlight kind="comment">  /// specific checks for outer loop vectorization.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00512" /><CodeLine lineNumber="512"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> canVectorizeOuterLoop();</Highlight></CodeLine>
+<Link id="l00513" /><CodeLine lineNumber="513"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00514" /><CodeLine lineNumber="514"><Highlight kind="comment">  /// Returns true if this is an early exit loop that can be vectorized.</Highlight></CodeLine>
+<Link id="l00515" /><CodeLine lineNumber="515"><Highlight kind="comment">  /// Currently, a loop with an uncountable early exit is considered</Highlight></CodeLine>
+<Link id="l00516" /><CodeLine lineNumber="516"><Highlight kind="comment">  /// vectorizable if:</Highlight></CodeLine>
+<Link id="l00517" /><CodeLine lineNumber="517"><Highlight kind="comment">  ///   1 There are no writes to memory in the loop.</Highlight></CodeLine>
+<Link id="l00518" /><CodeLine lineNumber="518"><Highlight kind="comment">  ///   2 The loop has only one early uncountable exit</Highlight></CodeLine>
+<Link id="l00519" /><CodeLine lineNumber="519"><Highlight kind="comment">  ///   3 The early exit block dominates the latch block.</Highlight></CodeLine>
+<Link id="l00520" /><CodeLine lineNumber="520"><Highlight kind="comment">  ///   4 The latch block has an exact exit count.</Highlight></CodeLine>
+<Link id="l00521" /><CodeLine lineNumber="521"><Highlight kind="comment">  ///   5 The loop does not contain reductions or recurrences.</Highlight></CodeLine>
+<Link id="l00522" /><CodeLine lineNumber="522"><Highlight kind="comment">  ///   6 We can prove at compile-time that loops will not contain faulting</Highlight></CodeLine>
+<Link id="l00523" /><CodeLine lineNumber="523"><Highlight kind="comment">  ///   loads.</Highlight></CodeLine>
+<Link id="l00524" /><CodeLine lineNumber="524"><Highlight kind="comment">  ///   7 It is safe to speculatively execute instructions such as divide or</Highlight></CodeLine>
+<Link id="l00525" /><CodeLine lineNumber="525"><Highlight kind="comment">  ///   call instructions.</Highlight></CodeLine>
+<Link id="l00526" /><CodeLine lineNumber="526"><Highlight kind="comment">  /// The list above is not based on theoretical limitations of vectorization,</Highlight></CodeLine>
+<Link id="l00527" /><CodeLine lineNumber="527"><Highlight kind="comment">  /// but simply a statement that more work is needed to support these</Highlight></CodeLine>
+<Link id="l00528" /><CodeLine lineNumber="528"><Highlight kind="comment">  /// additional cases safely.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00529" /><CodeLine lineNumber="529"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isVectorizableEarlyExitLoop();</Highlight></CodeLine>
+<Link id="l00530" /><CodeLine lineNumber="530"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00531" /><CodeLine lineNumber="531"><Highlight kind="comment">  /// Return true if all of the instructions in the block can be speculatively</Highlight></CodeLine>
+<Link id="l00532" /><CodeLine lineNumber="532"><Highlight kind="comment">  /// executed, and record the loads/stores that require masking.</Highlight></CodeLine>
+<Link id="l00533" /><CodeLine lineNumber="533"><Highlight kind="comment">  /// \\p SafePtrs is a list of addresses that are known to be legal and we know</Highlight></CodeLine>
+<Link id="l00534" /><CodeLine lineNumber="534"><Highlight kind="comment">  /// that we can read from them without segfault.</Highlight></CodeLine>
+<Link id="l00535" /><CodeLine lineNumber="535"><Highlight kind="comment">  /// \\p MaskedOp is a list of instructions that have to be transformed into</Highlight></CodeLine>
+<Link id="l00536" /><CodeLine lineNumber="536"><Highlight kind="comment">  /// calls to the appropriate masked intrinsic when the loop is vectorized</Highlight></CodeLine>
+<Link id="l00537" /><CodeLine lineNumber="537"><Highlight kind="comment">  /// or dropped if the instruction is a conditional assume intrinsic.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00538" /><CodeLine lineNumber="538"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00539" /><CodeLine lineNumber="539"><Highlight kind="normal">  blockCanBePredicated(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB, <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl&lt;Value &#42;&gt;</a> &amp;SafePtrs,</Highlight></CodeLine>
+<Link id="l00540" /><CodeLine lineNumber="540"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl&lt;const Instruction &#42;&gt;</a> &amp;MaskedOp) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00541" /><CodeLine lineNumber="541"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00542" /><CodeLine lineNumber="542"><Highlight kind="comment">  /// Updates the vectorization state by adding \\p Phi to the inductions list.</Highlight></CodeLine>
+<Link id="l00543" /><CodeLine lineNumber="543"><Highlight kind="comment">  /// This can set \\p Phi as the main induction of the loop if \\p Phi is a</Highlight></CodeLine>
+<Link id="l00544" /><CodeLine lineNumber="544"><Highlight kind="comment">  /// better choice for the main induction than the existing one.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00545" /><CodeLine lineNumber="545"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> addInductionPhi(<a href="/docs/api/classes/llvm/phinode">PHINode</a> &#42;Phi, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/inductiondescriptor">InductionDescriptor</a> &amp;<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>,</Highlight></CodeLine>
+<Link id="l00546" /><CodeLine lineNumber="546"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl&lt;Value &#42;&gt;</a> &amp;AllowedExit);</Highlight></CodeLine>
+<Link id="l00547" /><CodeLine lineNumber="547"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00548" /><CodeLine lineNumber="548"><Highlight kind="comment">  /// The loop that we evaluate.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00549" /><CodeLine lineNumber="549"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loop">Loop</a> &#42;TheLoop;</Highlight></CodeLine>
+<Link id="l00550" /><CodeLine lineNumber="550"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00551" /><CodeLine lineNumber="551"><Highlight kind="comment">  /// Loop Info analysis.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00552" /><CodeLine lineNumber="552"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;LI;</Highlight></CodeLine>
+<Link id="l00553" /><CodeLine lineNumber="553"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00554" /><CodeLine lineNumber="554"><Highlight kind="comment">  /// A wrapper around ScalarEvolution used to add runtime SCEV checks.</Highlight></CodeLine>
+<Link id="l00555" /><CodeLine lineNumber="555"><Highlight kind="comment">  /// Applies dynamic knowledge to simplify SCEV expressions in the context</Highlight></CodeLine>
+<Link id="l00556" /><CodeLine lineNumber="556"><Highlight kind="comment">  /// of existing SCEV assumptions. The analysis will also add a minimal set</Highlight></CodeLine>
+<Link id="l00557" /><CodeLine lineNumber="557"><Highlight kind="comment">  /// of new predicates if this is required to enable vectorization and</Highlight></CodeLine>
+<Link id="l00558" /><CodeLine lineNumber="558"><Highlight kind="comment">  /// unrolling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00559" /><CodeLine lineNumber="559"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/predicatedscalarevolution">PredicatedScalarEvolution</a> &amp;PSE;</Highlight></CodeLine>
+<Link id="l00560" /><CodeLine lineNumber="560"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00561" /><CodeLine lineNumber="561"><Highlight kind="comment">  /// Target Transform Info.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00562" /><CodeLine lineNumber="562"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> &#42;<a href="/docs/api/namespaces/llvm/#aa0d69e81725c10fa5407f0bf34462068">TTI</a>;</Highlight></CodeLine>
+<Link id="l00563" /><CodeLine lineNumber="563"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00564" /><CodeLine lineNumber="564"><Highlight kind="comment">  /// Target Library Info.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00565" /><CodeLine lineNumber="565"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/targetlibraryinfo">TargetLibraryInfo</a> &#42;TLI;</Highlight></CodeLine>
+<Link id="l00566" /><CodeLine lineNumber="566"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00567" /><CodeLine lineNumber="567"><Highlight kind="comment">  /// Dominator Tree.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00568" /><CodeLine lineNumber="568"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &#42;DT;</Highlight></CodeLine>
+<Link id="l00569" /><CodeLine lineNumber="569"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00570" /><CodeLine lineNumber="570"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// LoopAccess analysis.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00571" /><CodeLine lineNumber="571"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loopaccessinfomanager">LoopAccessInfoManager</a> &amp;LAIs;</Highlight></CodeLine>
+<Link id="l00572" /><CodeLine lineNumber="572"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00573" /><CodeLine lineNumber="573"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopaccessinfo">LoopAccessInfo</a> &#42;LAI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00574" /><CodeLine lineNumber="574"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00575" /><CodeLine lineNumber="575"><Highlight kind="comment">  /// Interface to emit optimization remarks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00576" /><CodeLine lineNumber="576"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/optimizationremarkemitter">OptimizationRemarkEmitter</a> &#42;ORE;</Highlight></CodeLine>
+<Link id="l00577" /><CodeLine lineNumber="577"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00578" /><CodeLine lineNumber="578"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//  ---  vectorization state --- //</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00579" /><CodeLine lineNumber="579"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00580" /><CodeLine lineNumber="580"><Highlight kind="comment">  /// Holds the primary induction variable. This is the counter of the</Highlight></CodeLine>
+<Link id="l00581" /><CodeLine lineNumber="581"><Highlight kind="comment">  /// loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00582" /><CodeLine lineNumber="582"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/phinode">PHINode</a> &#42;PrimaryInduction = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00583" /><CodeLine lineNumber="583"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00584" /><CodeLine lineNumber="584"><Highlight kind="comment">  /// Holds the reduction variables.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00585" /><CodeLine lineNumber="585"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loopvectorizationlegality/#abe830a64fea7dbeee20cdda3726b0120">ReductionList</a> <a href="/docs/api/namespaces/llvm/#a1200affbcdb869bf32076f90ad9d0eafa9a819585a6c0017acaff053c740cec70">Reductions</a>;</Highlight></CodeLine>
+<Link id="l00586" /><CodeLine lineNumber="586"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00587" /><CodeLine lineNumber="587"><Highlight kind="comment">  /// Holds all of the induction variables that we found in the loop.</Highlight></CodeLine>
+<Link id="l00588" /><CodeLine lineNumber="588"><Highlight kind="comment">  /// Notice that inductions don&#39;t need to start at zero and that induction</Highlight></CodeLine>
+<Link id="l00589" /><CodeLine lineNumber="589"><Highlight kind="comment">  /// variables can be pointers.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00590" /><CodeLine lineNumber="590"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a063c4d98febe7ef90dddbfedcfc59d16">InductionList</a> Inductions;</Highlight></CodeLine>
+<Link id="l00591" /><CodeLine lineNumber="591"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00592" /><CodeLine lineNumber="592"><Highlight kind="comment">  /// Holds all the casts that participate in the update chain of the induction</Highlight></CodeLine>
+<Link id="l00593" /><CodeLine lineNumber="593"><Highlight kind="comment">  /// variables, and that have been proven to be redundant (possibly under a</Highlight></CodeLine>
+<Link id="l00594" /><CodeLine lineNumber="594"><Highlight kind="comment">  /// runtime guard). These casts can be ignored when creating the vectorized</Highlight></CodeLine>
+<Link id="l00595" /><CodeLine lineNumber="595"><Highlight kind="comment">  /// loop body.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00596" /><CodeLine lineNumber="596"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet&lt;Instruction &#42;, 4&gt;</a> InductionCastsToIgnore;</Highlight></CodeLine>
+<Link id="l00597" /><CodeLine lineNumber="597"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00598" /><CodeLine lineNumber="598"><Highlight kind="comment">  /// Holds the phi nodes that are fixed-order recurrences.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00599" /><CodeLine lineNumber="599"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loopvectorizationlegality/#a543d30d3a2b289aaa6b363be25d2b295">RecurrenceSet</a> FixedOrderRecurrences;</Highlight></CodeLine>
+<Link id="l00600" /><CodeLine lineNumber="600"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00601" /><CodeLine lineNumber="601"><Highlight kind="comment">  /// Holds the widest induction type encountered.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00602" /><CodeLine lineNumber="602"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/type">Type</a> &#42;WidestIndTy = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00603" /><CodeLine lineNumber="603"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00604" /><CodeLine lineNumber="604"><Highlight kind="comment">  /// Allowed outside users. This holds the variables that can be accessed from</Highlight></CodeLine>
+<Link id="l00605" /><CodeLine lineNumber="605"><Highlight kind="comment">  /// outside the loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00606" /><CodeLine lineNumber="606"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet&lt;Value &#42;, 4&gt;</a> AllowedExit;</Highlight></CodeLine>
+<Link id="l00607" /><CodeLine lineNumber="607"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00608" /><CodeLine lineNumber="608"><Highlight kind="comment">  /// Vectorization requirements that will go through late-evaluation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00609" /><CodeLine lineNumber="609"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loopvectorizationrequirements">LoopVectorizationRequirements</a> &#42;Requirements;</Highlight></CodeLine>
+<Link id="l00610" /><CodeLine lineNumber="610"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00611" /><CodeLine lineNumber="611"><Highlight kind="comment">  /// Used to emit an analysis of any legality issues.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00612" /><CodeLine lineNumber="612"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loopvectorizehints">LoopVectorizeHints</a> &#42;Hints;</Highlight></CodeLine>
+<Link id="l00613" /><CodeLine lineNumber="613"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00614" /><CodeLine lineNumber="614"><Highlight kind="comment">  /// The demanded bits analysis is used to compute the minimum type size in</Highlight></CodeLine>
+<Link id="l00615" /><CodeLine lineNumber="615"><Highlight kind="comment">  /// which a reduction can be computed.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00616" /><CodeLine lineNumber="616"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/demandedbits">DemandedBits</a> &#42;DB;</Highlight></CodeLine>
+<Link id="l00617" /><CodeLine lineNumber="617"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00618" /><CodeLine lineNumber="618"><Highlight kind="comment">  /// The assumption cache analysis is used to compute the minimum type size in</Highlight></CodeLine>
+<Link id="l00619" /><CodeLine lineNumber="619"><Highlight kind="comment">  /// which a reduction can be computed.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00620" /><CodeLine lineNumber="620"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &#42;AC;</Highlight></CodeLine>
+<Link id="l00621" /><CodeLine lineNumber="621"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00622" /><CodeLine lineNumber="622"><Highlight kind="comment">  /// While vectorizing these instructions we have to generate a</Highlight></CodeLine>
+<Link id="l00623" /><CodeLine lineNumber="623"><Highlight kind="comment">  /// call to the appropriate masked intrinsic or drop them in case of</Highlight></CodeLine>
+<Link id="l00624" /><CodeLine lineNumber="624"><Highlight kind="comment">  /// conditional assumes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00625" /><CodeLine lineNumber="625"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet&lt;const Instruction &#42;, 8&gt;</a> MaskedOp;</Highlight></CodeLine>
+<Link id="l00626" /><CodeLine lineNumber="626"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00627" /><CodeLine lineNumber="627"><Highlight kind="comment">  /// Contains all identified histogram operations, which are sequences of</Highlight></CodeLine>
+<Link id="l00628" /><CodeLine lineNumber="628"><Highlight kind="comment">  /// load -&gt; update -&gt; store instructions where multiple lanes in a vector</Highlight></CodeLine>
+<Link id="l00629" /><CodeLine lineNumber="629"><Highlight kind="comment">  /// may work on the same memory location.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00630" /><CodeLine lineNumber="630"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;HistogramInfo, 1&gt;</a> Histograms;</Highlight></CodeLine>
+<Link id="l00631" /><CodeLine lineNumber="631"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00632" /><CodeLine lineNumber="632"><Highlight kind="comment">  /// BFI and PSI are used to check for profile guided size optimizations.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00633" /><CodeLine lineNumber="633"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> &#42;BFI;</Highlight></CodeLine>
+<Link id="l00634" /><CodeLine lineNumber="634"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42;PSI;</Highlight></CodeLine>
+<Link id="l00635" /><CodeLine lineNumber="635"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00636" /><CodeLine lineNumber="636"><Highlight kind="comment">  /// If we discover function calls within the loop which have a valid</Highlight></CodeLine>
+<Link id="l00637" /><CodeLine lineNumber="637"><Highlight kind="comment">  /// vectorized variant, record that fact so that LoopVectorize can</Highlight></CodeLine>
+<Link id="l00638" /><CodeLine lineNumber="638"><Highlight kind="comment">  /// (potentially) make a better decision on the maximum VF and enable</Highlight></CodeLine>
+<Link id="l00639" /><CodeLine lineNumber="639"><Highlight kind="comment">  /// the use of those function variants.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00640" /><CodeLine lineNumber="640"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> VecCallVariantsFound = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00641" /><CodeLine lineNumber="641"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00642" /><CodeLine lineNumber="642"><Highlight kind="comment">  /// If we find a call (to be vectorized) that returns a struct type, record</Highlight></CodeLine>
+<Link id="l00643" /><CodeLine lineNumber="643"><Highlight kind="comment">  /// that so we can bail out until this is supported.</Highlight></CodeLine>
+<Link id="l00644" /><CodeLine lineNumber="644"><Highlight kind="comment">  /// TODO: Remove this flag once vectorizing calls with struct returns is</Highlight></CodeLine>
+<Link id="l00645" /><CodeLine lineNumber="645"><Highlight kind="comment">  /// supported.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00646" /><CodeLine lineNumber="646"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> StructVecCallFound = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00647" /><CodeLine lineNumber="647"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00648" /><CodeLine lineNumber="648"><Highlight kind="comment">  /// Keep track of all the countable and uncountable exiting blocks if</Highlight></CodeLine>
+<Link id="l00649" /><CodeLine lineNumber="649"><Highlight kind="comment">  /// the exact backedge taken count is not computable.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00650" /><CodeLine lineNumber="650"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;BasicBlock &#42;, 4&gt;</a> CountableExitingBlocks;</Highlight></CodeLine>
+<Link id="l00651" /><CodeLine lineNumber="651"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00652" /><CodeLine lineNumber="652"><Highlight kind="comment">  /// Keep track of the loop edge to an uncountable exit, comprising a pair</Highlight></CodeLine>
+<Link id="l00653" /><CodeLine lineNumber="653"><Highlight kind="comment">  /// of (Exiting, Exit) blocks, if there is exactly one early exit.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00654" /><CodeLine lineNumber="654"><Highlight kind="normal">  std::optional&lt;std::pair&lt;BasicBlock &#42;, BasicBlock &#42;&gt;&gt; UncountableEdge;</Highlight></CodeLine>
+<Link id="l00655" /><CodeLine lineNumber="655"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00656" /><CodeLine lineNumber="656"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00657" /><CodeLine lineNumber="657"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00658" /><CodeLine lineNumber="658"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00659" /><CodeLine lineNumber="659"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;TRANSFORMS&#95;VECTORIZE&#95;LOOPVECTORIZATIONLEGALITY&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

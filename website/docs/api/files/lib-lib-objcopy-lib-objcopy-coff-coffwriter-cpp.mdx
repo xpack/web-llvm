@@ -1,0 +1,579 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/objcopy/lib/objcopy/coff/coffwriter-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `COFFWriter.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="COFFWriter.h"
+  permalink="/docs/api/files/lib/lib/objcopy/lib/objcopy/coff/coffwriter-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="COFFObject.h"
+  permalink="/docs/api/files/lib/lib/objcopy/lib/objcopy/coff/coffobject-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/ArrayRef.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/StringRef.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/BinaryFormat/COFF.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/binaryformat/coff-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Object/COFF.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/object/coff-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Errc.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/errc-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/ErrorHandling.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cstddef"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="cstdint"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/objcopy">llvm::objcopy</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/objcopy/coff">llvm::objcopy::coff</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- COFFWriter.cpp -----------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/objcopy/lib/objcopy/coff/coffwriter-h">COFFWriter.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/objcopy/lib/objcopy/coff/coffobject-h">COFFObject.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h">llvm/ADT/ArrayRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h">llvm/ADT/StringRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/binaryformat/coff-h">llvm/BinaryFormat/COFF.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/object/coff-h">llvm/Object/COFF.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/errc-h">llvm/Support/Errc.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h">llvm/Support/ErrorHandling.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstddef&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstdint&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/objcopy">objcopy</a> &#123;</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/objcopy/coff">coff</a> &#123;</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">object;</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/logicalview/#a68bf3a0b21ddaa5e5dd4700790af833ca4fa2ac5353638195d4ce3bc48a5a9db7">COFF</a>;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> COFFWriter::finalizeRelocTargets() &#123;</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/objcopy/#a88eeb89876019c1a9f2540275fb96457ad2c24d59e0baff4d0155fbdf62590867">Section</a> &amp;Sec : Obj.getMutableSections()) &#123;</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (Relocation &amp;R : Sec.Relocs) &#123;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/armbuildattrs/#aea10ca6bf098a425d51ac7fe65d30ed6aa10cda45fcbf7c8c9804e4e4d2e1bcdf">Symbol</a> &#42;Sym = Obj.findSymbol(<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.Target);</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Sym == </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">createStringError</a>(object&#95;error::invalid&#95;symbol&#95;index,</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">                                 </Highlight><Highlight kind="stringliteral">&quot;relocation target &#39;%s&#39; (%zu) not found&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">                                 <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.TargetName.str().c&#95;str(), <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.Target);</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.Reloc.SymbolTableIndex = Sym-&gt;RawIndex;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> COFFWriter::finalizeSymbolContents() &#123;</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (Symbol &amp;Sym : Obj.getMutableSymbols()) &#123;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Sym.TargetSectionId &lt;= 0) &#123;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Undefined, or a special kind of symbol. These negative values</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// are stored in the SectionNumber field which is unsigned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">      Sym.Sym.SectionNumber = </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uint32&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(Sym.TargetSectionId);</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/objcopy/#a88eeb89876019c1a9f2540275fb96457ad2c24d59e0baff4d0155fbdf62590867">Section</a> &#42;Sec = Obj.findSection(Sym.TargetSectionId);</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Sec == </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">createStringError</a>(object&#95;error::invalid&#95;symbol&#95;index,</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">                                 </Highlight><Highlight kind="stringliteral">&quot;symbol &#39;%s&#39; points to a removed section&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">                                 Sym.Name.str().c&#95;str());</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">      Sym.Sym.SectionNumber = Sec-&gt;Index;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Sym.Sym.NumberOfAuxSymbols == 1 &amp;&amp;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">          Sym.Sym.StorageClass == <a href="/docs/api/namespaces/llvm/coff/#a906c310d62ec1ae55afe3295a4fc2115afc617a23fd5e4cce7f2adfc7c2966e1c">IMAGE&#95;SYM&#95;CLASS&#95;STATIC</a>) &#123;</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">        coff&#95;aux&#95;section&#95;definition &#42;SD =</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">            </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="normal">coff&#95;aux&#95;section&#95;definition &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">                Sym.AuxData&#91;0&#93;.Opaque);</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">        uint32&#95;t SDSectionNumber;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Sym.AssociativeComdatTargetSectionId == 0) &#123;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// Not a comdat associative section; just set the Number field to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// the number of the section itself.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">          SDSectionNumber = Sec-&gt;Index;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">        &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">          Sec = Obj.findSection(Sym.AssociativeComdatTargetSectionId);</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Sec == </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">            </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">createStringError</a>(</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">                object&#95;error::invalid&#95;symbol&#95;index,</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">                </Highlight><Highlight kind="stringliteral">&quot;symbol &#39;%s&#39; is associative to a removed section&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">                Sym.Name.str().c&#95;str());</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">          SDSectionNumber = Sec-&gt;Index;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Update the section definition with the new section number.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">        SD-&gt;NumberLowPart = </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uint16&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(SDSectionNumber);</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">        SD-&gt;NumberHighPart = </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uint16&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(SDSectionNumber &gt;&gt; 16);</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Check that we actually have got AuxData to match the weak symbol target</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// we want to set. Only &gt;= 1 would be required, but only == 1 makes sense.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Sym.WeakTargetSymbolId &amp;&amp; Sym.Sym.NumberOfAuxSymbols == 1) &#123;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">      coff&#95;aux&#95;weak&#95;external &#42;WE =</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="normal">coff&#95;aux&#95;weak&#95;external &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(Sym.AuxData&#91;0&#93;.Opaque);</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/armbuildattrs/#aea10ca6bf098a425d51ac7fe65d30ed6aa10cda45fcbf7c8c9804e4e4d2e1bcdf">Symbol</a> &#42;<a href="/docs/api/namespaces/llvm/amdgpu/exp/#af7592dc94276d1958420bcfb414b6998">Target</a> = Obj.findSymbol(&#42;Sym.WeakTargetSymbolId);</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Target == </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">createStringError</a>(object&#95;error::invalid&#95;symbol&#95;index,</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">                                 </Highlight><Highlight kind="stringliteral">&quot;symbol &#39;%s&#39; is missing its weak target&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">                                 Sym.Name.str().c&#95;str());</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">      WE-&gt;TagIndex = <a href="/docs/api/namespaces/llvm/amdgpu/exp/#af7592dc94276d1958420bcfb414b6998">Target</a>-&gt;RawIndex;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> COFFWriter::layoutSections() &#123;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;S : Obj.getMutableSections()) &#123;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (S.Header.SizeOfRawData &gt; 0)</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">      S.Header.PointerToRawData = FileSize;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">      S.Header.PointerToRawData = 0;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">    FileSize += S.Header.SizeOfRawData; </Highlight><Highlight kind="comment">// For executables, this is already</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">                                        </Highlight><Highlight kind="comment">// aligned to FileAlignment.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (S.Relocs.size() &gt;= 0xffff) &#123;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">      S.Header.Characteristics |= <a href="/docs/api/namespaces/llvm/coff/#a45c610228e069b0b3efbcbc1d5577f5aa7a0c196168bd2cee7fedcbcf0a5c8bf1">COFF::IMAGE&#95;SCN&#95;LNK&#95;NRELOC&#95;OVFL</a>;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">      S.Header.NumberOfRelocations = 0xffff;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">      S.Header.PointerToRelocations = FileSize;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">      FileSize += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(coff&#95;relocation);</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">      S.Header.NumberOfRelocations = S.Relocs.size();</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">      S.Header.PointerToRelocations = S.Relocs.size() ? FileSize : 0;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">    FileSize += S.Relocs.size() &#42; </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(coff&#95;relocation);</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">    FileSize = <a href="/docs/api/namespaces/llvm/#ab102f0f12dd38aeea5906b1d80c792ff">alignTo</a>(FileSize, FileAlignment);</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (S.Header.Characteristics &amp; <a href="/docs/api/namespaces/llvm/coff/#a45c610228e069b0b3efbcbc1d5577f5aa6a1c5fd37f3374c2e8e233d9e19bd205">IMAGE&#95;SCN&#95;CNT&#95;INITIALIZED&#95;DATA</a>)</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">      SizeOfInitializedData += S.Header.SizeOfRawData;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">Expected&lt;size&#95;t&gt; COFFWriter::finalizeStringTable() &#123;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;S : Obj.getSections())</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (S.Name.size() &gt; <a href="/docs/api/namespaces/llvm/coff/#a008162b24bc184867edc5c39bd3969bda084ca1f72ecd10e22d3d8867548e0f61">COFF::NameSize</a>)</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">      StrTabBuilder.add(S.Name);</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;S : Obj.getSymbols())</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (S.Name.size() &gt; <a href="/docs/api/namespaces/llvm/coff/#a008162b24bc184867edc5c39bd3969bda084ca1f72ecd10e22d3d8867548e0f61">COFF::NameSize</a>)</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">      StrTabBuilder.add(S.Name);</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  StrTabBuilder.finalize();</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;S : Obj.getMutableSections()) &#123;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">    memset(S.Header.Name, 0, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(S.Header.Name));</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (S.Name.size() &lt;= <a href="/docs/api/namespaces/llvm/coff/#a008162b24bc184867edc5c39bd3969bda084ca1f72ecd10e22d3d8867548e0f61">COFF::NameSize</a>) &#123;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Short names can go in the field directly.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">      memcpy(S.Header.Name, S.Name.data(), S.Name.size());</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Offset of the section name in the string table.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a> = StrTabBuilder.getOffset(S.Name);</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/namespaces/llvm/coff/#a90b631351c27f8d64f1788ec334d7b4c">COFF::encodeSectionName</a>(S.Header.Name, <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>))</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">createStringError</a>(object&#95;error::invalid&#95;section&#95;index,</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">                                 </Highlight><Highlight kind="stringliteral">&quot;COFF string table is greater than 64GB, &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">                                 </Highlight><Highlight kind="stringliteral">&quot;unable to encode section name offset&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;S : Obj.getMutableSymbols()) &#123;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (S.Name.size() &gt; <a href="/docs/api/namespaces/llvm/coff/#a008162b24bc184867edc5c39bd3969bda084ca1f72ecd10e22d3d8867548e0f61">COFF::NameSize</a>) &#123;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">      S.Sym.Name.Offset.Zeroes = 0;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">      S.Sym.Name.Offset.Offset = StrTabBuilder.getOffset(S.Name);</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">      strncpy(S.Sym.Name.ShortName, S.Name.data(), <a href="/docs/api/namespaces/llvm/coff/#a008162b24bc184867edc5c39bd3969bda084ca1f72ecd10e22d3d8867548e0f61">COFF::NameSize</a>);</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> StrTabBuilder.getSize();</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> SymbolTy&gt;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">std::pair&lt;size&#95;t, size&#95;t&gt; COFFWriter::finalizeSymbolTable() &#123;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> RawSymIndex = 0;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;S : Obj.getMutableSymbols()) &#123;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Symbols normally have NumberOfAuxSymbols set correctly all the time.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// For file symbols, we need to know the output file&#39;s symbol size to be</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// able to calculate the number of slots it occupies.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!S.AuxFile.empty())</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">      S.Sym.NumberOfAuxSymbols =</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">          <a href="/docs/api/namespaces/llvm/#ab102f0f12dd38aeea5906b1d80c792ff">alignTo</a>(S.AuxFile.size(), </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(SymbolTy)) / </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(SymbolTy);</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">    S.RawIndex = RawSymIndex;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">    RawSymIndex += 1 + S.Sym.NumberOfAuxSymbols;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;pair(RawSymIndex &#42; </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(SymbolTy), </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(SymbolTy));</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> COFFWriter::finalize(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsBigObj) &#123;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> SymTabSize, SymbolSize;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">  std::tie(SymTabSize, SymbolSize) = IsBigObj</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">                                         ? finalizeSymbolTable&lt;coff&#95;symbol32&gt;()</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">                                         : finalizeSymbolTable&lt;<a href="/docs/api/namespaces/llvm/object/#a918bb801731475346a494b06e8f805cb">coff&#95;symbol16</a>&gt;();</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a> = finalizeRelocTargets())</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a> = finalizeSymbolContents())</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>;</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> SizeOfHeaders = 0;</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">  FileAlignment = 1;</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> PeHeaderSize = 0;</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Obj.IsPE) &#123;</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">    Obj.DosHeader.AddressOfNewExeHeader =</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">        sizeof(Obj.DosHeader) + Obj.DosStub.size();</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">    SizeOfHeaders += Obj.DosHeader.AddressOfNewExeHeader + sizeof(PEMagic);</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">    FileAlignment = Obj.PeHeader.FileAlignment;</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">    Obj.PeHeader.NumberOfRvaAndSize = Obj.DataDirectories.size();</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">    PeHeaderSize = Obj.Is64 ? sizeof(pe32plus&#95;header) : sizeof(pe32&#95;header);</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">    SizeOfHeaders +=</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">        PeHeaderSize + sizeof(data&#95;directory) &#42; Obj.DataDirectories.size();</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">  Obj.CoffFileHeader.NumberOfSections = Obj.getSections().size();</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">  SizeOfHeaders +=</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">      IsBigObj ? </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(coff&#95;bigobj&#95;file&#95;header) : </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(coff&#95;file&#95;header);</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">  SizeOfHeaders += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(coff&#95;section) &#42; Obj.getSections().size();</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">  SizeOfHeaders = <a href="/docs/api/namespaces/llvm/#ab102f0f12dd38aeea5906b1d80c792ff">alignTo</a>(SizeOfHeaders, FileAlignment);</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">  Obj.CoffFileHeader.SizeOfOptionalHeader =</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">      PeHeaderSize + </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(data&#95;directory) &#42; Obj.DataDirectories.size();</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">  FileSize = SizeOfHeaders;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">  SizeOfInitializedData = 0;</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">  layoutSections();</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Obj.IsPE) &#123;</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">    Obj.PeHeader.SizeOfHeaders = SizeOfHeaders;</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">    Obj.PeHeader.SizeOfInitializedData = SizeOfInitializedData;</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Obj.getSections().empty()) &#123;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/objcopy/#a88eeb89876019c1a9f2540275fb96457ad2c24d59e0baff4d0155fbdf62590867">Section</a> &amp;S = Obj.getSections().back();</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">      Obj.PeHeader.SizeOfImage =</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">          <a href="/docs/api/namespaces/llvm/#ab102f0f12dd38aeea5906b1d80c792ff">alignTo</a>(S.Header.VirtualAddress + S.Header.VirtualSize,</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">                  Obj.PeHeader.SectionAlignment);</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// If the PE header had a checksum, clear it, since it isn&#39;t valid</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// any longer. (We don&#39;t calculate a new one.)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">    Obj.PeHeader.CheckSum = 0;</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">  Expected&lt;size&#95;t&gt; StrTabSizeOrErr = finalizeStringTable();</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!StrTabSizeOrErr)</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> StrTabSizeOrErr.takeError();</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> StrTabSize = &#42;StrTabSizeOrErr;</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> PointerToSymbolTable = FileSize;</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// StrTabSize &lt;= 4 is the size of an empty string table, only consisting</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// of the length field.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SymTabSize == 0 &amp;&amp; StrTabSize &lt;= 4 &amp;&amp; Obj.IsPE) &#123;</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// For executables, don&#39;t point to the symbol table and skip writing</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// the length field, if both the symbol and string tables are empty.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">    PointerToSymbolTable = 0;</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">    StrTabSize = 0;</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> NumRawSymbols = SymTabSize / SymbolSize;</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">  Obj.CoffFileHeader.PointerToSymbolTable = PointerToSymbolTable;</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">  Obj.CoffFileHeader.NumberOfSymbols = NumRawSymbols;</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">  FileSize += SymTabSize + StrTabSize;</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">  FileSize = <a href="/docs/api/namespaces/llvm/#ab102f0f12dd38aeea5906b1d80c792ff">alignTo</a>(FileSize, FileAlignment);</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> COFFWriter::writeHeaders(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsBigObj) &#123;</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">  uint8&#95;t &#42;<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> = </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="normal">uint8&#95;t &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(Buf-&gt;getBufferStart());</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Obj.IsPE) &#123;</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">    memcpy(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, &amp;Obj.DosHeader, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Obj.DosHeader));</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Obj.DosHeader);</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">    memcpy(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, Obj.DosStub.data(), Obj.DosStub.size());</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += Obj.DosStub.size();</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">    memcpy(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, <a href="/docs/api/namespaces/llvm/coff/#aece3d8774b856cfd520c842bf134d4a0">PEMagic</a>, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/namespaces/llvm/coff/#aece3d8774b856cfd520c842bf134d4a0">PEMagic</a>));</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/namespaces/llvm/coff/#aece3d8774b856cfd520c842bf134d4a0">PEMagic</a>);</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!IsBigObj) &#123;</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">    memcpy(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, &amp;Obj.CoffFileHeader, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Obj.CoffFileHeader));</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Obj.CoffFileHeader);</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Generate a coff&#95;bigobj&#95;file&#95;header, filling it in with the values</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// from Obj.CoffFileHeader. All extra fields that don&#39;t exist in</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// coff&#95;file&#95;header can be set to hardcoded values.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">    coff&#95;bigobj&#95;file&#95;header BigObjHeader;</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">    BigObjHeader.Sig1 = <a href="/docs/api/namespaces/llvm/coff/#a38731f9b23370e15ad002c2a712d89a8a3b426e5bcc52a3693b62bdbf03dca30e">IMAGE&#95;FILE&#95;MACHINE&#95;UNKNOWN</a>;</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">    BigObjHeader.Sig2 = 0xffff;</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">    BigObjHeader.Version = <a href="/docs/api/structs/llvm/coff/bigobjheader/#ad65c26a9ca959e73682acb723a9a963da35098a5e6c71482140d6a477ec7f56ea">BigObjHeader::MinBigObjectVersion</a>;</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">    BigObjHeader.Machine = Obj.CoffFileHeader.Machine;</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal">    BigObjHeader.TimeDateStamp = Obj.CoffFileHeader.TimeDateStamp;</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">    memcpy(BigObjHeader.UUID, <a href="/docs/api/namespaces/llvm/coff/#ae89cd5cd0f88610c3b724d104f6f0fd8">BigObjMagic</a>, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/namespaces/llvm/coff/#ae89cd5cd0f88610c3b724d104f6f0fd8">BigObjMagic</a>));</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">    BigObjHeader.unused1 = 0;</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">    BigObjHeader.unused2 = 0;</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">    BigObjHeader.unused3 = 0;</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">    BigObjHeader.unused4 = 0;</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// The value in Obj.CoffFileHeader.NumberOfSections is truncated, thus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// get the original one instead.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">    BigObjHeader.NumberOfSections = Obj.getSections().size();</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">    BigObjHeader.PointerToSymbolTable = Obj.CoffFileHeader.PointerToSymbolTable;</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">    BigObjHeader.NumberOfSymbols = Obj.CoffFileHeader.NumberOfSymbols;</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">    memcpy(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, &amp;BigObjHeader, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(BigObjHeader));</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(BigObjHeader);</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Obj.IsPE) &#123;</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Obj.Is64) &#123;</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">      memcpy(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, &amp;Obj.PeHeader, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Obj.PeHeader));</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Obj.PeHeader);</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">      pe32&#95;header PeHeader;</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/objcopy/coff/#a61250bbdb8bca0ef99f4652f3a429fe9">copyPeHeader</a>(PeHeader, Obj.PeHeader);</Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// The pe32plus&#95;header (stored in Object) lacks the BaseOfData field.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">      PeHeader.BaseOfData = Obj.BaseOfData;</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">      memcpy(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, &amp;PeHeader, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(PeHeader));</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(PeHeader);</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;DD : Obj.DataDirectories) &#123;</Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal">      memcpy(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, &amp;DD, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(DD));</Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(DD);</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;S : Obj.getSections()) &#123;</Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal">    memcpy(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, &amp;S.Header, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(S.Header));</Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(S.Header);</Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> COFFWriter::writeSections() &#123;</Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;S : Obj.getSections()) &#123;</Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal">    uint8&#95;t &#42;<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> = </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="normal">uint8&#95;t &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(Buf-&gt;getBufferStart()) +</Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">                   S.Header.PointerToRawData;</Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal">    ArrayRef&lt;uint8&#95;t&gt; Contents = S.getContents();</Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal">    std::copy(Contents.begin(), Contents.end(), <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>);</Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// For executable sections, pad the remainder of the raw data size with</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// 0xcc, which is int3 on x86.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((S.Header.Characteristics &amp; <a href="/docs/api/namespaces/llvm/coff/#a45c610228e069b0b3efbcbc1d5577f5aa2b3dbe611464bb08a83985d56d7bc67b">IMAGE&#95;SCN&#95;CNT&#95;CODE</a>) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal">        S.Header.SizeOfRawData &gt; Contents.size())</Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">      memset(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> + Contents.size(), 0xcc,</Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal">             S.Header.SizeOfRawData - Contents.size());</Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += S.Header.SizeOfRawData;</Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (S.Relocs.size() &gt;= 0xffff) &#123;</Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal">      object::coff&#95;relocation <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>;</Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.VirtualAddress = S.Relocs.size() + 1;</Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.SymbolTableIndex = 0;</Highlight></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.Type = 0;</Highlight></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal">      memcpy(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, &amp;R, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(R));</Highlight></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>);</Highlight></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;R : S.Relocs) &#123;</Highlight></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal">      memcpy(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, &amp;<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.Reloc, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.Reloc));</Highlight></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.Reloc);</Highlight></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> SymbolTy&gt; </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> COFFWriter::writeSymbolStringTables() &#123;</Highlight></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">  uint8&#95;t &#42;<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> = </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="normal">uint8&#95;t &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(Buf-&gt;getBufferStart()) +</Highlight></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal">                 Obj.CoffFileHeader.PointerToSymbolTable;</Highlight></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;S : Obj.getSymbols()) &#123;</Highlight></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Convert symbols back to the right size, from coff&#95;symbol32.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/objcopy/coff/#a0f4e03df49ff52fb36573a91dbd23c67">copySymbol&lt;SymbolTy, coff&#95;symbol32&gt;</a>(&#42;</Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="normal">SymbolTy &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>),</Highlight></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="normal">                                        S.Sym);</Highlight></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(SymbolTy);</Highlight></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!S.AuxFile.empty()) &#123;</Highlight></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// For file symbols, just write the string into the aux symbol slots,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// assuming that the unwritten parts are initialized to zero in the memory</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// mapped file.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal">      std::copy(S.AuxFile.begin(), S.AuxFile.end(), <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>);</Highlight></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += S.Sym.NumberOfAuxSymbols &#42; </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(SymbolTy);</Highlight></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// For other auxillary symbols, write their opaque payload into one symbol</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// table slot each. For big object files, the symbols are larger than the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// opaque auxillary symbol struct and we leave padding at the end of each</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// entry.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> AuxSymbol &amp;AuxSym : S.AuxData) &#123;</Highlight></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal">        ArrayRef&lt;uint8&#95;t&gt; <a href="/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2ea60baadb22e80b147e4885ad16760e569">Ref</a> = AuxSym.getRef();</Highlight></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal">        std::copy(<a href="/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2ea60baadb22e80b147e4885ad16760e569">Ref</a>.begin(), <a href="/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2ea60baadb22e80b147e4885ad16760e569">Ref</a>.end(), <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>);</Highlight></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(SymbolTy);</Highlight></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (StrTabBuilder.getSize() &gt; 4 || !Obj.IsPE) &#123;</Highlight></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Always write a string table in object files, even an empty one.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="normal">    StrTabBuilder.write(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>);</Highlight></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += StrTabBuilder.getSize();</Highlight></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> <a href="/docs/api/classes/llvm/objcopy/coff/coffwriter/#aa33178217f3adda9b3fe805c1dfa5b5f">COFFWriter::write</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsBigObj) &#123;</Highlight></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a> = <a href="/docs/api/files/lib/lib/target/lib/target/arc/arcbranchfinalize-cpp/#a8e08eb3768ea6054b445ad1e5f0b9bba">finalize</a>(IsBigObj))</Highlight></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>;</Highlight></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="normal">  Buf = <a href="/docs/api/classes/llvm/writablememorybuffer/#a3ba0db4e545291ac0dbf07804f13d351">WritableMemoryBuffer::getNewMemBuffer</a>(FileSize);</Highlight></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Buf)</Highlight></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">createStringError</a>(<a href="/docs/api/namespaces/llvm/#a59739a4f15fb2ec57a6b7fcfe938546baafdb5594dc3e484fc1bfd7c564d550c1">llvm::errc::not&#95;enough&#95;memory</a>,</Highlight></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386"><Highlight kind="normal">                             </Highlight><Highlight kind="stringliteral">&quot;failed to allocate memory buffer of &quot;</Highlight><Highlight kind="normal"> +</Highlight></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="normal">                                 <a href="/docs/api/classes/llvm/twine/#acaa1b3e2d07a6c9d2d7030c7dc7ec6a7">Twine::utohexstr</a>(FileSize) + </Highlight><Highlight kind="stringliteral">&quot; bytes.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="normal">  writeHeaders(IsBigObj);</Highlight></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390"><Highlight kind="normal">  writeSections();</Highlight></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (IsBigObj)</Highlight></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="normal">    writeSymbolStringTables&lt;coff&#95;symbol32&gt;();</Highlight></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394"><Highlight kind="normal">    writeSymbolStringTables&lt;coff&#95;symbol16&gt;();</Highlight></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Obj.IsPE)</Highlight></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a> = patchDebugDirectory())</Highlight></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>;</Highlight></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// TODO: Implement direct writing to the output stream (without intermediate</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// memory buffer Buf).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="normal">  Out.write(Buf-&gt;getBufferStart(), Buf-&gt;getBufferSize());</Highlight></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="normal">Expected&lt;uint32&#95;t&gt; COFFWriter::virtualAddressToFileAddress(uint32&#95;t RVA) &#123;</Highlight></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;S : Obj.getSections()) &#123;</Highlight></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (RVA &gt;= S.Header.VirtualAddress &amp;&amp;</Highlight></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="normal">        RVA &lt; S.Header.VirtualAddress + S.Header.SizeOfRawData)</Highlight></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> S.Header.PointerToRawData + RVA - S.Header.VirtualAddress;</Highlight></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">createStringError</a>(object&#95;error::parse&#95;failed,</Highlight></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="normal">                           </Highlight><Highlight kind="stringliteral">&quot;debug directory payload not found&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Locate which sections contain the debug directories, iterate over all</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417"><Highlight kind="normal"></Highlight><Highlight kind="comment">// the debug&#95;directory structs in there, and set the PointerToRawData field</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="normal"></Highlight><Highlight kind="comment">// in all of them, according to their new physical location in the file.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> COFFWriter::patchDebugDirectory() &#123;</Highlight></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Obj.DataDirectories.size() &lt;= <a href="/docs/api/namespaces/llvm/coff/#a8ec28bc8cedea7febace40170acf2404ac180d06a50e9fc580140a835bb60fb8c">DEBUG&#95;DIRECTORY</a>)</Highlight></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00422" /><CodeLine lineNumber="422"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> data&#95;directory &#42;Dir = &amp;Obj.DataDirectories&#91;<a href="/docs/api/namespaces/llvm/coff/#a8ec28bc8cedea7febace40170acf2404ac180d06a50e9fc580140a835bb60fb8c">DEBUG&#95;DIRECTORY</a>&#93;;</Highlight></CodeLine>
+<Link id="l00423" /><CodeLine lineNumber="423"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Dir-&gt;Size &lt;= 0)</Highlight></CodeLine>
+<Link id="l00424" /><CodeLine lineNumber="424"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00425" /><CodeLine lineNumber="425"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;S : Obj.getSections()) &#123;</Highlight></CodeLine>
+<Link id="l00426" /><CodeLine lineNumber="426"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Dir-&gt;RelativeVirtualAddress &gt;= S.Header.VirtualAddress &amp;&amp;</Highlight></CodeLine>
+<Link id="l00427" /><CodeLine lineNumber="427"><Highlight kind="normal">        Dir-&gt;RelativeVirtualAddress &lt;</Highlight></CodeLine>
+<Link id="l00428" /><CodeLine lineNumber="428"><Highlight kind="normal">            S.Header.VirtualAddress + S.Header.SizeOfRawData) &#123;</Highlight></CodeLine>
+<Link id="l00429" /><CodeLine lineNumber="429"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Dir-&gt;RelativeVirtualAddress + Dir-&gt;Size &gt;</Highlight></CodeLine>
+<Link id="l00430" /><CodeLine lineNumber="430"><Highlight kind="normal">          S.Header.VirtualAddress + S.Header.SizeOfRawData)</Highlight></CodeLine>
+<Link id="l00431" /><CodeLine lineNumber="431"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">createStringError</a>(object&#95;error::parse&#95;failed,</Highlight></CodeLine>
+<Link id="l00432" /><CodeLine lineNumber="432"><Highlight kind="normal">                                 </Highlight><Highlight kind="stringliteral">&quot;debug directory extends past end of section&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00433" /><CodeLine lineNumber="433"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00434" /><CodeLine lineNumber="434"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a> = Dir-&gt;RelativeVirtualAddress - S.Header.VirtualAddress;</Highlight></CodeLine>
+<Link id="l00435" /><CodeLine lineNumber="435"><Highlight kind="normal">      uint8&#95;t &#42;<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> = </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="normal">uint8&#95;t &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(Buf-&gt;getBufferStart()) +</Highlight></CodeLine>
+<Link id="l00436" /><CodeLine lineNumber="436"><Highlight kind="normal">                     S.Header.PointerToRawData + <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>;</Highlight></CodeLine>
+<Link id="l00437" /><CodeLine lineNumber="437"><Highlight kind="normal">      uint8&#95;t &#42;End = <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> + Dir-&gt;Size;</Highlight></CodeLine>
+<Link id="l00438" /><CodeLine lineNumber="438"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> &lt; End) &#123;</Highlight></CodeLine>
+<Link id="l00439" /><CodeLine lineNumber="439"><Highlight kind="normal">        debug&#95;directory &#42;<a href="/docs/api/namespaces/llvm/objcopy/#a88eeb89876019c1a9f2540275fb96457aa603905470e2a5b8c13e96b579ef0dba">Debug</a> = </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="normal">debug&#95;directory &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>);</Highlight></CodeLine>
+<Link id="l00440" /><CodeLine lineNumber="440"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/objcopy/#a88eeb89876019c1a9f2540275fb96457aa603905470e2a5b8c13e96b579ef0dba">Debug</a>-&gt;PointerToRawData) &#123;</Highlight></CodeLine>
+<Link id="l00441" /><CodeLine lineNumber="441"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Expected&lt;uint32&#95;t&gt; FilePosOrErr =</Highlight></CodeLine>
+<Link id="l00442" /><CodeLine lineNumber="442"><Highlight kind="normal">                  virtualAddressToFileAddress(<a href="/docs/api/namespaces/llvm/objcopy/#a88eeb89876019c1a9f2540275fb96457aa603905470e2a5b8c13e96b579ef0dba">Debug</a>-&gt;AddressOfRawData))</Highlight></CodeLine>
+<Link id="l00443" /><CodeLine lineNumber="443"><Highlight kind="normal">            <a href="/docs/api/namespaces/llvm/objcopy/#a88eeb89876019c1a9f2540275fb96457aa603905470e2a5b8c13e96b579ef0dba">Debug</a>-&gt;PointerToRawData = &#42;FilePosOrErr;</Highlight></CodeLine>
+<Link id="l00444" /><CodeLine lineNumber="444"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00445" /><CodeLine lineNumber="445"><Highlight kind="normal">            </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> FilePosOrErr.takeError();</Highlight></CodeLine>
+<Link id="l00446" /><CodeLine lineNumber="446"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00447" /><CodeLine lineNumber="447"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(debug&#95;directory);</Highlight></CodeLine>
+<Link id="l00448" /><CodeLine lineNumber="448"><Highlight kind="normal">        <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(debug&#95;directory);</Highlight></CodeLine>
+<Link id="l00449" /><CodeLine lineNumber="449"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00450" /><CodeLine lineNumber="450"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Debug directory found and patched, all done.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00451" /><CodeLine lineNumber="451"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00452" /><CodeLine lineNumber="452"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00453" /><CodeLine lineNumber="453"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00454" /><CodeLine lineNumber="454"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">createStringError</a>(object&#95;error::parse&#95;failed,</Highlight></CodeLine>
+<Link id="l00455" /><CodeLine lineNumber="455"><Highlight kind="normal">                           </Highlight><Highlight kind="stringliteral">&quot;debug directory not found&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00456" /><CodeLine lineNumber="456"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00457" /><CodeLine lineNumber="457"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00458" /><CodeLine lineNumber="458" lineLink="/docs/api/classes/llvm/objcopy/coff/coffwriter/#aa33178217f3adda9b3fe805c1dfa5b5f"><Highlight kind="normal"><a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/classes/llvm/objcopy/coff/coffwriter/#aa33178217f3adda9b3fe805c1dfa5b5f">COFFWriter::write</a>() &#123;</Highlight></CodeLine>
+<Link id="l00459" /><CodeLine lineNumber="459"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsBigObj = Obj.<a href="/docs/api/structs/llvm/objcopy/coff/object/#ac719da3d3c57f045cb5dd0f8cf98aa01">getSections</a>().size() &gt; <a href="/docs/api/namespaces/llvm/coff/#ad3097c5eaf4198579c34562fd89a240e">MaxNumberOfSections16</a>;</Highlight></CodeLine>
+<Link id="l00460" /><CodeLine lineNumber="460"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (IsBigObj &amp;&amp; Obj.<a href="/docs/api/structs/llvm/objcopy/coff/object/#a372a31deed6f440b5d367a3d317eecde">IsPE</a>)</Highlight></CodeLine>
+<Link id="l00461" /><CodeLine lineNumber="461"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d2fd926089a58d482fb67a362e11bad">createStringError</a>(object&#95;error::parse&#95;failed,</Highlight></CodeLine>
+<Link id="l00462" /><CodeLine lineNumber="462"><Highlight kind="normal">                             </Highlight><Highlight kind="stringliteral">&quot;too many sections for executable&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00463" /><CodeLine lineNumber="463"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/objcopy/coff/coffwriter/#aa33178217f3adda9b3fe805c1dfa5b5f">write</a>(IsBigObj);</Highlight></CodeLine>
+<Link id="l00464" /><CodeLine lineNumber="464"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00465" /><CodeLine lineNumber="465"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00466" /><CodeLine lineNumber="466"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace coff</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00467" /><CodeLine lineNumber="467"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace objcopy</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00468" /><CodeLine lineNumber="468"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

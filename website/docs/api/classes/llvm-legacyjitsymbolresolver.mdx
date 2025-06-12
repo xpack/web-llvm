@@ -1,0 +1,201 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/legacyjitsymbolresolver
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `LegacyJITSymbolResolver` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Legacy symbol resolution interface. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::LegacyJITSymbolResolver</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/JITSymbol.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/jitsymbolresolver">JITSymbolResolver</a></>}>
+Symbol resolution interface. <a href="/docs/api/classes/llvm/jitsymbolresolver/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Derived Classes
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/linkingsymbolresolver">LinkingSymbolResolver</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/rtdyldmemorymanager">RTDyldMemoryManager</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/jitsymbol">JITSymbol</a></>}
+  name={<><a href="#a2612c868eb773faf53d42254da895290">findSymbol</a> (const std::string &amp;Name)=0</>}>
+This method returns the address of the specified function or variable. <a href="#a2612c868eb773faf53d42254da895290">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/jitsymbol">JITSymbol</a></>}
+  name={<><a href="#a7380b8beb758e62402b0817f6d5adfcb">findSymbolInLogicalDylib</a> (const std::string &amp;Name)=0</>}>
+This method returns the address of the specified symbol if it exists within the logical dynamic library represented by this <a href="/docs/api/classes/llvm/jitsymbolresolver">JITSymbolResolver</a>. <a href="#a7380b8beb758e62402b0817f6d5adfcb">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/expected">Expected</a>&lt; <a href="/docs/api/classes/llvm/jitsymbolresolver/#a487abfdc466598f156d5398ae986c6f9">LookupSet</a> &gt;</>}
+  name={<><a href="#a70654ce07c092ce4e460bb98d10319f6">getResponsibilitySet</a> (const LookupSet &amp;Symbols) final</>}>
+Performs flags lookup by calling findSymbolInLogicalDylib and returning the flags value for that symbol. <a href="#a70654ce07c092ce4e460bb98d10319f6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aadf85c83250f0a519c4e6c498dd91a15">lookup</a> (const LookupSet &amp;Symbols, OnResolvedFunction OnResolved) final</>}>
+Performs lookup by, for each symbol, first calling findSymbolInLogicalDylib and if that fails calling findSymbol. <a href="#aadf85c83250f0a519c4e6c498dd91a15">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a36b1823ae48f68eb092ada5887e54953">anchor</a> () override</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Legacy symbol resolution interface.
+
+Definition at line 401 of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>.
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### findSymbol() {#a2612c868eb773faf53d42254da895290}
+
+<MemberDefinition
+  prototype={<>virtual JITSymbol llvm::LegacyJITSymbolResolver::findSymbol (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> std::string &amp; Name)</>}>
+This method returns the address of the specified function or variable.
+
+It is used to resolve symbols during module linking.
+
+If the returned symbol&#39;s address is equal to ~0ULL then <a href="/docs/api/classes/llvm/runtimedyld">RuntimeDyld</a> will skip all relocations for that symbol, and the client will be responsible for handling them manually.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h/#l00432">432</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>.
+</MemberDefinition>
+
+### findSymbolInLogicalDylib() {#a7380b8beb758e62402b0817f6d5adfcb}
+
+<MemberDefinition
+  prototype={<>virtual JITSymbol llvm::LegacyJITSymbolResolver::findSymbolInLogicalDylib (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> std::string &amp; Name)</>}>
+This method returns the address of the specified symbol if it exists within the logical dynamic library represented by this <a href="/docs/api/classes/llvm/jitsymbolresolver">JITSymbolResolver</a>.
+
+Unlike findSymbol, queries through this interface should return addresses for hidden symbols.
+
+This is of particular importance for the Orc JIT APIs, which support lazy compilation by breaking up modules: Each of those broken out modules must be able to resolve hidden symbols provided by the others. Clients writing memory managers for <a href="/docs/api/classes/llvm/mcjit">MCJIT</a> can usually ignore this method.
+
+This method will be queried by <a href="/docs/api/classes/llvm/runtimedyld">RuntimeDyld</a> when checking for previous definitions of common symbols.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h/#l00424">424</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>.
+</MemberDefinition>
+
+### getResponsibilitySet() {#a70654ce07c092ce4e460bb98d10319f6}
+
+<MemberDefinition
+  prototype={<>Expected&lt; JITSymbolResolver::LookupSet &gt; LegacyJITSymbolResolver::getResponsibilitySet (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/jitsymbolresolver/#a487abfdc466598f156d5398ae986c6f9">LookupSet</a> &amp; Symbols)</>}
+  labels = {["virtual"]}>
+Performs flags lookup by calling findSymbolInLogicalDylib and returning the flags value for that symbol.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h/#l00410">410</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>, definition at line <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/runtimedyld/jitsymbol-cpp/#l00149">149</a> of file <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/runtimedyld/jitsymbol-cpp">JITSymbol.cpp</a>.
+</MemberDefinition>
+
+### lookup() {#aadf85c83250f0a519c4e6c498dd91a15}
+
+<MemberDefinition
+  prototype={<>void LegacyJITSymbolResolver::lookup (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/jitsymbolresolver/#a487abfdc466598f156d5398ae986c6f9">LookupSet</a> &amp; Symbols, <a href="/docs/api/classes/llvm/jitsymbolresolver/#a01f534cbe65344148ec2986691ff632a">OnResolvedFunction</a> OnResolved)</>}
+  labels = {["virtual"]}>
+Performs lookup by, for each symbol, first calling findSymbolInLogicalDylib and if that fails calling findSymbol.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h/#l00406">406</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>, definition at line <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/runtimedyld/jitsymbol-cpp/#l00108">108</a> of file <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/runtimedyld/jitsymbol-cpp">JITSymbol.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### anchor() {#a36b1823ae48f68eb092ada5887e54953}
+
+<MemberDefinition
+  prototype="void llvm::LegacyJITSymbolResolver::anchor ()"
+  labels = {["virtual"]}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h/#l00435">435</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a>, definition at line <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/runtimedyld/runtimedyld-cpp/#l01307">1307</a> of file <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/runtimedyld/runtimedyld-cpp">RuntimeDyld.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/jitsymbol-h">JITSymbol.h</a></li>
+<li><a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/runtimedyld/jitsymbol-cpp">JITSymbol.cpp</a></li>
+<li><a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/runtimedyld/runtimedyld-cpp">RuntimeDyld.cpp</a></li>
+</ul>
+
+</DoxygenPage>

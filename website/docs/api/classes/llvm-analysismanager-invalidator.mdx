@@ -1,0 +1,233 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/analysismanager/invalidator
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `Invalidator` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+API to communicate dependencies between analyses during invalidation. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::AnalysisManager::Invalidator</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/IR/PassManager.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h"
+  isLocal="true" />
+</IncludesList>
+
+## Friends Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="#affedfb8108f90597f24e166b7a36953b">AnalysisManager</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a71bd98f8460b2e94048665a664dbbe1f">Invalidator</a> (SmallDenseMap&lt; AnalysisKey &#42;, bool, 8 &gt; &amp;IsResultInvalidated, const AnalysisResultMapT &amp;Results)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename PassT&gt;</>}
+  type="bool"
+  name={<><a href="#a5e8e9230fa677542877d1f3c6ff95ae2">invalidate</a> (IRUnitT &amp;IR, const PreservedAnalyses &amp;PA)</>}>
+Trigger the invalidation of some other analysis pass if not already handled and return whether it was in fact invalidated. <a href="#a5e8e9230fa677542877d1f3c6ff95ae2">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a1a323b36498775645d82d4193998ed74">invalidate</a> (AnalysisKey &#42;ID, IRUnitT &amp;IR, const PreservedAnalyses &amp;PA)</>}>
+A type-erased variant of the above invalidate method with the same core API other than passing an analysis <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> rather than an analysis type parameter. <a href="#a1a323b36498775645d82d4193998ed74">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename ResultT = ResultConceptT&gt;</>}
+  type="bool"
+  name={<><a href="#a8ee07d24cf65b35a8fbd59e1aabf16b1">invalidateImpl</a> (AnalysisKey &#42;ID, IRUnitT &amp;IR, const PreservedAnalyses &amp;PA)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smalldensemap">SmallDenseMap</a>&lt; <a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a> &#42;, bool, 8 &gt; &amp;</>}
+  name={<><a href="#a512ef78aed59b026630fff96548bd819">IsResultInvalidated</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/densemap">AnalysisResultMapT</a> &amp;</>}
+  name={<><a href="#a1ef3234a0c0932ef94cafcc22895a82a">Results</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+API to communicate dependencies between analyses during invalidation.
+
+When an analysis result embeds handles to other analysis results, it needs to be invalidated both when its own information isn&#39;t preserved and when any of its embedded analysis results end up invalidated. We pass an <code><a href="/docs/api/classes/llvm/analysismanager/invalidator">Invalidator</a></code> object as an argument to <code><a href="#a5e8e9230fa677542877d1f3c6ff95ae2">invalidate()</a></code> in order to let the analysis results themselves define the dependency graph on the fly. This lets us avoid building an explicit representation of the dependencies between analysis results.
+
+Definition at line 292 of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+
+<SectionDefinition>
+
+## Friends
+
+### AnalysisManager {#affedfb8108f90597f24e166b7a36953b}
+
+<MemberDefinition
+  prototype={<>friend class <a href="/docs/api/classes/llvm/analysismanager">AnalysisManager</a></>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00329">329</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Constructors
+
+### Invalidator() {#a71bd98f8460b2e94048665a664dbbe1f}
+
+<MemberDefinition
+  prototype={<>llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::Invalidator::Invalidator (<a href="/docs/api/classes/llvm/smalldensemap">SmallDenseMap</a>&lt; <a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a> &#42;, bool, 8 &gt; &amp; IsResultInvalidated, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/densemap">AnalysisResultMapT</a> &amp; Results)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00362">362</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### invalidate() {#a5e8e9230fa677542877d1f3c6ff95ae2}
+
+<MemberDefinition
+  template={<>template &lt;typename PassT&gt;</>}
+  prototype={<>bool llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::Invalidator::invalidate (IRUnitT &amp; IR, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA)</>}
+  labels = {["inline"]}>
+Trigger the invalidation of some other analysis pass if not already handled and return whether it was in fact invalidated.
+
+This is expected to be called from within a given analysis result&#39;s <code>invalidate</code> method to trigger a depth-first walk of all inter-analysis dependencies. The same <code>IR</code> unit and <code>PA</code> passed to that result&#39;s <code>invalidate</code> method should in turn be provided to this routine.
+
+The first time this is called for a given analysis pass, it will call the corresponding result&#39;s <code>invalidate</code> method. Subsequent calls will use a cache of the results of that initial call. It is an error to form cyclic dependencies between analysis results.
+
+This returns true if the given analysis&#39;s result is invalid. <a href="/docs/api/classes/llvm/any">Any</a> dependecies on it will become invalid as a result.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00310">310</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### invalidate() {#a1a323b36498775645d82d4193998ed74}
+
+<MemberDefinition
+  prototype={<>bool llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::Invalidator::invalidate (<a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a> &#42; ID, IRUnitT &amp; IR, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA)</>}
+  labels = {["inline"]}>
+A type-erased variant of the above invalidate method with the same core API other than passing an analysis <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> rather than an analysis type parameter.
+
+This is sadly less efficient than the above routine, which leverages the type parameter to avoid the type erasure overhead.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00324">324</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### invalidateImpl() {#a8ee07d24cf65b35a8fbd59e1aabf16b1}
+
+<MemberDefinition
+  template={<>template &lt;typename ResultT = ResultConceptT&gt;</>}
+  prototype={<>bool llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::Invalidator::invalidateImpl (<a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a> &#42; ID, IRUnitT &amp; IR, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00332">332</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### IsResultInvalidated {#a512ef78aed59b026630fff96548bd819}
+
+<MemberDefinition
+  prototype={<>SmallDenseMap&lt;AnalysisKey &#42;, bool, 8&gt;&amp; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::Invalidator::IsResultInvalidated</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00366">366</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### Results {#a1ef3234a0c0932ef94cafcc22895a82a}
+
+<MemberDefinition
+  prototype={<>const AnalysisResultMapT&amp; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::Invalidator::Results</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00367">367</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a></li>
+</ul>
+
+</DoxygenPage>

@@ -1,0 +1,135 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/intrusiverefcntptrinfo
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `IntrusiveRefCntPtrInfo` Struct Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Class you can specialize to provide custom retain/release functionality for a type. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;typename T&gt;
+struct llvm::IntrusiveRefCntPtrInfo&lt;T&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/IntrusiveRefCntPtr.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/intrusiverefcntptr-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename T&gt;</>}
+  type="void"
+  name={<><a href="#acd7a88e0a43d734b6692c22e9d93e7f5">release</a> (T &#42;obj)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename T&gt;</>}
+  type="void"
+  name={<><a href="#a14558754209b6bf4d5d8eb4d43900681">retain</a> (T &#42;obj)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename T&gt;</>}
+  type="unsigned"
+  name={<><a href="#a164f355991617c24c14e4d61cf2787da">useCount</a> (const T &#42;obj)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Class you can specialize to provide custom retain/release functionality for a type.
+
+Usually specializing this class is not necessary, as <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr</a> works with any type which defines <a href="/docs/api/groups/arcopt/#ga8bf6836a2bd83d4d7a9c8ac79d3da011">Retain()</a> and <a href="/docs/api/namespaces/llvm/#a239c4ac35d6028bfacaed4018d0488faab8e7b465df7c5979dc731d06e84ce2cf">Release()</a> functions – you can define those functions yourself if <a href="/docs/api/classes/llvm/refcountedbase">RefCountedBase</a> doesn&#39;t work for you.
+
+One case when you might want to specialize this type is if you have
+<ul>
+<li>Foo.h defines type Foo and includes Bar.h, and</li>
+<li>Bar.h uses <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;Foo&gt;</a> in inline functions.</li>
+</ul>
+
+
+Because Foo.h includes Bar.h, Bar.h can&#39;t include Foo.h in order to pull in the declaration of Foo. Without the declaration of Foo, normally Bar.h wouldn&#39;t be able to use <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;Foo&gt;</a>, which wants to call T::Retain and T::Release.
+
+To resolve this, Bar.h could include a third header, FooFwd.h, which forward-declares Foo and specializes <a href="/docs/api/structs/llvm/intrusiverefcntptrinfo">IntrusiveRefCntPtrInfo&lt;Foo&gt;</a>. Then Bar.h could use <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;Foo&gt;</a>, although it still couldn&#39;t call any functions on Foo itself, because Foo would be an incomplete type.
+
+Definition at line 161 of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/intrusiverefcntptr-h">IntrusiveRefCntPtr.h</a>.
+
+<SectionDefinition>
+
+## Public Static Functions
+
+### release() {#acd7a88e0a43d734b6692c22e9d93e7f5}
+
+<MemberDefinition
+  template={<>template &lt;typename T&gt;</>}
+  prototype={<>static void llvm::IntrusiveRefCntPtrInfo&lt; T &gt;::release (T &#42; obj)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/intrusiverefcntptr-h/#l00164">164</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/intrusiverefcntptr-h">IntrusiveRefCntPtr.h</a>.
+</MemberDefinition>
+
+### retain() {#a14558754209b6bf4d5d8eb4d43900681}
+
+<MemberDefinition
+  template={<>template &lt;typename T&gt;</>}
+  prototype={<>static void llvm::IntrusiveRefCntPtrInfo&lt; T &gt;::retain (T &#42; obj)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/intrusiverefcntptr-h/#l00163">163</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/intrusiverefcntptr-h">IntrusiveRefCntPtr.h</a>.
+</MemberDefinition>
+
+### useCount() {#a164f355991617c24c14e4d61cf2787da}
+
+<MemberDefinition
+  template={<>template &lt;typename T&gt;</>}
+  prototype={<>static unsigned llvm::IntrusiveRefCntPtrInfo&lt; T &gt;::useCount (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> T &#42; obj)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/intrusiverefcntptr-h/#l00162">162</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/intrusiverefcntptr-h">IntrusiveRefCntPtr.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/adt/intrusiverefcntptr-h">IntrusiveRefCntPtr.h</a></li>
+</ul>
+
+</DoxygenPage>

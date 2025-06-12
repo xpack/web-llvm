@@ -1,0 +1,127 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/namespaces/anonymous-guardwidening-cpp-
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - namespace
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `anonymous{GuardWidening.cpp}` Namespace Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Definition
+
+<CodeBlock>namespace &#123; ... &#125;</CodeBlock>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-guardwidening-cpp-/guardwideningimpl">GuardWideningImpl</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a6d418914e8b20f42ccd313fd4f1f2585">eliminateGuard</a> (Instruction &#42;GuardInst, MemorySSAUpdater &#42;MSSAU)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> &gt;</>}
+  name={<><a href="#a0d69c80bfa592d9ac6901fa22f7ff405">findInsertionPointForWideCondition</a> (Instruction &#42;WCOrGuard)</>}>
+Find a point at which the widened condition of <code>Guard</code> should be inserted. <a href="#a0d69c80bfa592d9ac6901fa22f7ff405">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#afcfd6271b1843fd8e001db13c306bac4">getCondition</a> (Instruction &#42;I)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a5536295868d341feeda5831275a29e46">setCondition</a> (Instruction &#42;I, Value &#42;NewCond)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Functions
+
+### eliminateGuard() {#a6d418914e8b20f42ccd313fd4f1f2585}
+
+<MemberDefinition
+  prototype={<>static void anonymous&#95;namespace&#123;GuardWidening.cpp&#125;::eliminateGuard (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; GuardInst, <a href="/docs/api/classes/llvm/memoryssaupdater">MemorySSAUpdater</a> &#42; MSSAU)</>}
+  labels = {["static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/guardwidening-cpp/#l00108">108</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/guardwidening-cpp">GuardWidening.cpp</a>.
+</MemberDefinition>
+
+### findInsertionPointForWideCondition() {#a0d69c80bfa592d9ac6901fa22f7ff405}
+
+<MemberDefinition
+  prototype={<>static std::optional&lt; BasicBlock::iterator &gt; anonymous&#95;namespace&#123;GuardWidening.cpp&#125;::findInsertionPointForWideCondition (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; WCOrGuard)</>}
+  labels = {["static"]}>
+Find a point at which the widened condition of <code>Guard</code> should be inserted.
+
+When it is represented as intrinsic call, we can do it right before the call instruction. However, when we are dealing with widenable branch, we must account for the following situation: widening should not turn a loop-invariant condition into a loop-variant. It means that if widenable.condition() call is invariant (w.r.t. any loop), the new wide condition should stay invariant. Otherwise there can be a miscompile, like the one described at <a href="https://github.com/llvm/llvm-project/issues/60234">https://github.com/llvm/llvm-project/issues/60234</a>. The safest way to do it is to expand the new condition at WC&#39;s block.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/guardwidening-cpp/#l00125">125</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/guardwidening-cpp">GuardWidening.cpp</a>.
+</MemberDefinition>
+
+### getCondition() {#afcfd6271b1843fd8e001db13c306bac4}
+
+<MemberDefinition
+  prototype={<>static Value &#42; anonymous&#95;namespace&#123;GuardWidening.cpp&#125;::getCondition (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I)</>}
+  labels = {["static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/guardwidening-cpp/#l00081">81</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/guardwidening-cpp">GuardWidening.cpp</a>.
+</MemberDefinition>
+
+### setCondition() {#a5536295868d341feeda5831275a29e46}
+
+<MemberDefinition
+  prototype={<>static void anonymous&#95;namespace&#123;GuardWidening.cpp&#125;::setCondition (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I, <a href="/docs/api/classes/llvm/value">Value</a> &#42; NewCond)</>}
+  labels = {["static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/guardwidening-cpp/#l00097">97</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/guardwidening-cpp">GuardWidening.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this namespace was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/guardwidening-cpp">GuardWidening.cpp</a></li>
+</ul>
+
+</DoxygenPage>

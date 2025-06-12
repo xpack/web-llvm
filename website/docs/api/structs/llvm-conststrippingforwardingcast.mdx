@@ -1,0 +1,187 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/conststrippingforwardingcast
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ConstStrippingForwardingCast` Struct Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Provides a cast trait that strips <code>const</code> from types to make it easier to implement a const-version of a non-const cast. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;typename To, typename From, typename ForwardTo&gt;
+struct llvm::ConstStrippingForwardingCast&lt;To, From, ForwardTo&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/Casting.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/casting-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename To, typename From, typename ForwardTo&gt;</>}
+  type="using"
+  name={<><a href="#a073e27ce78cb25ccfa9b498586ec57ee">DecayedFrom</a> = std::remove&#95;cv&#95;t&lt; std::remove&#95;pointer&#95;t&lt; From &gt; &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename To, typename From, typename ForwardTo&gt;</>}
+  type="using"
+  name={<><a href="#acb4a56713da1326d0eec9ab65906898a">NonConstFrom</a> = std::conditional&#95;t&lt; std::is&#95;pointer&#95;v&lt; From &gt;, <a href="#a073e27ce78cb25ccfa9b498586ec57ee">DecayedFrom</a> &#42;, <a href="#a073e27ce78cb25ccfa9b498586ec57ee">DecayedFrom</a> &amp; &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename To, typename From, typename ForwardTo&gt;</>}
+  type="auto "
+  name={<><a href="#a171af00db56e6f8040563753853a61e7">castFailed</a> () -&gt; decltype(auto)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename To, typename From, typename ForwardTo&gt;</>}
+  type="auto "
+  name={<><a href="#a6775b16fe21564e4cba80220c802f0be">doCast</a> (const From &amp;f) -&gt; decltype(auto)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename To, typename From, typename ForwardTo&gt;</>}
+  type="auto "
+  name={<><a href="#a2c6d09a29b26e76978e3a735f6db9eb0">doCastIfPossible</a> (const From &amp;f) -&gt; decltype(auto)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename To, typename From, typename ForwardTo&gt;</>}
+  type="bool"
+  name={<><a href="#a9b9f6ed4ef6ac1d1d5e99ee4a7866e8f">isPossible</a> (const From &amp;f)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Provides a cast trait that strips <code>const</code> from types to make it easier to implement a const-version of a non-const cast.
+
+It just removes boilerplate and reduces the amount of code you as the user need to implement. You can use it like this:
+
+template&lt;&gt; struct <a href="/docs/api/structs/llvm/castinfo">CastInfo&lt;foo, bar&gt;</a> &#123; ...verbose implementation... &#125;;
+
+template&lt;&gt; struct <a href="/docs/api/structs/llvm/castinfo">CastInfo&lt;foo, const bar&gt;</a> : public <a href="/docs/api/structs/llvm/conststrippingforwardingcast">ConstStrippingForwardingCast&lt;foo, const bar, CastInfo&lt;foo, bar&gt;&gt;</a> &#123;&#125;;
+
+Definition at line 388 of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">Casting.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### DecayedFrom {#a073e27ce78cb25ccfa9b498586ec57ee}
+
+<MemberDefinition
+  template={<>template &lt;typename To, typename From, typename ForwardTo&gt;</>}
+  prototype={<>using llvm::ConstStrippingForwardingCast&lt; To, From, ForwardTo &gt;::DecayedFrom =  std::remove&#95;cv&#95;t&lt;std::remove&#95;pointer&#95;t&lt;From&gt;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h/#l00390">390</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">Casting.h</a>.
+</MemberDefinition>
+
+### NonConstFrom {#acb4a56713da1326d0eec9ab65906898a}
+
+<MemberDefinition
+  template={<>template &lt;typename To, typename From, typename ForwardTo&gt;</>}
+  prototype={<>using llvm::ConstStrippingForwardingCast&lt; To, From, ForwardTo &gt;::NonConstFrom = 
+      std::conditional&#95;t&lt;std::is&#95;pointer&#95;v&lt;From&gt;, DecayedFrom &#42;, DecayedFrom &amp;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h/#l00392">392</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">Casting.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Functions
+
+### castFailed() {#a171af00db56e6f8040563753853a61e7}
+
+<MemberDefinition
+  template={<>template &lt;typename To, typename From, typename ForwardTo&gt;</>}
+  prototype={<>static decltype(auto) llvm::ConstStrippingForwardingCast&lt; To, From, ForwardTo &gt;::castFailed ()</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h/#l00399">399</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">Casting.h</a>.
+</MemberDefinition>
+
+### doCast() {#a6775b16fe21564e4cba80220c802f0be}
+
+<MemberDefinition
+  template={<>template &lt;typename To, typename From, typename ForwardTo&gt;</>}
+  prototype={<>static decltype(auto) llvm::ConstStrippingForwardingCast&lt; To, From, ForwardTo &gt;::doCast (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> From &amp; f)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h/#l00401">401</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">Casting.h</a>.
+</MemberDefinition>
+
+### doCastIfPossible() {#a2c6d09a29b26e76978e3a735f6db9eb0}
+
+<MemberDefinition
+  template={<>template &lt;typename To, typename From, typename ForwardTo&gt;</>}
+  prototype={<>static decltype(auto) llvm::ConstStrippingForwardingCast&lt; To, From, ForwardTo &gt;::doCastIfPossible (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> From &amp; f)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h/#l00405">405</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">Casting.h</a>.
+</MemberDefinition>
+
+### isPossible() {#a9b9f6ed4ef6ac1d1d5e99ee4a7866e8f}
+
+<MemberDefinition
+  template={<>template &lt;typename To, typename From, typename ForwardTo&gt;</>}
+  prototype={<>static bool llvm::ConstStrippingForwardingCast&lt; To, From, ForwardTo &gt;::isPossible (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> From &amp; f)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h/#l00395">395</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">Casting.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">Casting.h</a></li>
+</ul>
+
+</DoxygenPage>

@@ -1,0 +1,398 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/analysis/memoryssaupdater-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `MemorySSAUpdater.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/SmallPtrSet.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/smallptrset-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/SmallSet.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/smallset-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/SmallVector.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Analysis/MemorySSA.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/memoryssa-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/ValueHandle.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/valuehandle-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/ValueMap.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/valuemap-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/CFGDiff.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/cfgdiff-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/memoryssaupdater">MemorySSAUpdater</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- MemorySSAUpdater.h - Memory SSA Updater-------------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// \\file</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// An automatic updater for MemorySSA that handles arbitrary insertion,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// deletion, and moves.  It performs phi insertion where necessary, and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// automatically updates the MemorySSA IR to be correct.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// While updating loads or removing instructions is often easy enough to not</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">// need this, updating stores should generally not be attemped outside this</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">// API.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Basic API usage:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Create the memory access you want for the instruction (this is mainly so</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="comment">// we know where it is, without having to duplicate the entire set of create</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="comment">// functions MemorySSA supports).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Call insertDef or insertUse depending on whether it&#39;s a MemoryUse or a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="comment">// MemoryDef.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="comment">// That&#39;s it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="comment">// For moving, first, move the instruction itself using the normal SSA</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="comment">// instruction moving API, then just call moveBefore, moveAfter,or moveTo with</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="comment">// the right arguments.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;ANALYSIS&#95;MEMORYSSAUPDATER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;ANALYSIS&#95;MEMORYSSAUPDATER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallptrset-h">llvm/ADT/SmallPtrSet.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallset-h">llvm/ADT/SmallSet.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memoryssa-h">llvm/Analysis/MemorySSA.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/valuehandle-h">llvm/IR/ValueHandle.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/valuemap-h">llvm/IR/ValueMap.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/cfgdiff-h">llvm/Support/CFGDiff.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/basicblock">BasicBlock</a>;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a>;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/instruction">Instruction</a>;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/loopblocksrpo">LoopBlocksRPO</a>;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> T, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> N&gt; </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/smallsetvector">SmallSetVector</a>;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50" lineLink="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> = <a href="/docs/api/classes/llvm/valuemap">ValueMap&lt;const Value &#42;, WeakTrackingVH&gt;</a>;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51" lineLink="/docs/api/namespaces/llvm/#a14697ded10a20f6938ae56ed208f0913"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a14697ded10a20f6938ae56ed208f0913">PhiToDefMap</a> = <a href="/docs/api/classes/llvm/smalldensemap">SmallDenseMap&lt;MemoryPhi &#42;, MemoryAccess &#42;&gt;</a>;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52" lineLink="/docs/api/namespaces/llvm/#ad36a34c7861d9ae3601c3c818d43ca2f"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#ad36a34c7861d9ae3601c3c818d43ca2f">CFGUpdate</a> = <a href="/docs/api/classes/llvm/cfg/update">cfg::Update&lt;BasicBlock &#42;&gt;</a>;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54" lineLink="/docs/api/classes/llvm/memoryssaupdater"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/memoryssaupdater/#a9e482c216b0c69891fc5ea7f090c77c1">MemorySSAUpdater</a> &#123;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryssa">MemorySSA</a> &#42;MSSA;</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">  /// We use WeakVH rather than a costly deletion to deal with dangling pointers.</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">  /// MemoryPhis are created eagerly and sometimes get zapped shortly afterwards.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;WeakVH, 16&gt;</a> InsertedPHIs;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet&lt;BasicBlock &#42;, 8&gt;</a> VisitedBlocks;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallset">SmallSet&lt;AssertingVH&lt;MemoryPhi&gt;</a>, 8&gt; NonOptPhis;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66" lineLink="/docs/api/classes/llvm/memoryssaupdater/#a9e482c216b0c69891fc5ea7f090c77c1"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryssaupdater/#a9e482c216b0c69891fc5ea7f090c77c1">MemorySSAUpdater</a>(<a href="/docs/api/classes/llvm/memoryssa">MemorySSA</a> &#42;MSSA) : MSSA(MSSA) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="comment">  /// Insert a definition into the MemorySSA IR.  RenameUses will rename any use</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="comment">  /// below the new def block (and any inserted phis).  RenameUses should be set</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="comment">  /// to true if the definition may cause new aliases for loads below it.  This</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">  /// is not the case for hoisting or sinking or other forms of code &#42;movement&#42;.</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">  /// It &#42;is&#42; the case for straight code insertion.</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="comment">  /// For example:</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">  /// store a</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">  /// if (foo) &#123; &#125;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">  /// load a</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="comment">  /// Moving the store into the if block, and calling insertDef, does not</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="comment">  /// require RenameUses.</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="comment">  /// However, changing it to:</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// store a</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">  /// if (foo) &#123; store b &#125;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">  /// load a</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  /// Where a mayalias b, &#42;does&#42; require RenameUses be set to true.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#a21fc5eae685ef3e2dce4403a75d5ff2f">insertDef</a>(<a href="/docs/api/classes/llvm/memorydef">MemoryDef</a> &#42;Def, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> RenameUses = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#a9ab9d33dbeb44b5ba49ab27201e6bd76">insertUse</a>(<a href="/docs/api/classes/llvm/memoryuse">MemoryUse</a> &#42;<a href="/docs/api/classes/llvm/use">Use</a>, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> RenameUses = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="comment">  /// Update the MemoryPhi in &#96;To&#96; following an edge deletion between &#96;From&#96; and</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">  /// &#96;To&#96;. If &#96;To&#96; becomes unreachable, a call to removeBlocks should be made.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#a4953231268ee21e95c3740e51ab37a96">removeEdge</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;From, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;To);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">  /// Update the MemoryPhi in &#96;To&#96; to have a single incoming edge from &#96;From&#96;,</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">  /// following a CFG change that replaced multiple edges (switch) with a direct</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="comment">  /// branch.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#a95eeaea882b3c388420da771fe488bbc">removeDuplicatePhiEdgesBetween</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;From,</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">                                      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;To);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">  /// Update MemorySSA when inserting a unique backedge block for a loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#a989bdd9e36b5327a04ad8db2a7014741">updatePhisWhenInsertingUniqueBackedgeBlock</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;LoopHeader,</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">                                                  <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;LoopPreheader,</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">                                                  <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BackedgeBlock);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  /// Update MemorySSA after a loop was cloned, given the blocks in RPO order,</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">  /// the exit blocks and a 1:1 mapping of all blocks and instructions</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="comment">  /// cloned. This involves duplicating all defs and uses in the cloned blocks</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">  /// Updating phi nodes in exit block successors is done separately.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#a667d41d0d3b12af17ccc6c99e3d51e5b">updateForClonedLoop</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/loopblocksrpo">LoopBlocksRPO</a> &amp;LoopBlocks,</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">                           <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;BasicBlock &#42;&gt;</a> ExitBlocks,</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">                           </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VM,</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">                           </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IgnoreIncomingWithNoClones = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Block BB was fully or partially cloned into its predecessor P1. Map</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// contains the 1:1 mapping of instructions cloned and VM&#91;BB&#93;=P1.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#ad7b4596999393cfa1b3c077caa0f2ca0">updateForClonedBlockIntoPred</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;P1,</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">                                    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VM);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">  /// Update phi nodes in exit block successors following cloning. Exit blocks</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">  /// that were not cloned don&#39;t have additional predecessors added.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#aeb3964d6e7884c21d8118699062c91df">updateExitBlocksForClonedLoop</a>(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;BasicBlock &#42;&gt;</a> ExitBlocks,</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">                                     </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap,</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">                                     <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &amp;DT);</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#aeb3964d6e7884c21d8118699062c91df">updateExitBlocksForClonedLoop</a>(</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;BasicBlock &#42;&gt;</a> ExitBlocks,</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt;std::unique&#95;ptr&lt;ValueToValueMapTy&gt;&gt; VMaps, <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &amp;DT);</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">  /// Apply CFG updates, analogous with the DT edge updates. By default, the</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">  /// DT is assumed to be already up to date. If UpdateDTFirst is true, first</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="comment">  /// update the DT with the same updates.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#ad89ca302de455d3971f751c8d1a5bd58">applyUpdates</a>(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;CFGUpdate&gt;</a> Updates, <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &amp;DT,</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">                    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UpdateDTFirst = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">  /// Apply CFG insert updates, analogous with the DT edge updates.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#ac0404328e9e4f5d3c565daabf46fffac">applyInsertUpdates</a>(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;CFGUpdate&gt;</a> Updates, <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &amp;DT);</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#af58e16a1d7ebc8f202ae2f8037b42df6">moveBefore</a>(<a href="/docs/api/classes/llvm/memoryuseordef">MemoryUseOrDef</a> &#42;What, <a href="/docs/api/classes/llvm/memoryuseordef">MemoryUseOrDef</a> &#42;Where);</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#a2d537a2dd5afbd1eba9a402cda94e067">moveAfter</a>(<a href="/docs/api/classes/llvm/memoryuseordef">MemoryUseOrDef</a> &#42;What, <a href="/docs/api/classes/llvm/memoryuseordef">MemoryUseOrDef</a> &#42;Where);</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#ae26e0fb4a78dc439a03ac42c4ba6e674">moveToPlace</a>(<a href="/docs/api/classes/llvm/memoryuseordef">MemoryUseOrDef</a> &#42;What, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB,</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">                   <a href="/docs/api/classes/llvm/memoryssa/#a9773fde54683945b9e34a0f2e5c1a5a5">MemorySSA::InsertionPlace</a> Where);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">  /// &#96;From&#96; block was spliced into &#96;From&#96; and &#96;To&#96;. There is a CFG edge from</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">  /// &#96;From&#96; to &#96;To&#96;. Move all accesses from &#96;From&#96; to &#96;To&#96; starting at</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">  /// instruction &#96;Start&#96;. &#96;To&#96; is newly created BB, so empty of</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">  /// MemorySSA::MemoryAccesses. Edges are already updated, so successors of</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">  /// &#96;To&#96; with MPhi nodes need to update incoming block.</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="comment">  /// |------|        |------|</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">  /// | From |        | From |</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="comment">  /// |      |        |------|</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="comment">  /// |      |           ||</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="comment">  /// |      |   =&gt;      \\/</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">  /// |      |        |------|  &lt;- Start</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="comment">  /// |      |        |  To  |</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="comment">  /// |------|        |------|</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#aa7518e6d6d74227a56b36eb88cfe26e6">moveAllAfterSpliceBlocks</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;From, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;To,</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">                                <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;Start);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="comment">  /// &#96;From&#96; block was merged into &#96;To&#96;. There is a CFG edge from &#96;To&#96; to</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="comment">  /// &#96;From&#96;.&#96;To&#96; still branches to &#96;From&#96;, but all instructions were moved and</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="comment">  /// &#96;From&#96; is now an empty block; &#96;From&#96; is about to be deleted. Move all</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="comment">  /// accesses from &#96;From&#96; to &#96;To&#96; starting at instruction &#96;Start&#96;. &#96;To&#96; may</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="comment">  /// have multiple successors, &#96;From&#96; has a single predecessor. &#96;From&#96; may have</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="comment">  /// successors with MPhi nodes, replace their incoming block with &#96;To&#96;.</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="comment">  /// |------|        |------|</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="comment">  /// |  To  |        |  To  |</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="comment">  /// |------|        |      |</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="comment">  ///    ||      =&gt;   |      |</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="comment">  ///    \\/           |      |</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="comment">  /// |------|        |      |  &lt;- Start</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="comment">  /// | From |        |      |</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="comment">  /// |------|        |------|</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#ae11d36d6d1f06cdf18a0333eab22f381">moveAllAfterMergeBlocks</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;From, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;To,</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;Start);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="comment">  /// A new empty BasicBlock (New) now branches directly to Old. Some of</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="comment">  /// Old&#39;s predecessors (Preds) are now branching to New instead of Old.</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="comment">  /// If New is the only predecessor, move Old&#39;s Phi, if present, to New.</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="comment">  /// Otherwise, add a new Phi in New with appropriate incoming values, and</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="comment">  /// update the incoming values in Old&#39;s Phi node too, if present.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#ae6b63bcaa1f6638b608f911cd04341e2">wireOldPredecessorsToNewImmediatePredecessor</a>(</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;Old, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;New, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;BasicBlock &#42;&gt;</a> Preds,</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IdenticalEdgesWereMerged = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The below are utility functions. Other than creation of accesses to pass</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// to insertDef, and removeAccess to remove accesses, you should generally</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// not attempt to update memoryssa yourself. It is very non-trivial to get</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// the edge cases right, and the above calls already operate in near-optimal</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// time bounds.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="comment">  /// Create a MemoryAccess in MemorySSA at a specified point in a block.</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="comment">  /// When used by itself, this method will only insert the new MemoryAccess</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="comment">  /// into the access list, but not make any other changes, such as inserting</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="comment">  /// MemoryPHI nodes, or updating users to point to the new MemoryAccess. You</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="comment">  /// must specify a correct Definition in this case.</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="comment">  /// Usually, this API is instead combined with insertUse() or insertDef(),</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="comment">  /// which will perform all the necessary MSSA updates. If these APIs are used,</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="comment">  /// then nullptr can be used as Definition, as the correct defining access</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="comment">  /// will be automatically determined.</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="comment">  /// Note: If a MemoryAccess already exists for I, this function will make it</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="comment">  /// inaccessible and it &#42;must&#42; have removeMemoryAccess called on it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;<a href="/docs/api/classes/llvm/memoryssaupdater/#ab23ba05c48e8be4a29c36d83deba9146">createMemoryAccessInBB</a>(<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;Definition,</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">                                       </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB,</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">                                       <a href="/docs/api/classes/llvm/memoryssa/#a9773fde54683945b9e34a0f2e5c1a5a5">MemorySSA::InsertionPlace</a> Point,</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">                                       </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> CreationMustSucceed = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="comment">  /// Create a MemoryAccess in MemorySSA before an existing MemoryAccess.</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="comment">  /// See createMemoryAccessInBB() for usage details.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryuseordef">MemoryUseOrDef</a> &#42;<a href="/docs/api/classes/llvm/memoryssaupdater/#a1c21c2f4d41d5c6f6807992d60347bbd">createMemoryAccessBefore</a>(<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>,</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">                                           <a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;Definition,</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">                                           <a href="/docs/api/classes/llvm/memoryuseordef">MemoryUseOrDef</a> &#42;InsertPt);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="comment">  /// Create a MemoryAccess in MemorySSA after an existing MemoryAccess.</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="comment">  /// See createMemoryAccessInBB() for usage details.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryuseordef">MemoryUseOrDef</a> &#42;<a href="/docs/api/classes/llvm/memoryssaupdater/#acf9a0bb25aae89d274ee9ae7dd0cf9b2">createMemoryAccessAfter</a>(<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>,</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">                                          <a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;Definition,</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">                                          <a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;InsertPt);</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="comment">  /// Remove a MemoryAccess from MemorySSA, including updating all</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="comment">  /// definitions and uses.</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="comment">  /// This should be called when a memory instruction that has a MemoryAccess</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="comment">  /// associated with it is erased from the program.  For example, if a store or</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="comment">  /// load is simply erased (not replaced), removeMemoryAccess should be called</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="comment">  /// on the MemoryAccess for that store/load.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#abcf78af37d56a9b72a49c65428210758">removeMemoryAccess</a>(<a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> OptimizePhis = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="comment">  /// Remove MemoryAccess for a given instruction, if a MemoryAccess exists.</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="comment">  /// This should be called when an instruction (load/store) is deleted from</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="comment">  /// the program.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220" lineLink="/docs/api/classes/llvm/memoryssaupdater/#aef87bd57ab712a0403630d15fa4b22b1"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#aef87bd57ab712a0403630d15fa4b22b1">removeMemoryAccess</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> OptimizePhis = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;MA = MSSA-&gt;<a href="/docs/api/classes/llvm/memoryssa/#ab15de610fca1c900038bf3c333919e45">getMemoryAccess</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>))</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/memoryssaupdater/#abcf78af37d56a9b72a49c65428210758">removeMemoryAccess</a>(MA, OptimizePhis);</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="comment">  /// Remove all MemoryAcceses in a set of BasicBlocks about to be deleted.</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="comment">  /// Assumption we make here: all uses of deleted defs and phi must either</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="comment">  /// occur in blocks about to be deleted (thus will be deleted as well), or</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="comment">  /// they occur in phis that will simply lose an incoming value.</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="comment">  /// Deleted blocks still have successor info, but their predecessor edges and</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="comment">  /// Phi nodes may already be updated. Instructions in DeadBlocks should be</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="comment">  /// deleted after this call.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#aa0c15073f16693ebc44c2410986cacec">removeBlocks</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/smallsetvector">SmallSetVector&lt;BasicBlock &#42;, 8&gt;</a> &amp;DeadBlocks);</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="comment">  /// Instruction I will be changed to an unreachable. Remove all accesses in</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="comment">  /// I&#39;s block that follow I (inclusive), and update the Phis in the blocks&#39;</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="comment">  /// successors.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#a94cd9c4d5114d65e1cd802c23c080326">changeToUnreachable</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="comment">  /// Get handle on MemorySSA.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240" lineLink="/docs/api/classes/llvm/memoryssaupdater/#a01a350909e784d6fa43181a72de61529"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryssa">MemorySSA</a>&#42; <a href="/docs/api/classes/llvm/memoryssaupdater/#a01a350909e784d6fa43181a72de61529">getMemorySSA</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> MSSA; &#125;</Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Move What before Where in the MemorySSA IR.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> WhereType&gt;</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> moveTo(<a href="/docs/api/classes/llvm/memoryuseordef">MemoryUseOrDef</a> &#42;What, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB, WhereType Where);</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Move all memory accesses from &#96;From&#96; to &#96;To&#96; starting at &#96;Start&#96;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Restrictions apply, see public wrappers of this method.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> moveAllAccesses(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;From, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;To, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;Start);</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;getPreviousDef(<a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;);</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;getPreviousDefInBlock(<a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;);</Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">  getPreviousDefFromEnd(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;,</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal">                        <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt;<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, <a href="/docs/api/classes/llvm/trackingvh">TrackingVH&lt;MemoryAccess&gt;</a>&gt; &amp;);</Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">  getPreviousDefRecursive(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;,</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">                          <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt;<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, <a href="/docs/api/classes/llvm/trackingvh">TrackingVH&lt;MemoryAccess&gt;</a>&gt; &amp;);</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;recursePhi(<a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;Phi);</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;tryRemoveTrivialPhi(<a href="/docs/api/classes/llvm/memoryphi">MemoryPhi</a> &#42;Phi);</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> RangeType&gt;</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryaccess">MemoryAccess</a> &#42;tryRemoveTrivialPhi(<a href="/docs/api/classes/llvm/memoryphi">MemoryPhi</a> &#42;Phi, RangeType &amp;<a href="/docs/api/files/lib/lib/codegen/mirnamerpass-cpp/#a05e4be4ec3e2c3587dda0e376bb6822c">Operands</a>);</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> tryRemoveTrivialPhis(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;WeakVH&gt;</a> UpdatedPHIs);</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> fixupDefs(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;WeakVH&gt;</a> &amp;);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="comment">  /// Clone all uses and defs from BB to NewBB given a 1:1 map of all</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="comment">  /// instructions and blocks cloned, and a map of MemoryPhi : Definition</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="comment">  /// (MemoryAccess Phi or Def).</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="comment">  /// \\param VMap Maps old instructions to cloned instructions and old blocks</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="comment">  ///        to cloned blocks</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="comment">  /// \\param MPhiMap, is created in the caller of this private method, and maps</Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="comment">  ///        existing MemoryPhis to new definitions that new MemoryAccesses</Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="comment">  ///        must point to. These definitions may not necessarily be MemoryPhis</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="comment">  ///        themselves, they may be MemoryDefs. As such, the map is between</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="comment">  ///        MemoryPhis and MemoryAccesses, where the MemoryAccesses may be</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="comment">  ///        MemoryPhis or MemoryDefs and not MemoryUses.</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="comment">  /// \\param IsInClonedRegion Determines whether a basic block was cloned.</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="comment">  ///        References to accesses outside the cloned region will not be</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="comment">  ///        remapped.</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="comment">  /// \\param CloneWasSimplified If false, the clone was exact. Otherwise,</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="comment">  ///        assume that the clone involved simplifications that may have:</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="comment">  ///        (1) turned a MemoryUse into an instruction that MemorySSA has no</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="comment">  ///        representation for, or (2) turned a MemoryDef into a MemoryUse or</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="comment">  ///        an instruction that MemorySSA has no representation for. No other</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="comment">  ///        cases are supported.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> cloneUsesAndDefs(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;NewBB,</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">                        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap, <a href="/docs/api/namespaces/llvm/#a14697ded10a20f6938ae56ed208f0913">PhiToDefMap</a> &amp;MPhiMap,</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">                        <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt;</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;)&gt; IsInClonedRegion,</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">                        </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> CloneWasSimplified = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Iter&gt;</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> privateUpdateExitBlocksForClonedLoop(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;BasicBlock &#42;&gt;</a> ExitBlocks,</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">                                            Iter ValuesBegin, Iter ValuesEnd,</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">                                            <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &amp;DT);</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryssaupdater/#ac0404328e9e4f5d3c565daabf46fffac">applyInsertUpdates</a>(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;CFGUpdate&gt;</a>, <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &amp;DT,</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">                          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/graphdiff">GraphDiff&lt;BasicBlock &#42;&gt;</a> &#42;GD);</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;ANALYSIS&#95;MEMORYSSAUPDATER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

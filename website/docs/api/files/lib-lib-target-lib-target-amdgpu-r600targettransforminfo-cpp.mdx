@@ -1,0 +1,237 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/target/lib/target/amdgpu/r600targettransforminfo-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `R600TargetTransformInfo.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="R600TargetTransformInfo.h"
+  permalink="/docs/api/files/lib/lib/target/lib/target/amdgpu/r600targettransforminfo-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="AMDGPU.h"
+  permalink="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpu-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="AMDGPUTargetMachine.h"
+  permalink="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="R600Subtarget.h"
+  permalink="/docs/api/files/lib/lib/target/lib/target/amdgpu/r600subtarget-h"
+  isLocal="true" />
+</IncludesList>
+
+## Defines Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="#define"
+  name={<><a href="#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG&#95;TYPE</a>&nbsp;&nbsp;&nbsp;&quot;R600tti&quot;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Defines
+
+### DEBUG&#95;TYPE {#ad78e062f62e0d6e453941fb4ca843e4d}
+
+<MemberDefinition
+  prototype={<>#define DEBUG&#95;TYPE&nbsp;&nbsp;&nbsp;&quot;R600tti&quot;</>}>
+
+Definition at line <a href="#l00024">24</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/r600targettransforminfo-cpp">R600TargetTransformInfo.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- R600TargetTransformInfo.cpp - AMDGPU specific TTI pass -----------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// \\file</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements a TargetTransformInfo analysis pass specific to the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// R600 target machine. It uses the target&#39;s detailed information to provide</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// more precise answers to certain TTI queries, while letting the target</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// independent and default TTI implementations handle the rest.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/r600targettransforminfo-h">R600TargetTransformInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpu-h">AMDGPU.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgputargetmachine-h">AMDGPUTargetMachine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/r600subtarget-h">R600Subtarget.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24" lineLink="#ad78e062f62e0d6e453941fb4ca843e4d"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEBUG&#95;TYPE &quot;R600tti&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26" lineLink="/docs/api/classes/llvm/r600ttiimpl/#ab93330bd3223afb926c2d8f0a0fd6b76"><Highlight kind="normal"><a href="/docs/api/classes/llvm/r600ttiimpl/#ab93330bd3223afb926c2d8f0a0fd6b76">R600TTIImpl::R600TTIImpl</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/amdgputargetmachine">AMDGPUTargetMachine</a> &#42;TM, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal">    : BaseT(TM, <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>.<a href="/docs/api/classes/llvm/targettransforminfoimplbase/#a01aadd7eea7124cd9f5cd7cea37d8dab">getDataLayout</a>()),</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">      ST(static&#95;cast&lt;<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/r600subtarget">R600Subtarget</a> &#42;&gt;(TM-&gt;getSubtargetImpl(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>))),</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">      TLI(ST-&gt;getTargetLowering()), CommonTTI(TM, <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31" lineLink="/docs/api/classes/llvm/r600ttiimpl/#acf3f5c15694256f2cd6cba8cc6c3a22e"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/r600ttiimpl/#acf3f5c15694256f2cd6cba8cc6c3a22e">R600TTIImpl::getHardwareNumberOfRegisters</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Vec)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 4 &#42; 128; </Highlight><Highlight kind="comment">// XXX - 4 channels. Should these count as vector instead?</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35" lineLink="/docs/api/classes/llvm/r600ttiimpl/#af9c8f663a50b6df34d7ad51988e3ec04"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/r600ttiimpl/#af9c8f663a50b6df34d7ad51988e3ec04">R600TTIImpl::getNumberOfRegisters</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Vec)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/r600ttiimpl/#acf3f5c15694256f2cd6cba8cc6c3a22e">getHardwareNumberOfRegisters</a>(Vec);</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"><a href="/docs/api/classes/llvm/typesize">TypeSize</a></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40" lineLink="/docs/api/classes/llvm/r600ttiimpl/#aebb07a0c2442cf05312ce6844e21fbd2"><Highlight kind="normal"><a href="/docs/api/classes/llvm/r600ttiimpl/#aebb07a0c2442cf05312ce6844e21fbd2">R600TTIImpl::getRegisterBitWidth</a>(<a href="/docs/api/classes/llvm/targettransforminfo/#a8bb3b1ccf19b8c85429b777dfa4a0166">TargetTransformInfo::RegisterKind</a> K)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/typesize/#a003b4369b4130e669dc9139798e0193c">TypeSize::getFixed</a>(32);</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44" lineLink="/docs/api/classes/llvm/r600ttiimpl/#af22fb016fc2e6502d2d6c37a298df98e"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/r600ttiimpl/#af22fb016fc2e6502d2d6c37a298df98e">R600TTIImpl::getMinVectorRegisterBitWidth</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 32; &#125;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46" lineLink="/docs/api/classes/llvm/r600ttiimpl/#aa6b38f927752e74714725aeaa75ad133"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/r600ttiimpl/#aa6b38f927752e74714725aeaa75ad133">R600TTIImpl::getLoadStoreVecRegBitWidth</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> AddrSpace)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (AddrSpace == <a href="/docs/api/namespaces/llvm/amdgpuas/#a899ad5bfccfc22965a6714929a3dfae1abf4559ef958a13c33f6ec7ed13fd44e5">AMDGPUAS::GLOBAL&#95;ADDRESS</a> ||</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">      AddrSpace == <a href="/docs/api/namespaces/llvm/amdgpuas/#a899ad5bfccfc22965a6714929a3dfae1aa6d3112da64eecbdbb50aacb5f8251e8">AMDGPUAS::CONSTANT&#95;ADDRESS</a>)</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 128;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (AddrSpace == <a href="/docs/api/namespaces/llvm/amdgpuas/#a899ad5bfccfc22965a6714929a3dfae1a77b1c964e2ff99057bf5e75140457abe">AMDGPUAS::LOCAL&#95;ADDRESS</a> ||</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">      AddrSpace == <a href="/docs/api/namespaces/llvm/amdgpuas/#a899ad5bfccfc22965a6714929a3dfae1a5b71ba6fa435ec288aba849e113721a7">AMDGPUAS::REGION&#95;ADDRESS</a>)</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 64;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (AddrSpace == <a href="/docs/api/namespaces/llvm/amdgpuas/#a899ad5bfccfc22965a6714929a3dfae1aec164f45437d8827346f2d8ec645479a">AMDGPUAS::PRIVATE&#95;ADDRESS</a>)</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 32;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((AddrSpace == <a href="/docs/api/namespaces/llvm/amdgpuas/#a899ad5bfccfc22965a6714929a3dfae1a4da965819228912d2be72bf34ace8ac7">AMDGPUAS::PARAM&#95;D&#95;ADDRESS</a> ||</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">       AddrSpace == <a href="/docs/api/namespaces/llvm/amdgpuas/#a899ad5bfccfc22965a6714929a3dfae1aa03e3cb93fc64ad53958ab0a2ff22f3a">AMDGPUAS::PARAM&#95;I&#95;ADDRESS</a> ||</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">       (AddrSpace &gt;= <a href="/docs/api/namespaces/llvm/amdgpuas/#a899ad5bfccfc22965a6714929a3dfae1a68e5b0cf4fb0f4c890718e035b0bda43">AMDGPUAS::CONSTANT&#95;BUFFER&#95;0</a> &amp;&amp;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">        AddrSpace &lt;= <a href="/docs/api/namespaces/llvm/amdgpuas/#a899ad5bfccfc22965a6714929a3dfae1a1ae19b57472eec1e951506094d92a411">AMDGPUAS::CONSTANT&#95;BUFFER&#95;15</a>)))</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 128;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm&#95;unreachable</a>(</Highlight><Highlight kind="stringliteral">&quot;unhandled address space&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64" lineLink="/docs/api/classes/llvm/r600ttiimpl/#a123e4fe3b614b2fe9869dae4017fb332"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/r600ttiimpl/#a123e4fe3b614b2fe9869dae4017fb332">R600TTIImpl::isLegalToVectorizeMemChain</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> ChainSizeInBytes,</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">                                             <a href="/docs/api/structs/llvm/align">Align</a> Alignment,</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">                                             </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> AddrSpace)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// We allow vectorization of flat stores, even though we may need to decompose</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// them later if they may access private memory. We don&#39;t have enough context</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// here, and legalization can handle it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (AddrSpace != <a href="/docs/api/namespaces/llvm/amdgpuas/#a899ad5bfccfc22965a6714929a3dfae1aec164f45437d8827346f2d8ec645479a">AMDGPUAS::PRIVATE&#95;ADDRESS</a>);</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73" lineLink="/docs/api/classes/llvm/r600ttiimpl/#af437596f08ba00c667b174ee5e41920e"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/r600ttiimpl/#af437596f08ba00c667b174ee5e41920e">R600TTIImpl::isLegalToVectorizeLoadChain</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> ChainSizeInBytes,</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">                                              <a href="/docs/api/structs/llvm/align">Align</a> Alignment,</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">                                              </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> AddrSpace)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/r600ttiimpl/#a123e4fe3b614b2fe9869dae4017fb332">isLegalToVectorizeMemChain</a>(ChainSizeInBytes, Alignment, AddrSpace);</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/classes/llvm/r600ttiimpl/#a4a1478ef1f6170cd0bc5ae58c89bc1f6"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/r600ttiimpl/#a4a1478ef1f6170cd0bc5ae58c89bc1f6">R600TTIImpl::isLegalToVectorizeStoreChain</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> ChainSizeInBytes,</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">                                               <a href="/docs/api/structs/llvm/align">Align</a> Alignment,</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">                                               </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> AddrSpace)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/r600ttiimpl/#a123e4fe3b614b2fe9869dae4017fb332">isLegalToVectorizeMemChain</a>(ChainSizeInBytes, Alignment, AddrSpace);</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85" lineLink="/docs/api/classes/llvm/r600ttiimpl/#a8bfce9237a4882c6862de27708677f5c"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/r600ttiimpl/#a8bfce9237a4882c6862de27708677f5c">R600TTIImpl::getMaxInterleaveFactor</a>(<a href="/docs/api/classes/llvm/elementcount">ElementCount</a> VF) &#123;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Disable unrolling if the loop is not vectorized.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// TODO: Enable this again.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (VF.<a href="/docs/api/classes/llvm/elementcount/#a991f269cde2e7fbcb254ef371efc8d1a">isScalar</a>())</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 1;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 8;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94" lineLink="/docs/api/classes/llvm/r600ttiimpl/#a30fec1c5a8125be962816feeefc92009"><Highlight kind="normal"><a href="/docs/api/classes/llvm/instructioncost">InstructionCost</a> <a href="/docs/api/classes/llvm/r600ttiimpl/#a30fec1c5a8125be962816feeefc92009">R600TTIImpl::getCFInstrCost</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Opcode,</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">                                            <a href="/docs/api/classes/llvm/targettransforminfo/#a706f223f760b55668fbae74202b816bb">TTI::TargetCostKind</a> <a href="/docs/api/files/lib/lib/analysis/costmodel-cpp/#a162d8b2b3865594d1e14d828d2b8336a">CostKind</a>,</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">                                            </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>) &#123;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/analysis/costmodel-cpp/#a162d8b2b3865594d1e14d828d2b8336a">CostKind</a> == <a href="/docs/api/classes/llvm/targettransforminfo/#a706f223f760b55668fbae74202b816bba737cfc93e5a2ff961677d57186167e7c">TTI::TCK&#95;CodeSize</a> || <a href="/docs/api/files/lib/lib/analysis/costmodel-cpp/#a162d8b2b3865594d1e14d828d2b8336a">CostKind</a> == <a href="/docs/api/classes/llvm/targettransforminfo/#a706f223f760b55668fbae74202b816bba7f80055e1969cb850739546467460ad8">TTI::TCK&#95;SizeAndLatency</a>)</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Opcode == Instruction::PHI ? 0 : 1;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// XXX - For some reason this isn&#39;t called for switch.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (Opcode) &#123;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> Instruction::Br:</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> Instruction::Ret:</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 10;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/basicttiimplbase/#aa459db33f4b14d518af003bf95c3417e">BaseT::getCFInstrCost</a>(Opcode, <a href="/docs/api/files/lib/lib/analysis/costmodel-cpp/#a162d8b2b3865594d1e14d828d2b8336a">CostKind</a>, <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110" lineLink="/docs/api/classes/llvm/r600ttiimpl/#af55f0e0db010c77e07d4b29c9fe27d61"><Highlight kind="normal"><a href="/docs/api/classes/llvm/instructioncost">InstructionCost</a> <a href="/docs/api/classes/llvm/r600ttiimpl/#af55f0e0db010c77e07d4b29c9fe27d61">R600TTIImpl::getVectorInstrCost</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Opcode, <a href="/docs/api/classes/llvm/type">Type</a> &#42;ValTy,</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">                                                <a href="/docs/api/classes/llvm/targettransforminfo/#a706f223f760b55668fbae74202b816bb">TTI::TargetCostKind</a> <a href="/docs/api/files/lib/lib/analysis/costmodel-cpp/#a162d8b2b3865594d1e14d828d2b8336a">CostKind</a>,</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">                                                </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Index, <a href="/docs/api/classes/llvm/value">Value</a> &#42;Op0,</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">                                                <a href="/docs/api/classes/llvm/value">Value</a> &#42;Op1) &#123;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (Opcode) &#123;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> Instruction::ExtractElement:</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> Instruction::InsertElement: &#123;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> EltSize =</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/basicttiimplbase/#aec0b8db50138e2a68aca36959b6692a5">DL</a>.getTypeSizeInBits(<a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;VectorType&gt;</a>(ValTy)-&gt;getElementType());</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (EltSize &lt; 32) &#123;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/basicttiimplbase/#a27bfcb3dd99fa7a7ca8dc24eeac6e8e6">BaseT::getVectorInstrCost</a>(Opcode, ValTy, <a href="/docs/api/files/lib/lib/analysis/costmodel-cpp/#a162d8b2b3865594d1e14d828d2b8336a">CostKind</a>, Index, Op0,</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">                                       Op1);</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Extracts are just reads of a subregister, so are free. Inserts are</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// considered free because we don&#39;t want to have any cost for scalarizing</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// operations, and we don&#39;t have to copy into a different register class.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Dynamic indexing isn&#39;t free and is best avoided.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Index == ~0u ? 2 : 0;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/basicttiimplbase/#a27bfcb3dd99fa7a7ca8dc24eeac6e8e6">BaseT::getVectorInstrCost</a>(Opcode, ValTy, <a href="/docs/api/files/lib/lib/analysis/costmodel-cpp/#a162d8b2b3865594d1e14d828d2b8336a">CostKind</a>, Index, Op0, Op1);</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136" lineLink="/docs/api/classes/llvm/r600ttiimpl/#a8e339c3466d8f873a4758618a176f35d"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/r600ttiimpl/#a8e339c3466d8f873a4758618a176f35d">R600TTIImpl::getUnrollingPreferences</a>(<a href="/docs/api/classes/llvm/loop">Loop</a> &#42;L, <a href="/docs/api/classes/llvm/scalarevolution">ScalarEvolution</a> &amp;SE,</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">                                          <a href="/docs/api/structs/llvm/targettransforminfo/unrollingpreferences">TTI::UnrollingPreferences</a> &amp;UP,</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">                                          <a href="/docs/api/classes/llvm/optimizationremarkemitter">OptimizationRemarkEmitter</a> &#42;ORE) &#123;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">  CommonTTI.getUnrollingPreferences(L, SE, UP, ORE);</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142" lineLink="/docs/api/classes/llvm/r600ttiimpl/#a24166f42244179ae0551eaf4c160c86f"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/r600ttiimpl/#a24166f42244179ae0551eaf4c160c86f">R600TTIImpl::getPeelingPreferences</a>(<a href="/docs/api/classes/llvm/loop">Loop</a> &#42;L, <a href="/docs/api/classes/llvm/scalarevolution">ScalarEvolution</a> &amp;SE,</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">                                        <a href="/docs/api/structs/llvm/targettransforminfo/peelingpreferences">TTI::PeelingPreferences</a> &amp;PP) &#123;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  CommonTTI.getPeelingPreferences(L, SE, PP);</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

@@ -1,0 +1,273 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/vphistogramrecipe
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `VPHistogramRecipe` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+A recipe representing a sequence of load -&gt; update -&gt; store as part of a histogram operation. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::VPHistogramRecipe</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="Transforms/Vectorize/VPlan.h"
+  permalink="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a></>}>
+<a href="/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a> is a base class modeling a sequence of one or more output IR instructions. <a href="/docs/api/classes/llvm/vprecipebase/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename IterT&gt;</>}
+  name={<><a href="#a91e7386c6a51261ce3ff563627329590">VPHistogramRecipe</a> (unsigned Opcode, iterator&#95;range&lt; IterT &gt; Operands, DebugLoc DL=&#123;&#125;)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Destructor Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#adf4dff3943f6fd412997de557d56c657">~VPHistogramRecipe</a> () override=default</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/vphistogramrecipe">VPHistogramRecipe</a> &#42;</>}
+  name={<><a href="#a4c02a215b23361553e82137c023b5556">clone</a> () override</>}>
+Clone the current recipe. <a href="#a4c02a215b23361553e82137c023b5556">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/instructioncost">InstructionCost</a></>}
+  name={<><a href="#a6def10381cc09d92342a6846fe1174e0">computeCost</a> (ElementCount VF, VPCostContext &amp;Ctx) const override</>}>
+Return the cost of this <a href="/docs/api/classes/llvm/vphistogramrecipe">VPHistogramRecipe</a>. <a href="#a6def10381cc09d92342a6846fe1174e0">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a19aa4af9c02f8e3571cc82c0634a25f6">execute</a> (VPTransformState &amp;State) override</>}>
+Produce a vectorized histogram operation. <a href="#a19aa4af9c02f8e3571cc82c0634a25f6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;</>}
+  name={<><a href="#aa8f8009fac3925355595375f9d3f458f">getMask</a> () const</>}>
+Return the mask operand if one was provided, or a null pointer if all lanes should be executed unconditionally. <a href="#aa8f8009fac3925355595375f9d3f458f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#ab935e1809d20254d3d4c29d46bc44d5b">getOpcode</a> () const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#afc22e4ac9c148e2145862b17b9aa3f98">print</a> (raw&#95;ostream &amp;O, const Twine &amp;Indent, VPSlotTracker &amp;SlotTracker) const override</>}>
+Print the recipe. <a href="#afc22e4ac9c148e2145862b17b9aa3f98">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  name={<><a href="#a4ab97cf29fb359f9d8b4db85e4e797e7">VP&#95;CLASSOF&#95;IMPL</a> (VPDef::VPHistogramSC)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a1504868763899af05a792ac0f574f8fc">Opcode</a></>}>
+Opcode of the update operation, currently either add or sub. <a href="#a1504868763899af05a792ac0f574f8fc">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+A recipe representing a sequence of load -&gt; update -&gt; store as part of a histogram operation.
+
+This means there may be aliasing between vector lanes, which is handled by the llvm.experimental.vector.histogram family of intrinsics. The only update operations currently supported are &#39;add&#39; and &#39;sub&#39; where the other term is loop-invariant.
+
+Definition at line 1781 of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### VPHistogramRecipe() {#a91e7386c6a51261ce3ff563627329590}
+
+<MemberDefinition
+  template={<>template &lt;typename IterT&gt;</>}
+  prototype={<>llvm::VPHistogramRecipe::VPHistogramRecipe (unsigned Opcode, <a href="/docs/api/classes/llvm/iterator-range">iterator&#95;range</a>&lt; IterT &gt; Operands, <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> DL=&#123;&#125;)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l01787">1787</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Destructor
+
+### ~VPHistogramRecipe() {#adf4dff3943f6fd412997de557d56c657}
+
+<MemberDefinition
+  prototype="llvm::VPHistogramRecipe::~VPHistogramRecipe ()"
+  labels = {["default"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l01791">1791</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### clone() {#a4c02a215b23361553e82137c023b5556}
+
+<MemberDefinition
+  prototype={<>VPHistogramRecipe &#42; llvm::VPHistogramRecipe::clone ()</>}
+  labels = {["inline", "virtual"]}>
+Clone the current recipe.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l01793">1793</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+### computeCost() {#a6def10381cc09d92342a6846fe1174e0}
+
+<MemberDefinition
+  prototype={<>InstructionCost VPHistogramRecipe::computeCost (<a href="/docs/api/classes/llvm/elementcount">ElementCount</a> VF, <a href="/docs/api/structs/llvm/vpcostcontext">VPCostContext</a> &amp; Ctx) const</>}
+  labels = {["virtual"]}>
+Return the cost of this <a href="/docs/api/classes/llvm/vphistogramrecipe">VPHistogramRecipe</a>.
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l01803">1803</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp/#l01221">1221</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp">VPlanRecipes.cpp</a>.
+</MemberDefinition>
+
+### execute() {#a19aa4af9c02f8e3571cc82c0634a25f6}
+
+<MemberDefinition
+  prototype={<>void VPHistogramRecipe::execute (<a href="/docs/api/structs/llvm/vptransformstate">VPTransformState</a> &amp; State)</>}
+  labels = {["virtual"]}>
+Produce a vectorized histogram operation.
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l01800">1800</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp/#l01191">1191</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp">VPlanRecipes.cpp</a>.
+</MemberDefinition>
+
+### getMask() {#aa8f8009fac3925355595375f9d3f458f}
+
+<MemberDefinition
+  prototype={<>VPValue &#42; llvm::VPHistogramRecipe::getMask () const</>}
+  labels = {["inline"]}>
+Return the mask operand if one was provided, or a null pointer if all lanes should be executed unconditionally.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l01810">1810</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+### getOpcode() {#ab935e1809d20254d3d4c29d46bc44d5b}
+
+<MemberDefinition
+  prototype="unsigned llvm::VPHistogramRecipe::getOpcode () const"
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l01806">1806</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+### print() {#afc22e4ac9c148e2145862b17b9aa3f98}
+
+<MemberDefinition
+  prototype={<>void VPHistogramRecipe::print (<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp; O, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp; Indent, <a href="/docs/api/classes/llvm/vpslottracker">VPSlotTracker</a> &amp; SlotTracker) const</>}
+  labels = {["virtual"]}>
+Print the recipe.
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l01816">1816</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp/#l01258">1258</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp">VPlanRecipes.cpp</a>.
+</MemberDefinition>
+
+### VP&#95;CLASSOF&#95;IMPL() {#a4ab97cf29fb359f9d8b4db85e4e797e7}
+
+<MemberDefinition
+  prototype={<>llvm::VPHistogramRecipe::VP&#95;CLASSOF&#95;IMPL (VPDef::VPHistogramSC)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l01797">1797</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### Opcode {#a1504868763899af05a792ac0f574f8fc}
+
+<MemberDefinition
+  prototype="unsigned llvm::VPHistogramRecipe::Opcode">
+Opcode of the update operation, currently either add or sub.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l01783">1783</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp">VPlanRecipes.cpp</a></li>
+</ul>
+
+</DoxygenPage>

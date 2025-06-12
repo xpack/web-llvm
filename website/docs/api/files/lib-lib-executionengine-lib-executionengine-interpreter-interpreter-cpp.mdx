@@ -1,0 +1,204 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/executionengine/lib/executionengine/interpreter/interpreter-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `Interpreter.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="Interpreter.h"
+  permalink="/docs/api/files/lib/lib/executionengine/lib/executionengine/interpreter/interpreter-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/IntrinsicLowering.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/intrinsiclowering-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/DerivedTypes.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/derivedtypes-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Module.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/module-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cstring"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/anonymous-interpreter-cpp-">anonymous&#123;Interpreter.cpp&#125;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/anonymous-namespace-interpreter-cpp-/registerinterp">RegisterInterp</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="/docs/api/groups/llvmcexecutionengine/#gacfb50cdd5f90d54ad40791117dfdc182">LLVMLinkInInterpreter</a> (void)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- Interpreter.cpp - Top-Level LLVM Interpreter Implementation --------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements the top-level functionality for the LLVM interpreter.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This interpreter is designed to be a very simple, portable, inefficient</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// interpreter.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/interpreter/interpreter-h">Interpreter.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/intrinsiclowering-h">llvm/CodeGen/IntrinsicLowering.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/derivedtypes-h">llvm/IR/DerivedTypes.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/module-h">llvm/IR/Module.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstring&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22" lineLink="/docs/api/namespaces/anonymous-interpreter-cpp-"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24" lineLink="/docs/api/structs/anonymous-namespace-interpreter-cpp-/registerinterp"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/anonymous-namespace-interpreter-cpp-/registerinterp/#abff839376f050d7e6e7a794a58ea6afd">RegisterInterp</a> &#123;</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25" lineLink="/docs/api/structs/anonymous-namespace-interpreter-cpp-/registerinterp/#abff839376f050d7e6e7a794a58ea6afd"><Highlight kind="normal">  <a href="/docs/api/structs/anonymous-namespace-interpreter-cpp-/registerinterp/#abff839376f050d7e6e7a794a58ea6afd">RegisterInterp</a>() &#123; <a href="/docs/api/classes/llvm/interpreter/#a152334c0d8a032d91d4c90b5197cb902">Interpreter::Register</a>(); &#125;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26" lineLink="/docs/api/namespaces/anonymous-interpreter-cpp-/#a8ff4009366b35c61e0243d78dad0192c"><Highlight kind="normal">&#125; <a href="/docs/api/namespaces/anonymous-interpreter-cpp-/#a8ff4009366b35c61e0243d78dad0192c">InterpRegistrator</a>;</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30" lineLink="/docs/api/groups/llvmcexecutionengine/#gacfb50cdd5f90d54ad40791117dfdc182"><Highlight kind="normal"></Highlight><Highlight kind="keyword">extern</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="stringliteral">&quot;C&quot;</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/llvmcexecutionengine/#gacfb50cdd5f90d54ad40791117dfdc182">LLVMLinkInInterpreter</a>() &#123; &#125;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">/// Create a new interpreter object.</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34" lineLink="/docs/api/classes/llvm/interpreter/#aec4c8f10c02e58107d0372b5de57b819"><Highlight kind="normal"><a href="/docs/api/classes/llvm/executionengine/#a92eef8691cfbe4446ee15d34258c3185">ExecutionEngine</a> &#42;<a href="/docs/api/classes/llvm/interpreter/#aec4c8f10c02e58107d0372b5de57b819">Interpreter::create</a>(std::unique&#95;ptr&lt;Module&gt; M,</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">                                     std::string &#42;ErrStr) &#123;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Tell this Module to materialize everything and release the GVMaterializer.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/error">Error</a> Err = M-&gt;materializeAll()) &#123;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">    std::string Msg;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a2aa0f5c36ac6291f5d5f2b4efd9ffe70">handleAllErrors</a>(std::move(Err), &#91;&amp;&#93;(<a href="/docs/api/classes/llvm/errorinfobase">ErrorInfoBase</a> &amp;EIB) &#123;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">      Msg = EIB.<a href="/docs/api/classes/llvm/errorinfobase/#a2b75e20ae30dbb4d4d96486653a9b710">message</a>();</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">    &#125;);</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ErrStr)</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">      &#42;ErrStr = Msg;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// We got an error, just return 0</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/interpreter/#a742cab06ece0dfaa5fb512243e616bcc">Interpreter</a>(std::move(M));</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Interpreter ctor - Initialize stuff</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54" lineLink="/docs/api/classes/llvm/interpreter/#a742cab06ece0dfaa5fb512243e616bcc"><Highlight kind="normal"><a href="/docs/api/classes/llvm/interpreter/#a742cab06ece0dfaa5fb512243e616bcc">Interpreter::Interpreter</a>(std::unique&#95;ptr&lt;Module&gt; M)</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">    : <a href="/docs/api/classes/llvm/executionengine/#a92eef8691cfbe4446ee15d34258c3185">ExecutionEngine</a>(<a href="/docs/api/namespaces/std">std</a>::<a href="/docs/api/namespaces/llvm/#abfc9c7ecf70f66901e439f7c04ef3dbb">move</a>(M)) &#123;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  memset(&amp;ExitValue.Untyped, 0, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(ExitValue.Untyped));</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Initialize the &quot;backend&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">  initializeExecutionEngine();</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">  initializeExternalFunctions();</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/executionengine/#aca88a09e03611e624c1b6ac0aad41ce3">emitGlobals</a>();</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">  IL = </Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrinsiclowering">IntrinsicLowering</a>(<a href="/docs/api/classes/llvm/executionengine/#a221f82626a9fd6d8dc7c76e097940b07">getDataLayout</a>());</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66" lineLink="/docs/api/classes/llvm/interpreter/#a176fa92633c4d8b9a610471772448583"><Highlight kind="normal"><a href="/docs/api/classes/llvm/interpreter/#a176fa92633c4d8b9a610471772448583">Interpreter::~Interpreter</a>() &#123;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal"> IL;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/classes/llvm/interpreter/#a508808d7cffb7f4416ddfdc8eb76dd36"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/interpreter/#a508808d7cffb7f4416ddfdc8eb76dd36">Interpreter::runAtExitHandlers</a> () &#123;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (!AtExitHandlers.empty()) &#123;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/interpreter/#a7e36a63781989accf846f2e78f510d33">callFunction</a>(AtExitHandlers.back(), &#123;&#125;);</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    AtExitHandlers.pop&#95;back();</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/interpreter/#a4b9367cdd0a810a103f13bb649cf697f">run</a>();</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="comment">/// run - Start execution with the specified function and arguments.</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/classes/llvm/interpreter/#a92bee9b9d1c7a9396f6d32bae5f7a563"><Highlight kind="normal"><a href="/docs/api/structs/llvm/genericvalue">GenericValue</a> <a href="/docs/api/classes/llvm/interpreter/#a92bee9b9d1c7a9396f6d32bae5f7a563">Interpreter::runFunction</a>(<a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>,</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">                                      <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;GenericValue&gt;</a> ArgValues) &#123;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Function &#42;F was null at entry to run()&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Try extra hard not to pass extra args to a function that isn&#39;t</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// expecting them.  C programmers frequently bend the rules and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// declare main() with fewer parameters than it actually gets</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// passed, and the interpreter barfs if you pass a function more</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// parameters than it is declared to take. This does not attempt to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// take into account gratuitous differences in declared types,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// though.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> ArgCount = <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;getFunctionType()-&gt;getNumParams();</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;GenericValue&gt;</a> ActualArgs =</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">      ArgValues.<a href="/docs/api/classes/llvm/arrayref/#aebf6ca7590d4f766b894044015a0fa31">slice</a>(0, std::min(ArgValues.<a href="/docs/api/classes/llvm/arrayref/#a85ffb6531d4cda988ea81f18d4e56fb7">size</a>(), ArgCount));</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Set up the function call.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/interpreter/#a7e36a63781989accf846f2e78f510d33">callFunction</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, ActualArgs);</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Start executing the function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/interpreter/#a4b9367cdd0a810a103f13bb649cf697f">run</a>();</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ExitValue;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

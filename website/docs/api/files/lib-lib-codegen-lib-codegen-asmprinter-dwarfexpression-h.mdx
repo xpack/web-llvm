@@ -1,0 +1,506 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/codegen/lib/codegen/asmprinter/dwarfexpression-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `DwarfExpression.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="ByteStreamer.h"
+  permalink="/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/bytestreamer-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/ArrayRef.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/SmallVector.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/DebugInfoMetadata.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/debuginfometadata-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cassert"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="cstdint"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="iterator"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="optional"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/dwarfexpression-2">DwarfExpression</a></>}>
+Base class containing the logic for constructing DWARF expressions independently of whether they are emitted into a <a href="/docs/api/classes/llvm/die">DIE</a> or into a .debug&#95;loc entry. <a href="/docs/api/classes/llvm/dwarfexpression-2/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/dwarfexpression/register">Register</a></>}>
+Holds information about all subregisters comprising a register location. <a href="/docs/api/structs/llvm/dwarfexpression/register/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/debuglocdwarfexpression">DebugLocDwarfExpression</a></>}>
+<a href="/docs/api/classes/llvm/dwarfexpression">DwarfExpression</a> implementation for .debug&#95;loc entries. <a href="/docs/api/classes/llvm/debuglocdwarfexpression/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/debuglocdwarfexpression/tempbuffer">TempBuffer</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/diedwarfexpression">DIEDwarfExpression</a></>}>
+<a href="/docs/api/classes/llvm/dwarfexpression">DwarfExpression</a> implementation for singular DW&#95;AT&#95;location. <a href="/docs/api/classes/llvm/diedwarfexpression/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/CodeGen/DwarfExpression.h - Dwarf Compile Unit ------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file contains support for writing dwarf compile unit.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;LIB&#95;CODEGEN&#95;ASMPRINTER&#95;DWARFEXPRESSION&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;LIB&#95;CODEGEN&#95;ASMPRINTER&#95;DWARFEXPRESSION&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/asmprinter/bytestreamer-h">ByteStreamer.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h">llvm/ADT/ArrayRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/debuginfometadata-h">llvm/IR/DebugInfoMetadata.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cassert&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstdint&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;iterator&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;optional&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/asmprinter">AsmPrinter</a>;</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/apint">APInt</a>;</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/dwarfcompileunit-2">DwarfCompileUnit</a>;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/dieloc">DIELoc</a>;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a>;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machinelocation">MachineLocation</a>;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="comment">/// Base class containing the logic for constructing DWARF expressions</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="comment">/// independently of whether they are emitted into a DIE or into a .debug&#95;loc</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="comment">/// entry.</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">/// Some DWARF operations, e.g. DW&#95;OP&#95;entry&#95;value, need to calculate the size</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">/// of a succeeding DWARF block before the latter is emitted to the output.</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">/// To handle such cases, data can conditionally be emitted to a temporary</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">/// buffer, which can later on be committed to the main output. The size of the</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">/// temporary buffer is queryable, allowing for the size of the data to be</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">/// emitted before the data is committed.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44" lineLink="/docs/api/classes/llvm/dwarfexpression-2"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/dwarfexpression-2/#af0f024a1be631b3865a2ac37210ad57c">DwarfExpression</a> &#123;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">  /// Holds information about all subregisters comprising a register location.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/structs/llvm/dwarfexpression/register"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/dwarfexpression/register">Register</a> &#123;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48" lineLink="/docs/api/structs/llvm/dwarfexpression/register/#a9598f3614493196cd1a491a06c2585ef"><Highlight kind="normal">    int64&#95;t <a href="/docs/api/structs/llvm/dwarfexpression/register/#a9598f3614493196cd1a491a06c2585ef">DwarfRegNo</a>;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49" lineLink="/docs/api/structs/llvm/dwarfexpression/register/#ada13275e6b7c522d4d5fa03680d12e92"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dwarfexpression/register/#ada13275e6b7c522d4d5fa03680d12e92">SubRegSize</a>;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50" lineLink="/docs/api/structs/llvm/dwarfexpression/register/#a4141ea0b5124c7cf48b91a552411488b"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/structs/llvm/dwarfexpression/register/#a4141ea0b5124c7cf48b91a552411488b">Comment</a>;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">    /// Create a full register, no extra DW&#95;OP&#95;piece operators necessary.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53" lineLink="/docs/api/structs/llvm/dwarfexpression/register/#a299b21f22318cb802f9136554ef10585"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dwarfexpression/register">Register</a> <a href="/docs/api/structs/llvm/dwarfexpression/register/#a299b21f22318cb802f9136554ef10585">createRegister</a>(int64&#95;t RegNo, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/structs/llvm/dwarfexpression/register/#a4141ea0b5124c7cf48b91a552411488b">Comment</a>) &#123;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#123;RegNo, 0, <a href="/docs/api/structs/llvm/dwarfexpression/register/#a4141ea0b5124c7cf48b91a552411488b">Comment</a>&#125;;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="comment">    /// Create a subregister that needs a DW&#95;OP&#95;piece operator with SizeInBits.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58" lineLink="/docs/api/structs/llvm/dwarfexpression/register/#ad5c60e74c887beef5da6437bba2327c4"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dwarfexpression/register">Register</a> <a href="/docs/api/structs/llvm/dwarfexpression/register/#ad5c60e74c887beef5da6437bba2327c4">createSubRegister</a>(int64&#95;t RegNo, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> SizeInBits,</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">                                      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/structs/llvm/dwarfexpression/register/#a4141ea0b5124c7cf48b91a552411488b">Comment</a>) &#123;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#123;RegNo, SizeInBits, <a href="/docs/api/structs/llvm/dwarfexpression/register/#a4141ea0b5124c7cf48b91a552411488b">Comment</a>&#125;;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/structs/llvm/dwarfexpression/register/#a233d602e2935755993d7d170e68ae287"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dwarfexpression/register/#a233d602e2935755993d7d170e68ae287">isSubRegister</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/dwarfexpression/register/#ada13275e6b7c522d4d5fa03680d12e92">SubRegSize</a>; &#125;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="comment">  /// Whether we are currently emitting an entry value operation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#add8b8103361d8eaacd6060718059b5d9"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#add8b8103361d8eaacd6060718059b5d9">IsEmittingEntryValue</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a64b9ee4a6edb2c1d9fe79128d97da5b8"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/dwarfcompileunit-2">DwarfCompileUnit</a> &amp;<a href="/docs/api/namespaces/cu">CU</a>;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">  /// The register location, if any.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a82429fe91ba06ffa4385d20115182958"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;Register, 2&gt;</a> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a82429fe91ba06ffa4385d20115182958">DwarfRegs</a>;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">  /// Current Fragment Offset in Bits.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a27e56563110c3919f11b5c08eb4457dd"><Highlight kind="normal">  uint64&#95;t <a href="/docs/api/classes/llvm/dwarfexpression-2/#a27e56563110c3919f11b5c08eb4457dd">OffsetInBits</a> = 0;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">  /// Sometimes we need to add a DW&#95;OP&#95;bit&#95;piece to describe a subregister.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#aacd5bdc1449ccfe9054e3d540647c5c7"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#aacd5bdc1449ccfe9054e3d540647c5c7">SubRegisterSizeInBits</a> : 16;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#ae4743278317e43a8e8c097f187a392d7"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#ae4743278317e43a8e8c097f187a392d7">SubRegisterOffsetInBits</a> : 16;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// The kind of location description being produced.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a2d4874c3f450184303a741b477b8529faedb8d8635e8871156b211802e87bba39"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> &#123; <a href="/docs/api/classes/llvm/dwarfexpression-2/#a2d4874c3f450184303a741b477b8529fa4a2d696e428f1286b5d265cd77d6aac1">Unknown</a> = 0, <a href="/docs/api/structs/llvm/dwarfexpression/register">Register</a>, <a href="/docs/api/classes/llvm/dwarfexpression-2/#a2d4874c3f450184303a741b477b8529faffed6f101874163407cc07f9c5d84c23">Memory</a>, <a href="/docs/api/classes/llvm/dwarfexpression-2/#a2d4874c3f450184303a741b477b8529faedb8d8635e8871156b211802e87bba39">Implicit</a> &#125;;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  /// Additional location flags which may be combined with any location kind.</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="comment">  /// Currently, entry values are not supported for the Memory location kind.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a467e19938e9af2b1003b8e56a07f8919a54208072c432df3a9f411db14390bb64"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> &#123; <a href="/docs/api/classes/llvm/dwarfexpression-2/#a467e19938e9af2b1003b8e56a07f8919a64e30e01fb92fbed321319e4cbc7b868">EntryValue</a> = 1 &lt;&lt; 0, <a href="/docs/api/classes/llvm/dwarfexpression-2/#a467e19938e9af2b1003b8e56a07f8919a9e467bd00311a19e75a75f808990ac0f">Indirect</a> = 1 &lt;&lt; 1, <a href="/docs/api/classes/llvm/dwarfexpression-2/#a467e19938e9af2b1003b8e56a07f8919a54208072c432df3a9f411db14390bb64">CallSiteParamValue</a> = 1 &lt;&lt; 2 &#125;;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a0ff61409e6730c315d8356d73919da19"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a0ff61409e6730c315d8356d73919da19">LocationKind</a> : 3;</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a5b9195ccfa14791ecd5d29c144b32ac2"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a5b9195ccfa14791ecd5d29c144b32ac2">SavedLocationKind</a> : 3;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a0c17a9605c4bfbb9986ff36ff1c35f77"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a0c17a9605c4bfbb9986ff36ff1c35f77">LocationFlags</a> : 3;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#aef5ba761b851d8fd81d469598cd9b678"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#aef5ba761b851d8fd81d469598cd9b678">DwarfVersion</a> : 4;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">  /// Set the location (\\p Loc) and \\ref DIExpression (\\p DIExpr) to describe.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a082b9984a203d2a2ba3dd4b5986d4706">setLocation</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinelocation">MachineLocation</a> &amp;<a href="/docs/api/namespaces/llvm/loc">Loc</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/diexpression">DIExpression</a> &#42;DIExpr);</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a238ed978a8838070e8eec9168fc08764"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a238ed978a8838070e8eec9168fc08764">isUnknownLocation</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a0ff61409e6730c315d8356d73919da19">LocationKind</a> == <a href="/docs/api/classes/llvm/dwarfexpression-2/#a2d4874c3f450184303a741b477b8529fa4a2d696e428f1286b5d265cd77d6aac1">Unknown</a>; &#125;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#aa6f5b7e87b7ed3a688215c95f870e0d5"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#aa6f5b7e87b7ed3a688215c95f870e0d5">isMemoryLocation</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a0ff61409e6730c315d8356d73919da19">LocationKind</a> == <a href="/docs/api/classes/llvm/dwarfexpression-2/#a2d4874c3f450184303a741b477b8529faffed6f101874163407cc07f9c5d84c23">Memory</a>; &#125;</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a480fc786a688aa08fbad50cb961bbdf5"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a480fc786a688aa08fbad50cb961bbdf5">isRegisterLocation</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a0ff61409e6730c315d8356d73919da19">LocationKind</a> == <a href="/docs/api/structs/llvm/dwarfexpression/register">Register</a>; &#125;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a6821f93d5f8c85cb416bf56acb135409"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a6821f93d5f8c85cb416bf56acb135409">isImplicitLocation</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a0ff61409e6730c315d8356d73919da19">LocationKind</a> == <a href="/docs/api/classes/llvm/dwarfexpression-2/#a2d4874c3f450184303a741b477b8529faedb8d8635e8871156b211802e87bba39">Implicit</a>; &#125;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#acb6233f16f7169eca9b6afd2f0a5635f"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#acb6233f16f7169eca9b6afd2f0a5635f">isEntryValue</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a0c17a9605c4bfbb9986ff36ff1c35f77">LocationFlags</a> &amp; <a href="/docs/api/classes/llvm/dwarfexpression-2/#a467e19938e9af2b1003b8e56a07f8919a64e30e01fb92fbed321319e4cbc7b868">EntryValue</a>; &#125;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a901d1bd450dc954f08cb3e435ff9560a"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a901d1bd450dc954f08cb3e435ff9560a">isIndirect</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a0c17a9605c4bfbb9986ff36ff1c35f77">LocationFlags</a> &amp; <a href="/docs/api/classes/llvm/dwarfexpression-2/#a467e19938e9af2b1003b8e56a07f8919a9e467bd00311a19e75a75f808990ac0f">Indirect</a>; &#125;</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#adaef0bfcd27f5f3266c56a477f288d8a"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#adaef0bfcd27f5f3266c56a477f288d8a">isParameterValue</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a0c17a9605c4bfbb9986ff36ff1c35f77">LocationFlags</a> &amp; <a href="/docs/api/classes/llvm/dwarfexpression-2/#a467e19938e9af2b1003b8e56a07f8919a54208072c432df3a9f411db14390bb64">CallSiteParamValue</a>; &#125;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a5f932b026f333235fb286cb5206fc208"><Highlight kind="normal">  std::optional&lt;uint8&#95;t&gt; <a href="/docs/api/classes/llvm/dwarfexpression-2/#a5f932b026f333235fb286cb5206fc208">TagOffset</a>;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">  /// Push a DW&#95;OP&#95;piece / DW&#95;OP&#95;bit&#95;piece for emitting later, if one is needed</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">  /// to represent a subregister.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#abf06301b75ad04934e944056d7e3b06d"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#abf06301b75ad04934e944056d7e3b06d">setSubRegisterPiece</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> SizeInBits, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a27e56563110c3919f11b5c08eb4457dd">OffsetInBits</a>) &#123;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(SizeInBits &lt; 65536 &amp;&amp; <a href="/docs/api/classes/llvm/dwarfexpression-2/#a27e56563110c3919f11b5c08eb4457dd">OffsetInBits</a> &lt; 65536);</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/dwarfexpression-2/#aacd5bdc1449ccfe9054e3d540647c5c7">SubRegisterSizeInBits</a> = SizeInBits;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/dwarfexpression-2/#ae4743278317e43a8e8c097f187a392d7">SubRegisterOffsetInBits</a> = <a href="/docs/api/classes/llvm/dwarfexpression-2/#a27e56563110c3919f11b5c08eb4457dd">OffsetInBits</a>;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="comment">  /// Add masking operations to stencil out a subregister.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a82020f82890e18c9863c168c761d9093">maskSubRegister</a>();</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">  /// Output a dwarf operand and an optional assembler comment.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a138888316d44c8f4e83e75958d0b2125"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a138888316d44c8f4e83e75958d0b2125">emitOp</a>(uint8&#95;t <a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;Comment = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">) = 0;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="comment">  /// Emit a raw signed value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#ae0e37c2238da26915e18ce4f433a1872"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#ae0e37c2238da26915e18ce4f433a1872">emitSigned</a>(int64&#95;t <a href="/docs/api/classes/llvm/value">Value</a>) = 0;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="comment">  /// Emit a raw unsigned value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a7420aaf331a0e070180d072dd5f7e4a6"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a7420aaf331a0e070180d072dd5f7e4a6">emitUnsigned</a>(uint64&#95;t <a href="/docs/api/classes/llvm/value">Value</a>) = 0;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a53524798940ea32cd77f95057d678aba"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a53524798940ea32cd77f95057d678aba">emitData1</a>(uint8&#95;t <a href="/docs/api/classes/llvm/value">Value</a>) = 0;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a535243c026735fb647637cdee450d3b9"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a535243c026735fb647637cdee450d3b9">emitBaseTypeRef</a>(uint64&#95;t Idx) = 0;</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">  /// Start emitting data to the temporary buffer. The data stored in the</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="comment">  /// temporary buffer can be committed to the main output using</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="comment">  /// commitTemporaryBuffer().</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#af2fbe56f4cb2d8d947912719b32204bb"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#af2fbe56f4cb2d8d947912719b32204bb">enableTemporaryBuffer</a>() = 0;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="comment">  /// Disable emission to the temporary buffer. This does not commit data</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="comment">  /// in the temporary buffer to the main output.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a20e32622eb9d47e4da545f349300010a"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a20e32622eb9d47e4da545f349300010a">disableTemporaryBuffer</a>() = 0;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="comment">  /// Return the emitted size, in number of bytes, for the data stored in the</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="comment">  /// temporary buffer.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a255788cd514b624b5c962a02d16a6a65"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a255788cd514b624b5c962a02d16a6a65">getTemporaryBufferSize</a>() = 0;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="comment">  /// Commit the data stored in the temporary buffer to the main output.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#ae9f7bf56f59e4092017760acc2cd2f6c"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#ae9f7bf56f59e4092017760acc2cd2f6c">commitTemporaryBuffer</a>() = 0;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="comment">  /// Emit a normalized unsigned constant.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#af32ea6310f5bc49d7bd68f9ce8770a77">emitConstu</a>(uint64&#95;t <a href="/docs/api/classes/llvm/value">Value</a>);</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="comment">  /// Return whether the given machine register is the frame register in the</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="comment">  /// current function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a2c49fb1fb9fd56187b3a506c56c726f2"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a2c49fb1fb9fd56187b3a506c56c726f2">isFrameRegister</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>,</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/register">llvm::Register</a> MachineReg) = 0;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="comment">  /// Emit a DW&#95;OP&#95;reg operation. Note that this is only legal inside a DWARF</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="comment">  /// register location description.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#ae2889592749021f38232e4aae86bbe44">addReg</a>(int64&#95;t DwarfReg, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;Comment = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="comment">  /// Emit a DW&#95;OP&#95;breg operation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#aff9d55590b1fef275ffe1c03ff36643e">addBReg</a>(int64&#95;t DwarfReg, int64&#95;t <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>);</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="comment">  /// Emit DW&#95;OP&#95;fbreg &lt;Offset&gt;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#ab5f8efc4431eaf9ad6b7521f1e64a419">addFBReg</a>(int64&#95;t <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>);</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="comment">  /// Emit a partial DWARF register operation.</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="comment">  /// \\param MachineReg           The register number.</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="comment">  /// \\param MaxSize              If the register must be composed from</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="comment">  ///                             sub-registers this is an upper bound</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="comment">  ///                             for how many bits the emitted DW&#95;OP&#95;piece</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="comment">  ///                             may cover.</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="comment">  /// If size and offset is zero an operation for the entire register is</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="comment">  /// emitted: Some targets do not provide a DWARF register number for every</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="comment">  /// register.  If this is the case, this function will attempt to emit a DWARF</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="comment">  /// register by emitting a fragment of a super-register or by piecing together</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="comment">  /// multiple subregisters that alias the register.</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="comment">  /// \\return false if no DWARF register exists for MachineReg.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a57484713254f31f8412d08ff85259761">addMachineReg</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>, <a href="/docs/api/classes/llvm/register">llvm::Register</a> MachineReg,</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">                     </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> MaxSize = ~1U);</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="comment">  /// Emit a DW&#95;OP&#95;piece or DW&#95;OP&#95;bit&#95;piece operation for a variable fragment.</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="comment">  /// \\param OffsetInBits    This is an optional offset into the location that</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="comment">  /// is at the top of the DWARF stack.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#af8bf7600af257516de6368b0350d5e9c">addOpPiece</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> SizeInBits, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a27e56563110c3919f11b5c08eb4457dd">OffsetInBits</a> = 0);</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="comment">  /// Emit a shift-right dwarf operation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#aecec7107d071835d6ad55d7b2006e816">addShr</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> ShiftBy);</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="comment">  /// Emit a bitwise and dwarf operation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a03b9dafb0c9b15379c0987735ba76809">addAnd</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Mask);</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="comment">  /// Emit a DW&#95;OP&#95;stack&#95;value, if supported.</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="comment">  /// The proper way to describe a constant value is DW&#95;OP&#95;constu &lt;const&gt;,</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="comment">  /// DW&#95;OP&#95;stack&#95;value.  Unfortunately, DW&#95;OP&#95;stack&#95;value was not available</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="comment">  /// until DWARF 4, so we will continue to generate DW&#95;OP&#95;constu &lt;const&gt; for</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="comment">  /// DWARF 2 and DWARF 3 Technically, this is incorrect since DW&#95;OP&#95;const</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="comment">  /// &lt;const&gt; actually describes a value at a constant address, not a constant</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="comment">  /// value.  However, in the past there was no better way to describe a</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="comment">  /// constant value, so the producers and consumers started to rely on</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="comment">  /// heuristics to disambiguate the value vs. location status of the</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="comment">  /// expression.  See PR21176 for more details.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a93f0796a16275cd71f21761c339cd19f">addStackValue</a>();</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="comment">  /// Finalize an entry value by emitting its size operand, and committing the</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="comment">  /// DWARF block which has been emitted to the temporary buffer.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a9e8af6b5a740749d2953cdca8c833e92">finalizeEntryValue</a>();</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="comment">  /// Cancel the emission of an entry value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a4766cf577f992a4cd6286696c47c01c0">cancelEntryValue</a>();</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a89fb4d2b1507375553c2c749364c155f"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/dwarfexpression-2/#a89fb4d2b1507375553c2c749364c155f">~DwarfExpression</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#af0f024a1be631b3865a2ac37210ad57c"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/dwarfexpression-2/#af0f024a1be631b3865a2ac37210ad57c">DwarfExpression</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#aef5ba761b851d8fd81d469598cd9b678">DwarfVersion</a>, <a href="/docs/api/classes/llvm/dwarfcompileunit-2">DwarfCompileUnit</a> &amp;<a href="/docs/api/namespaces/cu">CU</a>)</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">      : <a href="/docs/api/namespaces/cu">CU</a>(<a href="/docs/api/namespaces/cu">CU</a>), <a href="/docs/api/classes/llvm/dwarfexpression-2/#aacd5bdc1449ccfe9054e3d540647c5c7">SubRegisterSizeInBits</a>(0), <a href="/docs/api/classes/llvm/dwarfexpression-2/#ae4743278317e43a8e8c097f187a392d7">SubRegisterOffsetInBits</a>(0),</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/dwarfexpression-2/#a0ff61409e6730c315d8356d73919da19">LocationKind</a>(<a href="/docs/api/classes/llvm/dwarfexpression-2/#a2d4874c3f450184303a741b477b8529fa4a2d696e428f1286b5d265cd77d6aac1">Unknown</a>), <a href="/docs/api/classes/llvm/dwarfexpression-2/#a5b9195ccfa14791ecd5d29c144b32ac2">SavedLocationKind</a>(<a href="/docs/api/classes/llvm/dwarfexpression-2/#a2d4874c3f450184303a741b477b8529fa4a2d696e428f1286b5d265cd77d6aac1">Unknown</a>),</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/dwarfexpression-2/#a0c17a9605c4bfbb9986ff36ff1c35f77">LocationFlags</a>(<a href="/docs/api/classes/llvm/dwarfexpression-2/#a2d4874c3f450184303a741b477b8529fa4a2d696e428f1286b5d265cd77d6aac1">Unknown</a>), <a href="/docs/api/classes/llvm/dwarfexpression-2/#aef5ba761b851d8fd81d469598cd9b678">DwarfVersion</a>(<a href="/docs/api/classes/llvm/dwarfexpression-2/#aef5ba761b851d8fd81d469598cd9b678">DwarfVersion</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="comment">  /// This needs to be called last to commit any pending changes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a2faa879061bc4989e0b78a0928d74e29">finalize</a>();</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="comment">  /// Emit a signed constant.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#ad676cf44e0c249e17c08edb7d3270b45">addSignedConstant</a>(int64&#95;t <a href="/docs/api/classes/llvm/value">Value</a>);</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="comment">  /// Emit an unsigned constant.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#aa7a84268a368e42a1bed6f9e4def555b">addUnsignedConstant</a>(uint64&#95;t <a href="/docs/api/classes/llvm/value">Value</a>);</Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="comment">  /// Emit an unsigned constant.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#aa7a84268a368e42a1bed6f9e4def555b">addUnsignedConstant</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/apint">APInt</a> &amp;<a href="/docs/api/classes/llvm/value">Value</a>);</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="comment">  /// Emit an floating point constant.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a7ed44f2251a99b3c609481e114ae9295">addConstantFP</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/apfloat">APFloat</a> &amp;<a href="/docs/api/classes/llvm/value">Value</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/asmprinter">AsmPrinter</a> &amp;AP);</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="comment">  /// Lock this down to become a memory location description.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a509852c6998b529c06357c2bba7aeabb"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a509852c6998b529c06357c2bba7aeabb">setMemoryLocationKind</a>() &#123;</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/classes/llvm/dwarfexpression-2/#a238ed978a8838070e8eec9168fc08764">isUnknownLocation</a>());</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/dwarfexpression-2/#a0ff61409e6730c315d8356d73919da19">LocationKind</a> = <a href="/docs/api/classes/llvm/dwarfexpression-2/#a2d4874c3f450184303a741b477b8529faffed6f101874163407cc07f9c5d84c23">Memory</a>;</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="comment">  /// Lock this down to become an entry value location.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#ae69edc735ccf08fa2817b548619ddd34">setEntryValueFlags</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinelocation">MachineLocation</a> &amp;<a href="/docs/api/namespaces/llvm/loc">Loc</a>);</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="comment">  /// Lock this down to become a call site parameter location.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254" lineLink="/docs/api/classes/llvm/dwarfexpression-2/#a7188211a4157e4f38345d90d6030c562"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a7188211a4157e4f38345d90d6030c562">setCallSiteParamValueFlag</a>() &#123; <a href="/docs/api/classes/llvm/dwarfexpression-2/#a0c17a9605c4bfbb9986ff36ff1c35f77">LocationFlags</a> |= <a href="/docs/api/classes/llvm/dwarfexpression-2/#a467e19938e9af2b1003b8e56a07f8919a54208072c432df3a9f411db14390bb64">CallSiteParamValue</a>; &#125;</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="comment">  /// Emit a machine register location. As an optimization this may also consume</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="comment">  /// the prefix of a DwarfExpression if a more efficient representation for</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="comment">  /// combining the register location and the first operation exists.</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="comment">  /// \\param FragmentOffsetInBits     If this is one fragment out of a</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="comment">  /// fragmented</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="comment">  ///                                 location, this is the offset of the</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="comment">  ///                                 fragment inside the entire variable.</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="comment">  /// \\return                         false if no DWARF register exists</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="comment">  ///                                 for MachineReg.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a8337bafd341ca7fa36509bf0ad142c57">addMachineRegExpression</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>,</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/diexpressioncursor">DIExpressionCursor</a> &amp;Expr,</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/register">llvm::Register</a> MachineReg,</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">                               </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> FragmentOffsetInBits = 0);</Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="comment">  /// Begin emission of an entry value dwarf operation. The entry value&#39;s</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="comment">  /// first operand is the size of the DWARF block (its second operand),</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="comment">  /// which needs to be calculated at time of emission, so we don&#39;t emit</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="comment">  /// any operands here.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#af496d6e3f88f3b85e879bfdfe19b0b40">beginEntryValueExpression</a>(<a href="/docs/api/classes/llvm/diexpressioncursor">DIExpressionCursor</a> &amp;ExprCursor);</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="comment">  /// Return the index of a base type with the given properties and</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="comment">  /// create one if necessary.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#acb6564714268867b9179bfcfc0112c43">getOrCreateBaseType</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> BitSize, <a href="/docs/api/namespaces/llvm/dwarf/#a3cbae81b76554a92ff2b02baad6931bb">dwarf::TypeKind</a> Encoding);</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="comment">  /// Emit all remaining operations in the DIExpressionCursor. The</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="comment">  /// cursor must not contain any DW&#95;OP&#95;LLVM&#95;arg operations.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#ac2e0ff8d944ddd6ebf0ab7f7ab7b9775">addExpression</a>(<a href="/docs/api/classes/llvm/diexpressioncursor">DIExpressionCursor</a> &amp;&amp;Expr);</Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="comment">  /// Emit all remaining operations in the DIExpressionCursor.</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="comment">  /// DW&#95;OP&#95;LLVM&#95;arg operations are resolved by calling (\\p InsertArg).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="comment">  /// \\return false if any call to (\\p InsertArg) returns false.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#ac2e0ff8d944ddd6ebf0ab7f7ab7b9775">addExpression</a>(</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/diexpressioncursor">DIExpressionCursor</a> &amp;&amp;Expr,</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/function-ref">llvm::function&#95;ref</a>&lt;</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal">, <a href="/docs/api/classes/llvm/diexpressioncursor">DIExpressionCursor</a> &amp;)&gt; InsertArg);</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="comment">  /// If applicable, emit an empty DW&#95;OP&#95;piece / DW&#95;OP&#95;bit&#95;piece to advance to</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="comment">  /// the fragment described by \\c Expr.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a2fdab5e48a4c62a742df876d4e55940f">addFragmentOffset</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/diexpression">DIExpression</a> &#42;Expr);</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a4533dc140e9df632163f28cb90d31393">emitLegacySExt</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> FromBits);</Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#ad910bc547f0601c7152736e444af19d3">emitLegacyZExt</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> FromBits);</Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="comment">  /// Emit location information expressed via WebAssembly location + offset</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="comment">  /// The Index is an identifier for locals, globals or operand stack.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#af2a335e267a7975d64235e578d89a2c9">addWasmLocation</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Index, uint64&#95;t <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>);</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="comment">/// DwarfExpression implementation for .debug&#95;loc entries.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306" lineLink="/docs/api/classes/llvm/debuglocdwarfexpression"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/debuglocdwarfexpression/#a8895b94063c2f4c1d323fe1c8bdd44cd">DebugLocDwarfExpression</a> final : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#af0f024a1be631b3865a2ac37210ad57c">DwarfExpression</a> &#123;</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">TempBuffer &#123;</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/smallstring">SmallString&lt;32&gt;</a> Bytes;</Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal">    std::vector&lt;std::string&gt; Comments;</Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bufferbytestreamer">BufferByteStreamer</a> BS;</Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal">    TempBuffer(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> GenerateComments) : BS(Bytes, Comments, GenerateComments) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal">  std::unique&#95;ptr&lt;TempBuffer&gt; TmpBuf;</Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/bufferbytestreamer">BufferByteStreamer</a> &amp;OutBS;</Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsBuffering = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="comment">  /// Return the byte streamer that currently is being emitted to.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/bytestreamer">ByteStreamer</a> &amp;getActiveStreamer() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> IsBuffering ? TmpBuf-&gt;BS : OutBS; &#125;</Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> emitOp(uint8&#95;t <a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;Comment = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> emitSigned(int64&#95;t <a href="/docs/api/classes/llvm/value">Value</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> emitUnsigned(uint64&#95;t <a href="/docs/api/classes/llvm/value">Value</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> emitData1(uint8&#95;t <a href="/docs/api/classes/llvm/value">Value</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> emitBaseTypeRef(uint64&#95;t Idx) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#af2fbe56f4cb2d8d947912719b32204bb">enableTemporaryBuffer</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a20e32622eb9d47e4da545f349300010a">disableTemporaryBuffer</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a255788cd514b624b5c962a02d16a6a65">getTemporaryBufferSize</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#ae9f7bf56f59e4092017760acc2cd2f6c">commitTemporaryBuffer</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isFrameRegister(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>,</Highlight></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/register">llvm::Register</a> MachineReg) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338" lineLink="/docs/api/classes/llvm/debuglocdwarfexpression/#a8895b94063c2f4c1d323fe1c8bdd44cd"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/debuglocdwarfexpression/#a8895b94063c2f4c1d323fe1c8bdd44cd">DebugLocDwarfExpression</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#aef5ba761b851d8fd81d469598cd9b678">DwarfVersion</a>, <a href="/docs/api/classes/llvm/bufferbytestreamer">BufferByteStreamer</a> &amp;BS,</Highlight></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="normal">                          <a href="/docs/api/classes/llvm/dwarfcompileunit-2">DwarfCompileUnit</a> &amp;<a href="/docs/api/namespaces/cu">CU</a>)</Highlight></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal">      : <a href="/docs/api/classes/llvm/dwarfexpression-2/#af0f024a1be631b3865a2ac37210ad57c">DwarfExpression</a>(<a href="/docs/api/classes/llvm/dwarfexpression-2/#aef5ba761b851d8fd81d469598cd9b678">DwarfVersion</a>, <a href="/docs/api/namespaces/cu">CU</a>), OutBS(BS) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="comment">/// DwarfExpression implementation for singular DW&#95;AT&#95;location.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344" lineLink="/docs/api/classes/llvm/diedwarfexpression"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/diedwarfexpression/#a5ef7ffd7796ad4423f7cd36c564cb5c0">DIEDwarfExpression</a> final : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#af0f024a1be631b3865a2ac37210ad57c">DwarfExpression</a> &#123;</Highlight></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/asmprinter">AsmPrinter</a> &amp;AP;</Highlight></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/dieloc">DIELoc</a> &amp;OutDIE;</Highlight></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/dieloc">DIELoc</a> TmpDIE;</Highlight></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsBuffering = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="comment">  /// Return the DIE that currently is being emitted to.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/dieloc">DIELoc</a> &amp;getActiveDIE() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> IsBuffering ? TmpDIE : OutDIE; &#125;</Highlight></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> emitOp(uint8&#95;t <a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;Comment = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> emitSigned(int64&#95;t <a href="/docs/api/classes/llvm/value">Value</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> emitUnsigned(uint64&#95;t <a href="/docs/api/classes/llvm/value">Value</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> emitData1(uint8&#95;t <a href="/docs/api/classes/llvm/value">Value</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> emitBaseTypeRef(uint64&#95;t Idx) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#af2fbe56f4cb2d8d947912719b32204bb">enableTemporaryBuffer</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a20e32622eb9d47e4da545f349300010a">disableTemporaryBuffer</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#a255788cd514b624b5c962a02d16a6a65">getTemporaryBufferSize</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dwarfexpression-2/#ae9f7bf56f59e4092017760acc2cd2f6c">commitTemporaryBuffer</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isFrameRegister(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &amp;<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>,</Highlight></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/register">llvm::Register</a> MachineReg) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/diedwarfexpression/#a5ef7ffd7796ad4423f7cd36c564cb5c0">DIEDwarfExpression</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/asmprinter">AsmPrinter</a> &amp;AP, <a href="/docs/api/classes/llvm/dwarfcompileunit-2">DwarfCompileUnit</a> &amp;<a href="/docs/api/namespaces/cu">CU</a>, <a href="/docs/api/classes/llvm/dieloc">DIELoc</a> &amp;<a href="/docs/api/classes/llvm/die">DIE</a>);</Highlight></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370" lineLink="/docs/api/classes/llvm/diedwarfexpression/#a24b5a14abc09026d9bf5b13f6fe0b2fa"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/dieloc">DIELoc</a> &#42;<a href="/docs/api/classes/llvm/diedwarfexpression/#a24b5a14abc09026d9bf5b13f6fe0b2fa">finalize</a>() &#123;</Highlight></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/dwarfexpression-2/#a2faa879061bc4989e0b78a0928d74e29">DwarfExpression::finalize</a>();</Highlight></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &amp;OutDIE;</Highlight></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;LIB&#95;CODEGEN&#95;ASMPRINTER&#95;DWARFEXPRESSION&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

@@ -1,0 +1,661 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/anonymous-namespace-peepholeoptimizer-cpp-/peepholeoptimizer
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `PeepholeOptimizer` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Declaration
+
+<CodeBlock>class anonymous_namespace{PeepholeOptimizer.cpp}::PeepholeOptimizer</CodeBlock>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/machinefunction/delegate">Delegate</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a8a5134539212cd0d2a1bd7a4806136db">RecurrenceCycle</a> = <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/classes/anonymous-namespace-peepholeoptimizer-cpp-/recurrenceinstr">RecurrenceInstr</a>, 4 &gt;</>}>
+Sequence of instructions that formulate recurrence cycle. <a href="#a8a5134539212cd0d2a1bd7a4806136db">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#ac9b69446f99357cc880c06d10601bffa">RewriteMapTy</a> = <a href="/docs/api/classes/llvm/smalldensemap">SmallDenseMap</a>&lt; <a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a16005492b382a6a76abae848b4af2b83">RegSubRegPair</a>, <a href="/docs/api/classes/anonymous-namespace-peepholeoptimizer-cpp-/valuetrackerresult">ValueTrackerResult</a> &gt;</>}>
+Track Def -&gt; <a href="/docs/api/classes/llvm/use">Use</a> info used for rewriting copies. <a href="#ac9b69446f99357cc880c06d10601bffa">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a76599c40632271f6625e2b6694982279">PeepholeOptimizer</a> (MachineDominatorTree &#42;DT, MachineLoopInfo &#42;MLI)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ae6c94cc4b29dfbcc1cc39b73e871ec2a">run</a> (MachineFunction &amp;MF)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a4047d888feaba6fe0e3404efe24995f4">deleteChangedCopy</a> (MachineInstr &amp;MI)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ad5604b1c6c75b2486de340dadc4ecebe">findNextSource</a> (RegSubRegPair RegSubReg, RewriteMapTy &amp;RewriteMap)</>}>
+Try to find the next source that share the same register file for the value defined by <code>Reg</code> and <code>SubReg</code>. <a href="#ad5604b1c6c75b2486de340dadc4ecebe">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#acce24ead2438e23d301e2c1d387243ec">findTargetRecurrence</a> (Register Reg, const SmallSet&lt; Register, 2 &gt; &amp;TargetReg, RecurrenceCycle &amp;RC)</>}>
+Finds recurrence cycles, but only ones that formulated around a def operand and a use operand that are tied. <a href="#acce24ead2438e23d301e2c1d387243ec">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a9b93d9241cadd10ca266b2a5b78f412b">foldImmediate</a> (MachineInstr &amp;MI, SmallSet&lt; Register, 4 &gt; &amp;ImmDefRegs, DenseMap&lt; Register, MachineInstr &#42; &gt; &amp;ImmDefMIs, bool &amp;Deleted)</>}>
+Try folding register operands that are defined by move immediate instructions, i.e. <a href="#a9b93d9241cadd10ca266b2a5b78f412b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a02af52fb9b876f44f0696dcaa78c562e">foldRedundantCopy</a> (MachineInstr &amp;MI)</>}>
+If copy instruction <code>MI</code> is a virtual register copy or a copy of a constant physical register to a virtual register, track it in the set CopySrcMIs. <a href="#a02af52fb9b876f44f0696dcaa78c562e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a00115c69fc65079625fa4ef682d7c464">foldRedundantNAPhysCopy</a> (MachineInstr &amp;MI, DenseMap&lt; Register, MachineInstr &#42; &gt; &amp;NAPhysToVirtMIs)</>}>
+If copy instruction <code>MI</code> is a non-allocatable virtual&lt;-&gt;physical register copy, track it in the <code>NAPhysToVirtMIs</code> map. <a href="#a00115c69fc65079625fa4ef682d7c464">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ac61e6b3d58ef6558816bd00f910e44e8">getCopySrc</a> (MachineInstr &amp;MI, RegSubRegPair &amp;SrcPair)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a12491bf71b6ff506e1a88bef70dac88a">isCoalescableCopy</a> (const MachineInstr &amp;MI)</>}>
+Check whether <code>MI</code> is understood by the register coalescer but may require some rewriting. <a href="#a12491bf71b6ff506e1a88bef70dac88a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a063e979b58614abc00f3bc6434f6177e">isLoadFoldable</a> (MachineInstr &amp;MI, SmallSet&lt; Register, 16 &gt; &amp;FoldAsLoadDefCandidates)</>}>
+Check whether MI is a candidate for folding into a later instruction. <a href="#a063e979b58614abc00f3bc6434f6177e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ab2b07fd3cc32534ecb3895abef92141d">isMoveImmediate</a> (MachineInstr &amp;MI, SmallSet&lt; Register, 4 &gt; &amp;ImmDefRegs, DenseMap&lt; Register, MachineInstr &#42; &gt; &amp;ImmDefMIs)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a1fea3499f56751d54969e10fa9aaf381">isNAPhysCopy</a> (Register Reg)</>}>
+Is the register <code>Reg</code> a non-allocatable physical register? <a href="#a1fea3499f56751d54969e10fa9aaf381">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#adb310ba649423384d4538d77d12152e0">isUncoalescableCopy</a> (const MachineInstr &amp;MI)</>}>
+Check whether <code>MI</code> is a copy like instruction that is not recognized by the register coalescer. <a href="#adb310ba649423384d4538d77d12152e0">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ab4b15748b40a669ddc80d8b1a9b6a804">MF&#95;HandleChangeDesc</a> (MachineInstr &amp;MI, const MCInstrDesc &amp;TID) override</>}>
+Callback before changing MCInstrDesc. <a href="#ab4b15748b40a669ddc80d8b1a9b6a804">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ad38117df45c73b756050e8ca5668ff5c">MF&#95;HandleInsertion</a> (MachineInstr &amp;MI) override</>}>
+Callback after an insertion. This should not modify the MI directly. <a href="#ad38117df45c73b756050e8ca5668ff5c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a92fda5956ca68c55e0583f5ae440ae5d">MF&#95;HandleRemoval</a> (MachineInstr &amp;MI) override</>}>
+Callback before a removal. This should not modify the MI directly. <a href="#a92fda5956ca68c55e0583f5ae440ae5d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a416e002b5776024b699ed633e780f757">optimizeCmpInstr</a> (MachineInstr &amp;MI)</>}>
+If the instruction is a compare and the previous instruction it&#39;s comparing against already sets (or could be modified to set) the same flag as the compare, then we can remove the comparison and use the flag from the previous instruction. <a href="#a416e002b5776024b699ed633e780f757">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#aee3a7d60e7362713a610b044277590b9">optimizeCoalescableCopy</a> (MachineInstr &amp;MI)</>}>
+Optimize generic copy instructions to avoid cross register bank copy. <a href="#aee3a7d60e7362713a610b044277590b9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a631113ff6e562fcb2ab9d4c2565204f4">optimizeCoalescableCopyImpl</a> (Rewriter &amp;&amp;CpyRewriter)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a64dc79975d619fac4410305fc343ff64">optimizeCondBranch</a> (MachineInstr &amp;MI)</>}>
+Check if a simpler conditional branch can be generated. <a href="#a64dc79975d619fac4410305fc343ff64">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#add814eb1bdad7814fa3bca9f169cbdc8">optimizeExtInstr</a> (MachineInstr &amp;MI, MachineBasicBlock &amp;MBB, SmallPtrSetImpl&lt; MachineInstr &#42; &gt; &amp;LocalMIs)</>}>
+If instruction is a copy-like instruction, i.e. <a href="#add814eb1bdad7814fa3bca9f169cbdc8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#affd7f2762e5fe7c930cbb0a72d11f283">optimizeRecurrence</a> (MachineInstr &amp;PHI)</>}>
+Phi instructions will eventually be lowered to copy instructions. <a href="#affd7f2762e5fe7c930cbb0a72d11f283">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a63ce8874033db1b2e54c2a23d232384e">optimizeSelect</a> (MachineInstr &amp;MI, SmallPtrSetImpl&lt; MachineInstr &#42; &gt; &amp;LocalMIs)</>}>
+Optimize a select instruction. <a href="#a63ce8874033db1b2e54c2a23d232384e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a772a5cf97bcf08021653e9a485d5fb0c">optimizeUncoalescableCopy</a> (MachineInstr &amp;MI, SmallPtrSetImpl&lt; MachineInstr &#42; &gt; &amp;LocalMIs)</>}>
+Optimize copy-like instructions to create register coalescer friendly instruction. <a href="#a772a5cf97bcf08021653e9a485d5fb0c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp;</>}
+  name={<><a href="#a49deef120df4a47dd50c0a18976a0cc1">rewriteSource</a> (MachineInstr &amp;CopyLike, RegSubRegPair Def, RewriteMapTy &amp;RewriteMap)</>}>
+Rewrite the source found through <code>Def</code>, by using the <code>RewriteMap</code> and create a new COPY instruction. <a href="#a49deef120df4a47dd50c0a18976a0cc1">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a16005492b382a6a76abae848b4af2b83">RegSubRegPair</a>, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt;</>}
+  name={<><a href="#aa658c8231ae3741ec483c4c71478c7ab">CopySrcMIs</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a> &#42;</>}
+  name={<><a href="#a36c6e26ed2e2a2ab268efc742e64820a">DT</a> = nullptr</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineloopinfo">MachineLoopInfo</a> &#42;</>}
+  name={<><a href="#ab0f209a7e905906e02e85ec1811b0792">MLI</a> = nullptr</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &#42;</>}
+  name={<><a href="#a0f89b4c05fd054597384befceebea943">MRI</a> = nullptr</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;</>}
+  name={<><a href="#a992e7b8a53401bf807de9fb2ecc072eb">TII</a> = nullptr</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &#42;</>}
+  name={<><a href="#ac09a0c1e8668332f135dd6f203c4e21a">TRI</a> = nullptr</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+Definition at line 446 of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### RecurrenceCycle {#a8a5134539212cd0d2a1bd7a4806136db}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::RecurrenceCycle =  SmallVector&lt;RecurrenceInstr, 4&gt;</>}>
+Sequence of instructions that formulate recurrence cycle.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00462">462</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### RewriteMapTy {#ac9b69446f99357cc880c06d10601bffa}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::RewriteMapTy =  SmallDenseMap&lt;RegSubRegPair, ValueTrackerResult&gt;</>}>
+Track Def -&gt; <a href="/docs/api/classes/llvm/use">Use</a> info used for rewriting copies.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00459">459</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### PeepholeOptimizer() {#a76599c40632271f6625e2b6694982279}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::PeepholeOptimizer (<a href="/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a> &#42; DT, <a href="/docs/api/classes/llvm/machineloopinfo">MachineLoopInfo</a> &#42; MLI)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00454">454</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### run() {#ae6c94cc4b29dfbcc1cc39b73e871ec2a}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::run (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00457">457</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### deleteChangedCopy() {#a4047d888feaba6fe0e3404efe24995f4}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::deleteChangedCopy (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00557">557</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### findNextSource() {#ad5604b1c6c75b2486de340dadc4ecebe}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::findNextSource (<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a16005492b382a6a76abae848b4af2b83">RegSubRegPair</a> RegSubReg, <a href="#ac9b69446f99357cc880c06d10601bffa">RewriteMapTy</a> &amp; RewriteMap)</>}>
+Try to find the next source that share the same register file for the value defined by <code>Reg</code> and <code>SubReg</code>.
+
+When true is returned, the <code>RewriteMap</code> can be used by the client to retrieve all Def -&gt; <a href="/docs/api/classes/llvm/use">Use</a> along the way up to the next source. <a href="/docs/api/classes/llvm/any">Any</a> found <a href="/docs/api/classes/llvm/use">Use</a> that is not itself a key for another entry, is the next source to use. During the search for the next source, multiple sources can be found given multiple incoming sources of a PHI instruction. In this case, we look in each PHI source for the next source; all found next sources must share the same register file as <code>Reg</code> and <code>SubReg</code>. The client should then be capable to rewrite all intermediate PHIs to get the next source. 
+<SectionUser title="Returns">
+False if no alternative sources are available. True otherwise.
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00477">477</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### findTargetRecurrence() {#acce24ead2438e23d301e2c1d387243ec}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::findTargetRecurrence (<a href="/docs/api/classes/llvm/register">Register</a> Reg, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallset">SmallSet</a>&lt; <a href="/docs/api/classes/llvm/register">Register</a>, 2 &gt; &amp; TargetReg, <a href="#a8a5134539212cd0d2a1bd7a4806136db">RecurrenceCycle</a> &amp; RC)</>}>
+Finds recurrence cycles, but only ones that formulated around a def operand and a use operand that are tied.
+
+If there is a use operand commutable with the tied use operand, find recurrence cycle along that operand as well.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00488">488</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### foldImmediate() {#a9b93d9241cadd10ca266b2a5b78f412b}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::foldImmediate (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/classes/llvm/smallset">SmallSet</a>&lt; <a href="/docs/api/classes/llvm/register">Register</a>, 4 &gt; &amp; ImmDefRegs, <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/register">Register</a>, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt; &amp; ImmDefMIs, bool &amp; Deleted)</>}>
+Try folding register operands that are defined by move immediate instructions, i.e.
+
+a trivial constant folding optimization, if and only if the def and use are in the same BB.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00480">480</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### foldRedundantCopy() {#a02af52fb9b876f44f0696dcaa78c562e}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::foldRedundantCopy (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}>
+If copy instruction <code>MI</code> is a virtual register copy or a copy of a constant physical register to a virtual register, track it in the set CopySrcMIs.
+
+If this virtual register was previously seen as a copy, replace the uses of this copy with the previously seen copy&#39;s destination register.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00497">497</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### foldRedundantNAPhysCopy() {#a00115c69fc65079625fa4ef682d7c464}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::foldRedundantNAPhysCopy (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/register">Register</a>, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt; &amp; NAPhysToVirtMIs)</>}>
+If copy instruction <code>MI</code> is a non-allocatable virtual&lt;-&gt;physical register copy, track it in the <code>NAPhysToVirtMIs</code> map.
+
+If this non-allocatable physical register was previously copied to a virtual registered and hasn&#39;t been clobbered, the virt-&gt;phys copy can be deleted.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00508">508</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### getCopySrc() {#ac61e6b3d58ef6558816bd00f910e44e8}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::getCopySrc (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a16005492b382a6a76abae848b4af2b83">RegSubRegPair</a> &amp; SrcPair)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00542">542</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### isCoalescableCopy() {#a12491bf71b6ff506e1a88bef70dac88a}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::isCoalescableCopy (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}
+  labels = {["inline"]}>
+Check whether <code>MI</code> is understood by the register coalescer but may require some rewriting.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00516">516</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### isLoadFoldable() {#a063e979b58614abc00f3bc6434f6177e}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::isLoadFoldable (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/classes/llvm/smallset">SmallSet</a>&lt; <a href="/docs/api/classes/llvm/register">Register</a>, 16 &gt; &amp; FoldAsLoadDefCandidates)</>}>
+Check whether MI is a candidate for folding into a later instruction.
+
+We only fold loads to virtual registers and the virtual register defined has a single user.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00511">511</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### isMoveImmediate() {#ab2b07fd3cc32534ecb3895abef92141d}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::isMoveImmediate (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/classes/llvm/smallset">SmallSet</a>&lt; <a href="/docs/api/classes/llvm/register">Register</a>, 4 &gt; &amp; ImmDefRegs, <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/register">Register</a>, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt; &amp; ImmDefMIs)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00478">478</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### isNAPhysCopy() {#a1fea3499f56751d54969e10fa9aaf381}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::isNAPhysCopy (<a href="/docs/api/classes/llvm/register">Register</a> Reg)</>}>
+Is the register <code>Reg</code> a non-allocatable physical register?
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00500">500</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### isUncoalescableCopy() {#adb310ba649423384d4538d77d12152e0}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::isUncoalescableCopy (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}
+  labels = {["inline"]}>
+Check whether <code>MI</code> is a copy like instruction that is not recognized by the register coalescer.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00526">526</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### MF&#95;HandleChangeDesc() {#ab4b15748b40a669ddc80d8b1a9b6a804}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::MF&#95;HandleChangeDesc (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/mcinstrdesc">MCInstrDesc</a> &amp; TID)</>}
+  labels = {["inline", "virtual"]}>
+Callback before changing MCInstrDesc.
+
+This should not modify the MI directly.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00569">569</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### MF&#95;HandleInsertion() {#ad38117df45c73b756050e8ca5668ff5c}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::MF&#95;HandleInsertion (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}
+  labels = {["inline", "virtual"]}>
+Callback after an insertion. This should not modify the MI directly.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00540">540</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### MF&#95;HandleRemoval() {#a92fda5956ca68c55e0583f5ae440ae5d}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::MF&#95;HandleRemoval (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}
+  labels = {["inline", "virtual"]}>
+Callback before a removal. This should not modify the MI directly.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00567">567</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### optimizeCmpInstr() {#a416e002b5776024b699ed633e780f757}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::optimizeCmpInstr (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}>
+If the instruction is a compare and the previous instruction it&#39;s comparing against already sets (or could be modified to set) the same flag as the compare, then we can remove the comparison and use the flag from the previous instruction.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00465">465</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### optimizeCoalescableCopy() {#aee3a7d60e7362713a610b044277590b9}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::optimizeCoalescableCopy (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}>
+Optimize generic copy instructions to avoid cross register bank copy.
+
+The optimization looks through a chain of copies and tries to find a source that has a compatible register class. Two register classes are considered to be compatible if they share the same register bank. New copies issued by this optimization are register allocator friendly. This optimization does not remove any copy as it may overconstrain the register allocator, but replaces some operands when possible. 
+<SectionUser title="Precondition">
+isCoalescableCopy(&#42;MI) is true.
+</SectionUser>
+
+
+<SectionUser title="Returns">
+True, when <code>MI</code> has been rewritten. False otherwise.
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00473">473</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### optimizeCoalescableCopyImpl() {#a631113ff6e562fcb2ab9d4c2565204f4}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::optimizeCoalescableCopyImpl (<a href="/docs/api/classes/anonymous-namespace-peepholeoptimizer-cpp-/rewriter">Rewriter</a> &amp;&amp; CpyRewriter)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00472">472</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### optimizeCondBranch() {#a64dc79975d619fac4410305fc343ff64}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::optimizeCondBranch (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}>
+Check if a simpler conditional branch can be generated.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00470">470</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### optimizeExtInstr() {#add814eb1bdad7814fa3bca9f169cbdc8}
+
+<MemberDefinition
+  prototype={<>Peephole false bool PeepholeOptimizer::optimizeExtInstr (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt; &amp; LocalMIs)</>}>
+If instruction is a copy-like instruction, i.e.
+
+it reads a single register and writes a single register and it does not modify the source, and if the source value is preserved as a sub-register of the result, then replace all reachable uses of the source with the subreg of the result.
+
+Do not generate an EXTRACT that is used only in a debug use, as this changes the code. Since this code does not currently share EXTRACTs, just ignore all debug uses.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00466">466</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### optimizeRecurrence() {#affd7f2762e5fe7c930cbb0a72d11f283}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::optimizeRecurrence (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; PHI)</>}>
+Phi instructions will eventually be lowered to copy instructions.
+
+If phi is in a loop header, a recurrence may formulated around the source and destination of the phi. For such case commuting operands of the instructions in the recurrence may enable coalescing of the copy instruction generated from the phi. For example, if there is a recurrence of
+
+LoopHeader: %1 = phi(%0, %100) LoopLatch: %0&lt;def, tied1&gt; = ADD %2&lt;def, tied0&gt;, %1
+
+, the fact that %0 and %2 are in the same tied operands set makes the coalescing of copy instruction generated from the phi in LoopHeader(i.e. %1 = COPY %0) impossible, because %1 and %2 have overlapping live range. This introduces additional move instruction to the final assembly. However, if we commute %2 and %1 of ADD instruction, the redundant move instruction can be avoided.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00476">476</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### optimizeSelect() {#a63ce8874033db1b2e54c2a23d232384e}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::optimizeSelect (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt; &amp; LocalMIs)</>}>
+Optimize a select instruction.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00468">468</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### optimizeUncoalescableCopy() {#a772a5cf97bcf08021653e9a485d5fb0c}
+
+<MemberDefinition
+  prototype={<>bool PeepholeOptimizer::optimizeUncoalescableCopy (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt; &amp; LocalMIs)</>}>
+Optimize copy-like instructions to create register coalescer friendly instruction.
+
+The optimization tries to kill-off the <code>MI</code> by looking through a chain of copies to find a source that has a compatible register class. If such a source is found, it replace <code>MI</code> by a generic COPY operation. 
+<SectionUser title="Precondition">
+isUncoalescableCopy(&#42;MI) is true.
+</SectionUser>
+
+
+<SectionUser title="Returns">
+True, when <code>MI</code> has been optimized. In that case, <code>MI</code> has been removed from its parent. All COPY instructions created, are inserted in <code>LocalMIs</code>.
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00474">474</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### rewriteSource() {#a49deef120df4a47dd50c0a18976a0cc1}
+
+<MemberDefinition
+  prototype={<>MachineInstr &amp; PeepholeOptimizer::rewriteSource (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; CopyLike, <a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a16005492b382a6a76abae848b4af2b83">RegSubRegPair</a> Def, <a href="#ac9b69446f99357cc880c06d10601bffa">RewriteMapTy</a> &amp; RewriteMap)</>}>
+Rewrite the source found through <code>Def</code>, by using the <code>RewriteMap</code> and create a new COPY instruction.
+
+More info about RewriteMap in PeepholeOptimizer::findNextSource. Right now this is only used to handle Uncoalescable copies, since they are copy like instructions that aren&#39;t recognized by the register allocator.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00532">532</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### CopySrcMIs {#aa658c8231ae3741ec483c4c71478c7ab}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;RegSubRegPair, MachineInstr &#42;&gt; anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::CopySrcMIs</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00537">537</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### DT {#a36c6e26ed2e2a2ab268efc742e64820a}
+
+<MemberDefinition
+  prototype={<>MachineDominatorTree&#42; anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::DT = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00450">450</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### MLI {#ab0f209a7e905906e02e85ec1811b0792}
+
+<MemberDefinition
+  prototype={<>MachineLoopInfo&#42; anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::MLI = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00451">451</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### MRI {#a0f89b4c05fd054597384befceebea943}
+
+<MemberDefinition
+  prototype={<>MachineRegisterInfo&#42; anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::MRI = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00449">449</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### TII {#a992e7b8a53401bf807de9fb2ecc072eb}
+
+<MemberDefinition
+  prototype={<>const TargetInstrInfo&#42; anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::TII = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00447">447</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+### TRI {#ac09a0c1e8668332f135dd6f203c4e21a}
+
+<MemberDefinition
+  prototype={<>const TargetRegisterInfo&#42; anonymous&#95;namespace&#123;PeepholeOptimizer.cpp&#125;::PeepholeOptimizer::TRI = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp/#l00448">448</a> of file <a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/codegen/peepholeoptimizer-cpp">PeepholeOptimizer.cpp</a></li>
+</ul>
+
+</DoxygenPage>

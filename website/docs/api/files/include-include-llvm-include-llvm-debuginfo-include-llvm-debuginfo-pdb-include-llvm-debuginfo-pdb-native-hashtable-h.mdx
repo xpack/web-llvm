@@ -1,0 +1,463 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/pdb/include/llvm/debuginfo/pdb/native/hashtable-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `HashTable.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/SparseBitVector.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/sparsebitvector-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/iterator.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/iterator-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/DebugInfo/PDB/Native/RawError.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/pdb/include/llvm/debuginfo/pdb/native/rawerror-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/BinaryStreamReader.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/binarystreamreader-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/BinaryStreamWriter.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/binarystreamwriter-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Endian.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/endian-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Error.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/error-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cstdint"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="iterator"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="utility"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="vector"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/pdb">llvm::pdb</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/pdb/hashtableiterator">HashTableIterator&lt;ValueT&gt;</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/pdb/hashtable">HashTable&lt;ValueT&gt;</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/pdb/hashtable/header">Header</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- HashTable.h - PDB Hash Table -----------------------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;DEBUGINFO&#95;PDB&#95;NATIVE&#95;HASHTABLE&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;DEBUGINFO&#95;PDB&#95;NATIVE&#95;HASHTABLE&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/sparsebitvector-h">llvm/ADT/SparseBitVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/iterator-h">llvm/ADT/iterator.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/pdb/include/llvm/debuginfo/pdb/native/rawerror-h">llvm/DebugInfo/PDB/Native/RawError.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/binarystreamreader-h">llvm/Support/BinaryStreamReader.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/binarystreamwriter-h">llvm/Support/BinaryStreamWriter.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/endian-h">llvm/Support/Endian.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/error-h">llvm/Support/Error.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstdint&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;iterator&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;utility&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;vector&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/pdb">pdb</a> &#123;</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> <a href="/docs/api/namespaces/llvm/pdb/#abb261b1e80159e16ee57e79ed2d77494">readSparseBitVector</a>(BinaryStreamReader &amp;Stream, SparseBitVector&lt;&gt; &amp;V);</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> <a href="/docs/api/namespaces/llvm/pdb/#ae05f3870c8f629c981951b96ccbee160">writeSparseBitVector</a>(BinaryStreamWriter &amp;Writer, SparseBitVector&lt;&gt; &amp;Vec);</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> ValueT&gt; </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/pdb/hashtable">HashTable</a>;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> ValueT&gt;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34" lineLink="/docs/api/classes/llvm/pdb/hashtableiterator"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/pdb/hashtableiterator/#a8893151d8b1012d1745f7e12944848fa">HashTableIterator</a></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">    : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-facade-base">iterator&#95;facade&#95;base</a>&lt;HashTableIterator&lt;ValueT&gt;,</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">                                  std::forward&#95;iterator&#95;tag,</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">                                  const std::pair&lt;uint32&#95;t, ValueT&gt;&gt; &#123;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">BaseT = </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> HashTableIterator::iterator&#95;facade&#95;base;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable">HashTable&lt;ValueT&gt;</a>;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pdb/hashtableiterator/#a8893151d8b1012d1745f7e12944848fa">HashTableIterator</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable">HashTable&lt;ValueT&gt;</a> &amp;Map, uint32&#95;t Index,</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">                    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsEnd)</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">      : Map(&amp;Map), Index(Index), IsEnd(IsEnd) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46" lineLink="/docs/api/classes/llvm/pdb/hashtableiterator/#a8893151d8b1012d1745f7e12944848fa"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pdb/hashtableiterator/#a8893151d8b1012d1745f7e12944848fa">HashTableIterator</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable">HashTable&lt;ValueT&gt;</a> &amp;Map) : Map(&amp;Map) &#123;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = Map.Present.find&#95;first();</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> == -1) &#123;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">      Index = 0;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">      IsEnd = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">      Index = </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uint32&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">      IsEnd = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57" lineLink="/docs/api/classes/llvm/pdb/hashtableiterator/#ad174abbb113cc94b58ce2ab097feb87e"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pdb/hashtableiterator/#ad174abbb113cc94b58ce2ab097feb87e">HashTableIterator</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtableiterator/#a8893151d8b1012d1745f7e12944848fa">HashTableIterator</a> &amp;R) = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58" lineLink="/docs/api/classes/llvm/pdb/hashtableiterator/#ab10ec3bb3111ac4ae12bd9c8a856d964"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pdb/hashtableiterator/#a8893151d8b1012d1745f7e12944848fa">HashTableIterator</a> &amp;<a href="/docs/api/classes/llvm/pdb/hashtableiterator/#ab10ec3bb3111ac4ae12bd9c8a856d964">operator=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtableiterator/#a8893151d8b1012d1745f7e12944848fa">HashTableIterator</a> &amp;R) &#123;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">    Map = R.Map;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62" lineLink="/docs/api/classes/llvm/pdb/hashtableiterator/#a1e990526337f438eb04cb427342569f2"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtableiterator/#a1e990526337f438eb04cb427342569f2">operator==</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtableiterator/#a8893151d8b1012d1745f7e12944848fa">HashTableIterator</a> &amp;R)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (IsEnd &amp;&amp; R.IsEnd)</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (IsEnd != R.IsEnd)</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (Map == R.Map) &amp;&amp; (Index == R.Index);</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/classes/llvm/pdb/hashtableiterator/#a8e2531029cc9ade122f6d32616621a9a"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::pair&lt;uint32&#95;t, ValueT&gt; &amp;<a href="/docs/api/classes/llvm/pdb/hashtableiterator/#a8e2531029cc9ade122f6d32616621a9a">operator&#42;</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Map-&gt;Present.test(Index));</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Map-&gt;Buckets&#91;Index&#93;;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Implement postfix op++ in terms of prefix op++ by using the superclass</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// implementation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">BaseT::operator++;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78" lineLink="/docs/api/classes/llvm/pdb/hashtableiterator/#a149a2bb33ccefa51070fdfa37df3b614"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pdb/hashtableiterator/#a8893151d8b1012d1745f7e12944848fa">HashTableIterator</a> &amp;<a href="/docs/api/classes/llvm/pdb/hashtableiterator/#a149a2bb33ccefa51070fdfa37df3b614">operator++</a>() &#123;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (Index &lt; Map-&gt;Buckets.size()) &#123;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">      ++Index;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Map-&gt;Present.test(Index))</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">    IsEnd = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isEnd()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> IsEnd; &#125;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  uint32&#95;t index()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Index; &#125;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> HashTable&lt;ValueT&gt; &#42;Map;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  uint32&#95;t Index;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsEnd;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> ValueT&gt;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99" lineLink="/docs/api/classes/llvm/pdb/hashtable"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/pdb/hashtable/#a7a0924a9371fe9aae70f23821fd040b9">HashTable</a> &#123;</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">Header &#123;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/support/#a206b37274fa3e908017da357d12724d1">support::ulittle32&#95;t</a> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/support/#a206b37274fa3e908017da357d12724d1">support::ulittle32&#95;t</a> Capacity;</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">BucketList = std::vector&lt;std::pair&lt;uint32&#95;t, ValueT&gt;&gt;;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a392dbc16adc638b871a410be50dc0305"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/pdb/hashtable/#a392dbc16adc638b871a410be50dc0305">const&#95;iterator</a> = <a href="/docs/api/classes/llvm/pdb/hashtableiterator">HashTableIterator&lt;ValueT&gt;</a>;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a4d9e2ba93547578a59761041472cf7f3"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#a4d9e2ba93547578a59761041472cf7f3">const&#95;iterator</a>;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a7a0924a9371fe9aae70f23821fd040b9"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pdb/hashtable/#a7a0924a9371fe9aae70f23821fd040b9">HashTable</a>() &#123; <a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>.resize(8); &#125;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112" lineLink="/docs/api/classes/llvm/pdb/hashtable/#af0c1d7a27fa775e76b001cacc5b883d8"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#af0c1d7a27fa775e76b001cacc5b883d8">HashTable</a>(uint32&#95;t Capacity) &#123;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>.resize(Capacity);</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a0d7b4512480e721249639c7fa64636ce"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/classes/llvm/pdb/hashtable/#a0d7b4512480e721249639c7fa64636ce">load</a>(<a href="/docs/api/classes/llvm/binarystreamreader">BinaryStreamReader</a> &amp;Stream) &#123;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Header &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EC = Stream.<a href="/docs/api/classes/llvm/binarystreamreader/#a07e25e055f92f545f94821c4a3cbded8">readObject</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>))</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> EC;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>-&gt;Capacity == 0)</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">make&#95;error&lt;RawError&gt;</a>(<a href="/docs/api/namespaces/llvm/pdb/#a573bcbbea76b4d72b33de1e392cc14aea8c4fdeb9f0256322a364cd1347a6ffd6">raw&#95;error&#95;code::corrupt&#95;file</a>,</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">                                  </Highlight><Highlight kind="stringliteral">&quot;Invalid Hash Table Capacity&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>-&gt;Size &gt; maxLoad(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>-&gt;Capacity))</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">make&#95;error&lt;RawError&gt;</a>(<a href="/docs/api/namespaces/llvm/pdb/#a573bcbbea76b4d72b33de1e392cc14aea8c4fdeb9f0256322a364cd1347a6ffd6">raw&#95;error&#95;code::corrupt&#95;file</a>,</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">                                  </Highlight><Highlight kind="stringliteral">&quot;Invalid Hash Table Size&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>.resize(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>-&gt;Capacity);</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EC = <a href="/docs/api/namespaces/llvm/pdb/#abb261b1e80159e16ee57e79ed2d77494">readSparseBitVector</a>(Stream, <a href="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3">Present</a>))</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> EC;</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3">Present</a>.count() != <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>-&gt;Size)</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">make&#95;error&lt;RawError&gt;</a>(<a href="/docs/api/namespaces/llvm/pdb/#a573bcbbea76b4d72b33de1e392cc14aea8c4fdeb9f0256322a364cd1347a6ffd6">raw&#95;error&#95;code::corrupt&#95;file</a>,</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">                                  </Highlight><Highlight kind="stringliteral">&quot;Present bit vector does not match size!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EC = <a href="/docs/api/namespaces/llvm/pdb/#abb261b1e80159e16ee57e79ed2d77494">readSparseBitVector</a>(Stream, <a href="/docs/api/classes/llvm/pdb/hashtable/#afa514340456093cf8b780289fe7c74e6">Deleted</a>))</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> EC;</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3">Present</a>.intersects(<a href="/docs/api/classes/llvm/pdb/hashtable/#afa514340456093cf8b780289fe7c74e6">Deleted</a>))</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">make&#95;error&lt;RawError&gt;</a>(<a href="/docs/api/namespaces/llvm/pdb/#a573bcbbea76b4d72b33de1e392cc14aea8c4fdeb9f0256322a364cd1347a6ffd6">raw&#95;error&#95;code::corrupt&#95;file</a>,</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">                                  </Highlight><Highlight kind="stringliteral">&quot;Present bit vector intersects deleted!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (uint32&#95;t <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a> : <a href="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3">Present</a>) &#123;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EC = Stream.<a href="/docs/api/classes/llvm/binarystreamreader/#a6bb348b0b716cb9d060ecaef7a49dcc6">readInteger</a>(<a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>&#91;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>&#93;.first))</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> EC;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ValueT &#42;<a href="/docs/api/classes/llvm/value">Value</a>;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EC = Stream.<a href="/docs/api/classes/llvm/binarystreamreader/#a07e25e055f92f545f94821c4a3cbded8">readObject</a>(<a href="/docs/api/classes/llvm/value">Value</a>))</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> EC;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>&#91;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>&#93;.second = &#42;<a href="/docs/api/classes/llvm/value">Value</a>;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153" lineLink="/docs/api/classes/llvm/pdb/hashtable/#ad2641279da78692f41fad96d52d3bed5"><Highlight kind="normal">  uint32&#95;t <a href="/docs/api/classes/llvm/pdb/hashtable/#ad2641279da78692f41fad96d52d3bed5">calculateSerializedLength</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">    uint32&#95;t <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> = </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Header);</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> BitsPerWord = 8 &#42; </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint32&#95;t);</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> NumBitsP = <a href="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3">Present</a>.find&#95;last() + 1;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> NumBitsD = <a href="/docs/api/classes/llvm/pdb/hashtable/#afa514340456093cf8b780289fe7c74e6">Deleted</a>.find&#95;last() + 1;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">    uint32&#95;t NumWordsP = <a href="/docs/api/namespaces/llvm/#ab102f0f12dd38aeea5906b1d80c792ff">alignTo</a>(NumBitsP, BitsPerWord) / BitsPerWord;</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">    uint32&#95;t NumWordsD = <a href="/docs/api/namespaces/llvm/#ab102f0f12dd38aeea5906b1d80c792ff">alignTo</a>(NumBitsD, BitsPerWord) / BitsPerWord;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Present bit set number of words (4 bytes), followed by that many actual</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// words (4 bytes each).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint32&#95;t);</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> += NumWordsP &#42; </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint32&#95;t);</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Deleted bit set number of words (4 bytes), followed by that many actual</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// words (4 bytes each).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint32&#95;t);</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> += NumWordsD &#42; </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint32&#95;t);</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// One (Key, ValueT) pair for each entry Present.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> += (</Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint32&#95;t) + </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(ValueT)) &#42; <a href="/docs/api/classes/llvm/pdb/hashtable/#a241964f43ca3f3210706ddaf0515caf9">size</a>();</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>;</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a27e264b6aad589dd9c5013ca05d2fd55"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/classes/llvm/pdb/hashtable/#a27e264b6aad589dd9c5013ca05d2fd55">commit</a>(<a href="/docs/api/classes/llvm/binarystreamwriter">BinaryStreamWriter</a> &amp;Writer)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">    Header <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>;</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>.Size = <a href="/docs/api/classes/llvm/pdb/hashtable/#a241964f43ca3f3210706ddaf0515caf9">size</a>();</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>.Capacity = <a href="/docs/api/classes/llvm/pdb/hashtable/#a8533d14ac2783e4ad8164659058f8a8f">capacity</a>();</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EC = Writer.<a href="/docs/api/classes/llvm/binarystreamwriter/#ae73ad246f9f1adc35f0ce49fc089b52a">writeObject</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>))</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> EC;</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EC = <a href="/docs/api/namespaces/llvm/pdb/#ae05f3870c8f629c981951b96ccbee160">writeSparseBitVector</a>(Writer, <a href="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3">Present</a>))</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> EC;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EC = <a href="/docs/api/namespaces/llvm/pdb/#ae05f3870c8f629c981951b96ccbee160">writeSparseBitVector</a>(Writer, <a href="/docs/api/classes/llvm/pdb/hashtable/#afa514340456093cf8b780289fe7c74e6">Deleted</a>))</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> EC;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Entry : &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EC = Writer.<a href="/docs/api/classes/llvm/binarystreamwriter/#a344647bc1c4a4b53334296eba145d408">writeInteger</a>(Entry.first))</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> EC;</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EC = Writer.<a href="/docs/api/classes/llvm/binarystreamwriter/#ae73ad246f9f1adc35f0ce49fc089b52a">writeObject</a>(Entry.second))</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> EC;</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a9530511f62188d670afc381b8e2a1cc7"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#a9530511f62188d670afc381b8e2a1cc7">clear</a>() &#123;</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>.resize(8);</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3">Present</a>.clear();</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pdb/hashtable/#afa514340456093cf8b780289fe7c74e6">Deleted</a>.clear();</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a8f5939ef9a01a603e6de23a9bfbd3e43"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#a8f5939ef9a01a603e6de23a9bfbd3e43">empty</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#a241964f43ca3f3210706ddaf0515caf9">size</a>() == 0; &#125;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a8533d14ac2783e4ad8164659058f8a8f"><Highlight kind="normal">  uint32&#95;t <a href="/docs/api/classes/llvm/pdb/hashtable/#a8533d14ac2783e4ad8164659058f8a8f">capacity</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>.size(); &#125;</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a241964f43ca3f3210706ddaf0515caf9"><Highlight kind="normal">  uint32&#95;t <a href="/docs/api/classes/llvm/pdb/hashtable/#a241964f43ca3f3210706ddaf0515caf9">size</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3">Present</a>.count(); &#125;</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a5549724c67162c8a1e9c4179875689f8"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pdb/hashtable/#a4d9e2ba93547578a59761041472cf7f3">const&#95;iterator</a> <a href="/docs/api/classes/llvm/pdb/hashtable/#a5549724c67162c8a1e9c4179875689f8">begin</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#a392dbc16adc638b871a410be50dc0305">const&#95;iterator</a>(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">); &#125;</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213" lineLink="/docs/api/classes/llvm/pdb/hashtable/#ac2a599c5572db3a40595ed86b211ba97"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pdb/hashtable/#a4d9e2ba93547578a59761041472cf7f3">const&#95;iterator</a> <a href="/docs/api/classes/llvm/pdb/hashtable/#ac2a599c5572db3a40595ed86b211ba97">end</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#a392dbc16adc638b871a410be50dc0305">const&#95;iterator</a>(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">, 0, </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">); &#125;</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="comment">  /// Find the entry whose key has the specified hash value, using the specified</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="comment">  /// traits defining hash function and equality.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Key, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> TraitsT&gt;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218" lineLink="/docs/api/classes/llvm/pdb/hashtable/#abcbb9cfe3d56fdde054c1f193f6eb5d0"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pdb/hashtable/#a4d9e2ba93547578a59761041472cf7f3">const&#95;iterator</a> <a href="/docs/api/classes/llvm/pdb/hashtable/#abcbb9cfe3d56fdde054c1f193f6eb5d0">find&#95;as</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a98c6256d0644613c6b5b3e2ef06ef5ce">Key</a> &amp;K, <a href="/docs/api/classes/traitst">TraitsT</a> &amp;Traits)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">    uint32&#95;t <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a> = Traits.hashLookupKey(K) % <a href="/docs/api/classes/llvm/pdb/hashtable/#a8533d14ac2783e4ad8164659058f8a8f">capacity</a>();</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">    uint32&#95;t <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>;</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">    std::optional&lt;uint32&#95;t&gt; FirstUnused;</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">do</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/pdb/hashtable/#ab5d474a3181aef2296b2732887ac6d4f">isPresent</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)) &#123;</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Traits.storageKeyToLookupKey(<a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>&#91;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>&#93;.first) == K)</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#a392dbc16adc638b871a410be50dc0305">const&#95;iterator</a>(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">, <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">      &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!FirstUnused)</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">          FirstUnused = <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>;</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Insertion occurs via linear probing from the slot hint, and will be</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// inserted at the first empty / deleted location.  Therefore, if we are</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// probing and find a location that is neither present nor deleted, then</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// nothing must have EVER been inserted at this location, and thus it is</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// not possible for a matching value to occur later.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/classes/llvm/pdb/hashtable/#a0eca6606668a0d169c762e3e78556743">isDeleted</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>))</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = (<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> + 1) % <a href="/docs/api/classes/llvm/pdb/hashtable/#a8533d14ac2783e4ad8164659058f8a8f">capacity</a>();</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> != <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>);</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// The only way FirstUnused would not be set is if every single entry in the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// table were Present.  But this would violate the load factor constraints</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// that we impose, so it should never happen.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(FirstUnused);</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#a392dbc16adc638b871a410be50dc0305">const&#95;iterator</a>(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">, &#42;FirstUnused, </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="comment">  /// Set the entry using a key type that the specified Traits can convert</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="comment">  /// from a real key to an internal key.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Key, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> TraitsT&gt;</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a10623566dea3a29363713d0f716b9a92"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#a10623566dea3a29363713d0f716b9a92">set&#95;as</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a98c6256d0644613c6b5b3e2ef06ef5ce">Key</a> &amp;K, ValueT V, <a href="/docs/api/classes/traitst">TraitsT</a> &amp;Traits) &#123;</Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> set&#95;as&#95;internal(K, std::move(V), Traits, std::nullopt);</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Key, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> TraitsT&gt;</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a848d3d34c80143332428819ead838984"><Highlight kind="normal">  ValueT <a href="/docs/api/classes/llvm/pdb/hashtable/#a848d3d34c80143332428819ead838984">get</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a98c6256d0644613c6b5b3e2ef06ef5ce">Key</a> &amp;K, <a href="/docs/api/classes/traitst">TraitsT</a> &amp;Traits)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Iter = <a href="/docs/api/classes/llvm/pdb/hashtable/#abcbb9cfe3d56fdde054c1f193f6eb5d0">find&#95;as</a>(K, Traits);</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Iter != <a href="/docs/api/classes/llvm/pdb/hashtable/#ac2a599c5572db3a40595ed86b211ba97">end</a>());</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (&#42;Iter).second;</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262" lineLink="/docs/api/classes/llvm/pdb/hashtable/#ab5d474a3181aef2296b2732887ac6d4f"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#ab5d474a3181aef2296b2732887ac6d4f">isPresent</a>(uint32&#95;t K)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3">Present</a>.test(K); &#125;</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a0eca6606668a0d169c762e3e78556743"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#a0eca6606668a0d169c762e3e78556743">isDeleted</a>(uint32&#95;t K)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#afa514340456093cf8b780289fe7c74e6">Deleted</a>.test(K); &#125;</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265" lineLink="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694"><Highlight kind="normal">  BucketList <a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>;</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266" lineLink="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">mutable</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sparsebitvector">SparseBitVector&lt;&gt;</a> <a href="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3">Present</a>;</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267" lineLink="/docs/api/classes/llvm/pdb/hashtable/#afa514340456093cf8b780289fe7c74e6"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">mutable</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sparsebitvector">SparseBitVector&lt;&gt;</a> <a href="/docs/api/classes/llvm/pdb/hashtable/#afa514340456093cf8b780289fe7c74e6">Deleted</a>;</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="comment">  /// Set the entry using a key type that the specified Traits can convert</Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="comment">  /// from a real key to an internal key.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Key, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> TraitsT&gt;</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> set&#95;as&#95;internal(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a98c6256d0644613c6b5b3e2ef06ef5ce">Key</a> &amp;K, ValueT V, <a href="/docs/api/classes/traitst">TraitsT</a> &amp;Traits,</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">                       std::optional&lt;uint32&#95;t&gt; InternalKey) &#123;</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Entry = <a href="/docs/api/classes/llvm/pdb/hashtable/#abcbb9cfe3d56fdde054c1f193f6eb5d0">find&#95;as</a>(K, Traits);</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Entry != <a href="/docs/api/classes/llvm/pdb/hashtable/#ac2a599c5572db3a40595ed86b211ba97">end</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/classes/llvm/pdb/hashtable/#ab5d474a3181aef2296b2732887ac6d4f">isPresent</a>(Entry.index()));</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Traits.storageKeyToLookupKey(<a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>&#91;Entry.index()&#93;.first) == K);</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// We&#39;re updating, no need to do anything special.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>&#91;Entry.index()&#93;.second = V;</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a> = <a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>&#91;Entry.index()&#93;;</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!<a href="/docs/api/classes/llvm/pdb/hashtable/#ab5d474a3181aef2296b2732887ac6d4f">isPresent</a>(Entry.index()));</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Entry.isEnd());</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.first = InternalKey ? &#42;InternalKey : Traits.lookupKeyToStorageKey(K);</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.second = V;</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3">Present</a>.set(Entry.index());</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pdb/hashtable/#afa514340456093cf8b780289fe7c74e6">Deleted</a>.reset(Entry.index());</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">    grow(Traits);</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((<a href="/docs/api/classes/llvm/pdb/hashtable/#abcbb9cfe3d56fdde054c1f193f6eb5d0">find&#95;as</a>(K, Traits)) != <a href="/docs/api/classes/llvm/pdb/hashtable/#ac2a599c5572db3a40595ed86b211ba97">end</a>());</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> uint32&#95;t maxLoad(uint32&#95;t <a href="/docs/api/classes/llvm/pdb/hashtable/#a8533d14ac2783e4ad8164659058f8a8f">capacity</a>) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pdb/hashtable/#a8533d14ac2783e4ad8164659058f8a8f">capacity</a> &#42; 2 / 3 + 1; &#125;</Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> TraitsT&gt;</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> grow(<a href="/docs/api/classes/traitst">TraitsT</a> &amp;Traits) &#123;</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">    uint32&#95;t S = <a href="/docs/api/classes/llvm/pdb/hashtable/#a241964f43ca3f3210706ddaf0515caf9">size</a>();</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal">    uint32&#95;t MaxLoad = maxLoad(<a href="/docs/api/classes/llvm/pdb/hashtable/#a8533d14ac2783e4ad8164659058f8a8f">capacity</a>());</Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (S &lt; maxLoad(<a href="/docs/api/classes/llvm/pdb/hashtable/#a8533d14ac2783e4ad8164659058f8a8f">capacity</a>()))</Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/classes/llvm/pdb/hashtable/#a8533d14ac2783e4ad8164659058f8a8f">capacity</a>() != UINT32&#95;MAX &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Can&#39;t grow Hash table!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">    uint32&#95;t NewCapacity = (<a href="/docs/api/classes/llvm/pdb/hashtable/#a8533d14ac2783e4ad8164659058f8a8f">capacity</a>() &lt;= INT32&#95;MAX) ? MaxLoad &#42; 2 : UINT32&#95;MAX;</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Growing requires rebuilding the table and re-hashing every item.  Make a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// copy with a larger capacity, insert everything into the copy, then swap</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// it in.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pdb/hashtable/#a7a0924a9371fe9aae70f23821fd040b9">HashTable</a> NewMap(NewCapacity);</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> : <a href="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3">Present</a>) &#123;</Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> LookupKey = Traits.storageKeyToLookupKey(<a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>&#91;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>&#93;.first);</Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal">      NewMap.set&#95;as&#95;internal(LookupKey, <a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>&#91;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>&#93;.second, Traits,</Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal">                             <a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>&#91;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>&#93;.first);</Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pdb/hashtable/#a464b799e1798262b746964391bc9a694">Buckets</a>.swap(NewMap.Buckets);</Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal">    <a href="/docs/api/namespaces/std/#ab8424022895aee3e366fb9a32f2883cb">std::swap</a>(<a href="/docs/api/classes/llvm/pdb/hashtable/#ab8dde68e2499e983f64b6e48ea64e9f3">Present</a>, NewMap.Present);</Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">    <a href="/docs/api/namespaces/std/#ab8424022895aee3e366fb9a32f2883cb">std::swap</a>(<a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/loopdeletion-cpp/#a0f1c83c3d08d80b12c424962a5e94ce8a5fe6005bf6e415c950c011fb65f12b8f">Deleted</a>, NewMap.Deleted);</Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/classes/llvm/pdb/hashtable/#a8533d14ac2783e4ad8164659058f8a8f">capacity</a>() == NewCapacity);</Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/classes/llvm/pdb/hashtable/#a241964f43ca3f3210706ddaf0515caf9">size</a>() == S);</Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace pdb</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;DEBUGINFO&#95;PDB&#95;NATIVE&#95;HASHTABLE&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

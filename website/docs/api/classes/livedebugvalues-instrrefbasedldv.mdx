@@ -1,0 +1,1409 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/livedebugvalues/instrrefbasedldv
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `InstrRefBasedLDV` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Declaration
+
+<CodeBlock>class LiveDebugValues::InstrRefBasedLDV</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="CodeGen/LiveDebugValues/InstrRefBasedImpl.h"
+  permalink="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/ldvimpl">LDVImpl</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a8126e881577442cc33511b29b08a0d32">FragmentInfo</a> = <a href="/docs/api/classes/llvm/diexpression/#a2a09e6caba71ab15519f9e55ceb4d10d">DIExpression::FragmentInfo</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a3c96cc2839fdb5fe0010e73712a6ff61">InValueT</a> = std::pair&lt; <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;, <a href="/docs/api/classes/livedebugvalues/dbgvalue">DbgValue</a> &#42; &gt;</>}>
+<a href="/docs/api/classes/llvm/type">Type</a> for a live-in value: the predecessor block, and its value. <a href="#a3c96cc2839fdb5fe0010e73712a6ff61">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#abba7c6095e3e9ebb63a516620332773c">LiveIdxT</a> = <a href="/docs/api/classes/llvm/smalldensemap">SmallDenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;, <a href="/docs/api/classes/livedebugvalues/dbgvalue">DbgValue</a> &#42;, 16 &gt;</>}>
+Live in/out structure for the variable values: a per-block map of variables to their values. <a href="#abba7c6095e3e9ebb63a516620332773c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a4fcc5fc74d98f09bd495e93cec779cbc">LiveInsT</a> = <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="#a45f040800f20929318533875154927e1">VarAndLoc</a>, 8 &gt;, 8 &gt;</>}>
+Vector (per block) of a collection (inner smallvector) of live-ins. <a href="#a4fcc5fc74d98f09bd495e93cec779cbc">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#abc9d9007b0d77bc0954612b88df15142">MLocTransferMap</a> = <a href="/docs/api/classes/llvm/smalldensemap">SmallDenseMap</a>&lt; <a href="/docs/api/classes/livedebugvalues/locidx">LocIdx</a>, <a href="/docs/api/classes/livedebugvalues/valueidnum">ValueIDNum</a> &gt;</>}>
+Machine location/value transfer function, a mapping of which locations are assigned which new values. <a href="#abc9d9007b0d77bc0954612b88df15142">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#ab334acbb393549bc7c6e65c0d1c08842">OptFragmentInfo</a> = std::optional&lt; <a href="/docs/api/classes/llvm/diexpression/#a2a09e6caba71ab15519f9e55ceb4d10d">DIExpression::FragmentInfo</a> &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a68274d2602df99b0792e3474e37b3775">ScopeToAssignBlocksT</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/lexicalscope">LexicalScope</a> &#42;, <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;, 4 &gt; &gt;</>}>
+Mapping from lexical scopes to blocks where variables in that scope are assigned. <a href="#a68274d2602df99b0792e3474e37b3775">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a2233b318fa41cb9167e82f952f4b6df6">ScopeToDILocT</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/lexicalscope">LexicalScope</a> &#42;, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/dilocation">DILocation</a> &#42; &gt;</>}>
+Mapping from lexical scopes to a <a href="/docs/api/classes/llvm/dilocation">DILocation</a> in that scope. <a href="#a2233b318fa41cb9167e82f952f4b6df6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#aa55b289a4e7786074f4f3372425763cd">ScopeToVarsT</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/lexicalscope">LexicalScope</a> &#42;, <a href="/docs/api/classes/llvm/smallset">SmallSet</a>&lt; <a href="/docs/api/namespaces/livedebugvalues/#a2ad7532d3e36d429cab7c3ade85c5f77">DebugVariableID</a>, 4 &gt; &gt;</>}>
+Mapping from lexical scopes to variables in that scope. <a href="#aa55b289a4e7786074f4f3372425763cd">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a45f040800f20929318533875154927e1">VarAndLoc</a> = std::pair&lt; <a href="/docs/api/namespaces/livedebugvalues/#a2ad7532d3e36d429cab7c3ade85c5f77">DebugVariableID</a>, <a href="/docs/api/classes/livedebugvalues/dbgvalue">DbgValue</a> &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a2c6ff6a4c2ab1a469d229a327ed07222">VarToFragments</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/dilocalvariable">DILocalVariable</a> &#42;, <a href="/docs/api/classes/llvm/smallset">SmallSet</a>&lt; <a href="#a8126e881577442cc33511b29b08a0d32">FragmentInfo</a>, 4 &gt; &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a93f315c2ce86d06ab7a212a3019c8965">InstAndNum</a> = std::pair&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;, unsigned &gt;</>}>
+Pair of <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a>, and its 1-based offset into the containing block. <a href="#a93f315c2ce86d06ab7a212a3019c8965">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Friends Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="#a65dd2d19f26744f60c65d3164cfb5076">::InstrRefLDVTest</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a625f1469290a1b9bb1bc071a5392d3cb">InstrRefBasedLDV</a> ()</>}>
+Default construct and initialize the pass. <a href="#a625f1469290a1b9bb1bc071a5392d3cb">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#aa863693eef567397d9c292da5bf22d34">LLVM&#95;DUMP&#95;METHOD</a> void</>}
+  name={<><a href="#ae270bdce77ec139bf18564e50664dab8">dump&#95;mloc&#95;transfer</a> (const MLocTransferMap &amp;mloc&#95;transfer) const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/livedebugvalues/locidx">LocIdx</a> &gt;</>}
+  name={<><a href="#a3c1165eb09769fbc90612ff41c1830b3">findLocationForMemOperand</a> (const MachineInstr &amp;MI)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/livedebugvalues/debugvariablemap">DebugVariableMap</a> &amp;</>}
+  name={<><a href="#a40164b47ac9386a03fb7acf930eca83a">getDVMap</a> ()</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#abe3764a9e5e3a3929c0cef3d6dceaedf">hasFoldedStackStore</a> (const MachineInstr &amp;MI)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ac8e3a7e9be90841c721e738db731abbf">isCalleeSaved</a> (LocIdx L) const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ad778dafd8a5d853569fe78079b6960b7">isCalleeSavedReg</a> (Register R) const</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a10f5726e576f9a2190f07ad047841f9d">accumulateFragmentMap</a> (MachineInstr &amp;MI)</>}>
+Accumulate a mapping between each <a href="/docs/api/classes/llvm/dilocalvariable">DILocalVariable</a> fragment and other fragments of that <a href="/docs/api/classes/llvm/dilocalvariable">DILocalVariable</a> which overlap. <a href="#a10f5726e576f9a2190f07ad047841f9d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aa6111524681758e1000aaffa8df3d89e">BlockPHIPlacement</a> (const SmallPtrSetImpl&lt; MachineBasicBlock &#42; &gt; &amp;AllBlocks, const SmallPtrSetImpl&lt; MachineBasicBlock &#42; &gt; &amp;DefBlocks, SmallVectorImpl&lt; MachineBasicBlock &#42; &gt; &amp;PHIBlocks)</>}>
+Calculate the iterated-dominance-frontier for a set of defs, using the existing LLVM facilities for this. <a href="#aa6111524681758e1000aaffa8df3d89e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ab6b86c42097dd294307437291bbc8b2f">buildMLocValueMap</a> (MachineFunction &amp;MF, FuncValueTable &amp;MInLocs, FuncValueTable &amp;MOutLocs, SmallVectorImpl&lt; MLocTransferMap &gt; &amp;MLocTransfer)</>}>
+Solve the machine value location dataflow problem. <a href="#ab6b86c42097dd294307437291bbc8b2f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a59a737b5062cc6b00ced87df09c9a353">buildVLocValueMap</a> (const DILocation &#42;DILoc, const SmallSet&lt; DebugVariableID, 4 &gt; &amp;VarsWeCareAbout, SmallPtrSetImpl&lt; MachineBasicBlock &#42; &gt; &amp;AssignBlocks, LiveInsT &amp;Output, FuncValueTable &amp;MOutLocs, FuncValueTable &amp;MInLocs, SmallVectorImpl&lt; VLocTracker &gt; &amp;AllTheVLocs)</>}>
+Solve the variable value dataflow problem, for a single lexical scope. <a href="#a59a737b5062cc6b00ced87df09c9a353">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af6304d2a737f712448762178dd1f4404">depthFirstVLocAndEmit</a> (unsigned MaxNumBlocks, const ScopeToDILocT &amp;ScopeToDILocation, const ScopeToVarsT &amp;ScopeToVars, ScopeToAssignBlocksT &amp;ScopeToBlocks, LiveInsT &amp;Output, FuncValueTable &amp;MOutLocs, FuncValueTable &amp;MInLocs, SmallVectorImpl&lt; VLocTracker &gt; &amp;AllTheVLocs, MachineFunction &amp;MF, const TargetPassConfig &amp;TPC)</>}>
+When determining per-block variable values and emitting to DBG&#95;VALUEs, this function explores by lexical scope depth. <a href="#af6304d2a737f712448762178dd1f4404">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a204464a5e130feff38120d8989e427ef">emitTransfers</a> ()</>}>
+Take collections of DBG&#95;VALUE instructions stored in TTracker, and install them into their output blocks. <a href="#a204464a5e130feff38120d8989e427ef">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a326f546ac1f97d0d5d6fe81187d095d5">ExtendRanges</a> (MachineFunction &amp;MF, MachineDominatorTree &#42;DomTree, TargetPassConfig &#42;TPC, unsigned InputBBLimit, unsigned InputDbgValLimit) override</>}>
+Calculate the liveness information for the given machine function and extend ranges across basic blocks. <a href="#a326f546ac1f97d0d5d6fe81187d095d5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/livedebugvalues/spilllocationno">SpillLocationNo</a> &gt;</>}
+  name={<><a href="#a81f55a37e37cf727fd53d40a58687cd7">extractSpillBaseRegAndOffset</a> (const MachineInstr &amp;MI)</>}>
+Given a spill instruction, extract the spill slot information, ensure it&#39;s tracked, and return the spill number. <a href="#a81f55a37e37cf727fd53d40a58687cd7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a4fa53b1db8d8910ccd6f9d350a17fab4">findStackIndexInterference</a> (SmallVectorImpl&lt; unsigned &gt; &amp;Slots)</>}>
+Examine the stack indexes (i.e. <a href="#a4fa53b1db8d8910ccd6f9d350a17fab4">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a4ce7b03957b1093525b17050a957f24f">getBlocksForScope</a> (const DILocation &#42;DILoc, SmallPtrSetImpl&lt; const MachineBasicBlock &#42; &gt; &amp;Output, const SmallPtrSetImpl&lt; MachineBasicBlock &#42; &gt; &amp;AssignBlocks)</>}>
+Produce a set of blocks that are in the current lexical scope. <a href="#a4ce7b03957b1093525b17050a957f24f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/livedebugvalues/valueidnum">ValueIDNum</a> &gt;</>}
+  name={<><a href="#a6c8b21a5dac1f16592b6568015385f7a">getValueForInstrRef</a> (unsigned InstNo, unsigned OpNo, MachineInstr &amp;MI, const FuncValueTable &#42;MLiveOuts, const FuncValueTable &#42;MLiveIns)</>}>
+For an instruction reference given by <code>InstNo</code> and <code>OpNo</code> in instruction <code>MI</code> returns the <a href="/docs/api/classes/llvm/value">Value</a> pointed to by that instruction reference if any exists, otherwise returns std::nullopt. <a href="#a6c8b21a5dac1f16592b6568015385f7a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a2393c70c72c7638d47f319a87783e830">initialSetup</a> (MachineFunction &amp;MF)</>}>
+Boilerplate computation of some initial sets, artifical blocks and RPOT block ordering. <a href="#a2393c70c72c7638d47f319a87783e830">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a706f17a46553480f1ee4ad63e6af83d9">isLocationSpill</a> (const MachineInstr &amp;MI, MachineFunction &#42;MF, unsigned &amp;Reg)</>}>
+Decide if @MI is a spill instruction and return true if it is. <a href="#a706f17a46553480f1ee4ad63e6af83d9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/livedebugvalues/spilllocationno">SpillLocationNo</a> &gt;</>}
+  name={<><a href="#a07570f4999d0dd6b8eda2e51a0ed12c4">isRestoreInstruction</a> (const MachineInstr &amp;MI, MachineFunction &#42;MF, unsigned &amp;Reg)</>}>
+If a given instruction is identified as a spill, return the spill slot and set <code>Reg</code> to the spilled register. <a href="#a07570f4999d0dd6b8eda2e51a0ed12c4">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/livedebugvalues/spilllocationno">SpillLocationNo</a> &gt;</>}
+  name={<><a href="#a5b4b803e9f62d4926a8d662c3d2786b6">isSpillInstruction</a> (const MachineInstr &amp;MI, MachineFunction &#42;MF)</>}>
+Tests whether this instruction is a spill to a stack slot. <a href="#a5b4b803e9f62d4926a8d662c3d2786b6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a6ade9f757d736b13b669d71b06ef2d1e">makeDepthFirstEjectionMap</a> (SmallVectorImpl&lt; unsigned &gt; &amp;EjectionMap, const ScopeToDILocT &amp;ScopeToDILocation, ScopeToAssignBlocksT &amp;AssignBlocks)</>}>
+Produce a map of the last lexical scope that uses a block, using the scopes DFSOut number. <a href="#a6ade9f757d736b13b669d71b06ef2d1e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ad07b52c00979721f3aef3e806f640fa7">mlocJoin</a> (MachineBasicBlock &amp;MBB, SmallPtrSet&lt; const MachineBasicBlock &#42;, 16 &gt; &amp;Visited, FuncValueTable &amp;OutLocs, ValueTable &amp;InLocs)</>}>
+Perform a control flow join (lattice value meet) of the values in machine locations at <code>MBB</code>. <a href="#ad07b52c00979721f3aef3e806f640fa7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aacb6b27cdf1b0325978594464835075e">performCopy</a> (Register Src, Register Dst)</>}>
+Copy one location to the other, accounting for movement of subregisters too. <a href="#aacb6b27cdf1b0325978594464835075e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/livedebugvalues/valueidnum">ValueIDNum</a> &gt;</>}
+  name={<><a href="#a8acdd8867ac44190e388a08af059250a">pickOperandPHILoc</a> (unsigned DbgOpIdx, const MachineBasicBlock &amp;MBB, const LiveIdxT &amp;LiveOuts, FuncValueTable &amp;MOutLocs, const SmallVectorImpl&lt; const MachineBasicBlock &#42; &gt; &amp;BlockOrders)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a5a97be3b9a83608262c594ea71ca8364">pickVPHILoc</a> (SmallVectorImpl&lt; DbgOpID &gt; &amp;OutValues, const MachineBasicBlock &amp;MBB, const LiveIdxT &amp;LiveOuts, FuncValueTable &amp;MOutLocs, const SmallVectorImpl&lt; const MachineBasicBlock &#42; &gt; &amp;BlockOrders)</>}>
+For the given block and live-outs feeding into it, try to find machine locations for each debug operand where all the values feeding into that operand join together. <a href="#a5a97be3b9a83608262c594ea71ca8364">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a0e3cab548a55c94d96852f07fb16ea98">placeMLocPHIs</a> (MachineFunction &amp;MF, SmallPtrSetImpl&lt; MachineBasicBlock &#42; &gt; &amp;AllBlocks, FuncValueTable &amp;MInLocs, SmallVectorImpl&lt; MLocTransferMap &gt; &amp;MLocTransfer)</>}>
+Install PHI values into the live-in array for each block, according to the IDF of each register. <a href="#a0e3cab548a55c94d96852f07fb16ea98">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a90f1c48d64696e5e60b4b34d53e07a3e">placePHIsForSingleVarDefinition</a> (const SmallPtrSetImpl&lt; MachineBasicBlock &#42; &gt; &amp;InScopeBlocks, MachineBasicBlock &#42;MBB, SmallVectorImpl&lt; VLocTracker &gt; &amp;AllTheVLocs, DebugVariableID Var, LiveInsT &amp;Output)</>}>
+Propagate variable values to blocks in the common case where there&#39;s only one value assigned to the variable. <a href="#a90f1c48d64696e5e60b4b34d53e07a3e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a06d8c07b9cedf432f5d345544688d960">process</a> (MachineInstr &amp;MI, const FuncValueTable &#42;MLiveOuts, const FuncValueTable &#42;MLiveIns)</>}>
+Observe a single instruction while stepping through a block. <a href="#a06d8c07b9cedf432f5d345544688d960">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a5f5f0bf451a6c1870f6d8c2828e11737">produceMLocTransferFunction</a> (MachineFunction &amp;MF, SmallVectorImpl&lt; MLocTransferMap &gt; &amp;MLocTransfer, unsigned MaxNumBlocks)</>}>
+Step through the function, recording register definitions and movements in an <a href="/docs/api/classes/livedebugvalues/mloctracker">MLocTracker</a>. <a href="#a5f5f0bf451a6c1870f6d8c2828e11737">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/livedebugvalues/valueidnum">ValueIDNum</a> &gt;</>}
+  name={<><a href="#ac6bfbe8902542495bf8b1e1867c94150">resolveDbgPHIs</a> (MachineFunction &amp;MF, const FuncValueTable &amp;MLiveOuts, const FuncValueTable &amp;MLiveIns, MachineInstr &amp;Here, uint64&#95;t InstrNum)</>}>
+Determine the machine value number referred to by (potentially several) DBG&#95;PHI instructions. <a href="#ac6bfbe8902542495bf8b1e1867c94150">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/livedebugvalues/valueidnum">ValueIDNum</a> &gt;</>}
+  name={<><a href="#a5c0d554b2cb3525ca83c4a36b50f4f33">resolveDbgPHIsImpl</a> (MachineFunction &amp;MF, const FuncValueTable &amp;MLiveOuts, const FuncValueTable &amp;MLiveIns, MachineInstr &amp;Here, uint64&#95;t InstrNum)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#aa1d5c7cc1b11a8d0455b3461cb6ea121">transferDebugInstrRef</a> (MachineInstr &amp;MI, const FuncValueTable &#42;MLiveOuts, const FuncValueTable &#42;MLiveIns)</>}>
+Examines whether <code>MI</code> is a DBG&#95;INSTR&#95;REF and notifies trackers. <a href="#aa1d5c7cc1b11a8d0455b3461cb6ea121">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a6962b166d41a26c23c4ff1aeee4b0ac5">transferDebugPHI</a> (MachineInstr &amp;MI)</>}>
+Stores value-information about where this PHI occurred, and what instruction number is associated with it. <a href="#a6962b166d41a26c23c4ff1aeee4b0ac5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a07a04f10b667dc5b481a6edeaa1888b0">transferDebugValue</a> (const MachineInstr &amp;MI)</>}>
+Examines whether <code>MI</code> is a DBG&#95;VALUE and notifies trackers. <a href="#a07a04f10b667dc5b481a6edeaa1888b0">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a734b8343dd36a859e887d6e048a9a37a">transferRegisterCopy</a> (MachineInstr &amp;MI)</>}>
+Examines whether <code>MI</code> is copy instruction, and notifies trackers. <a href="#a734b8343dd36a859e887d6e048a9a37a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#abf7e8f68978d333ba4eb817370952e8f">transferRegisterDef</a> (MachineInstr &amp;MI)</>}>
+Examines <code>MI</code> for any registers that it defines, and notifies trackers. <a href="#abf7e8f68978d333ba4eb817370952e8f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a9d3b0bc989755d5befa2762363922866">transferSpillOrRestoreInst</a> (MachineInstr &amp;MI)</>}>
+Examines whether <code>MI</code> is stack spill or restore instruction, and notifies trackers. <a href="#a9d3b0bc989755d5befa2762363922866">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a4674e0625f729563d44ba5cab429ef8a">vlocJoin</a> (MachineBasicBlock &amp;MBB, LiveIdxT &amp;VLOCOutLocs, SmallPtrSet&lt; const MachineBasicBlock &#42;, 8 &gt; &amp;BlocksToExplore, DbgValue &amp;LiveIn)</>}>
+Attempt to eliminate un-necessary PHIs on entry to a block. <a href="#a4674e0625f729563d44ba5cab429ef8a">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a868405ab5f3dd0880f364a1e8abac5e4">AdjustsStackInCalls</a> = false</>}>
+True if we need to examine call instructions for stack clobbers. <a href="#a868405ab5f3dd0880f364a1e8abac5e4">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;, 16 &gt;</>}
+  name={<><a href="#aeac62138fdd885d11b3eb5bf8bba63c4">ArtificialBlocks</a></>}>
+Blocks which are artificial, i.e. <a href="#aeac62138fdd885d11b3eb5bf8bba63c4">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; unsigned, unsigned &gt;</>}
+  name={<><a href="#a71629590cc6d688bdfa05f76613fcc5e">BBNumToRPO</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;, unsigned int &gt;</>}
+  name={<><a href="#a44c580a6d08875e2765aa3d5e47a6c1a">BBToOrder</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/bitvector">BitVector</a></>}
+  name={<><a href="#aa9cd59bfbdd3378a02426ebfd8411a86">CalleeSavedRegs</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a2dffa1e1ffeb5a451136b837a07ef23f">CurBB</a> = -1</>}>
+Number of the current block <a href="/docs/api/namespaces/livedebugvalues">LiveDebugValues</a> is stepping through. <a href="#a2dffa1e1ffeb5a451136b837a07ef23f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#aecb320903dbb7f9bb43982ac351c5c2b">CurInst</a></>}>
+Number of the current instruction <a href="/docs/api/namespaces/livedebugvalues">LiveDebugValues</a> is evaluating. <a href="#aecb320903dbb7f9bb43982ac351c5c2b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/livedebugvalues/dbgopidmap">DbgOpIDMap</a></>}
+  name={<><a href="#a21e6911b3ba5b15b5a136a7d49580a09">DbgOpStore</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::map&lt; uint64&#95;t, InstAndNum &gt;</>}
+  name={<><a href="#a0db40a2a1b51a222eb02ba0ff7f05f73">DebugInstrNumToInstr</a></>}>
+Map from debug instruction number to the <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> labelled with that number, and its location within the function. <a href="#a0db40a2a1b51a222eb02ba0ff7f05f73">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; DebugPHIRecord, 32 &gt;</>}
+  name={<><a href="#a2704806d9344f84133d9dd4a8fc4b6f7">DebugPHINumToValue</a></>}>
+Map from instruction numbers defined by DBG&#95;PHIs to a record of what that DBG&#95;PHI read and where. <a href="#a2704806d9344f84133d9dd4a8fc4b6f7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a> &#42;</>}
+  name={<><a href="#a0cd6fca22445bf3062b6a35fba5137d6">DomTree</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/livedebugvalues/debugvariablemap">DebugVariableMap</a></>}
+  name={<><a href="#a02017d9f0608b38aba5e98e209328b16">DVMap</a></>}>
+Mapping between DebugVariables and unique <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> numbers. <a href="#a02017d9f0608b38aba5e98e209328b16">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/diexpression">DIExpression</a> &#42;</>}
+  name={<><a href="#abc888a5d7bdc06ad0f9734dddc9cb463">EmptyExpr</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/lexicalscopes">LexicalScopes</a></>}
+  name={<><a href="#a40865c48645bd3916eaf08a5c0d4960d">LS</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineframeinfo">MachineFrameInfo</a> &#42;</>}
+  name={<><a href="#aa351a7c3e07b4006d0f43afe08f6d812">MFI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &#42;</>}
+  name={<><a href="#a487646e28e68aed1416ec95d3fe3e4e1">MRI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/livedebugvalues/mloctracker">MLocTracker</a> &#42;</>}
+  name={<><a href="#a78400f292849e9960cef9172f1fc1fba">MTracker</a> = nullptr</>}>
+Object to track machine locations as we step through a block. <a href="#a78400f292849e9960cef9172f1fc1fba">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; &gt;</>}
+  name={<><a href="#a6a09b6200c1332310da5d23445fef6ab">OrderToBB</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/livedebugvalues/#a2fd2da038a0079e35e2d22f37984d4ee">OverlapMap</a></>}
+  name={<><a href="#a4a1ccefe1bfa1c318776ec1c00ac2528">OverlapFragments</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; std::pair&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;, unsigned &gt;, std::optional&lt; <a href="/docs/api/classes/livedebugvalues/valueidnum">ValueIDNum</a> &gt; &gt;</>}
+  name={<><a href="#a8c0888177522a9aec5b22527f0a9b981">SeenDbgPHIs</a></>}>
+Mapping of DBG&#95;INSTR&#95;REF instructions to their values, for those DBG&#95;INSTR&#95;REFs that call resolveDbgPHIs. <a href="#a8c0888177522a9aec5b22527f0a9b981">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#a2c6ff6a4c2ab1a469d229a327ed07222">VarToFragments</a></>}
+  name={<><a href="#a3c55db6d427ce7a739fbf81108f03fef">SeenFragments</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/stringref">StringRef</a></>}
+  name={<><a href="#a093bc749657288862cfe97564bf7a6e7">StackProbeSymbolName</a></>}>
+If AdjustsStackInCalls is true, this holds the name of the target&#39;s stack probe function, which is the function we expect will alter the stack pointer. <a href="#a093bc749657288862cfe97564bf7a6e7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetframelowering">TargetFrameLowering</a> &#42;</>}
+  name={<><a href="#a07d89949403222c9a50d48803c004bf7">TFI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;</>}
+  name={<><a href="#a5a10bf9bccc71697dea7be468c2f5746">TII</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/targetpassconfig">TargetPassConfig</a> &#42;</>}
+  name={<><a href="#a45db428547286759eab78d45192001f3">TPC</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &#42;</>}
+  name={<><a href="#a1aab1ae1f3779d4d46a12fcefe0903bb">TRI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/transfertracker">TransferTracker</a> &#42;</>}
+  name={<><a href="#a61028875188a8b16510dac222a472b04">TTracker</a> = nullptr</>}>
+Tracker for transfers, listens to DBG&#95;VALUEs and transfers of values between locations during stepping, creates new DBG&#95;VALUEs when values move location. <a href="#a61028875188a8b16510dac222a472b04">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/livedebugvalues/vloctracker">VLocTracker</a> &#42;</>}
+  name={<><a href="#a3969ac5b6d12166ef9e6ac00ab4ae7c9">VTracker</a> = nullptr</>}>
+Variable tracker – listens to DBG&#95;VALUEs occurring as InstrRefBasedImpl steps through a block. <a href="#a3969ac5b6d12166ef9e6ac00ab4ae7c9">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+Definition at line 1113 of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### FragmentInfo {#a8126e881577442cc33511b29b08a0d32}
+
+<MemberDefinition
+  prototype="using LiveDebugValues::InstrRefBasedLDV::FragmentInfo =  DIExpression::FragmentInfo">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01117">1117</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### InValueT {#a3c96cc2839fdb5fe0010e73712a6ff61}
+
+<MemberDefinition
+  prototype={<>using LiveDebugValues::InstrRefBasedLDV::InValueT =  std::pair&lt;MachineBasicBlock &#42;, DbgValue &#42;&gt;</>}>
+<a href="/docs/api/classes/llvm/type">Type</a> for a live-in value: the predecessor block, and its value.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01136">1136</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### LiveIdxT {#abba7c6095e3e9ebb63a516620332773c}
+
+<MemberDefinition
+  prototype={<>using LiveDebugValues::InstrRefBasedLDV::LiveIdxT =  SmallDenseMap&lt;const MachineBasicBlock &#42;, DbgValue &#42;, 16&gt;</>}>
+Live in/out structure for the variable values: a per-block map of variables to their values.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01131">1131</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### LiveInsT {#a4fcc5fc74d98f09bd495e93cec779cbc}
+
+<MemberDefinition
+  prototype={<>using LiveDebugValues::InstrRefBasedLDV::LiveInsT =  SmallVector&lt;SmallVector&lt;VarAndLoc, 8&gt;, 8&gt;</>}>
+Vector (per block) of a collection (inner smallvector) of live-ins.
+
+Used as the result type for the variable value dataflow problem.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01140">1140</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### MLocTransferMap {#abc9d9007b0d77bc0954612b88df15142}
+
+<MemberDefinition
+  prototype={<>using LiveDebugValues::InstrRefBasedLDV::MLocTransferMap =  SmallDenseMap&lt;LocIdx, ValueIDNum&gt;</>}>
+Machine location/value transfer function, a mapping of which locations are assigned which new values.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01127">1127</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### OptFragmentInfo {#ab334acbb393549bc7c6e65c0d1c08842}
+
+<MemberDefinition
+  prototype={<>using LiveDebugValues::InstrRefBasedLDV::OptFragmentInfo =  std::optional&lt;DIExpression::FragmentInfo&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01118">1118</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### ScopeToAssignBlocksT {#a68274d2602df99b0792e3474e37b3775}
+
+<MemberDefinition
+  prototype={<>using LiveDebugValues::InstrRefBasedLDV::ScopeToAssignBlocksT =  DenseMap&lt;const LexicalScope &#42;, SmallPtrSet&lt;MachineBasicBlock &#42;, 4&gt;&gt;</>}>
+Mapping from lexical scopes to blocks where variables in that scope are assigned.
+
+Such blocks aren&#39;t necessarily &quot;in&quot; the lexical scope, it&#39;s just a block where an assignment happens.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01152">1152</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### ScopeToDILocT {#a2233b318fa41cb9167e82f952f4b6df6}
+
+<MemberDefinition
+  prototype={<>using LiveDebugValues::InstrRefBasedLDV::ScopeToDILocT =  DenseMap&lt;const LexicalScope &#42;, const DILocation &#42;&gt;</>}>
+Mapping from lexical scopes to a <a href="/docs/api/classes/llvm/dilocation">DILocation</a> in that scope.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01143">1143</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### ScopeToVarsT {#aa55b289a4e7786074f4f3372425763cd}
+
+<MemberDefinition
+  prototype={<>using LiveDebugValues::InstrRefBasedLDV::ScopeToVarsT = 
+      DenseMap&lt;const LexicalScope &#42;, SmallSet&lt;DebugVariableID, 4&gt;&gt;</>}>
+Mapping from lexical scopes to variables in that scope.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01146">1146</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### VarAndLoc {#a45f040800f20929318533875154927e1}
+
+<MemberDefinition
+  prototype={<>using LiveDebugValues::InstrRefBasedLDV::VarAndLoc =  std::pair&lt;DebugVariableID, DbgValue&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01133">1133</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### VarToFragments {#a2c6ff6a4c2ab1a469d229a327ed07222}
+
+<MemberDefinition
+  prototype={<>using LiveDebugValues::InstrRefBasedLDV::VarToFragments = 
+      DenseMap&lt;const DILocalVariable &#42;, SmallSet&lt;FragmentInfo, 4&gt;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01122">1122</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### InstAndNum {#a93f315c2ce86d06ab7a212a3019c8965}
+
+<MemberDefinition
+  prototype={<>using LiveDebugValues::InstrRefBasedLDV::InstAndNum =  std::pair&lt;const MachineInstr &#42;, unsigned&gt;</>}>
+Pair of <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a>, and its 1-based offset into the containing block.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01199">1199</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Friends
+
+### ::InstrRefLDVTest {#a65dd2d19f26744f60c65d3164cfb5076}
+
+<MemberDefinition
+  prototype="friend class ::InstrRefLDVTest">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01115">1115</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### InstrRefBasedLDV() {#a625f1469290a1b9bb1bc071a5392d3cb}
+
+<MemberDefinition
+  prototype="InstrRefBasedLDV::InstrRefBasedLDV ()">
+Default construct and initialize the pass.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01496">1496</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### dump&#95;mloc&#95;transfer() {#ae270bdce77ec139bf18564e50664dab8}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::dump&#95;mloc&#95;transfer (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#abc9d9007b0d77bc0954612b88df15142">MLocTransferMap</a> &amp; mloc_transfer) const</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01499">1499</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l03429">3429</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### findLocationForMemOperand() {#a3c1165eb09769fbc90612ff41c1830b3}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; LocIdx &gt; InstrRefBasedLDV::findLocationForMemOperand (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01517">1517</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l01399">1399</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### getDVMap() {#a40164b47ac9386a03fb7acf930eca83a}
+
+<MemberDefinition
+  prototype={<>DebugVariableMap &amp; LiveDebugValues::InstrRefBasedLDV::getDVMap ()</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01520">1520</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### hasFoldedStackStore() {#abe3764a9e5e3a3929c0cef3d6dceaedf}
+
+<MemberDefinition
+  prototype={<>bool LiveDebugValues::InstrRefBasedLDV::hasFoldedStackStore (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01504">1504</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### isCalleeSaved() {#ac8e3a7e9be90841c721e738db731abbf}
+
+<MemberDefinition
+  prototype={<>bool InstrRefBasedLDV::isCalleeSaved (<a href="/docs/api/classes/livedebugvalues/locidx">LocIdx</a> L) const</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01501">1501</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l01363">1363</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### isCalleeSavedReg() {#ad778dafd8a5d853569fe78079b6960b7}
+
+<MemberDefinition
+  prototype={<>bool InstrRefBasedLDV::isCalleeSavedReg (<a href="/docs/api/classes/llvm/register">Register</a> R) const</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01502">1502</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l01367">1367</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### accumulateFragmentMap() {#a10f5726e576f9a2190f07ad047841f9d}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::accumulateFragmentMap (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}>
+Accumulate a mapping between each <a href="/docs/api/classes/llvm/dilocalvariable">DILocalVariable</a> fragment and other fragments of that <a href="/docs/api/classes/llvm/dilocalvariable">DILocalVariable</a> which overlap.
+
+This reduces work during the data-flow stage from &quot;Find any overlapping fragments&quot; to &quot;Check if the
+known-to-overlap fragments are present&quot;. 
+<ParametersList title="Parameters">
+<ParametersListItem name="MI">A previously unprocessed debug instruction to analyze for fragment usage.</ParametersListItem>
+</ParametersList>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01321">1321</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02246">2246</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### BlockPHIPlacement() {#aa6111524681758e1000aaffa8df3d89e}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::BlockPHIPlacement (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>&lt; <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; &gt; &amp; AllBlocks, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>&lt; <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; &gt; &amp; DefBlocks, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; &gt; &amp; PHIBlocks)</>}>
+Calculate the iterated-dominance-frontier for a set of defs, using the existing LLVM facilities for this.
+
+Works for a single &quot;value&quot; or machine/variable location. <code>AllBlocks</code> Set of blocks where we might consume the value. <code>DefBlocks</code> Set of blocks where the value/location is defined. <code>PHIBlocks</code> Output set of blocks where PHIs must be placed.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01386">1386</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02799">2799</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### buildMLocValueMap() {#ab6b86c42097dd294307437291bbc8b2f}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::buildMLocValueMap (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; MInLocs, <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; MOutLocs, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="#abc9d9007b0d77bc0954612b88df15142">MLocTransferMap</a> &gt; &amp; MLocTransfer)</>}>
+Solve the machine value location dataflow problem.
+
+Takes as input the transfer functions in <code>MLocTransfer</code>. Writes the output live-in and live-out arrays to the (initialized to zero) multidimensional arrays in <code>MInLocs</code> and <code>MOutLocs</code>. The outer dimension is indexed by block number, the inner by <a href="/docs/api/classes/livedebugvalues/locidx">LocIdx</a>.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01356">1356</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02671">2671</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### buildVLocValueMap() {#a59a737b5062cc6b00ced87df09c9a353}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::buildVLocValueMap (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/dilocation">DILocation</a> &#42; DILoc, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallset">SmallSet</a>&lt; <a href="/docs/api/namespaces/livedebugvalues/#a2ad7532d3e36d429cab7c3ade85c5f77">DebugVariableID</a>, 4 &gt; &amp; VarsWeCareAbout, <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>&lt; <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; &gt; &amp; AssignBlocks, <a href="#a4fcc5fc74d98f09bd495e93cec779cbc">LiveInsT</a> &amp; Output, <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; MOutLocs, <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; MInLocs, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/livedebugvalues/vloctracker">VLocTracker</a> &gt; &amp; AllTheVLocs)</>}>
+Solve the variable value dataflow problem, for a single lexical scope.
+
+Uses the algorithm from the file comment to resolve control flow joins using PHI placement and value propagation. Reads the locations of machine values from the <code>MInLocs</code> and <code>MOutLocs</code> arrays (see buildMLocValueMap) and reads the variable values transfer function from <code>AllTheVlocs</code>. Live-in and Live-out variable values are stored locally, with the live-ins permanently stored to <code>Output</code> once a fixedpoint is reached. <code>VarsWeCareAbout</code> contains a collection of the variables in <code>Scope</code> that we should be tracking. <code>AssignBlocks</code> contains the set of blocks that aren&#39;t in <code>DILoc&#39;s</code> scope, but which do contain DBG&#95;VALUEs, which VarLocBasedImpl tracks locations through.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01426">1426</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l03143">3143</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### depthFirstVLocAndEmit() {#af6304d2a737f712448762178dd1f4404}
+
+<MemberDefinition
+  prototype={<>bool InstrRefBasedLDV::depthFirstVLocAndEmit (unsigned MaxNumBlocks, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#a2233b318fa41cb9167e82f952f4b6df6">ScopeToDILocT</a> &amp; ScopeToDILocation, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#aa55b289a4e7786074f4f3372425763cd">ScopeToVarsT</a> &amp; ScopeToVars, <a href="#a68274d2602df99b0792e3474e37b3775">ScopeToAssignBlocksT</a> &amp; ScopeToBlocks, <a href="#a4fcc5fc74d98f09bd495e93cec779cbc">LiveInsT</a> &amp; Output, <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; MOutLocs, <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; MInLocs, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/livedebugvalues/vloctracker">VLocTracker</a> &gt; &amp; AllTheVLocs, <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetpassconfig">TargetPassConfig</a> &amp; TPC)</>}>
+When determining per-block variable values and emitting to DBG&#95;VALUEs, this function explores by lexical scope depth.
+
+Doing so means that per block information can be fully computed before exploration finishes, allowing us to emit it and free data structures earlier than otherwise. It&#39;s also good for locality.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01481">1481</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l03543">3543</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### emitTransfers() {#a204464a5e130feff38120d8989e427ef}
+
+<MemberDefinition
+  prototype="bool InstrRefBasedLDV::emitTransfers ()">
+Take collections of DBG&#95;VALUE instructions stored in TTracker, and install them into their output blocks.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01461">1461</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l03658">3658</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### ExtendRanges() {#a326f546ac1f97d0d5d6fe81187d095d5}
+
+<MemberDefinition
+  prototype={<>bool InstrRefBasedLDV::ExtendRanges (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a> &#42; DomTree, <a href="/docs/api/classes/llvm/targetpassconfig">TargetPassConfig</a> &#42; TPC, unsigned InputBBLimit, unsigned InputDbgValLimit)</>}>
+Calculate the liveness information for the given machine function and extend ranges across basic blocks.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01490">1490</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l03691">3691</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### extractSpillBaseRegAndOffset() {#a81f55a37e37cf727fd53d40a58687cd7}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; SpillLocationNo &gt; InstrRefBasedLDV::extractSpillBaseRegAndOffset (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}>
+Given a spill instruction, extract the spill slot information, ensure it&#39;s tracked, and return the spill number.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01278">1278</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l01384">1384</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### findStackIndexInterference() {#a4fa53b1db8d8910ccd6f9d350a17fab4}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::findStackIndexInterference (<a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; unsigned &gt; &amp; Slots)</>}>
+Examine the stack indexes (i.e.
+
+offsets within the stack) to find the basic units of interference – like reg units, but for the stack.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01362">1362</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02515">2515</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### getBlocksForScope() {#a4ce7b03957b1093525b17050a957f24f}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::getBlocksForScope (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/dilocation">DILocation</a> &#42; DILoc, <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; &gt; &amp; Output, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>&lt; <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; &gt; &amp; AssignBlocks)</>}>
+Produce a set of blocks that are in the current lexical scope.
+
+This means those blocks that contain instructions &quot;in&quot; the scope, blocks where assignments to variables in scope occur, and artificial blocks that are successors to any of the earlier blocks. See <a href="https://llvm.org/PR48091">https://llvm.org/PR48091</a> for more commentry on what &quot;in scope&quot; means. <code>DILoc</code> A location in the scope that we&#39;re fetching blocks for. <code>Output</code> Set to put in-scope-blocks into. <code>AssignBlocks</code> Blocks known to contain assignments of variables in scope.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01410">1410</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l03080">3080</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### getValueForInstrRef() {#a6c8b21a5dac1f16592b6568015385f7a}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; ValueIDNum &gt; InstrRefBasedLDV::getValueForInstrRef (unsigned InstNo, unsigned OpNo, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &#42; MLiveOuts, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &#42; MLiveIns)</>}>
+For an instruction reference given by <code>InstNo</code> and <code>OpNo</code> in instruction <code>MI</code> returns the <a href="/docs/api/classes/llvm/value">Value</a> pointed to by that instruction reference if any exists, otherwise returns std::nullopt.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01283">1283</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l01474">1474</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### initialSetup() {#a2393c70c72c7638d47f319a87783e830}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::initialSetup (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF)</>}>
+Boilerplate computation of some initial sets, artifical blocks and RPOT block ordering.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01465">1465</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l03439">3439</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### isLocationSpill() {#a706f17a46553480f1ee4ad63e6af83d9}
+
+<MemberDefinition
+  prototype={<>bool InstrRefBasedLDV::isLocationSpill (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42; MF, unsigned &amp; Reg)</>}>
+Decide if @MI is a spill instruction and return true if it is.
+
+We use 2 criteria to make this decision:
+<ul>
+<li>Is this instruction a store to a spill slot?</li>
+<li>Is there a register operand that is both used and killed? TODO: Store optimization can fold spills into other stores (including other spills). We do not handle this yet (more than one memory operand).</li>
+</ul>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01266">1266</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02025">2025</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### isRestoreInstruction() {#a07570f4999d0dd6b8eda2e51a0ed12c4}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; SpillLocationNo &gt; InstrRefBasedLDV::isRestoreInstruction (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42; MF, unsigned &amp; Reg)</>}>
+If a given instruction is identified as a spill, return the spill slot and set <code>Reg</code> to the spilled register.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01271">1271</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02036">2036</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### isSpillInstruction() {#a5b4b803e9f62d4926a8d662c3d2786b6}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; SpillLocationNo &gt; InstrRefBasedLDV::isSpillInstruction (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42; MF)</>}>
+Tests whether this instruction is a spill to a stack slot.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01257">1257</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02006">2006</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### makeDepthFirstEjectionMap() {#a6ade9f757d736b13b669d71b06ef2d1e}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::makeDepthFirstEjectionMap (<a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; unsigned &gt; &amp; EjectionMap, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#a2233b318fa41cb9167e82f952f4b6df6">ScopeToDILocT</a> &amp; ScopeToDILocation, <a href="#a68274d2602df99b0792e3474e37b3775">ScopeToAssignBlocksT</a> &amp; AssignBlocks)</>}>
+Produce a map of the last lexical scope that uses a block, using the scopes DFSOut number.
+
+Mapping is block-number to DFSOut. <code>EjectionMap</code> Pre-allocated vector in which to install the built ma. <code>ScopeToDILocation</code> Mapping of <a href="/docs/api/classes/llvm/lexicalscopes">LexicalScopes</a> to their DILocations. <code>AssignBlocks</code> Map of blocks where assignments happen for a scope.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01472">1472</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l03497">3497</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### mlocJoin() {#ad07b52c00979721f3aef3e806f640fa7}
+
+<MemberDefinition
+  prototype={<>bool InstrRefBasedLDV::mlocJoin (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;, 16 &gt; &amp; Visited, <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; OutLocs, <a href="/docs/api/namespaces/livedebugvalues/#a7697a3c717033a44ba7f9b272c1d5331">ValueTable</a> &amp; InLocs)</>}>
+Perform a control flow join (lattice value meet) of the values in machine locations at <code>MBB</code>.
+
+Follows the algorithm described in the file-comment, reading live-outs of predecessors from <code>OutLocs</code>, the current live ins from <code>InLocs</code>, and assigning the newly computed live ins back into <code>InLocs</code>. 
+<SectionUser title="Returns">
+two bools – the first indicates whether a change was made, the second whether a lattice downgrade occurred. If the latter is true, revisiting this block is necessary.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01397">1397</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02436">2436</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### performCopy() {#aacb6b27cdf1b0325978594464835075e}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::performCopy (<a href="/docs/api/classes/llvm/register">Register</a> Src, <a href="/docs/api/classes/llvm/register">Register</a> Dst)</>}>
+Copy one location to the other, accounting for movement of subregisters too.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01319">1319</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l01974">1974</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### pickOperandPHILoc() {#a8acdd8867ac44190e388a08af059250a}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; ValueIDNum &gt; InstrRefBasedLDV::pickOperandPHILoc (unsigned DbgOpIdx, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#abba7c6095e3e9ebb63a516620332773c">LiveIdxT</a> &amp; LiveOuts, <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; MOutLocs, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; &gt; &amp; BlockOrders)</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01454">1454</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02893">2893</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### pickVPHILoc() {#a5a97be3b9a83608262c594ea71ca8364}
+
+<MemberDefinition
+  prototype={<>bool InstrRefBasedLDV::pickVPHILoc (<a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/structs/livedebugvalues/dbgopid">DbgOpID</a> &gt; &amp; OutValues, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#abba7c6095e3e9ebb63a516620332773c">LiveIdxT</a> &amp; LiveOuts, <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; MOutLocs, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; &gt; &amp; BlockOrders)</>}>
+For the given block and live-outs feeding into it, try to find machine locations for each debug operand where all the values feeding into that operand join together.
+
+<SectionUser title="Returns">
+true if a joined location was found for every value that needed to be joined.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01450">1450</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02813">2813</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### placeMLocPHIs() {#a0e3cab548a55c94d96852f07fb16ea98}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::placeMLocPHIs (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>&lt; <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; &gt; &amp; AllBlocks, <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; MInLocs, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="#abc9d9007b0d77bc0954612b88df15142">MLocTransferMap</a> &gt; &amp; MLocTransfer)</>}>
+Install PHI values into the live-in array for each block, according to the IDF of each register.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01366">1366</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02541">2541</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### placePHIsForSingleVarDefinition() {#a90f1c48d64696e5e60b4b34d53e07a3e}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::placePHIsForSingleVarDefinition (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>&lt; <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; &gt; &amp; InScopeBlocks, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/livedebugvalues/vloctracker">VLocTracker</a> &gt; &amp; AllTheVLocs, <a href="/docs/api/namespaces/livedebugvalues/#a2ad7532d3e36d429cab7c3ade85c5f77">DebugVariableID</a> Var, <a href="#a4fcc5fc74d98f09bd495e93cec779cbc">LiveInsT</a> &amp; Output)</>}>
+Propagate variable values to blocks in the common case where there&#39;s only one value assigned to the variable.
+
+This function has better performance as it doesn&#39;t have to find the dominance frontier between different assignments.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01375">1375</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l03390">3390</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### process() {#a06d8c07b9cedf432f5d345544688d960}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::process (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &#42; MLiveOuts, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &#42; MLiveIns)</>}>
+Observe a single instruction while stepping through a block.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01289">1289</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02294">2294</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### produceMLocTransferFunction() {#a5f5f0bf451a6c1870f6d8c2828e11737}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::produceMLocTransferFunction (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="#abc9d9007b0d77bc0954612b88df15142">MLocTransferMap</a> &gt; &amp; MLocTransfer, unsigned MaxNumBlocks)</>}>
+Step through the function, recording register definitions and movements in an <a href="/docs/api/classes/livedebugvalues/mloctracker">MLocTracker</a>.
+
+Convert the observations into a per-block transfer function in <code>MLocTransfer</code>, suitable for using with the machine value location dataflow problem.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01347">1347</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02313">2313</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### resolveDbgPHIs() {#ac6bfbe8902542495bf8b1e1867c94150}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; ValueIDNum &gt; InstrRefBasedLDV::resolveDbgPHIs (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; MLiveOuts, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; MLiveIns, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; Here, uint64&#95;t InstrNum)</>}>
+Determine the machine value number referred to by (potentially several) DBG&#95;PHI instructions.
+
+Block duplication and tail folding can duplicate DBG&#95;PHIs, shifting the position where values in registers merge, and forming another mini-ssa problem to solve. <code>Here</code> the position of a DBG&#95;INSTR&#95;REF seeking a machine value number <code>InstrNum</code> Debug instruction number defined by DBG&#95;PHI instructions. 
+<SectionUser title="Returns">
+The machine value number at position Here, or std::nullopt.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01330">1330</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l04118">4118</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### resolveDbgPHIsImpl() {#a5c0d554b2cb3525ca83c4a36b50f4f33}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; ValueIDNum &gt; InstrRefBasedLDV::resolveDbgPHIsImpl (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; MLiveOuts, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &amp; MLiveIns, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; Here, uint64&#95;t InstrNum)</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01336">1336</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l04133">4133</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### transferDebugInstrRef() {#aa1d5c7cc1b11a8d0455b3461cb6ea121}
+
+<MemberDefinition
+  prototype={<>bool InstrRefBasedLDV::transferDebugInstrRef (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &#42; MLiveOuts, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/livedebugvalues/funcvaluetable">FuncValueTable</a> &#42; MLiveIns)</>}>
+Examines whether <code>MI</code> is a DBG&#95;INSTR&#95;REF and notifies trackers.
+
+<SectionUser title="Returns">
+true if MI was recognized and processed.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01298">1298</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l01621">1621</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### transferDebugPHI() {#a6962b166d41a26c23c4ff1aeee4b0ac5}
+
+<MemberDefinition
+  prototype={<>bool InstrRefBasedLDV::transferDebugPHI (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}>
+Stores value-information about where this PHI occurred, and what instruction number is associated with it.
+
+<SectionUser title="Returns">
+true if MI was recognized and processed.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01304">1304</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l01778">1778</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### transferDebugValue() {#a07a04f10b667dc5b481a6edeaa1888b0}
+
+<MemberDefinition
+  prototype={<>bool InstrRefBasedLDV::transferDebugValue (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}>
+Examines whether <code>MI</code> is a DBG&#95;VALUE and notifies trackers.
+
+End all previous ranges related to @MI and start a new range from @MI if it is a DBG&#95;VALUE instr.
+
+
+<SectionUser title="Returns">
+true if MI was recognized and processed.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01294">1294</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l01425">1425</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### transferRegisterCopy() {#a734b8343dd36a859e887d6e048a9a37a}
+
+<MemberDefinition
+  prototype={<>bool InstrRefBasedLDV::transferRegisterCopy (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}>
+Examines whether <code>MI</code> is copy instruction, and notifies trackers.
+
+<SectionUser title="Returns">
+true if MI was recognized and processed.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01308">1308</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02166">2166</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### transferRegisterDef() {#abf7e8f68978d333ba4eb817370952e8f}
+
+<MemberDefinition
+  prototype={<>void InstrRefBasedLDV::transferRegisterDef (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}>
+Examines <code>MI</code> for any registers that it defines, and notifies trackers.
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01315">1315</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l01857">1857</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### transferSpillOrRestoreInst() {#a9d3b0bc989755d5befa2762363922866}
+
+<MemberDefinition
+  prototype={<>bool InstrRefBasedLDV::transferSpillOrRestoreInst (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}>
+Examines whether <code>MI</code> is stack spill or restore instruction, and notifies trackers.
+
+<SectionUser title="Returns">
+true if MI was recognized and processed.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01312">1312</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02050">2050</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### vlocJoin() {#a4674e0625f729563d44ba5cab429ef8a}
+
+<MemberDefinition
+  prototype={<>bool InstrRefBasedLDV::vlocJoin (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="#abba7c6095e3e9ebb63a516620332773c">LiveIdxT</a> &amp; VLOCOutLocs, <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;, 8 &gt; &amp; BlocksToExplore, <a href="/docs/api/classes/livedebugvalues/dbgvalue">DbgValue</a> &amp; LiveIn)</>}>
+Attempt to eliminate un-necessary PHIs on entry to a block.
+
+Examines the live-in values coming from predecessors live-outs, and replaces any PHIs already present in this blocks live-ins with a live-through value if the PHI isn&#39;t needed. <code>LiveIn</code> Old live-in value, overwritten with new one if live-in changes. 
+<SectionUser title="Returns">
+true if any live-ins change value, either from value propagation or PHI elimination.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01440">1440</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l02966">2966</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### AdjustsStackInCalls {#a868405ab5f3dd0880f364a1e8abac5e4}
+
+<MemberDefinition
+  prototype="bool LiveDebugValues::InstrRefBasedLDV::AdjustsStackInCalls = false">
+True if we need to examine call instructions for stack clobbers.
+
+We normally assume that they don&#39;t clobber SP, but stack probes on Windows do.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01249">1249</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### ArtificialBlocks {#aeac62138fdd885d11b3eb5bf8bba63c4}
+
+<MemberDefinition
+  prototype={<>SmallPtrSet&lt;MachineBasicBlock &#42;, 16&gt; LiveDebugValues::InstrRefBasedLDV::ArtificialBlocks</>}>
+Blocks which are artificial, i.e.
+
+blocks which exclusively contain instructions without DebugLocs, or with line 0 locations.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01191">1191</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### BBNumToRPO {#a71629590cc6d688bdfa05f76613fcc5e}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;unsigned, unsigned&gt; LiveDebugValues::InstrRefBasedLDV::BBNumToRPO</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01196">1196</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### BBToOrder {#a44c580a6d08875e2765aa3d5e47a6c1a}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;const MachineBasicBlock &#42;, unsigned int&gt; LiveDebugValues::InstrRefBasedLDV::BBToOrder</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01195">1195</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### CalleeSavedRegs {#aa9cd59bfbdd3378a02426ebfd8411a86}
+
+<MemberDefinition
+  prototype="BitVector LiveDebugValues::InstrRefBasedLDV::CalleeSavedRegs">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01161">1161</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### CurBB {#a2dffa1e1ffeb5a451136b837a07ef23f}
+
+<MemberDefinition
+  prototype="unsigned LiveDebugValues::InstrRefBasedLDV::CurBB = -1">
+Number of the current block <a href="/docs/api/namespaces/livedebugvalues">LiveDebugValues</a> is stepping through.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01174">1174</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### CurInst {#aecb320903dbb7f9bb43982ac351c5c2b}
+
+<MemberDefinition
+  prototype="unsigned LiveDebugValues::InstrRefBasedLDV::CurInst">
+Number of the current instruction <a href="/docs/api/namespaces/livedebugvalues">LiveDebugValues</a> is evaluating.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01177">1177</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### DbgOpStore {#a21e6911b3ba5b15b5a136a7d49580a09}
+
+<MemberDefinition
+  prototype="DbgOpIDMap LiveDebugValues::InstrRefBasedLDV::DbgOpStore">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01239">1239</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### DebugInstrNumToInstr {#a0db40a2a1b51a222eb02ba0ff7f05f73}
+
+<MemberDefinition
+  prototype={<>std::map&lt;uint64&#95;t, InstAndNum&gt; LiveDebugValues::InstrRefBasedLDV::DebugInstrNumToInstr</>}>
+Map from debug instruction number to the <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> labelled with that number, and its location within the function.
+
+Used to transform instruction numbers in DBG&#95;INSTR&#95;REFs into machine value numbers.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01203">1203</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### DebugPHINumToValue {#a2704806d9344f84133d9dd4a8fc4b6f7}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;DebugPHIRecord, 32&gt; LiveDebugValues::InstrRefBasedLDV::DebugPHINumToValue</>}>
+Map from instruction numbers defined by DBG&#95;PHIs to a record of what that DBG&#95;PHI read and where.
+
+Populated and edited during the machine value location problem – we use LLVMs SSA Updater to fix changes by optimizations that destroy PHI instructions.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01226">1226</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### DomTree {#a0cd6fca22445bf3062b6a35fba5137d6}
+
+<MemberDefinition
+  prototype={<>MachineDominatorTree&#42; LiveDebugValues::InstrRefBasedLDV::DomTree</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01155">1155</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### DVMap {#a02017d9f0608b38aba5e98e209328b16}
+
+<MemberDefinition
+  prototype="DebugVariableMap LiveDebugValues::InstrRefBasedLDV::DVMap">
+Mapping between DebugVariables and unique <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> numbers.
+
+This is a more efficient way to represent the identity of a variable, versus a plain <a href="/docs/api/classes/llvm/debugvariable">DebugVariable</a>.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01244">1244</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### EmptyExpr {#abc888a5d7bdc06ad0f9734dddc9cb463}
+
+<MemberDefinition
+  prototype={<>const DIExpression&#42; LiveDebugValues::InstrRefBasedLDV::EmptyExpr</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01167">1167</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### LS {#a40865c48645bd3916eaf08a5c0d4960d}
+
+<MemberDefinition
+  prototype="LexicalScopes LiveDebugValues::InstrRefBasedLDV::LS">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01162">1162</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### MFI {#aa351a7c3e07b4006d0f43afe08f6d812}
+
+<MemberDefinition
+  prototype={<>const MachineFrameInfo&#42; LiveDebugValues::InstrRefBasedLDV::MFI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01160">1160</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### MRI {#a487646e28e68aed1416ec95d3fe3e4e1}
+
+<MemberDefinition
+  prototype={<>const MachineRegisterInfo&#42; LiveDebugValues::InstrRefBasedLDV::MRI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01157">1157</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### MTracker {#a78400f292849e9960cef9172f1fc1fba}
+
+<MemberDefinition
+  prototype={<>MLocTracker&#42; LiveDebugValues::InstrRefBasedLDV::MTracker = nullptr</>}>
+Object to track machine locations as we step through a block.
+
+Could probably be a field rather than a pointer, as it&#39;s always used.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01171">1171</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### OrderToBB {#a6a09b6200c1332310da5d23445fef6ab}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;MachineBasicBlock &#42;&gt; LiveDebugValues::InstrRefBasedLDV::OrderToBB</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01194">1194</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### OverlapFragments {#a4a1ccefe1bfa1c318776ec1c00ac2528}
+
+<MemberDefinition
+  prototype="OverlapMap LiveDebugValues::InstrRefBasedLDV::OverlapFragments">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01229">1229</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### SeenDbgPHIs {#a8c0888177522a9aec5b22527f0a9b981}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;std::pair&lt;MachineInstr &#42;, unsigned&gt;, std::optional&lt;ValueIDNum&gt; &gt; LiveDebugValues::InstrRefBasedLDV::SeenDbgPHIs</>}>
+Mapping of DBG&#95;INSTR&#95;REF instructions to their values, for those DBG&#95;INSTR&#95;REFs that call resolveDbgPHIs.
+
+These variable references solve a mini SSA problem caused by DBG&#95;PHIs being cloned, this collection caches the result.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01237">1237</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### SeenFragments {#a3c55db6d427ce7a739fbf81108f03fef}
+
+<MemberDefinition
+  prototype="VarToFragments LiveDebugValues::InstrRefBasedLDV::SeenFragments">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01230">1230</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### StackProbeSymbolName {#a093bc749657288862cfe97564bf7a6e7}
+
+<MemberDefinition
+  prototype="StringRef LiveDebugValues::InstrRefBasedLDV::StackProbeSymbolName">
+If AdjustsStackInCalls is true, this holds the name of the target&#39;s stack probe function, which is the function we expect will alter the stack pointer.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01254">1254</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### TFI {#a07d89949403222c9a50d48803c004bf7}
+
+<MemberDefinition
+  prototype={<>const TargetFrameLowering&#42; LiveDebugValues::InstrRefBasedLDV::TFI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01159">1159</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### TII {#a5a10bf9bccc71697dea7be468c2f5746}
+
+<MemberDefinition
+  prototype={<>const TargetInstrInfo&#42; LiveDebugValues::InstrRefBasedLDV::TII</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01158">1158</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### TPC {#a45db428547286759eab78d45192001f3}
+
+<MemberDefinition
+  prototype={<>TargetPassConfig&#42; LiveDebugValues::InstrRefBasedLDV::TPC</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01163">1163</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### TRI {#a1aab1ae1f3779d4d46a12fcefe0903bb}
+
+<MemberDefinition
+  prototype={<>const TargetRegisterInfo&#42; LiveDebugValues::InstrRefBasedLDV::TRI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01156">1156</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### TTracker {#a61028875188a8b16510dac222a472b04}
+
+<MemberDefinition
+  prototype={<>TransferTracker&#42; LiveDebugValues::InstrRefBasedLDV::TTracker = nullptr</>}>
+Tracker for transfers, listens to DBG&#95;VALUEs and transfers of values between locations during stepping, creates new DBG&#95;VALUEs when values move location.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01187">1187</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+### VTracker {#a3969ac5b6d12166ef9e6ac00ab4ae7c9}
+
+<MemberDefinition
+  prototype={<>VLocTracker&#42; LiveDebugValues::InstrRefBasedLDV::VTracker = nullptr</>}>
+Variable tracker – listens to DBG&#95;VALUEs occurring as InstrRefBasedImpl steps through a block.
+
+Reads the values at each location from the <a href="/docs/api/classes/livedebugvalues/mloctracker">MLocTracker</a> object.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h/#l01182">1182</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a></li>
+<li><a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-h">InstrRefBasedImpl.h</a></li>
+</ul>
+
+</DoxygenPage>

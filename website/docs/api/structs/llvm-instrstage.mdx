@@ -1,0 +1,290 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/instrstage
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import EnumerationList from '@xpack/docusaurus-plugin-doxygen/components/EnumerationList'
+import EnumerationListItem from '@xpack/docusaurus-plugin-doxygen/components/EnumerationListItem'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `InstrStage` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+These values represent a non-pipelined step in the execution of an instruction. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct llvm::InstrStage</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/MC/MCInstrItineraries.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="typedef"
+  name={<>uint64&#95;t <a href="#a28207c85d95c7a0d901b2d8dbc37b6e3">FuncUnits</a></>}>
+Bitmask representing a set of functional units. <a href="#a28207c85d95c7a0d901b2d8dbc37b6e3">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Enumerations Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="enum"
+  name={<>:  &#123; <a href="#a0c36089f8d92b1bcb9c0a582d42aa106">...</a> &#125;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#aebf0765776840275f39418c68660b53a">getCycles</a> () const</>}>
+Returns the number of cycles the stage is occupied. <a href="#aebf0765776840275f39418c68660b53a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a5aa7dea955d1ca8ddc402be471a188af">getNextCycles</a> () const</>}>
+Returns the number of cycles from the start of this stage to the start of the next stage in the itinerary. <a href="#a5aa7dea955d1ca8ddc402be471a188af">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#a0c36089f8d92b1bcb9c0a582d42aa106">ReservationKinds</a></>}
+  name={<><a href="#a8fe8e670a185825427da4f9566bc7639">getReservationKind</a> () const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#a28207c85d95c7a0d901b2d8dbc37b6e3">FuncUnits</a></>}
+  name={<><a href="#a8142eb541d0907bee0312e4b5421f62a">getUnits</a> () const</>}>
+Returns the choice of FUs. <a href="#a8142eb541d0907bee0312e4b5421f62a">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#aa8614d31923c695646f6e53413e25aca">Cycles&#95;</a></>}>
+Length of stage in machine cycles. <a href="#aa8614d31923c695646f6e53413e25aca">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#a0c36089f8d92b1bcb9c0a582d42aa106">ReservationKinds</a></>}
+  name={<><a href="#af5320a11af396a0abeddfce816e119ac">Kind&#95;</a></>}>
+Kind of the FU reservation. <a href="#af5320a11af396a0abeddfce816e119ac">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="int"
+  name={<><a href="#af3857eab7c0ff1a4733397f8d0f8b18e">NextCycles&#95;</a></>}>
+Number of machine cycles to next stage. <a href="#af3857eab7c0ff1a4733397f8d0f8b18e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#a28207c85d95c7a0d901b2d8dbc37b6e3">FuncUnits</a></>}
+  name={<><a href="#a91dae4825b72bebff6c096e43cf4323b">Units&#95;</a></>}>
+Choice of functional units. <a href="#a91dae4825b72bebff6c096e43cf4323b">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+These values represent a non-pipelined step in the execution of an instruction.
+
+Cycles represents the number of discrete time slots needed to complete the stage. Units represent the choice of functional units that can be used to complete the stage. Eg. IntUnit1, IntUnit2. NextCycles indicates how many cycles should elapse from the start of this stage to the start of the next stage in the itinerary. A value of -1 indicates that the next stage should start immediately after the current one. For example:
+
+&#123; 1, x, -1 &#125; indicates that the stage occupies FU x for 1 cycle and that the next stage starts immediately after this one.
+
+&#123; 2, x|y, 1 &#125; indicates that the stage occupies either FU x or FU y for 2 consecutive cycles and that the next stage starts one cycle after this stage starts. That is, the stage requirements overlap in time.
+
+&#123; 1, x, 0 &#125; indicates that the stage occupies FU x for 1 cycle and that the next stage starts in this same cycle. This can be used to indicate that the instruction requires multiple stages at the same time.
+
+FU reservation can be of two different kinds:
+<ul>
+<li>FUs which instruction actually requires</li>
+<li>FUs which instruction just reserves. Reserved unit is not available for execution of other instruction. However, several instructions can reserve the same unit several times. Such two types of units reservation is used to model instruction domain change stalls, FUs using the same resource (e.g. same register file), etc.</li>
+</ul>
+
+Definition at line 59 of file <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">MCInstrItineraries.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### FuncUnits {#a28207c85d95c7a0d901b2d8dbc37b6e3}
+
+<MemberDefinition
+  prototype={<>typedef uint64&#95;t llvm::InstrStage::FuncUnits</>}>
+Bitmask representing a set of functional units.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h/#l00066">66</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">MCInstrItineraries.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Enumerations
+
+### enum  {#a0c36089f8d92b1bcb9c0a582d42aa106}
+
+<MemberDefinition
+  prototype="enum llvm::InstrStage::ReservationKinds ">
+
+<EnumerationList title="Enumeration values">
+
+<Link id="a0c36089f8d92b1bcb9c0a582d42aa106a7774578153e4ca5a7299d1f42395ae6e" />
+<EnumerationListItem name="Required">
+ (= 0)
+</EnumerationListItem>
+
+<Link id="a0c36089f8d92b1bcb9c0a582d42aa106adb675fc15885dfb7a1666cc046ac7ba5" />
+<EnumerationListItem name="Reserved">
+ (= 1)
+</EnumerationListItem>
+
+</EnumerationList>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h/#l00060">60</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">MCInstrItineraries.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### getCycles() {#aebf0765776840275f39418c68660b53a}
+
+<MemberDefinition
+  prototype="unsigned llvm::InstrStage::getCycles () const"
+  labels = {["inline"]}>
+Returns the number of cycles the stage is occupied.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h/#l00074">74</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">MCInstrItineraries.h</a>.
+</MemberDefinition>
+
+### getNextCycles() {#a5aa7dea955d1ca8ddc402be471a188af}
+
+<MemberDefinition
+  prototype="unsigned llvm::InstrStage::getNextCycles () const"
+  labels = {["inline"]}>
+Returns the number of cycles from the start of this stage to the start of the next stage in the itinerary.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h/#l00089">89</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">MCInstrItineraries.h</a>.
+</MemberDefinition>
+
+### getReservationKind() {#a8fe8e670a185825427da4f9566bc7639}
+
+<MemberDefinition
+  prototype="ReservationKinds llvm::InstrStage::getReservationKind () const"
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h/#l00083">83</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">MCInstrItineraries.h</a>.
+</MemberDefinition>
+
+### getUnits() {#a8142eb541d0907bee0312e4b5421f62a}
+
+<MemberDefinition
+  prototype="FuncUnits llvm::InstrStage::getUnits () const"
+  labels = {["inline"]}>
+Returns the choice of FUs.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h/#l00079">79</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">MCInstrItineraries.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### Cycles&#95; {#aa8614d31923c695646f6e53413e25aca}
+
+<MemberDefinition
+  prototype={<>unsigned llvm::InstrStage::Cycles&#95;</>}>
+Length of stage in machine cycles.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h/#l00068">68</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">MCInstrItineraries.h</a>.
+</MemberDefinition>
+
+### Kind&#95; {#af5320a11af396a0abeddfce816e119ac}
+
+<MemberDefinition
+  prototype={<>ReservationKinds llvm::InstrStage::Kind&#95;</>}>
+Kind of the FU reservation.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h/#l00071">71</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">MCInstrItineraries.h</a>.
+</MemberDefinition>
+
+### NextCycles&#95; {#af3857eab7c0ff1a4733397f8d0f8b18e}
+
+<MemberDefinition
+  prototype={<>int llvm::InstrStage::NextCycles&#95;</>}>
+Number of machine cycles to next stage.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h/#l00070">70</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">MCInstrItineraries.h</a>.
+</MemberDefinition>
+
+### Units&#95; {#a91dae4825b72bebff6c096e43cf4323b}
+
+<MemberDefinition
+  prototype={<>FuncUnits llvm::InstrStage::Units&#95;</>}>
+Choice of functional units.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h/#l00069">69</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">MCInstrItineraries.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">MCInstrItineraries.h</a></li>
+</ul>
+
+</DoxygenPage>

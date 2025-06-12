@@ -1,0 +1,244 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/analysis/instsimplifyfolder-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `InstSimplifyFolder.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/ArrayRef.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Analysis/InstructionSimplify.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/instructionsimplify-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Analysis/TargetFolder.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/targetfolder-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/CmpPredicate.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/cmppredicate-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/IRBuilderFolder.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/irbuilderfolder-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Instruction.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/instruction-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/instsimplifyfolder">InstSimplifyFolder</a></>}>
+<a href="/docs/api/classes/llvm/instsimplifyfolder">InstSimplifyFolder</a> - <a href="/docs/api/classes/llvm/use">Use</a> InstructionSimplify to fold operations to existing values. <a href="/docs/api/classes/llvm/instsimplifyfolder/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- InstSimplifyFolder.h - InstSimplify folding helper --------&#42;- C++-&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file defines the InstSimplifyFolder class, a helper for IRBuilder.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// It provides IRBuilder with a set of methods for folding operations to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// existing values using InstructionSimplify. At the moment, only a subset of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// the implementation uses InstructionSimplify. The rest of the implementation</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// only folds constants.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The folder also applies target-specific constant folding.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;ANALYSIS&#95;INSTSIMPLIFYFOLDER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;ANALYSIS&#95;INSTSIMPLIFYFOLDER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h">llvm/ADT/ArrayRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/instructionsimplify-h">llvm/Analysis/InstructionSimplify.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/targetfolder-h">llvm/Analysis/TargetFolder.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/cmppredicate-h">llvm/IR/CmpPredicate.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/irbuilderfolder-h">llvm/IR/IRBuilderFolder.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/instruction-h">llvm/IR/Instruction.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/constant">Constant</a>;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">/// InstSimplifyFolder - Use InstructionSimplify to fold operations to existing</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="comment">/// values. Also applies target-specific constant folding when not using</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="comment">/// InstructionSimplify.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35" lineLink="/docs/api/classes/llvm/instsimplifyfolder"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/instsimplifyfolder/#a3b66a1842bef6cf89df493bfbb4859c6">InstSimplifyFolder</a> final : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/irbuilderfolder">IRBuilderFolder</a> &#123;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/targetfolder">TargetFolder</a> ConstFolder;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/simplifyquery">SimplifyQuery</a> SQ;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> anchor();</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#a3b66a1842bef6cf89df493bfbb4859c6"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/instsimplifyfolder/#a3b66a1842bef6cf89df493bfbb4859c6">InstSimplifyFolder</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/datalayout">DataLayout</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#ad467c4ab9119043f9b7750ab986be61a">DL</a>) : ConstFolder(<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#ad467c4ab9119043f9b7750ab986be61a">DL</a>), SQ(<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#ad467c4ab9119043f9b7750ab986be61a">DL</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Value-based folders.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Return an existing value or a constant if the operation can be simplified.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Otherwise return nullptr.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#a4cb1437ad09f0c7a346fdade6c98ff43"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#a4cb1437ad09f0c7a346fdade6c98ff43">FoldBinOp</a>(<a href="/docs/api/classes/llvm/instruction/#ac26154a24f393f523c87cc5f8239f36c">Instruction::BinaryOps</a> Opc, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>,</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">                   <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aa750395459fa1eb7130d6de8e3d074f6">simplifyBinOp</a>(Opc, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, SQ);</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#a3699d2fa3e29c3546def6b9e117f01d6"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#a3699d2fa3e29c3546def6b9e117f01d6">FoldExactBinOp</a>(<a href="/docs/api/classes/llvm/instruction/#ac26154a24f393f523c87cc5f8239f36c">Instruction::BinaryOps</a> Opc, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>,</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">                        </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsExact)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aa750395459fa1eb7130d6de8e3d074f6">simplifyBinOp</a>(Opc, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, SQ);</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#a57c62e11a9c1c44531170ef3a25e6079"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#a57c62e11a9c1c44531170ef3a25e6079">FoldNoWrapBinOp</a>(<a href="/docs/api/classes/llvm/instruction/#ac26154a24f393f523c87cc5f8239f36c">Instruction::BinaryOps</a> Opc, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>,</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">                         </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> HasNUW, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> HasNSW)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aa750395459fa1eb7130d6de8e3d074f6">simplifyBinOp</a>(Opc, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, SQ);</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#a5e58e6fc48d02b3b641b9ee1616d2b62"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#a5e58e6fc48d02b3b641b9ee1616d2b62">FoldBinOpFMF</a>(<a href="/docs/api/classes/llvm/instruction/#ac26154a24f393f523c87cc5f8239f36c">Instruction::BinaryOps</a> Opc, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>,</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">                      <a href="/docs/api/classes/llvm/fastmathflags">FastMathFlags</a> FMF)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aa750395459fa1eb7130d6de8e3d074f6">simplifyBinOp</a>(Opc, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, FMF, SQ);</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#a37540a1a81df1c148973c9198eea6f0b"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#a37540a1a81df1c148973c9198eea6f0b">FoldUnOpFMF</a>(<a href="/docs/api/classes/llvm/instruction/#af9f57a32b08304fea642871735717f24">Instruction::UnaryOps</a> Opc, <a href="/docs/api/classes/llvm/value">Value</a> &#42;V,</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">                      <a href="/docs/api/classes/llvm/fastmathflags">FastMathFlags</a> FMF)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a27487de7fe616848977b268e8aa6354d">simplifyUnOp</a>(Opc, V, FMF, SQ);</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#aa38760cb2c42b9453a171eb1bcfa2034"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#aa38760cb2c42b9453a171eb1bcfa2034">FoldCmp</a>(<a href="/docs/api/classes/llvm/cmpinst/#a2be3583dac92a031fa1458d4d992c78b">CmpInst::Predicate</a> <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#adccdd5d6b0c85f7917306e296b27c4cd">simplifyCmpInst</a>(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, SQ);</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#a2c0dde34ef6d083044360ac4c1d86359"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#a2c0dde34ef6d083044360ac4c1d86359">FoldGEP</a>(<a href="/docs/api/classes/llvm/type">Type</a> &#42;Ty, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Value &#42;&gt;</a> IdxList,</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">                 <a href="/docs/api/classes/llvm/gepnowrapflags">GEPNoWrapFlags</a> NW)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a0f010abd897957459c535649fa702c98">simplifyGEPInst</a>(Ty, <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, IdxList, NW, SQ);</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#a5d3f39fdf82f7ff2f6e6ba28f73ddadb"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#a5d3f39fdf82f7ff2f6e6ba28f73ddadb">FoldSelect</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, <a href="/docs/api/classes/llvm/value">Value</a> &#42;True, <a href="/docs/api/classes/llvm/value">Value</a> &#42;False)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#af03a113ed05a87f07ee096463723cfc0">simplifySelectInst</a>(<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, True, False, SQ);</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#ad1be18437e93e661c60b87da06845ece"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#ad1be18437e93e661c60b87da06845ece">FoldExtractValue</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Agg,</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">                          <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;unsigned&gt;</a> IdxList)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9442ed00a8dff89558d50f9c150951ff">simplifyExtractValueInst</a>(Agg, IdxList, SQ);</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#a75728bc5dd8521013ee967ff575c744c"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#a75728bc5dd8521013ee967ff575c744c">FoldInsertValue</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Agg, <a href="/docs/api/classes/llvm/value">Value</a> &#42;Val,</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">                         <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;unsigned&gt;</a> IdxList)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a94b67449bc2ce740bcec33d149769fe0">simplifyInsertValueInst</a>(Agg, Val, IdxList, SQ);</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#a97561094ae9536023768d18e1eeba70c"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#a97561094ae9536023768d18e1eeba70c">FoldExtractElement</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Vec, <a href="/docs/api/classes/llvm/value">Value</a> &#42;Idx)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aee89448981f9fbc0d97fe68f354a8e82">simplifyExtractElementInst</a>(Vec, Idx, SQ);</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#a502a6211db9932121fd751e300bac1f2"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#a502a6211db9932121fd751e300bac1f2">FoldInsertElement</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Vec, <a href="/docs/api/classes/llvm/value">Value</a> &#42;NewElt,</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">                           <a href="/docs/api/classes/llvm/value">Value</a> &#42;Idx)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#abdf4b5f9e1dc6887cac393ee643c10b6">simplifyInsertElementInst</a>(Vec, NewElt, Idx, SQ);</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#a8db493e6d91726e469aa91fa425cd269"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#a8db493e6d91726e469aa91fa425cd269">FoldShuffleVector</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;V1, <a href="/docs/api/classes/llvm/value">Value</a> &#42;V2,</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">                           <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;int&gt;</a> Mask)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/type">Type</a> &#42;RetTy = <a href="/docs/api/classes/llvm/vectortype/#a861be1e2092622462053c6d31dddbfd5">VectorType::get</a>(</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">        <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;VectorType&gt;</a>(V1-&gt;<a href="/docs/api/classes/llvm/value/#a0344a49526443edf90cc0aef3abd3337">getType</a>())-&gt;getElementType(), Mask.size(),</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">        <a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa&lt;ScalableVectorType&gt;</a>(V1-&gt;<a href="/docs/api/classes/llvm/value/#a0344a49526443edf90cc0aef3abd3337">getType</a>()));</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4e04471ed9ac60e70f5cf2d81f49b8c4">simplifyShuffleVectorInst</a>(V1, V2, Mask, RetTy, SQ);</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#a7dadc4b2d5f1b4089dcec045ed64a342"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#a7dadc4b2d5f1b4089dcec045ed64a342">FoldCast</a>(<a href="/docs/api/classes/llvm/instruction/#afa0b2fa29ba074f2b6ec9ac11163f2d9">Instruction::CastOps</a> <a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, <a href="/docs/api/classes/llvm/value">Value</a> &#42;V,</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">                  <a href="/docs/api/classes/llvm/type">Type</a> &#42;DestTy)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a57b7707bae1b59648d9b09e7c3e1106c">simplifyCastInst</a>(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, V, DestTy, SQ);</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#ac1bb8d8d128e0cd379507a02a8175ed5"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#ac1bb8d8d128e0cd379507a02a8175ed5">FoldBinaryIntrinsic</a>(<a href="/docs/api/namespaces/llvm/intrinsic/#a80add6b3b1cdaec560907995127adc16">Intrinsic::ID</a> <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, <a href="/docs/api/classes/llvm/type">Type</a> &#42;Ty,</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">                             <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/classes/llvm/fmfsource">FMFSource</a>)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ab720ac4c86a5f16a755b1e5cd0d32c80">simplifyBinaryIntrinsic</a>(<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>, Ty, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>, SQ,</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">                                   <a href="/docs/api/namespaces/llvm/#a3377eac88526e806d9d887c4a0ba2a73">dyn&#95;cast&#95;if&#95;present&lt;CallBase&gt;</a>(<a href="/docs/api/classes/llvm/fmfsource">FMFSource</a>));</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Cast/Conversion Operators</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#afffb34d7ea5e8faa68fb4d8ba20d6dc1"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#afffb34d7ea5e8faa68fb4d8ba20d6dc1">CreatePointerCast</a>(<a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, <a href="/docs/api/classes/llvm/type">Type</a> &#42;DestTy)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>-&gt;getType() == DestTy)</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>; </Highlight><Highlight kind="comment">// avoid calling Fold</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ConstFolder.CreatePointerCast(<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, DestTy);</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137" lineLink="/docs/api/classes/llvm/instsimplifyfolder/#ae97b3b46d2e619a8397955471da26a62"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/instsimplifyfolder/#ae97b3b46d2e619a8397955471da26a62">CreatePointerBitCastOrAddrSpaceCast</a>(<a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>,</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">                                             <a href="/docs/api/classes/llvm/type">Type</a> &#42;DestTy)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>-&gt;getType() == DestTy)</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>; </Highlight><Highlight kind="comment">// avoid calling Fold</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ConstFolder.CreatePointerBitCastOrAddrSpaceCast(<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, DestTy);</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;ANALYSIS&#95;INSTSIMPLIFYFOLDER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

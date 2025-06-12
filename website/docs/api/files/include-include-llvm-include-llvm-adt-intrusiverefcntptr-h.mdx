@@ -1,0 +1,489 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/adt/intrusiverefcntptr-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `IntrusiveRefCntPtr.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This file defines the RefCountedBase, ThreadSafeRefCountedBase, and IntrusiveRefCntPtr classes. <a href="#details">More...</a>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="atomic"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="cassert"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="cstddef"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="memory"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/refcountedbase">RefCountedBase&lt;Derived&gt;</a></>}>
+A CRTP mixin class that adds reference counting to a type. <a href="/docs/api/classes/llvm/refcountedbase/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/threadsaferefcountedbase">ThreadSafeRefCountedBase&lt;Derived&gt;</a></>}>
+A thread-safe version of <code><a href="/docs/api/classes/llvm/refcountedbase">RefCountedBase</a></code>. <a href="/docs/api/classes/llvm/threadsaferefcountedbase/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/intrusiverefcntptrinfo">IntrusiveRefCntPtrInfo&lt;T&gt;</a></>}>
+Class you can specialize to provide custom retain/release functionality for a type. <a href="/docs/api/structs/llvm/intrusiverefcntptrinfo/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;T&gt;</a></>}>
+A smart pointer to a reference-counted object that inherits from <a href="/docs/api/classes/llvm/refcountedbase">RefCountedBase</a> or <a href="/docs/api/classes/llvm/threadsaferefcountedbase">ThreadSafeRefCountedBase</a>. <a href="/docs/api/classes/llvm/intrusiverefcntptr/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/simplify-type-66e2750066e98d2dcee1b14f708ad275">simplify_type&lt;IntrusiveRefCntPtr&lt; T &gt;&gt;</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/simplify-type-aa6ab47e4560427fb2410abb01fcbdc0">simplify_type&lt;const IntrusiveRefCntPtr&lt; T &gt;&gt;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This file defines the RefCountedBase, ThreadSafeRefCountedBase, and IntrusiveRefCntPtr classes.
+
+IntrusiveRefCntPtr is a smart pointer to an object which maintains a reference count. (ThreadSafe)RefCountedBase is a mixin class that adds a refcount member variable and methods for updating the refcount. An object that inherits from (ThreadSafe)RefCountedBase deletes itself when its refcount hits zero.
+
+For example:
+
+
+<ProgramListing>
+
+<CodeLine><Highlight kind="keyword">class </Highlight><Highlight kind="normal">MyClass : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> RefCountedBase&lt;MyClass&gt; &#123;&#125;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> foo() &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Constructing an IntrusiveRefCntPtr increases the pointee&#39;s refcount</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// by 1 (from 0 in this case).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  IntrusiveRefCntPtr&lt;MyClass&gt; Ptr1(</Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> MyClass());</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Copying an IntrusiveRefCntPtr increases the pointee&#39;s refcount by 1</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  IntrusiveRefCntPtr&lt;MyClass&gt; Ptr2(Ptr1);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Constructing an IntrusiveRefCntPtr has no effect on the object&#39;s</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// refcount.  After a move, the moved-from pointer is null.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  IntrusiveRefCntPtr&lt;MyClass&gt; Ptr3(std::move(Ptr1));</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Ptr1 == </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Clearing an IntrusiveRefCntPtr decreases the pointee&#39;s refcount by 1</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  Ptr2.reset();</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The object deletes itself when we return from the function, because</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Ptr3&#39;s destructor decrements its refcount to 0</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+You can use IntrusiveRefCntPtr with isa&lt;T&gt;(), dyn&#95;cast&lt;T&gt;(), etc.:
+
+
+<ProgramListing>
+
+<CodeLine><Highlight kind="normal">IntrusiveRefCntPtr&lt;MyClass&gt; <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>(</Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> MyClass());</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">OtherClass &#42;<a href="/docs/api/namespaces/llvm/codeview/#a5998c3d968454cd19d6c0ba8e5331a14a6311ae17c1ee52b36e68aaf4ad066387">Other</a> = dyn&#95;cast&lt;OtherClass&gt;(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>);  </Highlight><Highlight kind="comment">// Ptr.get() not required</Highlight></CodeLine>
+
+</ProgramListing>
+
+IntrusiveRefCntPtr works with any class that
+
+
+<ul>
+<li>inherits from (ThreadSafe)RefCountedBase,</li>
+<li>has <a href="/docs/api/groups/arcopt/#ga8bf6836a2bd83d4d7a9c8ac79d3da011">Retain()</a> and Release() methods, or</li>
+<li>specializes IntrusiveRefCntPtrInfo.</li>
+</ul>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//==- llvm/ADT/IntrusiveRefCntPtr.h - Smart Refcounting Pointer --&#42;- C++ -&#42;-==//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="comment">/// \\file</Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="comment">/// This file defines the RefCountedBase, ThreadSafeRefCountedBase, and</Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="comment">/// IntrusiveRefCntPtr classes.</Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="comment">/// IntrusiveRefCntPtr is a smart pointer to an object which maintains a</Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="comment">/// reference count.  (ThreadSafe)RefCountedBase is a mixin class that adds a</Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="comment">/// refcount member variable and methods for updating the refcount.  An object</Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="comment">/// that inherits from (ThreadSafe)RefCountedBase deletes itself when its</Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="comment">/// refcount hits zero.</Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="comment">/// For example:</Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="comment">/// &#96;&#96;&#96;</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="comment">///   class MyClass : public RefCountedBase&lt;MyClass&gt; &#123;&#125;;</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="comment">///   void foo() &#123;</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="comment">///     // Constructing an IntrusiveRefCntPtr increases the pointee&#39;s refcount</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="comment">///     // by 1 (from 0 in this case).</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="comment">///     IntrusiveRefCntPtr&lt;MyClass&gt; Ptr1(new MyClass());</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="comment">///     // Copying an IntrusiveRefCntPtr increases the pointee&#39;s refcount by 1</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="comment">///     IntrusiveRefCntPtr&lt;MyClass&gt; Ptr2(Ptr1);</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">///     // Constructing an IntrusiveRefCntPtr has no effect on the object&#39;s</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="comment">///     // refcount.  After a move, the moved-from pointer is null.</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="comment">///     IntrusiveRefCntPtr&lt;MyClass&gt; Ptr3(std::move(Ptr1));</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="comment">///     assert(Ptr1 == nullptr);</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">///     // Clearing an IntrusiveRefCntPtr decreases the pointee&#39;s refcount by 1</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">///     Ptr2.reset();</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">///     // The object deletes itself when we return from the function, because</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">///     // Ptr3&#39;s destructor decrements its refcount to 0</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">///   &#125;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">/// &#96;&#96;&#96;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="comment">/// You can use IntrusiveRefCntPtr with isa&lt;T&gt;(), dyn&#95;cast&lt;T&gt;(), etc.:</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="comment">/// &#96;&#96;&#96;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="comment">///   IntrusiveRefCntPtr&lt;MyClass&gt; Ptr(new MyClass());</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="comment">///   OtherClass &#42;Other = dyn&#95;cast&lt;OtherClass&gt;(Ptr);  // Ptr.get() not required</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="comment">/// &#96;&#96;&#96;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">/// IntrusiveRefCntPtr works with any class that</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="comment">///  - inherits from (ThreadSafe)RefCountedBase,</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="comment">///  - has Retain() and Release() methods, or</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="comment">///  - specializes IntrusiveRefCntPtrInfo.</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;ADT&#95;INTRUSIVEREFCNTPTR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;ADT&#95;INTRUSIVEREFCNTPTR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;atomic&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cassert&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstddef&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;memory&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="comment">/// A CRTP mixin class that adds reference counting to a type.</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">/// The lifetime of an object which inherits from RefCountedBase is managed by</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="comment">/// calls to Release() and Retain(), which increment and decrement the object&#39;s</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">/// refcount, respectively.  When a Release() call decrements the refcount to 0,</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">/// the object deletes itself.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76" lineLink="/docs/api/classes/llvm/refcountedbase"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> Derived&gt; </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/refcountedbase/#a94ffba4dda35f380554d1f3c0a4fe918">RefCountedBase</a> &#123;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">mutable</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> RefCount = 0;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/classes/llvm/refcountedbase/#a94ffba4dda35f380554d1f3c0a4fe918"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/refcountedbase/#a94ffba4dda35f380554d1f3c0a4fe918">RefCountedBase</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81" lineLink="/docs/api/classes/llvm/refcountedbase/#a25f3aeae3acd124d3ef12aba1e5cea1e"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/refcountedbase/#a25f3aeae3acd124d3ef12aba1e5cea1e">RefCountedBase</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/refcountedbase/#a94ffba4dda35f380554d1f3c0a4fe918">RefCountedBase</a> &amp;) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82" lineLink="/docs/api/classes/llvm/refcountedbase/#a3befaa2eac2304e9af59e8854d389867"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/refcountedbase/#a94ffba4dda35f380554d1f3c0a4fe918">RefCountedBase</a> &amp;<a href="/docs/api/classes/llvm/refcountedbase/#a3befaa2eac2304e9af59e8854d389867">operator=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/refcountedbase/#a94ffba4dda35f380554d1f3c0a4fe918">RefCountedBase</a> &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef NDEBUG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85" lineLink="/docs/api/classes/llvm/refcountedbase/#ac3765417c5d8feb827965ee68d26cdef"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/refcountedbase/#ac3765417c5d8feb827965ee68d26cdef">~RefCountedBase</a>() &#123;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(RefCount == 0 &amp;&amp;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;Destruction occurred when there are still references to this.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Default the destructor in release builds, A trivial destructor may enable</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// better codegen.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/refcountedbase/#ac3765417c5d8feb827965ee68d26cdef">~RefCountedBase</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96" lineLink="/docs/api/classes/llvm/refcountedbase/#a3e6ca6741c7c94ecec6ef5acfee5aee8"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/refcountedbase/#a3e6ca6741c7c94ecec6ef5acfee5aee8">UseCount</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> RefCount; &#125;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98" lineLink="/docs/api/classes/llvm/refcountedbase/#a2b442286ce7181d7a1fafbbbd9849202"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/refcountedbase/#a2b442286ce7181d7a1fafbbbd9849202">Retain</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; ++RefCount; &#125;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100" lineLink="/docs/api/classes/llvm/refcountedbase/#ae63b3de92cc08fac3a500fa16c32a418"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/refcountedbase/#ae63b3de92cc08fac3a500fa16c32a418">Release</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(RefCount &gt; 0 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Reference count is already zero.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (--RefCount == 0)</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">Derived &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="comment">/// A thread-safe version of \\c RefCountedBase.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108" lineLink="/docs/api/classes/llvm/threadsaferefcountedbase"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> Derived&gt; </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/threadsaferefcountedbase/#a66adfdfd789c9f71dbf3a4c0942ef4fe">ThreadSafeRefCountedBase</a> &#123;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">mutable</Highlight><Highlight kind="normal"> std::atomic&lt;int&gt; RefCount&#123;0&#125;;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112" lineLink="/docs/api/classes/llvm/threadsaferefcountedbase/#a66adfdfd789c9f71dbf3a4c0942ef4fe"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/threadsaferefcountedbase/#a66adfdfd789c9f71dbf3a4c0942ef4fe">ThreadSafeRefCountedBase</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113" lineLink="/docs/api/classes/llvm/threadsaferefcountedbase/#a36e40a9b7bab044d557d456b28909bf3"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/threadsaferefcountedbase/#a36e40a9b7bab044d557d456b28909bf3">ThreadSafeRefCountedBase</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/threadsaferefcountedbase/#a66adfdfd789c9f71dbf3a4c0942ef4fe">ThreadSafeRefCountedBase</a> &amp;) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/threadsaferefcountedbase">ThreadSafeRefCountedBase</a> &amp;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115" lineLink="/docs/api/classes/llvm/threadsaferefcountedbase/#a6d2ae9903c07f633671063e1aa0aeb59"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/threadsaferefcountedbase/#a6d2ae9903c07f633671063e1aa0aeb59">operator=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/threadsaferefcountedbase/#a66adfdfd789c9f71dbf3a4c0942ef4fe">ThreadSafeRefCountedBase</a> &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef NDEBUG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118" lineLink="/docs/api/classes/llvm/threadsaferefcountedbase/#a3d954694c4ed27106628b469e2020279"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/threadsaferefcountedbase/#a3d954694c4ed27106628b469e2020279">~ThreadSafeRefCountedBase</a>() &#123;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(RefCount == 0 &amp;&amp;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;Destruction occurred when there are still references to this.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Default the destructor in release builds, A trivial destructor may enable</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// better codegen.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/threadsaferefcountedbase/#a3d954694c4ed27106628b469e2020279">~ThreadSafeRefCountedBase</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129" lineLink="/docs/api/classes/llvm/threadsaferefcountedbase/#ab4cf744e265a2fd40c9a9938c0d941ad"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/threadsaferefcountedbase/#ab4cf744e265a2fd40c9a9938c0d941ad">UseCount</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> RefCount.load(std::memory&#95;order&#95;relaxed); &#125;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131" lineLink="/docs/api/classes/llvm/threadsaferefcountedbase/#a6f3f202ac7c4bf335f8635144126a5e8"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/threadsaferefcountedbase/#a6f3f202ac7c4bf335f8635144126a5e8">Retain</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; RefCount.fetch&#95;add(1, std::memory&#95;order&#95;relaxed); &#125;</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133" lineLink="/docs/api/classes/llvm/threadsaferefcountedbase/#aace72d8ed6b135fd20d71cad7727316b"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/threadsaferefcountedbase/#aace72d8ed6b135fd20d71cad7727316b">Release</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> NewRefCount = RefCount.fetch&#95;sub(1, std::memory&#95;order&#95;acq&#95;rel) - 1;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(NewRefCount &gt;= 0 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Reference count was already zero.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (NewRefCount == 0)</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">Derived &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="comment">/// Class you can specialize to provide custom retain/release functionality for</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">/// a type.</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="comment">/// Usually specializing this class is not necessary, as IntrusiveRefCntPtr</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="comment">/// works with any type which defines Retain() and Release() functions -- you</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="comment">/// can define those functions yourself if RefCountedBase doesn&#39;t work for you.</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="comment">/// One case when you might want to specialize this type is if you have</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="comment">///  - Foo.h defines type Foo and includes Bar.h, and</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="comment">///  - Bar.h uses IntrusiveRefCntPtr&lt;Foo&gt; in inline functions.</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="comment">/// Because Foo.h includes Bar.h, Bar.h can&#39;t include Foo.h in order to pull in</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="comment">/// the declaration of Foo.  Without the declaration of Foo, normally Bar.h</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="comment">/// wouldn&#39;t be able to use IntrusiveRefCntPtr&lt;Foo&gt;, which wants to call</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="comment">/// T::Retain and T::Release.</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="comment">/// To resolve this, Bar.h could include a third header, FooFwd.h, which</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="comment">/// forward-declares Foo and specializes IntrusiveRefCntPtrInfo&lt;Foo&gt;.  Then</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="comment">/// Bar.h could use IntrusiveRefCntPtr&lt;Foo&gt;, although it still couldn&#39;t call any</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="comment">/// functions on Foo itself, because Foo would be an incomplete type.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161" lineLink="/docs/api/structs/llvm/intrusiverefcntptrinfo"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> T&gt; </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/intrusiverefcntptrinfo">IntrusiveRefCntPtrInfo</a> &#123;</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162" lineLink="/docs/api/structs/llvm/intrusiverefcntptrinfo/#a164f355991617c24c14e4d61cf2787da"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/intrusiverefcntptrinfo/#a164f355991617c24c14e4d61cf2787da">useCount</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;obj) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> obj-&gt;UseCount(); &#125;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163" lineLink="/docs/api/structs/llvm/intrusiverefcntptrinfo/#a14558754209b6bf4d5d8eb4d43900681"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/intrusiverefcntptrinfo/#a14558754209b6bf4d5d8eb4d43900681">retain</a>(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;obj) &#123; obj-&gt;Retain(); &#125;</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164" lineLink="/docs/api/structs/llvm/intrusiverefcntptrinfo/#acd7a88e0a43d734b6692c22e9d93e7f5"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/intrusiverefcntptrinfo/#acd7a88e0a43d734b6692c22e9d93e7f5">release</a>(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;obj) &#123; obj-&gt;Release(); &#125;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="comment">/// A smart pointer to a reference-counted object that inherits from</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="comment">/// RefCountedBase or ThreadSafeRefCountedBase.</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="comment">/// This class increments its pointee&#39;s reference count when it is created, and</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="comment">/// decrements its refcount when it&#39;s destroyed (or is changed to point to a</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="comment">/// different object).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173" lineLink="/docs/api/classes/llvm/intrusiverefcntptr"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> T&gt; </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/intrusiverefcntptr/#a9a3f5687546d02323dd55333c4d4917c">IntrusiveRefCntPtr</a> &#123;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;Obj = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#a51038133914e3f1cd29574888550fbc7"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/intrusiverefcntptr/#a51038133914e3f1cd29574888550fbc7">element&#95;type</a> = <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>;</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#aff8205dfed6c00793f2b0c9b4543d32d"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr/#aff8205dfed6c00793f2b0c9b4543d32d">IntrusiveRefCntPtr</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#a0e58d6171151106d4b29089b6dbb6c93"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/intrusiverefcntptr/#a0e58d6171151106d4b29089b6dbb6c93">IntrusiveRefCntPtr</a>(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;obj) : Obj(obj) &#123; retain(); &#125;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#aa6d94125aef1e13f98d673237b916c1d"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/intrusiverefcntptr/#aa6d94125aef1e13f98d673237b916c1d">IntrusiveRefCntPtr</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr/#a9a3f5687546d02323dd55333c4d4917c">IntrusiveRefCntPtr</a> &amp;S) : Obj(S.Obj) &#123; retain(); &#125;</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#a22699b436f866bff8470df64d6aa5f57"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/intrusiverefcntptr/#a22699b436f866bff8470df64d6aa5f57">IntrusiveRefCntPtr</a>(<a href="/docs/api/classes/llvm/intrusiverefcntptr/#a9a3f5687546d02323dd55333c4d4917c">IntrusiveRefCntPtr</a> &amp;&amp;S) : Obj(S.Obj) &#123; S.Obj = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>,</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">            std::enable&#95;if&#95;t&lt;std::is&#95;convertible&lt;X &#42;, T &#42;&gt;::value, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">&gt; = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">&gt;</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#abdf33f03564419bb658f7d79b8ddd04f"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/intrusiverefcntptr/#abdf33f03564419bb658f7d79b8ddd04f">IntrusiveRefCntPtr</a>(<a href="/docs/api/classes/llvm/intrusiverefcntptr/#a9a3f5687546d02323dd55333c4d4917c">IntrusiveRefCntPtr&lt;X&gt;</a> S) : Obj(S.<a href="/docs/api/classes/llvm/intrusiverefcntptr/#ab7e9ba9766156c2b9877ba451e7e9a64">get</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">    S.Obj = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>,</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">            std::enable&#95;if&#95;t&lt;std::is&#95;convertible&lt;X &#42;, T &#42;&gt;::value, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">&gt; = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">&gt;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#abd9f3730448bb29c3bb39e344cfeb6c3"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/intrusiverefcntptr/#abd9f3730448bb29c3bb39e344cfeb6c3">IntrusiveRefCntPtr</a>(std::unique&#95;ptr&lt;X&gt; S) : Obj(S.release()) &#123;</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">    retain();</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#a07c4d1bb18ef8a6e052aec6a97319827"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/intrusiverefcntptr/#a07c4d1bb18ef8a6e052aec6a97319827">~IntrusiveRefCntPtr</a>() &#123; <a href="/docs/api/namespaces/llvm/#a650dea4533083a886cec9f16d80356d9a123fead50246387983ee340507115ef4">release</a>(); &#125;</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#a102212de9e1f16d3cc57e199ec717abf"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/intrusiverefcntptr/#a9a3f5687546d02323dd55333c4d4917c">IntrusiveRefCntPtr</a> &amp;<a href="/docs/api/classes/llvm/intrusiverefcntptr/#a102212de9e1f16d3cc57e199ec717abf">operator=</a>(<a href="/docs/api/classes/llvm/intrusiverefcntptr/#a9a3f5687546d02323dd55333c4d4917c">IntrusiveRefCntPtr</a> S) &#123;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/intrusiverefcntptr/#ab65ecb0ee088b75f3df6d7e199dfb3ba">swap</a>(S);</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#a9f53c292a1d4c59ad47024ec785166d9"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;<a href="/docs/api/classes/llvm/intrusiverefcntptr/#a9f53c292a1d4c59ad47024ec785166d9">operator&#42;</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;Obj; &#125;</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#acb53c33789a082c8315115593999e577"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;<a href="/docs/api/classes/llvm/intrusiverefcntptr/#acb53c33789a082c8315115593999e577">operator-&gt;</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Obj; &#125;</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#ab7e9ba9766156c2b9877ba451e7e9a64"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;<a href="/docs/api/classes/llvm/intrusiverefcntptr/#ab7e9ba9766156c2b9877ba451e7e9a64">get</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Obj; &#125;</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#a558cf89842d3be4f325e9cd6967a7329"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> bool()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Obj; &#125;</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#ab65ecb0ee088b75f3df6d7e199dfb3ba"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr/#ab65ecb0ee088b75f3df6d7e199dfb3ba">swap</a>(<a href="/docs/api/classes/llvm/intrusiverefcntptr/#a9a3f5687546d02323dd55333c4d4917c">IntrusiveRefCntPtr</a> &amp;other) &#123;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;tmp = other.Obj;</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">    other.Obj = Obj;</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">    Obj = tmp;</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#a080f1afff3f5a7c639cc1a04a6ad79ae"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr/#a080f1afff3f5a7c639cc1a04a6ad79ae">reset</a>() &#123;</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a650dea4533083a886cec9f16d80356d9a123fead50246387983ee340507115ef4">release</a>();</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">    Obj = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#ac938f21bee5988709205ca3e9c40d348"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr/#ac938f21bee5988709205ca3e9c40d348">resetWithoutRelease</a>() &#123; Obj = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#a1e60f839b9f21f6602a0ac657756b144"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr/#a1e60f839b9f21f6602a0ac657756b144">useCount</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Obj ? <a href="/docs/api/structs/llvm/intrusiverefcntptrinfo/#a164f355991617c24c14e4d61cf2787da">IntrusiveRefCntPtrInfo&lt;T&gt;::useCount</a>(Obj) : 0;</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> retain() &#123;</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Obj)</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">      <a href="/docs/api/structs/llvm/intrusiverefcntptrinfo/#a14558754209b6bf4d5d8eb4d43900681">IntrusiveRefCntPtrInfo&lt;T&gt;::retain</a>(Obj);</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a650dea4533083a886cec9f16d80356d9a123fead50246387983ee340507115ef4">release</a>() &#123;</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Obj)</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">      <a href="/docs/api/structs/llvm/intrusiverefcntptrinfo/#acd7a88e0a43d734b6692c22e9d93e7f5">IntrusiveRefCntPtrInfo&lt;T&gt;::release</a>(Obj);</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236" lineLink="/docs/api/classes/llvm/intrusiverefcntptr/#a9a3f5687546d02323dd55333c4d4917c"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> X&gt; </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/intrusiverefcntptr/#a9a3f5687546d02323dd55333c4d4917c">IntrusiveRefCntPtr</a>;</Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> U&gt;</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240" lineLink="/docs/api/namespaces/llvm/#a47402cd8a1964dd4728e9edabb4ffea2"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d812a2dd18aa186c164447e20e348e7">operator==</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;T&gt;</a> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>,</Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">                       </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;U&gt;</a> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>) &#123;</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>.get() == <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.get();</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> U&gt;</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246" lineLink="/docs/api/namespaces/llvm/#a9e6289dad4970f8130f7c77def5307f8"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a2f883c895f4d244f4ed56ed8a8c160c1">operator!=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;T&gt;</a> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>,</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">                       </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;U&gt;</a> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>) &#123;</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>.get() != <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.get();</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> U&gt;</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252" lineLink="/docs/api/namespaces/llvm/#ace037d7466c90bee75825345f22c878d"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d812a2dd18aa186c164447e20e348e7">operator==</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;T&gt;</a> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>, U &#42;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>) &#123;</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>.get() == <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>;</Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> U&gt;</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257" lineLink="/docs/api/namespaces/llvm/#a17b704c0262b2c7cd230b4973fdca97a"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a2f883c895f4d244f4ed56ed8a8c160c1">operator!=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;T&gt;</a> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>, U &#42;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>) &#123;</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>.get() != <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>;</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> U&gt;</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262" lineLink="/docs/api/namespaces/llvm/#a3f379290076516b684675f12cc9f0ce0"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d812a2dd18aa186c164447e20e348e7">operator==</a>(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;U&gt;</a> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>) &#123;</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a> == <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.get();</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> U&gt;</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267" lineLink="/docs/api/namespaces/llvm/#a4cfb31915a02e54b1864302a0dcf95d3"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a2f883c895f4d244f4ed56ed8a8c160c1">operator!=</a>(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;U&gt;</a> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>) &#123;</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a> != <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.get();</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272" lineLink="/docs/api/namespaces/llvm/#a49d1d8791b8d64371ad1647bd334ad58"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d812a2dd18aa186c164447e20e348e7">operator==</a>(std::nullptr&#95;t, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;T&gt;</a> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>) &#123;</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> !<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>;</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277" lineLink="/docs/api/namespaces/llvm/#ad0d178608207f4eaec09a90492e48237"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4d812a2dd18aa186c164447e20e348e7">operator==</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;T&gt;</a> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>, std::nullptr&#95;t <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>) &#123;</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a> == <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>;</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282" lineLink="/docs/api/namespaces/llvm/#a5d35f06c135e9834c08f9a56acc029f8"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a2f883c895f4d244f4ed56ed8a8c160c1">operator!=</a>(std::nullptr&#95;t <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;T&gt;</a> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>) &#123;</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> !(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a> == <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>);</Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287" lineLink="/docs/api/namespaces/llvm/#a6227d580ad805a9d2cb16d9765ddf4ca"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a2f883c895f4d244f4ed56ed8a8c160c1">operator!=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;T&gt;</a> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>, std::nullptr&#95;t <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>) &#123;</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> !(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a> == <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>);</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Make IntrusiveRefCntPtr work with dyn&#95;cast, isa, and the other idioms from</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Casting.h.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> From&gt; </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">simplify&#95;type;</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295" lineLink="/docs/api/structs/llvm/simplify-type-66e2750066e98d2dcee1b14f708ad275"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt; </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/simplify-type">simplify&#95;type</a>&lt;<a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr</a>&lt;<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>&gt;&gt; &#123;</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296" lineLink="/docs/api/structs/llvm/simplify-type-66e2750066e98d2dcee1b14f708ad275/#a81a048b7689f71167269486f86f18358"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/simplify-type-66e2750066e98d2dcee1b14f708ad275/#a81a048b7689f71167269486f86f18358">SimpleType</a> = <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;;</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298" lineLink="/docs/api/structs/llvm/simplify-type-66e2750066e98d2dcee1b14f708ad275/#abbd8f11299fc93527b5d322e3cf71864"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/simplify-type-66e2750066e98d2dcee1b14f708ad275/#a81a048b7689f71167269486f86f18358">SimpleType</a> <a href="/docs/api/structs/llvm/simplify-type-66e2750066e98d2dcee1b14f708ad275/#abbd8f11299fc93527b5d322e3cf71864">getSimplifiedValue</a>(<a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;T&gt;</a> &amp;Val) &#123;</Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Val.<a href="/docs/api/classes/llvm/intrusiverefcntptr/#ab7e9ba9766156c2b9877ba451e7e9a64">get</a>();</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303" lineLink="/docs/api/structs/llvm/simplify-type-aa6ab47e4560427fb2410abb01fcbdc0"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt; </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/simplify-type">simplify&#95;type</a>&lt;<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr</a>&lt;<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>&gt;&gt; &#123;</Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304" lineLink="/docs/api/structs/llvm/simplify-type-aa6ab47e4560427fb2410abb01fcbdc0/#aa0a68082cd070b3a8b683113ffcebfad"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/simplify-type-aa6ab47e4560427fb2410abb01fcbdc0/#aa0a68082cd070b3a8b683113ffcebfad">SimpleType</a> = </Highlight><Highlight kind="comment">/&#42;const&#42;/</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;;</Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306" lineLink="/docs/api/structs/llvm/simplify-type-aa6ab47e4560427fb2410abb01fcbdc0/#ad114fc028415062f3d08ef025a583c17"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/simplify-type-aa6ab47e4560427fb2410abb01fcbdc0/#aa0a68082cd070b3a8b683113ffcebfad">SimpleType</a> <a href="/docs/api/structs/llvm/simplify-type-aa6ab47e4560427fb2410abb01fcbdc0/#ad114fc028415062f3d08ef025a583c17">getSimplifiedValue</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;T&gt;</a> &amp;Val) &#123;</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Val.<a href="/docs/api/classes/llvm/intrusiverefcntptr/#ab7e9ba9766156c2b9877ba451e7e9a64">get</a>();</Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="comment">/// Factory function for creating intrusive ref counted pointers.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal">... Args&gt;</Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313" lineLink="/docs/api/namespaces/llvm/#a42a531e15700a96c4d8ea192d98fbb57"><Highlight kind="normal"><a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;T&gt;</a> <a href="/docs/api/namespaces/llvm/#a42a531e15700a96c4d8ea192d98fbb57">makeIntrusiveRefCnt</a>(Args &amp;&amp;...<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>) &#123;</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/intrusiverefcntptr">IntrusiveRefCntPtr&lt;T&gt;</a>(</Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>(std::forward&lt;Args&gt;(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>)...));</Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;ADT&#95;INTRUSIVEREFCNTPTR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

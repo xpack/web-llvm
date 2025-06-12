@@ -1,0 +1,259 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/vpblendrecipe
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `VPBlendRecipe` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+A recipe for vectorizing a phi-node as a sequence of mask-based select instructions. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::VPBlendRecipe</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="Transforms/Vectorize/VPlan.h"
+  permalink="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/vpsingledefrecipe">VPSingleDefRecipe</a></>}>
+VPSingleDef is a base class for recipes for modeling a sequence of one or more output IR that define a single result <a href="/docs/api/classes/llvm/vpvalue">VPValue</a>. <a href="/docs/api/classes/llvm/vpsingledefrecipe/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a06a43099cff6ce62ba54dbdb91b394c2">VPBlendRecipe</a> (PHINode &#42;Phi, ArrayRef&lt; VPValue &#42; &gt; Operands)</>}>
+The blend operation is a <a href="/docs/api/classes/llvm/user">User</a> of the incoming values and of their respective masks, ordered &#91;I0, M0, I1, M1, I2, M2, ...&#93;. <a href="#a06a43099cff6ce62ba54dbdb91b394c2">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/vpblendrecipe">VPBlendRecipe</a> &#42;</>}
+  name={<><a href="#ad05094de15d05295d9e769d815cd076d">clone</a> () override</>}>
+Clone the current recipe. <a href="#ad05094de15d05295d9e769d815cd076d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/instructioncost">InstructionCost</a></>}
+  name={<><a href="#a0cf81ee784fd5dea0b9353a51f4f4fee">computeCost</a> (ElementCount VF, VPCostContext &amp;Ctx) const override</>}>
+Return the cost of this <a href="/docs/api/classes/llvm/vpwidenmemoryrecipe">VPWidenMemoryRecipe</a>. <a href="#a0cf81ee784fd5dea0b9353a51f4f4fee">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#af1d96b296e589e5d8318e526b5d2ff92">execute</a> (VPTransformState &amp;State) override</>}>
+Generate the phi/select nodes. <a href="#af1d96b296e589e5d8318e526b5d2ff92">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;</>}
+  name={<><a href="#a2019700bf97441cc4fcf162a09247210">getIncomingValue</a> (unsigned Idx) const</>}>
+Return incoming value number <code>Idx</code>. <a href="#a2019700bf97441cc4fcf162a09247210">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;</>}
+  name={<><a href="#a26df1ec06cf75ead168070b305c1344d">getMask</a> (unsigned Idx) const</>}>
+Return mask number <code>Idx</code>. <a href="#a26df1ec06cf75ead168070b305c1344d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a4f0a937b4e04952fc07607effb9866a7">getNumIncomingValues</a> () const</>}>
+Return the number of incoming values, taking into account when normalized the first incoming value will have no mask. <a href="#a4f0a937b4e04952fc07607effb9866a7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af90bcb1df94143ecfb840bfe359f86d1">isNormalized</a> () const</>}>
+A normalized blend is one that has an odd number of operands, whereby the first operand does not have an associated mask. <a href="#af90bcb1df94143ecfb840bfe359f86d1">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a0dc849c5a55d8fc876ea6deca991b264">onlyFirstLaneUsed</a> (const VPValue &#42;Op) const override</>}>
+Returns true if the recipe only uses the first lane of operand <code><a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a></code>. <a href="#a0dc849c5a55d8fc876ea6deca991b264">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a09354bbed6835f538ce6b7b995a02b46">print</a> (raw&#95;ostream &amp;O, const Twine &amp;Indent, VPSlotTracker &amp;SlotTracker) const override</>}>
+Print the recipe. <a href="#a09354bbed6835f538ce6b7b995a02b46">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+A recipe for vectorizing a phi-node as a sequence of mask-based select instructions.
+
+Definition at line 2497 of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### VPBlendRecipe() {#a06a43099cff6ce62ba54dbdb91b394c2}
+
+<MemberDefinition
+  prototype={<>llvm::VPBlendRecipe::VPBlendRecipe (<a href="/docs/api/classes/llvm/phinode">PHINode</a> &#42; Phi, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42; &gt; Operands)</>}
+  labels = {["inline"]}>
+The blend operation is a <a href="/docs/api/classes/llvm/user">User</a> of the incoming values and of their respective masks, ordered &#91;I0, M0, I1, M1, I2, M2, ...&#93;.
+
+Note that M0 can be omitted (implied by passing an odd number of operands) in which case all other incoming values are merged into it.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02503">2503</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### clone() {#ad05094de15d05295d9e769d815cd076d}
+
+<MemberDefinition
+  prototype={<>VPBlendRecipe &#42; llvm::VPBlendRecipe::clone ()</>}
+  labels = {["inline", "virtual"]}>
+Clone the current recipe.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02508">2508</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+### computeCost() {#a0cf81ee784fd5dea0b9353a51f4f4fee}
+
+<MemberDefinition
+  prototype={<>InstructionCost VPBlendRecipe::computeCost (<a href="/docs/api/classes/llvm/elementcount">ElementCount</a> VF, <a href="/docs/api/structs/llvm/vpcostcontext">VPCostContext</a> &amp; Ctx) const</>}
+  labels = {["virtual"]}>
+Return the cost of this <a href="/docs/api/classes/llvm/vpwidenmemoryrecipe">VPWidenMemoryRecipe</a>.
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02540">2540</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp/#l02180">2180</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp">VPlanRecipes.cpp</a>.
+</MemberDefinition>
+
+### execute() {#af1d96b296e589e5d8318e526b5d2ff92}
+
+<MemberDefinition
+  prototype={<>void VPBlendRecipe::execute (<a href="/docs/api/structs/llvm/vptransformstate">VPTransformState</a> &amp; State)</>}
+  labels = {["virtual"]}>
+Generate the phi/select nodes.
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02537">2537</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp/#l02143">2143</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp">VPlanRecipes.cpp</a>.
+</MemberDefinition>
+
+### getIncomingValue() {#a2019700bf97441cc4fcf162a09247210}
+
+<MemberDefinition
+  prototype={<>VPValue &#42; llvm::VPBlendRecipe::getIncomingValue (unsigned Idx) const</>}
+  labels = {["inline"]}>
+Return incoming value number <code>Idx</code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02526">2526</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+### getMask() {#a26df1ec06cf75ead168070b305c1344d}
+
+<MemberDefinition
+  prototype={<>VPValue &#42; llvm::VPBlendRecipe::getMask (unsigned Idx) const</>}
+  labels = {["inline"]}>
+Return mask number <code>Idx</code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02531">2531</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+### getNumIncomingValues() {#a4f0a937b4e04952fc07607effb9866a7}
+
+<MemberDefinition
+  prototype="unsigned llvm::VPBlendRecipe::getNumIncomingValues () const"
+  labels = {["inline"]}>
+Return the number of incoming values, taking into account when normalized the first incoming value will have no mask.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02521">2521</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+### isNormalized() {#af90bcb1df94143ecfb840bfe359f86d1}
+
+<MemberDefinition
+  prototype="bool llvm::VPBlendRecipe::isNormalized () const"
+  labels = {["inline"]}>
+A normalized blend is one that has an odd number of operands, whereby the first operand does not have an associated mask.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02517">2517</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+### onlyFirstLaneUsed() {#a0dc849c5a55d8fc876ea6deca991b264}
+
+<MemberDefinition
+  prototype={<>bool llvm::VPBlendRecipe::onlyFirstLaneUsed (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42; Op) const</>}
+  labels = {["inline", "virtual"]}>
+Returns true if the recipe only uses the first lane of operand <code><a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a></code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02550">2550</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>.
+</MemberDefinition>
+
+### print() {#a09354bbed6835f538ce6b7b995a02b46}
+
+<MemberDefinition
+  prototype={<>void VPBlendRecipe::print (<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp; O, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp; Indent, <a href="/docs/api/classes/llvm/vpslottracker">VPSlotTracker</a> &amp; SlotTracker) const</>}
+  labels = {["virtual"]}>
+Print the recipe.
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h/#l02545">2545</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp/#l02195">2195</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp">VPlanRecipes.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanrecipes-cpp">VPlanRecipes.cpp</a></li>
+</ul>
+
+</DoxygenPage>

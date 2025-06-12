@@ -1,0 +1,253 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/typeswitch
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `TypeSwitch` Class Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This class implements a switch-like dispatch statement for a value of &#39;T&#39; using dyn&#95;cast functionality. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;typename T, typename ResultT = void&gt;
+class llvm::TypeSwitch&lt;T, ResultT&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/TypeSwitch.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/detail/typeswitchbase">TypeSwitchBase&lt;DerivedT, T&gt;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename T, typename ResultT = void&gt;</>}
+  type="using"
+  name={<><a href="#a0e98bbeaba6fbd292907110f3b350885">BaseT</a> = <a href="/docs/api/classes/llvm/detail/typeswitchbase">detail::TypeSwitchBase</a>&lt; <a href="/docs/api/classes/llvm/typeswitch">TypeSwitch</a>&lt; T, ResultT &gt;, T &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename T, typename ResultT = void&gt;</>}
+  name={<><a href="#a5f8b4c9ccb1bab34c84ccbd45a5ea30e">TypeSwitch</a> (TypeSwitch &amp;&amp;other)=default</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Operators Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename T, typename ResultT = void&gt;</>}
+  name={<><a href="#afbd47b7a2eaa69d7fa65aef1206d1899">operator ResultT</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename CaseT, typename CallableT&gt;</>}
+  type="auto "
+  name={<><a href="#a78c545287cbe57529ce7751e25c815a5">Case</a> (CallableT &amp;&amp;caseFn) -&gt; <a href="/docs/api/classes/llvm/typeswitch">TypeSwitch</a>&lt; T, ResultT &gt; &amp;</>}>
+Add a case on the given type. <a href="#a78c545287cbe57529ce7751e25c815a5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename CallableT&gt;</>}
+  type="ResultT"
+  name={<><a href="#a52d46e4f7483f96b4d5f1b8a2b20cca6">Default</a> (CallableT &amp;&amp;defaultFn)</>}>
+As a default, invoke the given callable within the root value. <a href="#a52d46e4f7483f96b4d5f1b8a2b20cca6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename T, typename ResultT = void&gt;</>}
+  type="ResultT"
+  name={<><a href="#a5ee781e919541e19e824c26204d98fe2">Default</a> (ResultT defaultResult)</>}>
+As a default, return the given value. <a href="#a5ee781e919541e19e824c26204d98fe2">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename T, typename ResultT = void&gt;</>}
+  type={<>std::optional&lt; ResultT &gt;</>}
+  name={<><a href="#ab241ebc8f099792967cdc9dd7070b32b">result</a></>}>
+The pointer to the result of this switch statement, once known, null before that. <a href="#ab241ebc8f099792967cdc9dd7070b32b">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This class implements a switch-like dispatch statement for a value of &#39;T&#39; using dyn&#95;cast functionality.
+
+Each <code>Case&lt;T&gt;</code> takes a callable to be invoked if the root value isa&lt;T&gt;, the callable is invoked with the result of <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;T&gt;()</a> as a parameter.
+
+Example: Operation &#42;op = ...; <a href="/docs/api/structs/llvm/logicalresult">LogicalResult</a> result = TypeSwitch&lt;Operation &#42;, LogicalResult&gt;(op) .Case&lt;ConstantOp&gt;(&#91;&#93;(ConstantOp op) &#123; ... &#125;) .Default(&#91;&#93;(Operation &#42;op) &#123; ... &#125;);
+
+Definition at line 87 of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h">TypeSwitch.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### BaseT {#a0e98bbeaba6fbd292907110f3b350885}
+
+<MemberDefinition
+  template={<>template &lt;typename T, typename ResultT = void&gt;</>}
+  prototype={<>using llvm::TypeSwitch&lt; T, ResultT &gt;::BaseT =  detail::TypeSwitchBase&lt;TypeSwitch&lt;T, ResultT&gt;, T&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h/#l00089">89</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h">TypeSwitch.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### TypeSwitch() {#a5f8b4c9ccb1bab34c84ccbd45a5ea30e}
+
+<MemberDefinition
+  template={<>template &lt;typename T, typename ResultT = void&gt;</>}
+  prototype={<>llvm::TypeSwitch&lt; T, ResultT &gt;::TypeSwitch (<a href="/docs/api/classes/llvm/typeswitch">TypeSwitch</a> &amp;&amp; other)</>}
+  labels = {["default"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h/#l00092">92</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h">TypeSwitch.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Operators
+
+### operator ResultT() {#afbd47b7a2eaa69d7fa65aef1206d1899}
+
+<MemberDefinition
+  template={<>template &lt;typename T, typename ResultT = void&gt;</>}
+  prototype={<>llvm::TypeSwitch&lt; T, ResultT &gt;::operator ResultT ()</>}
+  labels = {["inline", "nodiscard"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h/#l00120">120</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h">TypeSwitch.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### Case() {#a78c545287cbe57529ce7751e25c815a5}
+
+<MemberDefinition
+  template={<>template &lt;typename CaseT, typename CallableT&gt;</>}
+  prototype={<>TypeSwitch&lt; T, ResultT &gt; &amp; llvm::TypeSwitch&lt; T, ResultT &gt;::Case (CallableT &amp;&amp; caseFn)</>}
+  labels = {["inline"]}>
+Add a case on the given type.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h/#l00096">96</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h">TypeSwitch.h</a>.
+</MemberDefinition>
+
+### Default() {#a52d46e4f7483f96b4d5f1b8a2b20cca6}
+
+<MemberDefinition
+  template={<>template &lt;typename CallableT&gt;</>}
+  prototype={<>ResultT llvm::TypeSwitch&lt; T, ResultT &gt;::Default (CallableT &amp;&amp; defaultFn)</>}
+  labels = {["inline", "nodiscard"]}>
+As a default, invoke the given callable within the root value.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h/#l00108">108</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h">TypeSwitch.h</a>.
+</MemberDefinition>
+
+### Default() {#a5ee781e919541e19e824c26204d98fe2}
+
+<MemberDefinition
+  template={<>template &lt;typename T, typename ResultT = void&gt;</>}
+  prototype={<>ResultT llvm::TypeSwitch&lt; T, ResultT &gt;::Default (ResultT defaultResult)</>}
+  labels = {["inline", "nodiscard"]}>
+As a default, return the given value.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h/#l00114">114</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h">TypeSwitch.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### result {#ab241ebc8f099792967cdc9dd7070b32b}
+
+<MemberDefinition
+  template={<>template &lt;typename T, typename ResultT = void&gt;</>}
+  prototype={<>std::optional&lt;ResultT&gt; llvm::TypeSwitch&lt; T, ResultT &gt;::result</>}>
+The pointer to the result of this switch statement, once known, null before that.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h/#l00128">128</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h">TypeSwitch.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/adt/typeswitch-h">TypeSwitch.h</a></li>
+</ul>
+
+</DoxygenPage>

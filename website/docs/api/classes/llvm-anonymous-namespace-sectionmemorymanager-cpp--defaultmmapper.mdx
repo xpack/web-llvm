@@ -1,0 +1,137 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/anonymous-namespace-sectionmemorymanager-cpp-/defaultmmapper
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `DefaultMMapper` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Declaration
+
+<CodeBlock>class llvm::anonymous_namespace{SectionMemoryManager.cpp}::DefaultMMapper</CodeBlock>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/sectionmemorymanager/memorymapper">MemoryMapper</a></>}>
+Implementations of this interface are used by <a href="/docs/api/classes/llvm/sectionmemorymanager">SectionMemoryManager</a> to request pages from the operating system. <a href="/docs/api/classes/llvm/sectionmemorymanager/memorymapper/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/sys/memoryblock">sys::MemoryBlock</a></>}
+  name={<><a href="#ae4e4ae90301d45b22f7c283d13a2e832">allocateMappedMemory</a> (SectionMemoryManager::AllocationPurpose Purpose, size&#95;t NumBytes, const sys::MemoryBlock &#42;const NearBlock, unsigned Flags, std::error&#95;code &amp;EC) override</>}>
+This method attempts to allocate <code>NumBytes</code> bytes of virtual memory for <code>Purpose</code>. <a href="#ae4e4ae90301d45b22f7c283d13a2e832">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::error&#95;code</>}
+  name={<><a href="#a7f9c28a81a61c5f292d14dbd7a9b2766">protectMappedMemory</a> (const sys::MemoryBlock &amp;Block, unsigned Flags) override</>}>
+This method sets the protection flags for a block of memory to the state specified by <code>Flags</code>. <a href="#a7f9c28a81a61c5f292d14dbd7a9b2766">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::error&#95;code</>}
+  name={<><a href="#abe6722b1a014fa1278361232a6a8ccc1">releaseMappedMemory</a> (sys::MemoryBlock &amp;M) override</>}>
+This method releases a block of memory that was allocated with the allocateMappedMemory method. <a href="#abe6722b1a014fa1278361232a6a8ccc1">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+Definition at line 247 of file <a href="/docs/api/files/lib/lib/executionengine/sectionmemorymanager-cpp">SectionMemoryManager.cpp</a>.
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### allocateMappedMemory() {#ae4e4ae90301d45b22f7c283d13a2e832}
+
+<MemberDefinition
+  prototype={<>sys::MemoryBlock llvm::anonymous&#95;namespace&#123;SectionMemoryManager.cpp&#125;::DefaultMMapper::allocateMappedMemory (<a href="/docs/api/classes/llvm/sectionmemorymanager/#a0cdbe52ddf56f7c9188174848e9423a4">SectionMemoryManager::AllocationPurpose</a> Purpose, size&#95;t NumBytes, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/sys/memoryblock">sys::MemoryBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> NearBlock, unsigned Flags, std::error&#95;code &amp; EC)</>}
+  labels = {["inline", "virtual"]}>
+This method attempts to allocate <code>NumBytes</code> bytes of virtual memory for <code>Purpose</code>.
+
+<code>NearBlock</code> may point to an existing allocation, in which case an attempt is made to allocate more memory near the existing block. The actual allocated address is not guaranteed to be near the requested address. <code>Flags</code> is used to set the initial protection flags for the block of the memory. <code>EC</code> &#91;out&#93; returns an object describing any error that occurs.
+
+This method may allocate more than the number of bytes requested. The actual number of bytes allocated is indicated in the returned <a href="/docs/api/classes/llvm/sys/memoryblock">MemoryBlock</a>.
+
+The start of the allocated block must be aligned with the system allocation granularity (64K on Windows, page size on Linux). If the address following <code>NearBlock</code> is not so aligned, it will be rounded up to the next allocation granularity boundary.
+
+\\r a non-null <a href="/docs/api/classes/llvm/sys/memoryblock">MemoryBlock</a> if the function was successful, otherwise a null <a href="/docs/api/classes/llvm/sys/memoryblock">MemoryBlock</a> with <code>EC</code> describing the error.
+
+Definition at line <a href="/docs/api/files/lib/lib/executionengine/sectionmemorymanager-cpp/#l00250">250</a> of file <a href="/docs/api/files/lib/lib/executionengine/sectionmemorymanager-cpp">SectionMemoryManager.cpp</a>.
+</MemberDefinition>
+
+### protectMappedMemory() {#a7f9c28a81a61c5f292d14dbd7a9b2766}
+
+<MemberDefinition
+  prototype={<>std::error&#95;code llvm::anonymous&#95;namespace&#123;SectionMemoryManager.cpp&#125;::DefaultMMapper::protectMappedMemory (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/sys/memoryblock">sys::MemoryBlock</a> &amp; Block, unsigned Flags)</>}
+  labels = {["inline", "virtual"]}>
+This method sets the protection flags for a block of memory to the state specified by <code>Flags</code>.
+
+The behavior is not specified if the memory was not allocated using the allocateMappedMemory method. <code>Block</code> describes the memory block to be protected. <code>Flags</code> specifies the new protection state to be assigned to the block.
+
+If <code>Flags</code> is MF&#95;WRITE, the actual behavior varies with the operating system (i.e. MF&#95;READ | MF&#95;WRITE on Windows) and the target architecture (i.e. MF&#95;WRITE -&gt; MF&#95;READ | MF&#95;WRITE on i386).
+
+\\r error&#95;success if the function was successful, or an error&#95;code describing the failure if an error occurred.
+
+Definition at line <a href="/docs/api/files/lib/lib/executionengine/sectionmemorymanager-cpp/#l00256">256</a> of file <a href="/docs/api/files/lib/lib/executionengine/sectionmemorymanager-cpp">SectionMemoryManager.cpp</a>.
+</MemberDefinition>
+
+### releaseMappedMemory() {#abe6722b1a014fa1278361232a6a8ccc1}
+
+<MemberDefinition
+  prototype={<>std::error&#95;code llvm::anonymous&#95;namespace&#123;SectionMemoryManager.cpp&#125;::DefaultMMapper::releaseMappedMemory (<a href="/docs/api/classes/llvm/sys/memoryblock">sys::MemoryBlock</a> &amp; M)</>}
+  labels = {["inline", "virtual"]}>
+This method releases a block of memory that was allocated with the allocateMappedMemory method.
+
+It should not be used to release any memory block allocated any other way. <code>Block</code> describes the memory to be released.
+
+\\r error&#95;success if the function was successful, or an error&#95;code describing the failure if an error occurred.
+
+Definition at line <a href="/docs/api/files/lib/lib/executionengine/sectionmemorymanager-cpp/#l00261">261</a> of file <a href="/docs/api/files/lib/lib/executionengine/sectionmemorymanager-cpp">SectionMemoryManager.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/executionengine/sectionmemorymanager-cpp">SectionMemoryManager.cpp</a></li>
+</ul>
+
+</DoxygenPage>

@@ -1,0 +1,332 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/analysis/memoryprofileinfo-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `MemoryProfileInfo.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/IR/Metadata.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/metadata-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/ModuleSummaryIndex.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/modulesummaryindex-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="map"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/memprof">llvm::memprof</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/memprof/callstacktrie">CallStackTrie</a></>}>
+Class to build a trie of call stack contexts for a particular profiled allocation call, along with their associated allocation types. <a href="/docs/api/classes/llvm/memprof/callstacktrie/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/memprof/callstacktrie/callstacktrienode">CallStackTrieNode</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/memprof/callstack">CallStack&lt;NodeT, IteratorT&gt;</a></>}>
+Helper class to iterate through stack ids in both metadata (memprof MIB and callsite) and the corresponding ThinLTO summary data structures (<a href="/docs/api/structs/llvm/callsiteinfo">CallsiteInfo</a> and <a href="/docs/api/structs/llvm/mibinfo">MIBInfo</a>). <a href="/docs/api/classes/llvm/memprof/callstack/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator">CallStackIterator</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/Analysis/MemoryProfileInfo.h - memory profile info ---&#42;- C++ -&#42;-==//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file contains utilities to analyze memory profile information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;ANALYSIS&#95;MEMORYPROFILEINFO&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;ANALYSIS&#95;MEMORYPROFILEINFO&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/metadata-h">llvm/IR/Metadata.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/modulesummaryindex-h">llvm/IR/ModuleSummaryIndex.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;map&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21" lineLink="/docs/api/namespaces/llvm/memprof"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/memprof">memprof</a> &#123;</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="comment">/// Return the allocation type for a given set of memory profile values.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a230980cf62b697d22ffdda32f6118e27">AllocationType</a> <a href="/docs/api/namespaces/llvm/memprof/#a1e8a171cb61e4be7336e3beb7136e2dc">getAllocType</a>(uint64&#95;t TotalLifetimeAccessDensity,</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal">                            uint64&#95;t AllocCount, uint64&#95;t TotalLifetime);</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="comment">/// Build callstack metadata from the provided list of call stack ids. Returns</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="comment">/// the resulting metadata node.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"><a href="/docs/api/classes/llvm/mdnode">MDNode</a> &#42;<a href="/docs/api/namespaces/llvm/memprof/#a1b412464f78908112e627ee7bc54f99d">buildCallstackMetadata</a>(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;uint64&#95;t&gt;</a> <a href="/docs/api/classes/llvm/memprof/callstack">CallStack</a>, <a href="/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp;Ctx);</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="comment">/// Build metadata from the provided list of full stack id and profiled size, to</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">/// use when reporting of hinted sizes is enabled.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33" lineLink="/docs/api/namespaces/llvm/memprof/#a679db336dac0055e74f577124838ecfe"><Highlight kind="normal"><a href="/docs/api/classes/llvm/mdnode">MDNode</a> &#42;<a href="/docs/api/namespaces/llvm/memprof/#a679db336dac0055e74f577124838ecfe">buildContextSizeMetadata</a>(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;ContextTotalSize&gt;</a> ContextSizeInfo,</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">                                 <a href="/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp;Ctx);</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="comment">/// Returns the stack node from an MIB metadata node.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"><a href="/docs/api/classes/llvm/mdnode">MDNode</a> &#42;<a href="/docs/api/namespaces/llvm/memprof/#ab5636c9dedf3853480a075cefc7cc1fa">getMIBStackNode</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mdnode">MDNode</a> &#42;MIB);</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">/// Returns the allocation type from an MIB metadata node.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a230980cf62b697d22ffdda32f6118e27">AllocationType</a> <a href="/docs/api/namespaces/llvm/memprof/#a6adf5ed44d664399d019ab3727dc5bd9">getMIBAllocType</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mdnode">MDNode</a> &#42;MIB);</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">/// Returns the string to use in attributes with the given type.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">std::string <a href="/docs/api/namespaces/llvm/memprof/#aafd414cdb5967be7eccd7a6f0d1ca76e">getAllocTypeAttributeString</a>(<a href="/docs/api/namespaces/llvm/#a230980cf62b697d22ffdda32f6118e27">AllocationType</a> <a href="/docs/api/classes/llvm/type">Type</a>);</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="comment">/// True if the AllocTypes bitmask contains just a single type.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/memprof/#a89184869fe3acb3e39f0bfcb98378676">hasSingleAllocType</a>(uint8&#95;t AllocTypes);</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="comment">/// Class to build a trie of call stack contexts for a particular profiled</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="comment">/// allocation call, along with their associated allocation types.</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="comment">/// The allocation will be at the root of the trie, which is then used to</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="comment">/// compute the minimum lists of context ids needed to associate a call context</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">/// with a single allocation type.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53" lineLink="/docs/api/classes/llvm/memprof/callstacktrie"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/memprof/callstacktrie/#a49f2ad3f9b504bbc6ac5fbb306d74772">CallStackTrie</a> &#123;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">CallStackTrieNode &#123;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Allocation types for call context sharing the context prefix at this</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// node.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">    uint8&#95;t AllocTypes;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// If the user has requested reporting of hinted sizes, keep track of the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// associated full stack id and profiled sizes. Can have more than one</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// after trimming (e.g. when building from metadata). This is only placed on</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// the last (root-most) trie node for each allocation context.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">    std::vector&lt;ContextTotalSize&gt; ContextSizeInfo;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Map of caller stack id to the corresponding child Trie node.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">    std::map&lt;uint64&#95;t, CallStackTrieNode &#42;&gt; Callers;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">    CallStackTrieNode(<a href="/docs/api/namespaces/llvm/#a230980cf62b697d22ffdda32f6118e27">AllocationType</a> <a href="/docs/api/classes/llvm/type">Type</a>)</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">        : AllocTypes(</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uint8&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/type">Type</a>)) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> addAllocType(<a href="/docs/api/namespaces/llvm/#a230980cf62b697d22ffdda32f6118e27">AllocationType</a> <a href="/docs/api/files/lib/lib/analysis/memorybuiltins-cpp/#abb725d65acc814edc5c025fb8ee6d55b">AllocType</a>) &#123;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">      AllocTypes |= </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uint8&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(<a href="/docs/api/files/lib/lib/analysis/memorybuiltins-cpp/#abb725d65acc814edc5c025fb8ee6d55b">AllocType</a>);</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> removeAllocType(<a href="/docs/api/namespaces/llvm/#a230980cf62b697d22ffdda32f6118e27">AllocationType</a> <a href="/docs/api/files/lib/lib/analysis/memorybuiltins-cpp/#abb725d65acc814edc5c025fb8ee6d55b">AllocType</a>) &#123;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">      AllocTypes &amp;= ~static&#95;cast&lt;uint8&#95;t&gt;(<a href="/docs/api/files/lib/lib/analysis/memorybuiltins-cpp/#abb725d65acc814edc5c025fb8ee6d55b">AllocType</a>);</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> hasAllocType(<a href="/docs/api/namespaces/llvm/#a230980cf62b697d22ffdda32f6118e27">AllocationType</a> <a href="/docs/api/files/lib/lib/analysis/memorybuiltins-cpp/#abb725d65acc814edc5c025fb8ee6d55b">AllocType</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> AllocTypes &amp; </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uint8&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(<a href="/docs/api/files/lib/lib/analysis/memorybuiltins-cpp/#abb725d65acc814edc5c025fb8ee6d55b">AllocType</a>);</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The node for the allocation at the root.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">  CallStackTrieNode &#42;Alloc = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The allocation&#39;s leaf stack id.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  uint64&#95;t AllocStackId = 0;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> deleteTrieNode(CallStackTrieNode &#42;<a href="/docs/api/classes/node">Node</a>) &#123;</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/classes/node">Node</a>)</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a> : <a href="/docs/api/classes/node">Node</a>-&gt;Callers)</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">      deleteTrieNode(<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>.second);</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/node">Node</a>;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Recursively build up a complete list of context size information from the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// trie nodes reached form the given Node, for hint size reporting.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> collectContextSizeInfo(CallStackTrieNode &#42;<a href="/docs/api/classes/node">Node</a>,</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">                              std::vector&lt;ContextTotalSize&gt; &amp;ContextSizeInfo);</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Recursively convert hot allocation types to notcold, since we don&#39;t</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// actually do any cloning for hot contexts, to facilitate more aggressive</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// pruning of contexts.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> convertHotToNotCold(CallStackTrieNode &#42;<a href="/docs/api/classes/node">Node</a>);</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Recursive helper to trim contexts and create metadata nodes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> buildMIBNodes(CallStackTrieNode &#42;<a href="/docs/api/classes/node">Node</a>, <a href="/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp;Ctx,</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">                     std::vector&lt;uint64&#95;t&gt; &amp;MIBCallStack,</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">                     std::vector&lt;Metadata &#42;&gt; &amp;MIBNodes,</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">                     </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> CalleeHasAmbiguousCallerContext);</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109" lineLink="/docs/api/classes/llvm/memprof/callstacktrie/#a49f2ad3f9b504bbc6ac5fbb306d74772"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memprof/callstacktrie/#a49f2ad3f9b504bbc6ac5fbb306d74772">CallStackTrie</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110" lineLink="/docs/api/classes/llvm/memprof/callstacktrie/#aea6085c89d1a32486046c3fcfa61eee0"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memprof/callstacktrie/#aea6085c89d1a32486046c3fcfa61eee0">~CallStackTrie</a>() &#123; deleteTrieNode(Alloc); &#125;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112" lineLink="/docs/api/classes/llvm/memprof/callstacktrie/#a8764bb32436ceef74c9a8cdfc0da0e28"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memprof/callstacktrie/#a8764bb32436ceef74c9a8cdfc0da0e28">empty</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Alloc == </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">  /// Add a call stack context with the given allocation type to the Trie.</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">  /// The context is represented by the list of stack ids (computed during</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">  /// matching via a debug location hash), expected to be in order from the</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">  /// allocation call down to the bottom of the call stack (i.e. callee to</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="comment">  /// caller order).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memprof/callstacktrie/#a87d4df64225248afbae4f68c4f9501b1">addCallStack</a>(<a href="/docs/api/namespaces/llvm/#a230980cf62b697d22ffdda32f6118e27">AllocationType</a> <a href="/docs/api/files/lib/lib/analysis/memorybuiltins-cpp/#abb725d65acc814edc5c025fb8ee6d55b">AllocType</a>, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;uint64&#95;t&gt;</a> StackIds,</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">                    std::vector&lt;ContextTotalSize&gt; ContextSizeInfo = &#123;&#125;);</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="comment">  /// Add the call stack context along with its allocation type from the MIB</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="comment">  /// metadata to the Trie.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memprof/callstacktrie/#a87d4df64225248afbae4f68c4f9501b1">addCallStack</a>(<a href="/docs/api/classes/llvm/mdnode">MDNode</a> &#42;MIB);</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="comment">  /// Build and attach the minimal necessary MIB metadata. If the alloc has a</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="comment">  /// single allocation type, add a function attribute instead. The reason for</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="comment">  /// adding an attribute in this case is that it matches how the behavior for</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="comment">  /// allocation calls will be communicated to lib call simplification after</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="comment">  /// cloning or another optimization to distinguish the allocation types,</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="comment">  /// which is lower overhead and more direct than maintaining this metadata.</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">  /// Returns true if memprof metadata attached, false if not (attribute added).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memprof/callstacktrie/#ab9f10c4267af88a1bd143a7260d2ac8f">buildAndAttachMIBMetadata</a>(<a href="/docs/api/classes/llvm/callbase">CallBase</a> &#42;CI);</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">  /// Add an attribute for the given allocation type to the call instruction.</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">  /// If hinted by reporting is enabled, a message is emitted with the given</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="comment">  /// descriptor used to identify the category of single allocation type.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memprof/callstacktrie/#a93eab9244b86ce5f52aa4f15a71741be">addSingleAllocTypeAttribute</a>(<a href="/docs/api/classes/llvm/callbase">CallBase</a> &#42;CI, <a href="/docs/api/namespaces/llvm/#a230980cf62b697d22ffdda32f6118e27">AllocationType</a> AT,</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/stringref">StringRef</a> Descriptor);</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">/// Helper class to iterate through stack ids in both metadata (memprof MIB and</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="comment">/// callsite) and the corresponding ThinLTO summary data structures</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="comment">/// (CallsiteInfo and MIBInfo). This simplifies implementation of client code</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="comment">/// which doesn&#39;t need to worry about whether we are operating with IR (Regular</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="comment">/// LTO), or summary (ThinLTO).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147" lineLink="/docs/api/classes/llvm/memprof/callstack"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> NodeT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> IteratorT&gt; </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/memprof/callstack/#a13a0bc8634c573823b8e98cdc5bbbf2e">CallStack</a> &#123;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149" lineLink="/docs/api/classes/llvm/memprof/callstack/#a13a0bc8634c573823b8e98cdc5bbbf2e"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memprof/callstack/#a13a0bc8634c573823b8e98cdc5bbbf2e">CallStack</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> NodeT &#42;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">) : <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Implement minimum required methods for range-based for loop.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The default implementation assumes we are operating on ThinLTO data</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// structures, which have a vector of StackIdIndices. There are specialized</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// versions provided to iterate through metadata.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155" lineLink="/docs/api/structs/llvm/memprof/callstack/callstackiterator"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#ad1eb8a8131d76d87c175640059ca21b3">CallStackIterator</a> &#123;</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156" lineLink="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a8e5d28319f8676510a6efdd4bf8d01ca"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> NodeT &#42;<a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a8e5d28319f8676510a6efdd4bf8d01ca">N</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157" lineLink="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a5ae0f0d5ef648ccea30a6028c82c2b2a"><Highlight kind="normal">    IteratorT <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a5ae0f0d5ef648ccea30a6028c82c2b2a">Iter</a>;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#ad1eb8a8131d76d87c175640059ca21b3">CallStackIterator</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> NodeT &#42;<a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a8e5d28319f8676510a6efdd4bf8d01ca">N</a>, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> End);</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">    uint64&#95;t <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#af7889f786837688475dfe17af8b39e55">operator&#42;</a>();</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160" lineLink="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#abaacedd8ec0ad6f90de8ee79b309ad5e"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#abaacedd8ec0ad6f90de8ee79b309ad5e">operator==</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#ad1eb8a8131d76d87c175640059ca21b3">CallStackIterator</a> &amp;rhs) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a5ae0f0d5ef648ccea30a6028c82c2b2a">Iter</a> == rhs.<a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a5ae0f0d5ef648ccea30a6028c82c2b2a">Iter</a>; &#125;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161" lineLink="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a268f1490d74fa9988335d2c0c29c3487"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a268f1490d74fa9988335d2c0c29c3487">operator!=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#ad1eb8a8131d76d87c175640059ca21b3">CallStackIterator</a> &amp;rhs) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> !(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal"> == rhs); &#125;</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162" lineLink="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a50a906df1bd60ff7cb4c8b3273a6c3aa"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a50a906df1bd60ff7cb4c8b3273a6c3aa">operator++</a>() &#123; ++<a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a5ae0f0d5ef648ccea30a6028c82c2b2a">Iter</a>; &#125;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165" lineLink="/docs/api/classes/llvm/memprof/callstack/#aa9e2045926d6c3f8367573526b1af0f8"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memprof/callstack/#aa9e2045926d6c3f8367573526b1af0f8">empty</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> == </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">  CallStackIterator <a href="/docs/api/classes/llvm/memprof/callstack/#a3ad31020297f36a08c7bb58a1df7b3a8">begin</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168" lineLink="/docs/api/classes/llvm/memprof/callstack/#a503a5a9aa96aa060c44756c03b5e5ef3"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator">CallStackIterator</a> <a href="/docs/api/classes/llvm/memprof/callstack/#a503a5a9aa96aa060c44756c03b5e5ef3">end</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator">CallStackIterator</a>(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>, </Highlight><Highlight kind="comment">/&#42;End&#42;/</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">); &#125;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">  CallStackIterator <a href="/docs/api/classes/llvm/memprof/callstack/#a874c43eac4b723c9e3d0070342a8f0f3">beginAfterSharedPrefix</a>(<a href="/docs/api/classes/llvm/memprof/callstack">CallStack</a> &amp;<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>);</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">  uint64&#95;t <a href="/docs/api/classes/llvm/memprof/callstack/#aa2ea6230d6476a358cbb5f4f7ed41b28">back</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> NodeT &#42;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> NodeT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> IteratorT&gt;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177" lineLink="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#ad1eb8a8131d76d87c175640059ca21b3"><Highlight kind="normal"><a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#ad1eb8a8131d76d87c175640059ca21b3">CallStack&lt;NodeT, IteratorT&gt;::CallStackIterator::CallStackIterator</a>(</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> NodeT &#42;<a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a8e5d28319f8676510a6efdd4bf8d01ca">N</a>, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> End)</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">    : <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a8e5d28319f8676510a6efdd4bf8d01ca">N</a>(<a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a8e5d28319f8676510a6efdd4bf8d01ca">N</a>) &#123;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a8e5d28319f8676510a6efdd4bf8d01ca">N</a>) &#123;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a5ae0f0d5ef648ccea30a6028c82c2b2a">Iter</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a5ae0f0d5ef648ccea30a6028c82c2b2a">Iter</a> = End ? <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a8e5d28319f8676510a6efdd4bf8d01ca">N</a>-&gt;StackIdIndices.end() : <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a8e5d28319f8676510a6efdd4bf8d01ca">N</a>-&gt;StackIdIndices.begin();</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> NodeT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> IteratorT&gt;</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188" lineLink="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#af7889f786837688475dfe17af8b39e55"><Highlight kind="normal">uint64&#95;t <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#af7889f786837688475dfe17af8b39e55">CallStack&lt;NodeT, IteratorT&gt;::CallStackIterator::operator&#42;</a>() &#123;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a5ae0f0d5ef648ccea30a6028c82c2b2a">Iter</a> != <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a8e5d28319f8676510a6efdd4bf8d01ca">N</a>-&gt;StackIdIndices.end());</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a5ae0f0d5ef648ccea30a6028c82c2b2a">Iter</a>;</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> NodeT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> IteratorT&gt;</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194" lineLink="/docs/api/classes/llvm/memprof/callstack/#aa2ea6230d6476a358cbb5f4f7ed41b28"><Highlight kind="normal">uint64&#95;t <a href="/docs/api/classes/llvm/memprof/callstack/#aa2ea6230d6476a358cbb5f4f7ed41b28">CallStack&lt;NodeT, IteratorT&gt;::back</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>);</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>-&gt;StackIdIndices.back();</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> NodeT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> IteratorT&gt;</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal"></Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator">CallStack&lt;NodeT, IteratorT&gt;::CallStackIterator</a></Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201" lineLink="/docs/api/classes/llvm/memprof/callstack/#a3ad31020297f36a08c7bb58a1df7b3a8"><Highlight kind="normal"><a href="/docs/api/classes/llvm/memprof/callstack/#a3ad31020297f36a08c7bb58a1df7b3a8">CallStack&lt;NodeT, IteratorT&gt;::begin</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator">CallStackIterator</a>(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>, </Highlight><Highlight kind="comment">/&#42;End&#42;/</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> NodeT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> IteratorT&gt;</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal"></Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator">CallStack&lt;NodeT, IteratorT&gt;::CallStackIterator</a></Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207" lineLink="/docs/api/classes/llvm/memprof/callstack/#a874c43eac4b723c9e3d0070342a8f0f3"><Highlight kind="normal"><a href="/docs/api/classes/llvm/memprof/callstack/#a874c43eac4b723c9e3d0070342a8f0f3">CallStack&lt;NodeT, IteratorT&gt;::beginAfterSharedPrefix</a>(<a href="/docs/api/classes/llvm/memprof/callstack/#a13a0bc8634c573823b8e98cdc5bbbf2e">CallStack</a> &amp;<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>) &#123;</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator">CallStackIterator</a> Cur = <a href="/docs/api/classes/llvm/memprof/callstack/#a3ad31020297f36a08c7bb58a1df7b3a8">begin</a>();</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator">CallStackIterator</a> OtherCur = <a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>.begin();</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">       Cur != <a href="/docs/api/classes/llvm/memprof/callstack/#a503a5a9aa96aa060c44756c03b5e5ef3">end</a>() &amp;&amp; OtherCur != <a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>.end(); ++Cur, ++OtherCur)</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(&#42;Cur == &#42;OtherCur);</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Cur;</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="comment">/// Specializations for iterating through IR metadata stack contexts.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;&gt;</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217" lineLink="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a8d1e97095918f6f93df6be45a6557afe"><Highlight kind="normal"><a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#ad1eb8a8131d76d87c175640059ca21b3">CallStack&lt;MDNode, MDNode::op&#95;iterator&gt;::CallStackIterator::CallStackIterator</a>(</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mdnode">MDNode</a> &#42;<a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a8e5d28319f8676510a6efdd4bf8d01ca">N</a>, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> End);</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;&gt;</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220" lineLink="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#a6b0c201e8ee704a7f52427ce5240e79e"><Highlight kind="normal">uint64&#95;t <a href="/docs/api/structs/llvm/memprof/callstack/callstackiterator/#af7889f786837688475dfe17af8b39e55">CallStack&lt;MDNode, MDNode::op&#95;iterator&gt;::CallStackIterator::operator&#42;</a>();</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221" lineLink="/docs/api/classes/llvm/memprof/callstack/#a8f15a4f39c55441b5710c112b16d5a6a"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;&gt; uint64&#95;t <a href="/docs/api/classes/llvm/memprof/callstack/#aa2ea6230d6476a358cbb5f4f7ed41b28">CallStack&lt;MDNode, MDNode::op&#95;iterator&gt;::back</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace memprof</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

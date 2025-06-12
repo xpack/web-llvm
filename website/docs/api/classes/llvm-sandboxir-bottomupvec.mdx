@@ -1,0 +1,347 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/sandboxir/bottomupvec
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `BottomUpVec` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Declaration
+
+<CodeBlock>class llvm::sandboxir::BottomUpVec</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Transforms/Vectorize/SandboxVectorizer/Passes/BottomUpVec.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/sandboxir/functionpass">FunctionPass</a></>}>
+A pass that runs on a sandbox::Function. <a href="/docs/api/classes/llvm/sandboxir/functionpass/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a121d3320d95d3836b765bf8e8cbb4de8">BottomUpVec</a> (StringRef Pipeline)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a47aa4241833389268fb4194c2ed936f5">printPipeline</a> (raw&#95;ostream &amp;OS) const final</>}>
+Similar to <a href="/docs/api/classes/llvm/sandboxir/pass/#ae4725099d02b2c60f33fca89e8672194">print()</a> but adds a newline. Used for testing. <a href="#a47aa4241833389268fb4194c2ed936f5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af99e15876a8fdb279707835eb24b037b">runOnFunction</a> (Function &amp;F, const Analyses &amp;A) final</>}>
+\\Returns true if it modifies <code>F</code>. <a href="#af99e15876a8fdb279707835eb24b037b">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a5ad7b5f4a7820715d589e79d06cc653c">collectPotentiallyDeadInstrs</a> (ArrayRef&lt; Value &#42; &gt; Bndl)</>}>
+After we create vectors for groups of instructions, the original instructions are potentially dead and may need to be removed. <a href="#a5ad7b5f4a7820715d589e79d06cc653c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/sandboxir/value">Value</a> &#42;</>}
+  name={<><a href="#aae8f38d76aa2d3e923b1a72248a8a07e">createPack</a> (ArrayRef&lt; Value &#42; &gt; ToPack, BasicBlock &#42;UserBB)</>}>
+Packs all elements of <code>ToPack</code> into a vector and returns that vector. <a href="#aae8f38d76aa2d3e923b1a72248a8a07e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/sandboxir/value">Value</a> &#42;</>}
+  name={<><a href="#ab03077fa914979d08c0d2684ed51a7b8">createShuffle</a> (Value &#42;VecOp, const ShuffleMask &amp;Mask, BasicBlock &#42;UserBB)</>}>
+Creates a shuffle instruction that shuffles <code>VecOp</code> according to <code>Mask</code>. <a href="#ab03077fa914979d08c0d2684ed51a7b8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/sandboxir/value">Value</a> &#42;</>}
+  name={<><a href="#a78f745978a01f6f983897de815aaeb3c">createVectorInstr</a> (ArrayRef&lt; Value &#42; &gt; Bndl, ArrayRef&lt; Value &#42; &gt; Operands)</>}>
+Creates and returns a vector instruction that replaces the instructions in <code>Bndl</code>. <a href="#a78f745978a01f6f983897de815aaeb3c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#add88155b9971925fb8c376e33a64af0a">tryEraseDeadInstrs</a> ()</>}>
+Erases all dead instructions from the dead instruction candidates collected during vectorization. <a href="#add88155b9971925fb8c376e33a64af0a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a5597f69a1272ebf88ba70920c448d452">tryVectorize</a> (ArrayRef&lt; Value &#42; &gt; Seeds)</>}>
+Entry point for vectorization starting from <code>Seeds</code>. <a href="#a5597f69a1272ebf88ba70920c448d452">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/sandboxir/value">Value</a> &#42;</>}
+  name={<><a href="#a2f1500c0378bbec9f606ab408bc781f5">vectorizeRec</a> (ArrayRef&lt; Value &#42; &gt; Bndl, ArrayRef&lt; Value &#42; &gt; UserBndl, unsigned Depth)</>}>
+Recursively try to vectorize <code>Bndl</code> and its operands. <a href="#a2f1500c0378bbec9f606ab408bc781f5">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a6dfd1da2f0ff3326944c923ab7d3b2b4">Change</a> = false</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/docs/api/classes/llvm/sandboxir/instruction">Instruction</a> &#42; &gt;</>}
+  name={<><a href="#a8862e1c5d84a550101c93c76551f4790">DeadInstrCandidates</a></>}>
+The original instructions that are potentially dead after vectorization. <a href="#a8862e1c5d84a550101c93c76551f4790">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::unique&#95;ptr&lt; <a href="/docs/api/classes/llvm/sandboxir/instrmaps">InstrMaps</a> &gt;</>}
+  name={<><a href="#ad7960076a164cc6cebdc824873e0e116">IMaps</a></>}>
+Maps scalars to vectors. <a href="#ad7960076a164cc6cebdc824873e0e116">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::unique&#95;ptr&lt; <a href="/docs/api/classes/llvm/sandboxir/legalityanalysis">LegalityAnalysis</a> &gt;</>}
+  name={<><a href="#a9f184aadfb0d48357960d51b3490de59">Legality</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/sandboxir/regionpassmanager">RegionPassManager</a></>}
+  name={<><a href="#ab5f18710c8016c42aa3dd429496513cf">RPM</a></>}>
+The PM containing the pipeline of region passes. <a href="#ab5f18710c8016c42aa3dd429496513cf">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+Definition at line 26 of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### BottomUpVec() {#a121d3320d95d3836b765bf8e8cbb4de8}
+
+<MemberDefinition
+  prototype={<>llvm::sandboxir::BottomUpVec::BottomUpVec (<a href="/docs/api/classes/llvm/stringref">StringRef</a> Pipeline)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00062">62</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp/#l00039">39</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp">BottomUpVec.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### printPipeline() {#a47aa4241833389268fb4194c2ed936f5}
+
+<MemberDefinition
+  prototype={<>void llvm::sandboxir::BottomUpVec::printPipeline (<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp; OS) const</>}
+  labels = {["inline", "virtual"]}>
+Similar to <a href="/docs/api/classes/llvm/sandboxir/pass/#ae4725099d02b2c60f33fca89e8672194">print()</a> but adds a newline. Used for testing.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00064">64</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>.
+</MemberDefinition>
+
+### runOnFunction() {#af99e15876a8fdb279707835eb24b037b}
+
+<MemberDefinition
+  prototype={<>bool llvm::sandboxir::BottomUpVec::runOnFunction (<a href="/docs/api/classes/llvm/sandboxir/function">Function</a> &amp; F, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/sandboxir/analyses">Analyses</a> &amp; A)</>}
+  labels = {["virtual"]}>
+\\Returns true if it modifies <code>F</code>.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00063">63</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp/#l00397">397</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp">BottomUpVec.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### collectPotentiallyDeadInstrs() {#a5ad7b5f4a7820715d589e79d06cc653c}
+
+<MemberDefinition
+  prototype={<>void llvm::sandboxir::BottomUpVec::collectPotentiallyDeadInstrs (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/sandboxir/value">Value</a> &#42; &gt; Bndl)</>}>
+After we create vectors for groups of instructions, the original instructions are potentially dead and may need to be removed.
+
+This function helps collect these instructions (along with the pointer operands for loads/stores) so that they can be cleaned up later.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00051">51</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp/#l00257">257</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp">BottomUpVec.cpp</a>.
+</MemberDefinition>
+
+### createPack() {#aae8f38d76aa2d3e923b1a72248a8a07e}
+
+<MemberDefinition
+  prototype={<>Value &#42; llvm::sandboxir::BottomUpVec::createPack (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/sandboxir/value">Value</a> &#42; &gt; ToPack, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; UserBB)</>}>
+Packs all elements of <code>ToPack</code> into a vector and returns that vector.
+
+<code>UserBB</code> is the block of the user bundle.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00046">46</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp/#l00205">205</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp">BottomUpVec.cpp</a>.
+</MemberDefinition>
+
+### createShuffle() {#ab03077fa914979d08c0d2684ed51a7b8}
+
+<MemberDefinition
+  prototype={<>Value &#42; llvm::sandboxir::BottomUpVec::createShuffle (<a href="/docs/api/classes/llvm/sandboxir/value">Value</a> &#42; VecOp, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/sandboxir/shufflemask">ShuffleMask</a> &amp; Mask, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; UserBB)</>}>
+Creates a shuffle instruction that shuffles <code>VecOp</code> according to <code>Mask</code>.
+
+<code>UserBB</code> is the block of the user bundle.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00042">42</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp/#l00198">198</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp">BottomUpVec.cpp</a>.
+</MemberDefinition>
+
+### createVectorInstr() {#a78f745978a01f6f983897de815aaeb3c}
+
+<MemberDefinition
+  prototype={<>Value &#42; llvm::sandboxir::BottomUpVec::createVectorInstr (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/sandboxir/value">Value</a> &#42; &gt; Bndl, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/sandboxir/value">Value</a> &#42; &gt; Operands)</>}>
+Creates and returns a vector instruction that replaces the instructions in <code>Bndl</code>.
+
+<code>Operands</code> are the already vectorized operands.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00036">36</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp/#l00067">67</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp">BottomUpVec.cpp</a>.
+</MemberDefinition>
+
+### tryEraseDeadInstrs() {#add88155b9971925fb8c376e33a64af0a}
+
+<MemberDefinition
+  prototype="void llvm::sandboxir::BottomUpVec::tryEraseDeadInstrs ()">
+Erases all dead instructions from the dead instruction candidates collected during vectorization.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00039">39</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp/#l00180">180</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp">BottomUpVec.cpp</a>.
+</MemberDefinition>
+
+### tryVectorize() {#a5597f69a1272ebf88ba70920c448d452}
+
+<MemberDefinition
+  prototype={<>bool llvm::sandboxir::BottomUpVec::tryVectorize (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/sandboxir/value">Value</a> &#42; &gt; Seeds)</>}>
+Entry point for vectorization starting from <code>Seeds</code>.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00056">56</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp/#l00389">389</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp">BottomUpVec.cpp</a>.
+</MemberDefinition>
+
+### vectorizeRec() {#a2f1500c0378bbec9f606ab408bc781f5}
+
+<MemberDefinition
+  prototype={<>Value &#42; llvm::sandboxir::BottomUpVec::vectorizeRec (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/sandboxir/value">Value</a> &#42; &gt; Bndl, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/sandboxir/value">Value</a> &#42; &gt; UserBndl, unsigned Depth)</>}>
+Recursively try to vectorize <code>Bndl</code> and its operands.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00053">53</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp/#l00282">282</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp">BottomUpVec.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### Change {#a6dfd1da2f0ff3326944c923ab7d3b2b4}
+
+<MemberDefinition
+  prototype="bool llvm::sandboxir::BottomUpVec::Change = false">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00027">27</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>.
+</MemberDefinition>
+
+### DeadInstrCandidates {#a8862e1c5d84a550101c93c76551f4790}
+
+<MemberDefinition
+  prototype={<>DenseSet&lt;Instruction &#42;&gt; llvm::sandboxir::BottomUpVec::DeadInstrCandidates</>}>
+The original instructions that are potentially dead after vectorization.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00030">30</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>.
+</MemberDefinition>
+
+### IMaps {#ad7960076a164cc6cebdc824873e0e116}
+
+<MemberDefinition
+  prototype={<>std::unique&#95;ptr&lt;InstrMaps&gt; llvm::sandboxir::BottomUpVec::IMaps</>}>
+Maps scalars to vectors.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00032">32</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>.
+</MemberDefinition>
+
+### Legality {#a9f184aadfb0d48357960d51b3490de59}
+
+<MemberDefinition
+  prototype={<>std::unique&#95;ptr&lt;LegalityAnalysis&gt; llvm::sandboxir::BottomUpVec::Legality</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00028">28</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>.
+</MemberDefinition>
+
+### RPM {#ab5f18710c8016c42aa3dd429496513cf}
+
+<MemberDefinition
+  prototype="RegionPassManager llvm::sandboxir::BottomUpVec::RPM">
+The PM containing the pipeline of region passes.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h/#l00059">59</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/vectorize/include/llvm/transforms/vectorize/sandboxvectorizer/include/llvm/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-h">BottomUpVec.h</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/lib/transforms/vectorize/sandboxvectorizer/lib/transforms/vectorize/sandboxvectorizer/passes/bottomupvec-cpp">BottomUpVec.cpp</a></li>
+</ul>
+
+</DoxygenPage>

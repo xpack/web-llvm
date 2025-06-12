@@ -1,0 +1,358 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/support/smallvector-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `SmallVector.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/SmallVector.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/Twine.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/MemAlloc.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/memalloc-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cstdint"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/anonymous-smallvector-cpp-">anonymous&#123;SmallVector.cpp&#125;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/anonymous-namespace-smallvector-cpp-/struct16b">Struct16B</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/anonymous-namespace-smallvector-cpp-/struct32b">Struct32B</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;class Size&#95;T&gt;</>}
+  type={<>size&#95;t</>}
+  name={<><a href="#aaacda3d173fc2125198e9fc756841767">getNewCapacity</a> (size&#95;t MinSize, size&#95;t TSize, size&#95;t OldCapacity)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>void &#42;</>}
+  name={<><a href="#af529edaff902b7a5f2370f71ed88db1e">replaceAllocation</a> (void &#42;NewElts, size&#95;t TSize, size&#95;t NewCapacity, size&#95;t VSize=0)</>}>
+If vector was first created with capacity 0, getFirstEl() points to the memory right after, an area unallocated. <a href="#af529edaff902b7a5f2370f71ed88db1e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aaba83d1439bd004981452b39ad73c3c0">report&#95;at&#95;maximum&#95;capacity</a> (size&#95;t MaxSize)</>}>
+Report that this vector is already at maximum capacity. <a href="#aaba83d1439bd004981452b39ad73c3c0">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a16781b016f45fba1aa015dc59ba7e653">report&#95;size&#95;overflow</a> (size&#95;t MinSize, size&#95;t MaxSize)</>}>
+Report that MinSize doesn&#39;t fit into this vector&#39;s size type. <a href="#a16781b016f45fba1aa015dc59ba7e653">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Functions
+
+### getNewCapacity() {#aaacda3d173fc2125198e9fc756841767}
+
+<MemberDefinition
+  template={<>template &lt;class Size&#95;T&gt;</>}
+  prototype={<>static size&#95;t getNewCapacity (size&#95;t MinSize, size&#95;t TSize, size&#95;t OldCapacity)</>}
+  labels = {["static"]}>
+
+Definition at line <a href="#l00090">90</a> of file <a href="/docs/api/files/lib/lib/support/smallvector-cpp">SmallVector.cpp</a>.
+</MemberDefinition>
+
+### replaceAllocation() {#af529edaff902b7a5f2370f71ed88db1e}
+
+<MemberDefinition
+  prototype={<>static void &#42; replaceAllocation (void &#42; NewElts, size&#95;t TSize, size&#95;t NewCapacity, size&#95;t VSize=0)</>}
+  labels = {["static"]}>
+If vector was first created with capacity 0, getFirstEl() points to the memory right after, an area unallocated.
+
+If a subsequent allocation, that grows the vector, happens to return the same pointer as getFirstEl(), get a new allocation, otherwise isSmall() will falsely return that no allocation was done (true) and the memory will not be freed in the destructor. If a VSize is given (vector size), also copy that many elements to the new allocation - used if realloca fails to increase space, and happens to allocate precisely at BeginX. This is unlikely to be called often, but resolves a memory leak when the situation does occur.
+
+Definition at line <a href="#l00121">121</a> of file <a href="/docs/api/files/lib/lib/support/smallvector-cpp">SmallVector.cpp</a>.
+</MemberDefinition>
+
+### report&#95;at&#95;maximum&#95;capacity() {#aaba83d1439bd004981452b39ad73c3c0}
+
+<MemberDefinition
+  prototype={<>static void report&#95;at&#95;maximum&#95;capacity (size&#95;t MaxSize)</>}
+  labels = {["static"]}>
+Report that this vector is already at maximum capacity.
+
+Throws std::length&#95;error or calls report&#95;fatal&#95;error.
+
+Definition at line <a href="#l00077">77</a> of file <a href="/docs/api/files/lib/lib/support/smallvector-cpp">SmallVector.cpp</a>.
+</MemberDefinition>
+
+### report&#95;size&#95;overflow() {#a16781b016f45fba1aa015dc59ba7e653}
+
+<MemberDefinition
+  prototype={<>static void report&#95;size&#95;overflow (size&#95;t MinSize, size&#95;t MaxSize)</>}
+  labels = {["static"]}>
+Report that MinSize doesn&#39;t fit into this vector&#39;s size type.
+
+Throws std::length&#95;error or calls report&#95;fatal&#95;error.
+
+Definition at line <a href="#l00062">62</a> of file <a href="/docs/api/files/lib/lib/support/smallvector-cpp">SmallVector.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/ADT/SmallVector.cpp - &#39;Normally small&#39; vectors ----------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements the SmallVector class.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h">llvm/ADT/Twine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/memalloc-h">llvm/Support/MemAlloc.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstdint&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef LLVM&#95;ENABLE&#95;EXCEPTIONS</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;stdexcept&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Check that no bytes are wasted and everything is well-aligned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23" lineLink="/docs/api/namespaces/anonymous-smallvector-cpp-"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="comment">// These structures may cause binary compat warnings on AIX. Suppress the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="comment">// warning since we are only using these types for the static assertions below.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;AIX)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic push</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic ignored &quot;-Waix-compat&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30" lineLink="/docs/api/structs/anonymous-namespace-smallvector-cpp-/struct16b"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/anonymous-namespace-smallvector-cpp-/struct16b">Struct16B</a> &#123;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31" lineLink="/docs/api/structs/anonymous-namespace-smallvector-cpp-/struct16b/#a4cee46c1ae2a60efffc3d4d6924dc1f6"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">alignas</Highlight><Highlight kind="normal">(16) </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/structs/anonymous-namespace-smallvector-cpp-/struct16b/#a4cee46c1ae2a60efffc3d4d6924dc1f6">X</a>;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33" lineLink="/docs/api/structs/anonymous-namespace-smallvector-cpp-/struct32b"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/anonymous-namespace-smallvector-cpp-/struct32b">Struct32B</a> &#123;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34" lineLink="/docs/api/structs/anonymous-namespace-smallvector-cpp-/struct32b/#a9485bc9bb9362e2838850a346185c07e"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">alignas</Highlight><Highlight kind="normal">(32) </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/structs/anonymous-namespace-smallvector-cpp-/struct32b/#a9485bc9bb9362e2838850a346185c07e">X</a>;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;AIX)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic pop</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;void &#42;, 0&gt;</a>) ==</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">                  </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(unsigned) &#42; 2 + </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;),</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">              </Highlight><Highlight kind="stringliteral">&quot;wasted space in SmallVector size 0&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">alignof</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;Struct16B, 0&gt;</a>) &gt;= </Highlight><Highlight kind="keyword">alignof</Highlight><Highlight kind="normal">(Struct16B),</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">              </Highlight><Highlight kind="stringliteral">&quot;wrong alignment for 16-byte aligned T&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">alignof</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;Struct32B, 0&gt;</a>) &gt;= </Highlight><Highlight kind="keyword">alignof</Highlight><Highlight kind="normal">(Struct32B),</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">              </Highlight><Highlight kind="stringliteral">&quot;wrong alignment for 32-byte aligned T&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;Struct16B, 0&gt;</a>) &gt;= </Highlight><Highlight kind="keyword">alignof</Highlight><Highlight kind="normal">(Struct16B),</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">              </Highlight><Highlight kind="stringliteral">&quot;missing padding for 16-byte aligned T&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;Struct32B, 0&gt;</a>) &gt;= </Highlight><Highlight kind="keyword">alignof</Highlight><Highlight kind="normal">(Struct32B),</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">              </Highlight><Highlight kind="stringliteral">&quot;missing padding for 32-byte aligned T&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;void &#42;, 1&gt;</a>) ==</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">                  </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(unsigned) &#42; 2 + </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;) &#42; 2,</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">              </Highlight><Highlight kind="stringliteral">&quot;wasted space in SmallVector size 1&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;char, 0&gt;</a>) ==</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">                  </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;) &#42; 2 + </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;),</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">              </Highlight><Highlight kind="stringliteral">&quot;1 byte elements have word-sized type for size and capacity&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">/// Report that MinSize doesn&#39;t fit into this vector&#39;s size type. Throws</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="comment">/// std::length&#95;error or calls report&#95;fatal&#95;error.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">&#91;&#91;noreturn&#93;&#93; </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="#a16781b016f45fba1aa015dc59ba7e653">report&#95;size&#95;overflow</a>(</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> MinSize, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> MaxSize);</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62" lineLink="#a16781b016f45fba1aa015dc59ba7e653"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="#a16781b016f45fba1aa015dc59ba7e653">report&#95;size&#95;overflow</a>(</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> MinSize, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> MaxSize) &#123;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">  std::string Reason = </Highlight><Highlight kind="stringliteral">&quot;SmallVector unable to grow. Requested capacity (&quot;</Highlight><Highlight kind="normal"> +</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">                       std::to&#95;string(MinSize) +</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">                       </Highlight><Highlight kind="stringliteral">&quot;) is larger than maximum value for size type (&quot;</Highlight><Highlight kind="normal"> +</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">                       std::to&#95;string(MaxSize) + </Highlight><Highlight kind="stringliteral">&quot;)&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef LLVM&#95;ENABLE&#95;EXCEPTIONS</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">throw</Highlight><Highlight kind="normal"> std::length&#95;error(Reason);</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69" lineLink="/docs/api/classes/llvm/smallvectorbase/#a2c068750374c249c3498144297eda93c"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">report&#95;fatal&#95;error</a>(<a href="/docs/api/classes/llvm/twine">Twine</a>(Reason));</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">/// Report that this vector is already at maximum capacity. Throws</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75" lineLink="/docs/api/classes/llvm/smallvectorbase/#a0fef5db8f0b473292cb9770075050da5"><Highlight kind="comment">/// std::length&#95;error or calls report&#95;fatal&#95;error.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">&#91;&#91;noreturn&#93;&#93; </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="#aaba83d1439bd004981452b39ad73c3c0">report&#95;at&#95;maximum&#95;capacity</a>(</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> MaxSize);</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77" lineLink="#aaba83d1439bd004981452b39ad73c3c0"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="#aaba83d1439bd004981452b39ad73c3c0">report&#95;at&#95;maximum&#95;capacity</a>(</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> MaxSize) &#123;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">  std::string Reason =</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">      </Highlight><Highlight kind="stringliteral">&quot;SmallVector capacity unable to grow. Already at maximum size &quot;</Highlight><Highlight kind="normal"> +</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">      std::to&#95;string(MaxSize);</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef LLVM&#95;ENABLE&#95;EXCEPTIONS</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">throw</Highlight><Highlight kind="normal"> std::length&#95;error(Reason);</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">report&#95;fatal&#95;error</a>(<a href="/docs/api/classes/llvm/twine">Twine</a>(Reason));</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Note: Moving this function into the header may cause performance regression.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> Size&#95;T&gt;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90" lineLink="#aaacda3d173fc2125198e9fc756841767"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="#aaacda3d173fc2125198e9fc756841767">getNewCapacity</a>(</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> MinSize, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> TSize, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> OldCapacity) &#123;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> MaxSize = std::numeric&#95;limits&lt;Size&#95;T&gt;::max();</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Ensure we can fit the new capacity.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// This is only going to be applicable when the capacity is 32 bit.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (MinSize &gt; MaxSize)</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">    <a href="#a16781b016f45fba1aa015dc59ba7e653">report&#95;size&#95;overflow</a>(MinSize, MaxSize);</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Ensure we can meet the guarantee of space for at least one more element.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The above check alone will not catch the case where grow is called with a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// default MinSize of 0, but the current capacity cannot be increased.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// This is only going to be applicable when the capacity is 32 bit.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (OldCapacity == MaxSize)</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">    <a href="#aaba83d1439bd004981452b39ad73c3c0">report&#95;at&#95;maximum&#95;capacity</a>(MaxSize);</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// In theory 2&#42;capacity can overflow if the capacity is 64 bit, but the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// original capacity would never be large enough for this to be a problem.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> NewCapacity = 2 &#42; OldCapacity + 1; </Highlight><Highlight kind="comment">// Always grow.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::clamp(NewCapacity, MinSize, MaxSize);</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">/// If vector was first created with capacity 0, getFirstEl() points to the</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">/// memory right after, an area unallocated. If a subsequent allocation,</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">/// that grows the vector, happens to return the same pointer as getFirstEl(),</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">/// get a new allocation, otherwise isSmall() will falsely return that no</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">/// allocation was done (true) and the memory will not be freed in the</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">/// destructor. If a VSize is given (vector size), also copy that many</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">/// elements to the new allocation - used if realloca fails to increase</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="comment">/// space, and happens to allocate precisely at BeginX.</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">/// This is unlikely to be called often, but resolves a memory leak when the</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">/// situation does occur.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121" lineLink="#af529edaff902b7a5f2370f71ed88db1e"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;<a href="#af529edaff902b7a5f2370f71ed88db1e">replaceAllocation</a>(</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;NewElts, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> TSize, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> NewCapacity,</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">                               </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> VSize = 0) &#123;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;NewEltsReplace = <a href="/docs/api/namespaces/llvm/#a8bb931812d78f470d4ca775ac8b88e61">llvm::safe&#95;malloc</a>(NewCapacity &#42; TSize);</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (VSize)</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">    memcpy(NewEltsReplace, NewElts, VSize &#42; TSize);</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  free(NewElts);</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> NewEltsReplace;</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Note: Moving this function into the header may cause performance regression.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> Size&#95;T&gt;</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132" lineLink="/docs/api/classes/llvm/smallvectorbase/#a2c068750374c249c3498144297eda93c"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/classes/llvm/smallvectorbase/#a2c068750374c249c3498144297eda93c">SmallVectorBase&lt;Size&#95;T&gt;::mallocForGrow</a>(</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;FirstEl, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> MinSize,</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">                                             </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> TSize,</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">                                             </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> &amp;NewCapacity) &#123;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  NewCapacity = <a href="#aaacda3d173fc2125198e9fc756841767">getNewCapacity&lt;Size&#95;T&gt;</a>(MinSize, TSize, this-&gt;<a href="/docs/api/classes/llvm/smallvectorbase/#ad5cd3f01e0e643f56beff88ff86dd5da">capacity</a>());</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Even if capacity is not 0 now, if the vector was originally created with</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// capacity 0, it&#39;s possible for the malloc to return FirstEl.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;NewElts = <a href="/docs/api/namespaces/llvm/#a8bb931812d78f470d4ca775ac8b88e61">llvm::safe&#95;malloc</a>(NewCapacity &#42; TSize);</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (NewElts == FirstEl)</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">    NewElts = <a href="#af529edaff902b7a5f2370f71ed88db1e">replaceAllocation</a>(NewElts, TSize, NewCapacity);</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> NewElts;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Note: Moving this function into the header may cause performance regression.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> Size&#95;T&gt;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146" lineLink="/docs/api/classes/llvm/smallvectorbase/#a0fef5db8f0b473292cb9770075050da5"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/smallvectorbase/#a0fef5db8f0b473292cb9770075050da5">SmallVectorBase&lt;Size&#95;T&gt;::grow&#95;pod</a>(</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;FirstEl, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> MinSize,</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">                                       </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> TSize) &#123;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> NewCapacity = <a href="#aaacda3d173fc2125198e9fc756841767">getNewCapacity&lt;Size&#95;T&gt;</a>(MinSize, TSize, this-&gt;<a href="/docs/api/classes/llvm/smallvectorbase/#ad5cd3f01e0e643f56beff88ff86dd5da">capacity</a>());</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;NewElts;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/smallvectorbase/#aeae003355ebd5135c415924b38964abd">BeginX</a> == FirstEl) &#123;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">    NewElts = <a href="/docs/api/namespaces/llvm/#a8bb931812d78f470d4ca775ac8b88e61">llvm::safe&#95;malloc</a>(NewCapacity &#42; TSize);</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (NewElts == FirstEl)</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">      NewElts = <a href="#af529edaff902b7a5f2370f71ed88db1e">replaceAllocation</a>(NewElts, TSize, NewCapacity);</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Copy the elements over.  No need to run dtors on PODs.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">    memcpy(NewElts, this-&gt;<a href="/docs/api/classes/llvm/smallvectorbase/#aeae003355ebd5135c415924b38964abd">BeginX</a>, <a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmreflect-cpp/#ac934769d93af95250952646a3829df4c">size</a>() &#42; TSize);</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// If this wasn&#39;t grown from the inline copy, grow the allocated space.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">    NewElts = <a href="/docs/api/namespaces/llvm/#a9edff61a0e003a8bb37f5a12a8755cf2">llvm::safe&#95;realloc</a>(this-&gt;<a href="/docs/api/classes/llvm/smallvectorbase/#aeae003355ebd5135c415924b38964abd">BeginX</a>, NewCapacity &#42; TSize);</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (NewElts == FirstEl)</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">      NewElts = <a href="#af529edaff902b7a5f2370f71ed88db1e">replaceAllocation</a>(NewElts, TSize, NewCapacity, <a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmreflect-cpp/#ac934769d93af95250952646a3829df4c">size</a>());</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">  this-&gt;<a href="/docs/api/classes/llvm/smallvectorbase/#a435b1238f81c19cd3bd557fe9af58ed9">set&#95;allocation&#95;range</a>(NewElts, NewCapacity);</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/smallvectorbase">llvm::SmallVectorBase&lt;uint32&#95;t&gt;</a>;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Disable the uint64&#95;t instantiation for 32-bit builds.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Both uint32&#95;t and uint64&#95;t instantiations are needed for 64-bit builds.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This instantiation will never be used in 32-bit builds, and will cause</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal"></Highlight><Highlight kind="comment">// warnings when sizeof(Size&#95;T) &gt; sizeof(size&#95;t).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if SIZE&#95;MAX &gt; UINT32&#95;MAX</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/smallvectorbase">llvm::SmallVectorBase&lt;uint64&#95;t&gt;</a>;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Assertions to ensure this #if stays in sync with SmallVectorSizeType.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/namespaces/llvm/#a8c03fc5361775d8b9c9412745110274b">SmallVectorSizeType&lt;char&gt;</a>) == </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint64&#95;t),</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">              </Highlight><Highlight kind="stringliteral">&quot;Expected SmallVectorBase&lt;uint64&#95;t&gt; variant to be in use.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/namespaces/llvm/#a8c03fc5361775d8b9c9412745110274b">SmallVectorSizeType&lt;char&gt;</a>) == </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint32&#95;t),</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">              </Highlight><Highlight kind="stringliteral">&quot;Expected SmallVectorBase&lt;uint32&#95;t&gt; variant to be in use.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

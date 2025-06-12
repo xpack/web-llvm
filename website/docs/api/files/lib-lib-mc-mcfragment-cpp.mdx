@@ -1,0 +1,370 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/mc/mcfragment-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `MCFragment.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/MC/MCFragment.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mcfragment-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/SmallVector.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/StringExtras.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/stringextras-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/Twine.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Config/llvm-config.h"
+  permalink=""
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/MC/MCContext.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mccontext-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/MC/MCFixup.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mcfixup-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/MC/MCSection.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mcsection-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/MC/MCSectionMachO.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mcsectionmacho-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/MC/MCSymbol.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mcsymbol-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Casting.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/casting-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Compiler.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/raw_ostream.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cassert"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="utility"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- lib/MC/MCFragment.cpp - Assembler Fragment Implementation ----------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcfragment-h">llvm/MC/MCFragment.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringextras-h">llvm/ADT/StringExtras.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h">llvm/ADT/Twine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;llvm/Config/llvm-config.h&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mccontext-h">llvm/MC/MCContext.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcfixup-h">llvm/MC/MCFixup.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcsection-h">llvm/MC/MCSection.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcsectionmacho-h">llvm/MC/MCSectionMachO.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcsymbol-h">llvm/MC/MCSymbol.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">llvm/Support/Casting.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h">llvm/Support/Compiler.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h">llvm/Support/raw&#95;ostream.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cassert&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;utility&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27" lineLink="/docs/api/classes/llvm/mcfragment/#a08c64d9919161955899f42fad75089dc"><Highlight kind="normal"><a href="/docs/api/classes/llvm/mcfragment/#a312f660c73af24d1d2697e1b1c25ff93">MCFragment::MCFragment</a>(<a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68">FragmentType</a> Kind, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#a47324e10b138f859b0fee6acf80bd979">HasInstructions</a>)</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">    : Kind(Kind), <a href="/docs/api/classes/llvm/mcfragment/#a47324e10b138f859b0fee6acf80bd979">HasInstructions</a>(<a href="/docs/api/classes/llvm/mcfragment/#a47324e10b138f859b0fee6acf80bd979">HasInstructions</a>), <a href="/docs/api/classes/llvm/mcfragment/#a063d6d412258d30d4ce0fcb37b645e9f">AlignToBundleEnd</a>(<a href="/docs/api/namespaces/false">false</a>),</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/mcfragment/#a0aa9816583f9e76543cd195c5b0acffc">LinkerRelaxable</a>(<a href="/docs/api/namespaces/false">false</a>), <a href="/docs/api/classes/llvm/mcfragment/#a9f7041d4aa87ae600ae5b28a4096dd9b">AllowAutoPadding</a>(<a href="/docs/api/namespaces/false">false</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31" lineLink="/docs/api/classes/llvm/mcfragment/#a60e0da8cb1cac614df18ebb7ad458f3e"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#a60e0da8cb1cac614df18ebb7ad458f3e">MCFragment::destroy</a>() &#123;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (Kind) &#123;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a1f3544ccfba8bd153218f9aff934ae23">FT&#95;Align</a>:</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCAlignFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCAlignFragment();</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a31f0e4803273f2184e596c87e1e05f80">FT&#95;Data</a>:</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCDataFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCDataFragment();</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a1d46f74bcd87621a62557b9b6fc67c4b">FT&#95;Fill</a>:</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCFillFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCFillFragment();</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68afa54da4eb8fe165449fbbd9a300903be">FT&#95;Nops</a>:</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCNopsFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCNopsFragment();</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68abe5194c45ead6aefe6b0882dcb6f2104">FT&#95;Relaxable</a>:</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCRelaxableFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCRelaxableFragment();</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68ac39471f5e9b12943cc8249cddbacd100">FT&#95;Org</a>:</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCOrgFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCOrgFragment();</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a01473d8036e353978ae750c8dace1a10">FT&#95;Dwarf</a>:</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCDwarfLineAddrFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCDwarfLineAddrFragment();</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a2f12197bbe6c6a91731b3828d033a212">FT&#95;DwarfFrame</a>:</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCDwarfCallFrameFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCDwarfCallFrameFragment();</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68acdb2608fe021d8fb06cf91d424f5bc53">FT&#95;LEB</a>:</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCLEBFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCLEBFragment();</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a79f2f5b7f9eccf921287b14be41f29ac">FT&#95;BoundaryAlign</a>:</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCBoundaryAlignFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCBoundaryAlignFragment();</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a39bf3fdfcea08fc7dc5e927aa5fce3be">FT&#95;SymbolId</a>:</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCSymbolIdFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCSymbolIdFragment();</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a4c741eccc3322f72bad81e89b70c9382">FT&#95;CVInlineLines</a>:</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCCVInlineLineTableFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCCVInlineLineTableFragment();</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a99243fc57a7beebaba062a013912846f">FT&#95;CVDefRange</a>:</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCCVDefRangeFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCCVDefRangeFragment();</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68adcbefeedb7422d13473a4df6ff1cf964">FT&#95;PseudoProbe</a>:</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCPseudoProbeAddrFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCPseudoProbeAddrFragment();</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68acd75963af411400a2ed7c133a25d17a3">FT&#95;Dummy</a>:</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCDummyFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;~MCDummyFragment();</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81" lineLink="/docs/api/classes/llvm/mcfragment/#a4e2fd6c6e6a95e8b339866567c8345d7"><Highlight kind="normal"></Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &#42;<a href="/docs/api/classes/llvm/mcfragment/#a4e2fd6c6e6a95e8b339866567c8345d7">MCFragment::getAtom</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCSectionMachO&gt;</a>(Parent)-&gt;getAtom(LayoutOrder);</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Debugging methods</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89" lineLink="/docs/api/namespaces/llvm/#a3370dd99cc932848c8d138025137ad6a"><Highlight kind="normal"><a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;<a href="/docs/api/namespaces/llvm/#ab89f1db02887aa569176f0e29622eb47">operator&lt;&lt;</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfixup">MCFixup</a> &amp;AF) &#123;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;&lt;MCFixup&quot;</Highlight><Highlight kind="normal"> &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Offset:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; AF.<a href="/docs/api/classes/llvm/mcfixup/#a6d15eb9e5fcc1aefad18f4f9f7dcbc66">getOffset</a>()</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">     &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Value:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; &#42;AF.<a href="/docs/api/classes/llvm/mcfixup/#a1766447693abfb2e612a4d394f8b4cd0">getValue</a>()</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">     &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Kind:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; AF.<a href="/docs/api/classes/llvm/mcfixup/#afe6bd9f0a68df78d2b0bfc4dc4f944a2">getKind</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;&gt;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OS;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if !defined(NDEBUG) || defined(LLVM&#95;ENABLE&#95;DUMP)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99" lineLink="/docs/api/classes/llvm/mcfragment/#a73af1340aaefb3f64c1e4000ce6254e4"><Highlight kind="normal"><a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#aa863693eef567397d9c292da5bf22d34">LLVM&#95;DUMP&#95;METHOD</a> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#a73af1340aaefb3f64c1e4000ce6254e4">MCFragment::dump</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS = <a href="/docs/api/namespaces/llvm/#a9a7b5c68c90f85baaedaa854cc5002cc">errs</a>();</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;&lt;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/mcfragment/#a2982683863a142955ae805f3bf930b4e">getKind</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a1f3544ccfba8bd153218f9aff934ae23">MCFragment::FT&#95;Align</a>: OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCAlignFragment&quot;</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a31f0e4803273f2184e596c87e1e05f80">MCFragment::FT&#95;Data</a>:  OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCDataFragment&quot;</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a1d46f74bcd87621a62557b9b6fc67c4b">MCFragment::FT&#95;Fill</a>:  OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCFillFragment&quot;</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68afa54da4eb8fe165449fbbd9a300903be">MCFragment::FT&#95;Nops</a>:</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCFNopsFragment&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68abe5194c45ead6aefe6b0882dcb6f2104">MCFragment::FT&#95;Relaxable</a>:  OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCRelaxableFragment&quot;</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68ac39471f5e9b12943cc8249cddbacd100">MCFragment::FT&#95;Org</a>:   OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCOrgFragment&quot;</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a01473d8036e353978ae750c8dace1a10">MCFragment::FT&#95;Dwarf</a>: OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCDwarfFragment&quot;</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a2f12197bbe6c6a91731b3828d033a212">MCFragment::FT&#95;DwarfFrame</a>: OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCDwarfCallFrameFragment&quot;</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68acdb2608fe021d8fb06cf91d424f5bc53">MCFragment::FT&#95;LEB</a>:   OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCLEBFragment&quot;</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a79f2f5b7f9eccf921287b14be41f29ac">MCFragment::FT&#95;BoundaryAlign</a>: OS&lt;&lt;</Highlight><Highlight kind="stringliteral">&quot;MCBoundaryAlignFragment&quot;</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a39bf3fdfcea08fc7dc5e927aa5fce3be">MCFragment::FT&#95;SymbolId</a>:    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCSymbolIdFragment&quot;</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a4c741eccc3322f72bad81e89b70c9382">MCFragment::FT&#95;CVInlineLines</a>: OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCCVInlineLineTableFragment&quot;</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a99243fc57a7beebaba062a013912846f">MCFragment::FT&#95;CVDefRange</a>: OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCCVDefRangeTableFragment&quot;</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68adcbefeedb7422d13473a4df6ff1cf964">MCFragment::FT&#95;PseudoProbe</a>:</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCPseudoProbe&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68acd75963af411400a2ed7c133a25d17a3">MCFragment::FT&#95;Dummy</a>: OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;MCDummyFragment&quot;</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;&lt;MCFragment &quot;</Highlight><Highlight kind="normal"> &lt;&lt; (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;)</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal"> &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; LayoutOrder:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; LayoutOrder</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">     &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Offset:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; Offset &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; HasInstructions:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; <a href="/docs/api/classes/llvm/mcfragment/#acd02e61b262530ebe5c9a27ac0a0a693">hasInstructions</a>();</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;EF = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;MCEncodedFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">))</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; BundlePadding:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(EF-&gt;getBundlePadding());</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;&gt;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/mcfragment/#a2982683863a142955ae805f3bf930b4e">getKind</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a1f3544ccfba8bd153218f9aff934ae23">MCFragment::FT&#95;Align</a>: &#123;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;AF = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCAlignFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (AF-&gt;hasEmitNops())</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">      OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; (emit nops)&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n       &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Alignment:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; AF-&gt;getAlignment().value()</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">       &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Value:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; AF-&gt;getValue() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; ValueSize:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; AF-&gt;getValueSize()</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">       &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; MaxBytesToEmit:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; AF-&gt;getMaxBytesToEmit() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;&gt;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a31f0e4803273f2184e596c87e1e05f80">MCFragment::FT&#95;Data</a>:  &#123;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/debugify-cpp/#a9e8fa29f7cb6a03aa586afae7591f6cc">DF</a> = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCDataFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n       &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Contents:&#91;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;char&gt;</a> &amp;Contents = <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/debugify-cpp/#a9e8fa29f7cb6a03aa586afae7591f6cc">DF</a>-&gt;getContents();</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i = 0, e = Contents.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#a1c479a8c434377c2b8cb056bdfdfc201">size</a>(); i != e; ++i) &#123;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (i) OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;,&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">      OS &lt;&lt; <a href="/docs/api/namespaces/llvm/#a7e4ad7349e8727c7d296afe9db1a09a2">hexdigit</a>((Contents&#91;i&#93; &gt;&gt; 4) &amp; 0xF) &lt;&lt; <a href="/docs/api/namespaces/llvm/#a7e4ad7349e8727c7d296afe9db1a09a2">hexdigit</a>(Contents&#91;i&#93; &amp; 0xF);</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;&#93; (&quot;</Highlight><Highlight kind="normal"> &lt;&lt; Contents.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#a1c479a8c434377c2b8cb056bdfdfc201">size</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; bytes)&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/debugify-cpp/#a9e8fa29f7cb6a03aa586afae7591f6cc">DF</a>-&gt;getFixups().size()) &#123;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">      OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;,\\n       &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">      OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Fixups:&#91;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a2145da5bde7663d745e9c3ade392809f">interleave</a>(<a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/debugify-cpp/#a9e8fa29f7cb6a03aa586afae7591f6cc">DF</a>-&gt;getFixups(), OS, </Highlight><Highlight kind="stringliteral">&quot;,\\n                &quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">      OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;&#93;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a1d46f74bcd87621a62557b9b6fc67c4b">MCFragment::FT&#95;Fill</a>:  &#123;</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;FF = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCFillFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Value:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(FF-&gt;getValue())</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">       &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; ValueSize:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(FF-&gt;getValueSize())</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">       &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; NumValues:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; FF-&gt;getNumValues();</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68afa54da4eb8fe165449fbbd9a300903be">MCFragment::FT&#95;Nops</a>: &#123;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;NF = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCNopsFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; NumBytes:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; NF-&gt;getNumBytes()</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">       &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; ControlledNopLength:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; NF-&gt;getControlledNopLength();</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68abe5194c45ead6aefe6b0882dcb6f2104">MCFragment::FT&#95;Relaxable</a>:  &#123;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCRelaxableFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n       &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Inst:&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;getInst().dump&#95;pretty(OS);</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; (&quot;</Highlight><Highlight kind="normal"> &lt;&lt; <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;getContents().size() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; bytes)&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68ac39471f5e9b12943cc8249cddbacd100">MCFragment::FT&#95;Org</a>:  &#123;</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;OF = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCOrgFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n       &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Offset:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; OF-&gt;getOffset()</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">       &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Value:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(OF-&gt;getValue());</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a01473d8036e353978ae750c8dace1a10">MCFragment::FT&#95;Dwarf</a>:  &#123;</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;OF = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCDwarfLineAddrFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n       &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; AddrDelta:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; OF-&gt;getAddrDelta()</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">       &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; LineDelta:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; OF-&gt;getLineDelta();</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a2f12197bbe6c6a91731b3828d033a212">MCFragment::FT&#95;DwarfFrame</a>:  &#123;</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;CF = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCDwarfCallFrameFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n       &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; AddrDelta:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; CF-&gt;getAddrDelta();</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68acdb2608fe021d8fb06cf91d424f5bc53">MCFragment::FT&#95;LEB</a>: &#123;</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;LF = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCLEBFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n       &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Value:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; LF-&gt;getValue() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Signed:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; LF-&gt;isSigned();</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a79f2f5b7f9eccf921287b14be41f29ac">MCFragment::FT&#95;BoundaryAlign</a>: &#123;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;BF = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCBoundaryAlignFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n       &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; BoundarySize:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; BF-&gt;getAlignment().value()</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">       &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; LastFragment:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; BF-&gt;getLastFragment()</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">       &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Size:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; BF-&gt;getSize();</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a39bf3fdfcea08fc7dc5e927aa5fce3be">MCFragment::FT&#95;SymbolId</a>: &#123;</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCSymbolIdFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n       &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Sym:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;getSymbol();</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a4c741eccc3322f72bad81e89b70c9382">MCFragment::FT&#95;CVInlineLines</a>: &#123;</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCCVInlineLineTableFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n       &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; Sym:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;getFnStartSym();</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68a99243fc57a7beebaba062a013912846f">MCFragment::FT&#95;CVDefRange</a>: &#123;</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCCVDefRangeFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n       &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (std::pair&lt;const MCSymbol &#42;, const MCSymbol &#42;&gt; RangeStartEnd :</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">         <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;getRanges()) &#123;</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">      OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; RangeStart:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; RangeStartEnd.first;</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">      OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; RangeEnd:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; RangeStartEnd.second;</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68adcbefeedb7422d13473a4df6ff1cf964">MCFragment::FT&#95;PseudoProbe</a>: &#123;</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;OF = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;MCPseudoProbeAddrFragment&gt;</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n       &quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">    OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; AddrDelta:&quot;</Highlight><Highlight kind="normal"> &lt;&lt; OF-&gt;getAddrDelta();</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment/#aebf48160a3995325c6d2465080bcab68acd75963af411400a2ed7c133a25d17a3">MCFragment::FT&#95;Dummy</a>:</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">  OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;&gt;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

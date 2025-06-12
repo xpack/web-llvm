@@ -1,0 +1,255 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/deadargumentelimination-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `DeadArgumentElimination.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/SmallVector.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/Twine.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Function.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/function-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/PassManager.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="map"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="set"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="string"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="tuple"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/deadargumenteliminationpass">DeadArgumentEliminationPass</a></>}>
+Eliminate dead arguments (and return values) from functions. <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg">RetOrArg</a></>}>
+Struct that represents (part of) either a return value or a function argument. <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- DeadArgumentElimination.h - Eliminate Dead Args ----------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This pass deletes dead arguments from internal functions.  Dead argument</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// elimination removes arguments which are directly dead, as well as arguments</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// only passed into function calls as dead arguments of other functions.  This</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// pass also deletes dead return values in a similar way.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This pass is often useful as a cleanup pass to run after aggressive</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">// interprocedural passes, which add possibly-dead arguments or return values.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;TRANSFORMS&#95;IPO&#95;DEADARGUMENTELIMINATION&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;TRANSFORMS&#95;IPO&#95;DEADARGUMENTELIMINATION&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h">llvm/ADT/Twine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/function-h">llvm/IR/Function.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">llvm/IR/PassManager.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;map&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;set&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;string&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;tuple&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/module">Module</a>;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/use">Use</a>;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/value">Value</a>;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">/// Eliminate dead arguments (and return values) from functions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38" lineLink="/docs/api/classes/llvm/deadargumenteliminationpass"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/deadargumenteliminationpass/#aac009d77b6fca714db3d7b9f11618ac9">DeadArgumentEliminationPass</a></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">    : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/passinfomixin">PassInfoMixin</a>&lt;DeadArgumentEliminationPass&gt; &#123;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">  /// Struct that represents (part of) either a return value or a function</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">  /// argument.  Used so that arguments and return values can be used</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">  /// interchangeably.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44" lineLink="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#afc898f4d6a31df60d20c4af66e4f9883">RetOrArg</a> &#123;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45" lineLink="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a163bb8216fa41dd887934a0b14bd6f2b"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a163bb8216fa41dd887934a0b14bd6f2b">F</a>;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46" lineLink="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a910f7a683ddbba1ef6b4dc568488e91c"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a910f7a683ddbba1ef6b4dc568488e91c">Idx</a>;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a2e0078db8ed89a9a43e5b13b58be458a"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a2e0078db8ed89a9a43e5b13b58be458a">IsArg</a>;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49" lineLink="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#afc898f4d6a31df60d20c4af66e4f9883"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#afc898f4d6a31df60d20c4af66e4f9883">RetOrArg</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a163bb8216fa41dd887934a0b14bd6f2b">F</a>, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a910f7a683ddbba1ef6b4dc568488e91c">Idx</a>, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a2e0078db8ed89a9a43e5b13b58be458a">IsArg</a>)</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">        : <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a163bb8216fa41dd887934a0b14bd6f2b">F</a>(<a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a163bb8216fa41dd887934a0b14bd6f2b">F</a>), <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a910f7a683ddbba1ef6b4dc568488e91c">Idx</a>(<a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a910f7a683ddbba1ef6b4dc568488e91c">Idx</a>), <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a2e0078db8ed89a9a43e5b13b58be458a">IsArg</a>(<a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a2e0078db8ed89a9a43e5b13b58be458a">IsArg</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">    /// Make RetOrArg comparable, so we can put it into a map.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53" lineLink="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a7534a8f94138b78738c9758b5157be80"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a7534a8f94138b78738c9758b5157be80">operator&lt;</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#afc898f4d6a31df60d20c4af66e4f9883">RetOrArg</a> &amp;O)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::tie(<a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a163bb8216fa41dd887934a0b14bd6f2b">F</a>, <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a910f7a683ddbba1ef6b4dc568488e91c">Idx</a>, <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a2e0078db8ed89a9a43e5b13b58be458a">IsArg</a>) &lt; std::tie(O.F, O.Idx, O.IsArg);</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="comment">    /// Make RetOrArg comparable, so we can easily iterate the multimap.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58" lineLink="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a099414b91a76ae70d3011b6639b141fc"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a099414b91a76ae70d3011b6639b141fc">operator==</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#afc898f4d6a31df60d20c4af66e4f9883">RetOrArg</a> &amp;O)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a163bb8216fa41dd887934a0b14bd6f2b">F</a> == O.F &amp;&amp; <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a910f7a683ddbba1ef6b4dc568488e91c">Idx</a> == O.Idx &amp;&amp; <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a2e0078db8ed89a9a43e5b13b58be458a">IsArg</a> == O.IsArg;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62" lineLink="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#af5950eb0a10b8b78ba2fa237dca795f0"><Highlight kind="normal">    std::string <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#af5950eb0a10b8b78ba2fa237dca795f0">getDescription</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/twine">Twine</a>(<a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a2e0078db8ed89a9a43e5b13b58be458a">IsArg</a> ? </Highlight><Highlight kind="stringliteral">&quot;Argument #&quot;</Highlight><Highlight kind="normal"> : </Highlight><Highlight kind="stringliteral">&quot;Return value #&quot;</Highlight><Highlight kind="normal">) + <a href="/docs/api/classes/llvm/twine">Twine</a>(<a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a910f7a683ddbba1ef6b4dc568488e91c">Idx</a>) +</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">              </Highlight><Highlight kind="stringliteral">&quot; of function &quot;</Highlight><Highlight kind="normal"> + <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg/#a163bb8216fa41dd887934a0b14bd6f2b">F</a>-&gt;getName())</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">          .str();</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="comment">  /// During our initial pass over the program, we determine that things are</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="comment">  /// either alive or maybe alive. We don&#39;t mark anything explicitly dead (even</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">  /// if we know they are), since anything not alive with no registered uses</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">  /// (in Uses) will never be marked alive and will thus become dead in the end.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73" lineLink="/docs/api/classes/llvm/deadargumenteliminationpass/#a3dee2ca18ff5275c99041264099fd964a8cb9173f3fd92152f18401c8bf8ba21b"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a3dee2ca18ff5275c99041264099fd964">Liveness</a> &#123; <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a3dee2ca18ff5275c99041264099fd964a8cb9173f3fd92152f18401c8bf8ba21b">Live</a>, <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a3dee2ca18ff5275c99041264099fd964af29a24ceeaaae7277109ac9c7a52d958">MaybeLive</a> &#125;;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75" lineLink="/docs/api/classes/llvm/deadargumenteliminationpass/#aac009d77b6fca714db3d7b9f11618ac9"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#aac009d77b6fca714db3d7b9f11618ac9">DeadArgumentEliminationPass</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a997b16dfcd40407daf7b4e5b27dbcecf">ShouldHackArguments</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">      : <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a997b16dfcd40407daf7b4e5b27dbcecf">ShouldHackArguments</a>(<a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a997b16dfcd40407daf7b4e5b27dbcecf">ShouldHackArguments</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a29ba94ac3af7390af4fa3209e6647732">run</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/namespaces/llvm/#af9c9208365fd9ce11392b4d79485e259">ModuleAnalysisManager</a> &amp;);</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="comment">  /// Convenience wrapper</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81" lineLink="/docs/api/classes/llvm/deadargumenteliminationpass/#a5852130d218f4c275e8194510a9e31dd"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg">RetOrArg</a> <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a5852130d218f4c275e8194510a9e31dd">createRet</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Idx) &#123;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg">RetOrArg</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, Idx, </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="comment">  /// Convenience wrapper</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86" lineLink="/docs/api/classes/llvm/deadargumenteliminationpass/#a9536f679d7b90e4dc0db3510ab67dce2"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg">RetOrArg</a> <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a9536f679d7b90e4dc0db3510ab67dce2">createArg</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Idx) &#123;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg">RetOrArg</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, Idx, </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/classes/llvm/deadargumenteliminationpass/#a9cbc5f82a665596b0ff5d374dcf9d01c"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a9cbc5f82a665596b0ff5d374dcf9d01c">UseMap</a> = std::multimap&lt;RetOrArg, RetOrArg&gt;;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="comment">  /// This maps a return value or argument to any MaybeLive return values or</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="comment">  /// arguments it uses. This allows the MaybeLive values to be marked live</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">  /// when any of its users is marked live.</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">  /// For example (indices are left out for clarity):</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="comment">  ///  - Uses&#91;ret F&#93; = ret G</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">  ///    This means that F calls G, and F returns the value returned by G.</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">  ///  - Uses&#91;arg F&#93; = ret G</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  ///    This means that some function calls G and passes its result as an</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">  ///    argument to F.</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="comment">  ///  - Uses&#91;ret F&#93; = arg F</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">  ///    This means that F returns one of its own arguments.</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="comment">  ///  - Uses&#91;arg F&#93; = arg G</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="comment">  ///    This means that G calls F and passes one of its own (G&#39;s) arguments</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">  ///    directly to F.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106" lineLink="/docs/api/classes/llvm/deadargumenteliminationpass/#afb15aeeba5e11ad17b03524730d51b7d"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a9cbc5f82a665596b0ff5d374dcf9d01c">UseMap</a> <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#afb15aeeba5e11ad17b03524730d51b7d">Uses</a>;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108" lineLink="/docs/api/classes/llvm/deadargumenteliminationpass/#adccc69f6d0152bec28db15a70cf05587"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/deadargumenteliminationpass/#adccc69f6d0152bec28db15a70cf05587">LiveSet</a> = std::set&lt;RetOrArg&gt;;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109" lineLink="/docs/api/classes/llvm/deadargumenteliminationpass/#a1eb5a2eac80c369977d7c8747be838ba"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a1eb5a2eac80c369977d7c8747be838ba">LiveFuncSet</a> = std::set&lt;const Function &#42;&gt;;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">  /// This set contains all values that have been determined to be live.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112" lineLink="/docs/api/classes/llvm/deadargumenteliminationpass/#a404cb9e3e1fb3992697a27bd58e44a68"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#adccc69f6d0152bec28db15a70cf05587">LiveSet</a> <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a404cb9e3e1fb3992697a27bd58e44a68">LiveValues</a>;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">  /// This set contains all values that are cannot be changed in any way.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115" lineLink="/docs/api/classes/llvm/deadargumenteliminationpass/#aa1991a5019f642f03694439d95fa1b20"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a1eb5a2eac80c369977d7c8747be838ba">LiveFuncSet</a> <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#aa1991a5019f642f03694439d95fa1b20">LiveFunctions</a>;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117" lineLink="/docs/api/classes/llvm/deadargumenteliminationpass/#a0fc4b7b5727b4a936d7c1c23320a8b12"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a0fc4b7b5727b4a936d7c1c23320a8b12">UseVector</a> = <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;RetOrArg, 5&gt;</a>;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">  /// This allows this pass to do double-duty as the dead arg hacking pass</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">  /// (used only by bugpoint).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121" lineLink="/docs/api/classes/llvm/deadargumenteliminationpass/#a997b16dfcd40407daf7b4e5b27dbcecf"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a997b16dfcd40407daf7b4e5b27dbcecf">ShouldHackArguments</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a3dee2ca18ff5275c99041264099fd964">Liveness</a> markIfNotLive(<a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg">RetOrArg</a> <a href="/docs/api/classes/llvm/use">Use</a>, <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a0fc4b7b5727b4a936d7c1c23320a8b12">UseVector</a> &amp;MaybeLiveUses);</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a3dee2ca18ff5275c99041264099fd964">Liveness</a> surveyUse(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/use">Use</a> &#42;U, <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a0fc4b7b5727b4a936d7c1c23320a8b12">UseVector</a> &amp;MaybeLiveUses,</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">                     </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> RetValNum = -1U);</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a3dee2ca18ff5275c99041264099fd964">Liveness</a> surveyUses(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;V, <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a0fc4b7b5727b4a936d7c1c23320a8b12">UseVector</a> &amp;MaybeLiveUses);</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> surveyFunction(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isLive(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg">RetOrArg</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/sioptimizeexecmaskingprera-cpp/#a3e47bdb3e296b00df96eff7896fa57bf">RA</a>);</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> markValue(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg">RetOrArg</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/sioptimizeexecmaskingprera-cpp/#a3e47bdb3e296b00df96eff7896fa57bf">RA</a>, <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a3dee2ca18ff5275c99041264099fd964">Liveness</a> L,</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">                 </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/deadargumenteliminationpass/#a0fc4b7b5727b4a936d7c1c23320a8b12">UseVector</a> &amp;MaybeLiveUses);</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> markLive(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg">RetOrArg</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/sioptimizeexecmaskingprera-cpp/#a3e47bdb3e296b00df96eff7896fa57bf">RA</a>);</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> markLive(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> propagateLiveness(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/deadargumenteliminationpass/retorarg">RetOrArg</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/sioptimizeexecmaskingprera-cpp/#a3e47bdb3e296b00df96eff7896fa57bf">RA</a>);</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> removeDeadStuffFromFunction(<a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> deleteDeadVarargs(<a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> removeDeadArgumentsFromCallers(<a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> propagateVirtMustcallLiveness(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/module">Module</a> &amp;M);</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;TRANSFORMS&#95;IPO&#95;DEADARGUMENTELIMINATION&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

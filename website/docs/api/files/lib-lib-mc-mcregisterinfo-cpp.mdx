@@ -1,0 +1,329 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/mc/mcregisterinfo-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `MCRegisterInfo.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/MC/MCRegisterInfo.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mcregisterinfo-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/DenseMap.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/Twine.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/ErrorHandling.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="algorithm"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="cassert"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="cstdint"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/anonymous-mcregisterinfo-cpp-">anonymous&#123;MCRegisterInfo.cpp&#125;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl">MCRegAliasIteratorImpl</a></>}>
+<a href="/docs/api/classes/llvm/mcregaliasiterator">MCRegAliasIterator</a> enumerates all registers aliasing Reg. <a href="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- MC/MCRegisterInfo.cpp - Target Register Description ----------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements MCRegisterInfo functions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcregisterinfo-h">llvm/MC/MCRegisterInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h">llvm/ADT/DenseMap.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h">llvm/ADT/Twine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h">llvm/Support/ErrorHandling.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;algorithm&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cassert&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstdint&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23" lineLink="/docs/api/namespaces/anonymous-mcregisterinfo-cpp-"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">&#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="comment">/// MCRegAliasIterator enumerates all registers aliasing Reg.  This iterator</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="comment">/// does not guarantee any ordering or that entries are unique.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26" lineLink="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#af5fcdca9b8e00680912eb63793cd669a">MCRegAliasIteratorImpl</a> &#123;</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mcregister">MCRegister</a> Reg;</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterinfo">MCRegisterInfo</a> &#42;MCRI;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mcregunititerator">MCRegUnitIterator</a> RI;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mcregunitrootiterator">MCRegUnitRootIterator</a> RRI;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mcsuperregiterator">MCSuperRegIterator</a> SI;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36" lineLink="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#af5fcdca9b8e00680912eb63793cd669a"><Highlight kind="normal">  <a href="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#af5fcdca9b8e00680912eb63793cd669a">MCRegAliasIteratorImpl</a>(<a href="/docs/api/classes/llvm/mcregister">MCRegister</a> Reg, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterinfo">MCRegisterInfo</a> &#42;MCRI)</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">      : Reg(Reg), MCRI(MCRI) &#123;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Initialize the iterators.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (RI = <a href="/docs/api/classes/llvm/mcregunititerator">MCRegUnitIterator</a>(Reg, MCRI); RI.<a href="/docs/api/classes/llvm/mcregunititerator/#a5e8916995af78fa1d4a67d8539b4abc1">isValid</a>(); ++RI) &#123;</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (RRI = <a href="/docs/api/classes/llvm/mcregunitrootiterator">MCRegUnitRootIterator</a>(&#42;RI, MCRI); RRI.<a href="/docs/api/classes/llvm/mcregunitrootiterator/#abd29ecab24058fdf823addcad29c6939">isValid</a>(); ++RRI) &#123;</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (SI = <a href="/docs/api/classes/llvm/mcsuperregiterator">MCSuperRegIterator</a>(&#42;RRI, MCRI, </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">); SI.<a href="/docs/api/classes/llvm/mcsuperregiterator/#ae9dbe83ef1f55ea3691bfff0eb37ffb5">isValid</a>(); ++SI) &#123;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Reg != &#42;SI)</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">            </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50" lineLink="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#a919c936a0ebece3d665931c581d9be45"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#a919c936a0ebece3d665931c581d9be45">isValid</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> RI.isValid(); &#125;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52" lineLink="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#a716bab5b112b5ec0812b8db526eae632"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mcregister">MCRegister</a> <a href="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#a716bab5b112b5ec0812b8db526eae632">operator&#42;</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(SI.isValid() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Cannot dereference an invalid iterator.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;SI;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57" lineLink="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#ab286de07063194d7bfb1e95fc03b7394"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#ab286de07063194d7bfb1e95fc03b7394">advance</a>() &#123;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Assuming SI is valid.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">    ++SI;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SI.isValid())</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">    ++RRI;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (RRI.isValid()) &#123;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">      SI = <a href="/docs/api/classes/llvm/mcsuperregiterator">MCSuperRegIterator</a>(&#42;RRI, MCRI, </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">    ++RI;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (RI.isValid()) &#123;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">      RRI = <a href="/docs/api/classes/llvm/mcregunitrootiterator">MCRegUnitRootIterator</a>(&#42;RI, MCRI);</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">      SI = <a href="/docs/api/classes/llvm/mcsuperregiterator">MCSuperRegIterator</a>(&#42;RRI, MCRI, </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76" lineLink="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#af52a9ac61bb053af83542e8eee6b3446"><Highlight kind="normal">  <a href="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#af5fcdca9b8e00680912eb63793cd669a">MCRegAliasIteratorImpl</a> &amp;<a href="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#af52a9ac61bb053af83542e8eee6b3446">operator++</a>() &#123;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/files/lib/lib/demangle/rustdemangle-cpp/#a103d8cfe62c1651cd70e181746f8a840">isValid</a>() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Cannot move off the end of the list.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">do</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">      <a href="/docs/api/classes/anonymous-namespace-mcregisterinfo-cpp-/mcregaliasiteratorimpl/#ab286de07063194d7bfb1e95fc03b7394">advance</a>();</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/demangle/rustdemangle-cpp/#a103d8cfe62c1651cd70e181746f8a840">isValid</a>() &amp;&amp; &#42;SI == Reg);</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"><a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;MCPhysReg&gt;</a> MCRegisterInfo::getCachedAliasesOf(<a href="/docs/api/classes/llvm/mcregister">MCRegister</a> R)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Aliases = RegAliasesCache&#91;<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.id()&#93;;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Aliases.empty())</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Aliases;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (MCRegAliasIteratorImpl It(R, </Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">); It.isValid(); ++It)</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">    Aliases.push&#95;back(&#42;It);</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a74cdbd1e4f731e7d7cd83461b8b1de0b">sort</a>(Aliases);</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  Aliases.erase(<a href="/docs/api/namespaces/llvm/#a48f85da577c6ce7d9aed90437dc0d07c">unique</a>(Aliases), Aliases.end());</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/#a7dc3069afa2ce5ea62ac2eb183e51c00">none&#95;of</a>(Aliases, &#91;&amp;&#93;(</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Cur) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a> == Cur; &#125;) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">         </Highlight><Highlight kind="stringliteral">&quot;MCRegAliasIteratorImpl includes Self!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Always put &quot;self&quot; at the end, so the iterator can choose to ignore it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// For registers without aliases, it also serves as a sentinel value that</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// tells us to not recompute the alias set.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  Aliases.push&#95;back(<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.id());</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  Aliases.shrink&#95;to&#95;fit();</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Aliases;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"><a href="/docs/api/classes/llvm/mcregister">MCRegister</a></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108" lineLink="/docs/api/classes/llvm/mcregisterinfo/#a2168c5f22e98b5c471060a3dfc1ec0db"><Highlight kind="normal"><a href="/docs/api/classes/llvm/mcregisterinfo/#a2168c5f22e98b5c471060a3dfc1ec0db">MCRegisterInfo::getMatchingSuperReg</a>(<a href="/docs/api/classes/llvm/mcregister">MCRegister</a> Reg, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> SubIdx,</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">                                    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;RC)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#aad72cfbb210808985a9dc19f4e5d8542">MCPhysReg</a> Super : <a href="/docs/api/classes/llvm/mcregisterinfo/#a5e72490b2e8a4c4f70e0aab62f0ea176">superregs</a>(Reg))</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (RC-&gt;<a href="/docs/api/classes/llvm/mcregisterclass/#ad183dc79953e350b769b1dcfda4f0f1c">contains</a>(Super) &amp;&amp; Reg == <a href="/docs/api/classes/llvm/mcregisterinfo/#ae3ba9f77f723402ff1e1f6d8ac0e3b36">getSubReg</a>(Super, SubIdx))</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Super;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116" lineLink="/docs/api/classes/llvm/mcregisterinfo/#ae3ba9f77f723402ff1e1f6d8ac0e3b36"><Highlight kind="normal"><a href="/docs/api/classes/llvm/mcregister">MCRegister</a> <a href="/docs/api/classes/llvm/mcregisterinfo/#ae3ba9f77f723402ff1e1f6d8ac0e3b36">MCRegisterInfo::getSubReg</a>(<a href="/docs/api/classes/llvm/mcregister">MCRegister</a> Reg, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Idx)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Idx &amp;&amp; Idx &lt; <a href="/docs/api/classes/llvm/mcregisterinfo/#a04922e6bf2f754ccfad845d7a0ec00a0">getNumSubRegIndices</a>() &amp;&amp;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">         </Highlight><Highlight kind="stringliteral">&quot;This is not a subregister index&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Get a pointer to the corresponding SubRegIndices list. This list has the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// name of each sub-register in the same order as MCSubRegIterator.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> uint16&#95;t &#42;SRI = SubRegIndices + <a href="/docs/api/classes/llvm/mcregisterinfo/#a20afbbc02b58a57256a9ac9736d08838">get</a>(Reg).<a href="/docs/api/structs/llvm/mcregisterdesc/#ad61c747e243c73c0e6b6a0cfcc4a45ad">SubRegIndices</a>;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#aad72cfbb210808985a9dc19f4e5d8542">MCPhysReg</a> Sub : <a href="/docs/api/classes/llvm/mcregisterinfo/#a9ded59d8266ccd2647bfd81722046beb">subregs</a>(Reg)) &#123;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (&#42;SRI == Idx)</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Sub;</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">    ++SRI;</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130" lineLink="/docs/api/classes/llvm/mcregisterinfo/#ab2c943894d8d91dead449b33a77981c5"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterinfo/#ab2c943894d8d91dead449b33a77981c5">MCRegisterInfo::getSubRegIndex</a>(<a href="/docs/api/classes/llvm/mcregister">MCRegister</a> Reg,</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">                                        <a href="/docs/api/classes/llvm/mcregister">MCRegister</a> <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#a92a6b0a9b7228d190b0a7d8ae3ef03c7">SubReg</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#a92a6b0a9b7228d190b0a7d8ae3ef03c7">SubReg</a> &amp;&amp; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#a92a6b0a9b7228d190b0a7d8ae3ef03c7">SubReg</a> &lt; <a href="/docs/api/classes/llvm/mcregisterinfo/#af946f316ed42f8b5eb99735a3b587ab5">getNumRegs</a>() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;This is not a register&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Get a pointer to the corresponding SubRegIndices list. This list has the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// name of each sub-register in the same order as MCSubRegIterator.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> uint16&#95;t &#42;SRI = SubRegIndices + <a href="/docs/api/classes/llvm/mcregisterinfo/#a20afbbc02b58a57256a9ac9736d08838">get</a>(Reg).<a href="/docs/api/structs/llvm/mcregisterdesc/#ad61c747e243c73c0e6b6a0cfcc4a45ad">SubRegIndices</a>;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#aad72cfbb210808985a9dc19f4e5d8542">MCPhysReg</a> Sub : <a href="/docs/api/classes/llvm/mcregisterinfo/#a9ded59d8266ccd2647bfd81722046beb">subregs</a>(Reg)) &#123;</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Sub == <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#a92a6b0a9b7228d190b0a7d8ae3ef03c7">SubReg</a>)</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;SRI;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">    ++SRI;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144" lineLink="/docs/api/classes/llvm/mcregisterinfo/#a7be5983b88f5da173b31deaa93c2a8c2"><Highlight kind="normal">int64&#95;t <a href="/docs/api/classes/llvm/mcregisterinfo/#a7be5983b88f5da173b31deaa93c2a8c2">MCRegisterInfo::getDwarfRegNum</a>(<a href="/docs/api/classes/llvm/mcregister">MCRegister</a> RegNum, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isEH)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/mcregisterinfo/dwarfllvmregpair">DwarfLLVMRegPair</a> &#42;M = isEH ? EHL2DwarfRegs : L2DwarfRegs;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> = isEH ? EHL2DwarfRegsSize : L2DwarfRegsSize;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!M)</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> -1;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/mcregisterinfo/dwarfllvmregpair">DwarfLLVMRegPair</a> <a href="/docs/api/namespaces/llvm/#a98c6256d0644613c6b5b3e2ef06ef5ce">Key</a> = &#123; RegNum, 0 &#125;;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/mcregisterinfo/dwarfllvmregpair">DwarfLLVMRegPair</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = std::lower&#95;bound(M, M+<a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>, <a href="/docs/api/namespaces/llvm/#a98c6256d0644613c6b5b3e2ef06ef5ce">Key</a>);</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> == M+<a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> || <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;FromReg != RegNum)</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> -1;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Consumers need to be able to detect -1 and -2, but at various points</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// the numbers move between unsigned and signed representations, as well as</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// between 32- and 64-bit representations. We need to convert first to int</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// before int64&#95;t for proper sign handling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> int64&#95;t(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;ToReg));</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161" lineLink="/docs/api/classes/llvm/mcregisterinfo/#ad8bd0d8807995fe448c671a5011734ff"><Highlight kind="normal">std::optional&lt;MCRegister&gt; <a href="/docs/api/classes/llvm/mcregisterinfo/#ad8bd0d8807995fe448c671a5011734ff">MCRegisterInfo::getLLVMRegNum</a>(uint64&#95;t RegNum,</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">                                                        </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isEH)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/mcregisterinfo/dwarfllvmregpair">DwarfLLVMRegPair</a> &#42;M = isEH ? EHDwarf2LRegs : Dwarf2LRegs;</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> = isEH ? EHDwarf2LRegsSize : Dwarf2LRegsSize;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!M)</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::nullopt;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/mcregisterinfo/dwarfllvmregpair">DwarfLLVMRegPair</a> <a href="/docs/api/namespaces/llvm/#a98c6256d0644613c6b5b3e2ef06ef5ce">Key</a> = &#123;unsigned(RegNum), 0&#125;;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/mcregisterinfo/dwarfllvmregpair">DwarfLLVMRegPair</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = std::lower&#95;bound(M, M+<a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>, <a href="/docs/api/namespaces/llvm/#a98c6256d0644613c6b5b3e2ef06ef5ce">Key</a>);</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> != M + <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> &amp;&amp; <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;FromReg == RegNum)</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregister/#a822cab8661beb03276b0566d33e41592">MCRegister::from</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;ToReg);</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::nullopt;</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175" lineLink="/docs/api/classes/llvm/mcregisterinfo/#a403ac8e5404443f85a39fd7f6cc97574"><Highlight kind="normal">int64&#95;t <a href="/docs/api/classes/llvm/mcregisterinfo/#a403ac8e5404443f85a39fd7f6cc97574">MCRegisterInfo::getDwarfRegNumFromDwarfEHRegNum</a>(uint64&#95;t RegNum)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// On ELF platforms, DWARF EH register numbers are the same as DWARF</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// other register numbers.  On Darwin x86, they differ and so need to be</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// mapped.  The .cfi&#95;&#42; directives accept integer literals as well as</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// register names and should generate exactly what the assembly code</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// asked for, so there might be DWARF/EH register numbers that don&#39;t have</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// a corresponding LLVM register number at all.  So if we can&#39;t map the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// EH register number to an LLVM register number, assume it&#39;s just a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// valid DWARF register number as is.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (std::optional&lt;MCRegister&gt; LRegNum = <a href="/docs/api/classes/llvm/mcregisterinfo/#ad8bd0d8807995fe448c671a5011734ff">getLLVMRegNum</a>(RegNum, </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">)) &#123;</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> DwarfRegNum = <a href="/docs/api/classes/llvm/mcregisterinfo/#a7be5983b88f5da173b31deaa93c2a8c2">getDwarfRegNum</a>(&#42;LRegNum, </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DwarfRegNum == -1)</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> RegNum;</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> DwarfRegNum;</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> RegNum;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194" lineLink="/docs/api/classes/llvm/mcregisterinfo/#a5a4f0d89d23611afff28a9b3a347cbfa"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterinfo/#a5a4f0d89d23611afff28a9b3a347cbfa">MCRegisterInfo::getSEHRegNum</a>(<a href="/docs/api/classes/llvm/mcregister">MCRegister</a> RegNum)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/densemapbase/#a5784c312872bef21d9344dae0a0e8fc0">DenseMap&lt;MCRegister, int&gt;::const&#95;iterator</a> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = L2SEHRegs.find(RegNum);</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> == L2SEHRegs.end()) </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">)RegNum;</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;second;</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200" lineLink="/docs/api/classes/llvm/mcregisterinfo/#a31c99afffac12a059636852d1d05f8e8"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterinfo/#a31c99afffac12a059636852d1d05f8e8">MCRegisterInfo::getCodeViewRegNum</a>(<a href="/docs/api/classes/llvm/mcregister">MCRegister</a> RegNum)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (L2CVRegs.empty())</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">report&#95;fatal&#95;error</a>(</Highlight><Highlight kind="stringliteral">&quot;target does not implement codeview register mapping&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/densemapbase/#a5784c312872bef21d9344dae0a0e8fc0">DenseMap&lt;MCRegister, int&gt;::const&#95;iterator</a> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = L2CVRegs.find(RegNum);</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> == L2CVRegs.end())</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">report&#95;fatal&#95;error</a>(</Highlight><Highlight kind="stringliteral">&quot;unknown codeview register &quot;</Highlight><Highlight kind="normal"> + (RegNum &lt; <a href="/docs/api/classes/llvm/mcregisterinfo/#af946f316ed42f8b5eb99735a3b587ab5">getNumRegs</a>()</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">                                                           ? <a href="/docs/api/classes/llvm/mcregisterinfo/#a72c68e39a0c971dae8d761c7aabfdf35">getName</a>(RegNum)</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">                                                           : <a href="/docs/api/classes/llvm/twine">Twine</a>(RegNum)));</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;second;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211" lineLink="/docs/api/classes/llvm/mcregisterinfo/#a0bd1b194b601377bdb0f3a4a6e1f7e0d"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterinfo/#a0bd1b194b601377bdb0f3a4a6e1f7e0d">MCRegisterInfo::regsOverlap</a>(<a href="/docs/api/classes/llvm/mcregister">MCRegister</a> RegA, <a href="/docs/api/classes/llvm/mcregister">MCRegister</a> RegB)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Regunits are numerically ordered. Find a common unit.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> RangeA = <a href="/docs/api/classes/llvm/mcregisterinfo/#abf9973b1c9926f0903d0c6bddfc93118">regunits</a>(RegA);</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mcregisterinfo/#acdaa5f1dcfe0ac250e2c0f285517494f">MCRegUnitIterator</a> IA = RangeA.begin(), EA = RangeA.end();</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> RangeB = <a href="/docs/api/classes/llvm/mcregisterinfo/#abf9973b1c9926f0903d0c6bddfc93118">regunits</a>(RegB);</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mcregisterinfo/#acdaa5f1dcfe0ac250e2c0f285517494f">MCRegUnitIterator</a> IB = RangeB.begin(), EB = RangeB.end();</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">do</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (&#42;IA == &#42;IB)</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (&#42;IA &lt; &#42;IB ? ++IA != EA : ++IB != EB);</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224" lineLink="/docs/api/classes/llvm/mcregisterinfo/#a9073d0a5218514fa4deb7ef2aa831492"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterinfo/#a9073d0a5218514fa4deb7ef2aa831492">MCRegisterInfo::isArtificialRegUnit</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Unit)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/mcregisterinfo/#a871e5c4479bde111063c92656dadf3cb">MCRegUnitRootIterator</a> Root(Unit, </Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">); Root.isValid(); ++Root)</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/mcregisterinfo/#ac075ed8f381fe6f102ac864a339124a6">isArtificial</a>(&#42;Root))</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

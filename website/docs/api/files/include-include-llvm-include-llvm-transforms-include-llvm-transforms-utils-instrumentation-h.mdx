@@ -1,0 +1,348 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/instrumentation-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `Instrumentation.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/StringRef.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/BasicBlock.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/basicblock-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/DebugInfoMetadata.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/debuginfometadata-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Function.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/function-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/IRBuilder.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/irbuilder-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Instruction.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/instruction-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cassert"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="cstdint"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="limits"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="string"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/pgo">llvm::pgo</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/gcovoptions">GCOVOptions</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/instrprofoptions">InstrProfOptions</a></>}>
+Options for the frontend instrumentation based profiling pass. <a href="/docs/api/structs/llvm/instrprofoptions/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/sanitizercoverageoptions">SanitizerCoverageOptions</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/instrumentationirbuilder">InstrumentationIRBuilder</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- Transforms/Instrumentation.h - Instrumentation passes ----&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file defines constructor functions for instrumentation passes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;TRANSFORMS&#95;INSTRUMENTATION&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;TRANSFORMS&#95;INSTRUMENTATION&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h">llvm/ADT/StringRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/basicblock-h">llvm/IR/BasicBlock.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/debuginfometadata-h">llvm/IR/DebugInfoMetadata.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/function-h">llvm/IR/Function.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/irbuilder-h">llvm/IR/IRBuilder.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/instruction-h">llvm/IR/Instruction.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cassert&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstdint&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;limits&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;string&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/triple">Triple</a>;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/optimizationremarkemitter">OptimizationRemarkEmitter</a>;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/comdat">Comdat</a>;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/callbase">CallBase</a>;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/module">Module</a>;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="comment">/// Check if module has flag attached, if not add the flag.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aeed520b6f17bd6271d563ee25f3e4728">checkIfAlreadyInstrumented</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/stringref">StringRef</a> Flag);</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">/// Instrumentation passes often insert conditional checks into entry blocks.</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">/// Call this function before splitting the entry block to move instructions</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">/// that must remain in the entry block up before the split point. Static</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">/// allocas and llvm.localescape calls, for example, must remain in the entry</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">/// block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"><a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> <a href="/docs/api/namespaces/llvm/#ad7f49d3dc767d0f0789ffd9e332e7a49">PrepareToSplitEntryBlock</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp;BB,</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">                                              <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> IP);</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Create a constant for Str so that we can pass it to the run-time lib.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"><a href="/docs/api/classes/llvm/globalvariable">GlobalVariable</a> &#42;<a href="/docs/api/namespaces/llvm/#a15889f1df360601e4f92325b39882a34">createPrivateGlobalForString</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/stringref">StringRef</a> Str,</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">                                             </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> AllowMerging,</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">                                             <a href="/docs/api/classes/llvm/twine">Twine</a> NamePrefix = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Returns F.getComdat() if it exists.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Otherwise creates a new comdat, sets F&#39;s comdat, and returns it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Returns nullptr on failure.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"><a href="/docs/api/classes/llvm/comdat">Comdat</a> &#42;<a href="/docs/api/namespaces/llvm/#a9176c73c5484c0f85a02eaa609d8a38c">getOrCreateFunctionComdat</a>(<a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/docs/api/classes/llvm/triple">Triple</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>);</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Place global in a large section for x86-64 ELF binaries to mitigate</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="comment">// relocation overflow pressure. This can be be used for metadata globals that</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="comment">// aren&#39;t directly accessed by code, which has no performance impact.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aaf2ff3020b311fe77e208f80459017aa">setGlobalVariableLargeSection</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/triple">Triple</a> &amp;TargetTriple,</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/globalvariable">GlobalVariable</a> &amp;GV);</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Insert GCOV profiling instrumentation</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/structs/llvm/gcovoptions"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/gcovoptions">GCOVOptions</a> &#123;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcovoptions">GCOVOptions</a> <a href="/docs/api/structs/llvm/gcovoptions/#a2a4f5ed715494231eea8c658023014dd">getDefault</a>();</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Specify whether to emit .gcno files.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67" lineLink="/docs/api/structs/llvm/gcovoptions/#a9650437e09459d65f738937955d8f884"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcovoptions/#a9650437e09459d65f738937955d8f884">EmitNotes</a>;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Specify whether to modify the program to emit .gcda files when run.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/structs/llvm/gcovoptions/#aaa4ca0fc70da4cc8a069186333919c9d"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcovoptions/#aaa4ca0fc70da4cc8a069186333919c9d">EmitData</a>;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// A four-byte version string. The meaning of a version string is described in</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// gcc&#39;s gcov-io.h</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/structs/llvm/gcovoptions/#aa42b0007c57b72eb60906d55125eb8b5"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcovoptions/#aa42b0007c57b72eb60906d55125eb8b5">Version</a>&#91;4&#93;;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Add the &#39;noredzone&#39; attribute to added runtime library calls.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77" lineLink="/docs/api/structs/llvm/gcovoptions/#a7603fb20be37298c2a4e85cc65cd00dc"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcovoptions/#a7603fb20be37298c2a4e85cc65cd00dc">NoRedZone</a>;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Use atomic profile counter increments.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/structs/llvm/gcovoptions/#a047d5b89b81ca7392d029cc29d7dc5b1"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcovoptions/#a047d5b89b81ca7392d029cc29d7dc5b1">Atomic</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Regexes separated by a semi-colon to filter the files to instrument.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/structs/llvm/gcovoptions/#a90fb5409637956ad55a1436c16eab67f"><Highlight kind="normal">  std::string <a href="/docs/api/structs/llvm/gcovoptions/#a90fb5409637956ad55a1436c16eab67f">Filter</a>;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Regexes separated by a semi-colon to filter the files to not instrument.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86" lineLink="/docs/api/structs/llvm/gcovoptions/#a82b0da882b862e60f85f88712a182bb3"><Highlight kind="normal">  std::string <a href="/docs/api/structs/llvm/gcovoptions/#a82b0da882b862e60f85f88712a182bb3">Exclude</a>;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The pgo-specific indirect call promotion function declared below is used by</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal"></Highlight><Highlight kind="comment">// the pgo-driven indirect call promotion and sample profile passes. It&#39;s a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal"></Highlight><Highlight kind="comment">// wrapper around llvm::promoteCall, et al. that additionally computes !prof</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight><Highlight kind="comment">// metadata. We place it in a pgo namespace so it&#39;s not confused with the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight><Highlight kind="comment">// generic utilities.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94" lineLink="/docs/api/namespaces/llvm/pgo"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/pgo">pgo</a> &#123;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Helper function that transforms CB (either an indirect-call instruction, or</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight><Highlight kind="comment">// an invoke instruction , to a conditional call to F. This is like:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight><Highlight kind="comment">//     if (Inst.CalledValue == F)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight><Highlight kind="comment">//        F(...);</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal"></Highlight><Highlight kind="comment">//     else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal"></Highlight><Highlight kind="comment">//        Inst(...);</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight><Highlight kind="comment">//     end</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight><Highlight kind="comment">// TotalCount is the profile count value that the instruction executes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Count is the profile count value that F is the target function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight><Highlight kind="comment">// These two values are used to update the branch weight.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal"></Highlight><Highlight kind="comment">// If \\p AttachProfToDirectCall is true, a prof metadata is attached to the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight><Highlight kind="comment">// new direct call to contain \\p Count.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Returns the promoted direct call instruction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"><a href="/docs/api/classes/llvm/callbase">CallBase</a> &amp;<a href="/docs/api/namespaces/llvm/pgo/#ac3ab1f99a5d99ba23fcfec6044ebc805">promoteIndirectCall</a>(<a href="/docs/api/classes/llvm/callbase">CallBase</a> &amp;CB, <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, uint64&#95;t <a href="/docs/api/namespaces/llvm/#a845e08be4b0320d66901a66b0c0e9509">Count</a>,</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">                              uint64&#95;t TotalCount, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> AttachProfToDirectCall,</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">                              <a href="/docs/api/classes/llvm/optimizationremarkemitter">OptimizationRemarkEmitter</a> &#42;ORE);</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace pgo</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">/// Options for the frontend instrumentation based profiling pass.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115" lineLink="/docs/api/structs/llvm/instrprofoptions"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/instrprofoptions/#a10acf855d7033007ebc6f0693a4dfa90">InstrProfOptions</a> &#123;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Add the &#39;noredzone&#39; attribute to added runtime library calls.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117" lineLink="/docs/api/structs/llvm/instrprofoptions/#a453a285abbd4055529d0113e34222fde"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrprofoptions/#a453a285abbd4055529d0113e34222fde">NoRedZone</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Do counter register promotion</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120" lineLink="/docs/api/structs/llvm/instrprofoptions/#a7961a6dd8e7618d08b3ffe19e1a3c7e3"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrprofoptions/#a7961a6dd8e7618d08b3ffe19e1a3c7e3">DoCounterPromotion</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Use atomic profile counter increments.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123" lineLink="/docs/api/structs/llvm/instrprofoptions/#a599d8f0899e3ea8da9d84cae20c82164"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrprofoptions/#a599d8f0899e3ea8da9d84cae20c82164">Atomic</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Use BFI to guide register promotion</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126" lineLink="/docs/api/structs/llvm/instrprofoptions/#a3924c5cb31de4d5bd52aa9191186765f"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrprofoptions/#a3924c5cb31de4d5bd52aa9191186765f">UseBFIInPromotion</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Use sampling to reduce the profile instrumentation runtime overhead.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129" lineLink="/docs/api/structs/llvm/instrprofoptions/#a455749336d730c09c0015adecf3139b2"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrprofoptions/#a455749336d730c09c0015adecf3139b2">Sampling</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Name of the profile file to use as output</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132" lineLink="/docs/api/structs/llvm/instrprofoptions/#ab9246d23776e80d142b6245f1ac54761"><Highlight kind="normal">  std::string <a href="/docs/api/structs/llvm/instrprofoptions/#ab9246d23776e80d142b6245f1ac54761">InstrProfileOutput</a>;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134" lineLink="/docs/api/structs/llvm/instrprofoptions/#a10acf855d7033007ebc6f0693a4dfa90"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/instrprofoptions/#a10acf855d7033007ebc6f0693a4dfa90">InstrProfOptions</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Create the variable for profile sampling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a277490f857b3fe53b950347a9148a447">createProfileSamplingVar</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M);</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Options for sanitizer coverage instrumentation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a116e5442a6e9139e0290b8ac2c8057f2">SanitizerCoverageOptions</a> &#123;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a6fbd9e46b04866c157520732aaaa99be"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a6fbd9e46b04866c157520732aaaa99be">Type</a> &#123;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a6fbd9e46b04866c157520732aaaa99bea8d35016762982753aec6d7aed4be8142"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a6fbd9e46b04866c157520732aaaa99bea8d35016762982753aec6d7aed4be8142">SCK&#95;None</a> = 0,</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a6fbd9e46b04866c157520732aaaa99bea626aea6d83c51734a35fe969a0c86c5f"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a6fbd9e46b04866c157520732aaaa99bea626aea6d83c51734a35fe969a0c86c5f">SCK&#95;Function</a>,</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a6fbd9e46b04866c157520732aaaa99beaa742a77dbd1705b1b3e1a612279029d8"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a6fbd9e46b04866c157520732aaaa99beaa742a77dbd1705b1b3e1a612279029d8">SCK&#95;BB</a>,</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a6fbd9e46b04866c157520732aaaa99beafdefa46197f678fbe938c38ee20befd1"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a6fbd9e46b04866c157520732aaaa99beafdefa46197f678fbe938c38ee20befd1">SCK&#95;Edge</a></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a09606541d39f43887258e83b257e34c1"><Highlight kind="normal">  &#125; <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a09606541d39f43887258e83b257e34c1">CoverageType</a> = <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a6fbd9e46b04866c157520732aaaa99bea8d35016762982753aec6d7aed4be8142">SCK&#95;None</a>;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#aaaab818a4cdbca694e6eb690d7a257f1"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#aaaab818a4cdbca694e6eb690d7a257f1">IndirectCalls</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a522ced4cb05f1d83530613288df101c9"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a522ced4cb05f1d83530613288df101c9">TraceBB</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#aa1e88635b87fdd3331a588f77c32cd44"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#aa1e88635b87fdd3331a588f77c32cd44">TraceCmp</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a7a323cb9df35165f7e78c7a1ef7b8292"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a7a323cb9df35165f7e78c7a1ef7b8292">TraceDiv</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#acd6a6faa8eb5e5d564000ead64b1bb12"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#acd6a6faa8eb5e5d564000ead64b1bb12">TraceGep</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a0b3595e6dda6233221763ca6e0e8455d"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a0b3595e6dda6233221763ca6e0e8455d">Use8bitCounters</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#aeb3f8fd48a0d88fa5424a949bd995bfc"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#aeb3f8fd48a0d88fa5424a949bd995bfc">TracePC</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#ac680953e8d40d90585617d7a46abe9f9"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#ac680953e8d40d90585617d7a46abe9f9">TracePCGuard</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#aad754cc8e7b969c123696d2aa4547377"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#aad754cc8e7b969c123696d2aa4547377">Inline8bitCounters</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a9fabea26362c7496d6bd719d59c70ca9"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a9fabea26362c7496d6bd719d59c70ca9">InlineBoolFlag</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#ad131c186c60ceb6f84f30207d70fca75"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#ad131c186c60ceb6f84f30207d70fca75">PCTable</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a1fe51c905aa299a1d55a1d8a32757efa"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a1fe51c905aa299a1d55a1d8a32757efa">NoPrune</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a521bd39307e7f521f1058809616ad006"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a521bd39307e7f521f1058809616ad006">StackDepth</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a007420e82756d706184013a949f57a58"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a007420e82756d706184013a949f57a58">TraceLoads</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a81e94626fdfa57d1375ddcc0d4d888a0"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a81e94626fdfa57d1375ddcc0d4d888a0">TraceStores</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#af47ef924a3c7312010d41dc3b8567357"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#af47ef924a3c7312010d41dc3b8567357">CollectControlFlow</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#ace07489c9e1913ab5e929fd21ae2e3fb"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#ace07489c9e1913ab5e929fd21ae2e3fb">GatedCallbacks</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166" lineLink="/docs/api/structs/llvm/sanitizercoverageoptions/#a116e5442a6e9139e0290b8ac2c8057f2"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/sanitizercoverageoptions/#a116e5442a6e9139e0290b8ac2c8057f2">SanitizerCoverageOptions</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="comment">/// Calculate what to divide by to scale counts.</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="comment">/// Given the maximum count, calculate a divisor that will scale all the</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="comment">/// weights to strictly less than std::numeric&#95;limits&lt;uint32&#95;t&gt;::max().</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173" lineLink="/docs/api/namespaces/llvm/#abb99891c63212832f13146f418aed935"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> uint64&#95;t <a href="/docs/api/namespaces/llvm/#abb99891c63212832f13146f418aed935">calculateCountScale</a>(uint64&#95;t MaxCount) &#123;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> MaxCount &lt; std::numeric&#95;limits&lt;uint32&#95;t&gt;::max()</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">             ? 1</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">             : MaxCount / std::numeric&#95;limits&lt;uint32&#95;t&gt;::max() + 1;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="comment">/// Scale an individual branch count.</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="comment">/// Scale a 64-bit weight down to 32-bits using \\c Scale.</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183" lineLink="/docs/api/namespaces/llvm/#aa9a2cc174301c011647c95c88e0f89b0"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> uint32&#95;t <a href="/docs/api/namespaces/llvm/#aa9a2cc174301c011647c95c88e0f89b0">scaleBranchCount</a>(uint64&#95;t <a href="/docs/api/namespaces/llvm/#a845e08be4b0320d66901a66b0c0e9509">Count</a>, uint64&#95;t Scale) &#123;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  uint64&#95;t <a href="/docs/api/files/lib/lib/target/lib/target/arc/arcinstrinfo-cpp/#a5d6e37f3d036496321824378223ad718a8009351707fa969013ab5d9126bab03e">Scaled</a> = <a href="/docs/api/namespaces/llvm/#a845e08be4b0320d66901a66b0c0e9509">Count</a> / Scale;</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/files/lib/lib/target/lib/target/arc/arcinstrinfo-cpp/#a5d6e37f3d036496321824378223ad718a8009351707fa969013ab5d9126bab03e">Scaled</a> &lt;= std::numeric&#95;limits&lt;uint32&#95;t&gt;::max() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;overflow 32-bits&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/arc/arcinstrinfo-cpp/#a5d6e37f3d036496321824378223ad718a8009351707fa969013ab5d9126bab03e">Scaled</a>;</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Use to ensure the inserted instrumentation has a DebugLocation; if none is</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal"></Highlight><Highlight kind="comment">// attached to the source instruction, try to use a DILocation with offset 0</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal"></Highlight><Highlight kind="comment">// scoped to surrounding function (if it has a DebugLocation).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Some non-call instructions may be missing debug info, but when inserting</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal"></Highlight><Highlight kind="comment">// instrumentation calls, some builds (e.g. LTO) want calls to have debug info</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight><Highlight kind="comment">// if the enclosing function does.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196" lineLink="/docs/api/structs/llvm/instrumentationirbuilder"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/instrumentationirbuilder/#a448f037b3ebf53dbba70a9ce7a89cad4">InstrumentationIRBuilder</a> : <a href="/docs/api/classes/llvm/irbuilder/#afdcde0e677ccb2ad5b4d67a510da2972">IRBuilder</a>&lt;&gt; &#123;</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197" lineLink="/docs/api/structs/llvm/instrumentationirbuilder/#acaa832739cdac826e2ffa713d3b4787a"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrumentationirbuilder/#acaa832739cdac826e2ffa713d3b4787a">ensureDebugInfo</a>(<a href="/docs/api/classes/llvm/irbuilder/#afdcde0e677ccb2ad5b4d67a510da2972">IRBuilder&lt;&gt;</a> &amp;IRB, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>) &#123;</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (IRB.<a href="/docs/api/classes/llvm/irbuilderbase/#a90a3242eeb2a7d1afbb5ab5bc5bfb20d">getCurrentDebugLocation</a>())</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/disubprogram">DISubprogram</a> &#42;SP = <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>.getSubprogram())</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">      IRB.<a href="/docs/api/classes/llvm/irbuilderbase/#a63fc74646456a3bed261512f21efe29c">SetCurrentDebugLocation</a>(<a href="/docs/api/classes/llvm/mdnode/#a7d10a7b9b7f40b04d27ed97c38ea1950">DILocation::get</a>(SP-&gt;getContext(), 0, 0, SP));</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204" lineLink="/docs/api/structs/llvm/instrumentationirbuilder/#a448f037b3ebf53dbba70a9ce7a89cad4"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrumentationirbuilder/#a448f037b3ebf53dbba70a9ce7a89cad4">InstrumentationIRBuilder</a>(<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;IP) : <a href="/docs/api/classes/llvm/irbuilder/#afdcde0e677ccb2ad5b4d67a510da2972">IRBuilder</a>&lt;&gt;(IP) &#123;</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/instrumentationirbuilder/#acaa832739cdac826e2ffa713d3b4787a">ensureDebugInfo</a>(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">, &#42;IP-&gt;<a href="/docs/api/classes/llvm/instruction/#a6a66ebb3aa12757479a3c88de77d78f8">getFunction</a>());</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208" lineLink="/docs/api/structs/llvm/instrumentationirbuilder/#a146c26005656a7c2a79168ab63b5b9fa"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrumentationirbuilder/#a146c26005656a7c2a79168ab63b5b9fa">InstrumentationIRBuilder</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;<a href="/docs/api/classes/llvm/irbuilderbase/#a03e7efde4d4b8c00e4d8431329383236">BB</a>, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> It)</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">      : <a href="/docs/api/classes/llvm/irbuilder/#afdcde0e677ccb2ad5b4d67a510da2972">IRBuilder</a>&lt;&gt;(<a href="/docs/api/classes/llvm/irbuilderbase/#a03e7efde4d4b8c00e4d8431329383236">BB</a>, It) &#123;</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/instrumentationirbuilder/#acaa832739cdac826e2ffa713d3b4787a">ensureDebugInfo</a>(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">, &#42;<a href="/docs/api/classes/llvm/irbuilderbase/#a03e7efde4d4b8c00e4d8431329383236">BB</a>-&gt;getParent());</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;TRANSFORMS&#95;INSTRUMENTATION&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

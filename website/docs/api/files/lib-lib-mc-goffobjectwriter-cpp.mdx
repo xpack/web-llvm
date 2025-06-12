@@ -1,0 +1,428 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/mc/goffobjectwriter-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `GOFFObjectWriter.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/BinaryFormat/GOFF.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/binaryformat/goff-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/MC/MCAssembler.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mcassembler-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/MC/MCGOFFObjectWriter.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mcgoffobjectwriter-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/MC/MCValue.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mcvalue-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Debug.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/debug-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Endian.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/endian-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/raw_ostream.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/anonymous-goffobjectwriter-cpp-">anonymous&#123;GOFFObjectWriter.cpp&#125;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags">Flags</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream">GOFFOstream</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter">GOFFObjectWriter</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Defines Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="#define"
+  name={<><a href="#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG&#95;TYPE</a>&nbsp;&nbsp;&nbsp;&quot;goff-writer&quot;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Defines
+
+### DEBUG&#95;TYPE {#ad78e062f62e0d6e453941fb4ca843e4d}
+
+<MemberDefinition
+  prototype={<>#define DEBUG&#95;TYPE&nbsp;&nbsp;&nbsp;&quot;goff-writer&quot;</>}>
+
+Definition at line <a href="#l00023">23</a> of file <a href="/docs/api/files/lib/lib/mc/goffobjectwriter-cpp">GOFFObjectWriter.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- lib/MC/GOFFObjectWriter.cpp - GOFF File Writer ---------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements GOFF object file writer information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/binaryformat/goff-h">llvm/BinaryFormat/GOFF.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcassembler-h">llvm/MC/MCAssembler.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcgoffobjectwriter-h">llvm/MC/MCGOFFObjectWriter.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcvalue-h">llvm/MC/MCValue.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h">llvm/Support/Debug.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/endian-h">llvm/Support/Endian.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h">llvm/Support/raw&#95;ostream.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23" lineLink="#ad78e062f62e0d6e453941fb4ca843e4d"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEBUG&#95;TYPE &quot;goff-writer&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25" lineLink="/docs/api/namespaces/anonymous-goffobjectwriter-cpp-"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The standard System/390 convention is to name the high-order (leftmost) bit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="comment">// in a byte as bit zero. The Flags type helps to set bits in a byte according</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="comment">// to this numeration order.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags/#a1de0ca40605c5a0ccf624bf90cfe3953">Flags</a> &#123;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">  uint8&#95;t Val;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> uint8&#95;t bits(uint8&#95;t BitIndex, uint8&#95;t <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878af6d9f1c7b49b7601fae6a545002a6763">Length</a>, uint8&#95;t <a href="/docs/api/classes/llvm/value">Value</a>,</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">                                uint8&#95;t OldValue) &#123;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(BitIndex &lt; 8 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Bit index out of bounds!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878af6d9f1c7b49b7601fae6a545002a6763">Length</a> + BitIndex &lt;= 8 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Bit length too long!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">    uint8&#95;t Mask = ((1 &lt;&lt; <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878af6d9f1c7b49b7601fae6a545002a6763">Length</a>) - 1) &lt;&lt; (8 - BitIndex - <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878af6d9f1c7b49b7601fae6a545002a6763">Length</a>);</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> = <a href="/docs/api/classes/llvm/value">Value</a> &lt;&lt; (8 - BitIndex - <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878af6d9f1c7b49b7601fae6a545002a6763">Length</a>);</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((<a href="/docs/api/classes/llvm/value">Value</a> &amp; Mask) == <a href="/docs/api/classes/llvm/value">Value</a> &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Bits set outside of range!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (OldValue &amp; ~Mask) | <a href="/docs/api/classes/llvm/value">Value</a>;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags/#a1de0ca40605c5a0ccf624bf90cfe3953"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags/#a1de0ca40605c5a0ccf624bf90cfe3953">Flags</a>() : Val(0) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags/#a22e10b1a1a2d0a72b925262552dc52de"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags/#a22e10b1a1a2d0a72b925262552dc52de">Flags</a>(uint8&#95;t BitIndex, uint8&#95;t <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878af6d9f1c7b49b7601fae6a545002a6763">Length</a>, uint8&#95;t <a href="/docs/api/classes/llvm/value">Value</a>)</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">      : Val(bits(BitIndex, <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878af6d9f1c7b49b7601fae6a545002a6763">Length</a>, <a href="/docs/api/classes/llvm/value">Value</a>, 0)) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags/#a2a3080ce7142a8710ad0a22a42a96d59"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags/#a2a3080ce7142a8710ad0a22a42a96d59">set</a>(uint8&#95;t BitIndex, uint8&#95;t <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878af6d9f1c7b49b7601fae6a545002a6763">Length</a>, uint8&#95;t <a href="/docs/api/classes/llvm/value">Value</a>) &#123;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">    Val = bits(BitIndex, <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878af6d9f1c7b49b7601fae6a545002a6763">Length</a>, <a href="/docs/api/classes/llvm/value">Value</a>, Val);</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags/#a0819cb71fbf5fe27832af6abbe7e2564"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> uint8&#95;t()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Val; &#125;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Common flag values on records.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Flag: This record is continued.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60" lineLink="/docs/api/namespaces/anonymous-goffobjectwriter-cpp-/#affc88a504614f8c5a35de21c7aa1e24a"><Highlight kind="normal"></Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> uint8&#95;t <a href="/docs/api/namespaces/anonymous-goffobjectwriter-cpp-/#affc88a504614f8c5a35de21c7aa1e24a">RecContinued</a> = <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags/#a1de0ca40605c5a0ccf624bf90cfe3953">Flags</a>(7, 1, 1);</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Flag: This record is a continuation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/namespaces/anonymous-goffobjectwriter-cpp-/#a01379ca88e4bf3d3df13070d0db31b78"><Highlight kind="normal"></Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> uint8&#95;t <a href="/docs/api/namespaces/anonymous-goffobjectwriter-cpp-/#a01379ca88e4bf3d3df13070d0db31b78">RecContinuation</a> = <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags/#a1de0ca40605c5a0ccf624bf90cfe3953">Flags</a>(6, 1, 1);</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The GOFFOstream is responsible to write the data into the fixed physical</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="comment">// records of the format. A user of this class announces the start of a new</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="comment">// logical record and the size of its content. While writing the content, the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight><Highlight kind="comment">// physical records are created for the data. Possible fill bytes at the end of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight><Highlight kind="comment">// a physical record are written automatically. In principle, the GOFFOstream</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight><Highlight kind="comment">// is agnostic of the endianness of the content. However, it also supports</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="comment">// writing data in big endian byte order.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#a0b6e28c2930d28e768447c416643c38a">GOFFOstream</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/raw-ostream/#a0f4b64a0f7aec0a02e7f2ff5a6552723">raw&#95;ostream</a> &#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="comment">  /// The underlying raw&#95;pwrite&#95;stream.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/raw-pwrite-stream">raw&#95;pwrite&#95;stream</a> &amp;OS;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">  /// The remaining size of this logical record, including fill bytes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> RemainingSize;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef NDEBUG</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="comment">  /// The number of bytes needed to fill up the last physical record.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> Gap = 0;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  /// The number of logical records emitted to far.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  uint32&#95;t LogicalRecords;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="comment">  /// The type of the current (logical) record.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/goff/#a0cf018cb9ae43f5fdf6288c3f4b50ffb">GOFF::RecordType</a> CurrentType;</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">  /// Signals start of new record.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> NewLogicalRecord;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="comment">  /// Static allocated buffer for the stream, used by the raw&#95;ostream class. The</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">  /// buffer is sized to hold the content of a physical record.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> Buffer&#91;<a href="/docs/api/namespaces/llvm/goff/#a4b6cc3635e837576be8b7bdc608ad0a6">GOFF::RecordContentLength</a>&#93;;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Return the number of bytes left to write until next physical record.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Please note that we maintain the total numbers of byte left, not the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// written size.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> bytesToNextPhysicalRecord() &#123;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> Bytes = RemainingSize % <a href="/docs/api/namespaces/llvm/goff/#a4b6cc3635e837576be8b7bdc608ad0a6">GOFF::RecordContentLength</a>;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Bytes ? Bytes : <a href="/docs/api/namespaces/llvm/goff/#a4b6cc3635e837576be8b7bdc608ad0a6">GOFF::RecordContentLength</a>;</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">  /// Write the record prefix of a physical record, using the given record type.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> writeRecordPrefix(<a href="/docs/api/classes/llvm/raw-ostream/#a0f4b64a0f7aec0a02e7f2ff5a6552723">raw&#95;ostream</a> &amp;OS, <a href="/docs/api/namespaces/llvm/goff/#a0cf018cb9ae43f5fdf6288c3f4b50ffb">GOFF::RecordType</a> <a href="/docs/api/classes/llvm/type">Type</a>,</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">                                </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> RemainingSize,</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">                                uint8&#95;t <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags">Flags</a> = <a href="/docs/api/namespaces/anonymous-goffobjectwriter-cpp-/#a01379ca88e4bf3d3df13070d0db31b78">RecContinuation</a>);</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="comment">  /// Fill the last physical record of a logical record with zero bytes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> fillRecord();</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">  /// See raw&#95;ostream::write&#95;impl.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> write&#95;impl(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">  /// Return the current position within the stream, not counting the bytes</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">  /// currently in the buffer.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  uint64&#95;t current&#95;pos()</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OS.tell(); &#125;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#a0b6e28c2930d28e768447c416643c38a"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#a0b6e28c2930d28e768447c416643c38a">GOFFOstream</a>(<a href="/docs/api/classes/llvm/raw-pwrite-stream">raw&#95;pwrite&#95;stream</a> &amp;OS)</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">      : OS(OS), RemainingSize(0), LogicalRecords(0), NewLogicalRecord(<a href="/docs/api/namespaces/false">false</a>) &#123;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/raw-ostream/#a61bcdba2623dbce59a5f460650255db2">SetBuffer</a>(Buffer, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Buffer));</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#a7854c72c615013bccfba0ca2d7c61ef0"><Highlight kind="normal">  <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#a7854c72c615013bccfba0ca2d7c61ef0">~GOFFOstream</a>() &#123; <a href="/docs/api/files/lib/lib/target/lib/target/arc/arcbranchfinalize-cpp/#a8e08eb3768ea6054b445ad1e5f0b9bba">finalize</a>(); &#125;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#aa3e61c34627265c4bad6df664958bd59"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/raw-pwrite-stream">raw&#95;pwrite&#95;stream</a> &amp;<a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#aa3e61c34627265c4bad6df664958bd59">getOS</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OS; &#125;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> newRecord(<a href="/docs/api/namespaces/llvm/goff/#a0cf018cb9ae43f5fdf6288c3f4b50ffb">GOFF::RecordType</a> <a href="/docs/api/classes/llvm/type">Type</a>, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>);</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#a4a6d27262dadddd3a922d56a777615e0"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#a4a6d27262dadddd3a922d56a777615e0">finalize</a>() &#123; fillRecord(); &#125;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#a62bd31d048a5dc5e1f00ea53c255bd16"><Highlight kind="normal">  uint32&#95;t <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#a62bd31d048a5dc5e1f00ea53c255bd16">logicalRecords</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> LogicalRecords; &#125;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Support for endian-specific data.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#a8ca35719bf73f88c6dbfc81f3e720973"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> value&#95;type&gt; </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#a8ca35719bf73f88c6dbfc81f3e720973">writebe</a>(value&#95;type <a href="/docs/api/classes/llvm/value">Value</a>) &#123;</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> =</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">        <a href="/docs/api/namespaces/llvm/support/endian/#a108ca68c609b3e8c00918a68d26905fa">support::endian::byte&#95;swap&lt;value&#95;type&gt;</a>(<a href="/docs/api/classes/llvm/value">Value</a>, <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dbad861877da56b8b4ceb35c8cbfdf65bb4">llvm::endianness::big</a>);</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a7363e46d4dd6c78affffabaea0de482b">write</a>(</Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(&amp;<a href="/docs/api/classes/llvm/value">Value</a>), </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(value&#95;type));</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> GOFFOstream::writeRecordPrefix(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS, <a href="/docs/api/namespaces/llvm/goff/#a0cf018cb9ae43f5fdf6288c3f4b50ffb">GOFF::RecordType</a> <a href="/docs/api/classes/llvm/type">Type</a>,</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">                                    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> RemainingSize, uint8&#95;t Flags) &#123;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">  uint8&#95;t TypeAndFlags = Flags | (<a href="/docs/api/classes/llvm/type">Type</a> &lt;&lt; 4);</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (RemainingSize &gt; <a href="/docs/api/namespaces/llvm/goff/#a9bd094a5bc04f1a61bde1d43568b595f">GOFF::RecordLength</a>)</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">    TypeAndFlags |= <a href="/docs/api/namespaces/anonymous-goffobjectwriter-cpp-/#affc88a504614f8c5a35de21c7aa1e24a">RecContinued</a>;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">  OS &lt;&lt; static&#95;cast&lt;unsigned char&gt;(<a href="/docs/api/namespaces/llvm/goff/#a866b62ea4915725aed3f51f6769be8f4">GOFF::PTVPrefix</a>) </Highlight><Highlight kind="comment">// Record Type</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">     &lt;&lt; </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(TypeAndFlags)    </Highlight><Highlight kind="comment">// Continuation</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">     &lt;&lt; </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(0);              </Highlight><Highlight kind="comment">// Version</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#a45866f71416d2aa1ce200d95e1045f0b"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream/#a45866f71416d2aa1ce200d95e1045f0b">GOFFOstream::newRecord</a>(<a href="/docs/api/namespaces/llvm/goff/#a0cf018cb9ae43f5fdf6288c3f4b50ffb">GOFF::RecordType</a> <a href="/docs/api/classes/llvm/type">Type</a>, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>) &#123;</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">  fillRecord();</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  CurrentType = <a href="/docs/api/classes/llvm/type">Type</a>;</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">  RemainingSize = <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef NDEBUG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> Gap;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">  Gap = (RemainingSize % <a href="/docs/api/namespaces/llvm/goff/#a4b6cc3635e837576be8b7bdc608ad0a6">GOFF::RecordContentLength</a>);</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Gap) &#123;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">    Gap = <a href="/docs/api/namespaces/llvm/goff/#a4b6cc3635e837576be8b7bdc608ad0a6">GOFF::RecordContentLength</a> - Gap;</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">    RemainingSize += Gap;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">  NewLogicalRecord = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">  ++LogicalRecords;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> GOFFOstream::fillRecord() &#123;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((GetNumBytesInBuffer() &lt;= RemainingSize) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">         </Highlight><Highlight kind="stringliteral">&quot;More bytes in buffer than expected&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> Remains = RemainingSize - GetNumBytesInBuffer();</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Remains) &#123;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Remains == Gap &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Wrong size of fill gap&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((Remains &lt; <a href="/docs/api/namespaces/llvm/goff/#a9bd094a5bc04f1a61bde1d43568b595f">GOFF::RecordLength</a>) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;Attempt to fill more than one physical record&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/raw-ostream/#a06288f4d38e1d74fc7a1d10056d88373">raw&#95;ostream::write&#95;zeros</a>(Remains);</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">  flush();</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(RemainingSize == 0 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Not fully flushed&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(GetNumBytesInBuffer() == 0 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Buffer not fully empty&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This function is called from the raw&#95;ostream implementation if:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal"></Highlight><Highlight kind="comment">// - The internal buffer is full. Size is excactly the size of the buffer.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal"></Highlight><Highlight kind="comment">// - Data larger than the internal buffer is written. Size is a multiple of the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal"></Highlight><Highlight kind="comment">//   buffer size.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal"></Highlight><Highlight kind="comment">// - flush() has been called. Size is at most the buffer size.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The GOFFOstream implementation ensures that flush() is called before a new</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal"></Highlight><Highlight kind="comment">// logical record begins. Therefore it is sufficient to check for a new block</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight><Highlight kind="comment">// only once.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> GOFFOstream::write&#95;impl(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>) &#123;</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((RemainingSize &gt;= <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>) &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Attempt to write too much data&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(RemainingSize &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Logical record overflow&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!(RemainingSize % <a href="/docs/api/namespaces/llvm/goff/#a4b6cc3635e837576be8b7bdc608ad0a6">GOFF::RecordContentLength</a>)) &#123;</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">    writeRecordPrefix(OS, CurrentType, RemainingSize,</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">                      NewLogicalRecord ? 0 : <a href="/docs/api/namespaces/anonymous-goffobjectwriter-cpp-/#a01379ca88e4bf3d3df13070d0db31b78">RecContinuation</a>);</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">    NewLogicalRecord = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!NewLogicalRecord &amp;&amp;</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">         </Highlight><Highlight kind="stringliteral">&quot;New logical record not on physical record boundary&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> Idx = 0;</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> &gt; 0) &#123;</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> BytesToWrite = bytesToNextPhysicalRecord();</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (BytesToWrite &gt; <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>)</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">      BytesToWrite = <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">    OS.<a href="/docs/api/classes/llvm/raw-ostream/#a6e0cbc5c8568d8446c284c8538b2c9f1">write</a>(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a> + Idx, BytesToWrite);</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">    Idx += BytesToWrite;</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> -= BytesToWrite;</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">    RemainingSize -= BytesToWrite;</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>)</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">      writeRecordPrefix(OS, CurrentType, RemainingSize);</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#a726eec348c27b5336229e78fd0b5437d">GOFFObjectWriter</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcobjectwriter/#a0e06822ad41ef36f2abad4a02733963b">MCObjectWriter</a> &#123;</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The target specific GOFF writer instance.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">  std::unique&#95;ptr&lt;MCGOFFObjectTargetWriter&gt; TargetObjectWriter;</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The stream used to write the GOFF records.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">  <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffostream">GOFFOstream</a> OS;</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#a726eec348c27b5336229e78fd0b5437d"><Highlight kind="normal">  <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#a726eec348c27b5336229e78fd0b5437d">GOFFObjectWriter</a>(std::unique&#95;ptr&lt;MCGOFFObjectTargetWriter&gt; MOTW,</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">                   <a href="/docs/api/classes/llvm/raw-pwrite-stream">raw&#95;pwrite&#95;stream</a> &amp;OS)</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">      : TargetObjectWriter(<a href="/docs/api/namespaces/std">std</a>::<a href="/docs/api/namespaces/llvm/#abfc9c7ecf70f66901e439f7c04ef3dbb">move</a>(MOTW)), OS(OS) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#a604e3c49da079f5e1439198eb3a89ada"><Highlight kind="normal">  <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#a604e3c49da079f5e1439198eb3a89ada">~GOFFObjectWriter</a>()</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;&#125;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Write GOFF records.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> writeHeader();</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> writeEnd();</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Implementation of the MCObjectWriter interface.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#ab804e28f2b38ee3b8ff61c1b03f83668"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#ab804e28f2b38ee3b8ff61c1b03f83668">recordRelocation</a>(<a href="/docs/api/classes/llvm/mcassembler">MCAssembler</a> &amp;Asm, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfragment">MCFragment</a> &#42;Fragment,</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">                        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfixup">MCFixup</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/powerpc/ppctlsdynamiccall-cpp/#a4a235aedca5bbfc39934045b6cbf9c70">Fixup</a>, <a href="/docs/api/classes/llvm/mcvalue">MCValue</a> <a href="/docs/api/classes/llvm/target">Target</a>,</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">                        uint64&#95;t &amp;FixedValue)</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;&#125;</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">  uint64&#95;t writeObject(<a href="/docs/api/classes/llvm/mcassembler">MCAssembler</a> &amp;Asm) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end anonymous namespace</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#a3992a2bfd4bb0b0696e40fd7f55a10c6"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#a3992a2bfd4bb0b0696e40fd7f55a10c6">GOFFObjectWriter::writeHeader</a>() &#123;</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">  OS.newRecord(<a href="/docs/api/namespaces/llvm/goff/#a0cf018cb9ae43f5fdf6288c3f4b50ffbaca3e490356a5af3693b9c0b9dfa3c309">GOFF::RT&#95;HDR</a>, </Highlight><Highlight kind="comment">/&#42;Size=&#42;/</Highlight><Highlight kind="normal">57);</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">  OS.write&#95;zeros(1);       </Highlight><Highlight kind="comment">// Reserved</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">  OS.writebe&lt;uint32&#95;t&gt;(0); </Highlight><Highlight kind="comment">// Target Hardware Environment</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">  OS.writebe&lt;uint32&#95;t&gt;(0); </Highlight><Highlight kind="comment">// Target Operating System Environment</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">  OS.write&#95;zeros(2);       </Highlight><Highlight kind="comment">// Reserved</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal">  OS.writebe&lt;uint16&#95;t&gt;(0); </Highlight><Highlight kind="comment">// CCSID</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">  OS.write&#95;zeros(16);      </Highlight><Highlight kind="comment">// Character Set name</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">  OS.write&#95;zeros(16);      </Highlight><Highlight kind="comment">// Language Product Identifier</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal">  OS.writebe&lt;uint32&#95;t&gt;(1); </Highlight><Highlight kind="comment">// Architecture Level</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">  OS.writebe&lt;uint16&#95;t&gt;(0); </Highlight><Highlight kind="comment">// Module Properties Length</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">  OS.write&#95;zeros(6);       </Highlight><Highlight kind="comment">// Reserved</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#af5fcffab76e6fcefcbe4293fdc63b0d3"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#af5fcffab76e6fcefcbe4293fdc63b0d3">GOFFObjectWriter::writeEnd</a>() &#123;</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">  uint8&#95;t <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = <a href="/docs/api/namespaces/llvm/goff/#a5d8160a21a216880a331021a4a112999affe3aa6f338cca77eddf80bbaab9386a">GOFF::END&#95;EPR&#95;None</a>;</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">  uint8&#95;t AMODE = 0;</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">  uint32&#95;t ESDID = 0;</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// TODO Set Flags/AMODE/ESDID for entry point.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">  OS.newRecord(<a href="/docs/api/namespaces/llvm/goff/#a0cf018cb9ae43f5fdf6288c3f4b50ffbaee4d114304b98c0c902da1fee306eea8">GOFF::RT&#95;END</a>, </Highlight><Highlight kind="comment">/&#42;Size=&#42;/</Highlight><Highlight kind="normal">13);</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">  OS.writebe&lt;uint8&#95;t&gt;(<a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/flags/#a1de0ca40605c5a0ccf624bf90cfe3953">Flags</a>(6, 2, <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)); </Highlight><Highlight kind="comment">// Indicator flags</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">  OS.writebe&lt;uint8&#95;t&gt;(AMODE);          </Highlight><Highlight kind="comment">// AMODE</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">  OS.write&#95;zeros(3);                   </Highlight><Highlight kind="comment">// Reserved</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The record count is the number of logical records. In principle, this value</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// is available as OS.logicalRecords(). However, some tools rely on this field</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// being zero.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">  OS.writebe&lt;uint32&#95;t&gt;(0);     </Highlight><Highlight kind="comment">// Record Count</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">  OS.writebe&lt;uint32&#95;t&gt;(ESDID); </Highlight><Highlight kind="comment">// ESDID (of entry point)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">  OS.finalize();</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277" lineLink="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#a260c83ace2744d606c0ffa69ec9be9f2"><Highlight kind="normal">uint64&#95;t <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#a260c83ace2744d606c0ffa69ec9be9f2">GOFFObjectWriter::writeObject</a>(<a href="/docs/api/classes/llvm/mcassembler">MCAssembler</a> &amp;Asm) &#123;</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">  uint64&#95;t StartOffset = OS.tell();</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">  <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#a3992a2bfd4bb0b0696e40fd7f55a10c6">writeHeader</a>();</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">  <a href="/docs/api/classes/anonymous-namespace-goffobjectwriter-cpp-/goffobjectwriter/#af5fcffab76e6fcefcbe4293fdc63b0d3">writeEnd</a>();</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Wrote &quot;</Highlight><Highlight kind="normal"> &lt;&lt; OS.logicalRecords() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; logical records.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OS.tell() - StartOffset;</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">std::unique&#95;ptr&lt;MCObjectWriter&gt;</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289" lineLink="/docs/api/namespaces/llvm/#a130dd53390dc40f261175e30c45f5b6e"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a130dd53390dc40f261175e30c45f5b6e">llvm::createGOFFObjectWriter</a>(std::unique&#95;ptr&lt;MCGOFFObjectTargetWriter&gt; MOTW,</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">                             <a href="/docs/api/classes/llvm/raw-pwrite-stream">raw&#95;pwrite&#95;stream</a> &amp;OS) &#123;</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;unique&lt;GOFFObjectWriter&gt;(std::move(MOTW), OS);</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

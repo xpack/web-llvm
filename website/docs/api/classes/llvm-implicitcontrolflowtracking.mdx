@@ -1,0 +1,155 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/implicitcontrolflowtracking
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ImplicitControlFlowTracking` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This class allows to keep track on instructions with implicit control flow. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::ImplicitControlFlowTracking</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Analysis/InstructionPrecedenceTracking.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/instructionprecedencetracking-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/instructionprecedencetracking">InstructionPrecedenceTracking</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;</>}
+  name={<><a href="#a462bb685cd45aed006cc467ccbcacd62">getFirstICFI</a> (const BasicBlock &#42;BB)</>}>
+Returns the topmost instruction with implicit control flow from the given basic block. <a href="#a462bb685cd45aed006cc467ccbcacd62">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#acbe6442a02a15b138ff870eeeb6da50b">hasICF</a> (const BasicBlock &#42;BB)</>}>
+Returns true if at least one instruction from the given basic block has implicit control flow. <a href="#acbe6442a02a15b138ff870eeeb6da50b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a6680bd71c9d15033f99c787b50d09e47">isDominatedByICFIFromSameBlock</a> (const Instruction &#42;Insn)</>}>
+Returns true if the first ICFI of Insn&#39;s block exists and dominates Insn. <a href="#a6680bd71c9d15033f99c787b50d09e47">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ae08e452a5b7166504b29a1d9140e4525">isSpecialInstruction</a> (const Instruction &#42;Insn) const override</>}>
+A predicate that defines whether or not the instruction <code>Insn</code> is considered special and needs to be tracked. <a href="#ae08e452a5b7166504b29a1d9140e4525">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This class allows to keep track on instructions with implicit control flow.
+
+These are instructions that may not pass execution to their successors. For example, throwing calls and guards do not always do this. If we need to know for sure that some instruction is guaranteed to execute if the given block is reached, then we need to make sure that there is no implicit control flow instruction (ICFI) preceding it. For example, this check is required if we perform PRE moving non-speculable instruction to other place.
+
+Definition at line 99 of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/instructionprecedencetracking-h">InstructionPrecedenceTracking.h</a>.
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### getFirstICFI() {#a462bb685cd45aed006cc467ccbcacd62}
+
+<MemberDefinition
+  prototype={<>const Instruction &#42; llvm::ImplicitControlFlowTracking::getFirstICFI (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB)</>}
+  labels = {["inline"]}>
+Returns the topmost instruction with implicit control flow from the given basic block.
+
+Returns nullptr if there is no such instructions in the block.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/instructionprecedencetracking-h/#l00103">103</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/instructionprecedencetracking-h">InstructionPrecedenceTracking.h</a>.
+</MemberDefinition>
+
+### hasICF() {#acbe6442a02a15b138ff870eeeb6da50b}
+
+<MemberDefinition
+  prototype={<>bool llvm::ImplicitControlFlowTracking::hasICF (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB)</>}
+  labels = {["inline"]}>
+Returns true if at least one instruction from the given basic block has implicit control flow.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/instructionprecedencetracking-h/#l00109">109</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/instructionprecedencetracking-h">InstructionPrecedenceTracking.h</a>.
+</MemberDefinition>
+
+### isDominatedByICFIFromSameBlock() {#a6680bd71c9d15033f99c787b50d09e47}
+
+<MemberDefinition
+  prototype={<>bool llvm::ImplicitControlFlowTracking::isDominatedByICFIFromSameBlock (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; Insn)</>}
+  labels = {["inline"]}>
+Returns true if the first ICFI of Insn&#39;s block exists and dominates Insn.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/instructionprecedencetracking-h/#l00114">114</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/instructionprecedencetracking-h">InstructionPrecedenceTracking.h</a>.
+</MemberDefinition>
+
+### isSpecialInstruction() {#ae08e452a5b7166504b29a1d9140e4525}
+
+<MemberDefinition
+  prototype={<>bool ImplicitControlFlowTracking::isSpecialInstruction (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; Insn) const</>}
+  labels = {["virtual"]}>
+A predicate that defines whether or not the instruction <code>Insn</code> is considered special and needs to be tracked.
+
+Implementing this method in children classes allows to implement tracking of implicit control flow, memory writing instructions or any other kinds of instructions we might be interested in.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/instructionprecedencetracking-h/#l00118">118</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/instructionprecedencetracking-h">InstructionPrecedenceTracking.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/instructionprecedencetracking-cpp/#l00138">138</a> of file <a href="/docs/api/files/lib/lib/analysis/instructionprecedencetracking-cpp">InstructionPrecedenceTracking.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/analysis/instructionprecedencetracking-h">InstructionPrecedenceTracking.h</a></li>
+<li><a href="/docs/api/files/lib/lib/analysis/instructionprecedencetracking-cpp">InstructionPrecedenceTracking.cpp</a></li>
+</ul>
+
+</DoxygenPage>

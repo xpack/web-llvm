@@ -1,0 +1,297 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/targetparser/cskytargetparser-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `CSKYTargetParser.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/TargetParser/CSKYTargetParser.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/targetparser/cskytargetparser-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/StringSwitch.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/stringswitch-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/TargetParser/CSKYTargetParser.def"
+  permalink=""
+  isLocal="true" />
+</IncludesList>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#aa4e31382e5e1a22b808da4b02b67a7d2">stripNegationPrefix</a> (StringRef &amp;Name)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Defines Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="#define"
+  name={<><a href="#a4efea434b0a491172b7c190224814d77">CSKY&#95;CPU&#95;NAME</a>&nbsp;&nbsp;&nbsp;  .Case(NAME, ARCHNames&#91;static&#95;cast&lt;unsigned&gt;(ArchKind::ID)&#93;.archBaseExt |     \\
+                  DEFAULT&#95;EXT)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Functions
+
+### stripNegationPrefix() {#aa4e31382e5e1a22b808da4b02b67a7d2}
+
+<MemberDefinition
+  prototype={<>static bool stripNegationPrefix (<a href="/docs/api/classes/llvm/stringref">StringRef</a> &amp; Name)</>}
+  labels = {["static"]}>
+
+Definition at line <a href="#l00152">152</a> of file <a href="/docs/api/files/lib/lib/targetparser/cskytargetparser-cpp">CSKYTargetParser.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Defines
+
+### CSKY&#95;CPU&#95;NAME {#a4efea434b0a491172b7c190224814d77}
+
+<MemberDefinition
+  prototype={<>#define CSKY&#95;CPU&#95;NAME&nbsp;&nbsp;&nbsp;  .Case(NAME, ARCHNames&#91;static&#95;cast&lt;unsigned&gt;(ArchKind::ID)&#93;.archBaseExt |     \\
+                  DEFAULT&#95;EXT)</>}>
+
+Definition at line <a href="#l00138">138</a> of file <a href="/docs/api/files/lib/lib/targetparser/cskytargetparser-cpp">CSKYTargetParser.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- TargetParser - Parser for target features ---------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">//                     The LLVM Compiler Infrastructure</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file is distributed under the University of Illinois Open Source</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">// License. See LICENSE.TXT for details.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements a target parser to recognise CSKY hardware features</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// such as CPU/ARCH names.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/targetparser/cskytargetparser-h">llvm/TargetParser/CSKYTargetParser.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringswitch-h">llvm/ADT/StringSwitch.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20" lineLink="/docs/api/namespaces/llvm/csky/#a52c5e59580b7e5998969341dae2cfba5"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#a52c5e59580b7e5998969341dae2cfba5">CSKY::getFPUFeatures</a>(<a href="/docs/api/namespaces/llvm/csky/#adab2b2e06b6e4bc7cd3724b12983748f">CSKYFPUKind</a> <a href="/docs/api/namespaces/llvm/csky/#adab2b2e06b6e4bc7cd3724b12983748f">CSKYFPUKind</a>,</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal">                          std::vector&lt;StringRef&gt; &amp;Features) &#123;</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/csky/#adab2b2e06b6e4bc7cd3724b12983748f">CSKYFPUKind</a> &gt;= FK&#95;LAST || <a href="/docs/api/namespaces/llvm/csky/#adab2b2e06b6e4bc7cd3724b12983748f">CSKYFPUKind</a> == FK&#95;INVALID)</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/csky/#adab2b2e06b6e4bc7cd3724b12983748f">CSKYFPUKind</a>) &#123;</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> FK&#95;AUTO:</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv2&#95;sf&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv2&#95;df&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fdivdu&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> FK&#95;FPV2:</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv2&#95;sf&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv2&#95;df&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> FK&#95;FPV2&#95;DIVD:</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv2&#95;sf&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv2&#95;df&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fdivdu&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> FK&#95;FPV2&#95;SF:</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv2&#95;sf&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> FK&#95;FPV3:</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv3&#95;hf&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv3&#95;hi&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv3&#95;sf&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv3&#95;df&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> FK&#95;FPV3&#95;HF:</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv3&#95;hf&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv3&#95;hi&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> FK&#95;FPV3&#95;HSF:</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv3&#95;hf&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv3&#95;hi&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv3&#95;sf&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> FK&#95;FPV3&#95;SDF:</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv3&#95;sf&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">    Features.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;+fpuv3&#95;df&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">    <a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm&#95;unreachable</a>(</Highlight><Highlight kind="stringliteral">&quot;Unknown FPU Kind&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ======================================================= //</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Information by ID</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ======================================================= //</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75" lineLink="/docs/api/namespaces/llvm/csky/#ae0afc37c0fe40d24d2021c7eba023b2a"><Highlight kind="normal"><a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/namespaces/llvm/csky/#ae0afc37c0fe40d24d2021c7eba023b2a">CSKY::getArchName</a>(<a href="/docs/api/namespaces/llvm/csky/#a1426cdc638fba0ce765f71cabfc5b612">ArchKind</a> AK) &#123;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#a33cc0e3e4552596d11c6ea6e28c33d0c">ARCHNames</a>&#91;</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(AK)&#93;.<a href="/docs/api/files/lib/lib/transforms/lib/transforms/objcarc/provenanceanalysisevaluator-cpp/#a2ee79648e8bce3ddbb26358ff10e3e82">getName</a>();</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The default cpu&#39;s name is same as arch name.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/namespaces/llvm/csky/#a8e20a1515e9e84624e4dc843d115f172"><Highlight kind="normal"><a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/namespaces/llvm/csky/#a8e20a1515e9e84624e4dc843d115f172">CSKY::getDefaultCPU</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Arch) &#123;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/csky/#a1426cdc638fba0ce765f71cabfc5b612">ArchKind</a> AK = <a href="/docs/api/files/lib/lib/targetparser/triple-cpp/#ad3a9a5aa955e9b62ec11e4d3566d4594">parseArch</a>(Arch);</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (AK == CSKY::ArchKind::INVALID)</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/stringref">StringRef</a>();</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Arch;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ======================================================= //</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Parsers</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ======================================================= //</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91" lineLink="/docs/api/namespaces/llvm/csky/#a86f105210202c670da40aab6b2f360be"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/csky/#a1426cdc638fba0ce765f71cabfc5b612">CSKY::ArchKind</a> <a href="/docs/api/namespaces/llvm/csky/#a86f105210202c670da40aab6b2f360be">CSKY::parseArch</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Arch) &#123;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a> : <a href="/docs/api/namespaces/llvm/csky/#a33cc0e3e4552596d11c6ea6e28c33d0c">ARCHNames</a>) &#123;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>.getName() == Arch)</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>.ID;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CSKY::ArchKind::INVALID;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100" lineLink="/docs/api/namespaces/llvm/csky/#a7c98978ae277e32680873dd619c2222f"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/csky/#a1426cdc638fba0ce765f71cabfc5b612">CSKY::ArchKind</a> <a href="/docs/api/namespaces/llvm/csky/#a7c98978ae277e32680873dd619c2222f">CSKY::parseCPUArch</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> CPU) &#123;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a> : <a href="/docs/api/namespaces/llvm/csky/#a73ad8b85bc7ebc91c97263c6d3d2ba3c">CPUNames</a>) &#123;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CPU == <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>.getName())</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>.ArchID;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CSKY::ArchKind::INVALID;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109" lineLink="/docs/api/namespaces/llvm/csky/#a5fa99baeb3d80d65a53554ef144d33ae"><Highlight kind="normal">uint64&#95;t <a href="/docs/api/namespaces/llvm/csky/#a5fa99baeb3d80d65a53554ef144d33ae">CSKY::parseArchExt</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> ArchExt) &#123;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a> : <a href="/docs/api/namespaces/llvm/csky/#ab146cb5385a6a851e47450414a8f9893">CSKYARCHExtNames</a>) &#123;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ArchExt == <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>.getName())</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a2e38c85003a042421cde1647632d0b72">A</a>.ID;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ace0fc151af4b77a32d0112e81e50c8e5a04b6b94a4398ed9aa59384b891a4dca6">AEK&#95;INVALID</a>;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117" lineLink="/docs/api/namespaces/llvm/csky/#a280ae1ca5da01930c7d1f757f3946d31"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#a280ae1ca5da01930c7d1f757f3946d31">CSKY::fillValidCPUArchList</a>(<a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;StringRef&gt;</a> &amp;Values) &#123;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/csky/cpunames">CpuNames&lt;CSKY::ArchKind&gt;</a> &amp;Arch : <a href="/docs/api/namespaces/llvm/csky/#a73ad8b85bc7ebc91c97263c6d3d2ba3c">CPUNames</a>) &#123;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Arch.ArchID != CSKY::ArchKind::INVALID)</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">      Values.<a href="/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">push&#95;back</a>(Arch.getName());</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124" lineLink="/docs/api/namespaces/llvm/csky/#a164f2bc2fa9803eda8b0a63f9466ac16"><Highlight kind="normal"><a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/namespaces/llvm/csky/#a164f2bc2fa9803eda8b0a63f9466ac16">CSKY::getFPUName</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> FPUKind) &#123;</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (FPUKind &gt;= FK&#95;LAST)</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/stringref">StringRef</a>();</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#aa195841b44cb9ff3a1e9da552bda33fc">FPUNames</a>&#91;FPUKind&#93;.getName();</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130" lineLink="/docs/api/namespaces/llvm/csky/#a7a41a469c3337e852a901c9f68caf161"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/csky/#ae4163409184fb1aa649f1fb543cda38f">CSKY::FPUVersion</a> <a href="/docs/api/namespaces/llvm/csky/#a7a41a469c3337e852a901c9f68caf161">CSKY::getFPUVersion</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> FPUKind) &#123;</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (FPUKind &gt;= FK&#95;LAST)</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae4163409184fb1aa649f1fb543cda38fab50339a10e1de285ac99d4c3990b8693">FPUVersion::NONE</a>;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#aa195841b44cb9ff3a1e9da552bda33fc">FPUNames</a>&#91;FPUKind&#93;.FPUVer;</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136" lineLink="/docs/api/namespaces/llvm/csky/#ae8c064152718a0cb588361b2a4e48f8f"><Highlight kind="normal">uint64&#95;t <a href="/docs/api/namespaces/llvm/csky/#ae8c064152718a0cb588361b2a4e48f8f">CSKY::getDefaultExtensions</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> CPU) &#123;</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/stringswitch">StringSwitch&lt;uint64&#95;t&gt;</a>(CPU)</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define CSKY&#95;CPU&#95;NAME(NAME, ID, DEFAULT&#95;EXT)                                   \\</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="preprocessor">  .Case(NAME, ARCHNames&#91;static&#95;cast&lt;unsigned&gt;(ArchKind::ID)&#93;.archBaseExt |     \\</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="preprocessor">                  DEFAULT&#95;EXT)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;llvm/TargetParser/CSKYTargetParser.def&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">      .<a href="/docs/api/classes/llvm/stringswitch/#a7f0e82e8a818ca43926fceb49be81661">Default</a>(<a href="/docs/api/namespaces/llvm/csky/#ace0fc151af4b77a32d0112e81e50c8e5a04b6b94a4398ed9aa59384b891a4dca6">CSKY::AEK&#95;INVALID</a>);</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145" lineLink="/docs/api/namespaces/llvm/csky/#ab76a2f48d6603e6f8f059795a043ccb1"><Highlight kind="normal"><a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/namespaces/llvm/csky/#ab76a2f48d6603e6f8f059795a043ccb1">CSKY::getArchExtName</a>(uint64&#95;t <a href="/docs/api/namespaces/llvm/csky/#ace0fc151af4b77a32d0112e81e50c8e5">ArchExtKind</a>) &#123;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;AE : <a href="/docs/api/namespaces/llvm/csky/#ab146cb5385a6a851e47450414a8f9893">CSKYARCHExtNames</a>)</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/csky/#ace0fc151af4b77a32d0112e81e50c8e5">ArchExtKind</a> == AE.ID)</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> AE.getName();</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/stringref">StringRef</a>();</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152" lineLink="#aa4e31382e5e1a22b808da4b02b67a7d2"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="#aa4e31382e5e1a22b808da4b02b67a7d2">stripNegationPrefix</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> &amp;Name) &#123;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Name.starts&#95;with(</Highlight><Highlight kind="stringliteral">&quot;no&quot;</Highlight><Highlight kind="normal">)) &#123;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">    Name = Name.substr(2);</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160" lineLink="/docs/api/namespaces/llvm/csky/#a2076f063c24750c7669aa18039c6a039"><Highlight kind="normal"><a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/namespaces/llvm/csky/#a2076f063c24750c7669aa18039c6a039">CSKY::getArchExtFeature</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> ArchExt) &#123;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Negated = <a href="#aa4e31382e5e1a22b808da4b02b67a7d2">stripNegationPrefix</a>(ArchExt);</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;AE : <a href="/docs/api/namespaces/llvm/csky/#ab146cb5385a6a851e47450414a8f9893">CSKYARCHExtNames</a>) &#123;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (AE.Feature &amp;&amp; ArchExt == AE.getName())</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/stringref">StringRef</a>(Negated ? AE.NegFeature : AE.Feature);</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/stringref">StringRef</a>();</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170" lineLink="/docs/api/namespaces/llvm/csky/#a23a8a2a541f391128f65c7a17cf6c0d5"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#a23a8a2a541f391128f65c7a17cf6c0d5">CSKY::getExtensionFeatures</a>(uint64&#95;t <a href="/docs/api/files/lib/lib/target/lib/target/spirv/spirvsubtarget-cpp/#aeb3e6d0c41c374eb76421fe8549919e5">Extensions</a>,</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">                                std::vector&lt;StringRef&gt; &amp;Features) &#123;</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/target/lib/target/spirv/spirvsubtarget-cpp/#aeb3e6d0c41c374eb76421fe8549919e5">Extensions</a> == <a href="/docs/api/namespaces/llvm/csky/#ace0fc151af4b77a32d0112e81e50c8e5a04b6b94a4398ed9aa59384b891a4dca6">CSKY::AEK&#95;INVALID</a>)</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;AE : <a href="/docs/api/namespaces/llvm/csky/#ab146cb5385a6a851e47450414a8f9893">CSKYARCHExtNames</a>) &#123;</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((<a href="/docs/api/files/lib/lib/target/lib/target/spirv/spirvsubtarget-cpp/#aeb3e6d0c41c374eb76421fe8549919e5">Extensions</a> &amp; AE.ID) == AE.ID &amp;&amp; AE.Feature)</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">      Features.push&#95;back(AE.Feature);</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

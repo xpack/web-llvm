@@ -1,0 +1,162 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/slpvectorizer/boupslp/vloperands/operanddata
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `OperandData` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+For each operand we need (i) the value, and (ii) the opcode that it would be attached to if the expression was in a left-linearized form. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct llvm::slpvectorizer::BoUpSLP::VLOperands::OperandData</CodeBlock>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#af8fe5073b5f1814338033a90bea539a1">OperandData</a> ()=default</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  name={<><a href="#a36814bd78383a56bf6cdba70228439f3">OperandData</a> (Value &#42;V, bool APO, bool IsUsed)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ad70019cd725a70beaefa89f167977cc8">APO</a> = false</>}>
+TreeEntries only allow a single opcode, or an alternate sequence of them (e.g, +, -). <a href="#ad70019cd725a70beaefa89f167977cc8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a270cb7ebb8aefb50bdd4fa4e29582fc6">IsUsed</a> = false</>}>
+Helper data for the reordering function. <a href="#a270cb7ebb8aefb50bdd4fa4e29582fc6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#a6547ac6c759708e9d597ff8d4937ca4e">V</a> = nullptr</>}>
+The operand value. <a href="#a6547ac6c759708e9d597ff8d4937ca4e">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+For each operand we need (i) the value, and (ii) the opcode that it would be attached to if the expression was in a left-linearized form.
+
+This is required to avoid illegal operand reordering. For example: <CodeBlock>///                         0 Op1
+///                         |/
+/// Op1 Op2   Linearized    + Op2
+///   \\ /     ----------&gt;   |/
+///    -                    -
+///
+/// Op1 - Op2            (0 + Op1) - Op2
+/// </CodeBlock>
+
+<a href="/docs/api/classes/llvm/value">Value</a> Op1 is attached to a &#39;+&#39; operation, and Op2 to a &#39;-&#39;.
+
+Another way to think of this is to track all the operations across the path from the operand all the way to the root of the tree and to calculate the operation that corresponds to this path. For example, the path from Op2 to the root crosses the RHS of the &#39;-&#39;, therefore the corresponding operation is a &#39;-&#39; (which matches the one in the linearized tree, as shown above).
+
+For lack of a better term, we refer to this operation as Accumulated Path Operation (APO).
+
+Definition at line 2014 of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### OperandData() {#af8fe5073b5f1814338033a90bea539a1}
+
+<MemberDefinition
+  prototype="llvm::slpvectorizer::BoUpSLP::VLOperands::OperandData::OperandData ()"
+  labels = {["default"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l02015">2015</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### OperandData() {#a36814bd78383a56bf6cdba70228439f3}
+
+<MemberDefinition
+  prototype={<>llvm::slpvectorizer::BoUpSLP::VLOperands::OperandData::OperandData (<a href="/docs/api/classes/llvm/value">Value</a> &#42; V, bool APO, bool IsUsed)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l02016">2016</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### APO {#ad70019cd725a70beaefa89f167977cc8}
+
+<MemberDefinition
+  prototype="bool llvm::slpvectorizer::BoUpSLP::VLOperands::OperandData::APO = false">
+TreeEntries only allow a single opcode, or an alternate sequence of them (e.g, +, -).
+
+Therefore, we can safely use a boolean value for the APO. It is set to &#39;true&#39; if &#39;V&#39; is attached to an inverse operation in the left-linearized form (e.g., Sub/Div), and &#39;false&#39; otherwise (e.g., Add/Mul)
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l02025">2025</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### IsUsed {#a270cb7ebb8aefb50bdd4fa4e29582fc6}
+
+<MemberDefinition
+  prototype="bool llvm::slpvectorizer::BoUpSLP::VLOperands::OperandData::IsUsed = false">
+Helper data for the reordering function.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l02027">2027</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+### V {#a6547ac6c759708e9d597ff8d4937ca4e}
+
+<MemberDefinition
+  prototype={<>Value&#42; llvm::slpvectorizer::BoUpSLP::VLOperands::OperandData::V = nullptr</>}>
+The operand value.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp/#l02019">2019</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/slpvectorizer-cpp">SLPVectorizer.cpp</a></li>
+</ul>
+
+</DoxygenPage>

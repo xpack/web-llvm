@@ -1,0 +1,247 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/analysis/objcarcaliasanalysis-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ObjCARCAliasAnalysis.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This file defines a simple ARC-aware <a href="/docs/api/namespaces/llvm/#ae457f1cf451ed893666c4a384e58f8e5">AliasAnalysis</a> using special knowledge of Objective C to enhance other optimization passes which rely on the Alias Analysis infrastructure. <a href="#details">More...</a>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Analysis/ObjCARCAliasAnalysis.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/objcarcaliasanalysis-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Analysis/ObjCARCAnalysisUtils.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/objcarcanalysisutils-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Function.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/function-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Pass.h"
+  permalink="/docs/api/files/include/include/llvm/pass-h"
+  isLocal="true" />
+</IncludesList>
+
+## Defines Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="#define"
+  name={<><a href="#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG&#95;TYPE</a>&nbsp;&nbsp;&nbsp;&quot;objc-arc-aa&quot;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This file defines a simple ARC-aware <a href="/docs/api/namespaces/llvm/#ae457f1cf451ed893666c4a384e58f8e5">AliasAnalysis</a> using special knowledge of Objective C to enhance other optimization passes which rely on the Alias Analysis infrastructure.
+
+WARNING: This file knows about certain library functions. It recognizes them by name, and hardwires knowledge of their semantics.
+
+WARNING: This file knows about how certain Objective-C library functions are used. Naive LLVM IR transformations which would otherwise be behavior-preserving may break these assumptions.
+
+TODO: Theoretically we could check for dependencies between objc&#95;&#42; calls and FMRB&#95;OnlyAccessesArgumentPointees calls or other well-behaved calls.
+
+TODO: The calls here to <a href="/docs/api/classes/llvm/aaresultbase">AAResultBase</a> member functions are all effectively no-ops that just return a conservative result. The original intent was to chain to another analysis for a recursive query, but this was lost in a refactor. These should instead be rephrased in terms of queries to AAQI.AAR.
+
+<SectionDefinition>
+
+## Defines
+
+### DEBUG&#95;TYPE {#ad78e062f62e0d6e453941fb4ca843e4d}
+
+<MemberDefinition
+  prototype={<>#define DEBUG&#95;TYPE&nbsp;&nbsp;&nbsp;&quot;objc-arc-aa&quot;</>}>
+
+Definition at line <a href="#l00035">35</a> of file <a href="/docs/api/files/lib/lib/analysis/objcarcaliasanalysis-cpp">ObjCARCAliasAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- ObjCARCAliasAnalysis.cpp - ObjC ARC Optimization -------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="comment">/// \\file</Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="comment">/// This file defines a simple ARC-aware AliasAnalysis using special knowledge</Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="comment">/// of Objective C to enhance other optimization passes which rely on the Alias</Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="comment">/// Analysis infrastructure.</Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="comment">/// WARNING: This file knows about certain library functions. It recognizes them</Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="comment">/// by name, and hardwires knowledge of their semantics.</Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="comment">/// WARNING: This file knows about how certain Objective-C library functions are</Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="comment">/// used. Naive LLVM IR transformations which would otherwise be</Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="comment">/// behavior-preserving may break these assumptions.</Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="comment">/// TODO: Theoretically we could check for dependencies between objc&#95;&#42; calls</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="comment">/// and FMRB&#95;OnlyAccessesArgumentPointees calls or other well-behaved calls.</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="comment">/// TODO: The calls here to AAResultBase member functions are all effectively</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="comment">/// no-ops that just return a conservative result. The original intent was to</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="comment">/// chain to another analysis for a recursive query, but this was lost in a</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="comment">/// refactor. These should instead be rephrased in terms of queries to AAQI.AAR.</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/objcarcaliasanalysis-h">llvm/Analysis/ObjCARCAliasAnalysis.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/objcarcanalysisutils-h">llvm/Analysis/ObjCARCAnalysisUtils.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/function-h">llvm/IR/Function.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/pass-h">llvm/Pass.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35" lineLink="#ad78e062f62e0d6e453941fb4ca843e4d"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEBUG&#95;TYPE &quot;objc-arc-aa&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/objcarc">llvm::objcarc</a>;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40" lineLink="/docs/api/classes/llvm/objcarc/objcarcaaresult/#acfba8e1035be99ff311c1af58e624878"><Highlight kind="normal"><a href="/docs/api/classes/llvm/aliasresult">AliasResult</a> <a href="/docs/api/classes/llvm/objcarc/objcarcaaresult/#acfba8e1035be99ff311c1af58e624878">ObjCARCAAResult::alias</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memorylocation">MemoryLocation</a> &amp;LocA,</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">                                   </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memorylocation">MemoryLocation</a> &amp;LocB,</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/aaqueryinfo">AAQueryInfo</a> &amp;AAQI, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;) &#123;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/namespaces/llvm/objcarc/#a6771e7364c5ab8a6354f744fe5bbc62b">EnableARCOpts</a>)</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/aaresultbase/#aebc901269a6aa648319ad24cd43b6a1e">AAResultBase::alias</a>(LocA, LocB, AAQI, </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// First, strip off no-ops, including ObjC-specific no-ops, and try making a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// precise alias query.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;SA = <a href="/docs/api/namespaces/llvm/objcarc/#ac5d623f0353e96c824196d6f6abc2dca">GetRCIdentityRoot</a>(LocA.<a href="/docs/api/classes/llvm/memorylocation/#a9550ce4a179e46db37f653ce28feca7a">Ptr</a>);</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;SB = <a href="/docs/api/namespaces/llvm/objcarc/#ac5d623f0353e96c824196d6f6abc2dca">GetRCIdentityRoot</a>(LocB.<a href="/docs/api/classes/llvm/memorylocation/#a9550ce4a179e46db37f653ce28feca7a">Ptr</a>);</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/aliasresult">AliasResult</a> Result = <a href="/docs/api/classes/llvm/aaresultbase/#aebc901269a6aa648319ad24cd43b6a1e">AAResultBase::alias</a>(</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/memorylocation">MemoryLocation</a>(SA, LocA.<a href="/docs/api/classes/llvm/memorylocation/#a39f7ff959874bf38f3e14aa0b2622da0">Size</a>, LocA.<a href="/docs/api/classes/llvm/memorylocation/#a926099ca5ca5db6ba2de398c2487b725">AATags</a>),</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/memorylocation">MemoryLocation</a>(SB, LocB.<a href="/docs/api/classes/llvm/memorylocation/#a39f7ff959874bf38f3e14aa0b2622da0">Size</a>, LocB.<a href="/docs/api/classes/llvm/memorylocation/#a926099ca5ca5db6ba2de398c2487b725">AATags</a>), AAQI, </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Result != <a href="/docs/api/classes/llvm/aliasresult/#a8d3de277fb70fa515efac2db2cfe9d57a0916b614598c673c1e6a59c7312a1409">AliasResult::MayAlias</a>)</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Result;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// If that failed, climb to the underlying object, including climbing through</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// ObjC-specific no-ops, and try making an imprecise alias query.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;UA = <a href="/docs/api/namespaces/llvm/objcarc/#ac420b82af0836c9c4312b413c8a0b6b4">GetUnderlyingObjCPtr</a>(SA);</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;UB = <a href="/docs/api/namespaces/llvm/objcarc/#ac420b82af0836c9c4312b413c8a0b6b4">GetUnderlyingObjCPtr</a>(SB);</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (UA != SA || UB != SB) &#123;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">    Result = <a href="/docs/api/classes/llvm/aaresultbase/#aebc901269a6aa648319ad24cd43b6a1e">AAResultBase::alias</a>(<a href="/docs/api/classes/llvm/memorylocation/#a46815b7f69bb96eddd2e1e01bec6120c">MemoryLocation::getBeforeOrAfter</a>(UA),</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">                                 <a href="/docs/api/classes/llvm/memorylocation/#a46815b7f69bb96eddd2e1e01bec6120c">MemoryLocation::getBeforeOrAfter</a>(UB), AAQI,</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">                                 </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// We can&#39;t use MustAlias or PartialAlias results here because</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// GetUnderlyingObjCPtr may return an offsetted pointer value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Result == <a href="/docs/api/classes/llvm/aliasresult/#a8d3de277fb70fa515efac2db2cfe9d57a863ee317b92588eb2d6878af9fc98922">AliasResult::NoAlias</a>)</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/aliasresult/#a8d3de277fb70fa515efac2db2cfe9d57a863ee317b92588eb2d6878af9fc98922">AliasResult::NoAlias</a>;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// If that failed, fail. We don&#39;t need to chain here, since that&#39;s covered</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// by the earlier precise query.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/aliasresult/#a8d3de277fb70fa515efac2db2cfe9d57a0916b614598c673c1e6a59c7312a1409">AliasResult::MayAlias</a>;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75" lineLink="/docs/api/classes/llvm/objcarc/objcarcaaresult/#a846e0f39264857f2a44cbab95183b2a6"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2e">ModRefInfo</a> <a href="/docs/api/classes/llvm/objcarc/objcarcaaresult/#a846e0f39264857f2a44cbab95183b2a6">ObjCARCAAResult::getModRefInfoMask</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memorylocation">MemoryLocation</a> &amp;<a href="/docs/api/namespaces/llvm/loc">Loc</a>,</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">                                              <a href="/docs/api/classes/llvm/aaqueryinfo">AAQueryInfo</a> &amp;AAQI,</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">                                              </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IgnoreLocals) &#123;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/namespaces/llvm/objcarc/#a6771e7364c5ab8a6354f744fe5bbc62b">EnableARCOpts</a>)</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/aaresultbase/#a43487a55e1c14c5a2e4f83731d4eca00">AAResultBase::getModRefInfoMask</a>(<a href="/docs/api/namespaces/llvm/loc">Loc</a>, AAQI, IgnoreLocals);</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// First, strip off no-ops, including ObjC-specific no-ops, and try making</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// a precise alias query.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;S = <a href="/docs/api/namespaces/llvm/objcarc/#ac5d623f0353e96c824196d6f6abc2dca">GetRCIdentityRoot</a>(<a href="/docs/api/namespaces/llvm/loc">Loc</a>.Ptr);</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ae96dbd1485a431400525ca17896ec48e">isNoModRef</a>(<a href="/docs/api/classes/llvm/aaresultbase/#a43487a55e1c14c5a2e4f83731d4eca00">AAResultBase::getModRefInfoMask</a>(</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/memorylocation">MemoryLocation</a>(S, <a href="/docs/api/namespaces/llvm/loc">Loc</a>.Size, <a href="/docs/api/namespaces/llvm/loc">Loc</a>.AATags), AAQI, IgnoreLocals)))</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2ead974636fce6d12e72054e61fb3c1e9a8">ModRefInfo::NoModRef</a>;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// If that failed, climb to the underlying object, including climbing through</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// ObjC-specific no-ops, and try making an imprecise alias query.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;U = <a href="/docs/api/namespaces/llvm/objcarc/#ac420b82af0836c9c4312b413c8a0b6b4">GetUnderlyingObjCPtr</a>(S);</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (U != S)</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/aaresultbase/#a43487a55e1c14c5a2e4f83731d4eca00">AAResultBase::getModRefInfoMask</a>(<a href="/docs/api/classes/llvm/memorylocation/#a46815b7f69bb96eddd2e1e01bec6120c">MemoryLocation::getBeforeOrAfter</a>(U),</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">                                           AAQI, IgnoreLocals);</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// If that failed, fail. We don&#39;t need to chain here, since that&#39;s covered</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// by the earlier precise query.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2ea6524b183b5cd0850f2cff6d30d581af9">ModRefInfo::ModRef</a>;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100" lineLink="/docs/api/classes/llvm/objcarc/objcarcaaresult/#a071f909717c950fac24cc53e42ef4c86"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a44ad2b29af9ebe3d12a99843a7594757">MemoryEffects</a> <a href="/docs/api/classes/llvm/objcarc/objcarcaaresult/#a071f909717c950fac24cc53e42ef4c86">ObjCARCAAResult::getMemoryEffects</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>) &#123;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/namespaces/llvm/objcarc/#a6771e7364c5ab8a6354f744fe5bbc62b">EnableARCOpts</a>)</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/aaresultbase/#a220014fc38f863e217586c7816db4b9c">AAResultBase::getMemoryEffects</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/objcarc/#a4e557a8b99ad5d09e3018b1f3e02a08f">GetFunctionClass</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)) &#123;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2ad20eb2456d446869820a1e7e385fe99f">ARCInstKind::NoopCast</a>:</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memoryeffectsbase/#af04065f3c729719471689b08089942f3">MemoryEffects::none</a>();</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/aaresultbase/#a220014fc38f863e217586c7816db4b9c">AAResultBase::getMemoryEffects</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114" lineLink="/docs/api/classes/llvm/objcarc/objcarcaaresult/#ab37ef2f706e7e7f64d0d3cd8e76d91bd"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2e">ModRefInfo</a> <a href="/docs/api/classes/llvm/objcarc/objcarcaaresult/#ab37ef2f706e7e7f64d0d3cd8e76d91bd">ObjCARCAAResult::getModRefInfo</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callbase">CallBase</a> &#42;<a href="/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2ac3755e61202abd74da5885d2e9c9160e">Call</a>,</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">                                          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memorylocation">MemoryLocation</a> &amp;<a href="/docs/api/namespaces/llvm/loc">Loc</a>,</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">                                          <a href="/docs/api/classes/llvm/aaqueryinfo">AAQueryInfo</a> &amp;AAQI) &#123;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/namespaces/llvm/objcarc/#a6771e7364c5ab8a6354f744fe5bbc62b">EnableARCOpts</a>)</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/aaresultbase/#adb56d853930e9104a7d1b3b1e2e82af8">AAResultBase::getModRefInfo</a>(<a href="/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2ac3755e61202abd74da5885d2e9c9160e">Call</a>, <a href="/docs/api/namespaces/llvm/loc">Loc</a>, AAQI);</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/objcarc/#a86cdbdf3773be3c67bc193b473b75708">GetBasicARCInstKind</a>(<a href="/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2ac3755e61202abd74da5885d2e9c9160e">Call</a>)) &#123;</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2aafece4245269582cb2f1009d4fb52047">ARCInstKind::Retain</a>:</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2aa1226b5450384ce6ea5ed47c317303ee">ARCInstKind::RetainRV</a>:</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2a61710f61a521b1544f5f7ab5abac843d">ARCInstKind::Autorelease</a>:</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2ac1dbc9b59747323224171927c310917d">ARCInstKind::AutoreleaseRV</a>:</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2ad20eb2456d446869820a1e7e385fe99f">ARCInstKind::NoopCast</a>:</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2a56a1f8ca583bf2a38d53b7e7825bd269">ARCInstKind::AutoreleasepoolPush</a>:</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2a044369e2f723153babfab4e7ba65dda4">ARCInstKind::FusedRetainAutorelease</a>:</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2aae83ce7464791df134eac666ac62c9cd">ARCInstKind::FusedRetainAutoreleaseRV</a>:</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// These functions don&#39;t access any memory visible to the compiler.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Note that this doesn&#39;t include objc&#95;retainBlock, because it updates</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// pointers when it copies block data.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9db8c44b250b90e3ab7e4d144e7c9c2ead974636fce6d12e72054e61fb3c1e9a8">ModRefInfo::NoModRef</a>;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/aaresultbase/#adb56d853930e9104a7d1b3b1e2e82af8">AAResultBase::getModRefInfo</a>(<a href="/docs/api/namespaces/llvm/objcarc/#a494b44abeacdfac8bb26d3203571d1c2ac3755e61202abd74da5885d2e9c9160e">Call</a>, <a href="/docs/api/namespaces/llvm/loc">Loc</a>, AAQI);</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal"><a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a> ObjCARCAA::Key;</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142" lineLink="/docs/api/classes/llvm/objcarc/objcarcaa/#a473e4b49777cb1555a11958b22acf413"><Highlight kind="normal"><a href="/docs/api/classes/llvm/objcarc/objcarcaaresult">ObjCARCAAResult</a> <a href="/docs/api/classes/llvm/objcarc/objcarcaa/#a473e4b49777cb1555a11958b22acf413">ObjCARCAA::run</a>(<a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/docs/api/namespaces/llvm/#adce09a5a0de0e3177eb00e932734af2f">FunctionAnalysisManager</a> &amp;AM) &#123;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/objcarc/objcarcaaresult">ObjCARCAAResult</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>.getDataLayout());</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

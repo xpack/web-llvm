@@ -1,0 +1,234 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/looptraversal
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `LoopTraversal` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This class provides the basic blocks traversal order used by passes like <a href="/docs/api/classes/llvm/reachingdefanalysis">ReachingDefAnalysis</a> and <a href="/docs/api/classes/llvm/executiondomainfix">ExecutionDomainFix</a>. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::LoopTraversal</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/CodeGen/LoopTraversal.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="typedef"
+  name={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/structs/llvm/looptraversal/traversedmbbinfo">TraversedMBBInfo</a>, 4 &gt; <a href="#adb30e4144436f66defa2ce2454e0fde8">TraversalOrder</a></>}>
+Identifies basic blocks that are part of loops and should to be visited twice and returns efficient traversal order for all the blocks. <a href="#adb30e4144436f66defa2ce2454e0fde8">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#ab1fcea688cf5f056fe49852f4690cd10">MBBInfoMap</a> = <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; MBBInfo, 4 &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a7c7577edd85546c2abaa7f58d5ae1142">LoopTraversal</a> ()=default</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="#adb30e4144436f66defa2ce2454e0fde8">TraversalOrder</a></>}
+  name={<><a href="#a87cd9704fc800af5dddb87f26badfb3a">traverse</a> (MachineFunction &amp;MF)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ae7f7e1c4b29321529e6098c173d509e8">isBlockDone</a> (MachineBasicBlock &#42;MBB)</>}>
+Returens true if the block is ready for its final round of processing. <a href="#ae7f7e1c4b29321529e6098c173d509e8">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">MBBInfoMap</a></>}
+  name={<><a href="#abe07efa093639990a2a9f1ae434f7044">MBBInfos</a></>}>
+Helps keep track if we proccessed this block and all its predecessors. <a href="#abe07efa093639990a2a9f1ae434f7044">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This class provides the basic blocks traversal order used by passes like <a href="/docs/api/classes/llvm/reachingdefanalysis">ReachingDefAnalysis</a> and <a href="/docs/api/classes/llvm/executiondomainfix">ExecutionDomainFix</a>.
+
+It identifies basic blocks that are part of loops and should to be visited twice and returns efficient traversal order for all the blocks.
+
+We want to visit every instruction in every basic block in order to update it&#39;s execution domain or collect clearance information. However, for the clearance calculation, we need to know clearances from all predecessors (including any backedges), therfore we need to visit some blocks twice. As an example, consider the following loop.
+
+PH -&gt; A -&gt; B (xmm&lt;Undef&gt; -&gt; xmm&lt;Def&gt;) -&gt; C -&gt; D -&gt; EXIT ^ | +-------------------------------—+
+
+The iteration order this pass will return is as follows: Optimized: PH A B C A&#39; B&#39; C&#39; D
+
+The basic block order is constructed as follows: Once we finish processing some block, we update the counters in MBBInfos and re-process any successors that are now &#39;done&#39;. We call a block that is ready for its final round of processing <code>done</code> (isBlockDone), e.g. when all predecessor information is known.
+
+Note that a naive traversal order would be to do two complete passes over all basic blocks/instructions, the first for recording clearances, the second for updating clearance based on backedges. However, for functions without backedges, or functions with a lot of straight-line code, and a small loop, that would be a lot of unnecessary work (since only the BBs that are part of the loop require two passes).
+
+E.g., the naive iteration order for the above exmple is as follows: Naive: PH A B C D A&#39; B&#39; C&#39; D&#39;
+
+In the optimized approach we avoid processing D twice, because we can entirely process the predecessors before getting to D.
+
+Definition at line 65 of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h">LoopTraversal.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### TraversalOrder {#adb30e4144436f66defa2ce2454e0fde8}
+
+<MemberDefinition
+  prototype={<>typedef SmallVector&lt;TraversedMBBInfo, 4&gt; llvm::LoopTraversal::TraversalOrder</>}>
+Identifies basic blocks that are part of loops and should to be visited twice and returns efficient traversal order for all the blocks.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h/#l00105">105</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h">LoopTraversal.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### MBBInfoMap {#ab1fcea688cf5f056fe49852f4690cd10}
+
+<MemberDefinition
+  prototype={<>using llvm::LoopTraversal::MBBInfoMap =  SmallVector&lt;MBBInfo, 4&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h/#l00082">82</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h">LoopTraversal.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### LoopTraversal() {#a7c7577edd85546c2abaa7f58d5ae1142}
+
+<MemberDefinition
+  prototype="llvm::LoopTraversal::LoopTraversal ()"
+  labels = {["default"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h/#l00101">101</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h">LoopTraversal.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### traverse() {#a87cd9704fc800af5dddb87f26badfb3a}
+
+<MemberDefinition
+  prototype={<>LoopTraversal::TraversalOrder LoopTraversal::traverse (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h/#l00106">106</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h">LoopTraversal.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/looptraversal-cpp/#l00024">24</a> of file <a href="/docs/api/files/lib/lib/codegen/looptraversal-cpp">LoopTraversal.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### isBlockDone() {#ae7f7e1c4b29321529e6098c173d509e8}
+
+<MemberDefinition
+  prototype={<>bool LoopTraversal::isBlockDone (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB)</>}>
+Returens true if the block is ready for its final round of processing.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h/#l00110">110</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h">LoopTraversal.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/looptraversal-cpp/#l00015">15</a> of file <a href="/docs/api/files/lib/lib/codegen/looptraversal-cpp">LoopTraversal.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### MBBInfos {#abe07efa093639990a2a9f1ae434f7044}
+
+<MemberDefinition
+  prototype="MBBInfoMap llvm::LoopTraversal::MBBInfos">
+Helps keep track if we proccessed this block and all its predecessors.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h/#l00084">84</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h">LoopTraversal.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/codegen/looptraversal-h">LoopTraversal.h</a></li>
+<li><a href="/docs/api/files/lib/lib/codegen/looptraversal-cpp">LoopTraversal.cpp</a></li>
+</ul>
+
+</DoxygenPage>

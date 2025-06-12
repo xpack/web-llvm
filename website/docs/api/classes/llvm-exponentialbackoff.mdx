@@ -1,0 +1,257 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/exponentialbackoff
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ExponentialBackoff` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+A class to help implement exponential backoff. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::ExponentialBackoff</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/ExponentialBackoff.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a4d2c6943b41cbbf75a554c1b43a92d25">duration</a> = std::chrono::steady&#95;clock::duration</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#ae628d41d81aaa7c963bd14d75a3452e9">time&#95;point</a> = std::chrono::steady&#95;clock::time&#95;point</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#ac3a72825a12a5f0edde2b4483124b190">ExponentialBackoff</a> (duration Timeout, duration MinWait=std::chrono::milliseconds(10), duration MaxWait=std::chrono::milliseconds(500))</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a2e8404047337057e4fff7e416f28ce3b">waitForNextAttempt</a> ()</>}>
+Blocks while waiting for the next attempt. <a href="#a2e8404047337057e4fff7e416f28ce3b">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>int64&#95;t</>}
+  name={<><a href="#a381b2fed148153fedda8c1a0e5934386">CurrentMultiplier</a> = 1</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#ae628d41d81aaa7c963bd14d75a3452e9">time&#95;point</a></>}
+  name={<><a href="#a0850165b7001b7514c78b56f2066751e">EndTime</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#a4d2c6943b41cbbf75a554c1b43a92d25">duration</a></>}
+  name={<><a href="#a58fde044ad9b62a267bd895c9e5c5d5c">MaxWait</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#a4d2c6943b41cbbf75a554c1b43a92d25">duration</a></>}
+  name={<><a href="#a7f2bea2509c7c98f5747072e4ee12f82">MinWait</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::random&#95;device</>}
+  name={<><a href="#aa1a8ce9588b35c7b1dc491352a6ecbaa">RandDev</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+A class to help implement exponential backoff.
+
+Example usage: 
+<ProgramListing>
+
+<CodeLine><Highlight kind="normal"><a href="#ac3a72825a12a5f0edde2b4483124b190">ExponentialBackoff</a> Backoff(10s);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordflow">do</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (tryToDoSomething())</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ItWorked;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125; </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (Backoff.waitForNextAttempt());</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Timeout;</Highlight></CodeLine>
+
+</ProgramListing>
+
+Definition at line 33 of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h">ExponentialBackoff.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### duration {#a4d2c6943b41cbbf75a554c1b43a92d25}
+
+<MemberDefinition
+  prototype={<>using llvm::ExponentialBackoff::duration =  std::chrono::steady&#95;clock::duration</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h/#l00035">35</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h">ExponentialBackoff.h</a>.
+</MemberDefinition>
+
+### time&#95;point {#ae628d41d81aaa7c963bd14d75a3452e9}
+
+<MemberDefinition
+  prototype={<>using llvm::ExponentialBackoff::time&#95;point =  std::chrono::steady&#95;clock::time&#95;point</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h/#l00036">36</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h">ExponentialBackoff.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### ExponentialBackoff() {#ac3a72825a12a5f0edde2b4483124b190}
+
+<MemberDefinition
+  prototype={<>llvm::ExponentialBackoff::ExponentialBackoff (<a href="#a4d2c6943b41cbbf75a554c1b43a92d25">duration</a> Timeout, <a href="#a4d2c6943b41cbbf75a554c1b43a92d25">duration</a> MinWait=std::chrono::milliseconds(10), <a href="#a4d2c6943b41cbbf75a554c1b43a92d25">duration</a> MaxWait=std::chrono::milliseconds(500))</>}
+  labels = {["inline"]}>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="Timeout">the maximum wall time this should run for starting when this object is constructed.</ParametersListItem>
+<ParametersListItem name="MinWait">the minimum amount of time <code>waitForNextAttempt</code> will sleep for.</ParametersListItem>
+<ParametersListItem name="MaxWait">the maximum amount of time <code>waitForNextAttempt</code> will sleep for.</ParametersListItem>
+</ParametersList>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h/#l00044">44</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h">ExponentialBackoff.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### waitForNextAttempt() {#a2e8404047337057e4fff7e416f28ce3b}
+
+<MemberDefinition
+  prototype="bool ExponentialBackoff::waitForNextAttempt ()">
+Blocks while waiting for the next attempt.
+
+<SectionUser title="Returns">
+true if you should try again, false if the timeout has been reached.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h/#l00053">53</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h">ExponentialBackoff.h</a>, definition at line <a href="/docs/api/files/lib/lib/support/exponentialbackoff-cpp/#l00014">14</a> of file <a href="/docs/api/files/lib/lib/support/exponentialbackoff-cpp">ExponentialBackoff.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### CurrentMultiplier {#a381b2fed148153fedda8c1a0e5934386}
+
+<MemberDefinition
+  prototype={<>int64&#95;t llvm::ExponentialBackoff::CurrentMultiplier = 1</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h/#l00060">60</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h">ExponentialBackoff.h</a>.
+</MemberDefinition>
+
+### EndTime {#a0850165b7001b7514c78b56f2066751e}
+
+<MemberDefinition
+  prototype={<>time&#95;point llvm::ExponentialBackoff::EndTime</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h/#l00058">58</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h">ExponentialBackoff.h</a>.
+</MemberDefinition>
+
+### MaxWait {#a58fde044ad9b62a267bd895c9e5c5d5c}
+
+<MemberDefinition
+  prototype="duration llvm::ExponentialBackoff::MaxWait">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h/#l00057">57</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h">ExponentialBackoff.h</a>.
+</MemberDefinition>
+
+### MinWait {#a7f2bea2509c7c98f5747072e4ee12f82}
+
+<MemberDefinition
+  prototype="duration llvm::ExponentialBackoff::MinWait">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h/#l00056">56</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h">ExponentialBackoff.h</a>.
+</MemberDefinition>
+
+### RandDev {#aa1a8ce9588b35c7b1dc491352a6ecbaa}
+
+<MemberDefinition
+  prototype={<>std::random&#95;device llvm::ExponentialBackoff::RandDev</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h/#l00059">59</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h">ExponentialBackoff.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h">ExponentialBackoff.h</a></li>
+<li><a href="/docs/api/files/lib/lib/support/exponentialbackoff-cpp">ExponentialBackoff.cpp</a></li>
+</ul>
+
+</DoxygenPage>

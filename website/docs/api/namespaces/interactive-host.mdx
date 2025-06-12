@@ -1,0 +1,114 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/namespaces/interactive-host
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - namespace
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `interactive_host` Namespace Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Definition
+
+<CodeBlock>namespace interactive&#95;host &#123; ... &#125;</CodeBlock>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a0eded48c2eef46879e2f4d0fd284238b">run&#95;interactive</a> (str temp&#95;rootname, Callable&#91;&#91;List&#91;log&#95;reader.TensorValue&#93;&#93;, Union&#91;int, float&#93;&#93; make&#95;response, List&#91;str&#93; process&#95;and&#95;args)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  name={<><a href="#af0b6c53060991a300bbffea33a67a8aa">send</a> (io.BufferedWriter f, Union&#91;int, float&#93; value, log&#95;reader.TensorSpec spec)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+
+<CodeBlock>Utility for testing InteractiveModelRunner.
+
+Use it from pass-specific tests by providing a main .py which calls this library&#39;s
+&#96;run&#95;interactive&#96; with an appropriate callback to provide advice.
+
+From .ll tests, just call the above-mentioned main as a prefix to the opt/llc
+invocation (with the appropriate flags enabling the interactive mode)
+
+Examples:
+test/Transforms/Inline/ML/interactive-mode.ll
+test/CodeGen/MLRegAlloc/interactive-mode.ll
+</CodeBlock>
+
+<SectionDefinition>
+
+## Functions
+
+### run&#95;interactive() {#a0eded48c2eef46879e2f4d0fd284238b}
+
+<MemberDefinition
+  prototype={<>interactive&#95;host.run&#95;interactive (str temp_rootname, Callable&#93; make_response=[[List[log_reader.TensorValue], Union&#93; process_and_args=[int, float], List process_and_args=[str])</>}>
+
+<CodeBlock>Host the compiler.
+Args:
+  temp&#95;rootname: the base file name from which to construct the 2 pipes for
+  communicating with the compiler.
+  make&#95;response: a function that, given the current tensor values, provides a
+  response.
+  process&#95;and&#95;args: the full commandline for the compiler. It it assumed it
+  contains a flag poiting to &#96;temp&#95;rootname&#96; so that the InteractiveModeRunner
+  would attempt communication on the same pair as this function opens.
+
+This function sets up the communication with the compiler - via 2 files named
+&#96;temp&#95;rootname&#96;.in and &#96;temp&#95;rootname&#96;.out - prints out the received features,
+and sends back to the compiler an advice (which it gets from &#96;make&#95;response&#96;).
+It&#39;s used for testing, and also to showcase how to set up communication in an
+interactive ML (&quot;gym&quot;) environment.
+</CodeBlock>
+
+Definition at line <a href="/docs/api/files/lib/lib/analysis/lib/analysis/models/interactive-host-py/#l00035">35</a> of file <a href="/docs/api/files/lib/lib/analysis/lib/analysis/models/interactive-host-py">interactive&#95;host.py</a>.
+</MemberDefinition>
+
+### send() {#af0b6c53060991a300bbffea33a67a8aa}
+
+<MemberDefinition
+  prototype={<>interactive&#95;host.send (io.BufferedWriter f, Union value=[int, float], <a href="/docs/api/classes/log-reader/tensorspec">log&#95;reader.TensorSpec</a> spec)</>}>
+
+<CodeBlock>Send the &#96;value&#96; - currently just a scalar - formatted as per &#96;spec&#96;.</CodeBlock>
+
+Definition at line <a href="/docs/api/files/lib/lib/analysis/lib/analysis/models/interactive-host-py/#l00023">23</a> of file <a href="/docs/api/files/lib/lib/analysis/lib/analysis/models/interactive-host-py">interactive&#95;host.py</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this namespace was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/analysis/lib/analysis/models/interactive-host-py">interactive_host.py</a></li>
+</ul>
+
+</DoxygenPage>

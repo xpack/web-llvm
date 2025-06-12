@@ -1,0 +1,172 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/cache
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The controlling options Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+These entry points control the ThinLTO cache. <a href="#details">More...</a>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/thinltocodegenerator/cachingoptions">CachingOptions</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ga13ac54ea2d670ae2b55c55d552ae2d2d">setCacheDir</a> (std::string Path)</>}>
+Provide a path to a directory where to store the cached files for incremental build. <a href="#ga13ac54ea2d670ae2b55c55d552ae2d2d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ga5ba128cec363595b8cb8d403509b71d7">setCacheEntryExpiration</a> (unsigned Expiration)</>}>
+Cache policy: expiration (in seconds) for an entry. <a href="#ga5ba128cec363595b8cb8d403509b71d7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ga755ef880ddfb2ecdf8b5cae2d611dd78">setCacheMaxSizeBytes</a> (uint64&#95;t MaxSizeBytes)</>}>
+Cache policy: the maximum size for the cache directory in bytes. <a href="#ga755ef880ddfb2ecdf8b5cae2d611dd78">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#gaca3298ccd1bd11e22a2119a0868177b4">setCacheMaxSizeFiles</a> (unsigned MaxSizeFiles)</>}>
+Cache policy: the maximum number of files in the cache directory. <a href="#gaca3298ccd1bd11e22a2119a0868177b4">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ga190f2d73ac70288b5323a0881fa0c727">setCachePruningInterval</a> (int Interval)</>}>
+Cache policy: interval (seconds) between two prunes of the cache. <a href="#ga190f2d73ac70288b5323a0881fa0c727">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ga724a34dbf10eb5f09062e52237ea0e96">setMaxCacheSizeRelativeToAvailableSpace</a> (unsigned Percentage)</>}>
+Sets the maximum cache size that can be persistent across build, in terms of percentage of the available space on the disk. <a href="#ga724a34dbf10eb5f09062e52237ea0e96">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+These entry points control the ThinLTO cache.
+
+The cache is intended to support incremental build, and thus needs to be persistent accross build. The client enabled the cache by supplying a path to an existing directory. The code generator will use this to store objects files that may be reused during a subsequent build. To avoid filling the disk space, a few knobs are provided:
+<ul>
+<li>The pruning interval limit the frequency at which the garbage collector will try to scan the cache directory to prune it from expired entries. Setting to -1 disable the pruning (default). Setting to 0 will force pruning to occur.</li>
+<li>The pruning expiration time indicates to the garbage collector how old an entry needs to be to be removed.</li>
+<li>Finally, the garbage collector can be instructed to prune the cache till the occupied space goes below a threshold.</li>
+</ul>
+
+<SectionDefinition>
+
+## Functions
+
+### setCacheDir() {#ga13ac54ea2d670ae2b55c55d552ae2d2d}
+
+<MemberDefinition
+  prototype={<>void llvm::ThinLTOCodeGenerator::setCacheDir (<a href="/docs/api/files/include/include/llvm/include/llvm/demangle/itaniumdemangle-h/#ae2b0d0345572d6718e219aa76d1d54edab45cffe084dd3d20d928bee85e7b0f21">std::string</a> Path)</>}
+  labels = {["inline"]}>
+Provide a path to a directory where to store the cached files for incremental build.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/lto/include/llvm/lto/legacy/thinltocodegenerator-h/#l00139">139</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/lto/include/llvm/lto/legacy/thinltocodegenerator-h">ThinLTOCodeGenerator.h</a>.
+</MemberDefinition>
+
+### setCacheEntryExpiration() {#ga5ba128cec363595b8cb8d403509b71d7}
+
+<MemberDefinition
+  prototype="void llvm::ThinLTOCodeGenerator::setCacheEntryExpiration (unsigned Expiration)"
+  labels = {["inline"]}>
+Cache policy: expiration (in seconds) for an entry.
+
+A value of 0 will be ignored.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/lto/include/llvm/lto/legacy/thinltocodegenerator-h/#l00153">153</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/lto/include/llvm/lto/legacy/thinltocodegenerator-h">ThinLTOCodeGenerator.h</a>.
+</MemberDefinition>
+
+### setCacheMaxSizeBytes() {#ga755ef880ddfb2ecdf8b5cae2d611dd78}
+
+<MemberDefinition
+  prototype={<>void llvm::ThinLTOCodeGenerator::setCacheMaxSizeBytes (uint64&#95;t MaxSizeBytes)</>}
+  labels = {["inline"]}>
+Cache policy: the maximum size for the cache directory in bytes.
+
+A value over the amount of available space on the disk will be reduced to the amount of available space. A value of 0 will be ignored.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/lto/include/llvm/lto/legacy/thinltocodegenerator-h/#l00179">179</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/lto/include/llvm/lto/legacy/thinltocodegenerator-h">ThinLTOCodeGenerator.h</a>.
+</MemberDefinition>
+
+### setCacheMaxSizeFiles() {#gaca3298ccd1bd11e22a2119a0868177b4}
+
+<MemberDefinition
+  prototype="void llvm::ThinLTOCodeGenerator::setCacheMaxSizeFiles (unsigned MaxSizeFiles)"
+  labels = {["inline"]}>
+Cache policy: the maximum number of files in the cache directory.
+
+A value of 0 will be ignored.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/lto/include/llvm/lto/legacy/thinltocodegenerator-h/#l00186">186</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/lto/include/llvm/lto/legacy/thinltocodegenerator-h">ThinLTOCodeGenerator.h</a>.
+</MemberDefinition>
+
+### setCachePruningInterval() {#ga190f2d73ac70288b5323a0881fa0c727}
+
+<MemberDefinition
+  prototype="void llvm::ThinLTOCodeGenerator::setCachePruningInterval (int Interval)"
+  labels = {["inline"]}>
+Cache policy: interval (seconds) between two prunes of the cache.
+
+Set to a negative value to disable pruning. A value of 0 will force pruning to occur.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/lto/include/llvm/lto/legacy/thinltocodegenerator-h/#l00144">144</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/lto/include/llvm/lto/legacy/thinltocodegenerator-h">ThinLTOCodeGenerator.h</a>.
+</MemberDefinition>
+
+### setMaxCacheSizeRelativeToAvailableSpace() {#ga724a34dbf10eb5f09062e52237ea0e96}
+
+<MemberDefinition
+  prototype="void llvm::ThinLTOCodeGenerator::setMaxCacheSizeRelativeToAvailableSpace (unsigned Percentage)"
+  labels = {["inline"]}>
+Sets the maximum cache size that can be persistent across build, in terms of percentage of the available space on the disk.
+
+Set to 100 to indicate no limit, 50 to indicate that the cache size will not be left over half the available space. A value over 100 will be reduced to 100, and a value of 0 will be ignored.
+
+The formula looks like: AvailableSpace = FreeSpace + ExistingCacheSize NewCacheSize = AvailableSpace &#42; P/100
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/lto/include/llvm/lto/legacy/thinltocodegenerator-h/#l00171">171</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/lto/include/llvm/lto/legacy/thinltocodegenerator-h">ThinLTOCodeGenerator.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+</DoxygenPage>

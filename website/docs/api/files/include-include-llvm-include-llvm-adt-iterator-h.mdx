@@ -1,0 +1,500 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/adt/iterator-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `iterator.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/iterator_range.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/iterator-range-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cstddef"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="iterator"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="type_traits"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="utility"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/iterator-facade-base">iterator_facade_base&lt;DerivedT, IteratorCategoryT, T, DifferenceTypeT, PointerT, ReferenceT&gt;</a></>}>
+CRTP base class which implements the entire standard iterator facade in terms of a minimal subset of the interface. <a href="/docs/api/classes/llvm/iterator-facade-base/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/iterator-facade-base/referenceproxy">ReferenceProxy</a></>}>
+A proxy object for computing a reference via indirecting a copy of an iterator. <a href="/docs/api/classes/llvm/iterator-facade-base/referenceproxy/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/iterator-facade-base/pointerproxy">PointerProxy</a></>}>
+A proxy object for computing a pointer via indirecting a copy of a reference. <a href="/docs/api/classes/llvm/iterator-facade-base/pointerproxy/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/iterator-adaptor-base">iterator_adaptor_base&lt;DerivedT, WrappedIteratorT, IteratorCategoryT, T, DifferenceTypeT, PointerT, ReferenceT&gt;</a></>}>
+CRTP base class for adapting an iterator to a different type. <a href="/docs/api/classes/llvm/iterator-adaptor-base/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/pointee-iterator">pointee_iterator&lt;WrappedIteratorT, T&gt;</a></>}>
+An iterator type that allows iterating over the pointees via some other iterator. <a href="/docs/api/structs/llvm/pointee-iterator/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/pointer-iterator">pointer_iterator&lt;WrappedIteratorT, T&gt;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- iterator.h - Utilities for using and defining iterators --&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;ADT&#95;ITERATOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;ADT&#95;ITERATOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/iterator-range-h">llvm/ADT/iterator&#95;range.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstddef&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;iterator&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;type&#95;traits&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;utility&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="comment">/// CRTP base class which implements the entire standard iterator facade</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="comment">/// in terms of a minimal subset of the interface.</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="comment">/// Use this when it is reasonable to implement most of the iterator</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="comment">/// functionality in terms of a core subset. If you need special behavior or</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="comment">/// there are performance implications for this, you may want to override the</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="comment">/// relevant members instead.</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="comment">/// Note, one abstraction that this does &#42;not&#42; provide is implementing</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="comment">/// subtraction in terms of addition by negating the difference. Negation isn&#39;t</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="comment">/// always information preserving, and I can see very reasonable iterator</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="comment">/// designs where this doesn&#39;t work well. It doesn&#39;t really force much added</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">/// boilerplate anyways.</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="comment">/// Another abstraction that this doesn&#39;t provide is implementing increment in</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="comment">/// terms of addition of one. These aren&#39;t equivalent for all iterator</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="comment">/// categories, and respecting that adds a lot of complexity for little gain.</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">/// Iterators are expected to have const rules analogous to pointers, with a</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">/// single, const-qualified operator&#42;() that returns ReferenceT. This matches</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">/// the second and third pointers in the following example:</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">/// \\code</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">///   int Value;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">///   &#123; int &#42;I = &amp;Value; &#125;             // ReferenceT &#39;int&amp;&#39;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">///   &#123; int &#42;const I = &amp;Value; &#125;       // ReferenceT &#39;int&amp;&#39;; const</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="comment">///   &#123; const int &#42;I = &amp;Value; &#125;       // ReferenceT &#39;const int&amp;&#39;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">///   &#123; const int &#42;const I = &amp;Value; &#125; // ReferenceT &#39;const int&amp;&#39;; const</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="comment">/// \\endcode</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="comment">/// If an iterator facade returns a handle to its own state, then T (and</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="comment">/// PointerT and ReferenceT) should usually be const-qualified. Otherwise, if</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="comment">/// clients are expected to modify the handle itself, the field can be declared</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="comment">/// mutable or use const&#95;cast.</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">/// Classes wishing to use &#96;iterator&#95;facade&#95;base&#96; should implement the following</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="comment">/// methods:</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="comment">/// Forward Iterators:</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="comment">///   (All of the following methods)</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">///   - DerivedT &amp;operator=(const DerivedT &amp;R);</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">///   - bool operator==(const DerivedT &amp;R) const;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="comment">///   - T &amp;operator&#42;() const;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="comment">///   - DerivedT &amp;operator++();</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="comment">/// Bidirectional Iterators:</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="comment">///   (All methods of forward iterators, plus the following)</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="comment">///   - DerivedT &amp;operator--();</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="comment">/// Random-access Iterators:</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="comment">///   (All methods of bidirectional iterators excluding the following)</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="comment">///   - DerivedT &amp;operator++();</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="comment">///   - DerivedT &amp;operator--();</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">///   (and plus the following)</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">///   - bool operator&lt;(const DerivedT &amp;RHS) const;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="comment">///   - DifferenceTypeT operator-(const DerivedT &amp;R) const;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">///   - DerivedT &amp;operator+=(DifferenceTypeT N);</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">///   - DerivedT &amp;operator-=(DifferenceTypeT N);</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> DerivedT, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> IteratorCategoryT, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>,</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> DifferenceTypeT = std::ptrdiff&#95;t, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> PointerT = <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;,</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> ReferenceT = <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;&gt;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/classes/llvm/iterator-facade-base"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/iterator-facade-base">iterator&#95;facade&#95;base</a> &#123;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a0fb41b5becfd488c52fb8c77d13fbcbc"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/iterator-facade-base/#a0fb41b5becfd488c52fb8c77d13fbcbc">iterator&#95;category</a> = IteratorCategoryT;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a36fb299f78c975d65ffcef4baa31b7f6"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/iterator-facade-base/#a36fb299f78c975d65ffcef4baa31b7f6">value&#95;type</a> = <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a7e07dfa56b74ed115bdddd442e8184e6"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/iterator-facade-base/#a7e07dfa56b74ed115bdddd442e8184e6">difference&#95;type</a> = DifferenceTypeT;</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85" lineLink="/docs/api/classes/llvm/iterator-facade-base/#ae2d9deb2dce97bf6cf45faf988c30a3b"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/iterator-facade-base/#ae2d9deb2dce97bf6cf45faf988c30a3b">pointer</a> = PointerT;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a9ac08db5b07aefa9e82e65806804268b"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/iterator-facade-base/#a9ac08db5b07aefa9e82e65806804268b">reference</a> = ReferenceT;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/classes/llvm/iterator-facade-base/#ad879b56a6ea95b7da949bfa63d03dde4a4f2910ff91c3e559958a66f09bfefe56"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/iterator-facade-base/#ad879b56a6ea95b7da949bfa63d03dde4a4f2910ff91c3e559958a66f09bfefe56">IsRandomAccess</a> = std::is&#95;base&#95;of&lt;std::random&#95;access&#95;iterator&#95;tag,</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">                                     IteratorCategoryT&gt;::value,</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92" lineLink="/docs/api/classes/llvm/iterator-facade-base/#ad879b56a6ea95b7da949bfa63d03dde4a4e1f229fa73b6b5c2f25734ab347c51f"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/iterator-facade-base/#ad879b56a6ea95b7da949bfa63d03dde4a4e1f229fa73b6b5c2f25734ab347c51f">IsBidirectional</a> = std::is&#95;base&#95;of&lt;std::bidirectional&#95;iterator&#95;tag,</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">                                      IteratorCategoryT&gt;::value,</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="comment">  /// A proxy object for computing a reference via indirecting a copy of an</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">  /// iterator. This is used in APIs which need to produce a reference via</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">  /// indirection but for which the iterator object might be a temporary. The</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  /// proxy preserves the iterator internally and exposes the indirected</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">  /// reference via a conversion operator.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101" lineLink="/docs/api/classes/llvm/iterator-facade-base/referenceproxy"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">ReferenceProxy &#123;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> iterator&#95;facade&#95;base;</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">    DerivedT I;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">    ReferenceProxy(DerivedT I) : <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>(std::move(I)) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109" lineLink="/docs/api/classes/llvm/iterator-facade-base/referenceproxy/#adc2a6b29380e0cbd28105a3ab0fe49d4"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> ReferenceT()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;I; &#125;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">  /// A proxy object for computing a pointer via indirecting a copy of a</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">  /// reference. This is used in APIs which need to produce a pointer but for</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">  /// which the reference might be a temporary. The proxy preserves the</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">  /// reference internally and exposes the pointer via a arrow operator.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116" lineLink="/docs/api/classes/llvm/iterator-facade-base/pointerproxy"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">PointerProxy &#123;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> iterator&#95;facade&#95;base;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">    ReferenceT R;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> RefT&gt;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">    PointerProxy(RefT &amp;&amp;R) : R(std::forward&lt;RefT&gt;(R)) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125" lineLink="/docs/api/classes/llvm/iterator-facade-base/pointerproxy/#a6740f4edbc8afd52db8a8ed2c061e0aa"><Highlight kind="normal">    PointerT <a href="/docs/api/classes/llvm/iterator-facade-base/pointerproxy/#a6740f4edbc8afd52db8a8ed2c061e0aa">operator-&gt;</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &amp;R; &#125;</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129" lineLink="/docs/api/classes/llvm/iterator-facade-base/#acf61699425762fc11a314213e3bc6ef4"><Highlight kind="normal">  DerivedT <a href="/docs/api/classes/llvm/iterator-facade-base/#acf61699425762fc11a314213e3bc6ef4">operator+</a>(DifferenceTypeT n)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(std::is&#95;base&#95;of&lt;iterator&#95;facade&#95;base, DerivedT&gt;::value,</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">                  </Highlight><Highlight kind="stringliteral">&quot;Must pass the derived type to this template!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/iterator-facade-base/#ad879b56a6ea95b7da949bfa63d03dde4a4f2910ff91c3e559958a66f09bfefe56">IsRandomAccess</a>,</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;The &#39;+&#39; operator is only defined for random access iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">    DerivedT tmp = &#42;</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">    tmp += n;</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> tmp;</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a56831a09ff0a972cfb02376aaab2caab"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> DerivedT <a href="/docs/api/classes/llvm/iterator-facade-base/#a56831a09ff0a972cfb02376aaab2caab">operator+</a>(DifferenceTypeT n, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> DerivedT &amp;i) &#123;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/iterator-facade-base/#ad879b56a6ea95b7da949bfa63d03dde4a4f2910ff91c3e559958a66f09bfefe56">IsRandomAccess</a>,</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;The &#39;+&#39; operator is only defined for random access iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> i + n;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a491d3989cc90d99cdb1f123d141b87cb"><Highlight kind="normal">  DerivedT <a href="/docs/api/classes/llvm/iterator-facade-base/#a491d3989cc90d99cdb1f123d141b87cb">operator-</a>(DifferenceTypeT n)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/iterator-facade-base/#ad879b56a6ea95b7da949bfa63d03dde4a4f2910ff91c3e559958a66f09bfefe56">IsRandomAccess</a>,</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;The &#39;-&#39; operator is only defined for random access iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">    DerivedT tmp = &#42;</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">    tmp -= n;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> tmp;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a10f99fd6afbddb5694dc277415dd143a"><Highlight kind="normal">  DerivedT &amp;<a href="/docs/api/classes/llvm/iterator-facade-base/#a10f99fd6afbddb5694dc277415dd143a">operator++</a>() &#123;</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(std::is&#95;base&#95;of&lt;iterator&#95;facade&#95;base, DerivedT&gt;::value,</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">                  </Highlight><Highlight kind="stringliteral">&quot;Must pass the derived type to this template!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;</Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal">+=(1);</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a668b849a4f26755eae386315d5ea363c"><Highlight kind="normal">  DerivedT <a href="/docs/api/classes/llvm/iterator-facade-base/#a668b849a4f26755eae386315d5ea363c">operator++</a>(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">    DerivedT tmp = &#42;</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">    ++&#42;</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> tmp;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a2b1add08071860fb4ce9f8b24b35271a"><Highlight kind="normal">  DerivedT &amp;<a href="/docs/api/classes/llvm/iterator-facade-base/#a2b1add08071860fb4ce9f8b24b35271a">operator--</a>() &#123;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/iterator-facade-base/#ad879b56a6ea95b7da949bfa63d03dde4a4e1f229fa73b6b5c2f25734ab347c51f">IsBidirectional</a>,</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;The decrement operator is only defined for bidirectional iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;</Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal">-=(1);</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a2fe5a54c4c470c05190130854c0baca3"><Highlight kind="normal">  DerivedT <a href="/docs/api/classes/llvm/iterator-facade-base/#a2fe5a54c4c470c05190130854c0baca3">operator--</a>(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/iterator-facade-base/#ad879b56a6ea95b7da949bfa63d03dde4a4e1f229fa73b6b5c2f25734ab347c51f">IsBidirectional</a>,</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;The decrement operator is only defined for bidirectional iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">    DerivedT tmp = &#42;</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">    --&#42;</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> tmp;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef &#95;&#95;cpp&#95;impl&#95;three&#95;way&#95;comparison</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a8177352435657f182290be3d5c345cfc"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-facade-base/#a8177352435657f182290be3d5c345cfc">operator!=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> DerivedT &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> !(</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">DerivedT &amp;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(&#42;this) == <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>);</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a9677d8ef8998cc763948bfdfc2f73c6e"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-facade-base/#a9677d8ef8998cc763948bfdfc2f73c6e">operator&gt;</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> DerivedT &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/iterator-facade-base/#ad879b56a6ea95b7da949bfa63d03dde4a4f2910ff91c3e559958a66f09bfefe56">IsRandomAccess</a>,</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;Relational operators are only defined for random access iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> !(</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">DerivedT &amp;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(&#42;this) &lt; <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">           !(</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">DerivedT &amp;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">) == <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>);</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a11ebcbea3c495045f2bef3d4a0b92e61"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-facade-base/#a11ebcbea3c495045f2bef3d4a0b92e61">operator&lt;=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> DerivedT &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/iterator-facade-base/#ad879b56a6ea95b7da949bfa63d03dde4a4f2910ff91c3e559958a66f09bfefe56">IsRandomAccess</a>,</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;Relational operators are only defined for random access iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> !(</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">DerivedT &amp;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(&#42;this) &gt; <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>);</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a2eaf8d2f2898a998c33dbc9d581844e3"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-facade-base/#a2eaf8d2f2898a998c33dbc9d581844e3">operator&gt;=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> DerivedT &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/iterator-facade-base/#ad879b56a6ea95b7da949bfa63d03dde4a4f2910ff91c3e559958a66f09bfefe56">IsRandomAccess</a>,</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;Relational operators are only defined for random access iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> !(</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">DerivedT &amp;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(&#42;this) &lt; <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>);</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205" lineLink="/docs/api/classes/llvm/iterator-facade-base/#a01eb14835f6bcb17f051721a0ebb80fc"><Highlight kind="normal">  PointerProxy <a href="/docs/api/classes/llvm/iterator-facade-base/#a01eb14835f6bcb17f051721a0ebb80fc">operator-&gt;</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;</Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal">&#42;();</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208" lineLink="/docs/api/classes/llvm/iterator-facade-base/#aef121b79d4aa4b0da5c1c8e9ae45f711"><Highlight kind="normal">  ReferenceProxy <a href="/docs/api/classes/llvm/iterator-facade-base/#aef121b79d4aa4b0da5c1c8e9ae45f711">operator&#91;&#93;</a>(DifferenceTypeT n)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/iterator-facade-base/#ad879b56a6ea95b7da949bfa63d03dde4a4f2910ff91c3e559958a66f09bfefe56">IsRandomAccess</a>,</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">                  </Highlight><Highlight kind="stringliteral">&quot;Subscripting is only defined for random access iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;</Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal">+(n);</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="comment">/// CRTP base class for adapting an iterator to a different type.</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="comment">/// This class can be used through CRTP to adapt one iterator into another.</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="comment">/// Typically this is done through providing in the derived class a custom \\c</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="comment">/// operator&#42; implementation. Other methods can be overridden as well.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> DerivedT, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> WrappedIteratorT,</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> IteratorCategoryT =</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> std::iterator&#95;traits&lt;WrappedIteratorT&gt;::iterator&#95;category,</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> = </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> std::iterator&#95;traits&lt;WrappedIteratorT&gt;::value&#95;type,</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> DifferenceTypeT =</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> std::iterator&#95;traits&lt;WrappedIteratorT&gt;::difference&#95;type,</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> PointerT = std::conditional&#95;t&lt;</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">        std::is&#95;same&lt;<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> std::iterator&#95;traits&lt;</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">                            WrappedIteratorT&gt;::value&#95;type&gt;::value,</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> std::iterator&#95;traits&lt;WrappedIteratorT&gt;::pointer, <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;&gt;,</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> ReferenceT = std::conditional&#95;t&lt;</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">        std::is&#95;same&lt;<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> std::iterator&#95;traits&lt;</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">                            WrappedIteratorT&gt;::value&#95;type&gt;::value,</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> std::iterator&#95;traits&lt;WrappedIteratorT&gt;::reference, <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;&gt;&gt;</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235" lineLink="/docs/api/classes/llvm/iterator-adaptor-base"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/iterator-adaptor-base/#a8170d24cedaf5c2a22d8fc0c986529aa">iterator&#95;adaptor&#95;base</a></Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">    : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-facade-base">iterator&#95;facade&#95;base</a>&lt;DerivedT, IteratorCategoryT, T,</Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">                                  DifferenceTypeT, PointerT, ReferenceT&gt; &#123;</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">BaseT = </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> iterator&#95;adaptor&#95;base::iterator&#95;facade&#95;base;</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241" lineLink="/docs/api/classes/llvm/iterator-adaptor-base/#a563ec95255977c34566292cbdce193b3"><Highlight kind="normal">  WrappedIteratorT <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a563ec95255977c34566292cbdce193b3">I</a>;</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243" lineLink="/docs/api/classes/llvm/iterator-adaptor-base/#a8170d24cedaf5c2a22d8fc0c986529aa"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a8170d24cedaf5c2a22d8fc0c986529aa">iterator&#95;adaptor&#95;base</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245" lineLink="/docs/api/classes/llvm/iterator-adaptor-base/#a0815f647af9e50dd6cd1602e1e262705"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a0815f647af9e50dd6cd1602e1e262705">iterator&#95;adaptor&#95;base</a>(WrappedIteratorT u) : <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a563ec95255977c34566292cbdce193b3">I</a>(<a href="/docs/api/namespaces/std">std</a>::<a href="/docs/api/namespaces/llvm/#abfc9c7ecf70f66901e439f7c04ef3dbb">move</a>(u)) &#123;</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(std::is&#95;base&#95;of&lt;iterator&#95;adaptor&#95;base, DerivedT&gt;::value,</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">                  </Highlight><Highlight kind="stringliteral">&quot;Must pass the derived type to this template!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250" lineLink="/docs/api/classes/llvm/iterator-adaptor-base/#a0b53ab0bf798b3740b3d2b0fea0c49ed"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> WrappedIteratorT &amp;<a href="/docs/api/classes/llvm/iterator-adaptor-base/#a0b53ab0bf798b3740b3d2b0fea0c49ed">wrapped</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a563ec95255977c34566292cbdce193b3">I</a>; &#125;</Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253" lineLink="/docs/api/classes/llvm/iterator-adaptor-base/#afddc7f6db019bdab6daa810e83d78de3"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/iterator-adaptor-base/#afddc7f6db019bdab6daa810e83d78de3">difference&#95;type</a> = DifferenceTypeT;</Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255" lineLink="/docs/api/classes/llvm/iterator-adaptor-base/#a2fb52c96bf21f23a5f7f49cb7614e429"><Highlight kind="normal">  DerivedT &amp;<a href="/docs/api/classes/llvm/iterator-adaptor-base/#a2fb52c96bf21f23a5f7f49cb7614e429">operator+=</a>(<a href="/docs/api/classes/llvm/iterator-adaptor-base/#afddc7f6db019bdab6daa810e83d78de3">difference&#95;type</a> n) &#123;</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">        BaseT::IsRandomAccess,</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;The &#39;+=&#39; operator is only defined for random access iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a563ec95255977c34566292cbdce193b3">I</a> += n;</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262" lineLink="/docs/api/classes/llvm/iterator-adaptor-base/#abcccaa0b1b4079318e092423f9f0bca2"><Highlight kind="normal">  DerivedT &amp;<a href="/docs/api/classes/llvm/iterator-adaptor-base/#abcccaa0b1b4079318e092423f9f0bca2">operator-=</a>(<a href="/docs/api/classes/llvm/iterator-adaptor-base/#afddc7f6db019bdab6daa810e83d78de3">difference&#95;type</a> n) &#123;</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">        BaseT::IsRandomAccess,</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;The &#39;-=&#39; operator is only defined for random access iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a563ec95255977c34566292cbdce193b3">I</a> -= n;</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">BaseT::operator-;</Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270" lineLink="/docs/api/classes/llvm/iterator-adaptor-base/#a86b76a04e3b7abc4a27ca714cea0afee"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/iterator-adaptor-base/#afddc7f6db019bdab6daa810e83d78de3">difference&#95;type</a> <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a86b76a04e3b7abc4a27ca714cea0afee">operator-</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> DerivedT &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">        BaseT::IsRandomAccess,</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;The &#39;-&#39; operator is only defined for random access iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a563ec95255977c34566292cbdce193b3">I</a> - <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>.I;</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// We have to explicitly provide ++ and -- rather than letting the facade</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// forward to += because WrappedIteratorT might not support +=.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">BaseT::operator++;</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280" lineLink="/docs/api/classes/llvm/iterator-adaptor-base/#a38723b6e10aa49a530f7e044d41df863"><Highlight kind="normal">  DerivedT &amp;<a href="/docs/api/classes/llvm/iterator-adaptor-base/#a38723b6e10aa49a530f7e044d41df863">operator++</a>() &#123;</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">    ++<a href="/docs/api/classes/llvm/iterator-adaptor-base/#a563ec95255977c34566292cbdce193b3">I</a>;</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">BaseT::operator--;</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285" lineLink="/docs/api/classes/llvm/iterator-adaptor-base/#a231c69151b0d1075f6cd91a116575ef2"><Highlight kind="normal">  DerivedT &amp;<a href="/docs/api/classes/llvm/iterator-adaptor-base/#a231c69151b0d1075f6cd91a116575ef2">operator--</a>() &#123;</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">        BaseT::IsBidirectional,</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;The decrement operator is only defined for bidirectional iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">    --<a href="/docs/api/classes/llvm/iterator-adaptor-base/#a563ec95255977c34566292cbdce193b3">I</a>;</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">DerivedT &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293" lineLink="/docs/api/classes/llvm/iterator-adaptor-base/#ad3fbc9a33f20835bf81e343d85ce3aaa"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-adaptor-base/#ad3fbc9a33f20835bf81e343d85ce3aaa">operator==</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a8170d24cedaf5c2a22d8fc0c986529aa">iterator&#95;adaptor&#95;base</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>,</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">                         </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a8170d24cedaf5c2a22d8fc0c986529aa">iterator&#95;adaptor&#95;base</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>) &#123;</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>.I == <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>.I;</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297" lineLink="/docs/api/classes/llvm/iterator-adaptor-base/#a9f74fe2ddfed7feb928edc871cb213f6"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a9f74fe2ddfed7feb928edc871cb213f6">operator&lt;</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a8170d24cedaf5c2a22d8fc0c986529aa">iterator&#95;adaptor&#95;base</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>,</Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal">                        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a8170d24cedaf5c2a22d8fc0c986529aa">iterator&#95;adaptor&#95;base</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>) &#123;</Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">        BaseT::IsRandomAccess,</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;Relational operators are only defined for random access iterators.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a9e1483f7215664a2315c53c3558d9a8d">LHS</a>.I &lt; <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>.I;</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305" lineLink="/docs/api/classes/llvm/iterator-adaptor-base/#ae47be6b8b03bf4680ea855ac805373a2"><Highlight kind="normal">  ReferenceT <a href="/docs/api/classes/llvm/iterator-adaptor-base/#ae47be6b8b03bf4680ea855ac805373a2">operator&#42;</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/classes/llvm/iterator-adaptor-base/#a563ec95255977c34566292cbdce193b3">I</a>; &#125;</Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="comment">/// An iterator type that allows iterating over the pointees via some</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="comment">/// other iterator.</Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="comment">/// The typical usage of this is to expose a type that iterates over Ts, but</Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="comment">/// which is implemented with some iterator over T&#42;s:</Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="comment">/// \\code</Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="comment">///   using iterator = pointee&#95;iterator&lt;SmallVectorImpl&lt;T &#42;&gt;::iterator&gt;;</Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="comment">/// \\endcode</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> WrappedIteratorT,</Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> = std::remove&#95;reference&#95;t&lt;</Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal">              &#42;&#42;std::declval&lt;WrappedIteratorT&gt;())&gt;&gt;</Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320" lineLink="/docs/api/structs/llvm/pointee-iterator"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/pointee-iterator/#adf01b96db9ddeda9a3edfc4bd6b392b8">pointee&#95;iterator</a></Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal">    : <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a8170d24cedaf5c2a22d8fc0c986529aa">iterator&#95;adaptor&#95;base</a>&lt;</Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">          <a href="/docs/api/structs/llvm/pointee-iterator/#adf01b96db9ddeda9a3edfc4bd6b392b8">pointee&#95;iterator</a>&lt;WrappedIteratorT, <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>&gt;, WrappedIteratorT,</Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal">          typename <a href="/docs/api/namespaces/std">std</a>::iterator&#95;traits&lt;WrappedIteratorT&gt;::<a href="/docs/api/classes/llvm/iterator-facade-base/#a0fb41b5becfd488c52fb8c77d13fbcbc">iterator&#95;category</a>,</Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">          <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>&gt; &#123;</Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325" lineLink="/docs/api/structs/llvm/pointee-iterator/#adf01b96db9ddeda9a3edfc4bd6b392b8"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/pointee-iterator/#adf01b96db9ddeda9a3edfc4bd6b392b8">pointee&#95;iterator</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> U&gt;</Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327" lineLink="/docs/api/structs/llvm/pointee-iterator/#a59bc770f1247d7ba2273481b962cae62"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/pointee-iterator/#a59bc770f1247d7ba2273481b962cae62">pointee&#95;iterator</a>(U &amp;&amp;u)</Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal">      : <a href="/docs/api/structs/llvm/pointee-iterator/#adf01b96db9ddeda9a3edfc4bd6b392b8">pointee&#95;iterator</a>::<a href="/docs/api/classes/llvm/iterator-adaptor-base/#a8170d24cedaf5c2a22d8fc0c986529aa">iterator&#95;adaptor&#95;base</a>(<a href="/docs/api/namespaces/std">std</a>::forward&lt;U &amp;&amp;&gt;(u)) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330" lineLink="/docs/api/structs/llvm/pointee-iterator/#ad797c8c6af7d8c66fbba4b3e14f527ca"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;<a href="/docs/api/structs/llvm/pointee-iterator/#ad797c8c6af7d8c66fbba4b3e14f527ca">operator&#42;</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;&#42;this-&gt;<a href="/docs/api/classes/llvm/iterator-adaptor-base/#a563ec95255977c34566292cbdce193b3">I</a>; &#125;</Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> RangeT, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> WrappedIteratorT =</Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">                               </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal">(std::begin(std::declval&lt;RangeT&gt;()))&gt;</Highlight></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a9b5301a03dc90d7ac00440e2de4d9149">iterator&#95;range</a>&lt;pointee&#95;iterator&lt;WrappedIteratorT&gt;&gt;</Highlight></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336" lineLink="/docs/api/namespaces/llvm/#a651dc9ad820d3c7cdd28f671e0d6d2e2"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a651dc9ad820d3c7cdd28f671e0d6d2e2">make&#95;pointee&#95;range</a>(RangeT &amp;&amp;<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#a34bd74317e3f04bfc4318c2d1a470877">Range</a>) &#123;</Highlight></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">PointeeIteratorT = <a href="/docs/api/structs/llvm/pointee-iterator">pointee&#95;iterator&lt;WrappedIteratorT&gt;</a>;</Highlight></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">make&#95;range</a>(PointeeIteratorT(std::begin(std::forward&lt;RangeT&gt;(<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#a34bd74317e3f04bfc4318c2d1a470877">Range</a>))),</Highlight></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="normal">                    PointeeIteratorT(std::end(std::forward&lt;RangeT&gt;(<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#a34bd74317e3f04bfc4318c2d1a470877">Range</a>))));</Highlight></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> WrappedIteratorT,</Highlight></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> = </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal">(&amp;&#42;std::declval&lt;WrappedIteratorT&gt;())&gt;</Highlight></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344" lineLink="/docs/api/classes/llvm/pointer-iterator"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pointer-iterator/#aeb988b18cf565ee8e1c6bb9da5363e85">pointer&#95;iterator</a></Highlight></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal">    : public <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a8170d24cedaf5c2a22d8fc0c986529aa">iterator&#95;adaptor&#95;base</a>&lt;</Highlight></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/pointer-iterator/#aeb988b18cf565ee8e1c6bb9da5363e85">pointer&#95;iterator</a>&lt;WrappedIteratorT, <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>&gt;, WrappedIteratorT,</Highlight></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">          typename <a href="/docs/api/namespaces/std">std</a>::iterator&#95;traits&lt;WrappedIteratorT&gt;::<a href="/docs/api/classes/llvm/iterator-facade-base/#a0fb41b5becfd488c52fb8c77d13fbcbc">iterator&#95;category</a>,</Highlight></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal">          <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>&gt; &#123;</Highlight></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">mutable</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> Ptr;</Highlight></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352" lineLink="/docs/api/classes/llvm/pointer-iterator/#aeb988b18cf565ee8e1c6bb9da5363e85"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pointer-iterator/#aeb988b18cf565ee8e1c6bb9da5363e85">pointer&#95;iterator</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354" lineLink="/docs/api/classes/llvm/pointer-iterator/#a738f3d6c147e1670a42d66c960bed2fc"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pointer-iterator/#a738f3d6c147e1670a42d66c960bed2fc">pointer&#95;iterator</a>(WrappedIteratorT u)</Highlight></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal">      : <a href="/docs/api/classes/llvm/pointer-iterator/#aeb988b18cf565ee8e1c6bb9da5363e85">pointer&#95;iterator</a>::<a href="/docs/api/classes/llvm/iterator-adaptor-base/#a8170d24cedaf5c2a22d8fc0c986529aa">iterator&#95;adaptor&#95;base</a>(<a href="/docs/api/namespaces/std">std</a>::<a href="/docs/api/namespaces/llvm/#abfc9c7ecf70f66901e439f7c04ef3dbb">move</a>(u)) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357" lineLink="/docs/api/classes/llvm/pointer-iterator/#a1357853d734999b0e136e0e057ce5b81"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;<a href="/docs/api/classes/llvm/pointer-iterator/#a1357853d734999b0e136e0e057ce5b81">operator&#42;</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Ptr = &amp;&#42;this-&gt;<a href="/docs/api/classes/llvm/iterator-adaptor-base/#a563ec95255977c34566292cbdce193b3">I</a>; &#125;</Highlight></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> RangeT, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> WrappedIteratorT =</Highlight></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="normal">                               </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal">(std::begin(std::declval&lt;RangeT&gt;()))&gt;</Highlight></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a9b5301a03dc90d7ac00440e2de4d9149">iterator&#95;range</a>&lt;pointer&#95;iterator&lt;WrappedIteratorT&gt;&gt;</Highlight></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363" lineLink="/docs/api/namespaces/llvm/#acc7cb42b6f860b105a2da0efa01ed0ce"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#acc7cb42b6f860b105a2da0efa01ed0ce">make&#95;pointer&#95;range</a>(RangeT &amp;&amp;<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#a34bd74317e3f04bfc4318c2d1a470877">Range</a>) &#123;</Highlight></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">PointerIteratorT = <a href="/docs/api/classes/llvm/pointer-iterator">pointer&#95;iterator&lt;WrappedIteratorT&gt;</a>;</Highlight></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a341215803e83773a3e97860dc291f121">make&#95;range</a>(PointerIteratorT(std::begin(std::forward&lt;RangeT&gt;(<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#a34bd74317e3f04bfc4318c2d1a470877">Range</a>))),</Highlight></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal">                    PointerIteratorT(std::end(std::forward&lt;RangeT&gt;(<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#a34bd74317e3f04bfc4318c2d1a470877">Range</a>))));</Highlight></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> WrappedIteratorT,</Highlight></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#ac16509a75e3d3fc46b9df1726be486ec">T1</a> = std::remove&#95;reference&#95;t&lt;</Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal">              &#42;&#42;std::declval&lt;WrappedIteratorT&gt;())&gt;,</Highlight></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> T2 = std::add&#95;pointer&#95;t&lt;T1&gt;&gt;</Highlight></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373" lineLink="/docs/api/namespaces/llvm/#a127c9c624df1dd0c2d3fb0d908ffcfbc"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a127c9c624df1dd0c2d3fb0d908ffcfbc">raw&#95;pointer&#95;iterator</a> =</Highlight></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pointer-iterator">pointer&#95;iterator</a>&lt;<a href="/docs/api/structs/llvm/pointee-iterator">pointee&#95;iterator&lt;WrappedIteratorT, T1&gt;</a>, T2&gt;;</Highlight></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;ADT&#95;ITERATOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

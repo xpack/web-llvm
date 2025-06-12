@@ -1,0 +1,221 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/target/lib/target/amdgpu/gcniterativescheduler-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `GCNIterativeScheduler.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This file defines the class GCNIterativeScheduler, which uses an iterative approach to find a best schedule for GCN architecture. <a href="#details">More...</a>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="GCNRegPressure.h"
+  permalink="/docs/api/files/lib/lib/target/lib/target/amdgpu/gcnregpressure-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/MachineScheduler.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/machinescheduler-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/gcniterativescheduler">GCNIterativeScheduler</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/gcniterativescheduler/tentativeschedule">TentativeSchedule</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/gcniterativescheduler/region">Region</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This file defines the class GCNIterativeScheduler, which uses an iterative approach to find a best schedule for GCN architecture.
+
+It basically makes use of various lightweight schedules, scores them, chooses best one based on their scores, and finally implements the chosen one.
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- GCNIterativeScheduler.h - GCN Scheduler ------------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="comment">/// \\file</Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="comment">/// This file defines the class GCNIterativeScheduler, which uses an iterative</Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="comment">/// approach to find a best schedule for GCN architecture. It basically makes</Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="comment">/// use of various lightweight schedules, scores them, chooses best one based on</Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="comment">/// their scores, and finally implements the chosen one.</Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;LIB&#95;TARGET&#95;AMDGPU&#95;GCNITERATIVESCHEDULER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;LIB&#95;TARGET&#95;AMDGPU&#95;GCNITERATIVESCHEDULER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/gcnregpressure-h">GCNRegPressure.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/machinescheduler-h">llvm/CodeGen/MachineScheduler.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a>;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/sunit">SUnit</a>;</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a>;</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29" lineLink="/docs/api/classes/llvm/gcniterativescheduler"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/gcniterativescheduler/#a6ca77a3ca62633e1f7f4ed2ff3be6d81">GCNIterativeScheduler</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scheduledagmilive/#a67da2c9a62e43ae7b66bc5ca91f55a05">ScheduleDAGMILive</a> &#123;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">BaseClass = <a href="/docs/api/classes/llvm/scheduledagmilive/#a67da2c9a62e43ae7b66bc5ca91f55a05">ScheduleDAGMILive</a>;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33" lineLink="/docs/api/classes/llvm/gcniterativescheduler/#a8f50e93e5644e2551f440ae6efd60014"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a8f50e93e5644e2551f440ae6efd60014">StrategyKind</a> &#123;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34" lineLink="/docs/api/classes/llvm/gcniterativescheduler/#a8f50e93e5644e2551f440ae6efd60014adfb47441ee2e798bb69902c033beecfc"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/gcniterativescheduler/#a8f50e93e5644e2551f440ae6efd60014adfb47441ee2e798bb69902c033beecfc">SCHEDULE&#95;MINREGONLY</a>,</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35" lineLink="/docs/api/classes/llvm/gcniterativescheduler/#a8f50e93e5644e2551f440ae6efd60014a22b41edb7c96fd84528ddc72ab613c99"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/gcniterativescheduler/#a8f50e93e5644e2551f440ae6efd60014a22b41edb7c96fd84528ddc72ab613c99">SCHEDULE&#95;MINREGFORCED</a>,</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36" lineLink="/docs/api/classes/llvm/gcniterativescheduler/#a8f50e93e5644e2551f440ae6efd60014a8052712f5608a83be17855aa8f395caa"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/gcniterativescheduler/#a8f50e93e5644e2551f440ae6efd60014a8052712f5608a83be17855aa8f395caa">SCHEDULE&#95;LEGACYMAXOCCUPANCY</a>,</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37" lineLink="/docs/api/classes/llvm/gcniterativescheduler/#a8f50e93e5644e2551f440ae6efd60014a7c8395842f648353057eff8923dfcc3c"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/gcniterativescheduler/#a8f50e93e5644e2551f440ae6efd60014a7c8395842f648353057eff8923dfcc3c">SCHEDULE&#95;ILP</a></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/gcniterativescheduler/#a6ca77a3ca62633e1f7f4ed2ff3be6d81">GCNIterativeScheduler</a>(<a href="/docs/api/structs/llvm/machineschedcontext">MachineSchedContext</a> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>,</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">                        <a href="/docs/api/classes/llvm/gcniterativescheduler/#a8f50e93e5644e2551f440ae6efd60014">StrategyKind</a> S);</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#ab201710a9597b0df54c12a848d4804d9">schedule</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a0fdf731113f2b02fd779a07e4d433717">enterRegion</a>(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/classes/llvm/scheduledaginstrs/#a254403f7804208ade3cb68086201cb7a">BB</a>,</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">                   <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> Begin,</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">                   <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> End,</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">                   </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> RegionInstrs) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a9d0ff8af24f7c66a107ce5695a1149dd">finalizeSchedule</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53" lineLink="/docs/api/classes/llvm/gcniterativescheduler/#abec99f440ac68fa7bf59a142fa6e8c7d"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/gcniterativescheduler/#abec99f440ac68fa7bf59a142fa6e8c7d">ScheduleRef</a> = <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;const SUnit &#42;&gt;</a>;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55" lineLink="/docs/api/structs/llvm/gcniterativescheduler/tentativeschedule"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/gcniterativescheduler/tentativeschedule">TentativeSchedule</a> &#123;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56" lineLink="/docs/api/structs/llvm/gcniterativescheduler/tentativeschedule/#abe8223bd08650b75411d58576f7eb916"><Highlight kind="normal">    std::vector&lt;MachineInstr &#42;&gt; <a href="/docs/api/structs/llvm/gcniterativescheduler/tentativeschedule/#abe8223bd08650b75411d58576f7eb916">Schedule</a>;</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57" lineLink="/docs/api/structs/llvm/gcniterativescheduler/tentativeschedule/#a7767f599f7aff0c2b5a23b7d4d9209db"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/gcnregpressure">GCNRegPressure</a> <a href="/docs/api/structs/llvm/gcniterativescheduler/tentativeschedule/#a7767f599f7aff0c2b5a23b7d4d9209db">MaxPressure</a>;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60" lineLink="/docs/api/structs/llvm/gcniterativescheduler/region"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/gcniterativescheduler/region">Region</a> &#123;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Fields except for BestSchedule are supposed to reflect current IR state</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// &#96;const&#96; fields are to emphasize they shouldn&#39;t change for any schedule.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/structs/llvm/gcniterativescheduler/region/#ae86a05ed53bde897be7f76987d583c77"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> <a href="/docs/api/structs/llvm/gcniterativescheduler/region/#ae86a05ed53bde897be7f76987d583c77">Begin</a>;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// End is either a boundary instruction or end of basic block</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/structs/llvm/gcniterativescheduler/region/#a82aa71dceae76b8d272df60ec5d672ec"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> <a href="/docs/api/structs/llvm/gcniterativescheduler/region/#a82aa71dceae76b8d272df60ec5d672ec">End</a>;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66" lineLink="/docs/api/structs/llvm/gcniterativescheduler/region/#a77defccc871bb0d13674b452da8c1c96"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcniterativescheduler/region/#a77defccc871bb0d13674b452da8c1c96">NumRegionInstrs</a>;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67" lineLink="/docs/api/structs/llvm/gcniterativescheduler/region/#a8b3a361ed51a19f59699dbdf5534a043"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/gcnregpressure">GCNRegPressure</a> <a href="/docs/api/structs/llvm/gcniterativescheduler/region/#a8b3a361ed51a19f59699dbdf5534a043">MaxPressure</a>;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// best schedule for the region so far (not scheduled yet)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/structs/llvm/gcniterativescheduler/region/#ab1bcdd8d3c29f1e1fe6c6816df699a34"><Highlight kind="normal">    std::unique&#95;ptr&lt;TentativeSchedule&gt; <a href="/docs/api/structs/llvm/gcniterativescheduler/region/#ab1bcdd8d3c29f1e1fe6c6816df699a34">BestSchedule</a>;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73" lineLink="/docs/api/classes/llvm/gcniterativescheduler/#a06dac9854e08794893d4ee5238929c21"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/specificbumpptrallocator">SpecificBumpPtrAllocator&lt;Region&gt;</a> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a06dac9854e08794893d4ee5238929c21">Alloc</a>;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/classes/llvm/gcniterativescheduler/#a2a420cc28ee66403c57d35de57e0d5b6"><Highlight kind="normal">  std::vector&lt;Region&#42;&gt; <a href="/docs/api/classes/llvm/gcniterativescheduler/#a2a420cc28ee66403c57d35de57e0d5b6">Regions</a>;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76" lineLink="/docs/api/classes/llvm/gcniterativescheduler/#a5c1486e176ff1b7209c9647bb7b2ff0d"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/machineschedcontext">MachineSchedContext</a> &#42;<a href="/docs/api/classes/llvm/gcniterativescheduler/#a5c1486e176ff1b7209c9647bb7b2ff0d">Context</a>;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77" lineLink="/docs/api/classes/llvm/gcniterativescheduler/#adee265df6741b5fdd6f8729d32853ad7"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a8f50e93e5644e2551f440ae6efd60014">StrategyKind</a> <a href="/docs/api/classes/llvm/gcniterativescheduler/#adee265df6741b5fdd6f8729d32853ad7">Strategy</a>;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78" lineLink="/docs/api/classes/llvm/gcniterativescheduler/#a4b98b84a6cc834ba657c411f1ae53d10"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">mutable</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcnupwardrptracker">GCNUpwardRPTracker</a> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a4b98b84a6cc834ba657c411f1ae53d10">UPTracker</a>;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/gcniterativescheduler/builddag">BuildDAG</a>;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/gcniterativescheduler/overridelegacystrategy">OverrideLegacyStrategy</a>;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Range&gt;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/gcnregpressure">GCNRegPressure</a> <a href="/docs/api/classes/llvm/gcniterativescheduler/#ab7703967e4547dc33bde51d360068021">getSchedulePressure</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcniterativescheduler/region">Region</a> &amp;R,</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">                                     <a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#a34bd74317e3f04bfc4318c2d1a470877">Range</a> &amp;&amp;Schedule) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/gcnregpressure">GCNRegPressure</a> <a href="/docs/api/classes/llvm/gcniterativescheduler/#abeb32a2045204d56bbf623bec5da25b3">getRegionPressure</a>(<a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> Begin,</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> End) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/classes/llvm/gcniterativescheduler/#ae026fc83e46ea2999953bd2b728ea4c7"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/gcnregpressure">GCNRegPressure</a> <a href="/docs/api/classes/llvm/gcniterativescheduler/#ae026fc83e46ea2999953bd2b728ea4c7">getRegionPressure</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcniterativescheduler/region">Region</a> &amp;R)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#abeb32a2045204d56bbf623bec5da25b3">getRegionPressure</a>(R.Begin, R.End);</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a8f9d10fa98c86d22e17258c86701191a">setBestSchedule</a>(<a href="/docs/api/classes/llvm/region">Region</a> &amp;R,</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/gcniterativescheduler/#abec99f440ac68fa7bf59a142fa6e8c7d">ScheduleRef</a> Schedule,</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">                       </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcnregpressure">GCNRegPressure</a> &amp;MaxRP = <a href="/docs/api/structs/llvm/gcnregpressure">GCNRegPressure</a>());</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a51ca74535c09b1424af0a32c4a5b9b1f">scheduleBest</a>(<a href="/docs/api/classes/llvm/region">Region</a> &amp;R);</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  std::vector&lt;MachineInstr&#42;&gt; <a href="/docs/api/classes/llvm/gcniterativescheduler/#af7c58c4a38a2148e0a6eec44b8749bbb">detachSchedule</a>(<a href="/docs/api/classes/llvm/gcniterativescheduler/#abec99f440ac68fa7bf59a142fa6e8c7d">ScheduleRef</a> Schedule) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a19e2ffc6c8269a09ca18d5255ec2345a">sortRegionsByPressure</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> TargetOcc);</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Range&gt;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#ad899858c4b90e464815c32a7f9c4bb26">scheduleRegion</a>(<a href="/docs/api/classes/llvm/region">Region</a> &amp;R, <a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#a34bd74317e3f04bfc4318c2d1a470877">Range</a> &amp;&amp;Schedule,</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">                      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcnregpressure">GCNRegPressure</a> &amp;MaxRP = <a href="/docs/api/structs/llvm/gcnregpressure">GCNRegPressure</a>());</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a6fd0550f564608fec7c5d7f25817ddef">tryMaximizeOccupancy</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> TargetOcc =</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">                                std::numeric&#95;limits&lt;unsigned&gt;::max());</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a9d479174d357214e5ea495943b55fdd2">scheduleLegacyMaxOccupancy</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> TryMaximizeOccupancy = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#ab7d457cdee60c23701eca3d110a4862f">scheduleMinReg</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> force = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a424a74f8852d22b010e48f8f6d0c748d">scheduleILP</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> TryMaximizeOccupancy = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a70f01da7bffd10dc0686e3ca4286eac8">printRegions</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a6e84e2872d922dee85f4511ac0326f64">printSchedResult</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS,</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">                        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/region">Region</a> &#42;R,</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">                        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcnregpressure">GCNRegPressure</a> &amp;RP) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcniterativescheduler/#a0cb97aff651ff2a97a061183a62dfc01">printSchedRP</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS,</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">                    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcnregpressure">GCNRegPressure</a> &amp;<a href="/docs/api/files/lib/lib/passes/standardinstrumentations-cpp/#a6f1bbcae7288f05872dcfe811d0388baa9060587edeb01a63e3d3edc959678d1e">Before</a>,</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">                    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gcnregpressure">GCNRegPressure</a> &amp;<a href="/docs/api/files/lib/lib/passes/standardinstrumentations-cpp/#a6f1bbcae7288f05872dcfe811d0388baa7bfcadb5535fe8aad5032762b7bfe159">After</a>) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;LIB&#95;TARGET&#95;AMDGPU&#95;GCNITERATIVESCHEDULER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

@@ -1,0 +1,196 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/orc/shared/methodwrapperhandler
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `MethodWrapperHandler` Class Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+A function object that takes an <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> as its first argument, casts that address to a ClassT&#42;, then calls the given method on that pointer passing in the remaining function arguments. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;typename RetT, typename ClassT, typename... ArgTs&gt;
+class llvm::orc::shared::MethodWrapperHandler&lt;RetT, ClassT, ArgTs&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/Shared/WrapperFunctionUtils.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/wrapperfunctionutils-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename RetT, typename ClassT, typename... ArgTs&gt;</>}
+  type="using"
+  name={<><a href="#a46899ff17b3ae88fa5833fd0d62ac166">MethodT</a> = RetT(ClassT::&#42;)(ArgTs...)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename RetT, typename ClassT, typename... ArgTs&gt;</>}
+  name={<><a href="#a52554e4b248e2a8522054f070f002fa5">MethodWrapperHandler</a> (MethodT M)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Operators Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename RetT, typename ClassT, typename... ArgTs&gt;</>}
+  type="RetT"
+  name={<><a href="#a70ffbc1ac2af66528c7830838143d78e">operator()</a> (ExecutorAddr ObjAddr, ArgTs &amp;...Args)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename RetT, typename ClassT, typename... ArgTs&gt;</>}
+  type={<><a href="#a46899ff17b3ae88fa5833fd0d62ac166">MethodT</a></>}
+  name={<><a href="#a141ed788562cbab6e2b42a0f546247dd">M</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+A function object that takes an <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> as its first argument, casts that address to a ClassT&#42;, then calls the given method on that pointer passing in the remaining function arguments.
+
+This utility removes some of the boilerplate from writing wrappers for method calls.
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="keyword">class </Highlight><Highlight kind="normal">MyClass &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> myMethod(uint32&#95;t, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">) &#123; ... &#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPS Method signature -- note MyClass object address as first argument.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">SPSMyMethodWrapperSignature =</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  SPSTuple&lt;SPSExecutorAddr, uint32&#95;t, bool&gt;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">WrapperFunctionResult</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">myMethodCallWrapper(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;ArgData, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> ArgSize) &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> WrapperFunction&lt;SPSMyMethodWrapperSignature&gt;::handle(</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">     ArgData, ArgSize, <a href="/docs/api/namespaces/llvm/orc/shared/#a22daede26acd2cbd316d09f0c21e12dd">makeMethodWrapperHandler</a>(&amp;MyClass::myMethod));</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+Definition at line 604 of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/wrapperfunctionutils-h">WrapperFunctionUtils.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### MethodT {#a46899ff17b3ae88fa5833fd0d62ac166}
+
+<MemberDefinition
+  template={<>template &lt;typename RetT, typename ClassT, typename... ArgTs&gt;</>}
+  prototype={<>using llvm::orc::shared::MethodWrapperHandler&lt; RetT, ClassT, ArgTs &gt;::MethodT =  RetT (ClassT::&#42;)(ArgTs...)</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/wrapperfunctionutils-h/#l00606">606</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/wrapperfunctionutils-h">WrapperFunctionUtils.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### MethodWrapperHandler() {#a52554e4b248e2a8522054f070f002fa5}
+
+<MemberDefinition
+  template={<>template &lt;typename RetT, typename ClassT, typename... ArgTs&gt;</>}
+  prototype={<>llvm::orc::shared::MethodWrapperHandler&lt; RetT, ClassT, ArgTs &gt;::MethodWrapperHandler (<a href="#a46899ff17b3ae88fa5833fd0d62ac166">MethodT</a> M)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/wrapperfunctionutils-h/#l00607">607</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/wrapperfunctionutils-h">WrapperFunctionUtils.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Operators
+
+### operator()() {#a70ffbc1ac2af66528c7830838143d78e}
+
+<MemberDefinition
+  template={<>template &lt;typename RetT, typename ClassT, typename... ArgTs&gt;</>}
+  prototype={<>RetT llvm::orc::shared::MethodWrapperHandler&lt; RetT, ClassT, ArgTs &gt;::operator() (<a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> ObjAddr, ArgTs &amp;... Args)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/wrapperfunctionutils-h/#l00608">608</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/wrapperfunctionutils-h">WrapperFunctionUtils.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### M {#a141ed788562cbab6e2b42a0f546247dd}
+
+<MemberDefinition
+  template={<>template &lt;typename RetT, typename ClassT, typename... ArgTs&gt;</>}
+  prototype={<>MethodT llvm::orc::shared::MethodWrapperHandler&lt; RetT, ClassT, ArgTs &gt;::M</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/wrapperfunctionutils-h/#l00613">613</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/wrapperfunctionutils-h">WrapperFunctionUtils.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/wrapperfunctionutils-h">WrapperFunctionUtils.h</a></li>
+</ul>
+
+</DoxygenPage>

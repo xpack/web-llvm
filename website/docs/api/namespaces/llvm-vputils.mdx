@@ -1,0 +1,169 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/namespaces/llvm/vputils
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - namespace
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `vputils` Namespace Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Definition
+
+<CodeBlock>namespace llvm::vputils &#123; ... &#125;</CodeBlock>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;</>}
+  name={<><a href="#a064976a6c7458b10c24021b7334cec2a">getOrCreateVPValueForSCEVExpr</a> (VPlan &amp;Plan, const SCEV &#42;Expr, ScalarEvolution &amp;SE)</>}>
+Get or create a <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> that corresponds to the expansion of <code>Expr</code>. <a href="#a064976a6c7458b10c24021b7334cec2a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/scev">SCEV</a> &#42;</>}
+  name={<><a href="#a5999b0390c92ee4af2544fe9772454bf">getSCEVExprForVPValue</a> (VPValue &#42;V, ScalarEvolution &amp;SE)</>}>
+Return the <a href="/docs/api/classes/llvm/scev">SCEV</a> expression for <code>V</code>. <a href="#a5999b0390c92ee4af2544fe9772454bf">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a96c706ef30193e00ac057bf24cf5719d">isHeaderMask</a> (const VPValue &#42;V, VPlan &amp;Plan)</>}>
+Return true if <code>V</code> is a header mask in <code>Plan</code>. <a href="#a96c706ef30193e00ac057bf24cf5719d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a0c663bf15e8398176f591270e7676f96">isUniformAcrossVFsAndUFs</a> (VPValue &#42;V)</>}>
+Checks if <code>V</code> is uniform across all VF lanes and UF parts. <a href="#a0c663bf15e8398176f591270e7676f96">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a002a77cdbc23293b8f7a8458ffd0f905">isUniformAfterVectorization</a> (const VPValue &#42;VPV)</>}>
+Returns true if <code>VPV</code> is uniform after vectorization. <a href="#a002a77cdbc23293b8f7a8458ffd0f905">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a5e3c306be8d629a994f3644765421d5f">onlyFirstLaneUsed</a> (const VPValue &#42;Def)</>}>
+Returns true if only the first lane of <code>Def</code> is used. <a href="#a5e3c306be8d629a994f3644765421d5f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a513233e0bcf9aaf36f9672eff75514ea">onlyFirstPartUsed</a> (const VPValue &#42;Def)</>}>
+Returns true if only the first part of <code>Def</code> is used. <a href="#a513233e0bcf9aaf36f9672eff75514ea">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Functions
+
+### getOrCreateVPValueForSCEVExpr() {#a064976a6c7458b10c24021b7334cec2a}
+
+<MemberDefinition
+  prototype={<>VPValue &#42; llvm::vputils::getOrCreateVPValueForSCEVExpr (<a href="/docs/api/classes/llvm/vplan">VPlan</a> &amp; Plan, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/scev">SCEV</a> &#42; Expr, <a href="/docs/api/classes/llvm/scalarevolution">ScalarEvolution</a> &amp; SE)</>}>
+Get or create a <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> that corresponds to the expansion of <code>Expr</code>.
+
+If <code>Expr</code> is a <a href="/docs/api/classes/llvm/scevconstant">SCEVConstant</a> or <a href="/docs/api/classes/llvm/scevunknown">SCEVUnknown</a>, return a <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> wrapping the live-in value. Otherwise return a <a href="/docs/api/classes/llvm/vpexpandscevrecipe">VPExpandSCEVRecipe</a> to expand <code>Expr</code>. If <code>Plan&#39;s</code> pre-header already contains a recipe expanding <code>Expr</code>, return it. If not, create a new one.
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h/#l00033">33</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h">VPlanUtils.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-cpp/#l00026">26</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-cpp">VPlanUtils.cpp</a>.
+</MemberDefinition>
+
+### getSCEVExprForVPValue() {#a5999b0390c92ee4af2544fe9772454bf}
+
+<MemberDefinition
+  prototype={<>const SCEV &#42; llvm::vputils::getSCEVExprForVPValue (<a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42; V, <a href="/docs/api/classes/llvm/scalarevolution">ScalarEvolution</a> &amp; SE)</>}>
+Return the <a href="/docs/api/classes/llvm/scev">SCEV</a> expression for <code>V</code>.
+
+Returns <a href="/docs/api/structs/llvm/scevcouldnotcompute">SCEVCouldNotCompute</a> if no <a href="/docs/api/classes/llvm/scev">SCEV</a> expression could be constructed.
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h/#l00038">38</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h">VPlanUtils.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-cpp/#l00072">72</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-cpp">VPlanUtils.cpp</a>.
+</MemberDefinition>
+
+### isHeaderMask() {#a96c706ef30193e00ac057bf24cf5719d}
+
+<MemberDefinition
+  prototype={<>bool llvm::vputils::isHeaderMask (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42; V, <a href="/docs/api/classes/llvm/vplan">VPlan</a> &amp; Plan)</>}>
+Return true if <code>V</code> is a header mask in <code>Plan</code>.
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h/#l00064">64</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h">VPlanUtils.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-cpp/#l00050">50</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-cpp">VPlanUtils.cpp</a>.
+</MemberDefinition>
+
+### isUniformAcrossVFsAndUFs() {#a0c663bf15e8398176f591270e7676f96}
+
+<MemberDefinition
+  prototype={<>bool llvm::vputils::isUniformAcrossVFsAndUFs (<a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42; V)</>}>
+Checks if <code>V</code> is uniform across all VF lanes and UF parts.
+
+It is considered as such if it is either loop invariant (defined outside the vector region) or its operand is known to be uniform across all VFs and UFs (e.g. VPDerivedIV or VPCanonicalIVPHI).
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h/#l00070">70</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h">VPlanUtils.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-cpp/#l00083">83</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-cpp">VPlanUtils.cpp</a>.
+</MemberDefinition>
+
+### isUniformAfterVectorization() {#a002a77cdbc23293b8f7a8458ffd0f905}
+
+<MemberDefinition
+  prototype={<>bool llvm::vputils::isUniformAfterVectorization (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42; VPV)</>}
+  labels = {["inline"]}>
+Returns true if <code>VPV</code> is uniform after vectorization.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h/#l00041">41</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h">VPlanUtils.h</a>.
+</MemberDefinition>
+
+### onlyFirstLaneUsed() {#a5e3c306be8d629a994f3644765421d5f}
+
+<MemberDefinition
+  prototype={<>bool llvm::vputils::onlyFirstLaneUsed (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42; Def)</>}>
+Returns true if only the first lane of <code>Def</code> is used.
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h/#l00023">23</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h">VPlanUtils.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-cpp/#l00016">16</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-cpp">VPlanUtils.cpp</a>.
+</MemberDefinition>
+
+### onlyFirstPartUsed() {#a513233e0bcf9aaf36f9672eff75514ea}
+
+<MemberDefinition
+  prototype={<>bool llvm::vputils::onlyFirstPartUsed (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42; Def)</>}>
+Returns true if only the first part of <code>Def</code> is used.
+
+Declaration at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h/#l00026">26</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h">VPlanUtils.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-cpp/#l00021">21</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-cpp">VPlanUtils.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this namespace was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-cpp">VPlanUtils.cpp</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h">VPlanUtils.h</a></li>
+</ul>
+
+</DoxygenPage>

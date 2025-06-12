@@ -1,0 +1,210 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/anonymous-namespace-armcalllowering-cpp-/armincomingvaluehandler
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ARMIncomingValueHandler` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Helper class for values coming in through an ABI boundary (used for handling formal arguments and call return values). <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct anonymous_namespace{ARMCallLowering.cpp}::ARMIncomingValueHandler</CodeBlock>
+
+## Base struct
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/calllowering/incomingvaluehandler">IncomingValueHandler</a></>}>
+Base class for ValueHandlers used for arguments coming into the current function, or for return values received from a call. <a href="/docs/api/structs/llvm/calllowering/incomingvaluehandler/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Derived Structs
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/anonymous-namespace-armcalllowering-cpp-/callreturnhandler">CallReturnHandler</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/anonymous-namespace-armcalllowering-cpp-/formalarghandler">FormalArgHandler</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a48c5d90707badc56101aef2ec9d36505">ARMIncomingValueHandler</a> (MachineIRBuilder &amp;MIRBuilder, MachineRegisterInfo &amp;MRI)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a2d9bff6057c95e354dbc28e4604517c0">assignCustomValue</a> (ARMCallLowering::ArgInfo &amp;Arg, ArrayRef&lt; CCValAssign &gt; VAs, std::function&lt; void()&gt; &#42;Thunk) override</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a84f5d960aa6e996db2572c7d5c7b163e">assignValueToAddress</a> (Register ValVReg, Register Addr, LLT MemTy, const MachinePointerInfo &amp;MPO, const CCValAssign &amp;VA) override</>}>
+The specified value has been assigned to a stack location. <a href="#a84f5d960aa6e996db2572c7d5c7b163e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aa35ca40243a91b75afd51c04ee241788">assignValueToReg</a> (Register ValVReg, Register PhysReg, const CCValAssign &amp;VA) override</>}>
+The specified value has been assigned to a physical register, handle the appropriate COPY (either to or from) and mark any relevant uses/defines as needed. <a href="#aa35ca40243a91b75afd51c04ee241788">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineinstrbuilder">MachineInstrBuilder</a></>}
+  name={<><a href="#a1623bba2a28207a4ded0016ebfb5e841">buildLoad</a> (const DstOp &amp;Res, Register Addr, LLT MemTy, const MachinePointerInfo &amp;MPO)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/register">Register</a></>}
+  name={<><a href="#ab81aa7a77f61bbabb3f265712cd8ad53">getStackAddress</a> (uint64&#95;t Size, int64&#95;t Offset, MachinePointerInfo &amp;MPO, ISD::ArgFlagsTy Flags) override</>}>
+Materialize a VReg containing the address of the specified stack-based object. <a href="#ab81aa7a77f61bbabb3f265712cd8ad53">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a0ee2d17f3a98009aaf10e193bbeea24e">markPhysRegUsed</a> (unsigned PhysReg)=0</>}>
+Marking a physical register as used is different between formal parameters, where it&#39;s a basic block live-in, and call returns, where it&#39;s an implicit-def of the call instruction. <a href="#a0ee2d17f3a98009aaf10e193bbeea24e">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Helper class for values coming in through an ABI boundary (used for handling formal arguments and call return values).
+
+Definition at line 241 of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp">ARMCallLowering.cpp</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### ARMIncomingValueHandler() {#a48c5d90707badc56101aef2ec9d36505}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;ARMCallLowering.cpp&#125;::ARMIncomingValueHandler::ARMIncomingValueHandler (<a href="/docs/api/classes/llvm/machineirbuilder">MachineIRBuilder</a> &amp; MIRBuilder, <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &amp; MRI)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp/#l00242">242</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp">ARMCallLowering.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### assignCustomValue() {#a2d9bff6057c95e354dbc28e4604517c0}
+
+<MemberDefinition
+  prototype={<>unsigned anonymous&#95;namespace&#123;ARMCallLowering.cpp&#125;::ARMIncomingValueHandler::assignCustomValue (ARMCallLowering::ArgInfo &amp; Arg, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/ccvalassign">CCValAssign</a> &gt; VAs, std::function&lt; void()&gt; &#42; Thunk)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp/#l00317">317</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp">ARMCallLowering.cpp</a>.
+</MemberDefinition>
+
+### assignValueToAddress() {#a84f5d960aa6e996db2572c7d5c7b163e}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;ARMCallLowering.cpp&#125;::ARMIncomingValueHandler::assignValueToAddress (<a href="/docs/api/classes/llvm/register">Register</a> ValVReg, <a href="/docs/api/classes/llvm/register">Register</a> Addr, <a href="/docs/api/classes/llvm/llt">LLT</a> MemTy, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/machinepointerinfo">MachinePointerInfo</a> &amp; MPO, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/ccvalassign">CCValAssign</a> &amp; VA)</>}
+  labels = {["inline", "virtual"]}>
+The specified value has been assigned to a stack location.
+
+Load or store it there, with appropriate extension if necessary.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp/#l00265">265</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp">ARMCallLowering.cpp</a>.
+</MemberDefinition>
+
+### assignValueToReg() {#aa35ca40243a91b75afd51c04ee241788}
+
+<MemberDefinition
+  prototype={<>void anonymous&#95;namespace&#123;ARMCallLowering.cpp&#125;::ARMIncomingValueHandler::assignValueToReg (<a href="/docs/api/classes/llvm/register">Register</a> ValVReg, <a href="/docs/api/classes/llvm/register">Register</a> PhysReg, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/ccvalassign">CCValAssign</a> &amp; VA)</>}
+  labels = {["inline", "virtual"]}>
+The specified value has been assigned to a physical register, handle the appropriate COPY (either to or from) and mark any relevant uses/defines as needed.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp/#l00292">292</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp">ARMCallLowering.cpp</a>.
+</MemberDefinition>
+
+### buildLoad() {#a1623bba2a28207a4ded0016ebfb5e841}
+
+<MemberDefinition
+  prototype={<>MachineInstrBuilder anonymous&#95;namespace&#123;ARMCallLowering.cpp&#125;::ARMIncomingValueHandler::buildLoad (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/dstop">DstOp</a> &amp; Res, <a href="/docs/api/classes/llvm/register">Register</a> Addr, <a href="/docs/api/classes/llvm/llt">LLT</a> MemTy, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/machinepointerinfo">MachinePointerInfo</a> &amp; MPO)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp/#l00283">283</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp">ARMCallLowering.cpp</a>.
+</MemberDefinition>
+
+### getStackAddress() {#ab81aa7a77f61bbabb3f265712cd8ad53}
+
+<MemberDefinition
+  prototype={<>Register anonymous&#95;namespace&#123;ARMCallLowering.cpp&#125;::ARMIncomingValueHandler::getStackAddress (uint64&#95;t MemSize, int64&#95;t Offset, <a href="/docs/api/structs/llvm/machinepointerinfo">MachinePointerInfo</a> &amp; MPO, <a href="/docs/api/structs/llvm/isd/argflagsty">ISD::ArgFlagsTy</a> Flags)</>}
+  labels = {["inline", "virtual"]}>
+Materialize a VReg containing the address of the specified stack-based object.
+
+This is either based on a FrameIndex or direct SP manipulation, depending on the context. <code>MPO</code> should be initialized to an appropriate description of the address created.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp/#l00246">246</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp">ARMCallLowering.cpp</a>.
+</MemberDefinition>
+
+### markPhysRegUsed() {#a0ee2d17f3a98009aaf10e193bbeea24e}
+
+<MemberDefinition
+  prototype={<>virtual void anonymous&#95;namespace&#123;ARMCallLowering.cpp&#125;::ARMIncomingValueHandler::markPhysRegUsed (unsigned PhysReg)</>}>
+Marking a physical register as used is different between formal parameters, where it&#39;s a basic block live-in, and call returns, where it&#39;s an implicit-def of the call instruction.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp/#l00357">357</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp">ARMCallLowering.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/arm/armcalllowering-cpp">ARMCallLowering.cpp</a></li>
+</ul>
+
+</DoxygenPage>

@@ -1,0 +1,599 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/analysismanager
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `AnalysisManager` Class Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+A container for analyses that lazily runs them and caches their results. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;
+class llvm::AnalysisManager&lt;IRUnitT, ExtraArgTs&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/IR/PassManager.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h"
+  isLocal="true" />
+</IncludesList>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type="using"
+  name={<><a href="#a134f995a67e3c8da28760abb1bc55ea5">AnalysisPassMapT</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a> &#42;, std::unique&#95;ptr&lt; <a href="/docs/api/structs/llvm/detail/analysispassconcept">PassConceptT</a> &gt; &gt;</>}>
+Map type from analysis pass <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> to pass concept pointer. <a href="#a134f995a67e3c8da28760abb1bc55ea5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type="using"
+  name={<><a href="#a442b62f548be7c59c652cf403fbef3b4">AnalysisResultListMapT</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; IRUnitT &#42;, AnalysisResultListT &gt;</>}>
+Map type from IRUnitT pointer to our custom list type. <a href="#a442b62f548be7c59c652cf403fbef3b4">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type="using"
+  name={<><a href="#ab6f9398a4226b26a5a676287641878a9">AnalysisResultListT</a> = std::list&lt; std::pair&lt; <a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a> &#42;, std::unique&#95;ptr&lt; <a href="/docs/api/structs/llvm/detail/analysisresultconcept">ResultConceptT</a> &gt; &gt; &gt;</>}>
+List of analysis pass IDs and associated concept pointers. <a href="#ab6f9398a4226b26a5a676287641878a9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type="using"
+  name={<><a href="#aeebed2f97445627bc499c393c8e80882">AnalysisResultMapT</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; std::pair&lt; <a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a> &#42;, IRUnitT &#42; &gt;, typename AnalysisResultListT::iterator &gt;</>}>
+Map type from a pair of analysis <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> and IRUnitT pointer to an iterator into a particular result list (which is where the actual analysis result is stored). <a href="#aeebed2f97445627bc499c393c8e80882">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type="using"
+  name={<><a href="#a3edb3b59ea216c36548151c2b1a14766">PassConceptT</a> = <a href="/docs/api/structs/llvm/detail/analysispassconcept">detail::AnalysisPassConcept</a>&lt; IRUnitT, <a href="/docs/api/classes/llvm/analysismanager/invalidator">Invalidator</a>, ExtraArgTs... &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type="using"
+  name={<><a href="#aa227a706b01df3e897821abd38cdf405">ResultConceptT</a> = <a href="/docs/api/structs/llvm/detail/analysisresultconcept">detail::AnalysisResultConcept</a>&lt; IRUnitT, <a href="/docs/api/classes/llvm/analysismanager/invalidator">Invalidator</a> &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  name={<><a href="#a04d20e532396b71cf376c777d6b838c9">AnalysisManager</a> ()</>}>
+Construct an empty analysis manager. <a href="#a04d20e532396b71cf376c777d6b838c9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  name={<><a href="#a22f4fe9d72c2287370e28fbbeabbd89f">AnalysisManager</a> (AnalysisManager &amp;&amp;)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Operators Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type={<><a href="/docs/api/classes/llvm/analysismanager">AnalysisManager</a> &amp;</>}
+  name={<><a href="#a2bc6bb441a5b546bf76b838ff9b5e473">operator=</a> (AnalysisManager &amp;&amp;)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type="void"
+  name={<><a href="#a4926331431f03253ee3ec8e6e3bb9d1c">clear</a> (IRUnitT &amp;IR, llvm::StringRef Name)</>}>
+Clear any cached analysis results for a single unit of IR. <a href="#a4926331431f03253ee3ec8e6e3bb9d1c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type="void"
+  name={<><a href="#a1def78d3ab800e1f9b15ac7f772862ff">clear</a> ()</>}>
+Clear all analysis results cached by this <a href="/docs/api/classes/llvm/analysismanager">AnalysisManager</a>. <a href="#a1def78d3ab800e1f9b15ac7f772862ff">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type="bool"
+  name={<><a href="#a92d8409cca05ebc97ee7d3180b2c00e3">empty</a> () const</>}>
+Returns true if the analysis manager has an empty results cache. <a href="#a92d8409cca05ebc97ee7d3180b2c00e3">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename PassT&gt;</>}
+  type={<>PassT::Result &#42;</>}
+  name={<><a href="#a828ff8185f881fca9e3d534781244041">getCachedResult</a> (IRUnitT &amp;IR) const</>}>
+Get the cached result of an analysis pass for a given IR unit. <a href="#a828ff8185f881fca9e3d534781244041">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename PassT&gt;</>}
+  type={<>PassT::Result &amp;</>}
+  name={<><a href="#aaab1fad63e4f3b8679469720a873fedd">getResult</a> (IRUnitT &amp;IR, ExtraArgTs... ExtraArgs)</>}>
+Get the result of an analysis pass for a given IR unit. <a href="#aaab1fad63e4f3b8679469720a873fedd">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type="void"
+  name={<><a href="#a64b2a209a16bcd41375b5cae12690eaa">invalidate</a> (IRUnitT &amp;IR, const PreservedAnalyses &amp;PA)</>}>
+Invalidate cached analyses for an IR unit. <a href="#a64b2a209a16bcd41375b5cae12690eaa">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename PassT&gt;</>}
+  type="bool"
+  name={<><a href="#a03f50a72945de4b779ffd17b508974c8">isPassRegistered</a> () const</>}>
+Returns true if the specified analysis pass is registered. <a href="#a03f50a72945de4b779ffd17b508974c8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename PassBuilderT&gt;</>}
+  type="bool"
+  name={<><a href="#a91ff894f756175a693c85bf73f79de9e">registerPass</a> (PassBuilderT &amp;&amp;PassBuilder)</>}>
+<a href="/docs/api/classes/llvm/register">Register</a> an analysis pass with the manager. <a href="#a91ff894f756175a693c85bf73f79de9e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename PassT&gt;</>}
+  type="void"
+  name={<><a href="#a29648f060d2dd1e126ed17733813cf0a">verifyNotInvalidated</a> (IRUnitT &amp;IR, typename PassT::Result &#42;Result) const</>}>
+Verify that the given Result cannot be invalidated, assert otherwise. <a href="#a29648f060d2dd1e126ed17733813cf0a">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type={<><a href="/docs/api/structs/llvm/detail/analysisresultconcept">ResultConceptT</a> &#42;</>}
+  name={<><a href="#ad87204b3132c8461e2b6f0e3629da6a5">getCachedResultImpl</a> (AnalysisKey &#42;ID, IRUnitT &amp;IR) const</>}>
+Get a cached analysis result or return null. <a href="#ad87204b3132c8461e2b6f0e3629da6a5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type={<><a href="/docs/api/structs/llvm/detail/analysisresultconcept">ResultConceptT</a> &amp;</>}
+  name={<><a href="#a7c21e9b71e06095567ef2d8749ec18b6">getResultImpl</a> (AnalysisKey &#42;ID, IRUnitT &amp;IR, ExtraArgTs... ExtraArgs)</>}>
+Get an analysis result, running the pass if necessary. <a href="#a7c21e9b71e06095567ef2d8749ec18b6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type={<><a href="/docs/api/structs/llvm/detail/analysispassconcept">PassConceptT</a> &amp;</>}
+  name={<><a href="#a896a2d0697604f08f99fe7b019ad3bfd">lookUpPass</a> (AnalysisKey &#42;ID)</>}>
+Look up a registered analysis pass. <a href="#a896a2d0697604f08f99fe7b019ad3bfd">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/detail/analysispassconcept">PassConceptT</a> &amp;</>}
+  name={<><a href="#a7b69a92067fc1113f29d9d4ca1d6c3ff">lookUpPass</a> (AnalysisKey &#42;ID) const</>}>
+Look up a registered analysis pass. <a href="#a7b69a92067fc1113f29d9d4ca1d6c3ff">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type={<><a href="/docs/api/classes/llvm/densemap">AnalysisPassMapT</a></>}
+  name={<><a href="#a6165fb98ddb81478865918c3e1b2b7d7">AnalysisPasses</a></>}>
+Collection of analysis passes, indexed by <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>. <a href="#a6165fb98ddb81478865918c3e1b2b7d7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type={<><a href="/docs/api/classes/llvm/densemap">AnalysisResultListMapT</a></>}
+  name={<><a href="#af18e57efae06e5053d32594df0afbbcc">AnalysisResultLists</a></>}>
+Map from IR unit to a list of analysis results. <a href="#af18e57efae06e5053d32594df0afbbcc">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  type={<><a href="/docs/api/classes/llvm/densemap">AnalysisResultMapT</a></>}
+  name={<><a href="#af6aa580ea41f8ad85f2dee2a40fb578d">AnalysisResults</a></>}>
+Map from an analysis <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> and IR unit to a particular cached analysis result. <a href="#af6aa580ea41f8ad85f2dee2a40fb578d">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+A container for analyses that lazily runs them and caches their results.
+
+This class can manage analyses for any IR unit where the address of the IR unit sufficies as its identity.
+
+Definition at line 253 of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### AnalysisPassMapT {#a134f995a67e3c8da28760abb1bc55ea5}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>using llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisPassMapT = 
+      DenseMap&lt;AnalysisKey &#42;, std::unique&#95;ptr&lt;PassConceptT&gt;&gt;</>}>
+Map type from analysis pass <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> to pass concept pointer.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00521">521</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### AnalysisResultListMapT {#a442b62f548be7c59c652cf403fbef3b4}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>using llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisResultListMapT =  DenseMap&lt;IRUnitT &#42;, AnalysisResultListT&gt;</>}>
+Map type from IRUnitT pointer to our custom list type.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00273">273</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### AnalysisResultListT {#ab6f9398a4226b26a5a676287641878a9}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>using llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisResultListT = 
+      std::list&lt;std::pair&lt;AnalysisKey &#42;, std::unique&#95;ptr&lt;ResultConceptT&gt;&gt;&gt;</>}>
+List of analysis pass IDs and associated concept pointers.
+
+Requires iterators to be valid across appending new entries and arbitrary erases. Provides the analysis <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> to enable finding iterators to a given entry in maps below, and provides the storage for the actual result concept.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00269">269</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### AnalysisResultMapT {#aeebed2f97445627bc499c393c8e80882}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>using llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisResultMapT = 
+      DenseMap&lt;std::pair&lt;AnalysisKey &#42;, IRUnitT &#42;&gt;,
+               typename AnalysisResultListT::iterator&gt;</>}>
+Map type from a pair of analysis <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> and IRUnitT pointer to an iterator into a particular result list (which is where the actual analysis result is stored).
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00278">278</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### PassConceptT {#a3edb3b59ea216c36548151c2b1a14766}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>using llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::PassConceptT = 
+      detail::AnalysisPassConcept&lt;IRUnitT, Invalidator, ExtraArgTs...&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00260">260</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### ResultConceptT {#aa227a706b01df3e897821abd38cdf405}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>using llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::ResultConceptT =  detail::AnalysisResultConcept&lt;IRUnitT, Invalidator&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00259">259</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### AnalysisManager() {#a04d20e532396b71cf376c777d6b838c9}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisManager ()</>}
+  labels = {["inline"]}>
+Construct an empty analysis manager.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00371">371</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### AnalysisManager() {#a22f4fe9d72c2287370e28fbbeabbd89f}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisManager (<a href="/docs/api/classes/llvm/analysismanager">AnalysisManager</a> &amp;&amp;)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00372">372</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Operators
+
+### operator=() {#a2bc6bb441a5b546bf76b838ff9b5e473}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>AnalysisManager&lt; IRUnitT, ExtraArgTs... &gt; &amp; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::operator= (<a href="/docs/api/classes/llvm/analysismanager">AnalysisManager</a> &amp;&amp;)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00373">373</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### clear() {#a4926331431f03253ee3ec8e6e3bb9d1c}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>void llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::clear (IRUnitT &amp; IR, <a href="/docs/api/classes/llvm/stringref">llvm::StringRef</a> Name)</>}
+  labels = {["inline"]}>
+Clear any cached analysis results for a single unit of IR.
+
+This doesn&#39;t invalidate, but instead simply deletes, the relevant results. It is useful when the IR is being removed and we want to clear out all the memory pinned for it.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00388">388</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>, definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanagerimpl-h/#l00119">119</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanagerimpl-h">PassManagerImpl.h</a>.
+</MemberDefinition>
+
+### clear() {#a1def78d3ab800e1f9b15ac7f772862ff}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>void llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::clear ()</>}
+  labels = {["inline"]}>
+Clear all analysis results cached by this <a href="/docs/api/classes/llvm/analysismanager">AnalysisManager</a>.
+
+Like <code>clear(IRUnitT&amp;)</code>, this doesn&#39;t invalidate the results; it simply deletes them. This lets you clean up the <a href="/docs/api/classes/llvm/analysismanager">AnalysisManager</a> when the set of IR units itself has potentially changed, and thus we can&#39;t even look up a a result and invalidate/clear it directly.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00396">396</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### empty() {#a92d8409cca05ebc97ee7d3180b2c00e3}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>bool llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::empty () const</>}
+  labels = {["inline"]}>
+Returns true if the analysis manager has an empty results cache.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00376">376</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### getCachedResult() {#a828ff8185f881fca9e3d534781244041}
+
+<MemberDefinition
+  template={<>template &lt;typename PassT&gt;</>}
+  prototype={<>PassT::Result &#42; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getCachedResult (IRUnitT &amp; IR) const</>}
+  labels = {["inline"]}>
+Get the cached result of an analysis pass for a given IR unit.
+
+This method never runs the analysis.
+
+
+<SectionUser title="Returns">
+null if there is no cached result.
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00429">429</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### getResult() {#aaab1fad63e4f3b8679469720a873fedd}
+
+<MemberDefinition
+  template={<>template &lt;typename PassT&gt;</>}
+  prototype={<>PassT::Result &amp; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResult (IRUnitT &amp; IR, ExtraArgTs... ExtraArgs)</>}
+  labels = {["inline"]}>
+Get the result of an analysis pass for a given IR unit.
+
+Runs the analysis if a cached result is not available.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00410">410</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### invalidate() {#a64b2a209a16bcd41375b5cae12690eaa}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>void llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::invalidate (IRUnitT &amp; IR, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA)</>}
+  labels = {["inline"]}>
+Invalidate cached analyses for an IR unit.
+
+Walk through all of the analyses pertaining to this unit of IR and invalidate them, unless they are preserved by the <a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> set.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00490">490</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>, definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanagerimpl-h/#l00172">172</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanagerimpl-h">PassManagerImpl.h</a>.
+</MemberDefinition>
+
+### isPassRegistered() {#a03f50a72945de4b779ffd17b508974c8}
+
+<MemberDefinition
+  template={<>template &lt;typename PassT&gt;</>}
+  prototype={<>bool llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::isPassRegistered () const</>}
+  labels = {["inline"]}>
+Returns true if the specified analysis pass is registered.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00402">402</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### registerPass() {#a91ff894f756175a693c85bf73f79de9e}
+
+<MemberDefinition
+  template={<>template &lt;typename PassBuilderT&gt;</>}
+  prototype={<>bool llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::registerPass (PassBuilderT &amp;&amp; PassBuilder)</>}
+  labels = {["inline"]}>
+<a href="/docs/api/classes/llvm/register">Register</a> an analysis pass with the manager.
+
+The parameter is a callable whose result is an analysis pass. This allows passing in a lambda to construct the analysis.
+
+The analysis type to register is the type returned by calling the <code><a href="/docs/api/classes/llvm/passbuilder">PassBuilder</a></code> argument. If that type has already been registered, then the argument will not be called and this function will return false. Otherwise, we register the analysis returned by calling <code>PassBuilder()</code>, and this function returns true.
+
+(Note: Although the return value of this function indicates whether or not an analysis was previously registered, you should just register all the analyses you might want and let this class run them lazily. This idiom lets us minimize the number of times we have to look up analyses in our hashtable.)
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00471">471</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### verifyNotInvalidated() {#a29648f060d2dd1e126ed17733813cf0a}
+
+<MemberDefinition
+  template={<>template &lt;typename PassT&gt;</>}
+  prototype={<>void llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::verifyNotInvalidated (IRUnitT &amp; IR, typename PassT::Result &#42; Result) const</>}
+  labels = {["inline"]}>
+Verify that the given Result cannot be invalidated, assert otherwise.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00446">446</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### getCachedResultImpl() {#ad87204b3132c8461e2b6f0e3629da6a5}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>ResultConceptT &#42; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getCachedResultImpl (<a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a> &#42; ID, IRUnitT &amp; IR) const</>}
+  labels = {["inline"]}>
+Get a cached analysis result or return null.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00514">514</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### getResultImpl() {#a7c21e9b71e06095567ef2d8749ec18b6}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>AnalysisManager&lt; IRUnitT, ExtraArgTs... &gt;::ResultConceptT &amp; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::getResultImpl (<a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a> &#42; ID, IRUnitT &amp; IR, ExtraArgTs... ExtraArgs)</>}
+  labels = {["inline"]}>
+Get an analysis result, running the pass if necessary.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00510">510</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>, definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanagerimpl-h/#l00137">137</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanagerimpl-h">PassManagerImpl.h</a>.
+</MemberDefinition>
+
+### lookUpPass() {#a896a2d0697604f08f99fe7b019ad3bfd}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>PassConceptT &amp; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::lookUpPass (<a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a> &#42; ID)</>}
+  labels = {["inline"]}>
+Look up a registered analysis pass.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00494">494</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### lookUpPass() {#a7b69a92067fc1113f29d9d4ca1d6c3ff}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>const PassConceptT &amp; llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::lookUpPass (<a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a> &#42; ID) const</>}
+  labels = {["inline"]}>
+Look up a registered analysis pass.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00502">502</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### AnalysisPasses {#a6165fb98ddb81478865918c3e1b2b7d7}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>AnalysisPassMapT llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisPasses</>}>
+Collection of analysis passes, indexed by <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00525">525</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### AnalysisResultLists {#af18e57efae06e5053d32594df0afbbcc}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>AnalysisResultListMapT llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisResultLists</>}>
+Map from IR unit to a list of analysis results.
+
+Provides linear time removal of all analysis results for a IR unit and the ultimate storage for a particular cached analysis result.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00531">531</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+### AnalysisResults {#af6aa580ea41f8ad85f2dee2a40fb578d}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgTs&gt;</>}
+  prototype={<>AnalysisResultMapT llvm::AnalysisManager&lt; IRUnitT, ExtraArgTs &gt;::AnalysisResults</>}>
+Map from an analysis <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> and IR unit to a particular cached analysis result.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h/#l00535">535</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">PassManager.h</a></li>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanagerimpl-h">PassManagerImpl.h</a></li>
+</ul>
+
+</DoxygenPage>

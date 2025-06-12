@@ -1,0 +1,295 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/object/recordstreamer-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `RecordStreamer.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="RecordStreamer.h"
+  permalink="/docs/api/files/lib/lib/object/recordstreamer-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Mangler.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/mangler-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Module.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/module-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/MC/MCContext.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mccontext-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/MC/MCSymbol.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mcsymbol-h"
+  isLocal="true" />
+</IncludesList>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- RecordStreamer.cpp - Record asm defined and used symbols ----------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/object/recordstreamer-h">RecordStreamer.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/mangler-h">llvm/IR/Mangler.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/module-h">llvm/IR/Module.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mccontext-h">llvm/MC/MCContext.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcsymbol-h">llvm/MC/MCSymbol.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> RecordStreamer::markDefined(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &amp;Symbol) &#123;</Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79">State</a> &amp;S = Symbols&#91;<a href="/docs/api/namespaces/llvm/armbuildattrs/#aea10ca6bf098a425d51ac7fe65d30ed6aa10cda45fcbf7c8c9804e4e4d2e1bcdf">Symbol</a>.getName()&#93;;</Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (S) &#123;</Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a8f29852e43dc39446fcdaaadb63a360f">DefinedGlobal</a>:</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a74d0c5a35544d5d655b9e8c1428e332c">Global</a>:</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal">    S = <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a8f29852e43dc39446fcdaaadb63a360f">DefinedGlobal</a>;</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79ac5f137d9e66ccfef984def002584e42b">NeverSeen</a>:</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79ae7df0ff533351ab7bad9352151008333">Defined</a>:</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a6a6ff7ed42d4c487edcfaaac5b29632c">Used</a>:</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal">    S = <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79ae7df0ff533351ab7bad9352151008333">Defined</a>;</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a65304bb6c2bf1507b761c39b494b8b64">DefinedWeak</a>:</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a7bade7b61e6d1bf22b1355cdb603d78a">UndefinedWeak</a>:</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">    S = <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a65304bb6c2bf1507b761c39b494b8b64">DefinedWeak</a>;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> RecordStreamer::markGlobal(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &amp;Symbol,</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">                                <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243">MCSymbolAttr</a> <a href="/docs/api/classes/llvm/attribute">Attribute</a>) &#123;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79">State</a> &amp;S = Symbols&#91;<a href="/docs/api/namespaces/llvm/armbuildattrs/#aea10ca6bf098a425d51ac7fe65d30ed6aa10cda45fcbf7c8c9804e4e4d2e1bcdf">Symbol</a>.getName()&#93;;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (S) &#123;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a8f29852e43dc39446fcdaaadb63a360f">DefinedGlobal</a>:</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79ae7df0ff533351ab7bad9352151008333">Defined</a>:</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">    S = (<a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343af2bbdf9f72c085adc4d0404e370f0f4c">Attribute</a> == <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243a83df6138e7dba38c0c80380486544ea0">MCSA&#95;Weak</a>) ? <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a65304bb6c2bf1507b761c39b494b8b64">DefinedWeak</a> : <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a8f29852e43dc39446fcdaaadb63a360f">DefinedGlobal</a>;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79ac5f137d9e66ccfef984def002584e42b">NeverSeen</a>:</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a74d0c5a35544d5d655b9e8c1428e332c">Global</a>:</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a6a6ff7ed42d4c487edcfaaac5b29632c">Used</a>:</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">    S = (<a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343af2bbdf9f72c085adc4d0404e370f0f4c">Attribute</a> == <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243a83df6138e7dba38c0c80380486544ea0">MCSA&#95;Weak</a>) ? <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a7bade7b61e6d1bf22b1355cdb603d78a">UndefinedWeak</a> : <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a74d0c5a35544d5d655b9e8c1428e332c">Global</a>;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a7bade7b61e6d1bf22b1355cdb603d78a">UndefinedWeak</a>:</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a65304bb6c2bf1507b761c39b494b8b64">DefinedWeak</a>:</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> RecordStreamer::markUsed(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &amp;Symbol) &#123;</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79">State</a> &amp;S = Symbols&#91;<a href="/docs/api/namespaces/llvm/armbuildattrs/#aea10ca6bf098a425d51ac7fe65d30ed6aa10cda45fcbf7c8c9804e4e4d2e1bcdf">Symbol</a>.getName()&#93;;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (S) &#123;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a8f29852e43dc39446fcdaaadb63a360f">DefinedGlobal</a>:</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79ae7df0ff533351ab7bad9352151008333">Defined</a>:</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a74d0c5a35544d5d655b9e8c1428e332c">Global</a>:</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a65304bb6c2bf1507b761c39b494b8b64">DefinedWeak</a>:</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a7bade7b61e6d1bf22b1355cdb603d78a">UndefinedWeak</a>:</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79ac5f137d9e66ccfef984def002584e42b">NeverSeen</a>:</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a6a6ff7ed42d4c487edcfaaac5b29632c">Used</a>:</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">    S = <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a6a6ff7ed42d4c487edcfaaac5b29632c">Used</a>;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> RecordStreamer::visitUsedSymbol(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &amp;Sym) &#123; markUsed(Sym); &#125;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75" lineLink="/docs/api/classes/llvm/recordstreamer/#aa55a7fd09c9524646b504c4623f98bc7"><Highlight kind="normal"><a href="/docs/api/classes/llvm/recordstreamer/#aa55a7fd09c9524646b504c4623f98bc7">RecordStreamer::RecordStreamer</a>(<a href="/docs/api/classes/llvm/mccontext">MCContext</a> &amp;Context, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/module">Module</a> &amp;M)</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">    : <a href="/docs/api/classes/llvm/mcstreamer/#a91d427d805fbdbcddd4d6381bee35ba6">MCStreamer</a>(Context), M(M) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78" lineLink="/docs/api/classes/llvm/recordstreamer/#afd03c4734cd0e7de64e4b808b6391f7e"><Highlight kind="normal"><a href="/docs/api/classes/llvm/recordstreamer/#a7d2537823cbfc9d81dd786c493fcbcc0">RecordStreamer::const&#95;iterator</a> <a href="/docs/api/classes/llvm/recordstreamer/#afd03c4734cd0e7de64e4b808b6391f7e">RecordStreamer::begin</a>() &#123;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Symbols.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#a8a045d250952c0867382a9840ee18fdf">begin</a>();</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82" lineLink="/docs/api/classes/llvm/recordstreamer/#a7fa65a4aa10fe30c34ed69cf5051448c"><Highlight kind="normal"><a href="/docs/api/classes/llvm/recordstreamer/#a7d2537823cbfc9d81dd786c493fcbcc0">RecordStreamer::const&#95;iterator</a> <a href="/docs/api/classes/llvm/recordstreamer/#a7fa65a4aa10fe30c34ed69cf5051448c">RecordStreamer::end</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Symbols.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#a075e34e98605d0e7c289763a104869ac">end</a>(); &#125;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84" lineLink="/docs/api/classes/llvm/recordstreamer/#aa780f89c07fb6ecf894165fba1eddd5f"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#aa780f89c07fb6ecf894165fba1eddd5f">RecordStreamer::emitLabel</a>(<a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &#42;Symbol, <a href="/docs/api/classes/llvm/smloc">SMLoc</a> <a href="/docs/api/namespaces/llvm/loc">Loc</a>) &#123;</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mcstreamer/#a822ae1a4f19b7b00a297a100749f9b8a">MCStreamer::emitLabel</a>(Symbol);</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  markDefined(&#42;Symbol);</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89" lineLink="/docs/api/classes/llvm/recordstreamer/#a306a23214c9482f62523348c733c6f1c"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a306a23214c9482f62523348c733c6f1c">RecordStreamer::emitAssignment</a>(<a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &#42;Symbol, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcexpr">MCExpr</a> &#42;<a href="/docs/api/classes/llvm/value">Value</a>) &#123;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  markDefined(&#42;Symbol);</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mcstreamer/#a04736ef5753e5ecda3c29ce902094e68">MCStreamer::emitAssignment</a>(Symbol, <a href="/docs/api/classes/llvm/value">Value</a>);</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94" lineLink="/docs/api/classes/llvm/recordstreamer/#a21af0361382d6dfb4321ab8f500e7645"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a21af0361382d6dfb4321ab8f500e7645">RecordStreamer::emitSymbolAttribute</a>(<a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &#42;Symbol,</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">                                         <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243">MCSymbolAttr</a> <a href="/docs/api/classes/llvm/attribute">Attribute</a>) &#123;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/attribute">Attribute</a> == <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243aa1e94c23156e37812e4d6e078af1d728">MCSA&#95;Global</a> || <a href="/docs/api/classes/llvm/attribute">Attribute</a> == <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243a83df6138e7dba38c0c80380486544ea0">MCSA&#95;Weak</a>)</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">    markGlobal(&#42;Symbol, <a href="/docs/api/classes/llvm/attribute">Attribute</a>);</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/attribute">Attribute</a> == <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243a6f8590ba0f71b1b8b0e937695e303208">MCSA&#95;LazyReference</a>)</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">    markUsed(&#42;Symbol);</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103" lineLink="/docs/api/classes/llvm/recordstreamer/#a0e8d737beabc541adfb2c643314155ef"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a0e8d737beabc541adfb2c643314155ef">RecordStreamer::emitZerofill</a>(<a href="/docs/api/classes/llvm/mcsection">MCSection</a> &#42;Section, <a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &#42;Symbol,</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">                                  uint64&#95;t <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>, <a href="/docs/api/structs/llvm/align">Align</a> ByteAlignment,</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">                                  <a href="/docs/api/classes/llvm/smloc">SMLoc</a> <a href="/docs/api/namespaces/llvm/loc">Loc</a>) &#123;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  markDefined(&#42;Symbol);</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109" lineLink="/docs/api/classes/llvm/recordstreamer/#a27d37ba3829434fa4c91650d5691baa1"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a27d37ba3829434fa4c91650d5691baa1">RecordStreamer::emitCommonSymbol</a>(<a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &#42;Symbol, uint64&#95;t <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>,</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">                                      <a href="/docs/api/structs/llvm/align">Align</a> ByteAlignment) &#123;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  markDefined(&#42;Symbol);</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal"><a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79">RecordStreamer::State</a> RecordStreamer::getSymbolState(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &#42;Sym) &#123;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/si">SI</a> = Symbols.<a href="/docs/api/classes/llvm/stringmap/#a49e68e4c86fe0b96c633adea0c366d74">find</a>(Sym-&gt;<a href="/docs/api/classes/llvm/mcsymbol/#a57c7b2b9784361914262eeb0a6f0b18d">getName</a>());</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/si">SI</a> == Symbols.<a href="/docs/api/classes/llvm/stringmap/#a16e5eaf2df56249e87019be23ee07695">end</a>())</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79ac5f137d9e66ccfef984def002584e42b">NeverSeen</a>;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/si">SI</a>-&gt;second;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121" lineLink="/docs/api/classes/llvm/recordstreamer/#a2bc4be823acc20c56bd37ac0db017850"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a2bc4be823acc20c56bd37ac0db017850">RecordStreamer::emitELFSymverDirective</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &#42;OriginalSym,</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">                                            <a href="/docs/api/classes/llvm/stringref">StringRef</a> Name,</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">                                            </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> KeepOriginalSym) &#123;</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  SymverAliasMap&#91;OriginalSym&#93;.push&#95;back(Name);</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"><a href="/docs/api/classes/llvm/iterator-range">iterator&#95;range&lt;RecordStreamer::const&#95;symver&#95;iterator&gt;</a></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128" lineLink="/docs/api/classes/llvm/recordstreamer/#a3945e54a1e7a69399bd13a229e58cb5b"><Highlight kind="normal"><a href="/docs/api/classes/llvm/recordstreamer/#a3945e54a1e7a69399bd13a229e58cb5b">RecordStreamer::symverAliases</a>() &#123;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#123;SymverAliasMap.begin(), SymverAliasMap.end()&#125;;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132" lineLink="/docs/api/classes/llvm/recordstreamer/#ae36c2a9293b9a50a2870d02f93d7d202"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#ae36c2a9293b9a50a2870d02f93d7d202">RecordStreamer::flushSymverDirectives</a>() &#123;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Mapping from mangled name to GV.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringmap">StringMap&lt;const GlobalValue &#42;&gt;</a> MangledNameMap;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The name in the assembler will be mangled, but the name in the IR</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// might not, so we first compute a mapping from mangled name to GV.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mangler">Mangler</a> Mang;</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallstring">SmallString&lt;64&gt;</a> MangledName;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/globalvalue">GlobalValue</a> &amp;GV : M.global&#95;values()) &#123;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!GV.hasName())</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">    MangledName.<a href="/docs/api/classes/llvm/smallvectorimpl/#aac0ea55010b7b1a301e65a0baea057aa">clear</a>();</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">    MangledName.<a href="/docs/api/classes/llvm/smallvectorimpl/#a499ea32ca1b8d16cedfe01d1e5b08f29">reserve</a>(GV.getName().size() + 1);</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">    Mang.<a href="/docs/api/classes/llvm/mangler/#aa1c9296fd511eb96bb487befbf5e7cea">getNameWithPrefix</a>(MangledName, &amp;GV, </Highlight><Highlight kind="comment">/&#42;CannotUsePrivateLabel=&#42;/</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">    MangledNameMap&#91;MangledName&#93; = &amp;GV;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Walk all the recorded .symver aliases, and set up the binding</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// for each alias.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Symver : SymverAliasMap) &#123;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &#42;Aliasee = Symver.first;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243">MCSymbolAttr</a> Attr = <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243af3367f8319e21bf0779da14146221c55">MCSA&#95;Invalid</a>;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsDefined = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// First check if the aliasee binding was recorded in the asm.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79">RecordStreamer::State</a> state = getSymbolState(Aliasee);</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (state) &#123;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a74d0c5a35544d5d655b9e8c1428e332c">RecordStreamer::Global</a>:</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a8f29852e43dc39446fcdaaadb63a360f">RecordStreamer::DefinedGlobal</a>:</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">      Attr = <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243aa1e94c23156e37812e4d6e078af1d728">MCSA&#95;Global</a>;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a7bade7b61e6d1bf22b1355cdb603d78a">RecordStreamer::UndefinedWeak</a>:</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a65304bb6c2bf1507b761c39b494b8b64">RecordStreamer::DefinedWeak</a>:</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">      Attr = <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243a83df6138e7dba38c0c80380486544ea0">MCSA&#95;Weak</a>;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (state) &#123;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79ae7df0ff533351ab7bad9352151008333">RecordStreamer::Defined</a>:</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a8f29852e43dc39446fcdaaadb63a360f">RecordStreamer::DefinedGlobal</a>:</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a65304bb6c2bf1507b761c39b494b8b64">RecordStreamer::DefinedWeak</a>:</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">      IsDefined = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79ac5f137d9e66ccfef984def002584e42b">RecordStreamer::NeverSeen</a>:</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a74d0c5a35544d5d655b9e8c1428e332c">RecordStreamer::Global</a>:</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a6a6ff7ed42d4c487edcfaaac5b29632c">RecordStreamer::Used</a>:</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/recordstreamer/#a30345c5991aa113e45ca828442920d79a7bade7b61e6d1bf22b1355cdb603d78a">RecordStreamer::UndefinedWeak</a>:</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Attr == <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243af3367f8319e21bf0779da14146221c55">MCSA&#95;Invalid</a> || !IsDefined) &#123;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/globalvalue">GlobalValue</a> &#42;GV = M.getNamedValue(Aliasee-&gt;<a href="/docs/api/classes/llvm/mcsymbol/#a57c7b2b9784361914262eeb0a6f0b18d">getName</a>());</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!GV) &#123;</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a> = MangledNameMap.<a href="/docs/api/classes/llvm/stringmap/#a49e68e4c86fe0b96c633adea0c366d74">find</a>(Aliasee-&gt;<a href="/docs/api/classes/llvm/mcsymbol/#a57c7b2b9784361914262eeb0a6f0b18d">getName</a>());</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a> != MangledNameMap.<a href="/docs/api/classes/llvm/stringmap/#a16e5eaf2df56249e87019be23ee07695">end</a>())</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">          GV = <a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/irtranslator-cpp/#abe44dfdea65b4f7e11e0a608ab708b76">MI</a>-&gt;second;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (GV) &#123;</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// If we don&#39;t have a symbol attribute from assembly, then check if</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// the aliasee was defined in the IR.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Attr == <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243af3367f8319e21bf0779da14146221c55">MCSA&#95;Invalid</a>) &#123;</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (GV-&gt;<a href="/docs/api/classes/llvm/globalvalue/#a1847e956a0087fefdb49e2a9583c7d18">hasExternalLinkage</a>())</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">            Attr = <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243aa1e94c23156e37812e4d6e078af1d728">MCSA&#95;Global</a>;</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (GV-&gt;<a href="/docs/api/classes/llvm/globalvalue/#a3ba1af4b9d9faa4a33729bbbecee83d1">hasLocalLinkage</a>())</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">            Attr = <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243a02f22ce66e6bacb5fbaba644ec799653">MCSA&#95;Local</a>;</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (GV-&gt;<a href="/docs/api/classes/llvm/globalvalue/#ac291102760c543c8e045e829d57d3341">isWeakForLinker</a>())</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">            Attr = <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243a83df6138e7dba38c0c80380486544ea0">MCSA&#95;Weak</a>;</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">        IsDefined = IsDefined || !GV-&gt;<a href="/docs/api/classes/llvm/globalvalue/#a6b66f492cbea5f4b4f434d7178477116">isDeclarationForLinker</a>();</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Set the detected binding on each alias with this aliasee.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> AliasName : Symver.second) &#123;</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">      std::pair&lt;StringRef, StringRef&gt; Split = AliasName.split(</Highlight><Highlight kind="stringliteral">&quot;@@@&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/smallstring">SmallString&lt;128&gt;</a> NewName;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Split.second.empty() &amp;&amp; !Split.second.starts&#95;with(</Highlight><Highlight kind="stringliteral">&quot;@&quot;</Highlight><Highlight kind="normal">)) &#123;</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Special processing for &quot;@@@&quot; according</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// https://sourceware.org/binutils/docs/as/Symver.html</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;Separator = IsDefined ? </Highlight><Highlight kind="stringliteral">&quot;@@&quot;</Highlight><Highlight kind="normal"> : </Highlight><Highlight kind="stringliteral">&quot;@&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">        AliasName =</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">            (Split.first + Separator + Split.second).<a href="/docs/api/namespaces/llvm/#aeeb5973ff74c4c4d279e275b34b7ef54">toStringRef</a>(NewName);</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/mcsymbol">MCSymbol</a> &#42;Alias = <a href="/docs/api/classes/llvm/mcstreamer/#a61c979932b890df773ce75013b76708b">getContext</a>().<a href="/docs/api/classes/llvm/mccontext/#ac11eef690074972378846024abbe8722">getOrCreateSymbol</a>(AliasName);</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// TODO: Handle &quot;@@@&quot;. Depending on SymbolAttribute value it needs to be</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// converted into @ or @@.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcexpr">MCExpr</a> &#42;<a href="/docs/api/classes/llvm/value">Value</a> = <a href="/docs/api/classes/llvm/mcsymbolrefexpr/#a9914b597552aa4b4bcbb8acaa04d632a">MCSymbolRefExpr::create</a>(Aliasee, <a href="/docs/api/classes/llvm/mcstreamer/#a61c979932b890df773ce75013b76708b">getContext</a>());</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (IsDefined)</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">        markDefined(&#42;Alias);</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Don&#39;t use EmitAssignment override as it always marks alias as defined.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/mcstreamer/#a04736ef5753e5ecda3c29ce902094e68">MCStreamer::emitAssignment</a>(Alias, <a href="/docs/api/classes/llvm/value">Value</a>);</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Attr != <a href="/docs/api/namespaces/llvm/#af74c787f7a33e251485729416d260243af3367f8319e21bf0779da14146221c55">MCSA&#95;Invalid</a>)</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/recordstreamer/#a21af0361382d6dfb4321ab8f500e7645">emitSymbolAttribute</a>(Alias, Attr);</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

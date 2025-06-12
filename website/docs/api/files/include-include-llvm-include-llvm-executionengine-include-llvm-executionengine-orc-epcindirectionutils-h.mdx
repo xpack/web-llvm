@@ -1,0 +1,339 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/epcindirectionutils-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `EPCIndirectionUtils.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/JITLink/JITLinkMemoryManager.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlinkmemorymanager-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/IndirectionUtils.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/LazyReexports.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/lazyreexports-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="mutex"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/orc">llvm::orc</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/orc/detail">llvm::orc::detail</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/orc/epcindirectionutils">EPCIndirectionUtils</a></>}>
+Provides <a href="/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> based indirect stubs, trampoline pool and lazy call through manager. <a href="/docs/api/classes/llvm/orc/epcindirectionutils/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport">ABISupport</a></>}>
+ABI support base class. <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/orc/epcindirectionutils/indirectstubinfo">IndirectStubInfo</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/orc/detail/abisupportimpl">ABISupportImpl&lt;ORCABI&gt;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===--- EPCIndirectionUtils.h - EPC based indirection utils ----&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Indirection utilities (stubs, trampolines, lazy call-throughs) that use the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ExecutorProcessControl API to interact with the executor process.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;EXECUTIONENGINE&#95;ORC&#95;EPCINDIRECTIONUTILS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;EXECUTIONENGINE&#95;ORC&#95;EPCINDIRECTIONUTILS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/jitlink/jitlinkmemorymanager-h">llvm/ExecutionEngine/JITLink/JITLinkMemoryManager.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h">llvm/ExecutionEngine/Orc/IndirectionUtils.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/lazyreexports-h">llvm/ExecutionEngine/Orc/LazyReexports.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;mutex&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/orc">orc</a> &#123;</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a>;</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="comment">/// Provides ExecutorProcessControl based indirect stubs, trampoline pool and</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="comment">/// lazy call through manager.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">EPCIndirectionUtils &#123;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/#af21342dd5bd9ad4edb6cece95bc5b83e"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/epcindirectionutils/#af21342dd5bd9ad4edb6cece95bc5b83e">EPCIndirectionUtilsAccess</a>;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="comment">  /// ABI support base class. Used to write resolver, stub, and trampoline</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="comment">  /// blocks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a2d118a2e895b534eade2213697a80197">ABISupport</a> &#123;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a2d118a2e895b534eade2213697a80197"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a2d118a2e895b534eade2213697a80197">ABISupport</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> PointerSize, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> TrampolineSize, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> StubSize,</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">               </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> StubToPointerMaxDisplacement, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> ResolverCodeSize)</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">        : PointerSize(PointerSize), TrampolineSize(TrampolineSize),</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">          StubSize(StubSize),</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">          StubToPointerMaxDisplacement(StubToPointerMaxDisplacement),</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">          ResolverCodeSize(ResolverCodeSize) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a72b4ff990844c319d0c0682368693d45"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a72b4ff990844c319d0c0682368693d45">~ABISupport</a>();</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#ac381414e203965f3b3138724eeb79470"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#ac381414e203965f3b3138724eeb79470">getPointerSize</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> PointerSize; &#125;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#acb18973040a3e2090c57d2aeead6038b"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#acb18973040a3e2090c57d2aeead6038b">getTrampolineSize</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> TrampolineSize; &#125;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a55007f2ecbf299eaa3871da5161c6f94"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a55007f2ecbf299eaa3871da5161c6f94">getStubSize</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> StubSize; &#125;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#aabc9dbf9824ec282b46f6021b8b5fb3b"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#aabc9dbf9824ec282b46f6021b8b5fb3b">getStubToPointerMaxDisplacement</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> StubToPointerMaxDisplacement;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a884b27a6bfc8446968d56fe13fa26e97"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a884b27a6bfc8446968d56fe13fa26e97">getResolverCodeSize</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ResolverCodeSize; &#125;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a59af7d7852d32ce2a7761958661d52c5"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a59af7d7852d32ce2a7761958661d52c5">writeResolverCode</a>(</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;ResolverWorkingMem,</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> ResolverTargetAddr,</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> ReentryFnAddr,</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> ReentryCtxAddr) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> = 0;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a9f8983605a8089a6b9a272a960ebfd1b"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a9f8983605a8089a6b9a272a960ebfd1b">writeTrampolines</a>(</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;TrampolineBlockWorkingMem,</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">                                  <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> TrampolineBlockTragetAddr,</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">                                  <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> ResolverAddr,</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">                                  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumTrampolines) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> = 0;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a006936d3aa9ad83c9b1e1ee8336bc9af"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a006936d3aa9ad83c9b1e1ee8336bc9af">writeIndirectStubsBlock</a>(</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">        </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;StubsBlockWorkingMem, <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> StubsBlockTargetAddress,</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> PointersBlockTargetAddress, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumStubs) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> = 0;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> PointerSize = 0;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> TrampolineSize = 0;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> StubSize = 0;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> StubToPointerMaxDisplacement = 0;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> ResolverCodeSize = 0;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="comment">  /// Create using the given ABI class.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> ORCABI&gt;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> std::unique&#95;ptr&lt;EPCIndirectionUtils&gt;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/epcindirectionutils/#a82f3f02e592ad6d352e788e7282449c3">CreateWithABI</a>(<a href="/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> &amp;EPC);</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">  /// Create based on the ExecutorProcessControl triple.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/expected">Expected&lt;std::unique&#95;ptr&lt;EPCIndirectionUtils&gt;</a>&gt;</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/epcindirectionutils/#af27142d4d30e48ac9857889e37500483">Create</a>(<a href="/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> &amp;EPC);</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="comment">  /// Create based on the ExecutorProcessControl triple.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/expected">Expected&lt;std::unique&#95;ptr&lt;EPCIndirectionUtils&gt;</a>&gt;</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/#a2d4d7f7525cb9afe6a7f1c767e5f2599"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/epcindirectionutils/#a2d4d7f7525cb9afe6a7f1c767e5f2599">Create</a>(<a href="/docs/api/classes/llvm/orc/executionsession">ExecutionSession</a> &amp;ES) &#123;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/#af27142d4d30e48ac9857889e37500483">Create</a>(ES.<a href="/docs/api/classes/llvm/orc/executionsession/#a128c42c13c6cee5b388a8748e6a0a797">getExecutorProcessControl</a>());</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="comment">  /// Return a reference to the ExecutorProcessControl object.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/#a8890a3e6bb712df11b8cfcd9508fae8b"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> &amp;<a href="/docs/api/classes/llvm/orc/epcindirectionutils/#a8890a3e6bb712df11b8cfcd9508fae8b">getExecutorProcessControl</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> EPC; &#125;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="comment">  /// Return a reference to the ABISupport object for this instance.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/#af3e8d441173c1c1316665a7de1391a85"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport">ABISupport</a> &amp;<a href="/docs/api/classes/llvm/orc/epcindirectionutils/#af3e8d441173c1c1316665a7de1391a85">getABISupport</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;ABI; &#125;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  /// Release memory for resources held by this instance. This &#42;must&#42; be called</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">  /// prior to destruction of the class.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/#ad028c15d9d57c008dc6bad42e35110e5">cleanup</a>();</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="comment">  /// Write resolver code to the executor process and return its address.</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="comment">  /// This must be called before any call to createTrampolinePool or</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">  /// createLazyCallThroughManager.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/expected">Expected&lt;ExecutorAddr&gt;</a> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/#a317664253790f09d0e0f53c7cfbbea16">writeResolverBlock</a>(<a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> ReentryFnAddr,</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">                                            <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> ReentryCtxAddr);</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="comment">  /// Returns the address of the Resolver block. Returns zero if the</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="comment">  /// writeResolverBlock method has not previously been called.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/#affa9b5484486ff45ae096fe18ee64b61"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/#affa9b5484486ff45ae096fe18ee64b61">getResolverBlockAddress</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ResolverBlockAddr; &#125;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">  /// Create an IndirectStubsManager for the executor process.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  std::unique&#95;ptr&lt;IndirectStubsManager&gt; <a href="/docs/api/classes/llvm/orc/epcindirectionutils/#a065673061f0571c524d168d53b6da30e">createIndirectStubsManager</a>();</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">  /// Create a TrampolinePool for the executor process.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/trampolinepool">TrampolinePool</a> &amp;<a href="/docs/api/classes/llvm/orc/epcindirectionutils/#aea5d38db0f25b5d558713ee7e95b54b1">getTrampolinePool</a>();</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">  /// Create a LazyCallThroughManager.</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">  /// This function should only be called once.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/lazycallthroughmanager">LazyCallThroughManager</a> &amp;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/epcindirectionutils/#acee4c6d802b59a49a6d81e448a8674fb">createLazyCallThroughManager</a>(<a href="/docs/api/classes/llvm/orc/executionsession">ExecutionSession</a> &amp;ES,</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> ErrorHandlerAddr);</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">  /// Create a LazyCallThroughManager for the executor process.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/#a5ec24aada6fb79fc32ae32e753c828a3"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/lazycallthroughmanager">LazyCallThroughManager</a> &amp;<a href="/docs/api/classes/llvm/orc/epcindirectionutils/#a5ec24aada6fb79fc32ae32e753c828a3">getLazyCallThroughManager</a>() &#123;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(LCTM &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;createLazyCallThroughManager must be called first&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;LCTM;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">FinalizedAlloc = <a href="/docs/api/classes/llvm/jitlink/jitlinkmemorymanager/finalizedalloc">jitlink::JITLinkMemoryManager::FinalizedAlloc</a>;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">IndirectStubInfo &#123;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">    IndirectStubInfo() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">    IndirectStubInfo(<a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> StubAddress, <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> PointerAddress)</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">        : StubAddress(StubAddress), PointerAddress(PointerAddress) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">    ExecutorAddr StubAddress;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">    ExecutorAddr PointerAddress;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">IndirectStubInfoVector = std::vector&lt;IndirectStubInfo&gt;;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="comment">  /// Create an EPCIndirectionUtils instance.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">  EPCIndirectionUtils(ExecutorProcessControl &amp;EPC,</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">                      std::unique&#95;ptr&lt;ABISupport&gt; ABI);</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">  Expected&lt;IndirectStubInfoVector&gt; getIndirectStubs(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumStubs);</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">  std::mutex EPCUIMutex;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">  ExecutorProcessControl &amp;EPC;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  std::unique&#95;ptr&lt;ABISupport&gt; ABI;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">  ExecutorAddr ResolverBlockAddr;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  FinalizedAlloc ResolverBlock;</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">  std::unique&#95;ptr&lt;TrampolinePool&gt; TP;</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  std::unique&#95;ptr&lt;LazyCallThroughManager&gt; LCTM;</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">  std::vector&lt;IndirectStubInfo&gt; AvailableIndirectStubs;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">  std::vector&lt;FinalizedAlloc&gt; IndirectStubAllocs;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="comment">/// This will call writeResolver on the given EPCIndirectionUtils instance</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="comment">/// to set up re-entry via a function that will directly return the trampoline</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="comment">/// landing address.</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="comment">/// The EPCIndirectionUtils&#39; LazyCallThroughManager must have been previously</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="comment">/// created via EPCIndirectionUtils::createLazyCallThroughManager.</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="comment">/// The EPCIndirectionUtils&#39; writeResolver method must not have been previously</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="comment">/// called.</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="comment">/// This function is experimental and likely subject to revision.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> <a href="/docs/api/namespaces/llvm/orc/#ad5f773f31c1e2529e6dca4686a3b968e">setUpInProcessLCTMReentryViaEPCIU</a>(<a href="/docs/api/classes/llvm/orc/epcindirectionutils">EPCIndirectionUtils</a> &amp;EPCIU);</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175" lineLink="/docs/api/namespaces/llvm/orc/detail"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/detail">detail</a> &#123;</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> ORCABI&gt;</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178" lineLink="/docs/api/classes/llvm/orc/detail/abisupportimpl"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/detail/abisupportimpl/#ae7e17656fb0eca8765dde96cabd9c176">ABISupportImpl</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport">EPCIndirectionUtils::ABISupport</a> &#123;</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180" lineLink="/docs/api/classes/llvm/orc/detail/abisupportimpl/#ae7e17656fb0eca8765dde96cabd9c176"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/detail/abisupportimpl/#ae7e17656fb0eca8765dde96cabd9c176">ABISupportImpl</a>()</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">      : <a href="/docs/api/classes/llvm/orc/epcindirectionutils/abisupport/#a2d118a2e895b534eade2213697a80197">ABISupport</a>(ORCABI::PointerSize, ORCABI::TrampolineSize,</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">                   ORCABI::StubSize, ORCABI::StubToPointerMaxDisplacement,</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">                   ORCABI::ResolverCodeSize) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185" lineLink="/docs/api/classes/llvm/orc/detail/abisupportimpl/#ab676d1d6e07b2182de3f69e80da56e56"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/detail/abisupportimpl/#ab676d1d6e07b2182de3f69e80da56e56">writeResolverCode</a>(</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;ResolverWorkingMem,</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">                         <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> ResolverTargetAddr,</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">                         <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> ReentryFnAddr,</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">                         <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> ReentryCtxAddr)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">    ORCABI::writeResolverCode(ResolverWorkingMem, ResolverTargetAddr,</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">                              ReentryFnAddr, ReentryCtxAddr);</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193" lineLink="/docs/api/classes/llvm/orc/detail/abisupportimpl/#a710cd2aa2fd3b3a20e3af974af9a12c7"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/detail/abisupportimpl/#a710cd2aa2fd3b3a20e3af974af9a12c7">writeTrampolines</a>(</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;TrampolineBlockWorkingMem,</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">                        <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> TrampolineBlockTargetAddr,</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">                        <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> ResolverAddr,</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">                        </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumTrampolines)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">    ORCABI::writeTrampolines(TrampolineBlockWorkingMem,</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">                             TrampolineBlockTargetAddr, ResolverAddr,</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">                             NumTrampolines);</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202" lineLink="/docs/api/classes/llvm/orc/detail/abisupportimpl/#a8d69be6ba0ba6be255d42054e9f1fd63"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/detail/abisupportimpl/#a8d69be6ba0ba6be255d42054e9f1fd63">writeIndirectStubsBlock</a>(</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;StubsBlockWorkingMem,</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> StubsBlockTargetAddress,</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> PointersBlockTargetAddress,</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">                               </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumStubs)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">    ORCABI::writeIndirectStubsBlock(StubsBlockWorkingMem,</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">                                    StubsBlockTargetAddress,</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">                                    PointersBlockTargetAddress, NumStubs);</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace detail</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> ORCABI&gt;</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">std::unique&#95;ptr&lt;EPCIndirectionUtils&gt;</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216" lineLink="/docs/api/classes/llvm/orc/epcindirectionutils/#a82f3f02e592ad6d352e788e7282449c3"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/epcindirectionutils/#a82f3f02e592ad6d352e788e7282449c3">EPCIndirectionUtils::CreateWithABI</a>(<a href="/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> &amp;EPC) &#123;</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::unique&#95;ptr&lt;EPCIndirectionUtils&gt;(</Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> EPCIndirectionUtils(</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">      EPC, std::make&#95;unique&lt;<a href="/docs/api/classes/llvm/orc/detail/abisupportimpl">detail::ABISupportImpl&lt;ORCABI&gt;</a>&gt;()));</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace orc</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;EXECUTIONENGINE&#95;ORC&#95;EPCINDIRECTIONUTILS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

@@ -1,0 +1,229 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/executionengine/lib/executionengine/orc/epcgenericdylibmanager-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `EPCGenericDylibManager.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/EPCGenericDylibManager.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/epcgenericdylibmanager-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/Core.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/core-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/Shared/OrcRTBridge.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/orcrtbridge-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/Shared/SimpleRemoteEPCUtils.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/simpleremoteepcutils-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/orc">llvm::orc</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/orc/shared">llvm::orc::shared</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/orc/shared/spsserializationtraits-0521b96d452ef45bf186843e7f4aa9f7">SPSSerializationTraits&lt;SPSRemoteSymbolLookupSetElement, SymbolLookupSet::value_type&gt;</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization-efda56c1d7ea865b9efb0454f9c681e8">TrivialSPSSequenceSerialization&lt;SPSRemoteSymbolLookupSetElement, SymbolLookupSet&gt;</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/orc/shared/spsserializationtraits-00c54102394820e4e4a0c6d885ac3542">SPSSerializationTraits&lt;SPSRemoteSymbolLookup, DylibManager::LookupRequest&gt;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===------- EPCGenericDylibManager.cpp -- Dylib management via EPC -------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/epcgenericdylibmanager-h">llvm/ExecutionEngine/Orc/EPCGenericDylibManager.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/core-h">llvm/ExecutionEngine/Orc/Core.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/orcrtbridge-h">llvm/ExecutionEngine/Orc/Shared/OrcRTBridge.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/simpleremoteepcutils-h">llvm/ExecutionEngine/Orc/Shared/SimpleRemoteEPCUtils.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/orc">orc</a> &#123;</Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/orc/shared">shared</a> &#123;</Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;&gt;</Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20" lineLink="/docs/api/classes/llvm/orc/shared/spsserializationtraits-0521b96d452ef45bf186843e7f4aa9f7"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/shared/spsserializationtraits">SPSSerializationTraits</a>&lt;<a href="/docs/api/namespaces/llvm/orc/shared/#a61d90db1bc867d756c6431a7aac12b2b">SPSRemoteSymbolLookupSetElement</a>,</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal">                             <a href="/docs/api/classes/llvm/orc/symbollookupset">SymbolLookupSet</a>::value&#95;type&gt; &#123;</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23" lineLink="/docs/api/classes/llvm/orc/shared/spsserializationtraits-0521b96d452ef45bf186843e7f4aa9f7/#a464e147c99cff6a8962b79be5ea3eb76"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/shared/spsserializationtraits-0521b96d452ef45bf186843e7f4aa9f7/#a464e147c99cff6a8962b79be5ea3eb76">size</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/symbollookupset/#a1857787c543dea6590006c57fef7af7c">SymbolLookupSet::value&#95;type</a> &amp;V) &#123;</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/shared/spsarglist">SPSArgList&lt;SPSString, bool&gt;::size</a>(</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal">        &#42;V.first, V.second == <a href="/docs/api/namespaces/llvm/orc/#a69e9511c04540297d2cff38f4645a9abaa1734373fb555ce75d3e33411f9ea827">SymbolLookupFlags::RequiredSymbol</a>);</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28" lineLink="/docs/api/classes/llvm/orc/shared/spsserializationtraits-0521b96d452ef45bf186843e7f4aa9f7/#a261aff5ae28c5237e8c4392fa6539467"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/shared/spsserializationtraits-0521b96d452ef45bf186843e7f4aa9f7/#a261aff5ae28c5237e8c4392fa6539467">serialize</a>(<a href="/docs/api/classes/llvm/orc/shared/spsoutputbuffer">SPSOutputBuffer</a> &amp;OB,</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">                        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/symbollookupset/#a1857787c543dea6590006c57fef7af7c">SymbolLookupSet::value&#95;type</a> &amp;V) &#123;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/shared/spsarglist">SPSArgList&lt;SPSString, bool&gt;::serialize</a>(</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">        OB, &#42;V.first, V.second == <a href="/docs/api/namespaces/llvm/orc/#a69e9511c04540297d2cff38f4645a9abaa1734373fb555ce75d3e33411f9ea827">SymbolLookupFlags::RequiredSymbol</a>);</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;&gt;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36" lineLink="/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization-efda56c1d7ea865b9efb0454f9c681e8"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization">TrivialSPSSequenceSerialization</a>&lt;<a href="/docs/api/namespaces/llvm/orc/shared/#a61d90db1bc867d756c6431a7aac12b2b">SPSRemoteSymbolLookupSetElement</a>,</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">                                      <a href="/docs/api/classes/llvm/orc/symbollookupset">SymbolLookupSet</a>&gt; &#123;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39" lineLink="/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization-efda56c1d7ea865b9efb0454f9c681e8/#abc44f1fc0e85cec477e9e81ce2339de5"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/shared/trivialspssequenceserialization-efda56c1d7ea865b9efb0454f9c681e8/#abc44f1fc0e85cec477e9e81ce2339de5">available</a> = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;&gt;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43" lineLink="/docs/api/classes/llvm/orc/shared/spsserializationtraits-00c54102394820e4e4a0c6d885ac3542"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/shared/spsserializationtraits">SPSSerializationTraits</a>&lt;<a href="/docs/api/namespaces/llvm/orc/shared/#aa3c3ea30847f43c1075fb13d02fc457a">SPSRemoteSymbolLookup</a>,</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">                             <a href="/docs/api/classes/llvm/orc/dylibmanager">DylibManager</a>::LookupRequest&gt; &#123;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">MemberSerialization =</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/orc/shared/spsarglist">SPSArgList&lt;SPSExecutorAddr, SPSRemoteSymbolLookupSet&gt;</a>;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49" lineLink="/docs/api/classes/llvm/orc/shared/spsserializationtraits-00c54102394820e4e4a0c6d885ac3542/#a743263a214c1e61b0b0f7204edc31ab0"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/shared/spsserializationtraits-00c54102394820e4e4a0c6d885ac3542/#a743263a214c1e61b0b0f7204edc31ab0">size</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/orc/dylibmanager/lookuprequest">DylibManager::LookupRequest</a> &amp;LR) &#123;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> MemberSerialization::size(<a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a>(LR.<a href="/docs/api/structs/llvm/orc/dylibmanager/lookuprequest/#a0ad6e98070f8308cb8699c98a9f903d0">Handle</a>), LR.<a href="/docs/api/structs/llvm/orc/dylibmanager/lookuprequest/#a4c3a9af49af3d697ca48dae256ac250c">Symbols</a>);</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53" lineLink="/docs/api/classes/llvm/orc/shared/spsserializationtraits-00c54102394820e4e4a0c6d885ac3542/#ac3ec625f50b1316875a6cff25997925b"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/shared/spsserializationtraits-00c54102394820e4e4a0c6d885ac3542/#ac3ec625f50b1316875a6cff25997925b">serialize</a>(<a href="/docs/api/classes/llvm/orc/shared/spsoutputbuffer">SPSOutputBuffer</a> &amp;OB,</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">                        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/orc/dylibmanager/lookuprequest">DylibManager::LookupRequest</a> &amp;LR) &#123;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> MemberSerialization::serialize(OB, <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a>(LR.<a href="/docs/api/structs/llvm/orc/dylibmanager/lookuprequest/#a0ad6e98070f8308cb8699c98a9f903d0">Handle</a>),</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">                                          LR.<a href="/docs/api/structs/llvm/orc/dylibmanager/lookuprequest/#a4c3a9af49af3d697ca48dae256ac250c">Symbols</a>);</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace shared</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"><a href="/docs/api/classes/llvm/expected">Expected&lt;EPCGenericDylibManager&gt;</a></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/classes/llvm/orc/epcgenericdylibmanager/#a3f31d0ec435c55a5b3e976c20ea3bf6c"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/epcgenericdylibmanager/#a3f31d0ec435c55a5b3e976c20ea3bf6c">EPCGenericDylibManager::CreateWithDefaultBootstrapSymbols</a>(</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> &amp;EPC) &#123;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/orc/epcgenericdylibmanager/symboladdrs">SymbolAddrs</a> SAs;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = EPC.<a href="/docs/api/classes/llvm/orc/executorprocesscontrol/#aab12eb0f7563916a37da32e520dc1ecf">getBootstrapSymbols</a>(</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">          &#123;&#123;SAs.Instance, rt::SimpleExecutorDylibManagerInstanceName&#125;,</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">           &#123;SAs.Open, rt::SimpleExecutorDylibManagerOpenWrapperName&#125;,</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">           &#123;SAs.Lookup, rt::SimpleExecutorDylibManagerLookupWrapperName&#125;&#125;))</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::move(Err);</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcgenericdylibmanager">EPCGenericDylibManager</a>(EPC, std::move(SAs));</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/classes/llvm/orc/epcgenericdylibmanager/#aa8ff17813ed881db4af1f6ef52300519"><Highlight kind="normal"><a href="/docs/api/classes/llvm/expected">Expected&lt;tpctypes::DylibHandle&gt;</a> <a href="/docs/api/classes/llvm/orc/epcgenericdylibmanager/#aa8ff17813ed881db4af1f6ef52300519">EPCGenericDylibManager::open</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Path,</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">                                                             uint64&#95;t <a href="/docs/api/files/lib/lib/codegen/regallocevictionadvisor-cpp/#aef71c4b21823f236e70cc6d62375adcd">Mode</a>) &#123;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/expected">Expected&lt;tpctypes::DylibHandle&gt;</a> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>((<a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a>()));</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err =</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">          EPC.callSPSWrapper&lt;<a href="/docs/api/namespaces/llvm/orc/rt/#a59cbb375727166fc83c1ed4a1e00010b">rt::SPSSimpleExecutorDylibManagerOpenSignature</a>&gt;(</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">              SAs.Open, <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>, SAs.Instance, Path, <a href="/docs/api/files/lib/lib/codegen/regallocevictionadvisor-cpp/#aef71c4b21823f236e70cc6d62375adcd">Mode</a>))</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::move(Err);</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84" lineLink="/docs/api/classes/llvm/orc/epcgenericdylibmanager/#a56d1a298963123bd7d97461aceb6d9c2"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcgenericdylibmanager/#a56d1a298963123bd7d97461aceb6d9c2">EPCGenericDylibManager::lookupAsync</a>(<a href="/docs/api/namespaces/llvm/orc/tpctypes/#a791ec0843cc10da4c64ae6d79f8381d8">tpctypes::DylibHandle</a> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>,</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">                                         </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/symbollookupset">SymbolLookupSet</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86floatingpoint-cpp/#ac28513e2e067144d291d2d8f0301b61a">Lookup</a>,</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">                                         <a href="/docs/api/classes/llvm/orc/epcgenericdylibmanager/#ae63bfef8805adb7f9d0f399e7ec79828">SymbolLookupCompleteFn</a> Complete) &#123;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  EPC.callSPSWrapperAsync&lt;<a href="/docs/api/namespaces/llvm/orc/rt/#a074336153a117ca2ccd97221e728a5c3">rt::SPSSimpleExecutorDylibManagerLookupSignature</a>&gt;(</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">      SAs.Lookup,</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">      &#91;Complete = std::move(Complete)&#93;(</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/error">Error</a> SerializationErr,</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/expected">Expected&lt;std::vector&lt;ExecutorSymbolDef&gt;</a>&gt; <a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>) </Highlight><Highlight kind="keyword">mutable</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SerializationErr) &#123;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">          <a href="/docs/api/namespaces/llvm/#aa1e1474f15df639f0d874b21f15666f7">cantFail</a>(<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>.takeError());</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">          Complete(std::move(SerializationErr));</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">        Complete(std::move(<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>));</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">      &#125;,</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">      SAs.Instance, <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86floatingpoint-cpp/#ac28513e2e067144d291d2d8f0301b61a">Lookup</a>);</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102" lineLink="/docs/api/classes/llvm/orc/epcgenericdylibmanager/#a65c75adf08e8934cebd374ceee8a6aad"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/epcgenericdylibmanager/#a56d1a298963123bd7d97461aceb6d9c2">EPCGenericDylibManager::lookupAsync</a>(<a href="/docs/api/namespaces/llvm/orc/tpctypes/#a791ec0843cc10da4c64ae6d79f8381d8">tpctypes::DylibHandle</a> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>,</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">                                         </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/orc/#a6ed8943340ff5fdbb423c5a9f55daf4c">RemoteSymbolLookupSet</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86floatingpoint-cpp/#ac28513e2e067144d291d2d8f0301b61a">Lookup</a>,</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">                                         <a href="/docs/api/classes/llvm/orc/epcgenericdylibmanager/#ae63bfef8805adb7f9d0f399e7ec79828">SymbolLookupCompleteFn</a> Complete) &#123;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  EPC.callSPSWrapperAsync&lt;<a href="/docs/api/namespaces/llvm/orc/rt/#a074336153a117ca2ccd97221e728a5c3">rt::SPSSimpleExecutorDylibManagerLookupSignature</a>&gt;(</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">      SAs.Lookup,</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">      &#91;Complete = std::move(Complete)&#93;(</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/error">Error</a> SerializationErr,</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/expected">Expected&lt;std::vector&lt;ExecutorSymbolDef&gt;</a>&gt; <a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>) </Highlight><Highlight kind="keyword">mutable</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SerializationErr) &#123;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">          <a href="/docs/api/namespaces/llvm/#aa1e1474f15df639f0d874b21f15666f7">cantFail</a>(<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>.takeError());</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">          Complete(std::move(SerializationErr));</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">        Complete(std::move(<a href="/docs/api/namespaces/llvm/orc/#a1448b52253eb43f8f07b7f5d94336a47a8eea62084ca7e541d918e823422bd82e">Result</a>));</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">      &#125;,</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">      SAs.Instance, <a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>, <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86floatingpoint-cpp/#ac28513e2e067144d291d2d8f0301b61a">Lookup</a>);</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace orc</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

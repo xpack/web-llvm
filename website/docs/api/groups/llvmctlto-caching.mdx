@@ -1,0 +1,207 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/llvmctlto-caching
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The ThinLTO Cache Control Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+// endgoup LLVMCTLTO <a href="#details">More...</a>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ga6ec37b4d07f9ca12a6dd7c425ea32f97">thinlto&#95;codegen&#95;set&#95;cache&#95;dir</a> (thinlto&#95;code&#95;gen&#95;t cg, const char &#42;cache&#95;dir)</>}>
+Sets the path to a directory to use as a cache storage for incremental build. <a href="#ga6ec37b4d07f9ca12a6dd7c425ea32f97">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ga9d6b04c106df48580e3b59fdfb38ca03">thinlto&#95;codegen&#95;set&#95;cache&#95;entry&#95;expiration</a> (thinlto&#95;code&#95;gen&#95;t cg, unsigned expiration)</>}>
+Sets the expiration (in seconds) for an entry in the cache. <a href="#ga9d6b04c106df48580e3b59fdfb38ca03">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ga8cb942810ce430321ec21e8621536b2e">thinlto&#95;codegen&#95;set&#95;cache&#95;pruning&#95;interval</a> (thinlto&#95;code&#95;gen&#95;t cg, int interval)</>}>
+Sets the cache pruning interval (in seconds). <a href="#ga8cb942810ce430321ec21e8621536b2e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ga87a51042c5bb698ec9a3704baacbdef8">thinlto&#95;codegen&#95;set&#95;cache&#95;size&#95;bytes</a> (thinlto&#95;code&#95;gen&#95;t cg, unsigned max&#95;size&#95;bytes)</>}>
+Sets the maximum size of the cache directory (in bytes). <a href="#ga87a51042c5bb698ec9a3704baacbdef8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ga46aff02588486d19399de795b8747877">thinlto&#95;codegen&#95;set&#95;cache&#95;size&#95;files</a> (thinlto&#95;code&#95;gen&#95;t cg, unsigned max&#95;size&#95;files)</>}>
+Sets the maximum number of files in the cache directory. <a href="#ga46aff02588486d19399de795b8747877">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ga017444e811c5736d4266fe97dc3a2969">thinlto&#95;codegen&#95;set&#95;cache&#95;size&#95;megabytes</a> (thinlto&#95;code&#95;gen&#95;t cg, unsigned max&#95;size&#95;megabytes)</>}>
+Same as thinlto&#95;codegen&#95;set&#95;cache&#95;size&#95;bytes, except the maximum size is in megabytes (2^20 bytes). <a href="#ga017444e811c5736d4266fe97dc3a2969">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ga296083b17c0cb3c208659235c166dc10">thinlto&#95;codegen&#95;set&#95;final&#95;cache&#95;size&#95;relative&#95;to&#95;available&#95;space</a> (thinlto&#95;code&#95;gen&#95;t cg, unsigned percentage)</>}>
+Sets the maximum cache size that can be persistent across build, in terms of percentage of the available space on the disk. <a href="#ga296083b17c0cb3c208659235c166dc10">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+// endgoup LLVMCTLTO
+
+These entry points control the ThinLTO cache. The cache is intended to support incremental builds, and thus needs to be persistent across builds. The client enables the cache by supplying a path to an existing directory. The code generator will use this to store objects files that may be reused during a subsequent build. To avoid filling the disk space, a few knobs are provided:
+<ul>
+<li>The pruning interval limits the frequency at which the garbage collector will try to scan the cache directory to prune expired entries. Setting to a negative number disables the pruning.</li>
+<li>The pruning expiration time indicates to the garbage collector how old an entry needs to be to be removed.</li>
+<li>Finally, the garbage collector can be instructed to prune the cache until the occupied space goes below a threshold.</li>
+</ul>
+
+<SectionDefinition>
+
+## Functions
+
+### thinlto&#95;codegen&#95;set&#95;cache&#95;dir() {#ga6ec37b4d07f9ca12a6dd7c425ea32f97}
+
+<MemberDefinition
+  prototype={<>void thinlto&#95;codegen&#95;set&#95;cache&#95;dir (<a href="/docs/api/groups/llvmclto/#gaad92d29c62685dde82e298596453c415">thinlto&#95;code&#95;gen&#95;t</a> cg, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> char &#42; cache_dir)</>}>
+Sets the path to a directory to use as a cache storage for incremental build.
+
+Setting this activates caching.
+
+
+<SectionUser title="Since">
+LTO&#95;API&#95;VERSION=18
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/include/include/llvm-c/lto-h/#l00885">885</a> of file <a href="/docs/api/files/include/include/llvm-c/lto-h">lto.h</a>.
+</MemberDefinition>
+
+### thinlto&#95;codegen&#95;set&#95;cache&#95;entry&#95;expiration() {#ga9d6b04c106df48580e3b59fdfb38ca03}
+
+<MemberDefinition
+  prototype={<>void thinlto&#95;codegen&#95;set&#95;cache&#95;entry&#95;expiration (<a href="/docs/api/groups/llvmclto/#gaad92d29c62685dde82e298596453c415">thinlto&#95;code&#95;gen&#95;t</a> cg, unsigned expiration)</>}>
+Sets the expiration (in seconds) for an entry in the cache.
+
+An unspecified default value will be applied. A value of 0 will be ignored.
+
+
+<SectionUser title="Since">
+LTO&#95;API&#95;VERSION=18
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/include/include/llvm-c/lto-h/#l00920">920</a> of file <a href="/docs/api/files/include/include/llvm-c/lto-h">lto.h</a>.
+</MemberDefinition>
+
+### thinlto&#95;codegen&#95;set&#95;cache&#95;pruning&#95;interval() {#ga8cb942810ce430321ec21e8621536b2e}
+
+<MemberDefinition
+  prototype={<>void thinlto&#95;codegen&#95;set&#95;cache&#95;pruning&#95;interval (<a href="/docs/api/groups/llvmclto/#gaad92d29c62685dde82e298596453c415">thinlto&#95;code&#95;gen&#95;t</a> cg, int interval)</>}>
+Sets the cache pruning interval (in seconds).
+
+A negative value disables the pruning. An unspecified default value will be applied, and a value of 0 will force prunning to occur.
+
+
+<SectionUser title="Since">
+LTO&#95;API&#95;VERSION=18
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/include/include/llvm-c/lto-h/#l00895">895</a> of file <a href="/docs/api/files/include/include/llvm-c/lto-h">lto.h</a>.
+</MemberDefinition>
+
+### thinlto&#95;codegen&#95;set&#95;cache&#95;size&#95;bytes() {#ga87a51042c5bb698ec9a3704baacbdef8}
+
+<MemberDefinition
+  prototype={<>void thinlto&#95;codegen&#95;set&#95;cache&#95;size&#95;bytes (<a href="/docs/api/groups/llvmclto/#gaad92d29c62685dde82e298596453c415">thinlto&#95;code&#95;gen&#95;t</a> cg, unsigned max_size_bytes)</>}>
+Sets the maximum size of the cache directory (in bytes).
+
+A value over the amount of available space on the disk will be reduced to the amount of available space. An unspecified default value will be applied. A value of 0 will be ignored.
+
+
+<SectionUser title="Since">
+LTO&#95;API&#95;VERSION=22
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/include/include/llvm-c/lto-h/#l00931">931</a> of file <a href="/docs/api/files/include/include/llvm-c/lto-h">lto.h</a>.
+</MemberDefinition>
+
+### thinlto&#95;codegen&#95;set&#95;cache&#95;size&#95;files() {#ga46aff02588486d19399de795b8747877}
+
+<MemberDefinition
+  prototype={<>void thinlto&#95;codegen&#95;set&#95;cache&#95;size&#95;files (<a href="/docs/api/groups/llvmclto/#gaad92d29c62685dde82e298596453c415">thinlto&#95;code&#95;gen&#95;t</a> cg, unsigned max_size_files)</>}>
+Sets the maximum number of files in the cache directory.
+
+An unspecified default value will be applied. A value of 0 will be ignored.
+
+
+<SectionUser title="Since">
+LTO&#95;API&#95;VERSION=22
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/include/include/llvm-c/lto-h/#l00950">950</a> of file <a href="/docs/api/files/include/include/llvm-c/lto-h">lto.h</a>.
+</MemberDefinition>
+
+### thinlto&#95;codegen&#95;set&#95;cache&#95;size&#95;megabytes() {#ga017444e811c5736d4266fe97dc3a2969}
+
+<MemberDefinition
+  prototype={<>void thinlto&#95;codegen&#95;set&#95;cache&#95;size&#95;megabytes (<a href="/docs/api/groups/llvmclto/#gaad92d29c62685dde82e298596453c415">thinlto&#95;code&#95;gen&#95;t</a> cg, unsigned max_size_megabytes)</>}>
+Same as thinlto&#95;codegen&#95;set&#95;cache&#95;size&#95;bytes, except the maximum size is in megabytes (2^20 bytes).
+
+<SectionUser title="Since">
+LTO&#95;API&#95;VERSION=23
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/include/include/llvm-c/lto-h/#l00941">941</a> of file <a href="/docs/api/files/include/include/llvm-c/lto-h">lto.h</a>.
+</MemberDefinition>
+
+### thinlto&#95;codegen&#95;set&#95;final&#95;cache&#95;size&#95;relative&#95;to&#95;available&#95;space() {#ga296083b17c0cb3c208659235c166dc10}
+
+<MemberDefinition
+  prototype={<>void thinlto&#95;codegen&#95;set&#95;final&#95;cache&#95;size&#95;relative&#95;to&#95;available&#95;space (<a href="/docs/api/groups/llvmclto/#gaad92d29c62685dde82e298596453c415">thinlto&#95;code&#95;gen&#95;t</a> cg, unsigned percentage)</>}>
+Sets the maximum cache size that can be persistent across build, in terms of percentage of the available space on the disk.
+
+Set to 100 to indicate no limit, 50 to indicate that the cache size will not be left over half the available space. A value over 100 will be reduced to 100, a value of 0 will be ignored. An unspecified default value will be applied.
+
+The formula looks like: AvailableSpace = FreeSpace + ExistingCacheSize NewCacheSize = AvailableSpace &#42; P/100
+
+
+<SectionUser title="Since">
+LTO&#95;API&#95;VERSION=18
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/include/include/llvm-c/lto-h/#l00911">911</a> of file <a href="/docs/api/files/include/include/llvm-c/lto-h">lto.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+</DoxygenPage>

@@ -1,0 +1,842 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/memorydependenceresults
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `MemoryDependenceResults` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Provides a lazy, caching interface for making common memory aliasing information queries, backed by LLVM&#39;s alias analysis passes. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::MemoryDependenceResults</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Analysis/MemoryDependenceAnalysis.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a1fb5d4e618ecf28ecd42ab6fab5a4245">NonLocalDepInfo</a> = std::vector&lt; <a href="/docs/api/classes/llvm/nonlocaldepentry">NonLocalDepEntry</a> &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a7f7a0fff3b6b76c1dec6d4e4267822ce">BBSkipFirstBlockPair</a> = <a href="/docs/api/classes/llvm/pointerintpair">PointerIntPair</a>&lt; <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, 1, bool &gt;</>}>
+This pair is used when caching information for a block. <a href="#a7f7a0fff3b6b76c1dec6d4e4267822ce">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#abb7ec7e0ef71b031bbb984f7bc7ad9b3">CachedNonLocalPointerInfo</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/pointerintpair">ValueIsLoadPair</a>, NonLocalPointerInfo &gt;</>}>
+This map stores the cached results of doing a pointer lookup at the bottom of a block. <a href="#abb7ec7e0ef71b031bbb984f7bc7ad9b3">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a4265e52e81113f073c48269b3e8867c6">ClobberOffsetsMapType</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/loadinst">LoadInst</a> &#42;, int32&#95;t &gt;</>}>
+Offsets to dependant clobber loads. <a href="#a4265e52e81113f073c48269b3e8867c6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a2be442e59733488467093467f8042e33">LocalDepMapType</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;, <a href="/docs/api/classes/llvm/memdepresult">MemDepResult</a> &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a7a30dbc00fe21c152591fa9ca20a1958">NonLocalDepMapType</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;, PerInstNLInfo &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a992eb97901d3a17517827f8605178de9">PerInstNLInfo</a> = std::pair&lt; <a href="#a1fb5d4e618ecf28ecd42ab6fab5a4245">NonLocalDepInfo</a>, bool &gt;</>}>
+This is the instruction we keep for each cached access that we have for an instruction. <a href="#a992eb97901d3a17517827f8605178de9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a0119b05b7204f92cefe44b17d368fcf7">ReverseDepMapType</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;, <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;, 4 &gt; &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a0cf9f5c1b3f477173cc7ac18fd07b45d">ReverseNonLocalDefsCacheTy</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;, <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/value">Value</a> &#42;, 4 &gt; &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a26ae71583008cba7fca63f45bf0661ac">ReverseNonLocalPtrDepTy</a> = <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;, <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/classes/llvm/pointerintpair">ValueIsLoadPair</a>, 4 &gt; &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#af8f064bcc104b6f8d4a0bb68399e5610">ValueIsLoadPair</a> = <a href="/docs/api/classes/llvm/pointerintpair">PointerIntPair</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/value">Value</a> &#42;, 1, bool &gt;</>}>
+A pair&lt;Value&#42;, bool&gt; where the bool is true if the dependence is a read only dependence, false if read/write. <a href="#af8f064bcc104b6f8d4a0bb68399e5610">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a2d532144bcebb13e2fbe5db3dee77abf">MemoryDependenceResults</a> (AAResults &amp;AA, AssumptionCache &amp;AC, const TargetLibraryInfo &amp;TLI, DominatorTree &amp;DT, unsigned DefaultBlockScanLimit)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::optional&lt; int32&#95;t &gt;</>}
+  name={<><a href="#a3b657f4fb63ca69608d191828f32ff01">getClobberOffset</a> (LoadInst &#42;DepInst) const</>}>
+Return the clobber offset to dependent instruction. <a href="#a3b657f4fb63ca69608d191828f32ff01">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#aa2685b1764b0730fb0ff4379700b9aba">getDefaultBlockScanLimit</a> () const</>}>
+Some methods limit the number of instructions they will examine. <a href="#aa2685b1764b0730fb0ff4379700b9aba">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/memdepresult">MemDepResult</a></>}
+  name={<><a href="#aa5c238ef927795521aeb232b467a6cd1">getDependency</a> (Instruction &#42;QueryInst)</>}>
+Returns the instruction on which a memory operation depends. <a href="#aa5c238ef927795521aeb232b467a6cd1">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/memdepresult">MemDepResult</a></>}
+  name={<><a href="#a81ed5939e93e21552b452f5f82a73a38">getInvariantGroupPointerDependency</a> (LoadInst &#42;LI, BasicBlock &#42;BB)</>}>
+This analysis looks for other loads and stores with invariant.group metadata and the same pointer operand. <a href="#a81ed5939e93e21552b452f5f82a73a38">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#a1fb5d4e618ecf28ecd42ab6fab5a4245">NonLocalDepInfo</a> &amp;</>}
+  name={<><a href="#aa7240503037f0c0499222a41a5f22d06">getNonLocalCallDependency</a> (CallBase &#42;QueryCall)</>}>
+Perform a full dependency query for the specified call, returning the set of blocks that the value is potentially live across. <a href="#aa7240503037f0c0499222a41a5f22d06">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ab46fb372d99dc0562d09cfdcd041d5ab">getNonLocalPointerDependency</a> (Instruction &#42;QueryInst, SmallVectorImpl&lt; NonLocalDepResult &gt; &amp;Result)</>}>
+Perform a full dependency query for an access to the QueryInst&#39;s specified memory location, returning the set of instructions that either define or clobber the value. <a href="#ab46fb372d99dc0562d09cfdcd041d5ab">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/memdepresult">MemDepResult</a></>}
+  name={<><a href="#a2f2f5f9e9837f7f9010c8a26cbd04f6f">getPointerDependencyFrom</a> (const MemoryLocation &amp;Loc, bool isLoad, BasicBlock::iterator ScanIt, BasicBlock &#42;BB, Instruction &#42;QueryInst=nullptr, unsigned &#42;Limit=nullptr)</>}>
+Returns the instruction on which a memory location depends. <a href="#a2f2f5f9e9837f7f9010c8a26cbd04f6f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/memdepresult">MemDepResult</a></>}
+  name={<><a href="#a3928622cecd7b474f1c959b50897fae4">getPointerDependencyFrom</a> (const MemoryLocation &amp;Loc, bool isLoad, BasicBlock::iterator ScanIt, BasicBlock &#42;BB, Instruction &#42;QueryInst, unsigned &#42;Limit, BatchAAResults &amp;BatchAA)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/memdepresult">MemDepResult</a></>}
+  name={<><a href="#a10168569b54ede5f3a15b05463db9495">getSimplePointerDependencyFrom</a> (const MemoryLocation &amp;MemLoc, bool isLoad, BasicBlock::iterator ScanIt, BasicBlock &#42;BB, Instruction &#42;QueryInst, unsigned &#42;Limit, BatchAAResults &amp;BatchAA)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#afdb9a6afa20a9c40940f135b6a1cf59b">invalidate</a> (Function &amp;F, const PreservedAnalyses &amp;PA, FunctionAnalysisManager::Invalidator &amp;Inv)</>}>
+Handle invalidation in the new PM. <a href="#afdb9a6afa20a9c40940f135b6a1cf59b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a2a5826c1be70ba257e98f90ed73a6b7c">invalidateCachedPointerInfo</a> (Value &#42;Ptr)</>}>
+Invalidates cached information about the specified pointer, because it may be too conservative in memdep. <a href="#a2a5826c1be70ba257e98f90ed73a6b7c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a278345b63e562031b41d6900c3e3bfb3">invalidateCachedPredecessors</a> ()</>}>
+Clears the <a href="/docs/api/classes/llvm/prediteratorcache">PredIteratorCache</a> info. <a href="#a278345b63e562031b41d6900c3e3bfb3">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ae81aabf5a99fd1f67c2619a1386731d6">releaseMemory</a> ()</>}>
+Release memory in caches. <a href="#ae81aabf5a99fd1f67c2619a1386731d6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a4082748189dc3460ea7130cd8d7790b5">removeInstruction</a> (Instruction &#42;InstToRemove)</>}>
+Removes an instruction from the dependence analysis, updating the dependence of instructions that previously depended on it. <a href="#a4082748189dc3460ea7130cd8d7790b5">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/memdepresult">MemDepResult</a></>}
+  name={<><a href="#ad9979c3a0fa0b1f27ea8e830875bd08f">getCallDependencyFrom</a> (CallBase &#42;Call, bool isReadOnlyCall, BasicBlock::iterator ScanIt, BasicBlock &#42;BB)</>}>
+Private helper for finding the local dependencies of a call site. <a href="#ad9979c3a0fa0b1f27ea8e830875bd08f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/memdepresult">MemDepResult</a></>}
+  name={<><a href="#ad837f20e512ed064b21828071eca6ed7">getNonLocalInfoForBlock</a> (Instruction &#42;QueryInst, const MemoryLocation &amp;Loc, bool isLoad, BasicBlock &#42;BB, NonLocalDepInfo &#42;Cache, unsigned NumSortedEntries, BatchAAResults &amp;BatchAA)</>}>
+Compute the memdep value for BB with Pointer/PointeeSize using either cached information in Cache or by doing a lookup (which may use dirty cache info if available). <a href="#ad837f20e512ed064b21828071eca6ed7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a6f09518d625c6cf9b18c25476c120100">getNonLocalPointerDepFromBB</a> (Instruction &#42;QueryInst, const PHITransAddr &amp;Pointer, const MemoryLocation &amp;Loc, bool isLoad, BasicBlock &#42;BB, SmallVectorImpl&lt; NonLocalDepResult &gt; &amp;Result, SmallDenseMap&lt; BasicBlock &#42;, Value &#42;, 16 &gt; &amp;Visited, bool SkipFirstBlock=false, bool IsIncomplete=false)</>}>
+Perform a dependency query based on pointer/pointeesize starting at the end of StartBB. <a href="#a6f09518d625c6cf9b18c25476c120100">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ab7eab4554aeae1406557302ccc42d95d">removeCachedNonLocalPointerDependencies</a> (ValueIsLoadPair P)</>}>
+If P exists in CachedNonLocalPointerInfo or NonLocalDefsCache, remove it. <a href="#ab7eab4554aeae1406557302ccc42d95d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a9196fb37f3d6d59db110d6c720ed57f8">verifyRemoved</a> (Instruction &#42;Inst) const</>}>
+Verify that the specified instruction does not occur in our internal data structures. <a href="#a9196fb37f3d6d59db110d6c720ed57f8">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/aaresults">AAResults</a> &amp;</>}
+  name={<><a href="#ab54c80229f77a7729c4f49c6c6e3dab9">AA</a></>}>
+Current <a href="/docs/api/namespaces/llvm/aa">AA</a> implementation, just a cache. <a href="#ab54c80229f77a7729c4f49c6c6e3dab9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &amp;</>}
+  name={<><a href="#a7ce9772a5933493fb943b4175240d06a">AC</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">ClobberOffsetsMapType</a></>}
+  name={<><a href="#aa507d703998ed3afdfe891727f1656ed">ClobberOffsets</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a49bb3be4669cf6ee873897a7bdd6772a">DefaultBlockScanLimit</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &amp;</>}
+  name={<><a href="#a820bc308a1070473ab353dbe182c4b8f">DT</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/earliestescapeanalysis">EarliestEscapeAnalysis</a></>}
+  name={<><a href="#aa99c43a2f6e4c5add448b5269b9c15f1">EEA</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">LocalDepMapType</a></>}
+  name={<><a href="#a607dc55ef161d0171005584775b0bef2">LocalDeps</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/assertingvh">AssertingVH</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/value">Value</a> &gt;, <a href="/docs/api/classes/llvm/nonlocaldepresult">NonLocalDepResult</a> &gt;</>}
+  name={<><a href="#aa7cd365ba3bb5dc42ce6edfaca44342f">NonLocalDefsCache</a></>}>
+Cache storing single nonlocal def for the instruction. <a href="#aa7cd365ba3bb5dc42ce6edfaca44342f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">NonLocalDepMapType</a></>}
+  name={<><a href="#a461c2fb0d9b1e37af4d76dc65a6d2a2d">NonLocalDepsMap</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">CachedNonLocalPointerInfo</a></>}
+  name={<><a href="#aa27d4a18b855225cdcdf19d58c732f26">NonLocalPointerDeps</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/prediteratorcache">PredIteratorCache</a></>}
+  name={<><a href="#a3edb50f717fe067ed222058869b8ceb6">PredCache</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">ReverseDepMapType</a></>}
+  name={<><a href="#a5efbbbb92817e1db3322733be6722d47">ReverseLocalDeps</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">ReverseNonLocalDefsCacheTy</a></>}
+  name={<><a href="#a4b963913e363cd73ad03b6e1cef1783c">ReverseNonLocalDefsCache</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">ReverseDepMapType</a></>}
+  name={<><a href="#a33697948eb34123a34200a84b07d15f8">ReverseNonLocalDeps</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">ReverseNonLocalPtrDepTy</a></>}
+  name={<><a href="#a47989864934b9852000cc87419f2b6a1">ReverseNonLocalPtrDeps</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetlibraryinfo">TargetLibraryInfo</a> &amp;</>}
+  name={<><a href="#a6f4a0182d9e5bb041efa14ff8d1cc1af">TLI</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Provides a lazy, caching interface for making common memory aliasing information queries, backed by LLVM&#39;s alias analysis passes.
+
+The dependency information returned is somewhat unusual, but is pragmatic. If queried about a store or call that might modify memory, the analysis will return the instruction&#91;s&#93; that may either load from that memory or store to it. If queried with a load or call that can never modify memory, the analysis will return calls and stores that might modify the pointer, but generally does not return loads unless a) they are volatile, or b) they load from <em>must-aliased</em> pointers. Returning a dependence on must-alias&#39;d pointers instead of all pointers interacts well with the internal caching mechanism.
+
+Definition at line 271 of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### NonLocalDepInfo {#a1fb5d4e618ecf28ecd42ab6fab5a4245}
+
+<MemberDefinition
+  prototype={<>using llvm::MemoryDependenceResults::NonLocalDepInfo =  std::vector&lt;NonLocalDepEntry&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00277">277</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### BBSkipFirstBlockPair {#a7f7a0fff3b6b76c1dec6d4e4267822ce}
+
+<MemberDefinition
+  prototype={<>using llvm::MemoryDependenceResults::BBSkipFirstBlockPair =  PointerIntPair&lt;BasicBlock &#42;, 1, bool&gt;</>}>
+This pair is used when caching information for a block.
+
+If the pointer is null, the cache value is not a full query that starts at the specified block. If non-null, the bool indicates whether or not the contents of the block was skipped.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00289">289</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### CachedNonLocalPointerInfo {#abb7ec7e0ef71b031bbb984f7bc7ad9b3}
+
+<MemberDefinition
+  prototype={<>using llvm::MemoryDependenceResults::CachedNonLocalPointerInfo = 
+      DenseMap&lt;ValueIsLoadPair, NonLocalPointerInfo&gt;</>}>
+This map stores the cached results of doing a pointer lookup at the bottom of a block.
+
+The key of this map is the pointer+isload bit, the value is a list of &lt;bb-&gt;result&gt; mappings.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00322">322</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### ClobberOffsetsMapType {#a4265e52e81113f073c48269b3e8867c6}
+
+<MemberDefinition
+  prototype={<>using llvm::MemoryDependenceResults::ClobberOffsetsMapType =  DenseMap&lt;LoadInst &#42;, int32&#95;t&gt;</>}>
+Offsets to dependant clobber loads.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00363">363</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### LocalDepMapType {#a2be442e59733488467093467f8042e33}
+
+<MemberDefinition
+  prototype={<>using llvm::MemoryDependenceResults::LocalDepMapType =  DenseMap&lt;Instruction &#42;, MemDepResult&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00273">273</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### NonLocalDepMapType {#a7a30dbc00fe21c152591fa9ca20a1958}
+
+<MemberDefinition
+  prototype={<>using llvm::MemoryDependenceResults::NonLocalDepMapType =  DenseMap&lt;Instruction &#42;, PerInstNLInfo&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00339">339</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### PerInstNLInfo {#a992eb97901d3a17517827f8605178de9}
+
+<MemberDefinition
+  prototype={<>using llvm::MemoryDependenceResults::PerInstNLInfo =  std::pair&lt;NonLocalDepInfo, bool&gt;</>}>
+This is the instruction we keep for each cached access that we have for an instruction.
+
+The pointer is an owning pointer and the bool indicates whether we have any dirty bits in the set.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00336">336</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### ReverseDepMapType {#a0119b05b7204f92cefe44b17d368fcf7}
+
+<MemberDefinition
+  prototype={<>using llvm::MemoryDependenceResults::ReverseDepMapType = 
+      DenseMap&lt;Instruction &#42;, SmallPtrSet&lt;Instruction &#42;, 4&gt;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00345">345</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### ReverseNonLocalDefsCacheTy {#a0cf9f5c1b3f477173cc7ac18fd07b45d}
+
+<MemberDefinition
+  prototype={<>using llvm::MemoryDependenceResults::ReverseNonLocalDefsCacheTy = 
+    DenseMap&lt;Instruction &#42;, SmallPtrSet&lt;const Value&#42;, 4&gt;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00313">313</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### ReverseNonLocalPtrDepTy {#a26ae71583008cba7fca63f45bf0661ac}
+
+<MemberDefinition
+  prototype={<>using llvm::MemoryDependenceResults::ReverseNonLocalPtrDepTy = 
+      DenseMap&lt;Instruction &#42;, SmallPtrSet&lt;ValueIsLoadPair, 4&gt;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00327">327</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### ValueIsLoadPair {#af8f064bcc104b6f8d4a0bb68399e5610}
+
+<MemberDefinition
+  prototype={<>using llvm::MemoryDependenceResults::ValueIsLoadPair =  PointerIntPair&lt;const Value &#42;, 1, bool&gt;</>}>
+A pair&lt;Value&#42;, bool&gt; where the bool is true if the dependence is a read only dependence, false if read/write.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00282">282</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### MemoryDependenceResults() {#a2d532144bcebb13e2fbe5db3dee77abf}
+
+<MemberDefinition
+  prototype={<>llvm::MemoryDependenceResults::MemoryDependenceResults (<a href="/docs/api/classes/llvm/aaresults">AAResults</a> &amp; AA, <a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &amp; AC, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetlibraryinfo">TargetLibraryInfo</a> &amp; TLI, <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &amp; DT, unsigned DefaultBlockScanLimit)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00367">367</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### getClobberOffset() {#a3b657f4fb63ca69608d191828f32ff01}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; int32&#95;t &gt; llvm::MemoryDependenceResults::getClobberOffset (<a href="/docs/api/classes/llvm/loadinst">LoadInst</a> &#42; DepInst) const</>}
+  labels = {["inline"]}>
+Return the clobber offset to dependent instruction.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00479">479</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### getDefaultBlockScanLimit() {#aa2685b1764b0730fb0ff4379700b9aba}
+
+<MemberDefinition
+  prototype="unsigned MemoryDependenceResults::getDefaultBlockScanLimit () const">
+Some methods limit the number of instructions they will examine.
+
+The return value of this method is the default limit that will be used if no limit is explicitly passed in.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00380">380</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l01766">1766</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getDependency() {#aa5c238ef927795521aeb232b467a6cd1}
+
+<MemberDefinition
+  prototype={<>MemDepResult MemoryDependenceResults::getDependency (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; QueryInst)</>}>
+Returns the instruction on which a memory operation depends.
+
+See the class comment for more details. It is illegal to call this on non-memory instructions.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00386">386</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l00647">647</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getInvariantGroupPointerDependency() {#a81ed5939e93e21552b452f5f82a73a38}
+
+<MemberDefinition
+  prototype={<>MemDepResult MemoryDependenceResults::getInvariantGroupPointerDependency (<a href="/docs/api/classes/llvm/loadinst">LoadInst</a> &#42; LI, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB)</>}>
+This analysis looks for other loads and stores with invariant.group metadata and the same pointer operand.
+
+Returns Unknown if it does not find anything, and Def if it can be assumed that 2 instructions load or store the same value and NonLocal which indicate that non-local Def was found, which can be retrieved by calling getNonLocalPointerDependency with the same queried instruction.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00473">473</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l00277">277</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getNonLocalCallDependency() {#aa7240503037f0c0499222a41a5f22d06}
+
+<MemberDefinition
+  prototype={<>const MemoryDependenceResults::NonLocalDepInfo &amp; MemoryDependenceResults::getNonLocalCallDependency (<a href="/docs/api/classes/llvm/callbase">CallBase</a> &#42; QueryCall)</>}>
+Perform a full dependency query for the specified call, returning the set of blocks that the value is potentially live across.
+
+The returned set of results will include a &quot;NonLocal&quot; result for all blocks where the value is live across.
+
+This method assumes the instruction returns a &quot;NonLocal&quot; dependency within its own block.
+
+This returns a reference to an internal data structure that may be invalidated on the next non-local query or when an instruction is removed. Clients must copy this data if they want it around longer than that.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00401">401</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l00718">718</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getNonLocalPointerDependency() {#ab46fb372d99dc0562d09cfdcd041d5ab}
+
+<MemberDefinition
+  prototype={<>void MemoryDependenceResults::getNonLocalPointerDependency (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; QueryInst, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/llvm/nonlocaldepresult">NonLocalDepResult</a> &gt; &amp; Result)</>}>
+Perform a full dependency query for an access to the QueryInst&#39;s specified memory location, returning the set of instructions that either define or clobber the value.
+
+Warning: For a volatile query instruction, the dependencies will be accurate, and thus usable for reordering, but it is never legal to remove the query instruction.
+
+This method assumes the pointer has a &quot;NonLocal&quot; dependency within QueryInst&#39;s parent basic block.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00413">413</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l00842">842</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getPointerDependencyFrom() {#a2f2f5f9e9837f7f9010c8a26cbd04f6f}
+
+<MemberDefinition
+  prototype={<>MemDepResult MemoryDependenceResults::getPointerDependencyFrom (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/memorylocation">MemoryLocation</a> &amp; Loc, bool isLoad, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> ScanIt, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; QueryInst=nullptr, unsigned &#42; Limit=nullptr)</>}>
+Returns the instruction on which a memory location depends.
+
+If isLoad is true, this routine ignores may-aliases with read-only operations. If isLoad is false, this routine ignores may-aliases with reads from read-only locations. If possible, pass the query instruction as well; this function may take advantage of the metadata annotated to the query instruction to refine the result. <code>Limit</code> can be used to set the maximum number of instructions that will be examined to find the pointer dependency. On return, it will be set to the number of instructions left to examine. If a null pointer is passed in, the limit will default to the value of -memdep-block-scan-limit.
+
+Note that this is an uncached query, and thus may be inefficient.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00448">448</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l00268">268</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getPointerDependencyFrom() {#a3928622cecd7b474f1c959b50897fae4}
+
+<MemberDefinition
+  prototype={<>MemDepResult MemoryDependenceResults::getPointerDependencyFrom (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/memorylocation">MemoryLocation</a> &amp; Loc, bool isLoad, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> ScanIt, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; QueryInst, unsigned &#42; Limit, <a href="/docs/api/classes/llvm/batchaaresults">BatchAAResults</a> &amp; BatchAA)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00454">454</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l00240">240</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getSimplePointerDependencyFrom() {#a10168569b54ede5f3a15b05463db9495}
+
+<MemberDefinition
+  prototype={<>MemDepResult MemoryDependenceResults::getSimplePointerDependencyFrom (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/memorylocation">MemoryLocation</a> &amp; MemLoc, bool isLoad, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> ScanIt, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; QueryInst, unsigned &#42; Limit, <a href="/docs/api/classes/llvm/batchaaresults">BatchAAResults</a> &amp; BatchAA)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00462">462</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l00367">367</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### invalidate() {#afdb9a6afa20a9c40940f135b6a1cf59b}
+
+<MemberDefinition
+  prototype={<>bool MemoryDependenceResults::invalidate (<a href="/docs/api/classes/llvm/function">Function</a> &amp; F, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA, FunctionAnalysisManager::Invalidator &amp; Inv)</>}>
+Handle invalidation in the new PM.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00374">374</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l01748">1748</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### invalidateCachedPointerInfo() {#a2a5826c1be70ba257e98f90ed73a6b7c}
+
+<MemberDefinition
+  prototype={<>void MemoryDependenceResults::invalidateCachedPointerInfo (<a href="/docs/api/classes/llvm/value">Value</a> &#42; Ptr)</>}>
+Invalidates cached information about the specified pointer, because it may be too conservative in memdep.
+
+This is an optional call that can be used when the client detects an equivalence between the pointer and some other value and replaces the other value with ptr. This can make Ptr available in more places that cached info does not necessarily keep.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00427">427</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l01476">1476</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### invalidateCachedPredecessors() {#a278345b63e562031b41d6900c3e3bfb3}
+
+<MemberDefinition
+  prototype="void MemoryDependenceResults::invalidateCachedPredecessors ()">
+Clears the <a href="/docs/api/classes/llvm/prediteratorcache">PredIteratorCache</a> info.
+
+This needs to be done when the CFG changes, e.g., due to splitting critical edges.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00433">433</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l01486">1486</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### releaseMemory() {#ae81aabf5a99fd1f67c2619a1386731d6}
+
+<MemberDefinition
+  prototype="void llvm::MemoryDependenceResults::releaseMemory ()">
+Release memory in caches.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00476">476</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### removeInstruction() {#a4082748189dc3460ea7130cd8d7790b5}
+
+<MemberDefinition
+  prototype={<>void MemoryDependenceResults::removeInstruction (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; InstToRemove)</>}>
+Removes an instruction from the dependence analysis, updating the dependence of instructions that previously depended on it.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00418">418</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l01490">1490</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### getCallDependencyFrom() {#ad9979c3a0fa0b1f27ea8e830875bd08f}
+
+<MemberDefinition
+  prototype={<>MemDepResult MemoryDependenceResults::getCallDependencyFrom (<a href="/docs/api/classes/llvm/callbase">CallBase</a> &#42; Call, bool isReadOnlyCall, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> ScanIt, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB)</>}>
+Private helper for finding the local dependencies of a call site.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00487">487</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l00183">183</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getNonLocalInfoForBlock() {#ad837f20e512ed064b21828071eca6ed7}
+
+<MemberDefinition
+  prototype={<>MemDepResult MemoryDependenceResults::getNonLocalInfoForBlock (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; QueryInst, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/memorylocation">MemoryLocation</a> &amp; Loc, bool isLoad, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB, <a href="#a1fb5d4e618ecf28ecd42ab6fab5a4245">NonLocalDepInfo</a> &#42; Cache, unsigned NumSortedEntries, <a href="/docs/api/classes/llvm/batchaaresults">BatchAAResults</a> &amp; BatchAA)</>}>
+Compute the memdep value for BB with Pointer/PointeeSize using either cached information in Cache or by doing a lookup (which may use dirty cache info if available).
+
+If we do a lookup, add the result to the cache.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00498">498</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l00905">905</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getNonLocalPointerDepFromBB() {#a6f09518d625c6cf9b18c25476c120100}
+
+<MemberDefinition
+  prototype={<>bool MemoryDependenceResults::getNonLocalPointerDepFromBB (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; QueryInst, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/phitransaddr">PHITransAddr</a> &amp; Pointer, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/memorylocation">MemoryLocation</a> &amp; Loc, bool isLoad, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; StartBB, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/llvm/nonlocaldepresult">NonLocalDepResult</a> &gt; &amp; Result, <a href="/docs/api/classes/llvm/smalldensemap">SmallDenseMap</a>&lt; <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, <a href="/docs/api/classes/llvm/value">Value</a> &#42;, 16 &gt; &amp; Visited, bool SkipFirstBlock=false, bool IsIncomplete=false)</>}>
+Perform a dependency query based on pointer/pointeesize starting at the end of StartBB.
+
+Add any clobber/def results to the results vector and keep track of which blocks are visited in &#39;Visited&#39;.
+
+This has special behavior for the first block queries (when SkipFirstBlock is true). In this special case, it ignores the contents of the specified block and starts returning dependence info for its predecessors.
+
+This function returns true on success, or false to indicate that it could not compute dependence information for some reason. This should be treated as a clobber dependence on the first instruction in the predecessor block.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00490">490</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l01037">1037</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### removeCachedNonLocalPointerDependencies() {#ab7eab4554aeae1406557302ccc42d95d}
+
+<MemberDefinition
+  prototype={<>void MemoryDependenceResults::removeCachedNonLocalPointerDependencies (<a href="/docs/api/classes/llvm/pointerintpair">ValueIsLoadPair</a> P)</>}>
+If P exists in CachedNonLocalPointerInfo or NonLocalDefsCache, remove it.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00504">504</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l01432">1432</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+### verifyRemoved() {#a9196fb37f3d6d59db110d6c720ed57f8}
+
+<MemberDefinition
+  prototype={<>void MemoryDependenceResults::verifyRemoved (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; D) const</>}>
+Verify that the specified instruction does not occur in our internal data structures.
+
+This function verifies by asserting in debug builds.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00506">506</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp/#l01662">1662</a> of file <a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### AA {#ab54c80229f77a7729c4f49c6c6e3dab9}
+
+<MemberDefinition
+  prototype={<>AAResults&amp; llvm::MemoryDependenceResults::AA</>}>
+Current <a href="/docs/api/namespaces/llvm/aa">AA</a> implementation, just a cache.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00353">353</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### AC {#a7ce9772a5933493fb943b4175240d06a}
+
+<MemberDefinition
+  prototype={<>AssumptionCache&amp; llvm::MemoryDependenceResults::AC</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00354">354</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### ClobberOffsets {#aa507d703998ed3afdfe891727f1656ed}
+
+<MemberDefinition
+  prototype="ClobberOffsetsMapType llvm::MemoryDependenceResults::ClobberOffsets">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00364">364</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### DefaultBlockScanLimit {#a49bb3be4669cf6ee873897a7bdd6772a}
+
+<MemberDefinition
+  prototype="unsigned llvm::MemoryDependenceResults::DefaultBlockScanLimit">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00360">360</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### DT {#a820bc308a1070473ab353dbe182c4b8f}
+
+<MemberDefinition
+  prototype={<>DominatorTree&amp; llvm::MemoryDependenceResults::DT</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00356">356</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### EEA {#aa99c43a2f6e4c5add448b5269b9c15f1}
+
+<MemberDefinition
+  prototype="EarliestEscapeAnalysis llvm::MemoryDependenceResults::EEA">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00358">358</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### LocalDeps {#a607dc55ef161d0171005584775b0bef2}
+
+<MemberDefinition
+  prototype="LocalDepMapType llvm::MemoryDependenceResults::LocalDeps">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00274">274</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### NonLocalDefsCache {#aa7cd365ba3bb5dc42ce6edfaca44342f}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;AssertingVH&lt;const Value&gt;, NonLocalDepResult&gt; llvm::MemoryDependenceResults::NonLocalDefsCache</>}>
+Cache storing single nonlocal def for the instruction.
+
+It is set when nonlocal def would be found in function returning only local dependencies.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00312">312</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### NonLocalDepsMap {#a461c2fb0d9b1e37af4d76dc65a6d2a2d}
+
+<MemberDefinition
+  prototype="NonLocalDepMapType llvm::MemoryDependenceResults::NonLocalDepsMap">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00341">341</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### NonLocalPointerDeps {#aa27d4a18b855225cdcdf19d58c732f26}
+
+<MemberDefinition
+  prototype="CachedNonLocalPointerInfo llvm::MemoryDependenceResults::NonLocalPointerDeps">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00324">324</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### PredCache {#a3edb50f717fe067ed222058869b8ceb6}
+
+<MemberDefinition
+  prototype="PredIteratorCache llvm::MemoryDependenceResults::PredCache">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00357">357</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### ReverseLocalDeps {#a5efbbbb92817e1db3322733be6722d47}
+
+<MemberDefinition
+  prototype="ReverseDepMapType llvm::MemoryDependenceResults::ReverseLocalDeps">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00347">347</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### ReverseNonLocalDefsCache {#a4b963913e363cd73ad03b6e1cef1783c}
+
+<MemberDefinition
+  prototype="ReverseNonLocalDefsCacheTy llvm::MemoryDependenceResults::ReverseNonLocalDefsCache">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00315">315</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### ReverseNonLocalDeps {#a33697948eb34123a34200a84b07d15f8}
+
+<MemberDefinition
+  prototype="ReverseDepMapType llvm::MemoryDependenceResults::ReverseNonLocalDeps">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00350">350</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### ReverseNonLocalPtrDeps {#a47989864934b9852000cc87419f2b6a1}
+
+<MemberDefinition
+  prototype="ReverseNonLocalPtrDepTy llvm::MemoryDependenceResults::ReverseNonLocalPtrDeps">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00329">329</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+### TLI {#a6f4a0182d9e5bb041efa14ff8d1cc1af}
+
+<MemberDefinition
+  prototype={<>const TargetLibraryInfo&amp; llvm::MemoryDependenceResults::TLI</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h/#l00355">355</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/analysis/memorydependenceanalysis-h">MemoryDependenceAnalysis.h</a></li>
+<li><a href="/docs/api/files/lib/lib/analysis/memorydependenceanalysis-cpp">MemoryDependenceAnalysis.cpp</a></li>
+</ul>
+
+</DoxygenPage>

@@ -1,0 +1,286 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/anonymous-namespace-amdgpusplitmodule-cpp-/recursivesearchsplitting
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `RecursiveSearchSplitting` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Partitioning algorithm. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::anonymous_namespace{AMDGPUSplitModule.cpp}::RecursiveSearchSplitting</CodeBlock>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a8eaf74ac38a942f1ca6e2307d38467cd">SubmitProposalFn</a> = <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; void(<a href="/docs/api/classes/llvm/anonymous-namespace-amdgpusplitmodule-cpp-/splitproposal">SplitProposal</a>)&gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a7730964440282e892cf5d22604f49507">RecursiveSearchSplitting</a> (const SplitGraph &amp;SG, unsigned NumParts, SubmitProposalFn SubmitProposal)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a38bc18e3b30c87e344d2b70e51815d1e">run</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::pair&lt; unsigned, <a href="/docs/api/namespaces/llvm/anonymous-amdgpusplitmodule-cpp-/#a0c86b2852d6e78ed3aaaf412ed290186">CostType</a> &gt;</>}
+  name={<><a href="#a2aeab1fffacfe90661414ba4ff5916b0">findMostSimilarPartition</a> (const WorkListEntry &amp;Entry, const SplitProposal &amp;SP)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a7dea9f559c7898a7c1838196750eb229">pickPartition</a> (unsigned Depth, unsigned Idx, SplitProposal SP)</>}>
+Recursive function that assigns the worklist item at <code>Idx</code> into a partition of <code>SP</code>. <a href="#a7dea9f559c7898a7c1838196750eb229">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ab0739b040a06dd1b36ca667304fc744a">setupWorkList</a> ()</>}>
+Collects all graph entry points&#39;s clusters and sort them so the most expensive clusters are viewed first. <a href="#ab0739b040a06dd1b36ca667304fc744a">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/anonymous-amdgpusplitmodule-cpp-/#a0c86b2852d6e78ed3aaaf412ed290186">CostType</a></>}
+  name={<><a href="#a2d853df2d3aff682ef9d8fa4e6d7ada9">LargeClusterThreshold</a> = 0</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a98d8698f3811e2b014080b312bc6addd">NumParts</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a284419741bd1701815761c018ce7aa68">NumProposalsSubmitted</a> = 0</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/anonymous-namespace-amdgpusplitmodule-cpp-/splitgraph">SplitGraph</a> &amp;</>}
+  name={<><a href="#ac72bec81fe77abda548d7c33dc65f9e3">SG</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="#a8eaf74ac38a942f1ca6e2307d38467cd">SubmitProposalFn</a></>}
+  name={<><a href="#a4e4fa35277e25ff218a47a90d5be9578">SubmitProposal</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; WorkListEntry &gt;</>}
+  name={<><a href="#a1d737d273e2bc529b2ae699d90d30dc2">WorkList</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Partitioning algorithm.
+
+This is a recursive search algorithm that can explore multiple possiblities.
+
+When a cluster of nodes can go into more than one partition, and we haven&#39;t reached maximum search depth, we recurse and explore both options and their consequences. Both branches will yield a proposal, and the driver will grade both and choose the best one.
+
+If max depth is reached, we will use some heuristics to make a choice. Most of the time we will just use the least-pressured (cheapest) partition, but if a cluster is particularly big and there is a good amount of overlap with an existing partition, we will choose that partition instead.
+
+Definition at line 915 of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### SubmitProposalFn {#a8eaf74ac38a942f1ca6e2307d38467cd}
+
+<MemberDefinition
+  prototype={<>using llvm::anonymous&#95;namespace&#123;AMDGPUSplitModule.cpp&#125;::RecursiveSearchSplitting::SubmitProposalFn =  function&#95;ref&lt;void(SplitProposal)&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp/#l00917">917</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### RecursiveSearchSplitting() {#a7730964440282e892cf5d22604f49507}
+
+<MemberDefinition
+  prototype={<>llvm::anonymous&#95;namespace&#123;AMDGPUSplitModule.cpp&#125;::RecursiveSearchSplitting::RecursiveSearchSplitting (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/anonymous-namespace-amdgpusplitmodule-cpp-/splitgraph">SplitGraph</a> &amp; SG, unsigned NumParts, <a href="#a8eaf74ac38a942f1ca6e2307d38467cd">SubmitProposalFn</a> SubmitProposal)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp/#l00919">919</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### run() {#a38bc18e3b30c87e344d2b70e51815d1e}
+
+<MemberDefinition
+  prototype={<>void llvm::anonymous&#95;namespace&#123;AMDGPUSplitModule.cpp&#125;::RecursiveSearchSplitting::run ()</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp/#l00922">922</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### findMostSimilarPartition() {#a2aeab1fffacfe90661414ba4ff5916b0}
+
+<MemberDefinition
+  prototype={<>std::pair&lt; unsigned, CostType &gt; llvm::anonymous&#95;namespace&#123;AMDGPUSplitModule.cpp&#125;::RecursiveSearchSplitting::findMostSimilarPartition (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> WorkListEntry &amp; Entry, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/anonymous-namespace-amdgpusplitmodule-cpp-/splitproposal">SplitProposal</a> &amp; SP)</>}>
+
+<SectionUser title="Returns">
+A pair: first element is the PID of the partition that has the most similarities with <code>Entry</code>, or <a href="/docs/api/namespaces/llvm/anonymous-amdgpusplitmodule-cpp-/#a286dd4db76f60ca092a2a00292b5638d">InvalidPID</a> if no partition was found with at least one element in common. The second element is the aggregated cost of all dependencies in common between <code>Entry</code> and that partition.
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp/#l00956">956</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a>.
+</MemberDefinition>
+
+### pickPartition() {#a7dea9f559c7898a7c1838196750eb229}
+
+<MemberDefinition
+  prototype={<>void llvm::anonymous&#95;namespace&#123;AMDGPUSplitModule.cpp&#125;::RecursiveSearchSplitting::pickPartition (unsigned Depth, unsigned Idx, <a href="/docs/api/classes/llvm/anonymous-namespace-amdgpusplitmodule-cpp-/splitproposal">SplitProposal</a> SP)</>}>
+Recursive function that assigns the worklist item at <code>Idx</code> into a partition of <code>SP</code>.
+
+<code>Depth</code> is the current search depth. When this value is equal to <a href="/docs/api/namespaces/llvm/anonymous-amdgpusplitmodule-cpp-/#a02273768ec41f48168b8b464f639bcd3">MaxDepth</a>, we can no longer recurse.
+
+This function only recurses if there is more than one possible assignment, otherwise it is iterative to avoid creating a call stack that is as big as WorkList.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp/#l00948">948</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a>.
+</MemberDefinition>
+
+### setupWorkList() {#ab0739b040a06dd1b36ca667304fc744a}
+
+<MemberDefinition
+  prototype={<>void llvm::anonymous&#95;namespace&#123;AMDGPUSplitModule.cpp&#125;::RecursiveSearchSplitting::setupWorkList ()</>}>
+Collects all graph entry points&#39;s clusters and sort them so the most expensive clusters are viewed first.
+
+This will merge clusters together if they share a non-copyable dependency.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp/#l00937">937</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### LargeClusterThreshold {#a2d853df2d3aff682ef9d8fa4e6d7ada9}
+
+<MemberDefinition
+  prototype={<>CostType llvm::anonymous&#95;namespace&#123;AMDGPUSplitModule.cpp&#125;::RecursiveSearchSplitting::LargeClusterThreshold = 0</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp/#l00964">964</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a>.
+</MemberDefinition>
+
+### NumParts {#a98d8698f3811e2b014080b312bc6addd}
+
+<MemberDefinition
+  prototype={<>unsigned llvm::anonymous&#95;namespace&#123;AMDGPUSplitModule.cpp&#125;::RecursiveSearchSplitting::NumParts</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp/#l00959">959</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a>.
+</MemberDefinition>
+
+### NumProposalsSubmitted {#a284419741bd1701815761c018ce7aa68}
+
+<MemberDefinition
+  prototype={<>unsigned llvm::anonymous&#95;namespace&#123;AMDGPUSplitModule.cpp&#125;::RecursiveSearchSplitting::NumProposalsSubmitted = 0</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp/#l00965">965</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a>.
+</MemberDefinition>
+
+### SG {#ac72bec81fe77abda548d7c33dc65f9e3}
+
+<MemberDefinition
+  prototype={<>const SplitGraph&amp; llvm::anonymous&#95;namespace&#123;AMDGPUSplitModule.cpp&#125;::RecursiveSearchSplitting::SG</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp/#l00958">958</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a>.
+</MemberDefinition>
+
+### SubmitProposal {#a4e4fa35277e25ff218a47a90d5be9578}
+
+<MemberDefinition
+  prototype={<>SubmitProposalFn llvm::anonymous&#95;namespace&#123;AMDGPUSplitModule.cpp&#125;::RecursiveSearchSplitting::SubmitProposal</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp/#l00960">960</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a>.
+</MemberDefinition>
+
+### WorkList {#a1d737d273e2bc529b2ae699d90d30dc2}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;WorkListEntry&gt; llvm::anonymous&#95;namespace&#123;AMDGPUSplitModule.cpp&#125;::RecursiveSearchSplitting::WorkList</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp/#l00966">966</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpusplitmodule-cpp">AMDGPUSplitModule.cpp</a></li>
+</ul>
+
+</DoxygenPage>

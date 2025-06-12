@@ -1,0 +1,183 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/concurrenthashtableinfobyptr
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ConcurrentHashTableInfoByPtr` Class Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+ConcurrentHashTable - is a resizeable concurrent hashtable. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;typename KeyTy, typename KeyDataTy, typename AllocatorTy&gt;
+class llvm::ConcurrentHashTableInfoByPtr&lt;KeyTy, KeyDataTy, AllocatorTy&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/ConcurrentHashtable.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/concurrenthashtable-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename KeyTy, typename KeyDataTy, typename AllocatorTy&gt;</>}
+  type={<>KeyDataTy &#42;</>}
+  name={<><a href="#a3a4f4feeaa7367627785fa335b336c56">create</a> (const KeyTy &amp;Key, AllocatorTy &amp;Allocator)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename KeyTy, typename KeyDataTy, typename AllocatorTy&gt;</>}
+  type={<>uint64&#95;t</>}
+  name={<><a href="#abb20cdc9d073209d4c5c7ced28165d96">getHashValue</a> (const KeyTy &amp;Key)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename KeyTy, typename KeyDataTy, typename AllocatorTy&gt;</>}
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> KeyTy &amp;</>}
+  name={<><a href="#a3a77ca8506207a5a0751194113a265f5">getKey</a> (const KeyDataTy &amp;KeyData)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename KeyTy, typename KeyDataTy, typename AllocatorTy&gt;</>}
+  type="bool"
+  name={<><a href="#a7aefc852266534710249a877d4e89a96">isEqual</a> (const KeyTy &amp;LHS, const KeyTy &amp;RHS)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+ConcurrentHashTable - is a resizeable concurrent hashtable.
+
+The number of resizings limited up to x2^31. This hashtable is useful to have efficient access to aggregate <a href="/docs/api/files/lib/lib/codegen/staticdatasplitter-cpp/#ad2fefd8832b4b1ea3dbb1f621063bbff">data(like strings,
+type descriptors...)</a> and to keep only single copy of such an aggregate. The hashtable allows only concurrent insertions:
+
+KeyDataTy&#42; = insert ( const KeyTy&amp; );
+
+Data structure:
+
+Inserted value KeyTy is mapped to 64-bit hash value -&gt; <CodeBlock>     &#91;------- 64-bit Hash value --------&#93;
+     &#91;  StartEntryIndex &#93;&#91; Bucket Index &#93;
+               |                |
+         points to the     points to
+         first probe       the bucket.
+         position inside
+         bucket entries
+</CodeBlock>
+
+After initialization, all buckets have an initial size. During insertions, buckets might be extended to contain more entries. Each bucket can be independently resized and rehashed(no need to lock the whole table). Different buckets may have different sizes. If the single bucket is full then the bucket is resized.
+
+BucketsArray keeps all buckets. Each bucket keeps an array of Entries (pointers to KeyDataTy) and another array of entries hashes:
+
+BucketsArray&#91;BucketIdx&#93;.Hashes&#91;EntryIdx&#93;: BucketsArray&#91;BucketIdx&#93;.Entries&#91;EntryIdx&#93;:
+
+&#91;Bucket 0&#93;.Hashes -&gt; &#91;uint32&#95;t&#93;&#91;uint32&#95;t&#93; &#91;Bucket 0&#93;.Entries -&gt; &#91;KeyDataTy&#42;&#93;&#91;KeyDataTy&#42;&#93;
+
+&#91;Bucket 1&#93;.Hashes -&gt; &#91;uint32&#95;t&#93;&#91;uint32&#95;t&#93;&#91;uint32&#95;t&#93;&#91;uint32&#95;t&#93; &#91;Bucket 1&#93;.Entries -&gt; &#91;KeyDataTy&#42;&#93;&#91;KeyDataTy&#42;&#93;&#91;KeyDataTy&#42;&#93;&#91;KeyDataTy&#42;&#93; ......................... &#91;Bucket N&#93;.Hashes -&gt; &#91;uint32&#95;t&#93;&#91;uint32&#95;t&#93;&#91;uint32&#95;t&#93; &#91;Bucket N&#93;.Entries -&gt; &#91;KeyDataTy&#42;&#93;&#91;KeyDataTy&#42;&#93;&#91;KeyDataTy&#42;&#93;
+
+<a href="/docs/api/classes/llvm/concurrenthashtablebyptr">ConcurrentHashTableByPtr</a> uses an external thread-safe allocator to allocate KeyDataTy items.
+
+Definition at line 76 of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/concurrenthashtable-h">ConcurrentHashtable.h</a>.
+
+<SectionDefinition>
+
+## Public Static Functions
+
+### create() {#a3a4f4feeaa7367627785fa335b336c56}
+
+<MemberDefinition
+  template={<>template &lt;typename KeyTy, typename KeyDataTy, typename AllocatorTy&gt;</>}
+  prototype={<>static KeyDataTy &#42; llvm::ConcurrentHashTableInfoByPtr&lt; KeyTy, KeyDataTy, AllocatorTy &gt;::create (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> KeyTy &amp; Key, AllocatorTy &amp; Allocator)</>}
+  labels = {["inline", "static"]}>
+
+<SectionUser title="Returns">
+newly created object of KeyDataTy type.
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/concurrenthashtable-h/#l00094">94</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/concurrenthashtable-h">ConcurrentHashtable.h</a>.
+</MemberDefinition>
+
+### getHashValue() {#abb20cdc9d073209d4c5c7ced28165d96}
+
+<MemberDefinition
+  template={<>template &lt;typename KeyTy, typename KeyDataTy, typename AllocatorTy&gt;</>}
+  prototype={<>static uint64&#95;t llvm::ConcurrentHashTableInfoByPtr&lt; KeyTy, KeyDataTy, AllocatorTy &gt;::getHashValue (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> KeyTy &amp; Key)</>}
+  labels = {["inline", "static"]}>
+
+<SectionUser title="Returns">
+Hash value for the specified <code>Key</code>.
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/concurrenthashtable-h/#l00079">79</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/concurrenthashtable-h">ConcurrentHashtable.h</a>.
+</MemberDefinition>
+
+### getKey() {#a3a77ca8506207a5a0751194113a265f5}
+
+<MemberDefinition
+  template={<>template &lt;typename KeyTy, typename KeyDataTy, typename AllocatorTy&gt;</>}
+  prototype={<>static const KeyTy &amp; llvm::ConcurrentHashTableInfoByPtr&lt; KeyTy, KeyDataTy, AllocatorTy &gt;::getKey (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> KeyDataTy &amp; KeyData)</>}
+  labels = {["inline", "static"]}>
+
+<SectionUser title="Returns">
+key for the specified <code>KeyData</code>.
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/concurrenthashtable-h/#l00089">89</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/concurrenthashtable-h">ConcurrentHashtable.h</a>.
+</MemberDefinition>
+
+### isEqual() {#a7aefc852266534710249a877d4e89a96}
+
+<MemberDefinition
+  template={<>template &lt;typename KeyTy, typename KeyDataTy, typename AllocatorTy&gt;</>}
+  prototype={<>static bool llvm::ConcurrentHashTableInfoByPtr&lt; KeyTy, KeyDataTy, AllocatorTy &gt;::isEqual (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> KeyTy &amp; LHS, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> KeyTy &amp; RHS)</>}
+  labels = {["inline", "static"]}>
+
+<SectionUser title="Returns">
+true if both <code>LHS</code> and <code>RHS</code> are equal.
+</SectionUser>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/concurrenthashtable-h/#l00084">84</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/concurrenthashtable-h">ConcurrentHashtable.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/adt/concurrenthashtable-h">ConcurrentHashtable.h</a></li>
+</ul>
+
+</DoxygenPage>

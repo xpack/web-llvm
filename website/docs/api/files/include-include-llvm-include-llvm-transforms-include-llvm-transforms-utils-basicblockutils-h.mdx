@@ -1,0 +1,726 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/basicblockutils-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `BasicBlockUtils.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/ArrayRef.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/SetVector.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/setvector-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/BasicBlock.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/basicblock-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Dominators.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/dominators-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cassert"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/criticaledgesplittingoptions">CriticalEdgeSplittingOptions</a></>}>
+Option class for critical edge splitting. <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- Transform/Utils/BasicBlockUtils.h - BasicBlock Utils -----&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This family of functions perform manipulations on basic blocks, and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// instructions contained within basic blocks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;TRANSFORMS&#95;UTILS&#95;BASICBLOCKUTILS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;TRANSFORMS&#95;UTILS&#95;BASICBLOCKUTILS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">// FIXME: Move to this file: BasicBlock::removePredecessor, BB::splitBasicBlock</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h">llvm/ADT/ArrayRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/setvector-h">llvm/ADT/SetVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/basicblock-h">llvm/IR/BasicBlock.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/dominators-h">llvm/IR/Dominators.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cassert&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/branchinst">BranchInst</a>;</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/landingpadinst">LandingPadInst</a>;</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/loop">Loop</a>;</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/phinode">PHINode</a>;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> PtrType&gt; </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a>;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/branchprobabilityinfo">BranchProbabilityInfo</a>;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a>;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/function">Function</a>;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/irbuilderbase">IRBuilderBase</a>;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a>;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/mdnode">MDNode</a>;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/memorydependenceresults">MemoryDependenceResults</a>;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/memoryssaupdater">MemorySSAUpdater</a>;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/postdominatortree">PostDominatorTree</a>;</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/returninst">ReturnInst</a>;</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/targetlibraryinfo">TargetLibraryInfo</a>;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/value">Value</a>;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="comment">/// Replace contents of every block in \\p BBs with single unreachable</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">/// instruction. If \\p Updates is specified, collect all necessary DT updates</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="comment">/// into this vector. If \\p KeepOneInputPHIs is true, one-input Phis in</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="comment">/// successors of blocks being deleted will be preserved.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a22b952b9d905fdd3aaedbc2ebf426339">detachDeadBlocks</a>(ArrayRef &lt;BasicBlock &#42;&gt; BBs,</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">                      <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;DominatorTree::UpdateType&gt;</a> &#42;Updates,</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">                      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> KeepOneInputPHIs = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">/// Delete the specified block, which must have no predecessors.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a458b4709ebedccb846a179f1e422265b">DeleteDeadBlock</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB, <a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a> &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">                     </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> KeepOneInputPHIs = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="comment">/// Delete the specified blocks from \\p BB. The set of deleted blocks must have</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">/// no predecessors that are not being deleted themselves. \\p BBs must have no</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">/// duplicating blocks. If there are loops among this set of blocks, all</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="comment">/// relevant loop info updates should be done before this function is called.</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="comment">/// If \\p KeepOneInputPHIs is true, one-input Phis in successors of blocks</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="comment">/// being deleted will be preserved.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#addf42fea14164ec994d4d517eaa56688">DeleteDeadBlocks</a>(ArrayRef &lt;BasicBlock &#42;&gt; BBs,</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">                      <a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a> &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">                      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> KeepOneInputPHIs = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="comment">/// Delete all basic blocks from \\p F that are not reachable from its entry</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="comment">/// node. If \\p KeepOneInputPHIs is true, one-input Phis in successors of</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="comment">/// blocks being deleted will be preserved.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a716fb64d05bc59a89aaa9d327c873c96">EliminateUnreachableBlocks</a>(<a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a> &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">                                </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> KeepOneInputPHIs = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="comment">/// We know that BB has one predecessor. If there are any single-entry PHI nodes</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">/// in it, fold them away. This handles the case when all entries to the PHI</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">/// nodes in a block are guaranteed equal, such as when the block has exactly</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">/// one predecessor.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ab7e8be1d1ae7e526ea156b60c51c10e5">FoldSingleEntryPHINodes</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB,</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">                             <a href="/docs/api/classes/llvm/memorydependenceresults">MemoryDependenceResults</a> &#42;MemDep = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="comment">/// Examine each PHI in the given block and delete it if it is dead. Also</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">/// recursively delete any operands that become dead as a result. This includes</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">/// tracing the def-use list from the PHI to see if it is ultimately unused or</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">/// if it reaches an unused cycle. Return true if any PHIs were deleted.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a64ecdacbd49f696216e772782a109945">DeleteDeadPHIs</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetlibraryinfo">TargetLibraryInfo</a> &#42;TLI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">                    <a href="/docs/api/classes/llvm/memoryssaupdater">MemorySSAUpdater</a> &#42;MSSAU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="comment">/// Attempts to merge a block into its predecessor, if possible. The return</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">/// value indicates success or failure.</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">/// By default do not merge blocks if BB&#39;s predecessor has multiple successors.</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">/// If PredecessorWithTwoSuccessors = true, the blocks can only be merged</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">/// if BB&#39;s Pred has a branch to BB and to AnotherBB, and BB has a single</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="comment">/// successor Sing. In this case the branch will be updated with Sing instead of</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="comment">/// BB, and BB will still be merged into its predecessor and removed.</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">/// If \\p DT is not nullptr, update it directly; in that case, DTU must be</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">/// nullptr.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aa76a2cf19b821f320ab439d5659ef4b9">MergeBlockIntoPredecessor</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB, <a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a> &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/memoryssaupdater">MemorySSAUpdater</a> &#42;MSSAU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/memorydependenceresults">MemoryDependenceResults</a> &#42;MemDep = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">                               </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> PredecessorWithTwoSuccessors = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &#42;DT = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="comment">/// Merge block(s) sucessors, if possible. Return true if at least two</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="comment">/// of the blocks were merged together.</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">/// In order to merge, each block must be terminated by an unconditional</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">/// branch. If L is provided, then the blocks merged into their predecessors</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="comment">/// must be in L. In addition, This utility calls on another utility:</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="comment">/// MergeBlockIntoPredecessor. Blocks are successfully merged when the call to</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="comment">/// MergeBlockIntoPredecessor returns true.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a74e70f818c0942a018c9c24cd5dca061">MergeBlockSuccessorsIntoGivenBlocks</a>(</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl&lt;BasicBlock &#42;&gt;</a> &amp;MergeBlocks, <a href="/docs/api/classes/llvm/loop">Loop</a> &#42;L = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a> &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">/// Try to remove redundant dbg.value instructions from given basic block.</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">/// Returns true if at least one instruction was removed. Remove redundant</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">/// pseudo ops when RemovePseudoOp is true.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a08f3f942afc0ee9115a8f9fa87e9191d">RemoveRedundantDbgInstrs</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB);</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">/// Replace all uses of an instruction (specified by BI) with a value, then</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">/// remove and delete the original instruction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4689c154d8eac4af62d37059c9898e6d">ReplaceInstWithValue</a>(<a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> &amp;BI, <a href="/docs/api/classes/llvm/value">Value</a> &#42;V);</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="comment">/// Replace the instruction specified by BI with the instruction specified by I.</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="comment">/// Copies DebugLoc from BI to I, if I doesn&#39;t already have a DebugLoc. The</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">/// original instruction is deleted and BI is updated to point to the new</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="comment">/// instruction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a016a85f7487f995fe80141e102a7a5ae">ReplaceInstWithInst</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> &amp;BI,</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">                         <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="comment">/// Replace the instruction specified by From with the instruction specified by</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="comment">/// To. Copies DebugLoc from BI to I, if I doesn&#39;t already have a DebugLoc.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a016a85f7487f995fe80141e102a7a5ae">ReplaceInstWithInst</a>(<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;From, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;To);</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">/// Check if we can prove that all paths starting from this block converge</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">/// to a block that either has a @llvm.experimental.deoptimize call</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">/// prior to its terminating return instruction or is terminated by unreachable.</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="comment">/// All blocks in the traversed sequence must have an unique successor, maybe</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">/// except for the last one.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a15055c7e3a33b44c293df24e4ba7bc5e">IsBlockFollowedByDeoptOrUnreachable</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB);</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="comment">/// Option class for critical edge splitting.</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="comment">/// This provides a builder interface for overriding the default options used</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="comment">/// during critical edge splitting.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a1b605eeb005e925cf79734b808296c9b">CriticalEdgeSplittingOptions</a> &#123;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#a36f19b8eb788ba80950c6835ca4ba457"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &#42;<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a36f19b8eb788ba80950c6835ca4ba457">DT</a>;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#ac1d1d47faf5cae8a86f8b9d1409f4b9c"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/postdominatortree">PostDominatorTree</a> &#42;<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#ac1d1d47faf5cae8a86f8b9d1409f4b9c">PDT</a>;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#ab190984f131aea41a3d3224eb29a8ad9"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#ab190984f131aea41a3d3224eb29a8ad9">LI</a>;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#afc1e09a5a5d2f91b5bc8c05496406131"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/memoryssaupdater">MemorySSAUpdater</a> &#42;<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#afc1e09a5a5d2f91b5bc8c05496406131">MSSAU</a>;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#a87beba41c5d885a2fe9afb593fc2e4a4"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a87beba41c5d885a2fe9afb593fc2e4a4">MergeIdenticalEdges</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#a7f3286b223c2d8453ef3fc834068a0de"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a7f3286b223c2d8453ef3fc834068a0de">KeepOneInputPHIs</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#a07576136ce65067b61f10ea0cb1a0a52"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a07576136ce65067b61f10ea0cb1a0a52">PreserveLCSSA</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#a4f6020a9ff97c0db6b311eb164656d68"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a4f6020a9ff97c0db6b311eb164656d68">IgnoreUnreachableDests</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="comment">  /// SplitCriticalEdge is guaranteed to preserve loop-simplify form if LI is</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="comment">  /// provided. If it cannot be preserved, no splitting will take place. If it</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="comment">  /// is not set, preserve loop-simplify form if possible.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#aa49c1cc9b14d9bb63aff235f1c0830f8"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#aa49c1cc9b14d9bb63aff235f1c0830f8">PreserveLoopSimplify</a> = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#a1b605eeb005e925cf79734b808296c9b"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a1b605eeb005e925cf79734b808296c9b">CriticalEdgeSplittingOptions</a>(<a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &#42;<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a36f19b8eb788ba80950c6835ca4ba457">DT</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#ab190984f131aea41a3d3224eb29a8ad9">LI</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/memoryssaupdater">MemorySSAUpdater</a> &#42;<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#afc1e09a5a5d2f91b5bc8c05496406131">MSSAU</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">                               <a href="/docs/api/classes/llvm/postdominatortree">PostDominatorTree</a> &#42;<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#ac1d1d47faf5cae8a86f8b9d1409f4b9c">PDT</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">      : <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a36f19b8eb788ba80950c6835ca4ba457">DT</a>(<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a36f19b8eb788ba80950c6835ca4ba457">DT</a>), <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#ac1d1d47faf5cae8a86f8b9d1409f4b9c">PDT</a>(<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#ac1d1d47faf5cae8a86f8b9d1409f4b9c">PDT</a>), <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#ab190984f131aea41a3d3224eb29a8ad9">LI</a>(<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#ab190984f131aea41a3d3224eb29a8ad9">LI</a>), <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#afc1e09a5a5d2f91b5bc8c05496406131">MSSAU</a>(<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#afc1e09a5a5d2f91b5bc8c05496406131">MSSAU</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#a2ae6c4689317427fe606a12a0ef0442d"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a1b605eeb005e925cf79734b808296c9b">CriticalEdgeSplittingOptions</a> &amp;<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a2ae6c4689317427fe606a12a0ef0442d">setMergeIdenticalEdges</a>() &#123;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a87beba41c5d885a2fe9afb593fc2e4a4">MergeIdenticalEdges</a> = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#a8504b5a6c0c25fb11a79b8b317947152"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a1b605eeb005e925cf79734b808296c9b">CriticalEdgeSplittingOptions</a> &amp;<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a8504b5a6c0c25fb11a79b8b317947152">setKeepOneInputPHIs</a>() &#123;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a7f3286b223c2d8453ef3fc834068a0de">KeepOneInputPHIs</a> = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#ae355dd9e9ab1c9b6928bbf8d962403bf"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a1b605eeb005e925cf79734b808296c9b">CriticalEdgeSplittingOptions</a> &amp;<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#ae355dd9e9ab1c9b6928bbf8d962403bf">setPreserveLCSSA</a>() &#123;</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a07576136ce65067b61f10ea0cb1a0a52">PreserveLCSSA</a> = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#aeec3f539d8bd56423f6882374ed11930"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a1b605eeb005e925cf79734b808296c9b">CriticalEdgeSplittingOptions</a> &amp;<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#aeec3f539d8bd56423f6882374ed11930">setIgnoreUnreachableDests</a>() &#123;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a4f6020a9ff97c0db6b311eb164656d68">IgnoreUnreachableDests</a> = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185" lineLink="/docs/api/structs/llvm/criticaledgesplittingoptions/#aa65e4aaf0bb75bb474b5812a6dc72962"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#a1b605eeb005e925cf79734b808296c9b">CriticalEdgeSplittingOptions</a> &amp;<a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#aa65e4aaf0bb75bb474b5812a6dc72962">unsetPreserveLoopSimplify</a>() &#123;</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/criticaledgesplittingoptions/#aa49c1cc9b14d9bb63aff235f1c0830f8">PreserveLoopSimplify</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="comment">/// When a loop exit edge is split, LCSSA form may require new PHIs in the new</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="comment">/// exit block. This function inserts the new PHIs, as needed. Preds is a list</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="comment">/// of preds inside the loop, SplitBB is the new loop exit block, and DestBB is</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="comment">/// the old loop exit, now the successor of SplitBB.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aa650642c90f81466c2cd062e00ab152b">createPHIsForSplitLoopExit</a>(ArrayRef&lt;BasicBlock &#42;&gt; Preds,</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">                                BasicBlock &#42;SplitBB, BasicBlock &#42;DestBB);</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="comment">/// If this edge is a critical edge, insert a new node to split the critical</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="comment">/// edge. This will update the analyses passed in through the option struct.</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="comment">/// This returns the new block if the edge was split, null otherwise.</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="comment">/// If MergeIdenticalEdges in the options struct is true (not the default),</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="comment">/// &#42;all&#42; edges from TI to the specified successor will be merged into the same</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="comment">/// critical edge block. This is most commonly interesting with switch</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="comment">/// instructions, which may have many edges to any one destination.  This</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="comment">/// ensures that all edges to that dest go to one block instead of each going</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="comment">/// to a different block, but isn&#39;t the standard definition of a &quot;critical</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="comment">/// edge&quot;.</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="comment">/// It is invalid to call this function on a critical edge that starts at an</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="comment">/// IndirectBrInst.  Splitting these edges will almost always create an invalid</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="comment">/// program because the address of the new block won&#39;t be the one that is jumped</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="comment">/// to.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">BasicBlock &#42;<a href="/docs/api/namespaces/llvm/#ab61955a622d233750894890e0704da5c">SplitCriticalEdge</a>(Instruction &#42;TI, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> SuccNum,</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">                              </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> CriticalEdgeSplittingOptions &amp;<a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/logicalview/lib/debuginfo/logicalview/core/lvoptions-cpp/#ab4088b7a11f3cbc38ac16a6e9c72494e">Options</a> =</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">                                  CriticalEdgeSplittingOptions(),</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">                              </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Twine &amp;BBName = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="comment">/// If it is known that an edge is critical, SplitKnownCriticalEdge can be</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="comment">/// called directly, rather than calling SplitCriticalEdge first.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">BasicBlock &#42;<a href="/docs/api/namespaces/llvm/#a4ab89e1812569bb89edf9e25c3582913">SplitKnownCriticalEdge</a>(Instruction &#42;TI, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> SuccNum,</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">                                   </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> CriticalEdgeSplittingOptions &amp;<a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/logicalview/lib/debuginfo/logicalview/core/lvoptions-cpp/#ab4088b7a11f3cbc38ac16a6e9c72494e">Options</a> =</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">                                       CriticalEdgeSplittingOptions(),</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">                                   </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Twine &amp;BBName = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="comment">/// If an edge from Src to Dst is critical, split the edge and return true,</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="comment">/// otherwise return false. This method requires that there be an edge between</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="comment">/// the two blocks. It updates the analyses passed in the options struct</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> BasicBlock &#42;</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230" lineLink="/docs/api/namespaces/llvm/#a6aad9a57bb45319be236a2c47cf23a5e"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#ab61955a622d233750894890e0704da5c">SplitCriticalEdge</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;Src, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;Dst,</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">                  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/criticaledgesplittingoptions">CriticalEdgeSplittingOptions</a> &amp;<a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/logicalview/lib/debuginfo/logicalview/core/lvoptions-cpp/#ab4088b7a11f3cbc38ac16a6e9c72494e">Options</a> =</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">                      <a href="/docs/api/structs/llvm/criticaledgesplittingoptions">CriticalEdgeSplittingOptions</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;TI = Src-&gt;getTerminator();</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i = 0;</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(i != TI-&gt;<a href="/docs/api/classes/llvm/instruction/#a3287172f2d13af086e6d66364e8c6de3">getNumSuccessors</a>() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Edge doesn&#39;t exist!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TI-&gt;<a href="/docs/api/classes/llvm/instruction/#a6e5d2e18c81baaeec7dadc81a0dea993">getSuccessor</a>(i) == Dst)</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ab61955a622d233750894890e0704da5c">SplitCriticalEdge</a>(TI, i, <a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/logicalview/lib/debuginfo/logicalview/core/lvoptions-cpp/#ab4088b7a11f3cbc38ac16a6e9c72494e">Options</a>);</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">    ++i;</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="comment">/// Loop over all of the edges in the CFG, breaking critical edges as they are</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="comment">/// found. Returns the number of broken edges.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/codegen/phielimination-cpp/#a961c52981e27f46c58457e8f93874b6d">SplitAllCriticalEdges</a>(Function &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>,</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">                               </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> CriticalEdgeSplittingOptions &amp;<a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/logicalview/lib/debuginfo/logicalview/core/lvoptions-cpp/#ab4088b7a11f3cbc38ac16a6e9c72494e">Options</a> =</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">                                   CriticalEdgeSplittingOptions());</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="comment">/// Split the edge connecting the specified blocks, and return the newly created</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="comment">/// basic block between \\p From and \\p To.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">BasicBlock &#42;<a href="/docs/api/namespaces/llvm/#adf83581f514774264d616eef5706cf6e">SplitEdge</a>(BasicBlock &#42;From, BasicBlock &#42;To,</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">                      DominatorTree &#42;DT = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, LoopInfo &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal">                      MemorySSAUpdater &#42;MSSAU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">                      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Twine &amp;BBName = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="comment">/// Sets the unwind edge of an instruction to a particular successor.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ae2c2758db51113863d0114f08c4b482a">setUnwindEdgeTo</a>(Instruction &#42;TI, BasicBlock &#42;Succ);</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="comment">/// Replaces all uses of OldPred with the NewPred block in all PHINodes in a</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="comment">/// block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ac1ced98ffeb2b6991821751661b136d6">updatePhiNodes</a>(BasicBlock &#42;DestBB, BasicBlock &#42;OldPred,</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">                    BasicBlock &#42;NewPred, PHINode &#42;Until = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="comment">/// Split the edge connect the specficed blocks in the case that \\p Succ is an</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="comment">/// Exception Handling Block</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">BasicBlock &#42;<a href="/docs/api/namespaces/llvm/#a833a6084a93d5900e8bdd493b37bbbc7">ehAwareSplitEdge</a>(BasicBlock &#42;BB, BasicBlock &#42;Succ,</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">                             LandingPadInst &#42;OriginalPad = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">                             PHINode &#42;LandingPadReplacement = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">                             </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> CriticalEdgeSplittingOptions &amp;<a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/logicalview/lib/debuginfo/logicalview/core/lvoptions-cpp/#ab4088b7a11f3cbc38ac16a6e9c72494e">Options</a> =</Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">                                 CriticalEdgeSplittingOptions(),</Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">                             </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Twine &amp;BBName = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="comment">/// Split the specified block at the specified instruction.</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="comment">/// If \\p Before is true, splitBlockBefore handles the block</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="comment">/// splitting. Otherwise, execution proceeds as described below.</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="comment">/// Everything before \\p SplitPt stays in \\p Old and everything starting with \\p</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="comment">/// SplitPt moves to a new block. The two blocks are joined by an unconditional</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="comment">/// branch. The new block with name \\p BBName is returned.</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="comment">/// FIXME: deprecated, switch to the DomTreeUpdater-based one.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">BasicBlock &#42;<a href="/docs/api/namespaces/llvm/#ac6c9ffe7979754415f4ca0d677174bc2">SplitBlock</a>(BasicBlock &#42;Old, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> SplitPt, DominatorTree &#42;DT,</Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">                       LoopInfo &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">                       MemorySSAUpdater &#42;MSSAU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">                       </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Twine &amp;BBName = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/passes/standardinstrumentations-cpp/#a6f1bbcae7288f05872dcfe811d0388baa9060587edeb01a63e3d3edc959678d1e">Before</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287" lineLink="/docs/api/namespaces/llvm/#ad295cb34421c21507bc9cdefe1ba3f16"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;<a href="/docs/api/namespaces/llvm/#ac6c9ffe7979754415f4ca0d677174bc2">SplitBlock</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;Old, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;SplitPt, <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &#42;DT,</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/memoryssaupdater">MemorySSAUpdater</a> &#42;MSSAU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">                       </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp;BBName = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/passes/standardinstrumentations-cpp/#a6f1bbcae7288f05872dcfe811d0388baa9060587edeb01a63e3d3edc959678d1e">Before</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ac6c9ffe7979754415f4ca0d677174bc2">SplitBlock</a>(Old, SplitPt-&gt;<a href="/docs/api/classes/llvm/ilist-node-impl/#af719fc783be6589465137d997701a432">getIterator</a>(), DT, LI, MSSAU, BBName, <a href="/docs/api/files/lib/lib/passes/standardinstrumentations-cpp/#a6f1bbcae7288f05872dcfe811d0388baa9060587edeb01a63e3d3edc959678d1e">Before</a>);</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="comment">/// Split the specified block at the specified instruction.</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="comment">/// If \\p Before is true, splitBlockBefore handles the block</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="comment">/// splitting. Otherwise, execution proceeds as described below.</Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="comment">/// Everything before \\p SplitPt stays in \\p Old and everything starting with \\p</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="comment">/// SplitPt moves to a new block. The two blocks are joined by an unconditional</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="comment">/// branch. The new block with name \\p BBName is returned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">BasicBlock &#42;<a href="/docs/api/namespaces/llvm/#ac6c9ffe7979754415f4ca0d677174bc2">SplitBlock</a>(BasicBlock &#42;Old, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> SplitPt,</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal">                       DomTreeUpdater &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, LoopInfo &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal">                       MemorySSAUpdater &#42;MSSAU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal">                       </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Twine &amp;BBName = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/passes/standardinstrumentations-cpp/#a6f1bbcae7288f05872dcfe811d0388baa9060587edeb01a63e3d3edc959678d1e">Before</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306" lineLink="/docs/api/namespaces/llvm/#a1b1bad7e6f993aef1349ee9ffe1f0e41"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;<a href="/docs/api/namespaces/llvm/#ac6c9ffe7979754415f4ca0d677174bc2">SplitBlock</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;Old, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;SplitPt,</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a> &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/memoryssaupdater">MemorySSAUpdater</a> &#42;MSSAU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal">                       </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp;BBName = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/passes/standardinstrumentations-cpp/#a6f1bbcae7288f05872dcfe811d0388baa9060587edeb01a63e3d3edc959678d1e">Before</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ac6c9ffe7979754415f4ca0d677174bc2">SplitBlock</a>(Old, SplitPt-&gt;<a href="/docs/api/classes/llvm/ilist-node-impl/#af719fc783be6589465137d997701a432">getIterator</a>(), DTU, LI, MSSAU, BBName, <a href="/docs/api/files/lib/lib/passes/standardinstrumentations-cpp/#a6f1bbcae7288f05872dcfe811d0388baa9060587edeb01a63e3d3edc959678d1e">Before</a>);</Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="comment">/// Split the specified block at the specified instruction \\p SplitPt.</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="comment">/// All instructions before \\p SplitPt are moved to a new block and all</Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="comment">/// instructions after \\p SplitPt stay in the old block. The new block and the</Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="comment">/// old block are joined by inserting an unconditional branch to the end of the</Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="comment">/// new block. The new block with name \\p BBName is returned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">BasicBlock &#42;<a href="/docs/api/namespaces/llvm/#a33f79ea6e1fd1b8ba93c75519b1c929c">splitBlockBefore</a>(BasicBlock &#42;Old, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> SplitPt,</Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal">                             DomTreeUpdater &#42;DTU, LoopInfo &#42;LI,</Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal">                             MemorySSAUpdater &#42;MSSAU, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Twine &amp;BBName = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321" lineLink="/docs/api/namespaces/llvm/#a3ec3ebb45e7dea6a1d64b09007f11c7a"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;<a href="/docs/api/namespaces/llvm/#a33f79ea6e1fd1b8ba93c75519b1c929c">splitBlockBefore</a>(<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;Old, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;SplitPt,</Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">                             <a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a> &#42;DTU, <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;LI,</Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal">                             <a href="/docs/api/classes/llvm/memoryssaupdater">MemorySSAUpdater</a> &#42;MSSAU, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp;BBName = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a33f79ea6e1fd1b8ba93c75519b1c929c">splitBlockBefore</a>(Old, SplitPt-&gt;<a href="/docs/api/classes/llvm/ilist-node-impl/#af719fc783be6589465137d997701a432">getIterator</a>(), DTU, LI, MSSAU, BBName);</Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="comment">/// This method introduces at least one new basic block into the function and</Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="comment">/// moves some of the predecessors of BB to be predecessors of the new block.</Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="comment">/// The new predecessors are indicated by the Preds array. The new block is</Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="comment">/// given a suffix of &#39;Suffix&#39;. Returns new basic block to which predecessors</Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="comment">/// from Preds are now pointing.</Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="comment">/// If BB is a landingpad block then additional basicblock might be introduced.</Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="comment">/// It will have Suffix+&quot;.split&#95;lp&quot;. See SplitLandingPadPredecessors for more</Highlight></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="comment">/// details on this case.</Highlight></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="comment">/// This currently updates the LLVM IR, DominatorTree, LoopInfo, and LCCSA but</Highlight></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="comment">/// no other analyses. In particular, it does not preserve LoopSimplify</Highlight></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="comment">/// (because it&#39;s complicated to handle the case where one of the edges being</Highlight></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="comment">/// split is an exit of a loop with other exits).</Highlight></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="comment">/// FIXME: deprecated, switch to the DomTreeUpdater-based one.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="normal">BasicBlock &#42;<a href="/docs/api/namespaces/llvm/#a9d391b6acc6d90c9b8a8442324b1aa6f">SplitBlockPredecessors</a>(BasicBlock &#42;BB, ArrayRef&lt;BasicBlock &#42;&gt; Preds,</Highlight></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal">                                   </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;Suffix, DominatorTree &#42;DT,</Highlight></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal">                                   LoopInfo &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal">                                   MemorySSAUpdater &#42;MSSAU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">                                   </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> PreserveLCSSA = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="comment">/// This method introduces at least one new basic block into the function and</Highlight></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="comment">/// moves some of the predecessors of BB to be predecessors of the new block.</Highlight></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="comment">/// The new predecessors are indicated by the Preds array. The new block is</Highlight></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="comment">/// given a suffix of &#39;Suffix&#39;. Returns new basic block to which predecessors</Highlight></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="comment">/// from Preds are now pointing.</Highlight></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="comment">/// If BB is a landingpad block then additional basicblock might be introduced.</Highlight></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="comment">/// It will have Suffix+&quot;.split&#95;lp&quot;. See SplitLandingPadPredecessors for more</Highlight></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="comment">/// details on this case.</Highlight></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="comment">/// This currently updates the LLVM IR, DominatorTree, LoopInfo, and LCCSA but</Highlight></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="comment">/// no other analyses. In particular, it does not preserve LoopSimplify</Highlight></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="comment">/// (because it&#39;s complicated to handle the case where one of the edges being</Highlight></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="comment">/// split is an exit of a loop with other exits).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal">BasicBlock &#42;<a href="/docs/api/namespaces/llvm/#a9d391b6acc6d90c9b8a8442324b1aa6f">SplitBlockPredecessors</a>(BasicBlock &#42;BB, ArrayRef&lt;BasicBlock &#42;&gt; Preds,</Highlight></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal">                                   </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;Suffix,</Highlight></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">                                   DomTreeUpdater &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal">                                   LoopInfo &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal">                                   MemorySSAUpdater &#42;MSSAU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="normal">                                   </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> PreserveLCSSA = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="comment">/// This method transforms the landing pad, OrigBB, by introducing two new basic</Highlight></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="comment">/// blocks into the function. One of those new basic blocks gets the</Highlight></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="comment">/// predecessors listed in Preds. The other basic block gets the remaining</Highlight></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="comment">/// predecessors of OrigBB. The landingpad instruction OrigBB is clone into both</Highlight></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="comment">/// of the new basic blocks. The new blocks are given the suffixes &#39;Suffix1&#39; and</Highlight></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="comment">/// &#39;Suffix2&#39;, and are returned in the NewBBs vector.</Highlight></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="comment">/// This currently updates the LLVM IR, DominatorTree, LoopInfo, and LCCSA but</Highlight></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="comment">/// no other analyses. In particular, it does not preserve LoopSimplify</Highlight></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="comment">/// (because it&#39;s complicated to handle the case where one of the edges being</Highlight></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="comment">/// split is an exit of a loop with other exits).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a949b0428c89b8ccf62d469bd325244ed">SplitLandingPadPredecessors</a>(</Highlight></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal">    BasicBlock &#42;OrigBB, ArrayRef&lt;BasicBlock &#42;&gt; Preds, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;Suffix,</Highlight></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;Suffix2, SmallVectorImpl&lt;BasicBlock &#42;&gt; &amp;NewBBs,</Highlight></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384"><Highlight kind="normal">    DomTreeUpdater &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, LoopInfo &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="normal">    MemorySSAUpdater &#42;MSSAU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> PreserveLCSSA = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="comment">/// This method duplicates the specified return instruction into a predecessor</Highlight></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388"><Highlight kind="comment">/// which ends in an unconditional branch. If the return instruction returns a</Highlight></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="comment">/// value defined by a PHI, propagate the right value into the return. It</Highlight></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390"><Highlight kind="comment">/// returns the new return instruction in the predecessor.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391"><Highlight kind="normal">ReturnInst &#42;<a href="/docs/api/namespaces/llvm/#a2e4b18daaf5f20f1ade3a9f66b86d843">FoldReturnIntoUncondBranch</a>(ReturnInst &#42;RI, BasicBlock &#42;BB,</Highlight></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="normal">                                       BasicBlock &#42;Pred,</Highlight></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="normal">                                       DomTreeUpdater &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="comment">/// Split the containing block at the specified instruction - everything before</Highlight></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="comment">/// SplitBefore stays in the old basic block, and the rest of the instructions</Highlight></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397"><Highlight kind="comment">/// in the BB are moved to a new block. The two blocks are connected by a</Highlight></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="comment">/// conditional branch (with value of Cmp being the condition).</Highlight></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399"><Highlight kind="comment">/// Before:</Highlight></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="comment">///   Head</Highlight></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="comment">///   SplitBefore</Highlight></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="comment">///   Tail</Highlight></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="comment">/// After:</Highlight></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="comment">///   Head</Highlight></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405"><Highlight kind="comment">///   if (Cond)</Highlight></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="comment">///     ThenBlock</Highlight></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="comment">///   SplitBefore</Highlight></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="comment">///   Tail</Highlight></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="comment">/// If \\p ThenBlock is not specified, a new block will be created for it.</Highlight></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411"><Highlight kind="comment">/// If \\p Unreachable is true, the newly created block will end with</Highlight></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="comment">/// UnreachableInst, otherwise it branches to Tail.</Highlight></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="comment">/// Returns the NewBasicBlock&#39;s terminator.</Highlight></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="comment">/// Updates DTU and LI if given.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="normal">Instruction &#42;<a href="/docs/api/namespaces/llvm/#ad957413955739c91204c96e33e0cc933">SplitBlockAndInsertIfThen</a>(Value &#42;<a href="/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> SplitBefore,</Highlight></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417"><Highlight kind="normal">                                       </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Unreachable,</Highlight></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="normal">                                       MDNode &#42;BranchWeights = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="normal">                                       DomTreeUpdater &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420"><Highlight kind="normal">                                       LoopInfo &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421"><Highlight kind="normal">                                       BasicBlock &#42;ThenBlock = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00422" /><CodeLine lineNumber="422"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00423" /><CodeLine lineNumber="423" lineLink="/docs/api/namespaces/llvm/#a30e63edf97576526208113bb1b049364"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/namespaces/llvm/#ad957413955739c91204c96e33e0cc933">SplitBlockAndInsertIfThen</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;SplitBefore,</Highlight></CodeLine>
+<Link id="l00424" /><CodeLine lineNumber="424"><Highlight kind="normal">                                       </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Unreachable,</Highlight></CodeLine>
+<Link id="l00425" /><CodeLine lineNumber="425"><Highlight kind="normal">                                       <a href="/docs/api/classes/llvm/mdnode">MDNode</a> &#42;BranchWeights = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00426" /><CodeLine lineNumber="426"><Highlight kind="normal">                                       <a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a> &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00427" /><CodeLine lineNumber="427"><Highlight kind="normal">                                       <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00428" /><CodeLine lineNumber="428"><Highlight kind="normal">                                       <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;ThenBlock = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00429" /><CodeLine lineNumber="429"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ad957413955739c91204c96e33e0cc933">SplitBlockAndInsertIfThen</a>(<a href="/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, SplitBefore-&gt;<a href="/docs/api/classes/llvm/ilist-node-impl/#af719fc783be6589465137d997701a432">getIterator</a>(),</Highlight></CodeLine>
+<Link id="l00430" /><CodeLine lineNumber="430"><Highlight kind="normal">                                   Unreachable, BranchWeights, DTU, LI,</Highlight></CodeLine>
+<Link id="l00431" /><CodeLine lineNumber="431"><Highlight kind="normal">                                   ThenBlock);</Highlight></CodeLine>
+<Link id="l00432" /><CodeLine lineNumber="432"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00433" /><CodeLine lineNumber="433"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00434" /><CodeLine lineNumber="434"><Highlight kind="comment">/// Similar to SplitBlockAndInsertIfThen, but the inserted block is on the false</Highlight></CodeLine>
+<Link id="l00435" /><CodeLine lineNumber="435"><Highlight kind="comment">/// path of the branch.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00436" /><CodeLine lineNumber="436"><Highlight kind="normal">Instruction &#42;<a href="/docs/api/namespaces/llvm/#a35593f403e6311f92924141d2fdca50c">SplitBlockAndInsertIfElse</a>(Value &#42;<a href="/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> SplitBefore,</Highlight></CodeLine>
+<Link id="l00437" /><CodeLine lineNumber="437"><Highlight kind="normal">                                       </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Unreachable,</Highlight></CodeLine>
+<Link id="l00438" /><CodeLine lineNumber="438"><Highlight kind="normal">                                       MDNode &#42;BranchWeights = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00439" /><CodeLine lineNumber="439"><Highlight kind="normal">                                       DomTreeUpdater &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00440" /><CodeLine lineNumber="440"><Highlight kind="normal">                                       LoopInfo &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00441" /><CodeLine lineNumber="441"><Highlight kind="normal">                                       BasicBlock &#42;ElseBlock = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00442" /><CodeLine lineNumber="442"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00443" /><CodeLine lineNumber="443" lineLink="/docs/api/namespaces/llvm/#adbb5b5ef063bbc4e62efdebb19df690e"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;<a href="/docs/api/namespaces/llvm/#a35593f403e6311f92924141d2fdca50c">SplitBlockAndInsertIfElse</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;SplitBefore,</Highlight></CodeLine>
+<Link id="l00444" /><CodeLine lineNumber="444"><Highlight kind="normal">                                       </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Unreachable,</Highlight></CodeLine>
+<Link id="l00445" /><CodeLine lineNumber="445"><Highlight kind="normal">                                       <a href="/docs/api/classes/llvm/mdnode">MDNode</a> &#42;BranchWeights = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00446" /><CodeLine lineNumber="446"><Highlight kind="normal">                                       <a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a> &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00447" /><CodeLine lineNumber="447"><Highlight kind="normal">                                       <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00448" /><CodeLine lineNumber="448"><Highlight kind="normal">                                       <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;ElseBlock = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00449" /><CodeLine lineNumber="449"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a35593f403e6311f92924141d2fdca50c">SplitBlockAndInsertIfElse</a>(<a href="/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, SplitBefore-&gt;<a href="/docs/api/classes/llvm/ilist-node-impl/#af719fc783be6589465137d997701a432">getIterator</a>(),</Highlight></CodeLine>
+<Link id="l00450" /><CodeLine lineNumber="450"><Highlight kind="normal">                                   Unreachable, BranchWeights, DTU, LI,</Highlight></CodeLine>
+<Link id="l00451" /><CodeLine lineNumber="451"><Highlight kind="normal">                                   ElseBlock);</Highlight></CodeLine>
+<Link id="l00452" /><CodeLine lineNumber="452"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00453" /><CodeLine lineNumber="453"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00454" /><CodeLine lineNumber="454"><Highlight kind="comment">/// SplitBlockAndInsertIfThenElse is similar to SplitBlockAndInsertIfThen,</Highlight></CodeLine>
+<Link id="l00455" /><CodeLine lineNumber="455"><Highlight kind="comment">/// but also creates the ElseBlock.</Highlight></CodeLine>
+<Link id="l00456" /><CodeLine lineNumber="456"><Highlight kind="comment">/// Before:</Highlight></CodeLine>
+<Link id="l00457" /><CodeLine lineNumber="457"><Highlight kind="comment">///   Head</Highlight></CodeLine>
+<Link id="l00458" /><CodeLine lineNumber="458"><Highlight kind="comment">///   SplitBefore</Highlight></CodeLine>
+<Link id="l00459" /><CodeLine lineNumber="459"><Highlight kind="comment">///   Tail</Highlight></CodeLine>
+<Link id="l00460" /><CodeLine lineNumber="460"><Highlight kind="comment">/// After:</Highlight></CodeLine>
+<Link id="l00461" /><CodeLine lineNumber="461"><Highlight kind="comment">///   Head</Highlight></CodeLine>
+<Link id="l00462" /><CodeLine lineNumber="462"><Highlight kind="comment">///   if (Cond)</Highlight></CodeLine>
+<Link id="l00463" /><CodeLine lineNumber="463"><Highlight kind="comment">///     ThenBlock</Highlight></CodeLine>
+<Link id="l00464" /><CodeLine lineNumber="464"><Highlight kind="comment">///   else</Highlight></CodeLine>
+<Link id="l00465" /><CodeLine lineNumber="465"><Highlight kind="comment">///     ElseBlock</Highlight></CodeLine>
+<Link id="l00466" /><CodeLine lineNumber="466"><Highlight kind="comment">///   SplitBefore</Highlight></CodeLine>
+<Link id="l00467" /><CodeLine lineNumber="467"><Highlight kind="comment">///   Tail</Highlight></CodeLine>
+<Link id="l00468" /><CodeLine lineNumber="468"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00469" /><CodeLine lineNumber="469"><Highlight kind="comment">/// Updates DT if given.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00470" /><CodeLine lineNumber="470"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a7ac00229d8c59902686f52ed061cdc80">SplitBlockAndInsertIfThenElse</a>(Value &#42;<a href="/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>,</Highlight></CodeLine>
+<Link id="l00471" /><CodeLine lineNumber="471"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> SplitBefore,</Highlight></CodeLine>
+<Link id="l00472" /><CodeLine lineNumber="472"><Highlight kind="normal">                                   Instruction &#42;&#42;ThenTerm,</Highlight></CodeLine>
+<Link id="l00473" /><CodeLine lineNumber="473"><Highlight kind="normal">                                   Instruction &#42;&#42;ElseTerm,</Highlight></CodeLine>
+<Link id="l00474" /><CodeLine lineNumber="474"><Highlight kind="normal">                                   MDNode &#42;BranchWeights = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00475" /><CodeLine lineNumber="475"><Highlight kind="normal">                                   DomTreeUpdater &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00476" /><CodeLine lineNumber="476"><Highlight kind="normal">                                   LoopInfo &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00477" /><CodeLine lineNumber="477"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00478" /><CodeLine lineNumber="478" lineLink="/docs/api/namespaces/llvm/#aabaaa075dbd0b194f8fce41baa5e5be5"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a7ac00229d8c59902686f52ed061cdc80">SplitBlockAndInsertIfThenElse</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;SplitBefore,</Highlight></CodeLine>
+<Link id="l00479" /><CodeLine lineNumber="479"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;&#42;ThenTerm,</Highlight></CodeLine>
+<Link id="l00480" /><CodeLine lineNumber="480"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;&#42;ElseTerm,</Highlight></CodeLine>
+<Link id="l00481" /><CodeLine lineNumber="481"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/mdnode">MDNode</a> &#42;BranchWeights = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00482" /><CodeLine lineNumber="482"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a> &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00483" /><CodeLine lineNumber="483"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00484" /><CodeLine lineNumber="484"><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00485" /><CodeLine lineNumber="485"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a7ac00229d8c59902686f52ed061cdc80">SplitBlockAndInsertIfThenElse</a>(<a href="/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, SplitBefore-&gt;<a href="/docs/api/classes/llvm/ilist-node-impl/#af719fc783be6589465137d997701a432">getIterator</a>(), ThenTerm,</Highlight></CodeLine>
+<Link id="l00486" /><CodeLine lineNumber="486"><Highlight kind="normal">                               ElseTerm, BranchWeights, DTU, LI);</Highlight></CodeLine>
+<Link id="l00487" /><CodeLine lineNumber="487"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00488" /><CodeLine lineNumber="488"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00489" /><CodeLine lineNumber="489"><Highlight kind="comment">/// Split the containing block at the specified instruction - everything before</Highlight></CodeLine>
+<Link id="l00490" /><CodeLine lineNumber="490"><Highlight kind="comment">/// SplitBefore stays in the old basic block, and the rest of the instructions</Highlight></CodeLine>
+<Link id="l00491" /><CodeLine lineNumber="491"><Highlight kind="comment">/// in the BB are moved to a new block. The two blocks are connected by a</Highlight></CodeLine>
+<Link id="l00492" /><CodeLine lineNumber="492"><Highlight kind="comment">/// conditional branch (with value of Cmp being the condition).</Highlight></CodeLine>
+<Link id="l00493" /><CodeLine lineNumber="493"><Highlight kind="comment">/// Before:</Highlight></CodeLine>
+<Link id="l00494" /><CodeLine lineNumber="494"><Highlight kind="comment">///   Head</Highlight></CodeLine>
+<Link id="l00495" /><CodeLine lineNumber="495"><Highlight kind="comment">///   SplitBefore</Highlight></CodeLine>
+<Link id="l00496" /><CodeLine lineNumber="496"><Highlight kind="comment">///   Tail</Highlight></CodeLine>
+<Link id="l00497" /><CodeLine lineNumber="497"><Highlight kind="comment">/// After:</Highlight></CodeLine>
+<Link id="l00498" /><CodeLine lineNumber="498"><Highlight kind="comment">///   Head</Highlight></CodeLine>
+<Link id="l00499" /><CodeLine lineNumber="499"><Highlight kind="comment">///   if (Cond)</Highlight></CodeLine>
+<Link id="l00500" /><CodeLine lineNumber="500"><Highlight kind="comment">///     TrueBlock</Highlight></CodeLine>
+<Link id="l00501" /><CodeLine lineNumber="501"><Highlight kind="comment">///   else</Highlight></CodeLine>
+<Link id="l00502" /><CodeLine lineNumber="502"><Highlight kind="comment">////    FalseBlock</Highlight></CodeLine>
+<Link id="l00503" /><CodeLine lineNumber="503"><Highlight kind="comment">///   SplitBefore</Highlight></CodeLine>
+<Link id="l00504" /><CodeLine lineNumber="504"><Highlight kind="comment">///   Tail</Highlight></CodeLine>
+<Link id="l00505" /><CodeLine lineNumber="505"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00506" /><CodeLine lineNumber="506"><Highlight kind="comment">/// If \\p ThenBlock is null, the resulting CFG won&#39;t contain the TrueBlock. If</Highlight></CodeLine>
+<Link id="l00507" /><CodeLine lineNumber="507"><Highlight kind="comment">/// \\p ThenBlock is non-null and points to non-null BasicBlock pointer, that</Highlight></CodeLine>
+<Link id="l00508" /><CodeLine lineNumber="508"><Highlight kind="comment">/// block will be inserted as the TrueBlock. Otherwise a new block will be</Highlight></CodeLine>
+<Link id="l00509" /><CodeLine lineNumber="509"><Highlight kind="comment">/// created. Likewise for the \\p ElseBlock parameter.</Highlight></CodeLine>
+<Link id="l00510" /><CodeLine lineNumber="510"><Highlight kind="comment">/// If \\p UnreachableThen or \\p UnreachableElse is true, the corresponding newly</Highlight></CodeLine>
+<Link id="l00511" /><CodeLine lineNumber="511"><Highlight kind="comment">/// created blocks will end with UnreachableInst, otherwise with branches to</Highlight></CodeLine>
+<Link id="l00512" /><CodeLine lineNumber="512"><Highlight kind="comment">/// Tail. The function will not modify existing basic blocks passed to it. The</Highlight></CodeLine>
+<Link id="l00513" /><CodeLine lineNumber="513"><Highlight kind="comment">/// caller must ensure that Tail is reachable from Head.</Highlight></CodeLine>
+<Link id="l00514" /><CodeLine lineNumber="514"><Highlight kind="comment">/// Returns the newly created blocks in \\p ThenBlock and \\p ElseBlock.</Highlight></CodeLine>
+<Link id="l00515" /><CodeLine lineNumber="515"><Highlight kind="comment">/// Updates DTU and LI if given.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00516" /><CodeLine lineNumber="516"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a7ac00229d8c59902686f52ed061cdc80">SplitBlockAndInsertIfThenElse</a>(Value &#42;<a href="/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>,</Highlight></CodeLine>
+<Link id="l00517" /><CodeLine lineNumber="517"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> SplitBefore,</Highlight></CodeLine>
+<Link id="l00518" /><CodeLine lineNumber="518"><Highlight kind="normal">                                   BasicBlock &#42;&#42;ThenBlock,</Highlight></CodeLine>
+<Link id="l00519" /><CodeLine lineNumber="519"><Highlight kind="normal">                                   BasicBlock &#42;&#42;ElseBlock,</Highlight></CodeLine>
+<Link id="l00520" /><CodeLine lineNumber="520"><Highlight kind="normal">                                   </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UnreachableThen = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00521" /><CodeLine lineNumber="521"><Highlight kind="normal">                                   </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UnreachableElse = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00522" /><CodeLine lineNumber="522"><Highlight kind="normal">                                   MDNode &#42;BranchWeights = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00523" /><CodeLine lineNumber="523"><Highlight kind="normal">                                   DomTreeUpdater &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00524" /><CodeLine lineNumber="524"><Highlight kind="normal">                                   LoopInfo &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00525" /><CodeLine lineNumber="525"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00526" /><CodeLine lineNumber="526" lineLink="/docs/api/namespaces/llvm/#aede2d32bd3bfd179688c57186b3fc69d"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a7ac00229d8c59902686f52ed061cdc80">SplitBlockAndInsertIfThenElse</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;SplitBefore,</Highlight></CodeLine>
+<Link id="l00527" /><CodeLine lineNumber="527"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;&#42;ThenBlock,</Highlight></CodeLine>
+<Link id="l00528" /><CodeLine lineNumber="528"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;&#42;ElseBlock,</Highlight></CodeLine>
+<Link id="l00529" /><CodeLine lineNumber="529"><Highlight kind="normal">                                   </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UnreachableThen = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00530" /><CodeLine lineNumber="530"><Highlight kind="normal">                                   </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UnreachableElse = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00531" /><CodeLine lineNumber="531"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/mdnode">MDNode</a> &#42;BranchWeights = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00532" /><CodeLine lineNumber="532"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a> &#42;DTU = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00533" /><CodeLine lineNumber="533"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42;LI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00534" /><CodeLine lineNumber="534"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a7ac00229d8c59902686f52ed061cdc80">SplitBlockAndInsertIfThenElse</a>(<a href="/docs/api/files/lib/lib/target/lib/target/riscv/riscvredundantcopyelimination-cpp/#a193847098793cdbab306803186676899">Cond</a>, SplitBefore-&gt;<a href="/docs/api/classes/llvm/ilist-node-impl/#af719fc783be6589465137d997701a432">getIterator</a>(), ThenBlock,</Highlight></CodeLine>
+<Link id="l00535" /><CodeLine lineNumber="535"><Highlight kind="normal">    ElseBlock, UnreachableThen, UnreachableElse, BranchWeights, DTU, LI);</Highlight></CodeLine>
+<Link id="l00536" /><CodeLine lineNumber="536"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00537" /><CodeLine lineNumber="537"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00538" /><CodeLine lineNumber="538"><Highlight kind="comment">/// Insert a for (int i = 0; i &lt; End; i++) loop structure (with the exception</Highlight></CodeLine>
+<Link id="l00539" /><CodeLine lineNumber="539"><Highlight kind="comment">/// that \\p End is assumed &gt; 0, and thus not checked on entry) at \\p</Highlight></CodeLine>
+<Link id="l00540" /><CodeLine lineNumber="540"><Highlight kind="comment">/// SplitBefore.  Returns the first insert point in the loop body, and the</Highlight></CodeLine>
+<Link id="l00541" /><CodeLine lineNumber="541"><Highlight kind="comment">/// PHINode for the induction variable (i.e. &quot;i&quot; above).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00542" /><CodeLine lineNumber="542"><Highlight kind="normal">std::pair&lt;Instruction&#42;, Value&#42;&gt;</Highlight></CodeLine>
+<Link id="l00543" /><CodeLine lineNumber="543"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a32aaa22eb69c944393cd5a1c79fa0d35">SplitBlockAndInsertSimpleForLoop</a>(Value &#42;End, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> SplitBefore);</Highlight></CodeLine>
+<Link id="l00544" /><CodeLine lineNumber="544"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00545" /><CodeLine lineNumber="545"><Highlight kind="comment">/// Utility function for performing a given action on each lane of a vector</Highlight></CodeLine>
+<Link id="l00546" /><CodeLine lineNumber="546"><Highlight kind="comment">/// with \\p EC elements.  To simplify porting legacy code, this defaults to</Highlight></CodeLine>
+<Link id="l00547" /><CodeLine lineNumber="547"><Highlight kind="comment">/// unrolling the implied loop for non-scalable element counts, but this is</Highlight></CodeLine>
+<Link id="l00548" /><CodeLine lineNumber="548"><Highlight kind="comment">/// not considered to be part of the contract of this routine, and is</Highlight></CodeLine>
+<Link id="l00549" /><CodeLine lineNumber="549"><Highlight kind="comment">/// expected to change in the future. The callback takes as arguments an</Highlight></CodeLine>
+<Link id="l00550" /><CodeLine lineNumber="550"><Highlight kind="comment">/// IRBuilder whose insert point is correctly set for instantiating the</Highlight></CodeLine>
+<Link id="l00551" /><CodeLine lineNumber="551"><Highlight kind="comment">/// given index, and a value which is (at runtime) the index to access.</Highlight></CodeLine>
+<Link id="l00552" /><CodeLine lineNumber="552"><Highlight kind="comment">/// This index &#42;may&#42; be a constant.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00553" /><CodeLine lineNumber="553"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#af71ef8ea795d6a6eb87a3499f3b0c90f">SplitBlockAndInsertForEachLane</a>(</Highlight></CodeLine>
+<Link id="l00554" /><CodeLine lineNumber="554"><Highlight kind="normal">    ElementCount EC, Type &#42;IndexTy, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> InsertBefore,</Highlight></CodeLine>
+<Link id="l00555" /><CodeLine lineNumber="555"><Highlight kind="normal">    std::function&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">(IRBuilderBase &amp;, Value &#42;)&gt; Func);</Highlight></CodeLine>
+<Link id="l00556" /><CodeLine lineNumber="556"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00557" /><CodeLine lineNumber="557"><Highlight kind="comment">/// Utility function for performing a given action on each lane of a vector</Highlight></CodeLine>
+<Link id="l00558" /><CodeLine lineNumber="558"><Highlight kind="comment">/// with \\p EVL effective length. EVL is assumed &gt; 0 To simplify porting legacy</Highlight></CodeLine>
+<Link id="l00559" /><CodeLine lineNumber="559"><Highlight kind="comment">/// code, this defaults to unrolling the implied loop for non-scalable element</Highlight></CodeLine>
+<Link id="l00560" /><CodeLine lineNumber="560"><Highlight kind="comment">/// counts, but this is not considered to be part of the contract of this</Highlight></CodeLine>
+<Link id="l00561" /><CodeLine lineNumber="561"><Highlight kind="comment">/// routine, and is expected to change in the future. The callback takes as</Highlight></CodeLine>
+<Link id="l00562" /><CodeLine lineNumber="562"><Highlight kind="comment">/// arguments an IRBuilder whose insert point is correctly set for instantiating</Highlight></CodeLine>
+<Link id="l00563" /><CodeLine lineNumber="563"><Highlight kind="comment">/// the given index, and a value which is (at runtime) the index to access. This</Highlight></CodeLine>
+<Link id="l00564" /><CodeLine lineNumber="564"><Highlight kind="comment">/// index &#42;may&#42; be a constant.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00565" /><CodeLine lineNumber="565"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#af71ef8ea795d6a6eb87a3499f3b0c90f">SplitBlockAndInsertForEachLane</a>(</Highlight></CodeLine>
+<Link id="l00566" /><CodeLine lineNumber="566"><Highlight kind="normal">    Value &#42;End, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> InsertBefore,</Highlight></CodeLine>
+<Link id="l00567" /><CodeLine lineNumber="567"><Highlight kind="normal">    std::function&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">(IRBuilderBase &amp;, Value &#42;)&gt; Func);</Highlight></CodeLine>
+<Link id="l00568" /><CodeLine lineNumber="568"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00569" /><CodeLine lineNumber="569"><Highlight kind="comment">/// Check whether BB is the merge point of a if-region.</Highlight></CodeLine>
+<Link id="l00570" /><CodeLine lineNumber="570"><Highlight kind="comment">/// If so, return the branch instruction that determines which entry into</Highlight></CodeLine>
+<Link id="l00571" /><CodeLine lineNumber="571"><Highlight kind="comment">/// BB will be taken.  Also, return by references the block that will be</Highlight></CodeLine>
+<Link id="l00572" /><CodeLine lineNumber="572"><Highlight kind="comment">/// entered from if the condition is true, and the block that will be</Highlight></CodeLine>
+<Link id="l00573" /><CodeLine lineNumber="573"><Highlight kind="comment">/// entered if the condition is false.</Highlight></CodeLine>
+<Link id="l00574" /><CodeLine lineNumber="574"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00575" /><CodeLine lineNumber="575"><Highlight kind="comment">/// This does no checking to see if the true/false blocks have large or unsavory</Highlight></CodeLine>
+<Link id="l00576" /><CodeLine lineNumber="576"><Highlight kind="comment">/// instructions in them.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00577" /><CodeLine lineNumber="577"><Highlight kind="normal">BranchInst &#42;<a href="/docs/api/namespaces/llvm/#a1a5751a2dd7306ff9a59eae6c1de8925">GetIfCondition</a>(BasicBlock &#42;BB, BasicBlock &#42;&amp;IfTrue,</Highlight></CodeLine>
+<Link id="l00578" /><CodeLine lineNumber="578"><Highlight kind="normal">                           BasicBlock &#42;&amp;IfFalse);</Highlight></CodeLine>
+<Link id="l00579" /><CodeLine lineNumber="579"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00580" /><CodeLine lineNumber="580"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Split critical edges where the source of the edge is an indirectbr</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00581" /><CodeLine lineNumber="581"><Highlight kind="normal"></Highlight><Highlight kind="comment">// instruction. This isn&#39;t always possible, but we can handle some easy cases.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00582" /><CodeLine lineNumber="582"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This is useful because MI is unable to split such critical edges,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00583" /><CodeLine lineNumber="583"><Highlight kind="normal"></Highlight><Highlight kind="comment">// which means it will not be able to sink instructions along those edges.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00584" /><CodeLine lineNumber="584"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This is especially painful for indirect branches with many successors, where</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00585" /><CodeLine lineNumber="585"><Highlight kind="normal"></Highlight><Highlight kind="comment">// we end up having to prepare all outgoing values in the origin block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00586" /><CodeLine lineNumber="586"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00587" /><CodeLine lineNumber="587"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Our normal algorithm for splitting critical edges requires us to update</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00588" /><CodeLine lineNumber="588"><Highlight kind="normal"></Highlight><Highlight kind="comment">// the outgoing edges of the edge origin block, but for an indirectbr this</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00589" /><CodeLine lineNumber="589"><Highlight kind="normal"></Highlight><Highlight kind="comment">// is hard, since it would require finding and updating the block addresses</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00590" /><CodeLine lineNumber="590"><Highlight kind="normal"></Highlight><Highlight kind="comment">// the indirect branch uses. But if a block only has a single indirectbr</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00591" /><CodeLine lineNumber="591"><Highlight kind="normal"></Highlight><Highlight kind="comment">// predecessor, with the others being regular branches, we can do it in a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00592" /><CodeLine lineNumber="592"><Highlight kind="normal"></Highlight><Highlight kind="comment">// different way.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00593" /><CodeLine lineNumber="593"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Say we have A -&gt; D, B -&gt; D, I -&gt; D where only I -&gt; D is an indirectbr.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00594" /><CodeLine lineNumber="594"><Highlight kind="normal"></Highlight><Highlight kind="comment">// We can split D into D0 and D1, where D0 contains only the PHIs from D,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00595" /><CodeLine lineNumber="595"><Highlight kind="normal"></Highlight><Highlight kind="comment">// and D1 is the D block body. We can then duplicate D0 as D0A and D0B, and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00596" /><CodeLine lineNumber="596"><Highlight kind="normal"></Highlight><Highlight kind="comment">// create the following structure:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00597" /><CodeLine lineNumber="597"><Highlight kind="normal"></Highlight><Highlight kind="comment">// A -&gt; D0A, B -&gt; D0A, I -&gt; D0B, D0A -&gt; D1, D0B -&gt; D1</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00598" /><CodeLine lineNumber="598"><Highlight kind="normal"></Highlight><Highlight kind="comment">// If BPI and BFI aren&#39;t non-null, BPI/BFI will be updated accordingly.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00599" /><CodeLine lineNumber="599"><Highlight kind="normal"></Highlight><Highlight kind="comment">// When &#96;IgnoreBlocksWithoutPHI&#96; is set to &#96;true&#96; critical edges leading to a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00600" /><CodeLine lineNumber="600"><Highlight kind="normal"></Highlight><Highlight kind="comment">// block without phi-instructions will not be split.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00601" /><CodeLine lineNumber="601"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a502009030bffff8a6992f4e4eb9380f5">SplitIndirectBrCriticalEdges</a>(Function &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IgnoreBlocksWithoutPHI,</Highlight></CodeLine>
+<Link id="l00602" /><CodeLine lineNumber="602"><Highlight kind="normal">                                  BranchProbabilityInfo &#42;BPI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00603" /><CodeLine lineNumber="603"><Highlight kind="normal">                                  BlockFrequencyInfo &#42;BFI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00604" /><CodeLine lineNumber="604"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00605" /><CodeLine lineNumber="605"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Utility function for inverting branch condition and for swapping its</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00606" /><CodeLine lineNumber="606"><Highlight kind="normal"></Highlight><Highlight kind="comment">// successors</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00607" /><CodeLine lineNumber="607"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a70cdc32fcfc8ba3feaf026f4959e2c2a">InvertBranch</a>(BranchInst &#42;PBI, IRBuilderBase &amp;Builder);</Highlight></CodeLine>
+<Link id="l00608" /><CodeLine lineNumber="608"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00609" /><CodeLine lineNumber="609"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Check whether the function only has simple terminator:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00610" /><CodeLine lineNumber="610"><Highlight kind="normal"></Highlight><Highlight kind="comment">// br/brcond/unreachable/ret</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00611" /><CodeLine lineNumber="611"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a2436f015662138f27cf2be735ad740e3">hasOnlySimpleTerminator</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Function &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00612" /><CodeLine lineNumber="612"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00613" /><CodeLine lineNumber="613"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Returns true if these basic blocks belong to a presplit coroutine and the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00614" /><CodeLine lineNumber="614"><Highlight kind="normal"></Highlight><Highlight kind="comment">// edge corresponds to the &#39;default&#39; case in the switch statement in the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00615" /><CodeLine lineNumber="615"><Highlight kind="normal"></Highlight><Highlight kind="comment">// pattern:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00616" /><CodeLine lineNumber="616"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00617" /><CodeLine lineNumber="617"><Highlight kind="normal"></Highlight><Highlight kind="comment">// %0 = call i8 @llvm.coro.suspend(token none, i1 false)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00618" /><CodeLine lineNumber="618"><Highlight kind="normal"></Highlight><Highlight kind="comment">// switch i8 %0, label %suspend &#91;i8 0, label %resume</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00619" /><CodeLine lineNumber="619"><Highlight kind="normal"></Highlight><Highlight kind="comment">//                               i8 1, label %cleanup&#93;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00620" /><CodeLine lineNumber="620"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00621" /><CodeLine lineNumber="621"><Highlight kind="normal"></Highlight><Highlight kind="comment">// i.e. the edge to the &#96;%suspend&#96; BB. This edge is special in that it will</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00622" /><CodeLine lineNumber="622"><Highlight kind="normal"></Highlight><Highlight kind="comment">// be elided by coroutine lowering (coro-split), and the &#96;%suspend&#96; BB needs</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00623" /><CodeLine lineNumber="623"><Highlight kind="normal"></Highlight><Highlight kind="comment">// to be kept as-is. It&#39;s not a real CFG edge - post-lowering, it will end</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00624" /><CodeLine lineNumber="624"><Highlight kind="normal"></Highlight><Highlight kind="comment">// up being a &#96;ret&#96;, and it must be thus lowerable to support symmetric</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00625" /><CodeLine lineNumber="625"><Highlight kind="normal"></Highlight><Highlight kind="comment">// transfer. For example:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00626" /><CodeLine lineNumber="626"><Highlight kind="normal"></Highlight><Highlight kind="comment">//  - this edge is not a loop exit edge if encountered in a loop (and should</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00627" /><CodeLine lineNumber="627"><Highlight kind="normal"></Highlight><Highlight kind="comment">//    be ignored)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00628" /><CodeLine lineNumber="628"><Highlight kind="normal"></Highlight><Highlight kind="comment">//  - must not be split for PGO instrumentation, for example.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00629" /><CodeLine lineNumber="629"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ac4603b4fac07d9342d2ea27067c81057">isPresplitCoroSuspendExitEdge</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> BasicBlock &amp;Src,</Highlight></CodeLine>
+<Link id="l00630" /><CodeLine lineNumber="630"><Highlight kind="normal">                                   </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> BasicBlock &amp;Dest);</Highlight></CodeLine>
+<Link id="l00631" /><CodeLine lineNumber="631"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00632" /><CodeLine lineNumber="632"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00633" /><CodeLine lineNumber="633"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;TRANSFORMS&#95;UTILS&#95;BASICBLOCKUTILS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

@@ -1,0 +1,476 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/analysis/developmentmodeinlineadvisor-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `DevelopmentModeInlineAdvisor.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Analysis/TensorSpec.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/tensorspec-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Config/config.h"
+  permalink=""
+  isLocal="true" />
+</IncludesList>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- DevelopmentModeInlineAdvisor.cpp - runtime-loadable model runner  --===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements a model runner using TFLite, allowing the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// loading of a model from a command line option.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/tensorspec-h">llvm/Analysis/TensorSpec.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;llvm/Config/config.h&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(LLVM&#95;HAVE&#95;TFLITE)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/bitvector-h">llvm/ADT/BitVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/callgraph-h">llvm/Analysis/CallGraph.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlinesizeestimatoranalysis-h">llvm/Analysis/InlineSizeEstimatorAnalysis.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/mlinlineadvisor-h">llvm/Analysis/MLInlineAdvisor.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/modelundertrainingrunner-h">llvm/Analysis/ModelUnderTrainingRunner.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/noinferencemodelrunner-h">llvm/Analysis/NoInferenceModelRunner.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/include/llvm/analysis/utils/tfutils-h">llvm/Analysis/Utils/TFUtils.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/include/llvm/analysis/utils/traininglogger-h">llvm/Analysis/Utils/TrainingLogger.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/llvmcontext-h">llvm/IR/LLVMContext.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/module-h">llvm/IR/Module.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/commandline-h">llvm/Support/CommandLine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/managedstatic-h">llvm/Support/ManagedStatic.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;vector&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;optional&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/cl/opt">cl::opt&lt;std::string&gt;</a> TrainingLog(</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;training-log&quot;</Highlight><Highlight kind="normal">, <a href="/docs/api/namespaces/llvm/cl/#a68075925a54790e71ca790e1d4f21a40a263ac008d8d31f13ce460395fc4cf7e6">cl::Hidden</a>,</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/cl/desc">cl::desc</a>(</Highlight><Highlight kind="stringliteral">&quot;Path where the development - mode inlining log is saved.&quot;</Highlight><Highlight kind="normal">));</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/cl/opt">cl::opt&lt;std::string&gt;</a> TFModelUnderTrainingPath(</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;ml-inliner-model-under-training&quot;</Highlight><Highlight kind="normal">, <a href="/docs/api/namespaces/llvm/cl/#a68075925a54790e71ca790e1d4f21a40a263ac008d8d31f13ce460395fc4cf7e6">cl::Hidden</a>,</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/cl/desc">cl::desc</a>(R</Highlight><Highlight kind="stringliteral">&quot;(Path to SavedModel from the previous training iteration.</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="stringliteral">The directory is also expected to contain a JSON specification of the </Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="stringliteral">outputs expected to be logged, where the first entry must be the </Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="stringliteral">inlining decision. The file containing the specification should be </Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="stringliteral">called output&#95;spec.json. The expected JSON value is an array of </Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="stringliteral">dictionaries. Each dictionary should have 2 keys: </Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="stringliteral"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="stringliteral">- &quot;tensor&#95;spec, followed by the TensorSpec description of the</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="stringliteral">output; and </Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="stringliteral">- &quot;logging&#95;name&quot;, a string indicating the name to use when</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="stringliteral">logging the output values. </Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="stringliteral"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="stringliteral">Example:</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="stringliteral">&#91;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="stringliteral">  &#123;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="stringliteral">    &quot;logging&#95;name&quot; : &quot;some&#95;name&quot;, </Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="stringliteral">    &quot;tensor&#95;spec&quot; : &#123; </Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="stringliteral">      &quot;name&quot; : &quot;model&#95;name&quot;, </Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="stringliteral">      &quot;port&quot; : 0,</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="stringliteral">      &quot;shape&quot; : &#91;2, 3&#93;,</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="stringliteral">      &quot;type&quot; : &quot;float&quot;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="stringliteral">      &#125;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="stringliteral">  &#125;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="stringliteral">&#93;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="stringliteral"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="stringliteral">The first value must always correspond to the decision.)&quot;));</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="stringliteral"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="stringliteral"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/cl/opt">cl::opt&lt;std::string&gt;</a> TFOutputSpecOverride(</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;ml-inliner-output-spec-override&quot;</Highlight><Highlight kind="normal">, <a href="/docs/api/namespaces/llvm/cl/#a68075925a54790e71ca790e1d4f21a40a263ac008d8d31f13ce460395fc4cf7e6">cl::Hidden</a>,</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/cl/desc">cl::desc</a>(</Highlight><Highlight kind="stringliteral">&quot;Override the path to the output spec json file. See &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">             </Highlight><Highlight kind="stringliteral">&quot;-ml-inliner-model-under-training documentation for the &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">             </Highlight><Highlight kind="stringliteral">&quot;specification of that file.&quot;</Highlight><Highlight kind="normal">));</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/cl/opt">cl::opt&lt;std::string&gt;</a> TFFeedPrefix(</Highlight><Highlight kind="stringliteral">&quot;ml-inliner-trained-model-feed-prefix&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">                                         <a href="/docs/api/namespaces/llvm/cl/#a68075925a54790e71ca790e1d4f21a40a263ac008d8d31f13ce460395fc4cf7e6">cl::Hidden</a>, <a href="/docs/api/namespaces/llvm/cl/#ac12e6a8f3a1b511f0dee2ed6de0ae806">cl::init</a>(</Highlight><Highlight kind="stringliteral">&quot;action&#95;&quot;</Highlight><Highlight kind="normal">),</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">                                         <a href="/docs/api/structs/llvm/cl/desc">cl::desc</a>(</Highlight><Highlight kind="stringliteral">&quot;Prefix for feature names.&quot;</Highlight><Highlight kind="normal">));</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">&#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="comment">/// An InlineEvent, used by TrainingLogger.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">InlineEvent &#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// What the default policy&#39;s decision would have been.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  int64&#95;t DefaultDecision = 0;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  /// What we advised. When training off the default policy, this is the same as</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="comment">  /// DefaultDecision.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  int64&#95;t AdvisedDecision = 0;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">  /// What actually happened. This would be &#39;false&#39; in the case of an inline</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">  /// error, even if AdvisedDecision were true, otherwise it agrees with</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">  /// AdvisedDecision.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Effect = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="comment">  /// What the change in size was: size&#95;after - size&#95;before</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  int64&#95;t Reward = 0;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">/// Collect data we may use for training a model.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">TrainingLogger final &#123;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  TrainingLogger(StringRef LogFileName, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ModelUnderTrainingRunner &#42;MUTR);</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">  /// Log one inlining event.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> logInlineEvent(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> InlineEvent &amp;Event,</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">                      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> MLModelRunner &amp;ModelRunner);</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  StringRef LogFileName;</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ModelUnderTrainingRunner &#42;</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> MUTR;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">  std::unique&#95;ptr&lt;Logger&gt; <a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587">L</a>;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  BitVector Effects;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">  /// Set these 2 clearly OOB, to make sure we set them later.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> DefaultDecisionPos = std::numeric&#95;limits&lt;size&#95;t&gt;::max();</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> DecisionPos = std::numeric&#95;limits&lt;size&#95;t&gt;::max();</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">/// An extension of the MLInlineAdvisor for the &#39;development&#39; mode, targeting</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">/// the offline training scenario. Note that training happens outside of the</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="comment">/// compiler, this facility is concerned with producing training data (&quot;logs&quot;).</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">/// This InlineAdvisor can operate in the following modes:</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">/// 1) collect logs for the default policy. This is useful for bootstrapping</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="comment">/// training, which will be considerably faster by starting from a reasonable</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="comment">/// policy.</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">/// 2) collect logs for the ML policy, using a model from a previous</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="comment">/// training. Potentially, that model uses internally some small random</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="comment">/// perturbation of its weights, to induce exploration (setting this up is the</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="comment">/// responsibility of the training algorithm). The logs would then be used to</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="comment">/// retrain and improve on this model.</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="comment">/// 3) use the provided model, with no logging. This is useful for end to end</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">/// validation - the model, in this case, is a release candidate and shouldn&#39;t</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">/// have random perturbations. It is a convenience feature: rather than needing</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">/// to take the release candidate model and compile it in &#39;release&#39; mode,</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">/// validate it, then potentially discard it, it&#39;s easier to just pass the model</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">/// to the compiler, albeit compilation would be slower, as a one-off. Once the</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="comment">/// model behaves satisfactorily, it can be compiled AOT, for efficiency, in</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">/// release mode. The expectation is that a well-trained model provides a good</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="comment">/// policy over a sufficiently diverse codebase, over many changes (i.e.</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="comment">/// training happens seldom).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">DevelopmentModeMLInlineAdvisor : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mlinlineadvisor">MLInlineAdvisor</a> &#123;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">  DevelopmentModeMLInlineAdvisor(</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/codegen/machinecheckdebugify-cpp/#a85892acfa8970627e9bd9c9815f15c25">Module</a> &amp;M, ModuleAnalysisManager &amp;<a href="/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a85bddafa659a93a7a67c9094648259be">MAM</a>,</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">      std::unique&#95;ptr&lt;MLModelRunner&gt; ModelRunner,</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">      std::function&lt;</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">(CallBase &amp;)&gt; GetDefaultAdvice,</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">      std::unique&#95;ptr&lt;TrainingLogger&gt; Logger);</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> getTotalSizeEstimate();</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> updateNativeSizeEstimate(int64&#95;t Change) &#123;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">    &#42;CurrentNativeSize += Change;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> resetNativeSize(Function &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>) &#123;</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">    PreservedAnalyses PA = PreservedAnalyses::all();</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">    PA.<a href="/docs/api/classes/llvm/preservedanalyses/#ac8a842a601c470fa22db443ac34d0a67">abandon</a>&lt;InlineSizeEstimatorAnalysis&gt;();</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a83c7e5ca51099e4efa895791a02fb0ed">FAM</a>.invalidate(&#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, PA);</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">  std::unique&#95;ptr&lt;MLInlineAdvice&gt;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">  getAdviceFromModel(CallBase &amp;CB, OptimizationRemarkEmitter &amp;ORE) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">  std::optional&lt;size&#95;t&gt; getNativeSizeEstimate(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Function &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isLogging()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> !!Logger; &#125;</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">  std::unique&#95;ptr&lt;MLInlineAdvice&gt; getMandatoryAdviceImpl(CallBase &amp;CB) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsDoingInference;</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">  std::unique&#95;ptr&lt;TrainingLogger&gt; Logger;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::optional&lt;int32&#95;t&gt; InitialNativeSize;</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">  std::optional&lt;int32&#95;t&gt; CurrentNativeSize;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="comment">/// A variant of MLInlineAdvice that tracks all non-trivial inlining</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="comment">/// decisions, for training/logging.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">LoggingMLInlineAdvice : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mlinlineadvice">MLInlineAdvice</a> &#123;</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">  LoggingMLInlineAdvice(DevelopmentModeMLInlineAdvisor &#42;Advisor, CallBase &amp;CB,</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">                        OptimizationRemarkEmitter &amp;ORE, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Recommendation,</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">                        TrainingLogger &amp;Logger,</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">                        std::optional&lt;size&#95;t&gt; CallerSizeEstimateBefore,</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">                        std::optional&lt;size&#95;t&gt; CalleeSizeEstimateBefore,</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">                        </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> DefaultDecision, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Mandatory = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">      : MLInlineAdvice(Advisor, CB, ORE, Recommendation), Logger(Logger),</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">        CallerSizeEstimateBefore(CallerSizeEstimateBefore),</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">        CalleeSizeEstimateBefore(CalleeSizeEstimateBefore),</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">        DefaultDecision(DefaultDecision), Mandatory(Mandatory) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> ~LoggingMLInlineAdvice() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">  DevelopmentModeMLInlineAdvisor &#42;getAdvisor()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">DevelopmentModeMLInlineAdvisor &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(Advisor);</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> recordInliningImpl()</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">    MLInlineAdvice::recordInliningImpl();</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">    getAdvisor()-&gt;resetNativeSize(Caller);</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> Reward = std::numeric&#95;limits&lt;int&gt;::max();</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (InlineSizeEstimatorAnalysis::isEvaluatorRequested() &amp;&amp;</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">        !getAdvisor()-&gt;isForcedToStop()) &#123;</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> NativeSizeAfter = &#42;getAdvisor()-&gt;getNativeSizeEstimate(&#42;Caller) +</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">                            &#42;CalleeSizeEstimateBefore;</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">      Reward = NativeSizeAfter -</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">               (&#42;CallerSizeEstimateBefore + &#42;CalleeSizeEstimateBefore);</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">      getAdvisor()-&gt;updateNativeSizeEstimate(Reward);</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">    log(Reward, </Highlight><Highlight kind="comment">/&#42;Success=&#42;/</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> recordInliningWithCalleeDeletedImpl()</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">    MLInlineAdvice::recordInliningWithCalleeDeletedImpl();</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">    getAdvisor()-&gt;resetNativeSize(Caller);</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (InlineSizeEstimatorAnalysis::isEvaluatorRequested() &amp;&amp;</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">        !getAdvisor()-&gt;isForcedToStop()) &#123;</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> NativeSizeAfter = &#42;getAdvisor()-&gt;getNativeSizeEstimate(&#42;Caller);</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> Reward = NativeSizeAfter -</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">                   (&#42;CallerSizeEstimateBefore + &#42;CalleeSizeEstimateBefore);</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">      getAdvisor()-&gt;updateNativeSizeEstimate(Reward);</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">      log(Reward, </Highlight><Highlight kind="comment">/&#42;Success=&#42;/</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">      log(NoReward, </Highlight><Highlight kind="comment">/&#42;Success=&#42;/</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> recordUnsuccessfulInliningImpl(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> InlineResult &amp;Result)</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">    MLInlineAdvice::recordUnsuccessfulInliningImpl(Result);</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">    log(NoReward, </Highlight><Highlight kind="comment">/&#42;Success=&#42;/</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> recordUnattemptedInliningImpl()</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">    MLInlineAdvice::recordUnattemptedInliningImpl();</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">    log(NoReward, </Highlight><Highlight kind="comment">/&#42;Success=&#42;/</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> log(int64&#95;t Reward, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/lib/target/aarch64/disassembler/aarch64disassembler-cpp/#abdb086b34295fb7aa09493c62d798465">Success</a>) &#123;</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Mandatory)</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">    InlineEvent Event;</Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">    Event.AdvisedDecision = isInliningRecommended();</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">    Event.DefaultDecision = DefaultDecision;</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">    Event.Effect = <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/lib/target/aarch64/disassembler/aarch64disassembler-cpp/#abdb086b34295fb7aa09493c62d798465">Success</a>;</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">    Event.Reward = Reward;</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">    Logger.logInlineEvent(Event, getAdvisor()-&gt;getModelRunner());</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> int64&#95;t NoReward = 0;</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">  TrainingLogger &amp;Logger;</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::optional&lt;size&#95;t&gt; CallerSizeEstimateBefore;</Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::optional&lt;size&#95;t&gt; CalleeSizeEstimateBefore;</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> int64&#95;t DefaultDecision;</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> int64&#95;t Mandatory;</Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::vector&lt;TensorSpec&gt; TrainingOnlyFeatures&#123;</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/tensorspec/#a48971e85ac1ac4e1598a6815bec525ab">TensorSpec::createSpec&lt;float&gt;</a>(TFFeedPrefix + </Highlight><Highlight kind="stringliteral">&quot;discount&quot;</Highlight><Highlight kind="normal">, &#123;1&#125;),</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/tensorspec/#a48971e85ac1ac4e1598a6815bec525ab">TensorSpec::createSpec&lt;float&gt;</a>(TFFeedPrefix + </Highlight><Highlight kind="stringliteral">&quot;reward&quot;</Highlight><Highlight kind="normal">, &#123;1&#125;),</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/tensorspec/#a48971e85ac1ac4e1598a6815bec525ab">TensorSpec::createSpec&lt;int32&#95;t&gt;</a>(TFFeedPrefix + </Highlight><Highlight kind="stringliteral">&quot;step&#95;type&quot;</Highlight><Highlight kind="normal">, &#123;1&#125;)&#125;;</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::vector&lt;TensorSpec&gt; getInputFeatures() &#123;</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">  std::vector&lt;TensorSpec&gt; InputSpecs;</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = 0; <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> &lt; <a href="/docs/api/namespaces/llvm/#a299d467a34db1328efc3b8279e1f435f">NumberOfFeatures</a>; ++<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">    InputSpecs.push&#95;back(<a href="/docs/api/classes/llvm/tensorspec/#a48971e85ac1ac4e1598a6815bec525ab">TensorSpec::createSpec&lt;int64&#95;t&gt;</a>(</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">        TFFeedPrefix + <a href="/docs/api/namespaces/llvm/#a8ac326bbf3910d5f456f0b3bbf8de06f">FeatureMap</a>&#91;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>&#93;.name(), <a href="/docs/api/namespaces/llvm/#a8ac326bbf3910d5f456f0b3bbf8de06f">FeatureMap</a>&#91;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>&#93;.shape()));</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a39d3d23a084c4544ee5903203db10e8a">append&#95;range</a>(InputSpecs, TrainingOnlyFeatures);</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> InputSpecs;</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">TrainingLogger::TrainingLogger(<a href="/docs/api/classes/llvm/stringref">StringRef</a> LogFileName,</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">                               </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ModelUnderTrainingRunner &#42;MUTR)</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">    : LogFileName(LogFileName), MUTR(MUTR) &#123;</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The first output is the inlining decision.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal">  std::vector&lt;TensorSpec&gt; FT(<a href="/docs/api/namespaces/llvm/#a8ac326bbf3910d5f456f0b3bbf8de06f">FeatureMap</a>.begin(), <a href="/docs/api/namespaces/llvm/#a8ac326bbf3910d5f456f0b3bbf8de06f">FeatureMap</a>.end());</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (MUTR)</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a39d3d23a084c4544ee5903203db10e8a">append&#95;range</a>(FT, MUTR-&gt;extraOutputsForLoggingSpecs());</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">  DefaultDecisionPos = FT.size();</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">  FT.push&#95;back(<a href="/docs/api/namespaces/llvm/#a663deee77caba960ac2159b86c068b95">DefaultDecisionSpec</a>);</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">  DecisionPos = FT.size();</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">  FT.push&#95;back(<a href="/docs/api/namespaces/llvm/#aa22d2826f4a9ac07e8c53cad3f0178a6">InlineDecisionSpec</a>);</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">  std::error&#95;code <a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>;</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> OS = std::make&#95;unique&lt;raw&#95;fd&#95;ostream&gt;(TrainingLog, EC);</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (EC)</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; (<a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>.message() + </Highlight><Highlight kind="stringliteral">&quot;:&quot;</Highlight><Highlight kind="normal"> + TrainingLog);</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587">L</a> = std::make&#95;unique&lt;Logger&gt;(</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">      std::move(OS), FT, <a href="/docs/api/classes/llvm/tensorspec/#a48971e85ac1ac4e1598a6815bec525ab">TensorSpec::createSpec&lt;int64&#95;t&gt;</a>(<a href="/docs/api/namespaces/llvm/#aa497b131be7719a15bde7cb3192d9bf8">RewardName</a>, &#123;1&#125;),</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/inlinesizeestimatoranalysis/#af2afe642df2ccb614a3f8a1d80910df9">InlineSizeEstimatorAnalysis::isEvaluatorRequested</a>());</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587">L</a>-&gt;switchContext(</Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="comment">/// Log one inlining event.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> TrainingLogger::logInlineEvent(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> InlineEvent &amp;Event,</Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">                                    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mlmodelrunner">MLModelRunner</a> &amp;ModelRunner) &#123;</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587">L</a>-&gt;startObservation();</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> CurrentFeature = 0;</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (; CurrentFeature &lt; <a href="/docs/api/namespaces/llvm/#a299d467a34db1328efc3b8279e1f435f">NumberOfFeatures</a>; ++CurrentFeature)</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587">L</a>-&gt;logTensorValue(CurrentFeature,</Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal">                      </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal">                          ModelRunner.<a href="/docs/api/classes/llvm/mlmodelrunner/#a3b741f081f53bbee6cb69b136eaa52c3">getTensorUntyped</a>(CurrentFeature)));</Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (MUTR)</Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = 0; <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> &lt; MUTR-&gt;extraOutputsForLoggingSpecs().<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmreflect-cpp/#ac934769d93af95250952646a3829df4c">size</a>(); ++<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>) &#123;</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;RawData =</Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(MUTR-&gt;getUntypedExtraOutputValue(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>));</Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587">L</a>-&gt;logTensorValue(CurrentFeature, RawData);</Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal">      ++CurrentFeature;</Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(CurrentFeature == DefaultDecisionPos);</Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587">L</a>-&gt;logTensorValue(DefaultDecisionPos,</Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal">                    </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(&amp;Event.DefaultDecision));</Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587">L</a>-&gt;logTensorValue(DecisionPos,</Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal">                    </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(&amp;Event.AdvisedDecision));</Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587">L</a>-&gt;endObservation();</Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/inlinesizeestimatoranalysis/#af2afe642df2ccb614a3f8a1d80910df9">InlineSizeEstimatorAnalysis::isEvaluatorRequested</a>())</Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/m68k/#ab3a288f2953d8eca3e363959fc2cf38ead20caec3b48a1eef164cb4ca81ba2587">L</a>-&gt;logReward(Event.Reward);</Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// For debugging / later use</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal">  Effects.push&#95;back(Event.Effect);</Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal">DevelopmentModeMLInlineAdvisor::DevelopmentModeMLInlineAdvisor(</Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/codegen/machinecheckdebugify-cpp/#a85892acfa8970627e9bd9c9815f15c25">Module</a> &amp;M, <a href="/docs/api/namespaces/llvm/#af9c9208365fd9ce11392b4d79485e259">ModuleAnalysisManager</a> &amp;<a href="/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a85bddafa659a93a7a67c9094648259be">MAM</a>,</Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal">    std::unique&#95;ptr&lt;MLModelRunner&gt; ModelRunner,</Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal">    std::function&lt;</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/callbase">CallBase</a> &amp;)&gt; GetDefaultAdvice,</Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal">    std::unique&#95;ptr&lt;TrainingLogger&gt; <a href="/docs/api/classes/llvm/logger">Logger</a>)</Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal">    : <a href="/docs/api/classes/llvm/mlinlineadvisor">MLInlineAdvisor</a>(M, <a href="/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a85bddafa659a93a7a67c9094648259be">MAM</a>, <a href="/docs/api/namespaces/std">std</a>::<a href="/docs/api/namespaces/llvm/#abfc9c7ecf70f66901e439f7c04ef3dbb">move</a>(ModelRunner), GetDefaultAdvice),</Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">      IsDoingInference(<a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa</a>&lt;ModelUnderTrainingRunner&gt;(getModelRunner())),</Highlight></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/logger">Logger</a>(<a href="/docs/api/namespaces/std">std</a>::<a href="/docs/api/namespaces/llvm/#abfc9c7ecf70f66901e439f7c04ef3dbb">move</a>(<a href="/docs/api/classes/llvm/logger">Logger</a>)),</Highlight></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal">      InitialNativeSize(isLogging() ? getTotalSizeEstimate() : 0),</Highlight></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal">      CurrentNativeSize(InitialNativeSize) &#123;</Highlight></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// We cannot have the case of neither inference nor logging.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(IsDoingInference || isLogging());</Highlight></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="normal">std::optional&lt;size&#95;t&gt;</Highlight></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="normal">DevelopmentModeMLInlineAdvisor::getNativeSizeEstimate(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/classes/llvm/inlinesizeestimatoranalysis/#af2afe642df2ccb614a3f8a1d80910df9">InlineSizeEstimatorAnalysis::isEvaluatorRequested</a>())</Highlight></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::nullopt;</Highlight></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a> =</Highlight></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a83c7e5ca51099e4efa895791a02fb0ed">FAM</a>.getResult&lt;<a href="/docs/api/classes/llvm/inlinesizeestimatoranalysis">InlineSizeEstimatorAnalysis</a>&gt;(</Highlight><Highlight kind="keyword">const&#95;cast&lt;</Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/function">Function</a> &amp;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>));</Highlight></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!R) &#123;</Highlight></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>.getParent()-&gt;getContext().emitError(</Highlight></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;Native size estimator is not present.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>;</Highlight></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal">std::unique&#95;ptr&lt;MLInlineAdvice&gt;</Highlight></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="normal">DevelopmentModeMLInlineAdvisor::getMandatoryAdviceImpl(<a href="/docs/api/classes/llvm/callbase">CallBase</a> &amp;CB) &#123;</Highlight></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;unique&lt;LoggingMLInlineAdvice&gt;(</Highlight></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="normal">      </Highlight><Highlight kind="comment">/&#42;Advisor=&#42;/</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="normal">      </Highlight><Highlight kind="comment">/&#42;CB=&#42;/</Highlight><Highlight kind="normal">CB, </Highlight><Highlight kind="comment">/&#42;ORE=&#42;/</Highlight><Highlight kind="normal">getCallerORE(CB), </Highlight><Highlight kind="comment">/&#42;Recommendation=&#42;/</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="normal">      </Highlight><Highlight kind="comment">/&#42;Logger=&#42;/</Highlight><Highlight kind="normal">&#42;<a href="/docs/api/classes/llvm/logger">Logger</a>,</Highlight></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal">      </Highlight><Highlight kind="comment">/&#42;CallerSizeEstimateBefore=&#42;/</Highlight><Highlight kind="normal">getNativeSizeEstimate(&#42;CB.<a href="/docs/api/classes/llvm/callbase/#afac5b39bcbb90d660f83d9b4bd8c6d95">getCaller</a>()),</Highlight></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal">      </Highlight><Highlight kind="comment">/&#42;CalleeSizeEstimateBefore=&#42;/</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal">      getNativeSizeEstimate(&#42;CB.<a href="/docs/api/classes/llvm/callbase/#a2b1ae7cf1bafdd43d1fee4c6ad0a2913">getCalledFunction</a>()),</Highlight></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">      </Highlight><Highlight kind="comment">/&#42;DefaultDecision=&#42;/</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="comment">/&#42;Mandatory&#42;/</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="normal">std::unique&#95;ptr&lt;MLInlineAdvice&gt;</Highlight></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal">DevelopmentModeMLInlineAdvisor::getAdviceFromModel(</Highlight></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/callbase">CallBase</a> &amp;CB, <a href="/docs/api/classes/llvm/optimizationremarkemitter">OptimizationRemarkEmitter</a> &amp;ORE) &#123;</Highlight></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (IsDoingInference &amp;&amp; !isLogging())</Highlight></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mlinlineadvisor/#ad29d86e8f62a35997fcc2f48d72653b2">MLInlineAdvisor::getAdviceFromModel</a>(CB, ORE);</Highlight></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> DefaultAdvice = GetDefaultAdvice(CB);</Highlight></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Recommendation =</Highlight></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal">      IsDoingInference ? </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(ModelRunner-&gt;evaluate&lt;int64&#95;t&gt;())</Highlight></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="normal">                       : DefaultAdvice;</Highlight></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;unique&lt;LoggingMLInlineAdvice&gt;(</Highlight></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="normal">      </Highlight><Highlight kind="comment">/&#42;Advisor=&#42;/</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="normal">      </Highlight><Highlight kind="comment">/&#42;CB=&#42;/</Highlight><Highlight kind="normal">CB, </Highlight><Highlight kind="comment">/&#42;ORE=&#42;/</Highlight><Highlight kind="normal">ORE, </Highlight><Highlight kind="comment">/&#42;Recommendation=&#42;/</Highlight><Highlight kind="normal">Recommendation,</Highlight></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal">      </Highlight><Highlight kind="comment">/&#42;Logger=&#42;/</Highlight><Highlight kind="normal">&#42;<a href="/docs/api/classes/llvm/logger">Logger</a>,</Highlight></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal">      </Highlight><Highlight kind="comment">/&#42;CallerSizeEstimateBefore=&#42;/</Highlight><Highlight kind="normal">getNativeSizeEstimate(&#42;CB.<a href="/docs/api/classes/llvm/callbase/#afac5b39bcbb90d660f83d9b4bd8c6d95">getCaller</a>()),</Highlight></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="normal">      </Highlight><Highlight kind="comment">/&#42;CalleeSizeEstimateBefore=&#42;/</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384"><Highlight kind="normal">      getNativeSizeEstimate(&#42;CB.<a href="/docs/api/classes/llvm/callbase/#a2b1ae7cf1bafdd43d1fee4c6ad0a2913">getCalledFunction</a>()),</Highlight></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="normal">      </Highlight><Highlight kind="comment">/&#42;DefaultDecision=&#42;/</Highlight><Highlight kind="normal">DefaultAdvice);</Highlight></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> DevelopmentModeMLInlineAdvisor::getTotalSizeEstimate() &#123;</Highlight></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/classes/llvm/inlinesizeestimatoranalysis/#af2afe642df2ccb614a3f8a1d80910df9">InlineSizeEstimatorAnalysis::isEvaluatorRequested</a>())</Highlight></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/mipsisd/#a422daf9aa810935178671306b651d69ba366e1eac31eeb1a1892d62ccfc0c8cf8">Ret</a> = 0;</Highlight></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> : M) &#123;</Highlight></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>.isDeclaration())</Highlight></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/mipsisd/#a422daf9aa810935178671306b651d69ba366e1eac31eeb1a1892d62ccfc0c8cf8">Ret</a> += &#42;getNativeSizeEstimate(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/mipsisd/#a422daf9aa810935178671306b651d69ba366e1eac31eeb1a1892d62ccfc0c8cf8">Ret</a>;</Highlight></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="normal">std::unique&#95;ptr&lt;InlineAdvisor&gt; <a href="/docs/api/namespaces/llvm/#abc692529e90df46d42cb2a005ec02a95">llvm::getDevelopmentModeAdvisor</a>(</Highlight></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/codegen/machinecheckdebugify-cpp/#a85892acfa8970627e9bd9c9815f15c25">Module</a> &amp;M, <a href="/docs/api/namespaces/llvm/#af9c9208365fd9ce11392b4d79485e259">ModuleAnalysisManager</a> &amp;<a href="/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a85bddafa659a93a7a67c9094648259be">MAM</a>,</Highlight></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="normal">    std::function&lt;</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/callbase">CallBase</a> &amp;)&gt; GetDefaultAdvice) &#123;</Highlight></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Ctx = M.getContext();</Highlight></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="normal">  std::unique&#95;ptr&lt;MLModelRunner&gt; Runner;</Highlight></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TFModelUnderTrainingPath.empty())</Highlight></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="normal">    Runner.reset(</Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/noinferencemodelrunner">NoInferenceModelRunner</a>(Ctx, getInputFeatures()));</Highlight></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="normal">    Runner = ModelUnderTrainingRunner::createAndEnsureValid(</Highlight></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="normal">        Ctx, TFModelUnderTrainingPath, <a href="/docs/api/files/lib/lib/codegen/mlregallocevictadvisor-cpp/#af5e2460c58b78f9becd283f9f0dc70ee">DecisionName</a>, getInputFeatures(),</Highlight></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="normal">        TFOutputSpecOverride);</Highlight></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Runner)</Highlight></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="normal">  std::unique&#95;ptr&lt;TrainingLogger&gt; <a href="/docs/api/classes/llvm/logger">Logger</a>;</Highlight></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!TrainingLog.empty())</Highlight></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/logger">Logger</a> = std::make&#95;unique&lt;TrainingLogger&gt;(</Highlight></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="normal">        TrainingLog, <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;ModelUnderTrainingRunner&gt;</a>(Runner.get()));</Highlight></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;unique&lt;DevelopmentModeMLInlineAdvisor&gt;(</Highlight></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="normal">      M, <a href="/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a85bddafa659a93a7a67c9094648259be">MAM</a>, std::move(Runner), GetDefaultAdvice, std::move(<a href="/docs/api/classes/llvm/logger">Logger</a>));</Highlight></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// defined(LLVM&#95;HAVE&#95;TFLITE)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

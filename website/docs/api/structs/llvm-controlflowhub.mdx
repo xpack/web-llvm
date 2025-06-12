@@ -1,0 +1,181 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/controlflowhub
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ControlFlowHub` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Given a set of branch descriptors &#91;BB, Succ0, Succ1&#93;, create a &quot;hub&quot; such that the control flow from each BB to a successor is now split into two edges, one from BB to the hub and another from the hub to the successor. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct llvm::ControlFlowHub</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Transforms/Utils/ControlFlowUtils.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/controlflowutils-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aef132a79cbc9fc2395fe9696dd654f8e">addBranch</a> (BasicBlock &#42;BB, BasicBlock &#42;Succ0, BasicBlock &#42;Succ1)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;</>}
+  name={<><a href="#a14e3b2ee272be893fb7d474a5530705c">finalize</a> (DomTreeUpdater &#42;DTU, SmallVectorImpl&lt; BasicBlock &#42; &gt; &amp;GuardBlocks, const StringRef Prefix, std::optional&lt; unsigned &gt; MaxControlFlowBooleans=std::nullopt)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/structs/llvm/controlflowhub/branchdescriptor">BranchDescriptor</a> &gt;</>}
+  name={<><a href="#adb601381bd0802bd08681776eeb7d297">Branches</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+The hub consists of a series of guard blocks, one for each outgoing block. Each guard block conditionally branches to the corresponding outgoing block, or the next guard block in the chain. These guard blocks are returned in the argument vector.
+
+This also updates any PHINodes in the successor. For each such <a href="/docs/api/classes/llvm/phinode">PHINode</a>, the operands corresponding to incoming blocks are moved to a new <a href="/docs/api/classes/llvm/phinode">PHINode</a> in the hub, and the hub is made an operand of the original <a href="/docs/api/classes/llvm/phinode">PHINode</a>.
+
+Note that for some block BB with a conditional branch, it is not necessary that both successors are rerouted. The client specifies this by setting either Succ0 or Succ1 to nullptr, in which case, the corresponding successor is not rerouted.
+
+<Link id="details" />
+
+
+## Input CFG:
+
+
+
+<CodeBlock>               Def
+                |
+                v
+      In1      In2
+       |        |
+       |        |
+       v        v
+</CodeBlock> Foo ---&gt; Out1 Out2 | v <a href="/docs/api/classes/llvm/use">Use</a>
+
+
+
+<Link id="details" />
+
+
+## Create hub: Incoming = &#123;In1, In2&#125;, Outgoing = &#123;Out1, Out2&#125;
+
+
+
+<CodeBlock>        Def
+         |
+         v
+</CodeBlock> In1 In2 Foo | Hub | | | + - - | - - + | | &#39; v &#39; V +------&gt; Guard1 -----&gt; Out1 &#39; | &#39; &#39; v &#39; &#39; Guard2 -----&gt; Out2 &#39; &#39; |
+<ul>
+<li>- - - - - + | v <a href="/docs/api/classes/llvm/use">Use</a></li>
+</ul>
+
+
+
+
+<Link id="details" />
+
+
+## Limitations:
+
+
+
+
+<ul>
+<li>This assumes that all terminators in the CFG are direct branches (the &quot;br&quot; instruction). The presence of any other control flow such as indirectbr, switch or callbr will cause an assert.</li>
+<li>The updates to the PHINodes are not sufficient to restore SSA form. Consider a definition Def, its use <a href="/docs/api/classes/llvm/use">Use</a>, incoming block In2 and outgoing block Out2, such that: a. In2 is reachable from D or contains D. b. U is reachable from Out2 or is contained in Out2. c. U is not a <a href="/docs/api/classes/llvm/phinode">PHINode</a> if U is contained in Out2.
+Clearly, Def dominates Out2 since the program is valid SSA. But when the hub is introduced, there is a new path through the hub along which <a href="/docs/api/classes/llvm/use">Use</a> is reachable from entry without passing through Def, and SSA is no longer valid. To fix this, we need to look at all the blocks post-dominated by the hub on the one hand, and dominated by Out2 on the other. This is left for the caller to accomplish, since each specific use of this function may have additional information which simplifies this fixup. For example, see <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/unifyloopexits-cpp/#aaaff4f2206ebf29a0a8e629835ca1973">restoreSSA()</a> in the UnifyLoopExits pass.</li>
+</ul>
+
+Definition at line 97 of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/controlflowutils-h">ControlFlowUtils.h</a>.
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### addBranch() {#aef132a79cbc9fc2395fe9696dd654f8e}
+
+<MemberDefinition
+  prototype={<>void llvm::ControlFlowHub::addBranch (<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; Succ0, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; Succ1)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/controlflowutils-h/#l00107">107</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/controlflowutils-h">ControlFlowUtils.h</a>.
+</MemberDefinition>
+
+### finalize() {#a14e3b2ee272be893fb7d474a5530705c}
+
+<MemberDefinition
+  prototype={<>BasicBlock &#42; ControlFlowHub::finalize (<a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a> &#42; DTU, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; &gt; &amp; GuardBlocks, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/stringref">StringRef</a> Prefix, std::optional&lt; unsigned &gt; MaxControlFlowBooleans=std::nullopt)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/controlflowutils-h/#l00114">114</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/controlflowutils-h">ControlFlowUtils.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/controlflowutils-cpp/#l00273">273</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/controlflowutils-cpp">ControlFlowUtils.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### Branches {#adb601381bd0802bd08681776eeb7d297}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;BranchDescriptor&gt; llvm::ControlFlowHub::Branches</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/controlflowutils-h/#l00118">118</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/controlflowutils-h">ControlFlowUtils.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/controlflowutils-h">ControlFlowUtils.h</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/controlflowutils-cpp">ControlFlowUtils.cpp</a></li>
+</ul>
+
+</DoxygenPage>

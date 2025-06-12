@@ -1,0 +1,275 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/anonymous-namespace-minidumpemitter-cpp-/bloballocator
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `BlobAllocator` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+A helper class to manage the placement of various structures into the final minidump binary. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class anonymous_namespace{MinidumpEmitter.cpp}::BlobAllocator</CodeBlock>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename T&gt;</>}
+  type={<>size&#95;t</>}
+  name={<><a href="#a2b137d6defad9eb2a2f16746e38543fc">allocateArray</a> (ArrayRef&lt; T &gt; Data)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>size&#95;t</>}
+  name={<><a href="#af0936e6a9125ea39e7fd148041ad89d9">allocateBytes</a> (ArrayRef&lt; uint8&#95;t &gt; Data)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>size&#95;t</>}
+  name={<><a href="#a076efed0f4ba2bbe074b0fd98330c749">allocateBytes</a> (yaml::BinaryRef Data)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>size&#95;t</>}
+  name={<><a href="#ad078901e81c86c80af1d4e660d86447f">allocateCallback</a> (size&#95;t Size, std::function&lt; void(raw&#95;ostream &amp;)&gt; Callback)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename T, typename RangeType&gt;</>}
+  type="auto "
+  name={<><a href="#a9d783fb2b6c746f4f17295b18a979d2b">allocateNewArray</a> (const iterator&#95;range&lt; RangeType &gt; &amp;Range) -&gt; std::pair&lt; size&#95;t, <a href="/docs/api/classes/llvm/mutablearrayref">MutableArrayRef</a>&lt; T &gt; &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename T, typename RangeType&gt;</>}
+  type="auto "
+  name={<><a href="#a9d783fb2b6c746f4f17295b18a979d2b">allocateNewArray</a> (const iterator&#95;range&lt; RangeType &gt; &amp;Range) -&gt; std::pair&lt; size&#95;t, <a href="/docs/api/classes/llvm/mutablearrayref">MutableArrayRef</a>&lt; T &gt; &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename T, typename... Types&gt;</>}
+  type="auto "
+  name={<><a href="#a47725bae3e80b536009eb10702be236a">allocateNewObject</a> (Types &amp;&amp;... Args) -&gt; std::pair&lt; size&#95;t, T &#42; &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename T&gt;</>}
+  type={<>size&#95;t</>}
+  name={<><a href="#a85461c3f1daa5e2cb34d114e5d36aa6f">allocateObject</a> (const T &amp;Data)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>size&#95;t</>}
+  name={<><a href="#af08557fb29f0c4129ff2121db66a7e43">allocateString</a> (StringRef Str)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>size&#95;t</>}
+  name={<><a href="#a27714db7bcf6006e5f61a7f3df85e36c">tell</a> () const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a6fa75f337ed8bdb565ad78234f20c1d9">writeTo</a> (raw&#95;ostream &amp;OS) const</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::vector&lt; std::function&lt; void(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;)&gt; &gt;</>}
+  name={<><a href="#a59a589cbdb2cbaf7229ef56de742eaab">Callbacks</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>size&#95;t</>}
+  name={<><a href="#a37a0935a9772bbd2d6ee338c23f65188">NextOffset</a> = 0</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#a8e612822d4ba7bb36c9c79582a567108">BumpPtrAllocator</a></>}
+  name={<><a href="#a56c0da16409b9a92f86ee1914e72f8a2">Temporaries</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+A helper class to manage the placement of various structures into the final minidump binary.
+
+Space for objects can be allocated via various allocate&#42;&#42;&#42; methods, while the final minidump file is written by calling the writeTo method. The plain versions of allocation functions take a reference to the data which is to be written (and hence the data must be available until writeTo is called), while the &quot;New&quot; versions allocate the data in an allocator-managed buffer, which is available until the allocator object is destroyed. For both kinds of functions, it is possible to modify the data for which the space has been &quot;allocated&quot; until the final writeTo call. This is useful for &quot;linking&quot; the allocated structures via their offsets.
+
+Definition at line 30 of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### allocateArray() {#a2b137d6defad9eb2a2f16746e38543fc}
+
+<MemberDefinition
+  template={<>template &lt;typename T&gt;</>}
+  prototype={<>size&#95;t anonymous&#95;namespace&#123;MinidumpEmitter.cpp&#125;::BlobAllocator::allocateArray (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; T &gt; Data)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00053">53</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+### allocateBytes() {#af0936e6a9125ea39e7fd148041ad89d9}
+
+<MemberDefinition
+  prototype={<>size&#95;t anonymous&#95;namespace&#123;MinidumpEmitter.cpp&#125;::BlobAllocator::allocateBytes (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; uint8&#95;t &gt; Data)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00042">42</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+### allocateBytes() {#a076efed0f4ba2bbe074b0fd98330c749}
+
+<MemberDefinition
+  prototype={<>size&#95;t anonymous&#95;namespace&#123;MinidumpEmitter.cpp&#125;::BlobAllocator::allocateBytes (<a href="/docs/api/classes/llvm/yaml/binaryref">yaml::BinaryRef</a> Data)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00047">47</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+### allocateCallback() {#ad078901e81c86c80af1d4e660d86447f}
+
+<MemberDefinition
+  prototype={<>size&#95;t anonymous&#95;namespace&#123;MinidumpEmitter.cpp&#125;::BlobAllocator::allocateCallback (size&#95;t Size, std::function&lt; void(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;)&gt; Callback)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00034">34</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+### allocateNewArray() {#a9d783fb2b6c746f4f17295b18a979d2b}
+
+<MemberDefinition
+  template={<>template &lt;typename T, typename RangeType&gt;</>}
+  prototype={<>std::pair&lt; size&#95;t, MutableArrayRef&lt; T &gt; &gt; anonymous&#95;namespace&#123;MinidumpEmitter.cpp&#125;::BlobAllocator::allocateNewArray (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/iterator-range">iterator&#95;range</a>&lt; RangeType &gt; &amp; Range)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00060">60</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+### allocateNewArray() {#a9d783fb2b6c746f4f17295b18a979d2b}
+
+<MemberDefinition
+  template={<>template &lt;typename T, typename RangeType&gt;</>}
+  prototype={<>std::pair&lt; size&#95;t, MutableArrayRef&lt; T &gt; &gt; anonymous&#95;namespace&#123;MinidumpEmitter.cpp&#125;::BlobAllocator::allocateNewArray (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/iterator-range">iterator&#95;range</a>&lt; RangeType &gt; &amp; Range)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00086">86</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+### allocateNewObject() {#a47725bae3e80b536009eb10702be236a}
+
+<MemberDefinition
+  template={<>template &lt;typename T, typename... Types&gt;</>}
+  prototype={<>std::pair&lt; size&#95;t, T &#42; &gt; anonymous&#95;namespace&#123;MinidumpEmitter.cpp&#125;::BlobAllocator::allocateNewObject (Types &amp;&amp;... Args)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00067">67</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+### allocateObject() {#a85461c3f1daa5e2cb34d114e5d36aa6f}
+
+<MemberDefinition
+  template={<>template &lt;typename T&gt;</>}
+  prototype={<>size&#95;t anonymous&#95;namespace&#123;MinidumpEmitter.cpp&#125;::BlobAllocator::allocateObject (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> T &amp; Data)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00062">62</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+### allocateString() {#af08557fb29f0c4129ff2121db66a7e43}
+
+<MemberDefinition
+  prototype={<>size&#95;t BlobAllocator::allocateString (<a href="/docs/api/classes/llvm/stringref">StringRef</a> Str)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00072">72</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+### tell() {#a27714db7bcf6006e5f61a7f3df85e36c}
+
+<MemberDefinition
+  prototype={<>size&#95;t anonymous&#95;namespace&#123;MinidumpEmitter.cpp&#125;::BlobAllocator::tell () const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00032">32</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+### writeTo() {#a6fa75f337ed8bdb565ad78234f20c1d9}
+
+<MemberDefinition
+  prototype={<>void BlobAllocator::writeTo (<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp; OS) const</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00074">74</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### Callbacks {#a59a589cbdb2cbaf7229ef56de742eaab}
+
+<MemberDefinition
+  prototype={<>std::vector&lt;std::function&lt;void(raw&#95;ostream &amp;)&gt; &gt; anonymous&#95;namespace&#123;MinidumpEmitter.cpp&#125;::BlobAllocator::Callbacks</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00080">80</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+### NextOffset {#a37a0935a9772bbd2d6ee338c23f65188}
+
+<MemberDefinition
+  prototype={<>size&#95;t anonymous&#95;namespace&#123;MinidumpEmitter.cpp&#125;::BlobAllocator::NextOffset = 0</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00077">77</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+### Temporaries {#a56c0da16409b9a92f86ee1914e72f8a2}
+
+<MemberDefinition
+  prototype={<>BumpPtrAllocator anonymous&#95;namespace&#123;MinidumpEmitter.cpp&#125;::BlobAllocator::Temporaries</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp/#l00079">79</a> of file <a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/objectyaml/minidumpemitter-cpp">MinidumpEmitter.cpp</a></li>
+</ul>
+
+</DoxygenPage>

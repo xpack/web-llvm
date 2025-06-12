@@ -1,0 +1,111 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/sparsesetvaltraits
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `SparseSetValTraits` Struct Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+<a href="/docs/api/structs/llvm/sparsesetvaltraits">SparseSetValTraits</a> - Objects in a <a href="/docs/api/classes/llvm/sparseset">SparseSet</a> are identified by keys that can be uniquely converted to a small integer less than the set&#39;s universe. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;typename ValueT&gt;
+struct llvm::SparseSetValTraits&lt;ValueT&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/SparseSet.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/sparseset-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename ValueT&gt;</>}
+  type="unsigned"
+  name={<><a href="#a933585c9ca05122d9fc6e234f3f3a212">getValIndex</a> (const ValueT &amp;Val)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+<a href="/docs/api/structs/llvm/sparsesetvaltraits">SparseSetValTraits</a> - Objects in a <a href="/docs/api/classes/llvm/sparseset">SparseSet</a> are identified by keys that can be uniquely converted to a small integer less than the set&#39;s universe.
+
+This class allows the set to hold values that differ from the set&#39;s key type as long as an index can still be derived from the value. <a href="/docs/api/classes/llvm/sparseset">SparseSet</a> never directly compares ValueT, only their indices, so it can map keys to arbitrary values. <a href="/docs/api/structs/llvm/sparsesetvaltraits">SparseSetValTraits</a> computes the index from the value object. To compute the index from a key, <a href="/docs/api/classes/llvm/sparseset">SparseSet</a> uses a separate KeyFunctorT template argument.
+
+A simple type declaration, <a href="/docs/api/classes/llvm/sparseset">SparseSet&lt;Type&gt;</a>, handles these cases:
+<ul>
+<li>unsigned key, identity index, identity value</li>
+<li>unsigned key, identity index, fat value providing getSparseSetIndex()</li>
+</ul>
+
+
+The type declaration <a href="/docs/api/classes/llvm/sparseset">SparseSet&lt;Type, UnaryFunction&gt;</a> handles:
+<ul>
+<li>unsigned key, remapped index, identity value (virtual registers)</li>
+<li>pointer key, pointer-derived index, identity value (node+ID)</li>
+<li>pointer key, pointer-derived index, fat value with getSparseSetIndex()</li>
+</ul>
+
+
+Only other, unexpected cases require specializing <a href="/docs/api/structs/llvm/sparsesetvaltraits">SparseSetValTraits</a>.
+
+For best results, ValueT should not require a destructor.
+
+Definition at line 57 of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/sparseset-h">SparseSet.h</a>.
+
+<SectionDefinition>
+
+## Public Static Functions
+
+### getValIndex() {#a933585c9ca05122d9fc6e234f3f3a212}
+
+<MemberDefinition
+  template={<>template &lt;typename ValueT&gt;</>}
+  prototype={<>static unsigned llvm::SparseSetValTraits&lt; ValueT &gt;::getValIndex (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> ValueT &amp; Val)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/adt/sparseset-h/#l00058">58</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/adt/sparseset-h">SparseSet.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/adt/sparseset-h">SparseSet.h</a></li>
+</ul>
+
+</DoxygenPage>

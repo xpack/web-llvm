@@ -1,0 +1,993 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/reachingdefanalysis
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ReachingDefAnalysis` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This class provides the reaching def analysis. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::ReachingDefAnalysis</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/CodeGen/ReachingDefAnalysis.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/machinefunctionpass">MachineFunctionPass</a></>}>
+<a href="/docs/api/classes/llvm/machinefunctionpass">MachineFunctionPass</a> - This class adapts the <a href="/docs/api/classes/llvm/functionpass">FunctionPass</a> interface to allow convenient creation of passes that operate on the <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> representation. <a href="/docs/api/classes/llvm/machinefunctionpass/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#af24d904aaeee62f20d15371bd78c88bb">BlockSet</a> = <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>&lt; <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#af006c287439f2f408b6ee5ebb951b738">InstSet</a> = <a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a2a6823b697832f797208d6fa083f6d71">LiveRegsDefInfo</a> = std::vector&lt; int &gt;</>}>
+<a href="/docs/api/classes/llvm/instruction">Instruction</a> that defined each register, relative to the beginning of the current basic block. <a href="#a2a6823b697832f797208d6fa083f6d71">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a40f81e54ba908c24cd4889533e6f558f">OutRegsInfoMap</a> = <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; LiveRegsDefInfo, 4 &gt;</>}>
+Keeps clearance information for all registers. <a href="#a40f81e54ba908c24cd4889533e6f558f">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a8f0413c573fa106fd0977f9992a0b9e4">ReachingDefAnalysis</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a67391278875db8d144d4b6bb6e6a09b8">collectKilledOperands</a> (MachineInstr &#42;MI, InstSet &amp;Dead) const</>}>
+Assuming MI is dead, recursively search the incoming operands which are killed by MI and collect those that would become dead. <a href="#a67391278875db8d144d4b6bb6e6a09b8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a55b5dbb2a8d0bc48a7867741fb7bdebd">getAnalysisUsage</a> (AnalysisUsage &amp;AU) const override</>}>
+getAnalysisUsage - Subclasses that override getAnalysisUsage must call this. <a href="#a55b5dbb2a8d0bc48a7867741fb7bdebd">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="int"
+  name={<><a href="#a95984ce0fa3263ce9a7c7992245a5e2c">getClearance</a> (MachineInstr &#42;MI, Register Reg) const</>}>
+Provides the clearance - the number of instructions since the closest reaching def instuction of Reg that reaches MI. <a href="#a95984ce0fa3263ce9a7c7992245a5e2c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ae53ede66334f07735b415d87d177ff38">getGlobalReachingDefs</a> (MachineInstr &#42;MI, Register Reg, InstSet &amp;Defs) const</>}>
+Collect all possible definitions of the value stored in Reg, which is used by MI. <a href="#ae53ede66334f07735b415d87d177ff38">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a5594932b56f2e0629b440a3c14de9eda">getGlobalUses</a> (MachineInstr &#42;MI, Register Reg, InstSet &amp;Uses) const</>}>
+Collect the users of the value stored in Reg, which is defined by MI. <a href="#a5594932b56f2e0629b440a3c14de9eda">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#abbea737b469ca04dfced1aa6c87d55c8">getLiveInUses</a> (MachineBasicBlock &#42;MBB, Register Reg, InstSet &amp;Uses) const</>}>
+For the given block, collect the instructions that use the live-in value of the provided register. <a href="#abbea737b469ca04dfced1aa6c87d55c8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a8a6fbbe8151eaf22fac6f748d6d55b6e">getLiveOuts</a> (MachineBasicBlock &#42;MBB, Register Reg, InstSet &amp;Defs, BlockSet &amp;VisitedBBs) const</>}>
+Search MBB for a definition of Reg and insert it into Defs. <a href="#a8a6fbbe8151eaf22fac6f748d6d55b6e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a1e73391b90930eb7a6e346ca07a570b4">getLiveOuts</a> (MachineBasicBlock &#42;MBB, Register Reg, InstSet &amp;Defs) const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;</>}
+  name={<><a href="#a063cf42159fd59dccd371d78ceff4a01">getLocalLiveOutMIDef</a> (MachineBasicBlock &#42;MBB, Register Reg) const</>}>
+Return the local MI that produces the live out value for Reg, or nullptr for a non-live out or non-local def. <a href="#a063cf42159fd59dccd371d78ceff4a01">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;</>}
+  name={<><a href="#a36f4fc1556edfb50cca3fe85fcc05e93">getMIOperand</a> (MachineInstr &#42;MI, unsigned Idx) const</>}>
+If a single <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> creates the reaching definition, for MIs operand at Idx, then return it. <a href="#a36f4fc1556edfb50cca3fe85fcc05e93">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;</>}
+  name={<><a href="#ad0d350086d0170ad8429e57516ba5a17">getMIOperand</a> (MachineInstr &#42;MI, MachineOperand &amp;MO) const</>}>
+If a single <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> creates the reaching definition, for MIs MO, then return it. <a href="#ad0d350086d0170ad8429e57516ba5a17">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="int"
+  name={<><a href="#a4d88bf4454485733ba7b4c725a9ccf51">getReachingDef</a> (MachineInstr &#42;MI, Register Reg) const</>}>
+Provides the instruction id of the closest reaching def instruction of Reg that reaches MI, relative to the begining of MI&#39;s basic block. <a href="#a4d88bf4454485733ba7b4c725a9ccf51">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ad474bae3c06f9ecee664f61b236e2ffb">getReachingLocalUses</a> (MachineInstr &#42;MI, Register Reg, InstSet &amp;Uses) const</>}>
+Provides the uses, in the same block as MI, of register that MI defines. <a href="#ad474bae3c06f9ecee664f61b236e2ffb">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machinefunctionproperties">MachineFunctionProperties</a></>}
+  name={<><a href="#ad96c8d05f6a14c1009a4db5a7e710f8b">getRequiredProperties</a> () const override</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;</>}
+  name={<><a href="#adf38674f9ee35a7d177066a78027aa56">getUniqueReachingMIDef</a> (MachineInstr &#42;MI, Register Reg) const</>}>
+If a single <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> creates the reaching definition, then return it. <a href="#adf38674f9ee35a7d177066a78027aa56">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a9e75c05a36cfe323cef8d3cceeb63c0b">hasLocalDefBefore</a> (MachineInstr &#42;MI, Register Reg) const</>}>
+Provide whether the register has been defined in the same basic block as, and before, MI. <a href="#a9e75c05a36cfe323cef8d3cceeb63c0b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ad1c18d22cd9c352cea5a957c89cf3f7c">hasSameReachingDef</a> (MachineInstr &#42;A, MachineInstr &#42;B, Register Reg) const</>}>
+Return whether A and B use the same def of Reg. <a href="#ad1c18d22cd9c352cea5a957c89cf3f7c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a5418eaa6c605a696a952bf86c829fe71">init</a> ()</>}>
+Initialize data structures. <a href="#a5418eaa6c605a696a952bf86c829fe71">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ab8aeae4e97e230dfac7bb530acd16eb0">isReachingDefLiveOut</a> (MachineInstr &#42;MI, Register Reg) const</>}>
+Return whether the reaching def for MI also is live out of its parent block. <a href="#ab8aeae4e97e230dfac7bb530acd16eb0">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ad74018294c98676ea265ee12521fb7e7">isRegDefinedAfter</a> (MachineInstr &#42;MI, Register Reg) const</>}>
+Return whether the given register is defined after MI. <a href="#ad74018294c98676ea265ee12521fb7e7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a11578546fb4cd061fedf4838313d1f97">isRegUsedAfter</a> (MachineInstr &#42;MI, Register Reg) const</>}>
+Return whether the given register is used after MI, whether it&#39;s a local use or a live out. <a href="#a11578546fb4cd061fedf4838313d1f97">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#abd1c3cbea21aa15aed845a4c163fe62c">isSafeToDefRegAt</a> (MachineInstr &#42;MI, Register Reg) const</>}>
+Return whether a <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> could be inserted at MI and safely define the given register without affecting the program. <a href="#abd1c3cbea21aa15aed845a4c163fe62c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ac153a9af74f3b0bb72e5f95a7654574e">isSafeToDefRegAt</a> (MachineInstr &#42;MI, Register Reg, InstSet &amp;Ignore) const</>}>
+Return whether a <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> could be inserted at MI and safely define the given register without affecting the program, ignoring any effects on the provided instructions. <a href="#ac153a9af74f3b0bb72e5f95a7654574e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a7bc46cb4bc77e9715066c204bd98e309">isSafeToMoveBackwards</a> (MachineInstr &#42;From, MachineInstr &#42;To) const</>}>
+Return whether From can be moved backwards to just after To. <a href="#a7bc46cb4bc77e9715066c204bd98e309">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a09e2271431de53cc4cc5057148c18c93">isSafeToMoveForwards</a> (MachineInstr &#42;From, MachineInstr &#42;To) const</>}>
+Return whether From can be moved forwards to just before To. <a href="#a09e2271431de53cc4cc5057148c18c93">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a2f90013f33dac170acc9c62907d99e44">isSafeToRemove</a> (MachineInstr &#42;MI, InstSet &amp;ToRemove) const</>}>
+Return whether removing this instruction will have no effect on the program, returning the redundant use-def chain. <a href="#a2f90013f33dac170acc9c62907d99e44">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a90cebb38d9bd176e0efbc97c9bf33c2d">isSafeToRemove</a> (MachineInstr &#42;MI, InstSet &amp;ToRemove, InstSet &amp;Ignore) const</>}>
+Return whether removing this instruction will have no effect on the program, ignoring the possible effects on some instructions, returning the redundant use-def chain. <a href="#a90cebb38d9bd176e0efbc97c9bf33c2d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a299fef476019ab8771773d7d4e664f2d">releaseMemory</a> () override</>}>
+<a href="#a299fef476019ab8771773d7d4e664f2d">releaseMemory()</a> - This member can be implemented by a pass if it wants to be able to release its memory when it is no longer needed. <a href="#a299fef476019ab8771773d7d4e664f2d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a39c852d6cd394007a2af6cc47012f295">reset</a> ()</>}>
+Re-run the analysis. <a href="#a39c852d6cd394007a2af6cc47012f295">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af7d89916d0369e37e6cbfbca7219cbb6">runOnMachineFunction</a> (MachineFunction &amp;MF) override</>}>
+runOnMachineFunction - This method must be overloaded to perform the desired machine code transformation or analysis. <a href="#af7d89916d0369e37e6cbfbca7219cbb6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a07b847f56e0b64fc3d3f0bc89a876e8f">traverse</a> ()</>}>
+Traverse the machine function, mapping definitions. <a href="#a07b847f56e0b64fc3d3f0bc89a876e8f">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a43859808ee99bdb8b2cc6e5b8c7a1020">enterBasicBlock</a> (MachineBasicBlock &#42;MBB)</>}>
+Set up LiveRegs by merging predecessor live-out values. <a href="#a43859808ee99bdb8b2cc6e5b8c7a1020">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;</>}
+  name={<><a href="#ac218cd2bc1d3011f05b88f60588d843c">getInstFromId</a> (MachineBasicBlock &#42;MBB, int InstId) const</>}>
+Provides the MI, from the given block, corresponding to the Id or a nullptr if the id does not refer to the block. <a href="#ac218cd2bc1d3011f05b88f60588d843c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;</>}
+  name={<><a href="#a6e31fd43bdb706d29716a5bb5365a446">getReachingLocalMIDef</a> (MachineInstr &#42;MI, Register Reg) const</>}>
+Provides the instruction of the closest reaching def instruction of Reg that reaches MI, relative to the begining of MI&#39;s basic block. <a href="#a6e31fd43bdb706d29716a5bb5365a446">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename Iterator&gt;</>}
+  type="bool"
+  name={<><a href="#ab3100c944028d50dacdc41f3e725c2d9">isSafeToMove</a> (MachineInstr &#42;From, MachineInstr &#42;To) const</>}>
+Utility function for isSafeToMoveForwards/Backwards. <a href="#ab3100c944028d50dacdc41f3e725c2d9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#afef608e89623bd7646435888a07446aa">isSafeToRemove</a> (MachineInstr &#42;MI, InstSet &amp;Visited, InstSet &amp;ToRemove, InstSet &amp;Ignore) const</>}>
+Return whether removing this instruction will have no effect on the program, ignoring the possible effects on some instructions, returning the redundant use-def chain. <a href="#afef608e89623bd7646435888a07446aa">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a63eb401f65fa9655642cb865cc7a2f8c">leaveBasicBlock</a> (MachineBasicBlock &#42;MBB)</>}>
+Update live-out values. <a href="#a63eb401f65fa9655642cb865cc7a2f8c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ad922e9ce9738b3aa693664971d9d81a1">processBasicBlock</a> (const LoopTraversal::TraversedMBBInfo &amp;TraversedMBB)</>}>
+<a href="/docs/api/classes/llvm/sys/process">Process</a> he given basic block. <a href="#ad922e9ce9738b3aa693664971d9d81a1">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a6193dc3adc4e2b2779876e31f9e8bed8">processDefs</a> (MachineInstr &#42;)</>}>
+Update def-ages for registers defined by MI. <a href="#a6193dc3adc4e2b2779876e31f9e8bed8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a1618ce4ec28ec3239ac8d57a0f7cc534">reprocessBasicBlock</a> (MachineBasicBlock &#42;MBB)</>}>
+<a href="/docs/api/classes/llvm/sys/process">Process</a> block that is part of a loop again. <a href="#a1618ce4ec28ec3239ac8d57a0f7cc534">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="int"
+  name={<><a href="#a1e6a5bd3420fafb5f6eec4981748aa63">CurInstr</a> = -1</>}>
+Current instruction number. <a href="#a1e6a5bd3420fafb5f6eec4981748aa63">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42;, int &gt;</>}
+  name={<><a href="#a38a070111b5a9015acf139de4212e169">InstIds</a></>}>
+Maps instructions to their instruction Ids, relative to the beginning of their basic blocks. <a href="#a38a070111b5a9015acf139de4212e169">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="LiveRegsDefInfo"
+  name={<><a href="#a496734e38cf07444333f80cda0163e7d">LiveRegs</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">OutRegsInfoMap</a></>}
+  name={<><a href="#afd1bfc0bd7379333aada63e1be5f629b">MBBOutRegsInfos</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/mbbreachingdefsinfo">MBBReachingDefsInfo</a></>}
+  name={<><a href="#a45dc3370cadeca5b66fc7ee14864983e">MBBReachingDefs</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42;</>}
+  name={<><a href="#a12043721f3b4b96fb4648f1e48e4137c">MF</a> = nullptr</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a5dc196ee7f67a649431e57267cdd3271">NumRegUnits</a> = 0</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> int</>}
+  name={<><a href="#a8336a52f50f8bd8a78041ac57f863e64">ReachingDefDefaultVal</a> = -(1 &lt;&lt; 21)</>}>
+Default values are &#39;nothing happened a long time ago&#39;. <a href="#a8336a52f50f8bd8a78041ac57f863e64">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/looptraversal/#adb30e4144436f66defa2ce2454e0fde8">LoopTraversal::TraversalOrder</a></>}
+  name={<><a href="#afc99fb880e4e52108eaac241b762219f">TraversedMBBOrder</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &#42;</>}
+  name={<><a href="#a988bfa3400feab20b9001ca3503f2ae4">TRI</a> = nullptr</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="char"
+  name={<><a href="#a818bf37052162dd21baf91ecd2ffd4b6">ID</a> = 0</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This class provides the reaching def analysis.
+
+Definition at line 113 of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### BlockSet {#af24d904aaeee62f20d15371bd78c88bb}
+
+<MemberDefinition
+  prototype={<>using llvm::ReachingDefAnalysis::BlockSet =  SmallPtrSetImpl&lt;MachineBasicBlock&#42;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00146">146</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### InstSet {#af006c287439f2f408b6ee5ebb951b738}
+
+<MemberDefinition
+  prototype={<>using llvm::ReachingDefAnalysis::InstSet =  SmallPtrSetImpl&lt;MachineInstr&#42;&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00145">145</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### LiveRegsDefInfo {#a2a6823b697832f797208d6fa083f6d71}
+
+<MemberDefinition
+  prototype={<>using llvm::ReachingDefAnalysis::LiveRegsDefInfo =  std::vector&lt;int&gt;</>}>
+<a href="/docs/api/classes/llvm/instruction">Instruction</a> that defined each register, relative to the beginning of the current basic block.
+
+When a LiveRegsDefInfo is used to represent a live-out register, this value is relative to the end of the basic block, so it will be a negative number.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00123">123</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### OutRegsInfoMap {#a40f81e54ba908c24cd4889533e6f558f}
+
+<MemberDefinition
+  prototype={<>using llvm::ReachingDefAnalysis::OutRegsInfoMap =  SmallVector&lt;LiveRegsDefInfo, 4&gt;</>}>
+Keeps clearance information for all registers.
+
+Note that this is different from the usual definition notion of liveness. The CPU doesn&#39;t care whether or not we consider a register killed.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00129">129</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### ReachingDefAnalysis() {#a8f0413c573fa106fd0977f9992a0b9e4}
+
+<MemberDefinition
+  prototype="llvm::ReachingDefAnalysis::ReachingDefAnalysis ()"
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00151">151</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### collectKilledOperands() {#a67391278875db8d144d4b6bb6e6a09b8}
+
+<MemberDefinition
+  prototype={<>void ReachingDefAnalysis::collectKilledOperands (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; Dead) const</>}>
+Assuming MI is dead, recursively search the incoming operands which are killed by MI and collect those that would become dead.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00254">254</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00641">641</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getAnalysisUsage() {#a55b5dbb2a8d0bc48a7867741fb7bdebd}
+
+<MemberDefinition
+  prototype={<>void llvm::ReachingDefAnalysis::getAnalysisUsage (<a href="/docs/api/classes/llvm/analysisusage">AnalysisUsage</a> &amp; AU) const</>}
+  labels = {["inline", "virtual"]}>
+getAnalysisUsage - Subclasses that override getAnalysisUsage must call this.
+
+For MachineFunctionPasses, calling AU.preservesCFG() indicates that the pass does not modify the <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> CFG.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00156">156</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### getClearance() {#a95984ce0fa3263ce9a7c7992245a5e2c}
+
+<MemberDefinition
+  prototype={<>int ReachingDefAnalysis::getClearance (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/register">Register</a> Reg) const</>}>
+Provides the clearance - the number of instructions since the closest reaching def instuction of Reg that reaches MI.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00219">219</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00319">319</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getGlobalReachingDefs() {#ae53ede66334f07735b415d87d177ff38}
+
+<MemberDefinition
+  prototype={<>void ReachingDefAnalysis::getGlobalReachingDefs (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/register">Register</a> Reg, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; Defs) const</>}>
+Collect all possible definitions of the value stored in Reg, which is used by MI.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00243">243</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00396">396</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getGlobalUses() {#a5594932b56f2e0629b440a3c14de9eda}
+
+<MemberDefinition
+  prototype={<>void ReachingDefAnalysis::getGlobalUses (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/register">Register</a> Reg, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; Uses) const</>}>
+Collect the users of the value stored in Reg, which is defined by MI.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00239">239</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00371">371</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getLiveInUses() {#abbea737b469ca04dfced1aa6c87d55c8}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::getLiveInUses (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB, <a href="/docs/api/classes/llvm/register">Register</a> Reg, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; Uses) const</>}>
+For the given block, collect the instructions that use the live-in value of the provided register.
+
+Return whether the value is still live on exit.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00235">235</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00353">353</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getLiveOuts() {#a8a6fbbe8151eaf22fac6f748d6d55b6e}
+
+<MemberDefinition
+  prototype={<>void ReachingDefAnalysis::getLiveOuts (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB, <a href="/docs/api/classes/llvm/register">Register</a> Reg, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; Defs, <a href="/docs/api/classes/llvm/smallptrsetimpl">BlockSet</a> &amp; VisitedBBs) const</>}>
+Search MBB for a definition of Reg and insert it into Defs.
+
+If no definition is found, recursively search the predecessor blocks for them.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00228">228</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00413">413</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getLiveOuts() {#a1e73391b90930eb7a6e346ca07a570b4}
+
+<MemberDefinition
+  prototype={<>void ReachingDefAnalysis::getLiveOuts (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB, <a href="/docs/api/classes/llvm/register">Register</a> Reg, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; Defs) const</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00230">230</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00407">407</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getLocalLiveOutMIDef() {#a063cf42159fd59dccd371d78ceff4a01}
+
+<MemberDefinition
+  prototype={<>MachineInstr &#42; ReachingDefAnalysis::getLocalLiveOutMIDef (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB, <a href="/docs/api/classes/llvm/register">Register</a> Reg) const</>}>
+Return the local MI that produces the live out value for Reg, or nullptr for a non-live out or non-local def.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00191">191</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00519">519</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getMIOperand() {#a36f4fc1556edfb50cca3fe85fcc05e93}
+
+<MemberDefinition
+  prototype={<>MachineInstr &#42; ReachingDefAnalysis::getMIOperand (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, unsigned Idx) const</>}>
+If a single <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> creates the reaching definition, for MIs operand at Idx, then return it.
+
+Otherwise return null.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00200">200</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00452">452</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getMIOperand() {#ad0d350086d0170ad8429e57516ba5a17}
+
+<MemberDefinition
+  prototype={<>MachineInstr &#42; ReachingDefAnalysis::getMIOperand (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/machineoperand">MachineOperand</a> &amp; MO) const</>}>
+If a single <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> creates the reaching definition, for MIs MO, then return it.
+
+Otherwise return null.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00204">204</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00458">458</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getReachingDef() {#a4d88bf4454485733ba7b4c725a9ccf51}
+
+<MemberDefinition
+  prototype={<>int ReachingDefAnalysis::getReachingDef (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/register">Register</a> Reg) const</>}>
+Provides the instruction id of the closest reaching def instruction of Reg that reaches MI, relative to the begining of MI&#39;s basic block.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00180">180</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00263">263</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getReachingLocalUses() {#ad474bae3c06f9ecee664f61b236e2ffb}
+
+<MemberDefinition
+  prototype={<>void ReachingDefAnalysis::getReachingLocalUses (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/register">Register</a> Reg, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; Uses) const</>}>
+Provides the uses, in the same block as MI, of register that MI defines.
+
+This does not consider live-outs.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00223">223</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00329">329</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getRequiredProperties() {#ad96c8d05f6a14c1009a4db5a7e710f8b}
+
+<MemberDefinition
+  prototype="MachineFunctionProperties llvm::ReachingDefAnalysis::getRequiredProperties () const"
+  labels = {["inline", "virtual"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00163">163</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### getUniqueReachingMIDef() {#adf38674f9ee35a7d177066a78027aa56}
+
+<MemberDefinition
+  prototype={<>MachineInstr &#42; ReachingDefAnalysis::getUniqueReachingMIDef (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/register">Register</a> Reg) const</>}>
+If a single <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> creates the reaching definition, then return it.
+
+Otherwise return null.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00196">196</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00432">432</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### hasLocalDefBefore() {#a9e75c05a36cfe323cef8d3cceeb63c0b}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::hasLocalDefBefore (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/register">Register</a> Reg) const</>}>
+Provide whether the register has been defined in the same basic block as, and before, MI.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00208">208</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00324">324</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### hasSameReachingDef() {#ad1c18d22cd9c352cea5a957c89cf3f7c}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::hasSameReachingDef (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; A, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; B, <a href="/docs/api/classes/llvm/register">Register</a> Reg) const</>}>
+Return whether A and B use the same def of Reg.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00183">183</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00289">289</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### init() {#a5418eaa6c605a696a952bf86c829fe71}
+
+<MemberDefinition
+  prototype="void ReachingDefAnalysis::init ()">
+Initialize data structures.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00173">173</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00235">235</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### isReachingDefLiveOut() {#ab8aeae4e97e230dfac7bb530acd16eb0}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::isReachingDefLiveOut (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/register">Register</a> Reg) const</>}>
+Return whether the reaching def for MI also is live out of its parent block.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00187">187</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00498">498</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### isRegDefinedAfter() {#ad74018294c98676ea265ee12521fb7e7}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::isRegDefinedAfter (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/register">Register</a> Reg) const</>}>
+Return whether the given register is defined after MI.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00215">215</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00484">484</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### isRegUsedAfter() {#a11578546fb4cd061fedf4838313d1f97}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::isRegUsedAfter (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/register">Register</a> Reg) const</>}>
+Return whether the given register is used after MI, whether it&#39;s a local use or a live out.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00212">212</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00464">464</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### isSafeToDefRegAt() {#abd1c3cbea21aa15aed845a4c163fe62c}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::isSafeToDefRegAt (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/register">Register</a> Reg) const</>}>
+Return whether a <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> could be inserted at MI and safely define the given register without affecting the program.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00268">268</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00673">673</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### isSafeToDefRegAt() {#ac153a9af74f3b0bb72e5f95a7654574e}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::isSafeToDefRegAt (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/register">Register</a> Reg, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; Ignore) const</>}>
+Return whether a <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> could be inserted at MI and safely define the given register without affecting the program, ignoring any effects on the provided instructions.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00273">273</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00679">679</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### isSafeToMoveBackwards() {#a7bc46cb4bc77e9715066c204bd98e309}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::isSafeToMoveBackwards (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; From, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; To) const</>}>
+Return whether From can be moved backwards to just after To.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00250">250</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00587">587</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### isSafeToMoveForwards() {#a09e2271431de53cc4cc5057148c18c93}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::isSafeToMoveForwards (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; From, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; To) const</>}>
+Return whether From can be moved forwards to just before To.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00247">247</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00577">577</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### isSafeToRemove() {#a2f90013f33dac170acc9c62907d99e44}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::isSafeToRemove (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; ToRemove) const</>}>
+Return whether removing this instruction will have no effect on the program, returning the redundant use-def chain.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00258">258</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00597">597</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### isSafeToRemove() {#a90cebb38d9bd176e0efbc97c9bf33c2d}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::isSafeToRemove (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; ToRemove, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; Ignore) const</>}>
+Return whether removing this instruction will have no effect on the program, ignoring the possible effects on some instructions, returning the redundant use-def chain.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00263">263</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00605">605</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### releaseMemory() {#a299fef476019ab8771773d7d4e664f2d}
+
+<MemberDefinition
+  prototype="void ReachingDefAnalysis::releaseMemory ()"
+  labels = {["virtual"]}>
+<a href="#a299fef476019ab8771773d7d4e664f2d">releaseMemory()</a> - This member can be implemented by a pass if it wants to be able to release its memory when it is no longer needed.
+
+The default behavior of passes is to hold onto memory for the entire duration of their lifetime (which is the entire compile time). For pipelined passes, this is not a big deal because that memory gets recycled every time the pass is invoked on another program unit. For IP passes, it is more important to free memory when it is unused.
+
+Optionally implement this function to release pass memory when it is no longer used.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00154">154</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00221">221</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### reset() {#a39c852d6cd394007a2af6cc47012f295}
+
+<MemberDefinition
+  prototype="void ReachingDefAnalysis::reset ()">
+Re-run the analysis.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00170">170</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00229">229</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### runOnMachineFunction() {#af7d89916d0369e37e6cbfbca7219cbb6}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::runOnMachineFunction (<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF)</>}
+  labels = {["virtual"]}>
+runOnMachineFunction - This method must be overloaded to perform the desired machine code transformation or analysis.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00161">161</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00212">212</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### traverse() {#a07b847f56e0b64fc3d3f0bc89a876e8f}
+
+<MemberDefinition
+  prototype="void ReachingDefAnalysis::traverse ()">
+Traverse the machine function, mapping definitions.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00176">176</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00244">244</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### enterBasicBlock() {#a43859808ee99bdb8b2cc6e5b8c7a1020}
+
+<MemberDefinition
+  prototype={<>void ReachingDefAnalysis::enterBasicBlock (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB)</>}>
+Set up LiveRegs by merging predecessor live-out values.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00277">277</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00051">51</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getInstFromId() {#ac218cd2bc1d3011f05b88f60588d843c}
+
+<MemberDefinition
+  prototype={<>MachineInstr &#42; ReachingDefAnalysis::getInstFromId (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB, int InstId) const</>}>
+Provides the MI, from the given block, corresponding to the Id or a nullptr if the id does not refer to the block.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00304">304</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00299">299</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### getReachingLocalMIDef() {#a6e31fd43bdb706d29716a5bb5365a446}
+
+<MemberDefinition
+  prototype={<>MachineInstr &#42; ReachingDefAnalysis::getReachingLocalMIDef (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/register">Register</a> Reg) const</>}>
+Provides the instruction of the closest reaching def instruction of Reg that reaches MI, relative to the begining of MI&#39;s basic block.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00308">308</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00282">282</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### isSafeToMove() {#ab3100c944028d50dacdc41f3e725c2d9}
+
+<MemberDefinition
+  template={<>template &lt;typename Iterator&gt;</>}
+  prototype={<>bool ReachingDefAnalysis::isSafeToMove (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; From, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; To) const</>}>
+Utility function for isSafeToMoveForwards/Backwards.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00294">294</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00548">548</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### isSafeToRemove() {#afef608e89623bd7646435888a07446aa}
+
+<MemberDefinition
+  prototype={<>bool ReachingDefAnalysis::isSafeToRemove (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; Visited, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; ToRemove, <a href="/docs/api/classes/llvm/smallptrsetimpl">InstSet</a> &amp; Ignore) const</>}>
+Return whether removing this instruction will have no effect on the program, ignoring the possible effects on some instructions, returning the redundant use-def chain.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00299">299</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00612">612</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### leaveBasicBlock() {#a63eb401f65fa9655642cb865cc7a2f8c}
+
+<MemberDefinition
+  prototype={<>void ReachingDefAnalysis::leaveBasicBlock (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB)</>}>
+Update live-out values.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00280">280</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00103">103</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### processBasicBlock() {#ad922e9ce9738b3aa693664971d9d81a1}
+
+<MemberDefinition
+  prototype={<>void ReachingDefAnalysis::processBasicBlock (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/looptraversal/traversedmbbinfo">LoopTraversal::TraversedMBBInfo</a> &amp; TraversedMBB)</>}>
+<a href="/docs/api/classes/llvm/sys/process">Process</a> he given basic block.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00283">283</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00192">192</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### processDefs() {#a6193dc3adc4e2b2779876e31f9e8bed8}
+
+<MemberDefinition
+  prototype={<>void ReachingDefAnalysis::processDefs (<a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; MI)</>}>
+Update def-ages for registers defined by MI.
+
+Also break dependencies on partial defs and undef uses.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00290">290</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00121">121</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+### reprocessBasicBlock() {#a1618ce4ec28ec3239ac8d57a0f7cc534}
+
+<MemberDefinition
+  prototype={<>void ReachingDefAnalysis::reprocessBasicBlock (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB)</>}>
+<a href="/docs/api/classes/llvm/sys/process">Process</a> block that is part of a loop again.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00286">286</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp/#l00147">147</a> of file <a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### CurInstr {#a1e6a5bd3420fafb5f6eec4981748aa63}
+
+<MemberDefinition
+  prototype="int llvm::ReachingDefAnalysis::CurInstr = -1">
+Current instruction number.
+
+The first instruction in each basic block is 0.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00134">134</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### InstIds {#a38a070111b5a9015acf139de4212e169}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;MachineInstr &#42;, int&gt; llvm::ReachingDefAnalysis::InstIds</>}>
+Maps instructions to their instruction Ids, relative to the beginning of their basic blocks.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00138">138</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### LiveRegs {#a496734e38cf07444333f80cda0163e7d}
+
+<MemberDefinition
+  prototype="LiveRegsDefInfo llvm::ReachingDefAnalysis::LiveRegs">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00124">124</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### MBBOutRegsInfos {#afd1bfc0bd7379333aada63e1be5f629b}
+
+<MemberDefinition
+  prototype="OutRegsInfoMap llvm::ReachingDefAnalysis::MBBOutRegsInfos">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00130">130</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### MBBReachingDefs {#a45dc3370cadeca5b66fc7ee14864983e}
+
+<MemberDefinition
+  prototype="MBBReachingDefsInfo llvm::ReachingDefAnalysis::MBBReachingDefs">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00140">140</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### MF {#a12043721f3b4b96fb4648f1e48e4137c}
+
+<MemberDefinition
+  prototype={<>MachineFunction&#42; llvm::ReachingDefAnalysis::MF = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00115">115</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### NumRegUnits {#a5dc196ee7f67a649431e57267cdd3271}
+
+<MemberDefinition
+  prototype="unsigned llvm::ReachingDefAnalysis::NumRegUnits = 0">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00118">118</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### ReachingDefDefaultVal {#a8336a52f50f8bd8a78041ac57f863e64}
+
+<MemberDefinition
+  prototype={<>const int llvm::ReachingDefAnalysis::ReachingDefDefaultVal = -(1 &lt;&lt; 21)</>}>
+Default values are &#39;nothing happened a long time ago&#39;.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00143">143</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### TraversedMBBOrder {#afc99fb880e4e52108eaac241b762219f}
+
+<MemberDefinition
+  prototype="LoopTraversal::TraversalOrder llvm::ReachingDefAnalysis::TraversedMBBOrder">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00117">117</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+### TRI {#a988bfa3400feab20b9001ca3503f2ae4}
+
+<MemberDefinition
+  prototype={<>const TargetRegisterInfo&#42; llvm::ReachingDefAnalysis::TRI = nullptr</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00116">116</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Attributes
+
+### ID {#a818bf37052162dd21baf91ecd2ffd4b6}
+
+<MemberDefinition
+  prototype="char ReachingDefAnalysis::ID = 0"
+  labels = {["static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h/#l00149">149</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/codegen/reachingdefanalysis-h">ReachingDefAnalysis.h</a></li>
+<li><a href="/docs/api/files/lib/lib/codegen/reachingdefanalysis-cpp">ReachingDefAnalysis.cpp</a></li>
+</ul>
+
+</DoxygenPage>

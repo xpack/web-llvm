@@ -1,0 +1,405 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/executionengine/lib/executionengine/orc/lib/executionengine/orc/debugging/perfsupportplugin-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `PerfSupportPlugin.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/Debugging/PerfSupportPlugin.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/debugging/perfsupportplugin-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/Debugging/DebugInfoSupport.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/debugging/debuginfosupport-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/LookupAndRecordAddrs.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/lookupandrecordaddrs-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/Shared/WrapperFunctionUtils.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/wrapperfunctionutils-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-">anonymous&#123;PerfSupportPlugin.cpp&#125;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Defines Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="#define"
+  name={<><a href="#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG&#95;TYPE</a>&nbsp;&nbsp;&nbsp;&quot;orc&quot;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Defines
+
+### DEBUG&#95;TYPE {#ad78e062f62e0d6e453941fb4ca843e4d}
+
+<MemberDefinition
+  prototype={<>#define DEBUG&#95;TYPE&nbsp;&nbsp;&nbsp;&quot;orc&quot;</>}>
+
+Definition at line <a href="#l00019">19</a> of file <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/orc/lib/executionengine/orc/debugging/perfsupportplugin-cpp">PerfSupportPlugin.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===----- PerfSupportPlugin.cpp --- Utils for perf support -----&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Handles support for registering code with perf</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/debugging/perfsupportplugin-h">llvm/ExecutionEngine/Orc/Debugging/PerfSupportPlugin.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/debugging/debuginfosupport-h">llvm/ExecutionEngine/Orc/Debugging/DebugInfoSupport.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/lookupandrecordaddrs-h">llvm/ExecutionEngine/Orc/LookupAndRecordAddrs.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/include/llvm/executionengine/orc/shared/wrapperfunctionutils-h">llvm/ExecutionEngine/Orc/Shared/WrapperFunctionUtils.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19" lineLink="#ad78e062f62e0d6e453941fb4ca843e4d"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEBUG&#95;TYPE &quot;orc&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/orc">llvm::orc</a>;</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/jitlink">llvm::jitlink</a>;</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25" lineLink="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Creates an EH frame header prepared for a 32-bit relative relocation</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="comment">// to the start of the .eh&#95;frame section. Absolute injects a 64-bit absolute</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="comment">// address space offset 4 bytes from the start instead of 4 bytes</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30" lineLink="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#a16f7e0099c6134ab100f80300b710e41"><Highlight kind="normal"><a href="/docs/api/classes/llvm/expected">Expected&lt;std::string&gt;</a> <a href="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#a16f7e0099c6134ab100f80300b710e41">createX64EHFrameHeader</a>(<a href="/docs/api/classes/llvm/jitlink/section">Section</a> &amp;EHFrame,</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">                                             <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000db">llvm::endianness</a> <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000db">endianness</a>,</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">                                             </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> absolute) &#123;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">  uint8&#95;t <a href="/docs/api/namespaces/llvm/#a689a023f54d38d41f6d952cac41ee538">Version</a> = 1;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">  uint8&#95;t EhFramePtrEnc = 0;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (absolute) &#123;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">    EhFramePtrEnc |= <a href="/docs/api/namespaces/llvm/dwarf/#ab4fde659cfd2ad21ef1920dca7f22255ab4f228eae8e91cb5eb218c4372d2cd75">dwarf::DW&#95;EH&#95;PE&#95;sdata8</a> | <a href="/docs/api/namespaces/llvm/dwarf/#ab4fde659cfd2ad21ef1920dca7f22255ab8bb265a153372d87860f6a33d858f3e">dwarf::DW&#95;EH&#95;PE&#95;absptr</a>;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">    EhFramePtrEnc |= <a href="/docs/api/namespaces/llvm/dwarf/#ab4fde659cfd2ad21ef1920dca7f22255a68bcc7d64ea60cf76503e913360e0b01">dwarf::DW&#95;EH&#95;PE&#95;sdata4</a> | <a href="/docs/api/namespaces/llvm/dwarf/#ab4fde659cfd2ad21ef1920dca7f22255a0e91cc214494d9c9f9c8adcf03be6e51">dwarf::DW&#95;EH&#95;PE&#95;datarel</a>;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">  uint8&#95;t FDECountEnc = <a href="/docs/api/namespaces/llvm/dwarf/#ab4fde659cfd2ad21ef1920dca7f22255af88641d07cb5fdb688ad0d4e78314222">dwarf::DW&#95;EH&#95;PE&#95;omit</a>;</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  uint8&#95;t TableEnc = <a href="/docs/api/namespaces/llvm/dwarf/#ab4fde659cfd2ad21ef1920dca7f22255af88641d07cb5fdb688ad0d4e78314222">dwarf::DW&#95;EH&#95;PE&#95;omit</a>;</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// X86&#95;64&#95;64 relocation to the start of the .eh&#95;frame section</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  uint32&#95;t EHFrameRelocation = 0;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// uint32&#95;t FDECount = 0;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Skip the FDE binary search table</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// We&#39;d have to reprocess the CIEs to get this information,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// which seems like more trouble than it&#39;s worth</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// TODO consider implementing this.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// binary search table goes here</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> HeaderSize =</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">      (</Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/namespaces/llvm/#a689a023f54d38d41f6d952cac41ee538">Version</a>) + </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(EhFramePtrEnc) + </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(FDECountEnc) +</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">       </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(TableEnc) +</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">       (absolute ? </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint64&#95;t) : </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(EHFrameRelocation)));</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">  std::string HeaderContent(HeaderSize, </Highlight><Highlight kind="charliteral">&#39;\\0&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/binarystreamwriter">BinaryStreamWriter</a> Writer(</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/mutablearrayref">MutableArrayRef&lt;uint8&#95;t&gt;</a>(</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="normal">uint8&#95;t &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(HeaderContent.data()), HeaderSize),</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000db">endianness</a>);</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = Writer.<a href="/docs/api/classes/llvm/binarystreamwriter/#a344647bc1c4a4b53334296eba145d408">writeInteger</a>(<a href="/docs/api/namespaces/llvm/#a689a023f54d38d41f6d952cac41ee538">Version</a>))</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::move(Err);</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = Writer.<a href="/docs/api/classes/llvm/binarystreamwriter/#a344647bc1c4a4b53334296eba145d408">writeInteger</a>(EhFramePtrEnc))</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::move(Err);</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = Writer.<a href="/docs/api/classes/llvm/binarystreamwriter/#a344647bc1c4a4b53334296eba145d408">writeInteger</a>(FDECountEnc))</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::move(Err);</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = Writer.<a href="/docs/api/classes/llvm/binarystreamwriter/#a344647bc1c4a4b53334296eba145d408">writeInteger</a>(TableEnc))</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::move(Err);</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (absolute) &#123;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">    uint64&#95;t EHFrameAddr = <a href="/docs/api/classes/llvm/jitlink/sectionrange">SectionRange</a>(EHFrame).<a href="/docs/api/classes/llvm/jitlink/sectionrange/#ab7bd439fefcb561d029d76b2ca9bc500">getStart</a>().<a href="/docs/api/classes/llvm/orc/executoraddr/#a4ee908fb9052f020e3c50e3f1a7d81c5">getValue</a>();</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = Writer.<a href="/docs/api/classes/llvm/binarystreamwriter/#a344647bc1c4a4b53334296eba145d408">writeInteger</a>(EHFrameAddr))</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::move(Err);</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = Writer.<a href="/docs/api/classes/llvm/binarystreamwriter/#a344647bc1c4a4b53334296eba145d408">writeInteger</a>(EHFrameRelocation))</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::move(Err);</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> HeaderContent;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#ac9be268f91eb48f7ea90632838a0afb1"><Highlight kind="normal"></Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#ac9be268f91eb48f7ea90632838a0afb1">RegisterPerfStartSymbolName</a> =</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;llvm&#95;orc&#95;registerJITLoaderPerfStart&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81" lineLink="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#a937eb14957f5735e32eaa7cb854e994c"><Highlight kind="normal"></Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#a937eb14957f5735e32eaa7cb854e994c">RegisterPerfEndSymbolName</a> =</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;llvm&#95;orc&#95;registerJITLoaderPerfEnd&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#a5fa9c8f4d6b70fbff649debfea585968"><Highlight kind="normal"></Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#a5fa9c8f4d6b70fbff649debfea585968">RegisterPerfImplSymbolName</a> =</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;llvm&#95;orc&#95;registerJITLoaderPerfImpl&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/orc/perfjitcodeloadrecord">PerfJITCodeLoadRecord</a></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87" lineLink="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#ac0d41cae6559f87a6e26f2db6c30f24d"><Highlight kind="normal"><a href="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#ac0d41cae6559f87a6e26f2db6c30f24d">getCodeLoadRecord</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/jitlink/symbol">Symbol</a> &amp;Sym, std::atomic&lt;uint64&#95;t&gt; &amp;CodeIndex) &#123;</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/orc/perfjitcodeloadrecord">PerfJITCodeLoadRecord</a> <a href="/docs/api/classes/llvm/record">Record</a>;</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Name = &#42;Sym.<a href="/docs/api/classes/llvm/jitlink/symbol/#a37941163af977712e6ae68591327a0ad">getName</a>();</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Addr = Sym.<a href="/docs/api/classes/llvm/jitlink/symbol/#a9266b50b560808e8f69eb394690d79c4">getAddress</a>();</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> = Sym.<a href="/docs/api/classes/llvm/jitlink/symbol/#ab790ccf24d158f2933ef1c6cf153fb62">getSize</a>();</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.Prefix.Id = <a href="/docs/api/namespaces/llvm/orc/#a58aef37a030d9c1e56eaa6ee5bef47a4a7cc9e41b90a35d5cb26e9fbb0cd0a8b0">PerfJITRecordType::JIT&#95;CODE&#95;LOAD</a>;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Runtime sets PID</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.Pid = 0;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Runtime sets TID</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.Tid = 0;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.Vma = Addr.<a href="/docs/api/classes/llvm/record/#a5e084b9b417ae456b128ee1f6506b41d">getValue</a>();</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.CodeAddr = Addr.<a href="/docs/api/classes/llvm/record/#a5e084b9b417ae456b128ee1f6506b41d">getValue</a>();</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.CodeSize = <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>;</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.CodeIndex = CodeIndex++;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.Name = Name.str();</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Initialize last, once all the other fields are filled</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.Prefix.TotalSize =</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">      (2 &#42; </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint32&#95;t)   </Highlight><Highlight kind="comment">// id, total&#95;size</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">       + </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint64&#95;t)     </Highlight><Highlight kind="comment">// timestamp</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">       + 2 &#42; </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint32&#95;t) </Highlight><Highlight kind="comment">// pid, tid</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">       + 4 &#42; </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint64&#95;t) </Highlight><Highlight kind="comment">// vma, code&#95;addr, code&#95;size, code&#95;index</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">       + Name.size() + 1      </Highlight><Highlight kind="comment">// symbol name</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">       + <a href="/docs/api/classes/llvm/record">Record</a>.CodeSize      </Highlight><Highlight kind="comment">// code</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">      );</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/record">Record</a>;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> std::optional&lt;PerfJITDebugInfoRecord&gt;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115" lineLink="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#ac931ae3a09278d920ebb024da87edf2e"><Highlight kind="normal"><a href="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#ac931ae3a09278d920ebb024da87edf2e">getDebugInfoRecord</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/jitlink/symbol">Symbol</a> &amp;Sym, <a href="/docs/api/classes/llvm/dwarfcontext">DWARFContext</a> &amp;DC) &#123;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/classes/llvm/jitlink/section">Section</a> = Sym.<a href="/docs/api/classes/llvm/jitlink/symbol/#a99c40db3f91fad3db60ba33e9fe93977">getSection</a>();</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Addr = Sym.<a href="/docs/api/classes/llvm/jitlink/symbol/#a9266b50b560808e8f69eb394690d79c4">getAddress</a>();</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> = Sym.<a href="/docs/api/classes/llvm/jitlink/symbol/#ab790ccf24d158f2933ef1c6cf153fb62">getSize</a>();</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> SAddr = <a href="/docs/api/structs/llvm/object/sectionedaddress">object::SectionedAddress</a>&#123;Addr.getValue(), <a href="/docs/api/classes/llvm/jitlink/section">Section</a>.<a href="/docs/api/classes/llvm/jitlink/section/#a46c35148a73ab51b69108948f0361d52">getOrdinal</a>()&#125;;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Getting debug info for symbol &quot;</Highlight><Highlight kind="normal"> &lt;&lt; Sym.<a href="/docs/api/classes/llvm/jitlink/symbol/#a37941163af977712e6ae68591327a0ad">getName</a>()</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">                    &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; at address &quot;</Highlight><Highlight kind="normal"> &lt;&lt; Addr.getValue() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; with size &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">                    &lt;&lt; <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a> &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">                    &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Section ordinal: &quot;</Highlight><Highlight kind="normal"> &lt;&lt; <a href="/docs/api/classes/llvm/jitlink/section">Section</a>.<a href="/docs/api/classes/llvm/jitlink/section/#a46c35148a73ab51b69108948f0361d52">getOrdinal</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> LInfo = DC.<a href="/docs/api/classes/llvm/dwarfcontext/#a55f204d9568a58fbc54ad04343452904">getLineInfoForAddressRange</a>(</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">      SAddr, <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>, <a href="/docs/api/structs/llvm/dilineinfospecifier/#a4d01b170267924ab4225e3c93ad666c3a7e2c85add6bbb98ae5b91471b11fd9a2">DILineInfoSpecifier::FileLineInfoKind::AbsoluteFilePath</a>);</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LInfo.empty()) &#123;</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// No line info available</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">    <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;No line info available\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::nullopt;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/orc/perfjitdebuginforecord">PerfJITDebugInfoRecord</a> <a href="/docs/api/classes/llvm/record">Record</a>;</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.Prefix.Id = <a href="/docs/api/namespaces/llvm/orc/#a58aef37a030d9c1e56eaa6ee5bef47a4ae494e6a50a57d80f1dfad853e3c7cee9">PerfJITRecordType::JIT&#95;CODE&#95;DEBUG&#95;INFO</a>;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.CodeAddr = Addr.<a href="/docs/api/classes/llvm/record/#a5e084b9b417ae456b128ee1f6506b41d">getValue</a>();</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Entry : LInfo) &#123;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Addr = Entry.first;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// The function re-created by perf is preceded by a elf</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// header. Need to adjust for that, otherwise the results are</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// wrong.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">    Addr += 0x40;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/record">Record</a>.Entries.push&#95;back(&#123;Addr, Entry.second.Line,</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">                              Entry.second.Discriminator,</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">                              Entry.second.FileName&#125;);</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> EntriesBytes = (2   </Highlight><Highlight kind="comment">// record header</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">                         + 2 </Highlight><Highlight kind="comment">// record fields</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">                         ) &#42;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">                        </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint64&#95;t);</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Entry : <a href="/docs/api/classes/llvm/record">Record</a>.Entries) &#123;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">    EntriesBytes +=</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint64&#95;t) + 2 &#42; </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint32&#95;t); </Highlight><Highlight kind="comment">// Addr, Line/Discrim</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">    EntriesBytes += Entry.Name.size() + 1;       </Highlight><Highlight kind="comment">// Name</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.Prefix.TotalSize = EntriesBytes;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Created debug info record\\n&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">                    &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Total size: &quot;</Highlight><Highlight kind="normal"> &lt;&lt; <a href="/docs/api/classes/llvm/record">Record</a>.Prefix.TotalSize &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">                    &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Nr entries: &quot;</Highlight><Highlight kind="normal"> &lt;&lt; <a href="/docs/api/classes/llvm/record">Record</a>.Entries.size() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/record">Record</a>;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/expected">Expected&lt;PerfJITCodeUnwindingInfoRecord&gt;</a></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161" lineLink="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#a68574bf3a1f3cabcb89adaf75a2e51b3"><Highlight kind="normal"><a href="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#a68574bf3a1f3cabcb89adaf75a2e51b3">getUnwindingRecord</a>(<a href="/docs/api/classes/llvm/jitlink/linkgraph">LinkGraph</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>) &#123;</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/orc/perfjitcodeunwindinginforecord">PerfJITCodeUnwindingInfoRecord</a> <a href="/docs/api/classes/llvm/record">Record</a>;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.Prefix.Id = <a href="/docs/api/namespaces/llvm/orc/#a58aef37a030d9c1e56eaa6ee5bef47a4abf17deed25fa2105a9053029e46aa615">PerfJITRecordType::JIT&#95;CODE&#95;UNWINDING&#95;INFO</a>;</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.Prefix.TotalSize = 0;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Eh&#95;frame = <a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>.findSectionByName(</Highlight><Highlight kind="stringliteral">&quot;.eh&#95;frame&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Eh&#95;frame) &#123;</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">    <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;No .eh&#95;frame section found\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/record">Record</a>;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>.getTargetTriple().isOSBinFormatELF()) &#123;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">    <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Not an ELF file, will not emit unwinding info\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/record">Record</a>;</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> SR = <a href="/docs/api/classes/llvm/jitlink/sectionrange">SectionRange</a>(&#42;Eh&#95;frame);</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EHFrameSize = SR.getSize();</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Eh&#95;frame&#95;hdr = <a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>.findSectionByName(</Highlight><Highlight kind="stringliteral">&quot;.eh&#95;frame&#95;hdr&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Eh&#95;frame&#95;hdr) &#123;</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>.getTargetTriple().getArch() == <a href="/docs/api/classes/llvm/triple/#a547abd13f7a3c063aa72c8192a868154a13d8ce5e71051718a537277c6a594062">Triple::x86&#95;64</a>) &#123;</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Hdr = <a href="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#a16f7e0099c6134ab100f80300b710e41">createX64EHFrameHeader</a>(&#42;Eh&#95;frame, <a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>.getEndianness(), </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Hdr)</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Hdr.takeError();</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/record">Record</a>.EHFrameHdr = std::move(&#42;Hdr);</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">      <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;No .eh&#95;frame&#95;hdr section found\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/record">Record</a>;</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/record">Record</a>.EHFrameHdrAddr = 0;</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/record">Record</a>.EHFrameHdrSize = <a href="/docs/api/classes/llvm/record">Record</a>.EHFrameHdr.size();</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/record">Record</a>.UnwindDataSize = EHFrameSize + <a href="/docs/api/classes/llvm/record">Record</a>.EHFrameHdrSize;</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/record">Record</a>.MappedSize = 0; </Highlight><Highlight kind="comment">// Because the EHFrame header was not mapped</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> SR = <a href="/docs/api/classes/llvm/jitlink/sectionrange">SectionRange</a>(&#42;Eh&#95;frame&#95;hdr);</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/record">Record</a>.EHFrameHdrAddr = SR.getStart().<a href="/docs/api/classes/llvm/record/#a5e084b9b417ae456b128ee1f6506b41d">getValue</a>();</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/record">Record</a>.EHFrameHdrSize = SR.getSize();</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/record">Record</a>.UnwindDataSize = EHFrameSize + <a href="/docs/api/classes/llvm/record">Record</a>.EHFrameHdrSize;</Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/record">Record</a>.MappedSize = <a href="/docs/api/classes/llvm/record">Record</a>.UnwindDataSize;</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.EHFrameAddr = SR.getStart().<a href="/docs/api/classes/llvm/record/#a5e084b9b417ae456b128ee1f6506b41d">getValue</a>();</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/record">Record</a>.Prefix.TotalSize =</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">      (2 &#42; </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint32&#95;t) </Highlight><Highlight kind="comment">// id, total&#95;size</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">       + </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint64&#95;t)   </Highlight><Highlight kind="comment">// timestamp</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">       +</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">       3 &#42; </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(uint64&#95;t) </Highlight><Highlight kind="comment">// unwind&#95;data&#95;size, eh&#95;frame&#95;hdr&#95;size, mapped&#95;size</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">       + <a href="/docs/api/classes/llvm/record">Record</a>.UnwindDataSize </Highlight><Highlight kind="comment">// eh&#95;frame&#95;hdr, eh&#95;frame</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">      );</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Created unwind record\\n&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">                    &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Total size: &quot;</Highlight><Highlight kind="normal"> &lt;&lt; <a href="/docs/api/classes/llvm/record">Record</a>.Prefix.TotalSize &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">                    &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Unwind size: &quot;</Highlight><Highlight kind="normal"> &lt;&lt; <a href="/docs/api/classes/llvm/record">Record</a>.UnwindDataSize &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">                    &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;EHFrame size: &quot;</Highlight><Highlight kind="normal"> &lt;&lt; EHFrameSize &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">                    &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;EHFrameHdr size: &quot;</Highlight><Highlight kind="normal"> &lt;&lt; <a href="/docs/api/classes/llvm/record">Record</a>.EHFrameHdrSize &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/record">Record</a>;</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214" lineLink="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#a55e3f6a5c003de75eabd889a24709857"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/orc/perfjitrecordbatch">PerfJITRecordBatch</a> <a href="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#a55e3f6a5c003de75eabd889a24709857">getRecords</a>(<a href="/docs/api/classes/llvm/orc/executionsession">ExecutionSession</a> &amp;ES, <a href="/docs/api/classes/llvm/jitlink/linkgraph">LinkGraph</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>,</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">                                     std::atomic&lt;uint64&#95;t&gt; &amp;CodeIndex,</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">                                     </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> EmitDebugInfo, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/mc/mcwin64eh-cpp/#a5d75ea3f9831315ebdb816d70c58c30b">EmitUnwindInfo</a>) &#123;</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">  std::unique&#95;ptr&lt;DWARFContext&gt; DC;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringmap">StringMap&lt;std::unique&#95;ptr&lt;MemoryBuffer&gt;</a>&gt; DCBacking;</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (EmitDebugInfo) &#123;</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> EDC = <a href="/docs/api/namespaces/llvm/orc/#a9ecb3cb1036963ce01100bfddac5791f">createDWARFContext</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>);</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!EDC) &#123;</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">      ES.<a href="/docs/api/classes/llvm/orc/executionsession/#a1c47ed6ddfb6770f1a432af1c9acdc44">reportError</a>(EDC.takeError());</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">      EmitDebugInfo = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">      DC = std::move(EDC-&gt;first);</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">      DCBacking = std::move(EDC-&gt;second);</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/orc/perfjitrecordbatch">PerfJITRecordBatch</a> Batch;</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Sym : <a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>.defined&#95;symbols()) &#123;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Sym-&gt;hasName() || !Sym-&gt;isCallable())</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (EmitDebugInfo) &#123;</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/dwarf-linker/#a463a58e257d5f6fb2c39eb9a2474fc24af6f6931771db95a6bffec131b856bd50">DebugInfo</a> = <a href="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#ac931ae3a09278d920ebb024da87edf2e">getDebugInfoRecord</a>(&#42;Sym, &#42;DC);</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/dwarf-linker/#a463a58e257d5f6fb2c39eb9a2474fc24af6f6931771db95a6bffec131b856bd50">DebugInfo</a>)</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">        Batch.<a href="/docs/api/structs/llvm/orc/perfjitrecordbatch/#a55770d4a7181cf614f005f4fb62a2e62">DebugInfoRecords</a>.push&#95;back(std::move(&#42;<a href="/docs/api/namespaces/llvm/dwarf-linker/#a463a58e257d5f6fb2c39eb9a2474fc24af6f6931771db95a6bffec131b856bd50">DebugInfo</a>));</Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">    Batch.<a href="/docs/api/structs/llvm/orc/perfjitrecordbatch/#aed5c2092464488662d58242c310db140">CodeLoadRecords</a>.push&#95;back(<a href="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#ac0d41cae6559f87a6e26f2db6c30f24d">getCodeLoadRecord</a>(&#42;Sym, CodeIndex));</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/mc/mcwin64eh-cpp/#a5d75ea3f9831315ebdb816d70c58c30b">EmitUnwindInfo</a>) &#123;</Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> UWR = <a href="/docs/api/namespaces/anonymous-perfsupportplugin-cpp-/#a68574bf3a1f3cabcb89adaf75a2e51b3">getUnwindingRecord</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>);</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!UWR) &#123;</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">      ES.<a href="/docs/api/classes/llvm/orc/executionsession/#a1c47ed6ddfb6770f1a432af1c9acdc44">reportError</a>(UWR.takeError());</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">      Batch.<a href="/docs/api/structs/llvm/orc/perfjitrecordbatch/#a8cff396945130f0d41bcca7bd88bc513">UnwindingRecord</a> = std::move(&#42;UWR);</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">    Batch.<a href="/docs/api/structs/llvm/orc/perfjitrecordbatch/#a8cff396945130f0d41bcca7bd88bc513">UnwindingRecord</a>.<a href="/docs/api/structs/llvm/orc/perfjitcodeunwindinginforecord/#af2e7b4e4f8057abfa680eaaece56a449">Prefix</a>.<a href="/docs/api/structs/llvm/orc/perfjitrecordprefix/#a04ad3002e4d48b2dfdb8c830cce5d0fb">TotalSize</a> = 0;</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Batch;</Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254" lineLink="/docs/api/classes/llvm/orc/perfsupportplugin/#a83edb7e626e56d27c5100a3fb433fec0"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/perfsupportplugin/#a83edb7e626e56d27c5100a3fb433fec0">PerfSupportPlugin::PerfSupportPlugin</a>(<a href="/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> &amp;EPC,</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">                                     <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> RegisterPerfStartAddr,</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">                                     <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> RegisterPerfEndAddr,</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">                                     <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> RegisterPerfImplAddr,</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">                                     </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> EmitDebugInfo, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> EmitUnwindInfo)</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">    : EPC(EPC), RegisterPerfStartAddr(RegisterPerfStartAddr),</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">      RegisterPerfEndAddr(RegisterPerfEndAddr),</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">      RegisterPerfImplAddr(RegisterPerfImplAddr), CodeIndex(0),</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">      EmitDebugInfo(EmitDebugInfo), EmitUnwindInfo(EmitUnwindInfo) &#123;</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#aa1e1474f15df639f0d874b21f15666f7">cantFail</a>(EPC.callSPSWrapper&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">()&gt;(RegisterPerfStartAddr));</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265" lineLink="/docs/api/classes/llvm/orc/perfsupportplugin/#a3faed67ac0ef0503a5477854e6663e2f"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/perfsupportplugin/#a3faed67ac0ef0503a5477854e6663e2f">PerfSupportPlugin::~PerfSupportPlugin</a>() &#123;</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#aa1e1474f15df639f0d874b21f15666f7">cantFail</a>(EPC.callSPSWrapper&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">()&gt;(RegisterPerfEndAddr));</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269" lineLink="/docs/api/classes/llvm/orc/perfsupportplugin/#a0b1cb2049314feb0a29760c548a604af"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/perfsupportplugin/#a0b1cb2049314feb0a29760c548a604af">PerfSupportPlugin::modifyPassConfig</a>(<a href="/docs/api/classes/llvm/orc/materializationresponsibility">MaterializationResponsibility</a> &amp;MR,</Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">                                         <a href="/docs/api/classes/llvm/jitlink/linkgraph">LinkGraph</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>,</Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">                                         <a href="/docs/api/structs/llvm/jitlink/passconfiguration">PassConfiguration</a> &amp;Config) &#123;</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">  Config.<a href="/docs/api/structs/llvm/jitlink/passconfiguration/#a617bac95c4003dd176fa5cc119d2a919">PostFixupPasses</a>.push&#95;back(&#91;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">&#93;(<a href="/docs/api/classes/llvm/jitlink/linkgraph">LinkGraph</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>) &#123;</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Batch = getRecords(EPC.getExecutionSession(), <a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>, CodeIndex,</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">                            EmitDebugInfo, EmitUnwindInfo);</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/md5-cpp/#ad96b7cf3182ce2ba85e5a7a93b12c441">G</a>.allocActions().push&#95;back(</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal">        &#123;<a href="/docs/api/namespaces/llvm/#aa1e1474f15df639f0d874b21f15666f7">cantFail</a>(<a href="/docs/api/classes/llvm/orc/shared/wrapperfunctioncall/#ac924edcd8ad4ceeebcbcea4ca04a793b">shared::WrapperFunctionCall::Create</a>&lt;</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">                  <a href="/docs/api/classes/llvm/orc/shared/spsarglist">shared::SPSArgList&lt;shared::SPSPerfJITRecordBatch&gt;</a>&gt;(</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">             RegisterPerfImplAddr, Batch)),</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">         &#123;&#125;&#125;);</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/error/#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">  &#125;);</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal"><a href="/docs/api/classes/llvm/expected">Expected&lt;std::unique&#95;ptr&lt;PerfSupportPlugin&gt;</a>&gt;</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285" lineLink="/docs/api/classes/llvm/orc/perfsupportplugin/#a7751907e2f56cfdda9aacebaea981e3d"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/perfsupportplugin/#a7751907e2f56cfdda9aacebaea981e3d">PerfSupportPlugin::Create</a>(<a href="/docs/api/classes/llvm/orc/executorprocesscontrol">ExecutorProcessControl</a> &amp;EPC, <a href="/docs/api/classes/llvm/orc/jitdylib">JITDylib</a> &amp;JD,</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">                          </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> EmitDebugInfo, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> EmitUnwindInfo) &#123;</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!EPC.getTargetTriple().isOSBinFormatELF()) &#123;</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">make&#95;error&lt;StringError&gt;</a>(</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;Perf support only available for ELF LinkGraphs!&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">        <a href="/docs/api/namespaces/llvm/#a2b43c21951d0948b34bcf7019949032d">inconvertibleErrorCode</a>());</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;ES = EPC.getExecutionSession();</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> StartAddr, EndAddr, ImplAddr;</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = <a href="/docs/api/namespaces/llvm/orc/#a8099b2810ee3dbc4cb1a1efdafcb4dfb">lookupAndRecordAddrs</a>(</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">          ES, <a href="/docs/api/namespaces/llvm/orc/#ac17672ae6b70c781cc77713e88d698eba84a8921b25f505d0d2077aeb5db4bc16">LookupKind::Static</a>, <a href="/docs/api/namespaces/llvm/orc/#a14f663a8d190b740cfb9cbf0d88a7619">makeJITDylibSearchOrder</a>(&#123;&amp;JD&#125;),</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">          &#123;&#123;ES.intern(RegisterPerfStartSymbolName), &amp;StartAddr&#125;,</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal">           &#123;ES.intern(RegisterPerfEndSymbolName), &amp;EndAddr&#125;,</Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal">           &#123;ES.intern(RegisterPerfImplSymbolName), &amp;ImplAddr&#125;&#125;))</Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::move(Err);</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;unique&lt;PerfSupportPlugin&gt;(EPC, StartAddr, EndAddr, ImplAddr,</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">                                             EmitDebugInfo, EmitUnwindInfo);</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

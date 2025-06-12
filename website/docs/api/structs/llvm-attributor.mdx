@@ -1,0 +1,2153 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/attributor
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import EnumerationList from '@xpack/docusaurus-plugin-doxygen/components/EnumerationList'
+import EnumerationListItem from '@xpack/docusaurus-plugin-doxygen/components/EnumerationListItem'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `Attributor` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+The fixpoint analysis framework that orchestrates the attribute deduction. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct llvm::Attributor</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Transforms/IPO/Attributor.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a813f0a09e121e02a8f069816aaa9176c">GlobalVariableSimplifictionCallbackTy</a> = std::function&lt; std::optional&lt; <a href="/docs/api/classes/llvm/constant">Constant</a> &#42; &gt;( <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/globalvariable">GlobalVariable</a> &amp;, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42;, bool &amp;)&gt;</>}>
+<a href="/docs/api/classes/llvm/register">Register</a> <code>CB</code> as a simplification callback. <a href="#a813f0a09e121e02a8f069816aaa9176c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a50c4a1ab2061b7d6ee7de27db7754158">SimplifictionCallbackTy</a> = std::function&lt; std::optional&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt;( <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp;, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42;, bool &amp;)&gt;</>}>
+<a href="/docs/api/classes/llvm/register">Register</a> <code>CB</code> as a simplification callback. <a href="#a50c4a1ab2061b7d6ee7de27db7754158">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#ac9df8bec175fc7ec8950b9df07b0dbf1">VirtualUseCallbackTy</a> = std::function&lt; bool(<a href="/docs/api/structs/llvm/attributor">Attributor</a> &amp;, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42;)&gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a0807a0eb03406c66c5e56ad667c80122">AAMapKeyTy</a> = std::pair&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> char &#42;, <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &gt;</>}>
+A nested map to lookup abstract attributes based on the argument position on the outer level, and the addresses of the static member (AAType::ID) on the inner level. <a href="#a0807a0eb03406c66c5e56ad667c80122">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#ae857b1ae733d7a846225c2f3bd481c10">DependenceVector</a> = <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; DepInfo, 8 &gt;</>}>
+The dependence stack is used to track dependences during an <code><a href="/docs/api/structs/llvm/abstractattribute/#a03972b18e36635ccda4c5a26891f0d25">AbstractAttribute::update</a></code> call. <a href="#ae857b1ae733d7a846225c2f3bd481c10">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Enumerations Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="enum class"
+  name={<>:  &#123; <a href="#a97ebf3ac7509b87322902eae364d2fce">...</a> &#125;</>}>
+A flag that indicates which stage of the process we are in. <a href="#a97ebf3ac7509b87322902eae364d2fce">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a8aedb3ab3b9d39e1ddc68d1c027af2f8">Attributor</a> (SetVector&lt; Function &#42; &gt; &amp;Functions, InformationCache &amp;InfoCache, AttributorConfig Configuration)</>}>
+Constructor. <a href="#a8aedb3ab3b9d39e1ddc68d1c027af2f8">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Destructor Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a0ec7de1b5853de9ecb0a11eb2ac1c8d1">~Attributor</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a23c3ad9b1a74163fc898fc3f8fa398dc">changeAfterManifest</a> (const IRPosition IRP, Value &amp;NV, bool ChangeDroppable=true)</>}>
+Helper function to replace all uses associated with <code>IRP</code> with <code>NV</code>. <a href="#a23c3ad9b1a74163fc898fc3f8fa398dc">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a6e35504e47bdac806456a20c5a6ae2aa">changeToUnreachableAfterManifest</a> (Instruction &#42;I)</>}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>I</code> is to be replaced with <code>unreachable</code> after information was manifested. <a href="#a6e35504e47bdac806456a20c5a6ae2aa">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a95df269c34995fb5c2c123b4638a455b">changeUseAfterManifest</a> (Use &amp;U, Value &amp;NV)</>}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>U</code> is to be replaces with <code>NV</code> after information was manifested. <a href="#a95df269c34995fb5c2c123b4638a455b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a130fa46387c197f8e770059b89d2a4b4">checkForAllCallees</a> (function&#95;ref&lt; bool(ArrayRef&lt; const Function &#42; &gt; Callees)&gt; Pred, const AbstractAttribute &amp;QueryingAA, const CallBase &amp;CB)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all potential Callees of <code>CB</code>. <a href="#a130fa46387c197f8e770059b89d2a4b4">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af579297433eef861f2e181d8979efb21">checkForAllCallLikeInstructions</a> (function&#95;ref&lt; bool(Instruction &amp;)&gt; Pred, const AbstractAttribute &amp;QueryingAA, bool &amp;UsedAssumedInformation, bool CheckBBLivenessOnly=false, bool CheckPotentiallyDead=false)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all call-like instructions (=CallBased derived). <a href="#af579297433eef861f2e181d8979efb21">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#afe7689e6835845cf28f72769c620e36c">checkForAllCallSites</a> (function&#95;ref&lt; bool(AbstractCallSite)&gt; Pred, const AbstractAttribute &amp;QueryingAA, bool RequireAllCallSites, bool &amp;UsedAssumedInformation)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all function call sites. <a href="#afe7689e6835845cf28f72769c620e36c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a8d0a2ebeeedeb0bd16a52affb7f6ed88">checkForAllCallSites</a> (function&#95;ref&lt; bool(AbstractCallSite)&gt; Pred, const Function &amp;Fn, bool RequireAllCallSites, const AbstractAttribute &#42;QueryingAA, bool &amp;UsedAssumedInformation, bool CheckPotentiallyDead=false)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all call sites of <code>Fn</code>. <a href="#a8d0a2ebeeedeb0bd16a52affb7f6ed88">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a440c7b43772713f767d18f81c9caadf2">checkForAllInstructions</a> (function&#95;ref&lt; bool(Instruction &amp;)&gt; Pred, const Function &#42;Fn, const AbstractAttribute &#42;QueryingAA, ArrayRef&lt; unsigned &gt; Opcodes, bool &amp;UsedAssumedInformation, bool CheckBBLivenessOnly=false, bool CheckPotentiallyDead=false)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all instructions in <code>Fn</code> with an opcode present in <code>Opcodes</code>. <a href="#a440c7b43772713f767d18f81c9caadf2">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a20e98490072ce547a896b89b31e110ed">checkForAllInstructions</a> (function&#95;ref&lt; bool(Instruction &amp;)&gt; Pred, const AbstractAttribute &amp;QueryingAA, ArrayRef&lt; unsigned &gt; Opcodes, bool &amp;UsedAssumedInformation, bool CheckBBLivenessOnly=false, bool CheckPotentiallyDead=false)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all instructions with an opcode present in <code>Opcodes</code>. <a href="#a20e98490072ce547a896b89b31e110ed">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a6a9714645534051ae76feba39ffbfb13">checkForAllReadWriteInstructions</a> (function&#95;ref&lt; bool(Instruction &amp;)&gt; Pred, AbstractAttribute &amp;QueryingAA, bool &amp;UsedAssumedInformation)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all Read/Write instructions. <a href="#a6a9714645534051ae76feba39ffbfb13">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a789d552f9e7bede3444f4350d05025af">checkForAllReturnedValues</a> (function&#95;ref&lt; bool(Value &amp;)&gt; Pred, const AbstractAttribute &amp;QueryingAA, AA::ValueScope S=AA::ValueScope::Intraprocedural, bool RecurseForSelectAndPHI=true)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all values potentially returned by the function associated with <code>QueryingAA</code>. <a href="#a789d552f9e7bede3444f4350d05025af">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#abbea65eed8b9b7cd07f0b8eef53df6f5">checkForAllUses</a> (function&#95;ref&lt; bool(const Use &amp;, bool &amp;)&gt; Pred, const AbstractAttribute &amp;QueryingAA, const Value &amp;V, bool CheckBBLivenessOnly=false, DepClassTy LivenessDepClass=DepClassTy::OPTIONAL, bool IgnoreDroppableUses=true, function&#95;ref&lt; bool(const Use &amp;OldU, const Use &amp;NewU)&gt; EquivalentUseCB=nullptr)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all (transitive) uses of <code>V</code>. <a href="#abbea65eed8b9b7cd07f0b8eef53df6f5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ac721eb1fd5b7055e86b73192d40516fd">deleteAfterManifest</a> (Instruction &amp;I)</>}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>I</code> is deleted after information was manifested. <a href="#ac721eb1fd5b7055e86b73192d40516fd">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ad24ef41b2df43a5c5b1fb5742c8d7846">deleteAfterManifest</a> (BasicBlock &amp;BB)</>}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>BB</code> is deleted after information was manifested. <a href="#ad24ef41b2df43a5c5b1fb5742c8d7846">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a5341cc2229babd395097211c10b701c3">deleteAfterManifest</a> (Function &amp;F)</>}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>F</code> is deleted after information was manifested. <a href="#a5341cc2229babd395097211c10b701c3">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename RemarkKind, typename RemarkCallBack&gt;</>}
+  type="void"
+  name={<><a href="#a361e84c7ad1bb42e35e8a7db774c6a54">emitRemark</a> (Instruction &#42;I, StringRef RemarkName, RemarkCallBack &amp;&amp;RemarkCB) const</>}>
+Emit a remark generically. <a href="#a361e84c7ad1bb42e35e8a7db774c6a54">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename RemarkKind, typename RemarkCallBack&gt;</>}
+  type="void"
+  name={<><a href="#a5718ec8f63e95fd6b47488b9e375fbb9">emitRemark</a> (Function &#42;F, StringRef RemarkName, RemarkCallBack &amp;&amp;RemarkCB) const</>}>
+Emit a remark on a function. <a href="#a5718ec8f63e95fd6b47488b9e375fbb9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename AAType&gt;</>}
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> AAType &#42;</>}
+  name={<><a href="#a4f07dfd5d71c602655995567fe27d4a7">getAAFor</a> (const AbstractAttribute &amp;QueryingAA, const IRPosition &amp;IRP, DepClassTy DepClass)</>}>
+Lookup an abstract attribute of type <code>AAType</code> at position <code>IRP</code>. <a href="#a4f07dfd5d71c602655995567fe27d4a7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/llvm/constant">Constant</a> &#42; &gt;</>}
+  name={<><a href="#a853ba647ef2e86e05cd988dae8ed8897">getAssumedConstant</a> (const IRPosition &amp;IRP, const AbstractAttribute &amp;AA, bool &amp;UsedAssumedInformation)</>}>
+If <code>IRP</code> is assumed to be a constant, return it, if it is unclear yet, return std::nullopt, otherwise return <code>nullptr</code>. <a href="#a853ba647ef2e86e05cd988dae8ed8897">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/llvm/constant">Constant</a> &#42; &gt;</>}
+  name={<><a href="#a713758a5b4aeee53e9d6bea99a501d45">getAssumedConstant</a> (const Value &amp;V, const AbstractAttribute &amp;AA, bool &amp;UsedAssumedInformation)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/llvm/constant">Constant</a> &#42; &gt;</>}
+  name={<><a href="#a5271637ff64a682112e6099c249706c5">getAssumedInitializerFromCallBack</a> (const GlobalVariable &amp;GV, const AbstractAttribute &#42;AA, bool &amp;UsedAssumedInformation)</>}>
+Return <code>std::nullopt</code> if there is no call back registered for <code>GV</code> or the call back is still not sure if <code>GV</code> can be simplified. <a href="#a5271637ff64a682112e6099c249706c5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt;</>}
+  name={<><a href="#a55d76a2640e6d82014e150608631667d">getAssumedSimplified</a> (const IRPosition &amp;IRP, const AbstractAttribute &amp;AA, bool &amp;UsedAssumedInformation, AA::ValueScope S)</>}>
+If <code>V</code> is assumed simplified, return it, if it is unclear yet, return std::nullopt, otherwise return <code>nullptr</code>. <a href="#a55d76a2640e6d82014e150608631667d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt;</>}
+  name={<><a href="#af916e9c6236ca0251f6b7ce190543435">getAssumedSimplified</a> (const Value &amp;V, const AbstractAttribute &amp;AA, bool &amp;UsedAssumedInformation, AA::ValueScope S)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt;</>}
+  name={<><a href="#a529439af5980ea04e96200187061c86d">getAssumedSimplified</a> (const IRPosition &amp;V, const AbstractAttribute &#42;AA, bool &amp;UsedAssumedInformation, AA::ValueScope S)</>}>
+If <code>V</code> is assumed simplified, return it, if it is unclear yet, return std::nullopt, otherwise return <code>nullptr</code>. <a href="#a529439af5980ea04e96200187061c86d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ae92d755a80dec605503e2ba653765360">getAssumedSimplifiedValues</a> (const IRPosition &amp;IRP, const AbstractAttribute &#42;AA, SmallVectorImpl&lt; AA::ValueAndContext &gt; &amp;Values, AA::ValueScope S, bool &amp;UsedAssumedInformation, bool RecurseForSelectAndPHI=true)</>}>
+Try to simplify <code>IRP</code> and in the scope <code>S</code>. <a href="#ae92d755a80dec605503e2ba653765360">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a93c49ee9e7df77b696906e02e0ada7d7">getAttrs</a> (const IRPosition &amp;IRP, ArrayRef&lt; Attribute::AttrKind &gt; AKs, SmallVectorImpl&lt; Attribute &gt; &amp;Attrs, bool IgnoreSubsumingPositions=false)</>}>
+Return the attributes of any kind in <code>AKs</code> existing in the IR at a position that will affect this one. <a href="#a93c49ee9e7df77b696906e02e0ada7d7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#aff3d225ae8841fccee34cd8a722f14b2">getAttrsFromAssumes</a> (const IRPosition &amp;IRP, Attribute::AttrKind AK, SmallVectorImpl&lt; Attribute &gt; &amp;Attrs)</>}>
+Return the attributes of kind <code>AK</code> existing in the IR as operand bundles of an llvm.assume. <a href="#aff3d225ae8841fccee34cd8a722f14b2">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/datalayout">DataLayout</a> &amp;</>}
+  name={<><a href="#a8feeb62a7127e68dc6b93eb3697e222e">getDataLayout</a> () const</>}>
+Return the data layout associated with the anchor scope. <a href="#a8feeb62a7127e68dc6b93eb3697e222e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/structs/llvm/informationcache">InformationCache</a> &amp;</>}
+  name={<><a href="#a94b7568dbf492336c71aba240dc9eaf1">getInfoCache</a> ()</>}>
+Return the internal information cache. <a href="#a94b7568dbf492336c71aba240dc9eaf1">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallsetvector">SmallSetVector</a>&lt; <a href="/docs/api/classes/llvm/function">Function</a> &#42;, 8 &gt; &amp;</>}
+  name={<><a href="#a676b09c541144fdec0d1764538a24e4f">getModifiedFunctions</a> ()</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename AAType&gt;</>}
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> AAType &#42;</>}
+  name={<><a href="#a5d9b598f1c0dd1ef47f78469582de44d">getOrCreateAAFor</a> (IRPosition IRP, const AbstractAttribute &#42;QueryingAA, DepClassTy DepClass, bool ForceUpdate=false, bool UpdateAfterInit=true)</>}>
+The version of getAAFor that allows to omit a querying abstract attribute. <a href="#a5d9b598f1c0dd1ef47f78469582de44d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename AAType&gt;</>}
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> AAType &#42;</>}
+  name={<><a href="#a8a3fb6da176bdf8309bc221d7e9a6510">getOrCreateAAFor</a> (const IRPosition &amp;IRP)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#abc575c6c80287df1f51f698ec74e315e">hasAttr</a> (const IRPosition &amp;IRP, ArrayRef&lt; Attribute::AttrKind &gt; AKs, bool IgnoreSubsumingPositions=false, Attribute::AttrKind ImpliedAttributeKind=Attribute::None)</>}>
+Return true if any kind in <code>AKs</code> existing in the IR at a position that will affect this one. <a href="#abc575c6c80287df1f51f698ec74e315e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a6f17bea8405ad7378ca5e3d4fdb73a37">hasGlobalVariableSimplificationCallback</a> (const GlobalVariable &amp;GV)</>}>
+Return true if there is a simplification callback for <code>GV</code>. <a href="#a6f17bea8405ad7378ca5e3d4fdb73a37">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a7e10245805bf47cf09486a7f77bbb660">hasSimplificationCallback</a> (const IRPosition &amp;IRP)</>}>
+Return true if there is a simplification callback for <code>IRP</code>. <a href="#a7e10245805bf47cf09486a7f77bbb660">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#adab9b2e1a33cfbe6f0fa6443046dcaf8">identifyDefaultAbstractAttributes</a> (Function &amp;F)</>}>
+Determine opportunities to derive &#39;default&#39; attributes in <code>F</code> and create abstract attribute objects for them. <a href="#adab9b2e1a33cfbe6f0fa6443046dcaf8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a3ab97c855b4dcf01f5b3de1c50c98018">isAssumedDead</a> (const AbstractAttribute &amp;AA, const AAIsDead &#42;LivenessAA, bool &amp;UsedAssumedInformation, bool CheckBBLivenessOnly=false, DepClassTy DepClass=DepClassTy::OPTIONAL)</>}>
+Return true if <code><a href="/docs/api/namespaces/llvm/aa">AA</a></code> (or its context instruction) is assumed dead. <a href="#a3ab97c855b4dcf01f5b3de1c50c98018">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a532d694575abb82423e79aedce3437cc">isAssumedDead</a> (const Instruction &amp;I, const AbstractAttribute &#42;QueryingAA, const AAIsDead &#42;LivenessAA, bool &amp;UsedAssumedInformation, bool CheckBBLivenessOnly=false, DepClassTy DepClass=DepClassTy::OPTIONAL, bool CheckForDeadStore=false)</>}>
+Return true if <code>I</code> is assumed dead. <a href="#a532d694575abb82423e79aedce3437cc">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a78cf0931abfbc70e124e7c225584b686">isAssumedDead</a> (const Use &amp;U, const AbstractAttribute &#42;QueryingAA, const AAIsDead &#42;FnLivenessAA, bool &amp;UsedAssumedInformation, bool CheckBBLivenessOnly=false, DepClassTy DepClass=DepClassTy::OPTIONAL)</>}>
+Return true if <code>U</code> is assumed dead. <a href="#a78cf0931abfbc70e124e7c225584b686">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a0214244f107a21a911d07efd0c8e899b">isAssumedDead</a> (const IRPosition &amp;IRP, const AbstractAttribute &#42;QueryingAA, const AAIsDead &#42;FnLivenessAA, bool &amp;UsedAssumedInformation, bool CheckBBLivenessOnly=false, DepClassTy DepClass=DepClassTy::OPTIONAL)</>}>
+Return true if <code>IRP</code> is assumed dead. <a href="#a0214244f107a21a911d07efd0c8e899b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a28ca3a54ea9ef7dd53412258dc067de3">isAssumedDead</a> (const BasicBlock &amp;BB, const AbstractAttribute &#42;QueryingAA, const AAIsDead &#42;FnLivenessAA, DepClassTy DepClass=DepClassTy::OPTIONAL)</>}>
+Return true if <code>BB</code> is assumed dead. <a href="#a28ca3a54ea9ef7dd53412258dc067de3">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a84e8ffa7958427b302f833f8d89ba06a">isClosedWorldModule</a> () const</>}>
+Return true if the module contains the whole world, thus, no outside functions exist. <a href="#a84e8ffa7958427b302f833f8d89ba06a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a596c00dc88e93bcbe9f9c58b0c1f23bb">isFunctionIPOAmendable</a> (const Function &amp;F)</>}>
+Determine whether the function <code>F</code> is IPO amendable. <a href="#a596c00dc88e93bcbe9f9c58b0c1f23bb">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a16c57fa54ffac78fa93b5a1d6f9eb4eb">isModulePass</a> () const</>}>
+Return true if this is a module pass, false otherwise. <a href="#a16c57fa54ffac78fa93b5a1d6f9eb4eb">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a3853ed90dd9241284f8bc645e6363ee8">isRunOn</a> (Function &amp;Fn) const</>}>
+Return true if we derive attributes for <code>Fn</code>. <a href="#a3853ed90dd9241284f8bc645e6363ee8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a48e43f049afff816153471217859244b">isRunOn</a> (Function &#42;Fn) const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a273e9b97fc0dfec8df7cf4294d9b87fe">isValidFunctionSignatureRewrite</a> (Argument &amp;Arg, ArrayRef&lt; Type &#42; &gt; ReplacementTypes)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> if we can rewrite a function signature. <a href="#a273e9b97fc0dfec8df7cf4294d9b87fe">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename AAType&gt;</>}
+  type={<>AAType &#42;</>}
+  name={<><a href="#a99bf7bb6daaedee4ea4ae344df38ef8c">lookupAAFor</a> (const IRPosition &amp;IRP, const AbstractAttribute &#42;QueryingAA=nullptr, DepClassTy DepClass=DepClassTy::OPTIONAL, bool AllowInvalidState=false)</>}>
+Return the attribute of <code>AAType</code> for <code>IRP</code> if existing and valid. <a href="#a99bf7bb6daaedee4ea4ae344df38ef8c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a></>}
+  name={<><a href="#abc4265ad1d2a8b43fcf0e44d4b4f6274">manifestAttrs</a> (const IRPosition &amp;IRP, ArrayRef&lt; Attribute &gt; DeducedAttrs, bool ForceReplace=false)</>}>
+Attach <code>DeducedAttrs</code> to <code>IRP</code>, if <code>ForceReplace</code> is set we do this even if the same attribute kind was already present. <a href="#abc4265ad1d2a8b43fcf0e44d4b4f6274">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aad329ad4e840a3849e8cad4d3daed329">markLiveInternalFunction</a> (const Function &amp;F)</>}>
+Mark the internal function <code>F</code> as live. <a href="#aad329ad4e840a3849e8cad4d3daed329">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a44cbebd01cb4b697d9f6827de7e5acee">recordDependence</a> (const AbstractAttribute &amp;FromAA, const AbstractAttribute &amp;ToAA, DepClassTy DepClass)</>}>
+Explicitly record a dependence from <code>FromAA</code> to <code>ToAA</code>, that is if <code>FromAA</code> changes <code>ToAA</code> should be updated as well. <a href="#a44cbebd01cb4b697d9f6827de7e5acee">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename AAType&gt;</>}
+  type={<>AAType &amp;</>}
+  name={<><a href="#a060e233568f50e4e09fe490e93cbd5db">registerAA</a> (AAType &amp;AA)</>}>
+Introduce a new abstract attribute into the fixpoint analysis. <a href="#a060e233568f50e4e09fe490e93cbd5db">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ac0de109386cd611d8f68827a4ed7312c">registerForUpdate</a> (AbstractAttribute &amp;AA)</>}>
+Allows a query <a href="/docs/api/namespaces/llvm/aa">AA</a> to request an update if a new query was received. <a href="#ac0de109386cd611d8f68827a4ed7312c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a0121eb7b984a5cf2527133cb838d5982">registerFunctionSignatureRewrite</a> (Argument &amp;Arg, ArrayRef&lt; Type &#42; &gt; ReplacementTypes, ArgumentReplacementInfo::CalleeRepairCBTy &amp;&amp;CalleeRepairCB, ArgumentReplacementInfo::ACSRepairCBTy &amp;&amp;ACSRepairCB)</>}>
+<a href="/docs/api/classes/llvm/register">Register</a> a rewrite for a function signature. <a href="#a0121eb7b984a5cf2527133cb838d5982">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a8f6fa73384494a86cf6bee52910d35b9">registerGlobalVariableSimplificationCallback</a> (const GlobalVariable &amp;GV, const GlobalVariableSimplifictionCallbackTy &amp;CB)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a1b7a62e6ac2580f9bc9cbd488d6852a2">registerInvokeWithDeadSuccessor</a> (InvokeInst &amp;II)</>}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>II</code> has at least one dead successor block. <a href="#a1b7a62e6ac2580f9bc9cbd488d6852a2">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ab4537becef2e91c777c8d87a97d27ed5">registerManifestAddedBasicBlock</a> (BasicBlock &amp;BB)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a22d9947df9dad7d873c3e222a680a97a">registerSimplificationCallback</a> (const IRPosition &amp;IRP, const SimplifictionCallbackTy &amp;CB)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ab78e9693b79c2a63f753ae9e7d98977d">registerVirtualUseCallback</a> (const Value &amp;V, const VirtualUseCallbackTy &amp;CB)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a></>}
+  name={<><a href="#a33ddc37dc52df4343895a6ada894428c">removeAttrs</a> (const IRPosition &amp;IRP, ArrayRef&lt; Attribute::AttrKind &gt; AttrKinds)</>}>
+Remove all <code>AttrKinds</code> attached to <code>IRP</code>. <a href="#a33ddc37dc52df4343895a6ada894428c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a></>}
+  name={<><a href="#a7c6aa966d08ba8856227ba098f739522">removeAttrs</a> (const IRPosition &amp;IRP, ArrayRef&lt; StringRef &gt; Attrs)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a></>}
+  name={<><a href="#af7d3babc57be041df699846f65d231c8">run</a> ()</>}>
+Run the analyses until a fixpoint is reached or enforced (timeout). <a href="#af7d3babc57be041df699846f65d231c8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename AAType&gt;</>}
+  type="bool"
+  name={<><a href="#ae2b97aec15d3a340e6d2eab0f467aa0a">shouldInitialize</a> (const IRPosition &amp;IRP, bool &amp;ShouldUpdateAA)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af768b31689a456e1335c106cee423fde">shouldSpecializeCallSiteForCallee</a> (const AbstractAttribute &amp;AA, CallBase &amp;CB, Function &amp;Callee, unsigned NumAssumedCallees)</>}>
+Return true if we should specialize the call site <b>CB</b> for the potential callee <code>Fn</code>. <a href="#af768b31689a456e1335c106cee423fde">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename AAType&gt;</>}
+  type="bool"
+  name={<><a href="#afc379e94b702009982a10bb57c4a9e7a">shouldUpdateAA</a> (const IRPosition &amp;IRP)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt;</>}
+  name={<><a href="#a975eb04de3ce355131f2bdc9328def27">translateArgumentToCallSiteContent</a> (std::optional&lt; Value &#42; &gt; V, CallBase &amp;CB, const AbstractAttribute &amp;AA, bool &amp;UsedAssumedInformation)</>}>
+Translate <code>V</code> from the callee context into the call site context. <a href="#a975eb04de3ce355131f2bdc9328def27">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;Attribute::AttrKind AK, typename AAType&gt;</>}
+  type="void"
+  name={<><a href="#ace75380dcb5889a043ac8dead62bd2ea">checkAndQueryIRAttr</a> (const IRPosition &amp;IRP, AttributeSet Attrs)</>}>
+Helper to check <code>Attrs</code> for <code>AK</code>, if not found, check if <code>AAType::isImpliedByIR</code> is true, and if not, create AAType for <code>IRP</code>. <a href="#ace75380dcb5889a043ac8dead62bd2ea">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a></>}
+  name={<><a href="#a2b1be07fc9d5c508490c02c7d990674c">cleanupIR</a> ()</>}>
+Gets called after attributes have been manifested, cleans up the IR. <a href="#a2b1be07fc9d5c508490c02c7d990674c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a2168819c408a92780eec87f19d948244">identifyDeadInternalFunctions</a> ()</>}>
+Identify internal functions that are effectively dead, thus not reachable from a live entry point. <a href="#a2168819c408a92780eec87f19d948244">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a></>}
+  name={<><a href="#a45be2c37323c4072b639978064a869e2">manifestAttributes</a> ()</>}>
+Gets called after scheduling, manifests attributes to the LLVM IR. <a href="#a45be2c37323c4072b639978064a869e2">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a7890eb5376939c12d8382ed776a8c744">rememberDependences</a> ()</>}>
+Remember the dependences on the top of the dependence stack such that they may trigger further updates. <a href="#a7890eb5376939c12d8382ed776a8c744">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a></>}
+  name={<><a href="#a4f97fa57be7bade11ca16c8600eefa63">rewriteFunctionSignatures</a> (SmallSetVector&lt; Function &#42;, 8 &gt; &amp;ModifiedFns)</>}>
+Apply all requested function signature rewrites (. <a href="#a4f97fa57be7bade11ca16c8600eefa63">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ac5cf00977d2a2d7939a920b1fd848203">runTillFixpoint</a> ()</>}>
+This method will do fixpoint iteration until fixpoint or the maximum iteration count is reached. <a href="#ac5cf00977d2a2d7939a920b1fd848203">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a581b0ac39d5a7c3b74493ae1922bee40">shouldPropagateCallBaseContext</a> (const IRPosition &amp;IRP)</>}>
+Determine if <a href="/docs/api/classes/llvm/callbase">CallBase</a> context in <code>IRP</code> should be propagated. <a href="#a581b0ac39d5a7c3b74493ae1922bee40">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a52cf9d9031b2897b56bca1fa70897845">shouldSeedAttribute</a> (AbstractAttribute &amp;AA)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> if the <a href="/docs/api/classes/llvm/attribute">Attribute</a> <code><a href="/docs/api/namespaces/llvm/aa">AA</a></code> should be seeded. <a href="#a52cf9d9031b2897b56bca1fa70897845">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a></>}
+  name={<><a href="#adcd3cb00cc0f00c768c8581f3ba58798">updateAA</a> (AbstractAttribute &amp;AA)</>}>
+Run <code>::update</code> on <code><a href="/docs/api/namespaces/llvm/aa">AA</a></code> and track the dependences queried while doing so. <a href="#adcd3cb00cc0f00c768c8581f3ba58798">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename DescTy&gt;</>}
+  type={<><a href="/docs/api/namespaces/llvm/#acd850975ae5042cacb64a9d0ea4715f3">ChangeStatus</a></>}
+  name={<><a href="#acc4a2059668d8d034907024c9d7fa6c7">updateAttrMap</a> (const IRPosition &amp;IRP, ArrayRef&lt; DescTy &gt; AttrDescs, function&#95;ref&lt; bool(const DescTy &amp;, AttributeSet, AttributeMask &amp;, AttrBuilder &amp;)&gt; CB)</>}>
+Helper to apply <code>CB</code> on all attributes of type <code>AttrDescs</code> of <code>IRP</code>. <a href="#acc4a2059668d8d034907024c9d7fa6c7">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#a8e612822d4ba7bb36c9c79582a567108">BumpPtrAllocator</a> &amp;</>}
+  name={<><a href="#aeaab50c006df3da87c8813ea0715cecb">Allocator</a></>}>
+The allocator used to allocate memory, e.g. for <code><a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a></code>s. <a href="#aeaab50c006df3da87c8813ea0715cecb">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="friend"
+  name={<><a href="#a2c4ab9b13ea1a3b4a36d18736d3da837">AADepGraph</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; AAMapKeyTy, <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42; &gt;</>}
+  name={<><a href="#a1c49bd2adda4fb426346e28ed96bffe4">AAMap</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/function">Function</a> &#42;, <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; std::unique&#95;ptr&lt; <a href="/docs/api/structs/llvm/attributor/argumentreplacementinfo">ArgumentReplacementInfo</a> &gt;, 8 &gt; &gt;</>}
+  name={<><a href="#aa6b9649d69f018f0980bafe73d3ff6cc">ArgumentReplacementMap</a></>}>
+&#125; <a href="#aa6b9649d69f018f0980bafe73d3ff6cc">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="friend"
+  name={<><a href="#a5a7445ccedf03e6c429810509ec1acd1">AttributorCallGraph</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42;, AttributeList &gt;</>}
+  name={<><a href="#a7084a64341771cca3e89998702485b6b">AttrsMap</a></>}>
+Mapping from functions/call sites to their attributes. <a href="#a7084a64341771cca3e89998702485b6b">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallsetvector">SmallSetVector</a>&lt; <a href="/docs/api/classes/llvm/function">Function</a> &#42;, 8 &gt;</>}
+  name={<><a href="#a4570ce786b44539a8d5fb2bf5ea9882a">CGModifiedFunctions</a></>}>
+Set of functions for which we modified the content such that it might impact the call graph. <a href="#a4570ce786b44539a8d5fb2bf5ea9882a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/attributorconfig">AttributorConfig</a></>}
+  name={<><a href="#a85a6f474ebf278136052f8812d4cdb40">Configuration</a></>}>
+<a href="/docs/api/classes/llvm/user">User</a> provided configuration for this <a href="/docs/api/structs/llvm/attributor">Attributor</a> instance. <a href="#a85a6f474ebf278136052f8812d4cdb40">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/classes/llvm/smallvector">DependenceVector</a> &#42;, 16 &gt;</>}
+  name={<><a href="#a1ff9d4598a1b2e4829918095b3b0f997">DependenceStack</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/structs/llvm/aadepgraph">AADepGraph</a></>}
+  name={<><a href="#a48655318409d77036ca664f96a55cee4">DG</a></>}>
+Abstract <a href="/docs/api/classes/llvm/attribute">Attribute</a> dependency graph. <a href="#a48655318409d77036ca664f96a55cee4">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/setvector">SetVector</a>&lt; <a href="/docs/api/classes/llvm/function">Function</a> &#42; &gt; &amp;</>}
+  name={<><a href="#aae377da2a2b36995174221edd4e272e2">Functions</a></>}>
+The set of functions we are deriving attributes for. <a href="#aae377da2a2b36995174221edd4e272e2">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/globalvariable">GlobalVariable</a> &#42;, <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="#a813f0a09e121e02a8f069816aaa9176c">GlobalVariableSimplifictionCallbackTy</a>, 1 &gt; &gt;</>}
+  name={<><a href="#a8c5d568d515ec34a46884f60b98677b5">GlobalVariableSimplificationCallbacks</a></>}>
+The vector with all simplification callbacks for global variables registered by outside AAs. <a href="#a8c5d568d515ec34a46884f60b98677b5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/structs/llvm/informationcache">InformationCache</a> &amp;</>}
+  name={<><a href="#a5119e955144ef3c4868e58f13c0ff545">InfoCache</a></>}>
+The information cache that holds pre-processed (LLVM-IR) information. <a href="#a5119e955144ef3c4868e58f13c0ff545">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#aced70c245425d7b7b3e96fc4693926f4">InitializationChainLength</a> = 0</>}>
+The current initialization chain length. Tracked to avoid stack overflows. <a href="#aced70c245425d7b7b3e96fc4693926f4">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallsetvector">SmallSetVector</a>&lt; <a href="/docs/api/classes/llvm/weakvh">WeakVH</a>, 16 &gt;</>}
+  name={<><a href="#aac5174d5a3ecd5abb5c60f5cb4574df8">InvokeWithDeadSuccessor</a></>}>
+Invoke instructions with at least a single dead successor block. <a href="#aac5174d5a3ecd5abb5c60f5cb4574df8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet</a>&lt; <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, 8 &gt;</>}
+  name={<><a href="#ade5e3d65099ec9545b8e7f49eabf77be">ManifestAddedBlocks</a></>}>
+Functions, blocks, and instructions we delete after manifest is done. <a href="#ade5e3d65099ec9545b8e7f49eabf77be">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="enum llvm::Attributor::AttributorPhase"
+  name={<><a href="#a04377d5c1ee669a0a73c45c139c35166">Phase</a> = AttributorPhase::SEEDING</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallsetvector">SmallSetVector</a>&lt; <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42;, 16 &gt;</>}
+  name={<><a href="#a34bbb127cdca0a1bdfc80a08e8875588">QueryAAsAwaitingUpdate</a></>}>
+&#125; <a href="#a34bbb127cdca0a1bdfc80a08e8875588">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/structs/llvm/irposition">IRPosition</a>, <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="#a50c4a1ab2061b7d6ee7de27db7754158">SimplifictionCallbackTy</a>, 1 &gt; &gt;</>}
+  name={<><a href="#abf94d7e856e4a69d1b30316f86783bbc">SimplificationCallbacks</a></>}>
+The vector with all simplification callbacks registered by outside AAs. <a href="#abf94d7e856e4a69d1b30316f86783bbc">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallsetvector">SmallSetVector</a>&lt; <a href="/docs/api/classes/llvm/weakvh">WeakVH</a>, 16 &gt;</>}
+  name={<><a href="#a843544028117b6ce5324f28898ced3a9">ToBeChangedToUnreachableInsts</a></>}>
+Instructions we replace with <code>unreachable</code> insts after manifest is done. <a href="#a843544028117b6ce5324f28898ced3a9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/structs/llvm/smallmapvector">SmallMapVector</a>&lt; <a href="/docs/api/classes/llvm/use">Use</a> &#42;, <a href="/docs/api/classes/llvm/value">Value</a> &#42;, 32 &gt;</>}
+  name={<><a href="#a2d50c9a9ecf7dfb113c08ed86efb05a8">ToBeChangedUses</a></>}>
+Uses we replace with a new value after manifest is done. <a href="#a2d50c9a9ecf7dfb113c08ed86efb05a8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/structs/llvm/smallmapvector">SmallMapVector</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42;, <a href="/docs/api/classes/llvm/pointerintpair">PointerIntPair</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42;, 1, bool &gt;, 32 &gt;</>}
+  name={<><a href="#a0c747ed62ce5183082d71038c42a874e">ToBeChangedValues</a></>}>
+Values we replace with a new value after manifest is done. <a href="#a0c747ed62ce5183082d71038c42a874e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallsetvector">SmallSetVector</a>&lt; <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, 8 &gt;</>}
+  name={<><a href="#a8aab46aeed4eca2012e6c373a8a867b4">ToBeDeletedBlocks</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallsetvector">SmallSetVector</a>&lt; <a href="/docs/api/classes/llvm/function">Function</a> &#42;, 8 &gt;</>}
+  name={<><a href="#ab00e27ed38c98b43326eb2cc2ffa0ee8">ToBeDeletedFunctions</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallsetvector">SmallSetVector</a>&lt; <a href="/docs/api/classes/llvm/weakvh">WeakVH</a>, 8 &gt;</>}
+  name={<><a href="#a3d4f24248068af18bce5ddaaee0e336b">ToBeDeletedInsts</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/value">Value</a> &#42;, <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="#ac9df8bec175fc7ec8950b9df07b0dbf1">VirtualUseCallbackTy</a>, 1 &gt; &gt;</>}
+  name={<><a href="#a1007c70a5a22b71330afb2dbe47c7d8f">VirtualUseCallbacks</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/function">Function</a> &#42; &gt;</>}
+  name={<><a href="#a2bc48f6ac575b6552845254c51fa6a93">VisitedFunctions</a></>}>
+A set to remember the functions we already assume to be live and visited. <a href="#a2bc48f6ac575b6552845254c51fa6a93">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a45f6cbf770c1d990014838ceb300e936">createShallowWrapper</a> (Function &amp;F)</>}>
+Create a shallow wrapper for <code>F</code> such that <code>F</code> has internal linkage afterwards. <a href="#a45f6cbf770c1d990014838ceb300e936">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/function">Function</a> &#42;</>}
+  name={<><a href="#a58a631dd1eec9e904e4618288bcc9442">internalizeFunction</a> (Function &amp;F, bool Force=false)</>}>
+Make another copy of the function <code>F</code> such that the copied version has internal linkage afterwards and can be analysed. <a href="#a58a631dd1eec9e904e4618288bcc9442">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af85fe4610a8ddd0d57149e73008f32fb">internalizeFunctions</a> (SmallPtrSetImpl&lt; Function &#42; &gt; &amp;FnSet, DenseMap&lt; Function &#42;, Function &#42; &gt; &amp;FnMap)</>}>
+Make copies of each function in the set <code>FnSet</code> such that the copied version has internal linkage afterwards and can be analysed. <a href="#af85fe4610a8ddd0d57149e73008f32fb">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a312bc8ef3e9761ec87b3b6d05d6e2420">isInternalizable</a> (Function &amp;F)</>}>
+Returns true if the function <code>F</code> can be internalized. <a href="#a312bc8ef3e9761ec87b3b6d05d6e2420">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+The fixpoint analysis framework that orchestrates the attribute deduction.
+
+The <a href="/docs/api/structs/llvm/attributor">Attributor</a> provides a general abstract analysis framework (guided fixpoint iteration) as well as helper functions for the deduction of (LLVM-IR) attributes. However, also other code properties can be deduced, propagated, and ultimately manifested through the <a href="/docs/api/structs/llvm/attributor">Attributor</a> framework. This is particularly useful if these properties interact with attributes and a co-scheduled deduction allows to improve the solution. Even if not, thus if attributes/properties are completely isolated, they should use the <a href="/docs/api/structs/llvm/attributor">Attributor</a> framework to reduce the number of fixpoint iteration frameworks in the code base. Note that the <a href="/docs/api/structs/llvm/attributor">Attributor</a> design makes sure that isolated attributes are not impacted, in any way, by others derived at the same time if there is no cross-reasoning performed.
+
+The public facing interface of the <a href="/docs/api/structs/llvm/attributor">Attributor</a> is kept simple and basically allows abstract attributes to one thing, query abstract attributes in-flight. There are two reasons to do this: a) The optimistic state of one abstract attribute can justify an optimistic state of another, allowing to framework to end up with an optimistic (=best possible) fixpoint instead of one based solely on information in the IR. b) This avoids reimplementing various kinds of lookups, e.g., to check for existing IR attributes, in favor of a single lookups interface provided by an abstract attribute subclass.
+
+NOTE: The mechanics of adding a new &quot;concrete&quot; abstract attribute are described in the file comment.
+
+Definition at line 1525 of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### GlobalVariableSimplifictionCallbackTy {#a813f0a09e121e02a8f069816aaa9176c}
+
+<MemberDefinition
+  prototype={<>using llvm::Attributor::GlobalVariableSimplifictionCallbackTy = 
+      std::function&lt;std::optional&lt;Constant &#42;&gt;(
+          const GlobalVariable &amp;, const AbstractAttribute &#42;, bool &amp;)&gt;</>}>
+<a href="/docs/api/classes/llvm/register">Register</a> <code>CB</code> as a simplification callback.
+
+Similar to <code>registerSimplificationCallback</code>, the call back will be called first when we simplify a global variable <code>GV</code>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02040">2040</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### SimplifictionCallbackTy {#a50c4a1ab2061b7d6ee7de27db7754158}
+
+<MemberDefinition
+  prototype={<>using llvm::Attributor::SimplifictionCallbackTy =  std::function&lt;std::optional&lt;Value &#42;&gt;(
+      const IRPosition &amp;, const AbstractAttribute &#42;, bool &amp;)&gt;</>}>
+<a href="/docs/api/classes/llvm/register">Register</a> <code>CB</code> as a simplification callback.
+
+<code><a href="#a55d76a2640e6d82014e150608631667d">Attributor::getAssumedSimplified</a></code> will use these callbacks before we it will ask <code><a href="/docs/api/structs/llvm/aavaluesimplify">AAValueSimplify</a></code>. It is important to ensure this is called before <code>identifyDefaultAbstractAttributes</code>, assuming the latter is called at all.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02025">2025</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### VirtualUseCallbackTy {#ac9df8bec175fc7ec8950b9df07b0dbf1}
+
+<MemberDefinition
+  prototype={<>using llvm::Attributor::VirtualUseCallbackTy = 
+      std::function&lt;bool(Attributor &amp;, const AbstractAttribute &#42;)&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02071">2071</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### AAMapKeyTy {#a0807a0eb03406c66c5e56ad667c80122}
+
+<MemberDefinition
+  prototype={<>using llvm::Attributor::AAMapKeyTy =  std::pair&lt;const char &#42;, IRPosition&gt;</>}>
+A nested map to lookup abstract attributes based on the argument position on the outer level, and the addresses of the static member (AAType::ID) on the inner level.
+
+&#123;
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02507">2507</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### DependenceVector {#ae857b1ae733d7a846225c2f3bd481c10}
+
+<MemberDefinition
+  prototype={<>using llvm::Attributor::DependenceVector =  SmallVector&lt;DepInfo, 8&gt;</>}>
+The dependence stack is used to track dependences during an <code><a href="/docs/api/structs/llvm/abstractattribute/#a03972b18e36635ccda4c5a26891f0d25">AbstractAttribute::update</a></code> call.
+
+As <code><a href="/docs/api/structs/llvm/abstractattribute/#a03972b18e36635ccda4c5a26891f0d25">AbstractAttribute::update</a></code> can be recursive we might have multiple vectors of dependences in here. The stack size, should be adjusted according to the expected recursion depth and the inner dependence vector size to the expected number of dependences per abstract attribute. Since the inner vectors are actually allocated on the stack we can be generous with their size.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02543">2543</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Enumerations
+
+### enum class  {#a97ebf3ac7509b87322902eae364d2fce}
+
+<MemberDefinition
+  prototype="enum class llvm::Attributor::AttributorPhase "
+ labels = {["strong"]}>
+A flag that indicates which stage of the process we are in.
+
+<EnumerationList title="Enumeration values">
+
+<Link id="a97ebf3ac7509b87322902eae364d2fcea37f5e363e6f4eb0e4fd2b27f47b5a35f" />
+<EnumerationListItem name="SEEDING">
+
+</EnumerationListItem>
+
+<Link id="a97ebf3ac7509b87322902eae364d2fcea15a8022d0ed9cd9c2a2e756822703eb4" />
+<EnumerationListItem name="UPDATE">
+
+</EnumerationListItem>
+
+<Link id="a97ebf3ac7509b87322902eae364d2fcea0bf22fc49ca50df354c7619caaaa96d2" />
+<EnumerationListItem name="MANIFEST">
+
+</EnumerationListItem>
+
+<Link id="a97ebf3ac7509b87322902eae364d2fcea3bdb81b260b21a403c3e23fadf1e8f7c" />
+<EnumerationListItem name="CLEANUP">
+
+</EnumerationListItem>
+
+</EnumerationList>
+
+Initially, the phase is SEEDING. Phase is changed in <code><a href="#af7d3babc57be041df699846f65d231c8">Attributor::run()</a></code>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02566">2566</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### Attributor() {#a8aedb3ab3b9d39e1ddc68d1c027af2f8}
+
+<MemberDefinition
+  prototype={<>Attributor::Attributor (<a href="/docs/api/classes/llvm/setvector">SetVector</a>&lt; <a href="/docs/api/classes/llvm/function">Function</a> &#42; &gt; &amp; Functions, <a href="/docs/api/structs/llvm/informationcache">InformationCache</a> &amp; InfoCache, <a href="/docs/api/structs/llvm/attributorconfig">AttributorConfig</a> Configuration)</>}>
+Constructor.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="Functions">The set of functions we are deriving attributes for.</ParametersListItem>
+<ParametersListItem name="InfoCache">Cache to hold various information accessible for the abstract attributes.</ParametersListItem>
+<ParametersListItem name="Configuration">The <a href="/docs/api/structs/llvm/attributor">Attributor</a> configuration which determines what generic features to use.</ParametersListItem>
+</ParametersList>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01534">1534</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01064">1064</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Destructor
+
+### ~Attributor() {#a0ec7de1b5853de9ecb0a11eb2ac1c8d1}
+
+<MemberDefinition
+  prototype="Attributor::~Attributor ()">
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01537">1537</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01530">1530</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### changeAfterManifest() {#a23c3ad9b1a74163fc898fc3f8fa398dc}
+
+<MemberDefinition
+  prototype={<>bool llvm::Attributor::changeAfterManifest (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> IRP, <a href="/docs/api/classes/llvm/value">Value</a> &amp; NV, bool ChangeDroppable=<a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>)</>}
+  labels = {["inline"]}>
+Helper function to replace all uses associated with <code>IRP</code> with <code>NV</code>.
+
+Return true if there is any change. The flag <code>ChangeDroppable</code> indicates if dropppable uses should be changed too.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01865">1865</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### changeToUnreachableAfterManifest() {#a6e35504e47bdac806456a20c5a6ae2aa}
+
+<MemberDefinition
+  prototype={<>void llvm::Attributor::changeToUnreachableAfterManifest (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I)</>}
+  labels = {["inline"]}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>I</code> is to be replaced with <code>unreachable</code> after information was manifested.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01886">1886</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### changeUseAfterManifest() {#a95df269c34995fb5c2c123b4638a455b}
+
+<MemberDefinition
+  prototype={<>bool llvm::Attributor::changeUseAfterManifest (<a href="/docs/api/classes/llvm/use">Use</a> &amp; U, <a href="/docs/api/classes/llvm/value">Value</a> &amp; NV)</>}
+  labels = {["inline"]}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>U</code> is to be replaces with <code>NV</code> after information was manifested.
+
+This also triggers deletion of trivially dead istructions.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01851">1851</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### checkForAllCallees() {#a130fa46387c197f8e770059b89d2a4b4}
+
+<MemberDefinition
+  prototype={<>bool Attributor::checkForAllCallees (<a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; bool(<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/function">Function</a> &#42; &gt; Callees)&gt; Pred, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; QueryingAA, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/callbase">CallBase</a> &amp; CB)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all potential Callees of <code>CB</code>.
+
+This method will evaluate <code>Pred</code> with all potential callees of <code>CB</code> as input and return true if <code>Pred</code> does. If some callees might be unknown this function will return false.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02144">2144</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01736">1736</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### checkForAllCallLikeInstructions() {#af579297433eef861f2e181d8979efb21}
+
+<MemberDefinition
+  prototype={<>bool llvm::Attributor::checkForAllCallLikeInstructions (<a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; bool(<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp;)&gt; Pred, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; QueryingAA, bool &amp; UsedAssumedInformation, bool CheckBBLivenessOnly=false, bool CheckPotentiallyDead=false)</>}
+  labels = {["inline"]}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all call-like instructions (=CallBased derived).
+
+See checkForAllCallLikeInstructions(...) for more information.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02379">2379</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### checkForAllCallSites() {#afe7689e6835845cf28f72769c620e36c}
+
+<MemberDefinition
+  prototype={<>bool Attributor::checkForAllCallSites (<a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; bool(<a href="/docs/api/classes/llvm/abstractcallsite">AbstractCallSite</a>)&gt; Pred, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; QueryingAA, bool RequireAllCallSites, bool &amp; UsedAssumedInformation)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all function call sites.
+
+This method will evaluate <code>Pred</code> on call sites and return true if <code>Pred</code> holds in every call sites. However, this is only possible all call sites are known, hence the function has internal linkage. If true is returned, <code>UsedAssumedInformation</code> is set if assumed information was used to skip or simplify potential call sites.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02324">2324</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01859">1859</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### checkForAllCallSites() {#a8d0a2ebeeedeb0bd16a52affb7f6ed88}
+
+<MemberDefinition
+  prototype={<>bool Attributor::checkForAllCallSites (<a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; bool(<a href="/docs/api/classes/llvm/abstractcallsite">AbstractCallSite</a>)&gt; Pred, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/function">Function</a> &amp; Fn, bool RequireAllCallSites, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42; QueryingAA, bool &amp; UsedAssumedInformation, bool CheckPotentiallyDead=false)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all call sites of <code>Fn</code>.
+
+This method will evaluate <code>Pred</code> on call sites and return true if <code>Pred</code> holds in every call sites. However, this is only possible all call sites are known, hence the function has internal linkage. If true is returned, <code>UsedAssumedInformation</code> is set if assumed information was used to skip or simplify potential call sites.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02336">2336</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01878">1878</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### checkForAllInstructions() {#a440c7b43772713f767d18f81c9caadf2}
+
+<MemberDefinition
+  prototype={<>bool Attributor::checkForAllInstructions (<a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; bool(<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp;)&gt; Pred, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/function">Function</a> &#42; Fn, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42; QueryingAA, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; unsigned &gt; Opcodes, bool &amp; UsedAssumedInformation, bool CheckBBLivenessOnly=false, bool CheckPotentiallyDead=false)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all instructions in <code>Fn</code> with an opcode present in <code>Opcodes</code>.
+
+This method will evaluate <code>Pred</code> on all instructions with an opcode present in <code>Opcode</code> and return true if <code>Pred</code> holds on all of them.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02357">2357</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02039">2039</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### checkForAllInstructions() {#a20e98490072ce547a896b89b31e110ed}
+
+<MemberDefinition
+  prototype={<>bool Attributor::checkForAllInstructions (<a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; bool(<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp;)&gt; Pred, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; QueryingAA, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; unsigned &gt; Opcodes, bool &amp; UsedAssumedInformation, bool CheckBBLivenessOnly=false, bool CheckPotentiallyDead=false)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all instructions with an opcode present in <code>Opcodes</code>.
+
+This method will evaluate <code>Pred</code> on all instructions with an opcode present in <code>Opcode</code> and return true if <code>Pred</code> holds on all of them.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02369">2369</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02065">2065</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### checkForAllReadWriteInstructions() {#a6a9714645534051ae76feba39ffbfb13}
+
+<MemberDefinition
+  prototype={<>bool Attributor::checkForAllReadWriteInstructions (<a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; bool(<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp;)&gt; Pred, <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; QueryingAA, bool &amp; UsedAssumedInformation)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all Read/Write instructions.
+
+This method will evaluate <code>Pred</code> on all instructions that read or write to memory present in the information cache and return true if <code>Pred</code> holds on all of them.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02396">2396</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02078">2078</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### checkForAllReturnedValues() {#a789d552f9e7bede3444f4350d05025af}
+
+<MemberDefinition
+  prototype={<>bool Attributor::checkForAllReturnedValues (<a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; bool(<a href="/docs/api/classes/llvm/value">Value</a> &amp;)&gt; Pred, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; QueryingAA, <a href="/docs/api/namespaces/llvm/aa/#ac85851126814105f4a92b699293e4141">AA::ValueScope</a> S=<a href="/docs/api/namespaces/llvm/aa/#ac85851126814105f4a92b699293e4141a5c330ebe62fe7984f41ec28c822a869a">AA::ValueScope::Intraprocedural</a>, bool RecurseForSelectAndPHI=<a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all values potentially returned by the function associated with <code>QueryingAA</code>.
+
+This is the context insensitive version of the method above.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02347">2347</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01987">1987</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### checkForAllUses() {#abbea65eed8b9b7cd07f0b8eef53df6f5}
+
+<MemberDefinition
+  prototype={<>bool Attributor::checkForAllUses (<a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; bool(<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/use">Use</a> &amp;, bool &amp;)&gt; Pred, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; QueryingAA, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/value">Value</a> &amp; V, bool CheckBBLivenessOnly=false, <a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1">DepClassTy</a> LivenessDepClass=<a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1a7951811e4b085cf68ed3dc3191f36405">DepClassTy::OPTIONAL</a>, bool IgnoreDroppableUses=<a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>, <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; bool(<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/use">Use</a> &amp;OldU, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/use">Use</a> &amp;NewU)&gt; EquivalentUseCB=nullptr)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> <code>Pred</code> on all (transitive) uses of <code>V</code>.
+
+This method will evaluate <code>Pred</code> on all (transitive) uses of the associated value and return true if <code>Pred</code> holds every time. If uses are skipped in favor of equivalent ones, e.g., if we look through memory, the <code>EquivalentUseCB</code> will be used to give the caller an idea what original used was replaced by a new one (or new ones). The visit is cut short if <code>EquivalentUseCB</code> returns false and the function will return false as well.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02157">2157</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01755">1755</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### deleteAfterManifest() {#ac721eb1fd5b7055e86b73192d40516fd}
+
+<MemberDefinition
+  prototype={<>void llvm::Attributor::deleteAfterManifest (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}
+  labels = {["inline"]}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>I</code> is deleted after information was manifested.
+
+This also triggers deletion of trivially dead istructions.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01899">1899</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### deleteAfterManifest() {#ad24ef41b2df43a5c5b1fb5742c8d7846}
+
+<MemberDefinition
+  prototype={<>void llvm::Attributor::deleteAfterManifest (<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; BB)</>}
+  labels = {["inline"]}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>BB</code> is deleted after information was manifested.
+
+This also triggers deletion of trivially dead istructions.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01903">1903</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### deleteAfterManifest() {#a5341cc2229babd395097211c10b701c3}
+
+<MemberDefinition
+  prototype={<>void llvm::Attributor::deleteAfterManifest (<a href="/docs/api/classes/llvm/function">Function</a> &amp; F)</>}
+  labels = {["inline"]}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>F</code> is deleted after information was manifested.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01912">1912</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### emitRemark() {#a361e84c7ad1bb42e35e8a7db774c6a54}
+
+<MemberDefinition
+  template={<>template &lt;typename RemarkKind, typename RemarkCallBack&gt;</>}
+  prototype={<>void llvm::Attributor::emitRemark (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42; I, <a href="/docs/api/classes/llvm/stringref">StringRef</a> RemarkName, RemarkCallBack &amp;&amp; RemarkCB) const</>}
+  labels = {["inline"]}>
+Emit a remark generically.
+
+This template function can be used to generically emit a remark. The RemarkKind should be one of the following:
+<ul>
+<li><a href="/docs/api/classes/llvm/optimizationremark">OptimizationRemark</a> to indicate a successful optimization attempt</li>
+<li><a href="/docs/api/classes/llvm/optimizationremarkmissed">OptimizationRemarkMissed</a> to report a failed optimization attempt</li>
+<li><a href="/docs/api/classes/llvm/optimizationremarkanalysis">OptimizationRemarkAnalysis</a> to provide additional information about an optimization attempt</li>
+</ul>
+
+
+The remark is built using a callback function <code>RemarkCB</code> that takes a RemarkKind as input and returns a RemarkKind.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02177">2177</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### emitRemark() {#a5718ec8f63e95fd6b47488b9e375fbb9}
+
+<MemberDefinition
+  template={<>template &lt;typename RemarkKind, typename RemarkCallBack&gt;</>}
+  prototype={<>void llvm::Attributor::emitRemark (<a href="/docs/api/classes/llvm/function">Function</a> &#42; F, <a href="/docs/api/classes/llvm/stringref">StringRef</a> RemarkName, RemarkCallBack &amp;&amp; RemarkCB) const</>}
+  labels = {["inline"]}>
+Emit a remark on a function.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02198">2198</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### getAAFor() {#a4f07dfd5d71c602655995567fe27d4a7}
+
+<MemberDefinition
+  template={<>template &lt;typename AAType&gt;</>}
+  prototype={<>const AAType &#42; llvm::Attributor::getAAFor (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; QueryingAA, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1">DepClassTy</a> DepClass)</>}
+  labels = {["inline"]}>
+Lookup an abstract attribute of type <code>AAType</code> at position <code>IRP</code>.
+
+While no abstract attribute is found equivalent positions are checked, see <a href="/docs/api/classes/llvm/subsumingpositioniterator">SubsumingPositionIterator</a>. Thus, the returned abstract attribute might be anchored at a different position, e.g., the callee if <code>IRP</code> is a call base.
+
+This method is the only (supported) way an abstract attribute can retrieve information from another abstract attribute. As an example, take an abstract attribute that determines the memory access behavior for a argument (readnone, readonly, ...). It should use <code>getAAFor</code> to get the most optimistic information for other abstract attributes in-flight, e.g. the one reasoning about the &quot;captured&quot; state for the argument or the one reasoning on the memory access behavior of the function as a whole.
+
+If the DepClass enum is set to <code>DepClassTy::None</code> the dependence from <code>QueryingAA</code> to the return abstract attribute is not automatically recorded. This should only be used if the caller will record the dependence explicitly if necessary, thus if it the returned abstract attribute is used for reasoning. To record the dependences explicitly use the <code><a href="#a44cbebd01cb4b697d9f6827de7e5acee">Attributor::recordDependence</a></code> method.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01568">1568</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### getAssumedConstant() {#a853ba647ef2e86e05cd988dae8ed8897}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; Constant &#42; &gt; Attributor::getAssumedConstant (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; AA, bool &amp; UsedAssumedInformation)</>}>
+If <code>IRP</code> is assumed to be a constant, return it, if it is unclear yet, return std::nullopt, otherwise return <code>nullptr</code>.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01973">1973</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01396">1396</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### getAssumedConstant() {#a713758a5b4aeee53e9d6bea99a501d45}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; Constant &#42; &gt; llvm::Attributor::getAssumedConstant (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/value">Value</a> &amp; V, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; AA, bool &amp; UsedAssumedInformation)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01976">1976</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### getAssumedInitializerFromCallBack() {#a5271637ff64a682112e6099c249706c5}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; Constant &#42; &gt; llvm::Attributor::getAssumedInitializerFromCallBack (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/globalvariable">GlobalVariable</a> &amp; GV, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42; AA, bool &amp; UsedAssumedInformation)</>}
+  labels = {["inline"]}>
+Return <code>std::nullopt</code> if there is no call back registered for <code>GV</code> or the call back is still not sure if <code>GV</code> can be simplified.
+
+Return <code>nullptr</code> if <code>GV</code> can&#39;t be simplified.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02058">2058</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### getAssumedSimplified() {#a55d76a2640e6d82014e150608631667d}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; Value &#42; &gt; llvm::Attributor::getAssumedSimplified (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; AA, bool &amp; UsedAssumedInformation, <a href="/docs/api/namespaces/llvm/aa/#ac85851126814105f4a92b699293e4141">AA::ValueScope</a> S)</>}
+  labels = {["inline"]}>
+If <code>V</code> is assumed simplified, return it, if it is unclear yet, return std::nullopt, otherwise return <code>nullptr</code>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01984">1984</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### getAssumedSimplified() {#af916e9c6236ca0251f6b7ce190543435}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; Value &#42; &gt; llvm::Attributor::getAssumedSimplified (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/value">Value</a> &amp; V, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; AA, bool &amp; UsedAssumedInformation, <a href="/docs/api/namespaces/llvm/aa/#ac85851126814105f4a92b699293e4141">AA::ValueScope</a> S)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01990">1990</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### getAssumedSimplified() {#a529439af5980ea04e96200187061c86d}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; Value &#42; &gt; Attributor::getAssumedSimplified (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; V, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42; AA, bool &amp; UsedAssumedInformation, <a href="/docs/api/namespaces/llvm/aa/#ac85851126814105f4a92b699293e4141">AA::ValueScope</a> S)</>}>
+If <code>V</code> is assumed simplified, return it, if it is unclear yet, return std::nullopt, otherwise return <code>nullptr</code>.
+
+Same as the public version except that it can be used without recording dependences on any <code><a href="/docs/api/namespaces/llvm/aa">AA</a></code>.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02002">2002</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01425">1425</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### getAssumedSimplifiedValues() {#ae92d755a80dec605503e2ba653765360}
+
+<MemberDefinition
+  prototype={<>bool Attributor::getAssumedSimplifiedValues (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42; AA, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/structs/llvm/aa/valueandcontext">AA::ValueAndContext</a> &gt; &amp; Values, <a href="/docs/api/namespaces/llvm/aa/#ac85851126814105f4a92b699293e4141">AA::ValueScope</a> S, bool &amp; UsedAssumedInformation, bool RecurseForSelectAndPHI=<a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>)</>}>
+Try to simplify <code>IRP</code> and in the scope <code>S</code>.
+
+If successful, true is returned and all potential values <code>IRP</code> can take are put into <code>Values</code>. If the result in <code>Values</code> contains select or PHI instructions it means those could not be simplified to a single value. Recursive calls with these instructions will yield their respective potential values. If false is returned no other information is valid.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02013">2013</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01448">1448</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### getAttrs() {#a93c49ee9e7df77b696906e02e0ada7d7}
+
+<MemberDefinition
+  prototype={<>void Attributor::getAttrs (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/attribute/#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a> &gt; AKs, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/llvm/attribute">Attribute</a> &gt; &amp; Attrs, bool IgnoreSubsumingPositions=false)</>}>
+Return the attributes of any kind in <code>AKs</code> existing in the IR at a position that will affect this one.
+
+While each position can only have a single attribute of any kind in <code>AKs</code>, there are &quot;subsuming&quot; positions that could have an attribute as well. This method returns all attributes found in <code>Attrs</code>. 
+<ParametersList title="Parameters">
+<ParametersListItem name="IgnoreSubsumingPositions">Flag to determine if subsuming positions, e.g., the function position if this is an argument position, should be ignored.</ParametersListItem>
+</ParametersList>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01939">1939</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01197">1197</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### getAttrsFromAssumes() {#aff3d225ae8841fccee34cd8a722f14b2}
+
+<MemberDefinition
+  prototype={<>bool Attributor::getAttrsFromAssumes (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/classes/llvm/attribute/#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a> AK, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/llvm/attribute">Attribute</a> &gt; &amp; Attrs)</>}>
+Return the attributes of kind <code>AK</code> existing in the IR as operand bundles of an llvm.assume.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01919">1919</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01081">1081</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### getDataLayout() {#a8feeb62a7127e68dc6b93eb3697e222e}
+
+<MemberDefinition
+  prototype={<>const DataLayout &amp; llvm::Attributor::getDataLayout () const</>}
+  labels = {["inline"]}>
+Return the data layout associated with the anchor scope.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02452">2452</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### getInfoCache() {#a94b7568dbf492336c71aba240dc9eaf1}
+
+<MemberDefinition
+  prototype={<>InformationCache &amp; llvm::Attributor::getInfoCache ()</>}
+  labels = {["inline"]}>
+Return the internal information cache.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01730">1730</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### getModifiedFunctions() {#a676b09c541144fdec0d1764538a24e4f}
+
+<MemberDefinition
+  prototype={<>const SmallSetVector&lt; Function &#42;, 8 &gt; &amp; llvm::Attributor::getModifiedFunctions ()</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02457">2457</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### getOrCreateAAFor() {#a5d9b598f1c0dd1ef47f78469582de44d}
+
+<MemberDefinition
+  template={<>template &lt;typename AAType&gt;</>}
+  prototype={<>const AAType &#42; llvm::Attributor::getOrCreateAAFor (<a href="/docs/api/structs/llvm/irposition">IRPosition</a> IRP, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42; QueryingAA, <a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1">DepClassTy</a> DepClass, bool ForceUpdate=false, bool UpdateAfterInit=<a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>)</>}
+  labels = {["inline"]}>
+The version of getAAFor that allows to omit a querying abstract attribute.
+
+Using this after <a href="/docs/api/structs/llvm/attributor">Attributor</a> started running is restricted to only the <a href="/docs/api/structs/llvm/attributor">Attributor</a> itself. Initial seeding of AAs can be done via this function. NOTE: ForceUpdate is ignored in any stage other than the update stage.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01580">1580</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### getOrCreateAAFor() {#a8a3fb6da176bdf8309bc221d7e9a6510}
+
+<MemberDefinition
+  template={<>template &lt;typename AAType&gt;</>}
+  prototype={<>const AAType &#42; llvm::Attributor::getOrCreateAAFor (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01650">1650</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### hasAttr() {#abc575c6c80287df1f51f698ec74e315e}
+
+<MemberDefinition
+  prototype={<>bool Attributor::hasAttr (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/attribute/#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a> &gt; AKs, bool IgnoreSubsumingPositions=false, <a href="/docs/api/classes/llvm/attribute/#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a> ImpliedAttributeKind=<a href="/docs/api/classes/llvm/attribute/#aab7ee4b8fd1d3e7e4cea87868855e60ea5e58e419b1c9e35d6131976412fd8f0c">Attribute::None</a>)</>}>
+Return true if any kind in <code>AKs</code> existing in the IR at a position that will affect this one.
+
+See also getAttrs(...). 
+<ParametersList title="Parameters">
+<ParametersListItem name="IgnoreSubsumingPositions">Flag to determine if subsuming positions, e.g., the function position if this is an argument position, should be ignored.</ParametersListItem>
+</ParametersList>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01927">1927</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01155">1155</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### hasGlobalVariableSimplificationCallback() {#a6f17bea8405ad7378ca5e3d4fdb73a37}
+
+<MemberDefinition
+  prototype={<>bool llvm::Attributor::hasGlobalVariableSimplificationCallback (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/globalvariable">GlobalVariable</a> &amp; GV)</>}
+  labels = {["inline"]}>
+Return true if there is a simplification callback for <code>GV</code>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02050">2050</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### hasSimplificationCallback() {#a7e10245805bf47cf09486a7f77bbb660}
+
+<MemberDefinition
+  prototype={<>bool llvm::Attributor::hasSimplificationCallback (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP)</>}
+  labels = {["inline"]}>
+Return true if there is a simplification callback for <code>IRP</code>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02033">2033</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### identifyDefaultAbstractAttributes() {#adab9b2e1a33cfbe6f0fa6443046dcaf8}
+
+<MemberDefinition
+  prototype={<>void Attributor::identifyDefaultAbstractAttributes (<a href="/docs/api/classes/llvm/function">Function</a> &amp; F)</>}>
+Determine opportunities to derive &#39;default&#39; attributes in <code>F</code> and create abstract attribute objects for them.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="F">The function that is checked for attribute opportunities.</ParametersListItem>
+</ParametersList>
+Note that abstract attribute instances are generally created even if the IR already contains the information they would deduce. The most important reason for this is the single interface, the one of the abstract attribute instance, which can be queried without the need to look at the IR in various places.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01824">1824</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l03343">3343</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### isAssumedDead() {#a3ab97c855b4dcf01f5b3de1c50c98018}
+
+<MemberDefinition
+  prototype={<>bool Attributor::isAssumedDead (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; AA, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/aaisdead">AAIsDead</a> &#42; LivenessAA, bool &amp; UsedAssumedInformation, bool CheckBBLivenessOnly=false, <a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1">DepClassTy</a> DepClass=<a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1a7951811e4b085cf68ed3dc3191f36405">DepClassTy::OPTIONAL</a>)</>}>
+Return true if <code><a href="/docs/api/namespaces/llvm/aa">AA</a></code> (or its context instruction) is assumed dead.
+
+If <code>LivenessAA</code> is not provided it is queried.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02102">2102</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01539">1539</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### isAssumedDead() {#a532d694575abb82423e79aedce3437cc}
+
+<MemberDefinition
+  prototype={<>bool Attributor::isAssumedDead (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42; QueryingAA, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/aaisdead">AAIsDead</a> &#42; LivenessAA, bool &amp; UsedAssumedInformation, bool CheckBBLivenessOnly=false, <a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1">DepClassTy</a> DepClass=<a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1a7951811e4b085cf68ed3dc3191f36405">DepClassTy::OPTIONAL</a>, bool CheckForDeadStore=false)</>}>
+Return true if <code>I</code> is assumed dead.
+
+If <code>LivenessAA</code> is not provided it is queried.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02110">2110</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01601">1601</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### isAssumedDead() {#a78cf0931abfbc70e124e7c225584b686}
+
+<MemberDefinition
+  prototype={<>bool Attributor::isAssumedDead (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/use">Use</a> &amp; U, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42; QueryingAA, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/aaisdead">AAIsDead</a> &#42; FnLivenessAA, bool &amp; UsedAssumedInformation, bool CheckBBLivenessOnly=false, <a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1">DepClassTy</a> DepClass=<a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1a7951811e4b085cf68ed3dc3191f36405">DepClassTy::OPTIONAL</a>)</>}>
+Return true if <code>U</code> is assumed dead.
+
+If <code>FnLivenessAA</code> is not provided it is queried.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02119">2119</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01552">1552</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### isAssumedDead() {#a0214244f107a21a911d07efd0c8e899b}
+
+<MemberDefinition
+  prototype={<>bool Attributor::isAssumedDead (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42; QueryingAA, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/aaisdead">AAIsDead</a> &#42; FnLivenessAA, bool &amp; UsedAssumedInformation, bool CheckBBLivenessOnly=false, <a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1">DepClassTy</a> DepClass=<a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1a7951811e4b085cf68ed3dc3191f36405">DepClassTy::OPTIONAL</a>)</>}>
+Return true if <code>IRP</code> is assumed dead.
+
+If <code>FnLivenessAA</code> is not provided it is queried.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02127">2127</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01664">1664</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### isAssumedDead() {#a28ca3a54ea9ef7dd53412258dc067de3}
+
+<MemberDefinition
+  prototype={<>bool Attributor::isAssumedDead (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; BB, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42; QueryingAA, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/aaisdead">AAIsDead</a> &#42; FnLivenessAA, <a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1">DepClassTy</a> DepClass=<a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1a7951811e4b085cf68ed3dc3191f36405">DepClassTy::OPTIONAL</a>)</>}>
+Return true if <code>BB</code> is assumed dead.
+
+If <code>LivenessAA</code> is not provided it is queried.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02135">2135</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01712">1712</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### isClosedWorldModule() {#a84e8ffa7958427b302f833f8d89ba06a}
+
+<MemberDefinition
+  prototype="bool Attributor::isClosedWorldModule () const">
+Return true if the module contains the whole world, thus, no outside functions exist.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01748">1748</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l03656">3656</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### isFunctionIPOAmendable() {#a596c00dc88e93bcbe9f9c58b0c1f23bb}
+
+<MemberDefinition
+  prototype={<>bool llvm::Attributor::isFunctionIPOAmendable (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/function">Function</a> &amp; F)</>}
+  labels = {["inline"]}>
+Determine whether the function <code>F</code> is IPO amendable.
+
+If a function is exactly defined or it has alwaysinline attribute and is viable to be inlined, we say it is IPO amendable
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01830">1830</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### isModulePass() {#a16c57fa54ffac78fa93b5a1d6f9eb4eb}
+
+<MemberDefinition
+  prototype="bool llvm::Attributor::isModulePass () const"
+  labels = {["inline"]}>
+Return true if this is a module pass, false otherwise.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01733">1733</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### isRunOn() {#a3853ed90dd9241284f8bc645e6363ee8}
+
+<MemberDefinition
+  prototype={<>bool llvm::Attributor::isRunOn (<a href="/docs/api/classes/llvm/function">Function</a> &amp; Fn) const</>}
+  labels = {["inline"]}>
+Return true if we derive attributes for <code>Fn</code>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01751">1751</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### isRunOn() {#a48e43f049afff816153471217859244b}
+
+<MemberDefinition
+  prototype={<>bool llvm::Attributor::isRunOn (<a href="/docs/api/classes/llvm/function">Function</a> &#42; Fn) const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01752">1752</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### isValidFunctionSignatureRewrite() {#a273e9b97fc0dfec8df7cf4294d9b87fe}
+
+<MemberDefinition
+  prototype={<>bool Attributor::isValidFunctionSignatureRewrite (<a href="/docs/api/classes/llvm/argument">Argument</a> &amp; Arg, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/type">Type</a> &#42; &gt; ReplacementTypes)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> if we can rewrite a function signature.
+
+The argument <code>Arg</code> is replaced with new ones defined by the number, order, and types in <code>ReplacementTypes</code>.
+
+
+<SectionUser title="Returns">
+True, if the replacement can be registered, via registerFunctionSignatureRewrite, false otherwise.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02301">2301</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02845">2845</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### lookupAAFor() {#a99bf7bb6daaedee4ea4ae344df38ef8c}
+
+<MemberDefinition
+  template={<>template &lt;typename AAType&gt;</>}
+  prototype={<>AAType &#42; llvm::Attributor::lookupAAFor (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &#42; QueryingAA=nullptr, <a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1">DepClassTy</a> DepClass=<a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1a7951811e4b085cf68ed3dc3191f36405">DepClassTy::OPTIONAL</a>, bool AllowInvalidState=false)</>}
+  labels = {["inline"]}>
+Return the attribute of <code>AAType</code> for <code>IRP</code> if existing and valid.
+
+This also allows non-AA users lookup.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01658">1658</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### manifestAttrs() {#abc4265ad1d2a8b43fcf0e44d4b4f6274}
+
+<MemberDefinition
+  prototype={<>ChangeStatus Attributor::manifestAttrs (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/attribute">Attribute</a> &gt; DeducedAttrs, bool ForceReplace=false)</>}>
+Attach <code>DeducedAttrs</code> to <code>IRP</code>, if <code>ForceReplace</code> is set we do this even if the same attribute kind was already present.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01950">1950</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01245">1245</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### markLiveInternalFunction() {#aad329ad4e840a3849e8cad4d3daed329}
+
+<MemberDefinition
+  prototype={<>void llvm::Attributor::markLiveInternalFunction (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/function">Function</a> &amp; F)</>}
+  labels = {["inline"]}>
+Mark the internal function <code>F</code> as live.
+
+This will trigger the identification and initialization of attributes for <code>F</code>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01839">1839</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### recordDependence() {#a44cbebd01cb4b697d9f6827de7e5acee}
+
+<MemberDefinition
+  prototype={<>void Attributor::recordDependence (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; FromAA, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; ToAA, <a href="/docs/api/namespaces/llvm/#adadcb655edca867f08f7ea6068a7d8a1">DepClassTy</a> DepClass)</>}>
+Explicitly record a dependence from <code>FromAA</code> to <code>ToAA</code>, that is if <code>FromAA</code> changes <code>ToAA</code> should be updated as well.
+
+This method should be used in conjunction with the <code>getAAFor</code> method and with the DepClass enum passed to the method set to None. This can be beneficial to avoid false dependences but it requires the users of <code>getAAFor</code> to explicitly record true dependences through this method. The <code>DepClass</code> flag indicates if the dependence is striclty necessary. That means for required dependences, if <code>FromAA</code> changes to an invalid state, <code>ToAA</code> can be moved to a pessimistic fixpoint because it required information from <code>FromAA</code> but none are available anymore.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01699">1699</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l03304">3304</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### registerAA() {#a060e233568f50e4e09fe490e93cbd5db}
+
+<MemberDefinition
+  template={<>template &lt;typename AAType&gt;</>}
+  prototype={<>AAType &amp; llvm::Attributor::registerAA (AAType &amp; AA)</>}
+  labels = {["inline"]}>
+Introduce a new abstract attribute into the fixpoint analysis.
+
+Note that ownership of the attribute is given to the <a href="/docs/api/structs/llvm/attributor">Attributor</a>. It will invoke delete for the <a href="/docs/api/structs/llvm/attributor">Attributor</a> on destruction of the <a href="/docs/api/structs/llvm/attributor">Attributor</a>.
+
+Attributes are identified by their IR position (AAType::getIRPosition()) and the address of their static member (see AAType::ID).
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01709">1709</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### registerForUpdate() {#ac0de109386cd611d8f68827a4ed7312c}
+
+<MemberDefinition
+  prototype={<>void Attributor::registerForUpdate (<a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; AA)</>}>
+Allows a query <a href="/docs/api/namespaces/llvm/aa">AA</a> to request an update if a new query was received.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01686">1686</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02248">2248</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### registerFunctionSignatureRewrite() {#a0121eb7b984a5cf2527133cb838d5982}
+
+<MemberDefinition
+  prototype={<>bool Attributor::registerFunctionSignatureRewrite (<a href="/docs/api/classes/llvm/argument">Argument</a> &amp; Arg, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/type">Type</a> &#42; &gt; ReplacementTypes, <a href="/docs/api/structs/llvm/attributor/argumentreplacementinfo/#a2083e74f7ea053500761e58968041ff7">ArgumentReplacementInfo::CalleeRepairCBTy</a> &amp;&amp; CalleeRepairCB, <a href="/docs/api/structs/llvm/attributor/argumentreplacementinfo/#ae7e2d390e89b26a2e16db36d9f522874">ArgumentReplacementInfo::ACSRepairCBTy</a> &amp;&amp; ACSRepairCB)</>}>
+<a href="/docs/api/classes/llvm/register">Register</a> a rewrite for a function signature.
+
+The argument <code>Arg</code> is replaced with new ones defined by the number, order, and types in <code>ReplacementTypes</code>. The rewiring at the call sites is done through <code>ACSRepairCB</code> and at the callee site through <code>CalleeRepairCB</code>.
+
+
+<SectionUser title="Returns">
+True, if the replacement was registered, false otherwise.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02312">2312</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02914">2914</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### registerGlobalVariableSimplificationCallback() {#a8f6fa73384494a86cf6bee52910d35b9}
+
+<MemberDefinition
+  prototype={<>void llvm::Attributor::registerGlobalVariableSimplificationCallback (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/globalvariable">GlobalVariable</a> &amp; GV, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#a813f0a09e121e02a8f069816aaa9176c">GlobalVariableSimplifictionCallbackTy</a> &amp; CB)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02043">2043</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### registerInvokeWithDeadSuccessor() {#a1b7a62e6ac2580f9bc9cbd488d6852a2}
+
+<MemberDefinition
+  prototype={<>void llvm::Attributor::registerInvokeWithDeadSuccessor (<a href="/docs/api/classes/llvm/invokeinst">InvokeInst</a> &amp; II)</>}
+  labels = {["inline"]}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>II</code> has at least one dead successor block.
+
+This information is used, e.g., to replace <code>II</code> with a call, after information was manifested.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01893">1893</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### registerManifestAddedBasicBlock() {#ab4537becef2e91c777c8d87a97d27ed5}
+
+<MemberDefinition
+  prototype={<>void llvm::Attributor::registerManifestAddedBasicBlock (<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; BB)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01907">1907</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### registerSimplificationCallback() {#a22d9947df9dad7d873c3e222a680a97a}
+
+<MemberDefinition
+  prototype={<>void llvm::Attributor::registerSimplificationCallback (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#a50c4a1ab2061b7d6ee7de27db7754158">SimplifictionCallbackTy</a> &amp; CB)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02027">2027</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### registerVirtualUseCallback() {#ab78e9693b79c2a63f753ae9e7d98977d}
+
+<MemberDefinition
+  prototype={<>void llvm::Attributor::registerVirtualUseCallback (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/value">Value</a> &amp; V, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#ac9df8bec175fc7ec8950b9df07b0dbf1">VirtualUseCallbackTy</a> &amp; CB)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02073">2073</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### removeAttrs() {#a33ddc37dc52df4343895a6ada894428c}
+
+<MemberDefinition
+  prototype={<>ChangeStatus Attributor::removeAttrs (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/attribute/#aab7ee4b8fd1d3e7e4cea87868855e60e">Attribute::AttrKind</a> &gt; AttrKinds)</>}>
+Remove all <code>AttrKinds</code> attached to <code>IRP</code>.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01944">1944</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01220">1220</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### removeAttrs() {#a7c6aa966d08ba8856227ba098f739522}
+
+<MemberDefinition
+  prototype={<>ChangeStatus Attributor::removeAttrs (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/stringref">StringRef</a> &gt; Attrs)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01946">1946</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01232">1232</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### run() {#af7d3babc57be041df699846f65d231c8}
+
+<MemberDefinition
+  prototype="ChangeStatus Attributor::run ()">
+Run the analyses until a fixpoint is reached or enforced (timeout).
+
+The attributes registered with this <a href="/docs/api/structs/llvm/attributor">Attributor</a> can be used after as long as the <a href="/docs/api/structs/llvm/attributor">Attributor</a> is not destroyed (it owns the attributes now).
+
+\\Returns CHANGED if the IR was changed, otherwise UNCHANGED.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01545">1545</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02635">2635</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### shouldInitialize() {#ae2b97aec15d3a340e6d2eab0f467aa0a}
+
+<MemberDefinition
+  template={<>template &lt;typename AAType&gt;</>}
+  prototype={<>bool llvm::Attributor::shouldInitialize (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, bool &amp; ShouldUpdateAA)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01792">1792</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### shouldSpecializeCallSiteForCallee() {#af768b31689a456e1335c106cee423fde}
+
+<MemberDefinition
+  prototype={<>bool llvm::Attributor::shouldSpecializeCallSiteForCallee (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; AA, <a href="/docs/api/classes/llvm/callbase">CallBase</a> &amp; CB, <a href="/docs/api/classes/llvm/function">Function</a> &amp; Callee, unsigned NumAssumedCallees)</>}
+  labels = {["inline"]}>
+Return true if we should specialize the call site <b>CB</b> for the potential callee <code>Fn</code>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01737">1737</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### shouldUpdateAA() {#afc379e94b702009982a10bb57c4a9e7a}
+
+<MemberDefinition
+  template={<>template &lt;typename AAType&gt;</>}
+  prototype={<>bool llvm::Attributor::shouldUpdateAA (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01756">1756</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### translateArgumentToCallSiteContent() {#a975eb04de3ce355131f2bdc9328def27}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; Value &#42; &gt; Attributor::translateArgumentToCallSiteContent (std::optional&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt; V, <a href="/docs/api/classes/llvm/callbase">CallBase</a> &amp; CB, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; AA, bool &amp; UsedAssumedInformation)</>}>
+Translate <code>V</code> from the callee context into the call site context.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02095">2095</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01513">1513</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### checkAndQueryIRAttr() {#ace75380dcb5889a043ac8dead62bd2ea}
+
+<MemberDefinition
+  template={<>template &lt;Attribute::AttrKind AK, typename AAType&gt;</>}
+  prototype={<>void Attributor::checkAndQueryIRAttr (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/classes/llvm/attributeset">AttributeSet</a> Attrs)</>}>
+Helper to check <code>Attrs</code> for <code>AK</code>, if not found, check if <code>AAType::isImpliedByIR</code> is true, and if not, create AAType for <code>IRP</code>.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01958">1958</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l03333">3333</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### cleanupIR() {#a2b1be07fc9d5c508490c02c7d990674c}
+
+<MemberDefinition
+  prototype="ChangeStatus Attributor::cleanupIR ()">
+Gets called after attributes have been manifested, cleans up the IR.
+
+Deletes dead functions, blocks and instructions. Rewrites function signitures and updates the call graph.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02476">2476</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02398">2398</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### identifyDeadInternalFunctions() {#a2168819c408a92780eec87f19d948244}
+
+<MemberDefinition
+  prototype="void Attributor::identifyDeadInternalFunctions ()">
+Identify internal functions that are effectively dead, thus not reachable from a live entry point.
+
+The functions are added to ToBeDeletedFunctions.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02480">2480</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02343">2343</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### manifestAttributes() {#a45be2c37323c4072b639978064a869e2}
+
+<MemberDefinition
+  prototype="ChangeStatus Attributor::manifestAttributes ()">
+Gets called after scheduling, manifests attributes to the LLVM IR.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02471">2471</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02254">2254</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### rememberDependences() {#a7890eb5376939c12d8382ed776a8c744}
+
+<MemberDefinition
+  prototype="void Attributor::rememberDependences ()">
+Remember the dependences on the top of the dependence stack such that they may trigger further updates.
+
+(
+<SectionUser title="See Also">
+DependenceStack)
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02488">2488</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l03319">3319</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### rewriteFunctionSignatures() {#a4f97fa57be7bade11ca16c8600eefa63}
+
+<MemberDefinition
+  prototype={<>ChangeStatus Attributor::rewriteFunctionSignatures (<a href="/docs/api/classes/llvm/smallsetvector">SmallSetVector</a>&lt; <a href="/docs/api/classes/llvm/function">Function</a> &#42;, 8 &gt; &amp; ModifiedFns)</>}>
+Apply all requested function signature rewrites (.
+
+<SectionUser title="See Also">
+<a href="#a0121eb7b984a5cf2527133cb838d5982">registerFunctionSignatureRewrite</a>) and return <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> <a href="/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#acdfbcf188e2d4a80837e89de2ccdffab">if</a> the module was altered.
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02497">2497</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02966">2966</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### runTillFixpoint() {#ac5cf00977d2a2d7939a920b1fd848203}
+
+<MemberDefinition
+  prototype="void Attributor::runTillFixpoint ()">
+This method will do fixpoint iteration until fixpoint or the maximum iteration count is reached.
+
+If the maximum iteration count is reached, This method will indicate pessimistic fixpoint on attributes that transitively depend on attributes that were scheduled for an update.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02468">2468</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02106">2106</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### shouldPropagateCallBaseContext() {#a581b0ac39d5a7c3b74493ae1922bee40}
+
+<MemberDefinition
+  prototype={<>bool Attributor::shouldPropagateCallBaseContext (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP)</>}>
+Determine if <a href="/docs/api/classes/llvm/callbase">CallBase</a> context in <code>IRP</code> should be propagated.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02491">2491</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01980">1980</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### shouldSeedAttribute() {#a52cf9d9031b2897b56bca1fa70897845}
+
+<MemberDefinition
+  prototype={<>bool Attributor::shouldSeedAttribute (<a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; AA)</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> if the <a href="/docs/api/classes/llvm/attribute">Attribute</a> <code><a href="/docs/api/namespaces/llvm/aa">AA</a></code> should be seeded.
+
+See getOrCreateAAFor.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02501">2501</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02954">2954</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### updateAA() {#adcd3cb00cc0f00c768c8581f3ba58798}
+
+<MemberDefinition
+  prototype={<>ChangeStatus Attributor::updateAA (<a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a> &amp; AA)</>}>
+Run <code>::update</code> on <code><a href="/docs/api/namespaces/llvm/aa">AA</a></code> and track the dependences queried while doing so.
+
+Also adjust the state if we know further updates are not necessary.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02484">2484</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02667">2667</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### updateAttrMap() {#acc4a2059668d8d034907024c9d7fa6c7}
+
+<MemberDefinition
+  template={<>template &lt;typename DescTy&gt;</>}
+  prototype={<>ChangeStatus Attributor::updateAttrMap (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/irposition">IRPosition</a> &amp; IRP, <a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; DescTy &gt; AttrDescs, <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt; bool(<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> DescTy &amp;, <a href="/docs/api/classes/llvm/attributeset">AttributeSet</a>, <a href="/docs/api/classes/llvm/attributemask">AttributeMask</a> &amp;, AttrBuilder &amp;)&gt; CB)</>}>
+Helper to apply <code>CB</code> on all attributes of type <code>AttrDescs</code> of <code>IRP</code>.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01962">1962</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l01113">1113</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### Allocator {#aeaab50c006df3da87c8813ea0715cecb}
+
+<MemberDefinition
+  prototype={<>BumpPtrAllocator&amp; llvm::Attributor::Allocator</>}>
+The allocator used to allocate memory, e.g. for <code><a href="/docs/api/structs/llvm/abstractattribute">AbstractAttribute</a></code>s.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02455">2455</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### AADepGraph {#a2c4ab9b13ea1a3b4a36d18736d3da837}
+
+<MemberDefinition
+  prototype="friend llvm::Attributor::AADepGraph">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02592">2592</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### AAMap {#a1c49bd2adda4fb426346e28ed96bffe4}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;AAMapKeyTy, AbstractAttribute &#42;&gt; llvm::Attributor::AAMap</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02508">2508</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### ArgumentReplacementMap {#aa6b9649d69f018f0980bafe73d3ff6cc}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;Function &#42;, SmallVector&lt;std::unique&#95;ptr&lt;ArgumentReplacementInfo&gt;, 8&gt; &gt; llvm::Attributor::ArgumentReplacementMap</>}>
+&#125;
+
+Map to remember all requested signature changes (= argument replacements).
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02513">2513</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### AttributorCallGraph {#a5a7445ccedf03e6c429810509ec1acd1}
+
+<MemberDefinition
+  prototype="friend llvm::Attributor::AttributorCallGraph">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02593">2593</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### AttrsMap {#a7084a64341771cca3e89998702485b6b}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;Value &#42;, AttributeList&gt; llvm::Attributor::AttrsMap</>}>
+Mapping from functions/call sites to their attributes.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l01968">1968</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### CGModifiedFunctions {#a4570ce786b44539a8d5fb2bf5ea9882a}
+
+<MemberDefinition
+  prototype={<>SmallSetVector&lt;Function &#42;, 8&gt; llvm::Attributor::CGModifiedFunctions</>}>
+Set of functions for which we modified the content such that it might impact the call graph.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02526">2526</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### Configuration {#a85a6f474ebf278136052f8812d4cdb40}
+
+<MemberDefinition
+  prototype="const AttributorConfig llvm::Attributor::Configuration">
+<a href="/docs/api/classes/llvm/user">User</a> provided configuration for this <a href="/docs/api/structs/llvm/attributor">Attributor</a> instance.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02590">2590</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### DependenceStack {#a1ff9d4598a1b2e4829918095b3b0f997}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;DependenceVector &#42;, 16&gt; llvm::Attributor::DependenceStack</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02544">2544</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### DG {#a48655318409d77036ca664f96a55cee4}
+
+<MemberDefinition
+  prototype="AADepGraph llvm::Attributor::DG">
+Abstract <a href="/docs/api/classes/llvm/attribute">Attribute</a> dependency graph.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02522">2522</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### Functions {#aae377da2a2b36995174221edd4e272e2}
+
+<MemberDefinition
+  prototype={<>SetVector&lt;Function &#42;&gt;&amp; llvm::Attributor::Functions</>}>
+The set of functions we are deriving attributes for.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02516">2516</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### GlobalVariableSimplificationCallbacks {#a8c5d568d515ec34a46884f60b98677b5}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;const GlobalVariable &#42;, SmallVector&lt;GlobalVariableSimplifictionCallbackTy, 1&gt; &gt; llvm::Attributor::GlobalVariableSimplificationCallbacks</>}>
+The vector with all simplification callbacks for global variables registered by outside AAs.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02087">2087</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### InfoCache {#a5119e955144ef3c4868e58f13c0ff545}
+
+<MemberDefinition
+  prototype={<>InformationCache&amp; llvm::Attributor::InfoCache</>}>
+The information cache that holds pre-processed (LLVM-IR) information.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02519">2519</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### InitializationChainLength {#aced70c245425d7b7b3e96fc4693926f4}
+
+<MemberDefinition
+  prototype="unsigned llvm::Attributor::InitializationChainLength = 0">
+The current initialization chain length. Tracked to avoid stack overflows.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02574">2574</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### InvokeWithDeadSuccessor {#aac5174d5a3ecd5abb5c60f5cb4574df8}
+
+<MemberDefinition
+  prototype={<>SmallSetVector&lt;WeakVH, 16&gt; llvm::Attributor::InvokeWithDeadSuccessor</>}>
+Invoke instructions with at least a single dead successor block.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02562">2562</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### ManifestAddedBlocks {#ade5e3d65099ec9545b8e7f49eabf77be}
+
+<MemberDefinition
+  prototype={<>SmallPtrSet&lt;BasicBlock &#42;, 8&gt; llvm::Attributor::ManifestAddedBlocks</>}>
+Functions, blocks, and instructions we delete after manifest is done.
+
+&#123;
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02579">2579</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### Phase {#a04377d5c1ee669a0a73c45c139c35166}
+
+<MemberDefinition
+  prototype="enum llvm::Attributor::AttributorPhase llvm::Attributor::Phase = AttributorPhase::SEEDING">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02571">2571</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### QueryAAsAwaitingUpdate {#a34bbb127cdca0a1bdfc80a08e8875588}
+
+<MemberDefinition
+  prototype={<>SmallSetVector&lt;AbstractAttribute &#42;, 16&gt; llvm::Attributor::QueryAAsAwaitingUpdate</>}>
+&#125;
+
+Container with all the query AAs that requested an update via registerForUpdate.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02587">2587</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### SimplificationCallbacks {#abf94d7e856e4a69d1b30316f86783bbc}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;IRPosition, SmallVector&lt;SimplifictionCallbackTy, 1&gt; &gt; llvm::Attributor::SimplificationCallbacks</>}>
+The vector with all simplification callbacks registered by outside AAs.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02081">2081</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### ToBeChangedToUnreachableInsts {#a843544028117b6ce5324f28898ced3a9}
+
+<MemberDefinition
+  prototype={<>SmallSetVector&lt;WeakVH, 16&gt; llvm::Attributor::ToBeChangedToUnreachableInsts</>}>
+Instructions we replace with <code>unreachable</code> insts after manifest is done.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02559">2559</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### ToBeChangedUses {#a2d50c9a9ecf7dfb113c08ed86efb05a8}
+
+<MemberDefinition
+  prototype={<>SmallMapVector&lt;Use &#42;, Value &#42;, 32&gt; llvm::Attributor::ToBeChangedUses</>}>
+Uses we replace with a new value after manifest is done.
+
+We will remove then trivially dead instructions as well.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02551">2551</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### ToBeChangedValues {#a0c747ed62ce5183082d71038c42a874e}
+
+<MemberDefinition
+  prototype={<>SmallMapVector&lt;Value &#42;, PointerIntPair&lt;Value &#42;, 1, bool&gt;, 32&gt; llvm::Attributor::ToBeChangedValues</>}>
+Values we replace with a new value after manifest is done.
+
+We will remove then trivially dead instructions as well.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02556">2556</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### ToBeDeletedBlocks {#a8aab46aeed4eca2012e6c373a8a867b4}
+
+<MemberDefinition
+  prototype={<>SmallSetVector&lt;BasicBlock &#42;, 8&gt; llvm::Attributor::ToBeDeletedBlocks</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02581">2581</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### ToBeDeletedFunctions {#ab00e27ed38c98b43326eb2cc2ffa0ee8}
+
+<MemberDefinition
+  prototype={<>SmallSetVector&lt;Function &#42;, 8&gt; llvm::Attributor::ToBeDeletedFunctions</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02580">2580</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### ToBeDeletedInsts {#a3d4f24248068af18bce5ddaaee0e336b}
+
+<MemberDefinition
+  prototype={<>SmallSetVector&lt;WeakVH, 8&gt; llvm::Attributor::ToBeDeletedInsts</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02582">2582</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### VirtualUseCallbacks {#a1007c70a5a22b71330afb2dbe47c7d8f}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;const Value &#42;, SmallVector&lt;VirtualUseCallbackTy, 1&gt; &gt; llvm::Attributor::VirtualUseCallbacks</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02090">2090</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+### VisitedFunctions {#a2bc48f6ac575b6552845254c51fa6a93}
+
+<MemberDefinition
+  prototype={<>DenseSet&lt;const Function &#42;&gt; llvm::Attributor::VisitedFunctions</>}>
+A set to remember the functions we already assume to be live and visited.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02547">2547</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Functions
+
+### createShallowWrapper() {#a45f6cbf770c1d990014838ceb300e936}
+
+<MemberDefinition
+  prototype={<>void Attributor::createShallowWrapper (<a href="/docs/api/classes/llvm/function">Function</a> &amp; F)</>}
+  labels = {["static"]}>
+Create a shallow wrapper for <code>F</code> such that <code>F</code> has internal linkage afterwards.
+
+It also sets the original <code>F</code> &#39;s name to anonymous
+
+A wrapper is a function with the same type (and attributes) as <code>F</code> that will only call <code>F</code> and return the result, if any.
+
+Assuming the declaration of looks like: rty <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F(aty0 arg0, ..., atyN argN)</a>;
+
+The wrapper will then look as follows: rty <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpualiasanalysis-cpp/#ae516ea75555373b0b369a3d1b3cd41e2">wrapper(aty0 arg0, ..., atyN argN)</a> &#123; return <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F(arg0, ..., argN)</a>; &#125;
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02414">2414</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02713">2713</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### internalizeFunction() {#a58a631dd1eec9e904e4618288bcc9442}
+
+<MemberDefinition
+  prototype={<>Function &#42; Attributor::internalizeFunction (<a href="/docs/api/classes/llvm/function">Function</a> &amp; F, bool Force=false)</>}
+  labels = {["static"]}>
+Make another copy of the function <code>F</code> such that the copied version has internal linkage afterwards and can be analysed.
+
+Then we replace all uses of the original function to the copied one
+
+Only non-locally linked functions that have <code>linkonce&#95;odr</code> or <code>weak&#95;odr</code> linkage can be internalized because these linkages guarantee that other definitions with the same name have the same semantics as this one.
+
+This will only be run if the <code>attributor-allow-deep-wrappers</code> option is set, or if the function is called with <code>Force</code> set to true.
+
+If the function <code>F</code> failed to be internalized the return value will be a null pointer.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02433">2433</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02769">2769</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### internalizeFunctions() {#af85fe4610a8ddd0d57149e73008f32fb}
+
+<MemberDefinition
+  prototype={<>bool Attributor::internalizeFunctions (<a href="/docs/api/classes/llvm/smallptrsetimpl">SmallPtrSetImpl</a>&lt; <a href="/docs/api/classes/llvm/function">Function</a> &#42; &gt; &amp; FnSet, <a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/function">Function</a> &#42;, <a href="/docs/api/classes/llvm/function">Function</a> &#42; &gt; &amp; FnMap)</>}
+  labels = {["static"]}>
+Make copies of each function in the set <code>FnSet</code> such that the copied version has internal linkage afterwards and can be analysed.
+
+Then we replace all uses of the original function to the copied one. The map <code>FnMap</code> contains a mapping of functions to their internalized versions.
+
+Only non-locally linked functions that have <code>linkonce&#95;odr</code> or <code>weak&#95;odr</code> linkage can be internalized because these linkages guarantee that other definitions with the same name have the same semantics as this one.
+
+This version will internalize all the functions in the set <code>FnSet</code> at once and then replace the uses. This prevents internalized functions being called by external functions when there is an internalized version in the module.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02448">2448</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02782">2782</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+### isInternalizable() {#a312bc8ef3e9761ec87b3b6d05d6e2420}
+
+<MemberDefinition
+  prototype={<>bool Attributor::isInternalizable (<a href="/docs/api/classes/llvm/function">Function</a> &amp; F)</>}
+  labels = {["static"]}>
+Returns true if the function <code>F</code> can be internalized.
+
+i.e. it has a compatible linkage.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h/#l02418">2418</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp/#l02762">2762</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/attributor-h">Attributor.h</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/attributor-cpp">Attributor.cpp</a></li>
+</ul>
+
+</DoxygenPage>

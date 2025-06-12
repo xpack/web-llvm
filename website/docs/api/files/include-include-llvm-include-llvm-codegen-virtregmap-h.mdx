@@ -1,0 +1,355 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/codegen/virtregmap-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `VirtRegMap.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/IndexedMap.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/indexedmap-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/MachineFunctionPass.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/machinefunctionpass-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/TargetRegisterInfo.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/targetregisterinfo-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/TileShapeInfo.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/tileshapeinfo-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/PassManager.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Pass.h"
+  permalink="/docs/api/files/include/include/llvm/pass-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cassert"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/virtregmap">VirtRegMap</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/virtregmapwrapperlegacy">VirtRegMapWrapperLegacy</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/virtregmapanalysis">VirtRegMapAnalysis</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/virtregmapprinterpass">VirtRegMapPrinterPass</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/CodeGen/VirtRegMap.h - Virtual Register Map ---------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements a virtual register map. This maps virtual registers to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// physical registers and virtual registers to stack slots. It is created and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// updated by a register allocator and then used by a machine code rewriter that</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// adds spill code and rewrites virtual into physical register references.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;CODEGEN&#95;VIRTREGMAP&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;CODEGEN&#95;VIRTREGMAP&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/indexedmap-h">llvm/ADT/IndexedMap.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/machinefunctionpass-h">llvm/CodeGen/MachineFunctionPass.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/targetregisterinfo-h">llvm/CodeGen/TargetRegisterInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/tileshapeinfo-h">llvm/CodeGen/TileShapeInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">llvm/IR/PassManager.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/pass-h">llvm/Pass.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cassert&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a>;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a>;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a>;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a>;</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34" lineLink="/docs/api/classes/llvm/virtregmap"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/virtregmap/#a69fa879a33a59f14ca440c7ec9669a38">VirtRegMap</a> &#123;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &#42;MRI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;TII = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &#42;TRI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42;MF = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">  /// Virt2PhysMap - This is a virtual to physical register</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">  /// mapping. Each virtual register is required to have an entry in</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">  /// it; even spilled virtual registers (the register mapped to a</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">  /// spilled register is the temporary used to load it from the</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">  /// stack).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/indexedmap">IndexedMap&lt;MCRegister, VirtReg2IndexFunctor&gt;</a> Virt2PhysMap;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="comment">  /// Virt2StackSlotMap - This is virtual register to stack slot</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="comment">  /// mapping. Each spilled virtual register has an entry in it</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="comment">  /// which corresponds to the stack slot this register is spilled</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="comment">  /// at.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/indexedmap">IndexedMap&lt;int, VirtReg2IndexFunctor&gt;</a> Virt2StackSlotMap;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">  /// Virt2SplitMap - This is virtual register to splitted virtual register</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="comment">  /// mapping.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/indexedmap">IndexedMap&lt;Register, VirtReg2IndexFunctor&gt;</a> Virt2SplitMap;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="comment">  /// Virt2ShapeMap - For X86 AMX register whose register is bound shape</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">  /// information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;Register, ShapeT&gt;</a> Virt2ShapeMap;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="comment">  /// createSpillSlot - Allocate a spill slot for RC from MFI.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> createSpillSlot(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetregisterclass">TargetRegisterClass</a> &#42;RC);</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/classes/llvm/virtregmap/#ad2e99ae080aa934d64b0ff504dab0158"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#ad2e99ae080aa934d64b0ff504dab0158">NO&#95;STACK&#95;SLOT</a> = INT&#95;MAX;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67" lineLink="/docs/api/classes/llvm/virtregmap/#a69fa879a33a59f14ca440c7ec9669a38"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/virtregmap/#a69fa879a33a59f14ca440c7ec9669a38">VirtRegMap</a>() : Virt2StackSlotMap(<a href="/docs/api/classes/llvm/virtregmap/#ad2e99ae080aa934d64b0ff504dab0158">NO&#95;STACK&#95;SLOT</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68" lineLink="/docs/api/classes/llvm/virtregmap/#a9017e7efa287f0d78d5072d2a26e9913"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/virtregmap/#a9017e7efa287f0d78d5072d2a26e9913">VirtRegMap</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a69fa879a33a59f14ca440c7ec9669a38">VirtRegMap</a> &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69" lineLink="/docs/api/classes/llvm/virtregmap/#adf00a08991767e88031193592a29ab85"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/virtregmap/#a69fa879a33a59f14ca440c7ec9669a38">VirtRegMap</a> &amp;<a href="/docs/api/classes/llvm/virtregmap/#adf00a08991767e88031193592a29ab85">operator=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a69fa879a33a59f14ca440c7ec9669a38">VirtRegMap</a> &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/classes/llvm/virtregmap/#a8479febdfe5f9093009aecb7d0fae952"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/virtregmap/#a8479febdfe5f9093009aecb7d0fae952">VirtRegMap</a>(<a href="/docs/api/classes/llvm/virtregmap/#a69fa879a33a59f14ca440c7ec9669a38">VirtRegMap</a> &amp;&amp;) = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72" lineLink="/docs/api/classes/llvm/virtregmap/#a1a06f2509b5f901646c6498e9a0e8d4f"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a1a06f2509b5f901646c6498e9a0e8d4f">init</a>(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF);</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/classes/llvm/virtregmap/#a7619711af4bb95253dea3e0783400f26"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;<a href="/docs/api/classes/llvm/virtregmap/#a7619711af4bb95253dea3e0783400f26">getMachineFunction</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(MF &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;getMachineFunction called before runOnMachineFunction&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;MF;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/classes/llvm/virtregmap/#a5b03bffeedbff2a86dfe427fd90c1465"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &amp;<a href="/docs/api/classes/llvm/virtregmap/#a5b03bffeedbff2a86dfe427fd90c1465">getRegInfo</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;MRI; &#125;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/classes/llvm/virtregmap/#adb16c0664049f377c9ff542829013a75"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &amp;<a href="/docs/api/classes/llvm/virtregmap/#adb16c0664049f377c9ff542829013a75">getTargetRegInfo</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;TRI; &#125;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a8d5afab2fece1568139a0c2784f0e481">grow</a>();</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  /// returns true if the specified virtual register is</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="comment">  /// mapped to a physical register</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86" lineLink="/docs/api/classes/llvm/virtregmap/#ab28bf4ffd3e2223dab0527c9d7e18288"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#ab28bf4ffd3e2223dab0527c9d7e18288">hasPhys</a>(<a href="/docs/api/classes/llvm/register">Register</a> virtReg)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a785a4e2daf4e5bf3f0836adbc4fb7e65">getPhys</a>(virtReg).<a href="/docs/api/classes/llvm/mcregister/#a127e2906913fb89109f3e86397a559ad">isValid</a>(); &#125;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">  /// returns the physical register mapped to the specified</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">  /// virtual register</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/classes/llvm/virtregmap/#a785a4e2daf4e5bf3f0836adbc4fb7e65"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mcregister">MCRegister</a> <a href="/docs/api/classes/llvm/virtregmap/#a785a4e2daf4e5bf3f0836adbc4fb7e65">getPhys</a>(<a href="/docs/api/classes/llvm/register">Register</a> virtReg)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(virtReg.<a href="/docs/api/classes/llvm/register/#ab203bbcbc320180b1da9e9a92ee0c784">isVirtual</a>());</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Virt2PhysMap&#91;virtReg&#93;;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">  /// creates a mapping for the specified virtual register to</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="comment">  /// the specified physical register</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a7483a2fa0354b8fa3298ab99f41ce0d4">assignVirt2Phys</a>(<a href="/docs/api/classes/llvm/register">Register</a> virtReg, <a href="/docs/api/classes/llvm/mcregister">MCRegister</a> physReg);</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99" lineLink="/docs/api/classes/llvm/virtregmap/#af0653b6b211a32dda8152d3177e11aa4"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#af0653b6b211a32dda8152d3177e11aa4">isShapeMapEmpty</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Virt2ShapeMap.<a href="/docs/api/classes/llvm/densemapbase/#a49c487a9395a6c384be8544cfb2cfccf">empty</a>(); &#125;</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101" lineLink="/docs/api/classes/llvm/virtregmap/#a3d1e9b1a4148131fa20946943f7b1449"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a3d1e9b1a4148131fa20946943f7b1449">hasShape</a>(<a href="/docs/api/classes/llvm/register">Register</a> virtReg)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Virt2ShapeMap.<a href="/docs/api/classes/llvm/densemapbase/#a836d9cba6deced0bb1fa7333ce5afd3a">contains</a>(virtReg);</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105" lineLink="/docs/api/classes/llvm/virtregmap/#a5bdec6932a16e4d542bd8773fcb50acb"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/shapet">ShapeT</a> <a href="/docs/api/classes/llvm/virtregmap/#a5bdec6932a16e4d542bd8773fcb50acb">getShape</a>(<a href="/docs/api/classes/llvm/register">Register</a> virtReg)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(virtReg.<a href="/docs/api/classes/llvm/register/#ab203bbcbc320180b1da9e9a92ee0c784">isVirtual</a>());</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Virt2ShapeMap.<a href="/docs/api/classes/llvm/densemapbase/#a0b2ca98dc28c61793ff5c90d23e5f14e">lookup</a>(virtReg);</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110" lineLink="/docs/api/classes/llvm/virtregmap/#ac75c4794d822351e963610133d4dc701"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#ac75c4794d822351e963610133d4dc701">assignVirt2Shape</a>(<a href="/docs/api/classes/llvm/register">Register</a> virtReg, <a href="/docs/api/classes/llvm/shapet">ShapeT</a> shape) &#123;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">    Virt2ShapeMap&#91;virtReg&#93; = shape;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">  /// clears the specified virtual register&#39;s, physical</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">  /// register mapping</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116" lineLink="/docs/api/classes/llvm/virtregmap/#a2d25688d9c61100ba6a5dea48771ecde"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a2d25688d9c61100ba6a5dea48771ecde">clearVirt</a>(<a href="/docs/api/classes/llvm/register">Register</a> virtReg) &#123;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(virtReg.<a href="/docs/api/classes/llvm/register/#ab203bbcbc320180b1da9e9a92ee0c784">isVirtual</a>());</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Virt2PhysMap&#91;virtReg&#93; &amp;&amp;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;attempt to clear a not assigned virtual register&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">    Virt2PhysMap&#91;virtReg&#93; = <a href="/docs/api/classes/llvm/mcregister">MCRegister</a>();</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="comment">  /// clears all virtual to physical register mappings</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124" lineLink="/docs/api/classes/llvm/virtregmap/#a35ab2e8cafc507db705e2eeae719ae5c"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a35ab2e8cafc507db705e2eeae719ae5c">clearAllVirt</a>() &#123;</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">    Virt2PhysMap.<a href="/docs/api/classes/llvm/indexedmap/#ac835fc191baf29fc0fd54d1c41146868">clear</a>();</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/virtregmap/#a8d5afab2fece1568139a0c2784f0e481">grow</a>();</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="comment">  /// returns true if VirtReg is assigned to its preferred physreg.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a4af3414dbf16e5eb1b862c7cf35ed83c">hasPreferredPhys</a>(<a href="/docs/api/classes/llvm/register">Register</a> VirtReg) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">  /// returns true if VirtReg has a known preferred register.</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">  /// This returns false if VirtReg has a preference that is a virtual</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">  /// register that hasn&#39;t been assigned yet.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a103071c94c9a366fd2d96f5953871dde">hasKnownPreference</a>(<a href="/docs/api/classes/llvm/register">Register</a> VirtReg) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="comment">  /// records virtReg is a split live interval from SReg.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138" lineLink="/docs/api/classes/llvm/virtregmap/#a37b7b231e8677fb4c83572d6f4bedaa1"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a37b7b231e8677fb4c83572d6f4bedaa1">setIsSplitFromReg</a>(<a href="/docs/api/classes/llvm/register">Register</a> virtReg, <a href="/docs/api/classes/llvm/register">Register</a> SReg) &#123;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">    Virt2SplitMap&#91;virtReg&#93; = SReg;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/virtregmap/#a3d1e9b1a4148131fa20946943f7b1449">hasShape</a>(SReg)) &#123;</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">      Virt2ShapeMap&#91;virtReg&#93; = <a href="/docs/api/classes/llvm/virtregmap/#a5bdec6932a16e4d542bd8773fcb50acb">getShape</a>(SReg);</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="comment">  /// returns the live interval virtReg is split from.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146" lineLink="/docs/api/classes/llvm/virtregmap/#a582c4d764e37313a1bc6dff1a727e752"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/register">Register</a> <a href="/docs/api/classes/llvm/virtregmap/#a582c4d764e37313a1bc6dff1a727e752">getPreSplitReg</a>(<a href="/docs/api/classes/llvm/register">Register</a> virtReg)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Virt2SplitMap&#91;virtReg&#93;;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="comment">  /// getOriginal - Return the original virtual register that VirtReg descends</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="comment">  /// from through splitting.</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="comment">  /// A register that was not created by splitting is its own original.</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="comment">  /// This operation is idempotent.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154" lineLink="/docs/api/classes/llvm/virtregmap/#a4d88862090bbf71af421aacae8f12866"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/register">Register</a> <a href="/docs/api/classes/llvm/virtregmap/#a4d88862090bbf71af421aacae8f12866">getOriginal</a>(<a href="/docs/api/classes/llvm/register">Register</a> VirtReg)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/register">Register</a> Orig = <a href="/docs/api/classes/llvm/virtregmap/#a582c4d764e37313a1bc6dff1a727e752">getPreSplitReg</a>(VirtReg);</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Orig ? Orig : VirtReg;</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="comment">  /// returns true if the specified virtual register is not</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="comment">  /// mapped to a stack slot or rematerialized.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161" lineLink="/docs/api/classes/llvm/virtregmap/#ad0df6033e4012261f7531e62274cf99c"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#ad0df6033e4012261f7531e62274cf99c">isAssignedReg</a>(<a href="/docs/api/classes/llvm/register">Register</a> virtReg)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/virtregmap/#a32846fd2d98022e7b336962f85411a42">getStackSlot</a>(virtReg) == <a href="/docs/api/classes/llvm/virtregmap/#ad2e99ae080aa934d64b0ff504dab0158">NO&#95;STACK&#95;SLOT</a>)</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Split register can be assigned a physical register as well as a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// stack slot or remat id.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (Virt2SplitMap&#91;virtReg&#93; &amp;&amp; Virt2PhysMap&#91;virtReg&#93;);</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="comment">  /// returns the stack slot mapped to the specified virtual</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="comment">  /// register</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171" lineLink="/docs/api/classes/llvm/virtregmap/#a32846fd2d98022e7b336962f85411a42"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a32846fd2d98022e7b336962f85411a42">getStackSlot</a>(<a href="/docs/api/classes/llvm/register">Register</a> virtReg)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(virtReg.<a href="/docs/api/classes/llvm/register/#ab203bbcbc320180b1da9e9a92ee0c784">isVirtual</a>());</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Virt2StackSlotMap&#91;virtReg&#93;;</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="comment">  /// create a mapping for the specifed virtual register to</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="comment">  /// the next available stack slot</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a1ae60b2416ed4d106a241c6874c1992d">assignVirt2StackSlot</a>(<a href="/docs/api/classes/llvm/register">Register</a> virtReg);</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="comment">  /// create a mapping for the specified virtual register to</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="comment">  /// the specified stack slot</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a1ae60b2416ed4d106a241c6874c1992d">assignVirt2StackSlot</a>(<a href="/docs/api/classes/llvm/register">Register</a> virtReg, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> SS);</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a7fa4b2ab2c4e30ebbb80c8384dc9ddd3">print</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/module">Module</a> &#42;M = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap/#a570cc2ad4630f9e1adf4576e36507449">dump</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188" lineLink="/docs/api/namespaces/llvm/#a071a500925a47bb844a0ad854252821c"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;<a href="/docs/api/namespaces/llvm/#ab89f1db02887aa569176f0e29622eb47">operator&lt;&lt;</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap">VirtRegMap</a> &amp;VRM) &#123;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">  VRM.<a href="/docs/api/classes/llvm/virtregmap/#a7fa4b2ab2c4e30ebbb80c8384dc9ddd3">print</a>(OS);</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OS;</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193" lineLink="/docs/api/classes/llvm/virtregmapwrapperlegacy"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/virtregmapwrapperlegacy/#a1b98a729d403e13e590f8dc83ac1b847">VirtRegMapWrapperLegacy</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinefunctionpass/#a29c81d2386f4a727c6d33413807530c8">MachineFunctionPass</a> &#123;</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/virtregmap">VirtRegMap</a> VRM;</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197" lineLink="/docs/api/classes/llvm/virtregmapwrapperlegacy/#a8f8f960f62f49ec8fecbe4f75c7f1c20"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmapwrapperlegacy/#a8f8f960f62f49ec8fecbe4f75c7f1c20">ID</a>;</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199" lineLink="/docs/api/classes/llvm/virtregmapwrapperlegacy/#a1b98a729d403e13e590f8dc83ac1b847"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/virtregmapwrapperlegacy/#a1b98a729d403e13e590f8dc83ac1b847">VirtRegMapWrapperLegacy</a>() : <a href="/docs/api/classes/llvm/machinefunctionpass/#a29c81d2386f4a727c6d33413807530c8">MachineFunctionPass</a>(<a href="/docs/api/classes/llvm/virtregmapwrapperlegacy/#a8f8f960f62f49ec8fecbe4f75c7f1c20">ID</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201" lineLink="/docs/api/classes/llvm/virtregmapwrapperlegacy/#a7f9d1c60f1cb661243229aa0e1acbffe"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmapwrapperlegacy/#a7f9d1c60f1cb661243229aa0e1acbffe">print</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/module">Module</a> &#42;M = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">    VRM.print(OS, M);</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205" lineLink="/docs/api/classes/llvm/virtregmapwrapperlegacy/#a50c711c64ad19dce693157933262d63e"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/virtregmap">VirtRegMap</a> &amp;<a href="/docs/api/classes/llvm/virtregmapwrapperlegacy/#a50c711c64ad19dce693157933262d63e">getVRM</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> VRM; &#125;</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206" lineLink="/docs/api/classes/llvm/virtregmapwrapperlegacy/#a29299aaafccd1fc0cd433413b1c95952"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmap">VirtRegMap</a> &amp;<a href="/docs/api/classes/llvm/virtregmapwrapperlegacy/#a29299aaafccd1fc0cd433413b1c95952">getVRM</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> VRM; &#125;</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208" lineLink="/docs/api/classes/llvm/virtregmapwrapperlegacy/#ac7c96f8cf3e66036855011e2a6fd633c"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmapwrapperlegacy/#ac7c96f8cf3e66036855011e2a6fd633c">runOnMachineFunction</a>(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF)</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">    VRM.init(MF);</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213" lineLink="/docs/api/classes/llvm/virtregmapwrapperlegacy/#ae6b2a92b14ba5fe23649b6e8c78ee008"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmapwrapperlegacy/#ae6b2a92b14ba5fe23649b6e8c78ee008">getAnalysisUsage</a>(<a href="/docs/api/classes/llvm/analysisusage">AnalysisUsage</a> &amp;AU)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">    AU.<a href="/docs/api/classes/llvm/analysisusage/#af22b06a6a4f9df80454071685a0d6a02">setPreservesAll</a>();</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/machinefunctionpass/#a864fd57b4304ef933b3281d0ef85a88e">MachineFunctionPass::getAnalysisUsage</a>(AU);</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219" lineLink="/docs/api/classes/llvm/virtregmapanalysis"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/virtregmapanalysis">VirtRegMapAnalysis</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/analysisinfomixin">AnalysisInfoMixin</a>&lt;VirtRegMapAnalysis&gt; &#123;</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/analysisinfomixin">AnalysisInfoMixin&lt;VirtRegMapAnalysis&gt;</a>;</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a> Key;</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224" lineLink="/docs/api/classes/llvm/virtregmapanalysis/#ae9d6b56505c08c9eef54b32e46493045"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/virtregmapanalysis/#ae9d6b56505c08c9eef54b32e46493045">Result</a> = <a href="/docs/api/classes/llvm/virtregmap">VirtRegMap</a>;</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/virtregmap">VirtRegMap</a> <a href="/docs/api/classes/llvm/virtregmapanalysis/#a01f5f291c2aa5b0c076173adeb2dbd3a">run</a>(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF, <a href="/docs/api/namespaces/llvm/#a064825a8817522ca733ac413a7122d36">MachineFunctionAnalysisManager</a> &amp;<a href="/docs/api/files/lib/lib/passes/passbuilderbindings-cpp/#a85bddafa659a93a7a67c9094648259be">MAM</a>);</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229" lineLink="/docs/api/classes/llvm/virtregmapprinterpass"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/virtregmapprinterpass/#aaac72519f7c085a5ffeb509ee8f08fbe">VirtRegMapPrinterPass</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/passinfomixin">PassInfoMixin</a>&lt;VirtRegMapPrinterPass&gt; &#123;</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233" lineLink="/docs/api/classes/llvm/virtregmapprinterpass/#aaac72519f7c085a5ffeb509ee8f08fbe"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmapprinterpass/#aaac72519f7c085a5ffeb509ee8f08fbe">VirtRegMapPrinterPass</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS) : OS(OS) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> <a href="/docs/api/classes/llvm/virtregmapprinterpass/#a101be45b1a9d89ebbd7df78a0f9ffa85">run</a>(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF,</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">                        <a href="/docs/api/namespaces/llvm/#a064825a8817522ca733ac413a7122d36">MachineFunctionAnalysisManager</a> &amp;MFAM);</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236" lineLink="/docs/api/classes/llvm/virtregmapprinterpass/#aced7adf6a26e194c55000139b4a1291a"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/virtregmapprinterpass/#aced7adf6a26e194c55000139b4a1291a">isRequired</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end llvm namespace</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;CODEGEN&#95;VIRTREGMAP&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

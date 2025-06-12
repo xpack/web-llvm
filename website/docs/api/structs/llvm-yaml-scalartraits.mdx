@@ -1,0 +1,54 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/yaml/scalartraits
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ScalarTraits` Struct Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This class should be specialized by type that requires custom conversion to/from a yaml scalar. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;typename T, typename Enable = void&gt;
+struct llvm::yaml::ScalarTraits&lt;T, Enable&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/YAMLTraits.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/yamltraits-h"
+  isLocal="true" />
+</IncludesList>
+
+## Description {#details}
+
+This class should be specialized by type that requires custom conversion to/from a yaml scalar.
+
+For example:
+
+template&lt;&gt; struct <a href="/docs/api/structs/llvm/yaml/scalartraits">ScalarTraits&lt;MyType&gt;</a> &#123; static void output(const MyType &amp;val, void&#42;, llvm::raw&#95;ostream &amp;out) &#123; // stream out custom formatting out &lt;&lt; <a href="/docs/api/namespaces/llvm/#a939bc2108d47080767f0c06ba56caec7">llvm::format</a>(&quot;%x&quot;, val); &#125; static <a href="/docs/api/classes/llvm/stringref">StringRef</a> input(StringRef scalar, void&#42;, MyType &amp;value) &#123; // parse scalar and set <code>value</code> // return empty string on success, or error string return StringRef(); &#125; static <a href="/docs/api/namespaces/llvm/yaml/#a2e9b09c50b4fff3bad8cba23daef8757">QuotingType</a> mustQuote(StringRef) &#123; return <a href="/docs/api/namespaces/llvm/yaml/#a2e9b09c50b4fff3bad8cba23daef8757a66ba162102bbf6ae31b522aec561735e">QuotingType::Single</a>; &#125; &#125;;
+
+Definition at line 149 of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/yamltraits-h">YAMLTraits.h</a>.
+
+</DoxygenPage>

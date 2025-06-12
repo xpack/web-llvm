@@ -1,0 +1,155 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/target/lib/target/hexagon/rdfdeadcode-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `RDFDeadCode.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/CodeGen/RDFGraph.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/rdfgraph-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/CodeGen/RDFLiveness.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/rdfliveness-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/SetVector.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/setvector-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm/rdf">llvm::rdf</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/rdf/deadcodeelimination">DeadCodeElimination</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===--- RDFDeadCode.h ----------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// RDF-based generic dead code elimination.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The main interface of this class are functions &quot;collect&quot; and &quot;erase&quot;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This allows custom processing of the function being optimized by a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// particular consumer. The simplest way to use this class would be to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">// instantiate an object, and then simply call &quot;collect&quot; and &quot;erase&quot;,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">// passing the result of &quot;getDeadInstrs()&quot; to it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">// A more complex scenario would be to call &quot;collect&quot; first, then visit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">// all post-increment instructions to see if the address update is dead</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="comment">// or not, and if it is, convert the instruction to a non-updating form.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="comment">// After that &quot;erase&quot; can be called with the set of nodes including both,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="comment">// dead defs from the updating instructions and the nodes corresponding</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="comment">// to the dead instructions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef RDF&#95;DEADCODE&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define RDF&#95;DEADCODE&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/rdfgraph-h">llvm/CodeGen/RDFGraph.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/rdfliveness-h">llvm/CodeGen/RDFLiveness.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/setvector-h">llvm/ADT/SetVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a>;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/rdf">rdf</a> &#123;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34" lineLink="/docs/api/structs/llvm/rdf/deadcodeelimination"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/rdf/deadcodeelimination/#aa6d5a6946206dc321fe3a47988a3f213">DeadCodeElimination</a> &#123;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35" lineLink="/docs/api/structs/llvm/rdf/deadcodeelimination/#aa6d5a6946206dc321fe3a47988a3f213"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/rdf/deadcodeelimination/#aa6d5a6946206dc321fe3a47988a3f213">DeadCodeElimination</a>(<a href="/docs/api/structs/llvm/rdf/dataflowgraph">DataFlowGraph</a> &amp;dfg, <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &amp;mri)</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">      : Trace(<a href="/docs/api/namespaces/false">false</a>), DFG(dfg), MRI(mri), LV(mri, dfg) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/rdf/deadcodeelimination/#a4c7ab56ddc8e8b9a4f7903e9268c10e9">collect</a>();</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/rdf/deadcodeelimination/#ac9dc6dd66dabbaf46fe4d72655758f4a">erase</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/setvector">SetVector&lt;NodeId&gt;</a> &amp;Nodes);</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40" lineLink="/docs/api/structs/llvm/rdf/deadcodeelimination/#a3489a989f719ff09485f7947cd58647d"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/rdf/deadcodeelimination/#a3489a989f719ff09485f7947cd58647d">trace</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> On) &#123; Trace = On; &#125;</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41" lineLink="/docs/api/structs/llvm/rdf/deadcodeelimination/#a47a8fb8802526e5063c8eef8c5a920a4"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/rdf/deadcodeelimination/#a47a8fb8802526e5063c8eef8c5a920a4">trace</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Trace; &#125;</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43" lineLink="/docs/api/structs/llvm/rdf/deadcodeelimination/#a0342efb029e23ad0521814134f16d71a"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/setvector">SetVector&lt;NodeId&gt;</a> <a href="/docs/api/structs/llvm/rdf/deadcodeelimination/#a0342efb029e23ad0521814134f16d71a">getDeadNodes</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> DeadNodes; &#125;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44" lineLink="/docs/api/structs/llvm/rdf/deadcodeelimination/#ab8d2a4f384a62322a138c343714c0fa5"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/setvector">SetVector&lt;NodeId&gt;</a> <a href="/docs/api/structs/llvm/rdf/deadcodeelimination/#ab8d2a4f384a62322a138c343714c0fa5">getDeadInstrs</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> DeadInstrs; &#125;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45" lineLink="/docs/api/structs/llvm/rdf/deadcodeelimination/#a4a48f3770514abec1ab3ef56e1ab8070"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/rdf/dataflowgraph">DataFlowGraph</a> &amp;<a href="/docs/api/structs/llvm/rdf/deadcodeelimination/#a4a48f3770514abec1ab3ef56e1ab8070">getDFG</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> DFG; &#125;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/trace">Trace</a>;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/setvector">SetVector&lt;NodeId&gt;</a> LiveNodes;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/setvector">SetVector&lt;NodeId&gt;</a> DeadNodes;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/setvector">SetVector&lt;NodeId&gt;</a> DeadInstrs;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/rdf/dataflowgraph">DataFlowGraph</a> &amp;DFG;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64advsimdscalarpass-cpp/#aacd2ab195054a3e6a74bfbb9d5d571c8">MRI</a>;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/rdf/liveness">Liveness</a> LV;</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal">&lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> T&gt; </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">SetQueue;</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isLiveInstr(<a href="/docs/api/structs/llvm/rdf/nodeaddr">NodeAddr&lt;StmtNode&#42;&gt;</a> S) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> scanInstr(<a href="/docs/api/structs/llvm/rdf/nodeaddr">NodeAddr&lt;InstrNode&#42;&gt;</a> IA, SetQueue&lt;NodeId&gt; &amp;WorkQ);</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> processDef(<a href="/docs/api/structs/llvm/rdf/nodeaddr">NodeAddr&lt;DefNode&#42;&gt;</a> DA, SetQueue&lt;NodeId&gt; &amp;WorkQ);</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerkernelattributes-cpp/#aec05cafc12b1852dbd16670773d4f00d">processUse</a>(<a href="/docs/api/structs/llvm/rdf/nodeaddr">NodeAddr&lt;UseNode&#42;&gt;</a> UA, SetQueue&lt;NodeId&gt; &amp;WorkQ);</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace rdf</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

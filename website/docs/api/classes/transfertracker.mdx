@@ -1,0 +1,689 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/transfertracker
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import EnumerationList from '@xpack/docusaurus-plugin-doxygen/components/EnumerationList'
+import EnumerationListItem from '@xpack/docusaurus-plugin-doxygen/components/EnumerationListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `TransferTracker` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Tracker for converting machine value locations and variable values into variable locations (the output of <a href="/docs/api/namespaces/livedebugvalues">LiveDebugValues</a>), recorded as DBG&#95;VALUEs specifying block live-in locations and transfers within blocks. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class TransferTracker</CodeBlock>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#afa24ee75e581d521a08c6731becbc964">ValueLocPair</a> = std::pair&lt; <a href="/docs/api/classes/livedebugvalues/valueidnum">ValueIDNum</a>, <a href="/docs/api/classes/transfertracker/locationandquality">LocationAndQuality</a> &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Enumerations Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="enum class"
+  name={<>: unsigned char &#123; <a href="#aa5d994f6e3b0b93e697c85ca2002834d">...</a> &#125;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#ab62a3902e9944a4a6da8a82cc72ea1c9">TransferTracker</a> (const TargetInstrInfo &#42;TII, MLocTracker &#42;MTracker, MachineFunction &amp;MF, const DebugVariableMap &amp;DVMap, const TargetRegisterInfo &amp;TRI, const BitVector &amp;CalleeSavedRegs, const TargetPassConfig &amp;TPC)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a46747b1281d39a5af4e522209198e3f2">addUseBeforeDef</a> (DebugVariableID VarID, const DbgValueProperties &amp;Properties, const SmallVectorImpl&lt; DbgOp &gt; &amp;DbgOps, unsigned Inst)</>}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>Var</code> has value <code><a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a></code>, a value that becomes available later in the function. <a href="#a46747b1281d39a5af4e522209198e3f2">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aa1129d2080e1308fd9bd27d20374ace5">checkInstForNewValues</a> (unsigned Inst, MachineBasicBlock::iterator pos)</>}>
+After the instruction at index <code>Inst</code> and position <code>pos</code> has been processed, check whether it defines a variable value in a use-before-def. <a href="#aa1129d2080e1308fd9bd27d20374ace5">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ac9ed6c9ebb7ede8539a8fe20bfeb36c2">clobberMloc</a> (LocIdx MLoc, MachineBasicBlock::iterator Pos, bool MakeUndef=true)</>}>
+Account for a location <code>mloc</code> being clobbered. <a href="#ac9ed6c9ebb7ede8539a8fe20bfeb36c2">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aee68454c02cb09e9dc1213c607ee78b9">clobberMloc</a> (LocIdx MLoc, ValueIDNum OldValue, MachineBasicBlock::iterator Pos, bool MakeUndef=true)</>}>
+Overload that takes an explicit value <code>OldValue</code> for when the value in <code>MLoc</code> has changed and the <a href="/docs/api/classes/transfertracker">TransferTracker</a>&#39;s locations have not been updated yet. <a href="#aee68454c02cb09e9dc1213c607ee78b9">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machineinstrbuilder">MachineInstrBuilder</a></>}
+  name={<><a href="#ab17b4ddf05538aab17dbb53a0f5f4329">emitMOLoc</a> (const MachineOperand &amp;MO, const DebugVariable &amp;Var, const DbgValueProperties &amp;Properties)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#acf872fb0e884bca493cc867aac36ed79">flushDbgValues</a> (MachineBasicBlock::iterator Pos, MachineBasicBlock &#42;MBB)</>}>
+Helper to move created DBG&#95;VALUEs into Transfers collection. <a href="#acf872fb0e884bca493cc867aac36ed79">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::optional&lt; <a href="#aa5d994f6e3b0b93e697c85ca2002834d">LocationQuality</a> &gt;</>}
+  name={<><a href="#a79fb4ee603e9a1f3010aba7fb3da0f82">getLocQualityIfBetter</a> (LocIdx L, LocationQuality Min) const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ac546420f6cd906a9b17e41c43e720e98">isCalleeSaved</a> (LocIdx L) const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ab76cea3708e144106a37446994e2482c">isEntryValueValue</a> (const ValueIDNum &amp;Val) const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a930c119c5ebcb496e7665a4521f42b94">isEntryValueVariable</a> (const DebugVariable &amp;Var, const DIExpression &#42;Expr) const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a304b877a673788ae4edd0e8f5fa1d5d8">loadInlocs</a> (MachineBasicBlock &amp;MBB, ValueTable &amp;MLocs, DbgOpIDMap &amp;DbgOpStore, const SmallVectorImpl&lt; std::pair&lt; DebugVariableID, DbgValue &gt; &gt; &amp;VLocs, unsigned NumLocs)</>}>
+Load object with live-in variable values. <a href="#a304b877a673788ae4edd0e8f5fa1d5d8">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#af64654b3c46ec3154963aed1dbb016d2">loadVarInloc</a> (MachineBasicBlock &amp;MBB, DbgOpIDMap &amp;DbgOpStore, const SmallVectorImpl&lt; ValueLocPair &gt; &amp;ValueToLoc, DebugVariableID VarID, DbgValue Value)</>}>
+For a variable <code>Var</code> with the live-in value <code><a href="/docs/api/classes/llvm/value">Value</a></code>, attempts to resolve the <a href="/docs/api/classes/livedebugvalues/dbgvalue">DbgValue</a> to a concrete DBG&#95;VALUE, emitting that value and loading the tracking information to track Var throughout the block. <a href="#af64654b3c46ec3154963aed1dbb016d2">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ac441348b2e73e12e1d8657de17b76568">recoverAsEntryValue</a> (DebugVariableID VarID, const DbgValueProperties &amp;Prop, const ValueIDNum &amp;Num)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ac1753e9184a776f25f017ac1022f2a13">redefVar</a> (const MachineInstr &amp;MI)</>}>
+Change a variable value after encountering a DBG&#95;VALUE inside a block. <a href="#ac1753e9184a776f25f017ac1022f2a13">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#af3b3d27cd53936e3c52e01a34817d6be">redefVar</a> (const MachineInstr &amp;MI, const DbgValueProperties &amp;Properties, SmallVectorImpl&lt; ResolvedDbgOp &gt; &amp;NewLocs)</>}>
+Handle a change in variable location within a block. <a href="#af3b3d27cd53936e3c52e01a34817d6be">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a787205c8858064b56bad25b823faf3d0">transferMlocs</a> (LocIdx Src, LocIdx Dst, MachineBasicBlock::iterator Pos)</>}>
+<a href="/docs/api/structs/transfertracker/transfer">Transfer</a> variables based on <code>Src</code> to be based on <code>Dst</code>. <a href="#a787205c8858064b56bad25b823faf3d0">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/livedebugvalues/locidx">LocIdx</a>, <a href="/docs/api/classes/llvm/smallset">SmallSet</a>&lt; <a href="/docs/api/namespaces/livedebugvalues/#a2ad7532d3e36d429cab7c3ade85c5f77">DebugVariableID</a>, 4 &gt; &gt;</>}
+  name={<><a href="#aacea713c5575395a3ce28a43c31f1df6">ActiveMLocs</a></>}>
+Map from LocIdxes to which DebugVariables are based that location. <a href="#aacea713c5575395a3ce28a43c31f1df6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/namespaces/livedebugvalues/#a2ad7532d3e36d429cab7c3ade85c5f77">DebugVariableID</a>, <a href="/docs/api/structs/transfertracker/resolveddbgvalue">ResolvedDbgValue</a> &gt;</>}
+  name={<><a href="#ae0a495620f7b1dd27811000f102d1d40">ActiveVLocs</a></>}>
+Map from <a href="/docs/api/classes/llvm/debugvariable">DebugVariable</a> to it&#39;s current location and qualifying meta information. <a href="#ae0a495620f7b1dd27811000f102d1d40">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/bitvector">BitVector</a> &amp;</>}
+  name={<><a href="#a1b1735405477716ee8dd95236d3257bf">CalleeSavedRegs</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/livedebugvalues/debugvariablemap">DebugVariableMap</a> &amp;</>}
+  name={<><a href="#a0a05f0bb5e94aa2300445044a7a1da02">DVMap</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;</>}
+  name={<><a href="#a79f160cf45e05ebc07c2751e0bd4d944">MF</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/livedebugvalues/mloctracker">MLocTracker</a> &#42;</>}
+  name={<><a href="#a5ccc49e3b9263bbfcdeb391f17b84c2d">MTracker</a></>}>
+This machine location tracker is assumed to always contain the up-to-date value mapping for all machine locations. <a href="#a5ccc49e3b9263bbfcdeb391f17b84c2d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; std::pair&lt; <a href="/docs/api/namespaces/livedebugvalues/#a2ad7532d3e36d429cab7c3ade85c5f77">DebugVariableID</a>, <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &#42; &gt;, 4 &gt;</>}
+  name={<><a href="#a7ee7f28da62a849df2fdb7a96be072d1">PendingDbgValues</a></>}>
+Temporary cache of DBG&#95;VALUEs to be entered into the Transfers collection. <a href="#a7ee7f28da62a849df2fdb7a96be072d1">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af1088d1f2ac99145846bedd829c2a05e">ShouldEmitDebugEntryValues</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;</>}
+  name={<><a href="#aa1cef6664a3e135245b35927b6db11e5">TII</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetlowering">TargetLowering</a> &#42;</>}
+  name={<><a href="#a31452b4b5d9984ee5ed52db4b1a52d5e">TLI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/structs/transfertracker/transfer">Transfer</a>, 32 &gt;</>}
+  name={<><a href="#af06b11c084b9a4ff7e063e146d4131d3">Transfers</a></>}>
+Collection of transfers (DBG&#95;VALUEs) to be inserted. <a href="#af06b11c084b9a4ff7e063e146d4131d3">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &amp;</>}
+  name={<><a href="#abf13e97a9a5cff9aa06c88d1ac5172fb">TRI</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; unsigned, <a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/structs/transfertracker/usebeforedef">UseBeforeDef</a>, 1 &gt; &gt;</>}
+  name={<><a href="#ae485598414179a9523e127ad2df4756c">UseBeforeDefs</a></>}>
+Map from instruction index (within the block) to the set of UseBeforeDefs that become defined at that instruction. <a href="#ae485598414179a9523e127ad2df4756c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/docs/api/namespaces/livedebugvalues/#a2ad7532d3e36d429cab7c3ade85c5f77">DebugVariableID</a> &gt;</>}
+  name={<><a href="#a162a58b620ec34701775d8d3e953fb20">UseBeforeDefVariables</a></>}>
+The set of variables that are in UseBeforeDefs and can become a location once the relevant value is defined. <a href="#a162a58b620ec34701775d8d3e953fb20">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/classes/livedebugvalues/valueidnum">ValueIDNum</a>, 32 &gt;</>}
+  name={<><a href="#a498b0782412a1488e7cb5c22a635188d">VarLocs</a></>}>
+Local cache of what-value-is-in-what-LocIdx. <a href="#a498b0782412a1488e7cb5c22a635188d">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#affb90f774e59ab28e9d3a9d72ac8f8d0">ValueToLocSort</a> (const ValueLocPair &amp;A, const ValueLocPair &amp;B)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Tracker for converting machine value locations and variable values into variable locations (the output of <a href="/docs/api/namespaces/livedebugvalues">LiveDebugValues</a>), recorded as DBG&#95;VALUEs specifying block live-in locations and transfers within blocks.
+
+Operating on a per-block basis, this class takes a (pre-loaded) <a href="/docs/api/classes/livedebugvalues/mloctracker">MLocTracker</a> and must be initialized with the set of variable values that are live-in to the block. The caller then repeatedly calls process(). <a href="/docs/api/classes/transfertracker">TransferTracker</a> picks out variable locations for the live-in variable values (if there <em>is</em> a location) and creates the corresponding DBG&#95;VALUEs. Then, as the block is stepped through, transfers of values between machine locations are identified and if profitable, a DBG&#95;VALUE created.
+
+This is where debug use-before-defs would be resolved: a variable with an unavailable value could materialize in the middle of a block, when the value becomes available. Or, we could detect clobbers and re-specify the variable in a backup location. (XXX these are unimplemented).
+
+Definition at line 177 of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### ValueLocPair {#afa24ee75e581d521a08c6731becbc964}
+
+<MemberDefinition
+  prototype={<>using TransferTracker::ValueLocPair =  std::pair&lt;ValueIDNum, LocationAndQuality&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00322">322</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Enumerations
+
+### enum class  {#aa5d994f6e3b0b93e697c85ca2002834d}
+
+<MemberDefinition
+  prototype="enum class TransferTracker::LocationQuality : unsigned char"
+ labels = {["strong"]}>
+
+<EnumerationList title="Enumeration values">
+
+<Link id="aa5d994f6e3b0b93e697c85ca2002834da71f91e12ab77fda34a39063650e3b2e7" />
+<EnumerationListItem name="Illegal">
+ (= 0)
+</EnumerationListItem>
+
+<Link id="aa5d994f6e3b0b93e697c85ca2002834da0ba7583639a274c434bbe6ef797115a4" />
+<EnumerationListItem name="Register">
+
+</EnumerationListItem>
+
+<Link id="aa5d994f6e3b0b93e697c85ca2002834da356463ee55aa35f2112197b17e3e18f4" />
+<EnumerationListItem name="CalleeSavedRegister">
+
+</EnumerationListItem>
+
+<Link id="aa5d994f6e3b0b93e697c85ca2002834da927573a0209c7f5f0e934ebb6c90d3bf" />
+<EnumerationListItem name="SpillSlot">
+
+</EnumerationListItem>
+
+<Link id="aa5d994f6e3b0b93e697c85ca2002834da68ef004de6166492c1d668eb8efe09bd" />
+<EnumerationListItem name="Best">
+ (= SpillSlot)
+</EnumerationListItem>
+
+</EnumerationList>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00296">296</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### TransferTracker() {#ab62a3902e9944a4a6da8a82cc72ea1c9}
+
+<MemberDefinition
+  prototype={<>TransferTracker::TransferTracker (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42; TII, <a href="/docs/api/classes/livedebugvalues/mloctracker">MLocTracker</a> &#42; MTracker, <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp; MF, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/livedebugvalues/debugvariablemap">DebugVariableMap</a> &amp; DVMap, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &amp; TRI, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/bitvector">BitVector</a> &amp; CalleeSavedRegs, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetpassconfig">TargetPassConfig</a> &amp; TPC)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00270">270</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### addUseBeforeDef() {#a46747b1281d39a5af4e522209198e3f2}
+
+<MemberDefinition
+  prototype={<>void TransferTracker::addUseBeforeDef (<a href="/docs/api/namespaces/livedebugvalues/#a2ad7532d3e36d429cab7c3ade85c5f77">DebugVariableID</a> VarID, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/livedebugvalues/dbgvalueproperties">DbgValueProperties</a> &amp; Properties, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/structs/livedebugvalues/dbgop">DbgOp</a> &gt; &amp; DbgOps, unsigned Inst)</>}
+  labels = {["inline"]}>
+<a href="/docs/api/classes/llvm/record">Record</a> that <code>Var</code> has value <code><a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a></code>, a value that becomes available later in the function.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00513">513</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### checkInstForNewValues() {#aa1129d2080e1308fd9bd27d20374ace5}
+
+<MemberDefinition
+  prototype={<>void TransferTracker::checkInstForNewValues (unsigned Inst, <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> pos)</>}
+  labels = {["inline"]}>
+After the instruction at index <code>Inst</code> and position <code>pos</code> has been processed, check whether it defines a variable value in a use-before-def.
+
+If so, and the variable value hasn&#39;t changed since the start of the block, create a DBG&#95;VALUE.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00524">524</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### clobberMloc() {#ac9ed6c9ebb7ede8539a8fe20bfeb36c2}
+
+<MemberDefinition
+  prototype={<>void TransferTracker::clobberMloc (<a href="/docs/api/classes/livedebugvalues/locidx">LocIdx</a> MLoc, <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> Pos, bool MakeUndef=<a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>)</>}
+  labels = {["inline"]}>
+Account for a location <code>mloc</code> being clobbered.
+
+Examine the variable locations that will be terminated: and try to recover them by using another location. Optionally, given <code>MakeUndef</code>, emit a DBG&#95;VALUE to explicitly terminate a location if it can&#39;t be recovered.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00801">801</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### clobberMloc() {#aee68454c02cb09e9dc1213c607ee78b9}
+
+<MemberDefinition
+  prototype={<>void TransferTracker::clobberMloc (<a href="/docs/api/classes/livedebugvalues/locidx">LocIdx</a> MLoc, <a href="/docs/api/classes/livedebugvalues/valueidnum">ValueIDNum</a> OldValue, <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> Pos, bool MakeUndef=<a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>)</>}
+  labels = {["inline"]}>
+Overload that takes an explicit value <code>OldValue</code> for when the value in <code>MLoc</code> has changed and the <a href="/docs/api/classes/transfertracker">TransferTracker</a>&#39;s locations have not been updated yet.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00814">814</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### emitMOLoc() {#ab17b4ddf05538aab17dbb53a0f5f4329}
+
+<MemberDefinition
+  prototype={<>MachineInstrBuilder TransferTracker::emitMOLoc (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineoperand">MachineOperand</a> &amp; MO, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/debugvariable">DebugVariable</a> &amp; Var, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/livedebugvalues/dbgvalueproperties">DbgValueProperties</a> &amp; Properties)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00950">950</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### flushDbgValues() {#acf872fb0e884bca493cc867aac36ed79}
+
+<MemberDefinition
+  prototype={<>void TransferTracker::flushDbgValues (<a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> Pos, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42; MBB)</>}
+  labels = {["inline"]}>
+Helper to move created DBG&#95;VALUEs into Transfers collection.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00606">606</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### getLocQualityIfBetter() {#a79fb4ee603e9a1f3010aba7fb3da0f82}
+
+<MemberDefinition
+  prototype={<>std::optional&lt; LocationQuality &gt; TransferTracker::getLocQualityIfBetter (<a href="/docs/api/classes/livedebugvalues/locidx">LocIdx</a> L, <a href="#aa5d994f6e3b0b93e697c85ca2002834d">LocationQuality</a> Min) const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00332">332</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### isCalleeSaved() {#ac546420f6cd906a9b17e41c43e720e98}
+
+<MemberDefinition
+  prototype={<>bool TransferTracker::isCalleeSaved (<a href="/docs/api/classes/livedebugvalues/locidx">LocIdx</a> L) const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00281">281</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### isEntryValueValue() {#ab76cea3708e144106a37446994e2482c}
+
+<MemberDefinition
+  prototype={<>bool TransferTracker::isEntryValueValue (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/livedebugvalues/valueidnum">ValueIDNum</a> &amp; Val) const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00635">635</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### isEntryValueVariable() {#a930c119c5ebcb496e7665a4521f42b94}
+
+<MemberDefinition
+  prototype={<>bool TransferTracker::isEntryValueVariable (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/debugvariable">DebugVariable</a> &amp; Var, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/diexpression">DIExpression</a> &#42; Expr) const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00621">621</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### loadInlocs() {#a304b877a673788ae4edd0e8f5fa1d5d8}
+
+<MemberDefinition
+  prototype={<>void TransferTracker::loadInlocs (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/docs/api/namespaces/livedebugvalues/#a7697a3c717033a44ba7f9b272c1d5331">ValueTable</a> &amp; MLocs, <a href="/docs/api/classes/livedebugvalues/dbgopidmap">DbgOpIDMap</a> &amp; DbgOpStore, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; std::pair&lt; <a href="/docs/api/namespaces/livedebugvalues/#a2ad7532d3e36d429cab7c3ade85c5f77">DebugVariableID</a>, <a href="/docs/api/classes/livedebugvalues/dbgvalue">DbgValue</a> &gt; &gt; &amp; VLocs, unsigned NumLocs)</>}
+  labels = {["inline"]}>
+Load object with live-in variable values.
+
+<code>mlocs</code> contains the live-in values in each machine location, while <code>vlocs</code> the live-in variable values. This method picks variable locations for the live-in variables, creates DBG&#95;VALUEs and puts them in <a href="#af06b11c084b9a4ff7e063e146d4131d3">Transfers</a>, then prepares the other object fields to track variable locations as we step through the block. FIXME: could just examine mloctracker instead of passing in <code>mlocs</code>?
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00451">451</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### loadVarInloc() {#af64654b3c46ec3154963aed1dbb016d2}
+
+<MemberDefinition
+  prototype={<>void TransferTracker::loadVarInloc (<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp; MBB, <a href="/docs/api/classes/livedebugvalues/dbgopidmap">DbgOpIDMap</a> &amp; DbgOpStore, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="#afa24ee75e581d521a08c6731becbc964">ValueLocPair</a> &gt; &amp; ValueToLoc, <a href="/docs/api/namespaces/livedebugvalues/#a2ad7532d3e36d429cab7c3ade85c5f77">DebugVariableID</a> VarID, <a href="/docs/api/classes/livedebugvalues/dbgvalue">DbgValue</a> Value)</>}
+  labels = {["inline"]}>
+For a variable <code>Var</code> with the live-in value <code><a href="/docs/api/classes/llvm/value">Value</a></code>, attempts to resolve the <a href="/docs/api/classes/livedebugvalues/dbgvalue">DbgValue</a> to a concrete DBG&#95;VALUE, emitting that value and loading the tracking information to track Var throughout the block.
+
+<code>ValueToLoc</code> is a map containing the best known location for every <a href="/docs/api/classes/livedebugvalues/valueidnum">ValueIDNum</a> that <a href="/docs/api/classes/llvm/value">Value</a> may use. <code>MBB</code> is the basic block that we are loading the live-in value for. <code>DbgOpStore</code> is the map containing the DbgOpID-&gt;<a href="/docs/api/structs/livedebugvalues/dbgop">DbgOp</a> mapping needed to determine the values used by <a href="/docs/api/classes/llvm/value">Value</a>.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00356">356</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### recoverAsEntryValue() {#ac441348b2e73e12e1d8657de17b76568}
+
+<MemberDefinition
+  prototype={<>bool TransferTracker::recoverAsEntryValue (<a href="/docs/api/namespaces/livedebugvalues/#a2ad7532d3e36d429cab7c3ade85c5f77">DebugVariableID</a> VarID, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/livedebugvalues/dbgvalueproperties">DbgValueProperties</a> &amp; Prop, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/livedebugvalues/valueidnum">ValueIDNum</a> &amp; Num)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00650">650</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### redefVar() {#ac1753e9184a776f25f017ac1022f2a13}
+
+<MemberDefinition
+  prototype={<>void TransferTracker::redefVar (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI)</>}
+  labels = {["inline"]}>
+Change a variable value after encountering a DBG&#95;VALUE inside a block.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00692">692</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### redefVar() {#af3b3d27cd53936e3c52e01a34817d6be}
+
+<MemberDefinition
+  prototype={<>void TransferTracker::redefVar (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/livedebugvalues/dbgvalueproperties">DbgValueProperties</a> &amp; Properties, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/structs/livedebugvalues/resolveddbgop">ResolvedDbgOp</a> &gt; &amp; NewLocs)</>}
+  labels = {["inline"]}>
+Handle a change in variable location within a block.
+
+Terminate the variables current location, and record the value it now refers to, so that we can detect location transfers later on.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00731">731</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### transferMlocs() {#a787205c8858064b56bad25b823faf3d0}
+
+<MemberDefinition
+  prototype={<>void TransferTracker::transferMlocs (<a href="/docs/api/classes/livedebugvalues/locidx">LocIdx</a> Src, <a href="/docs/api/classes/livedebugvalues/locidx">LocIdx</a> Dst, <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> Pos)</>}
+  labels = {["inline"]}>
+<a href="/docs/api/structs/transfertracker/transfer">Transfer</a> variables based on <code>Src</code> to be based on <code>Dst</code>.
+
+This handles both register copies as well as spills and restores. Creates DBG&#95;VALUEs describing the movement.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00911">911</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### ActiveMLocs {#aacea713c5575395a3ce28a43c31f1df6}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;LocIdx, SmallSet&lt;DebugVariableID, 4&gt; &gt; TransferTracker::ActiveMLocs</>}>
+Map from LocIdxes to which DebugVariables are based that location.
+
+Mantained while stepping through the block. Not accurate if VarLocs&#91;Idx&#93; != MTracker-&gt;LocIdxToIDNum&#91;Idx&#93;.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00233">233</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### ActiveVLocs {#ae0a495620f7b1dd27811000f102d1d40}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;DebugVariableID, ResolvedDbgValue&gt; TransferTracker::ActiveVLocs</>}>
+Map from <a href="/docs/api/classes/llvm/debugvariable">DebugVariable</a> to it&#39;s current location and qualifying meta information.
+
+To be used in conjunction with ActiveMLocs to construct enough information for the DBG&#95;VALUEs for a particular <a href="/docs/api/classes/livedebugvalues/locidx">LocIdx</a>.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00238">238</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### CalleeSavedRegs {#a1b1735405477716ee8dd95236d3257bf}
+
+<MemberDefinition
+  prototype={<>const BitVector&amp; TransferTracker::CalleeSavedRegs</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00268">268</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### DVMap {#a0a05f0bb5e94aa2300445044a7a1da02}
+
+<MemberDefinition
+  prototype={<>const DebugVariableMap&amp; TransferTracker::DVMap</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00186">186</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### MF {#a79f160cf45e05ebc07c2751e0bd4d944}
+
+<MemberDefinition
+  prototype={<>MachineFunction&amp; TransferTracker::MF</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00185">185</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### MTracker {#a5ccc49e3b9263bbfcdeb391f17b84c2d}
+
+<MemberDefinition
+  prototype={<>MLocTracker&#42; TransferTracker::MTracker</>}>
+This machine location tracker is assumed to always contain the up-to-date value mapping for all machine locations.
+
+<a href="/docs/api/classes/transfertracker">TransferTracker</a> only reads information from it. (XXX make it const?)
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00184">184</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### PendingDbgValues {#a7ee7f28da62a849df2fdb7a96be072d1}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;std::pair&lt;DebugVariableID, MachineInstr &#42;&gt;, 4&gt; TransferTracker::PendingDbgValues</>}>
+Temporary cache of DBG&#95;VALUEs to be entered into the Transfers collection.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00241">241</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### ShouldEmitDebugEntryValues {#af1088d1f2ac99145846bedd829c2a05e}
+
+<MemberDefinition
+  prototype="bool TransferTracker::ShouldEmitDebugEntryValues">
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00187">187</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### TII {#aa1cef6664a3e135245b35927b6db11e5}
+
+<MemberDefinition
+  prototype={<>const TargetInstrInfo&#42; TransferTracker::TII</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00179">179</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### TLI {#a31452b4b5d9984ee5ed52db4b1a52d5e}
+
+<MemberDefinition
+  prototype={<>const TargetLowering&#42; TransferTracker::TLI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00180">180</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### Transfers {#af06b11c084b9a4ff7e063e146d4131d3}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;Transfer, 32&gt; TransferTracker::Transfers</>}>
+Collection of transfers (DBG&#95;VALUEs) to be inserted.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00222">222</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### TRI {#abf13e97a9a5cff9aa06c88d1ac5172fb}
+
+<MemberDefinition
+  prototype={<>const TargetRegisterInfo&amp; TransferTracker::TRI</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00267">267</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### UseBeforeDefs {#ae485598414179a9523e127ad2df4756c}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;unsigned, SmallVector&lt;UseBeforeDef, 1&gt; &gt; TransferTracker::UseBeforeDefs</>}>
+Map from instruction index (within the block) to the set of UseBeforeDefs that become defined at that instruction.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00260">260</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### UseBeforeDefVariables {#a162a58b620ec34701775d8d3e953fb20}
+
+<MemberDefinition
+  prototype={<>DenseSet&lt;DebugVariableID&gt; TransferTracker::UseBeforeDefVariables</>}>
+The set of variables that are in UseBeforeDefs and can become a location once the relevant value is defined.
+
+An element being erased from this collection prevents the use-before-def materializing.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00265">265</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+### VarLocs {#a498b0782412a1488e7cb5c22a635188d}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;ValueIDNum, 32&gt; TransferTracker::VarLocs</>}>
+Local cache of what-value-is-in-what-LocIdx.
+
+Used to identify differences between TransferTrackers view of variable locations and MLocTrackers. For example, <a href="/docs/api/classes/livedebugvalues/mloctracker">MLocTracker</a> observes all clobbers, but <a href="/docs/api/classes/transfertracker">TransferTracker</a> lazily does not.
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00228">228</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Functions
+
+### ValueToLocSort() {#affb90f774e59ab28e9d3a9d72ac8f8d0}
+
+<MemberDefinition
+  prototype={<>static bool TransferTracker::ValueToLocSort (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#afa24ee75e581d521a08c6731becbc964">ValueLocPair</a> &amp; A, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="#afa24ee75e581d521a08c6731becbc964">ValueLocPair</a> &amp; B)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp/#l00324">324</a> of file <a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/codegen/lib/codegen/livedebugvalues/instrrefbasedimpl-cpp">InstrRefBasedImpl.cpp</a></li>
+</ul>
+
+</DoxygenPage>

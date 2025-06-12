@@ -1,0 +1,266 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/anonymous-namespace-virtualfilesystem-cpp-/combiningdiriterimpl
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `CombiningDirIterImpl` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Combines and deduplicates directory entries across multiple file systems. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class anonymous_namespace{VirtualFileSystem.cpp}::CombiningDirIterImpl</CodeBlock>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/vfs/detail/diriterimpl">DirIterImpl</a></>}>
+An interface for virtual file systems to provide an iterator over the (non-recursive) contents of a directory. <a href="/docs/api/structs/llvm/vfs/detail/diriterimpl/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a733b6262596e57bc384524e33f3444de">FileSystemPtr</a> = <a href="/docs/api/classes/llvm/intrusiverefcntptr">llvm::IntrusiveRefCntPtr</a>&lt; <a href="/docs/api/classes/llvm/vfs/filesystem">llvm::vfs::FileSystem</a> &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#add1e4acd30e068fc7a65f3c2be9c1855">CombiningDirIterImpl</a> (ArrayRef&lt; FileSystemPtr &gt; FileSystems, std::string Dir, std::error&#95;code &amp;EC)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  name={<><a href="#a96ad1ece88bc5aa08748719dfedb1f72">CombiningDirIterImpl</a> (ArrayRef&lt; directory&#95;iterator &gt; DirIters, std::error&#95;code &amp;EC)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::error&#95;code</>}
+  name={<><a href="#ad8a53f1ef68a1a1afce7b963b6595f35">increment</a> () override</>}>
+Sets <code>CurrentEntry</code> to the next entry in the directory on success, to directory&#95;entry() at end, or returns a system-defined <code>error&#95;code</code>. <a href="#ad8a53f1ef68a1a1afce7b963b6595f35">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::error&#95;code</>}
+  name={<><a href="#a7a10bf78fcb3a2346bb8a5ea3f9e5bb5">incrementDirIter</a> (bool IsFirstTime)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::error&#95;code</>}
+  name={<><a href="#a1f714c92e6306858050d7aadb02ea517">incrementImpl</a> (bool IsFirstTime)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::error&#95;code</>}
+  name={<><a href="#a5f2f93276b9db1f297cb866902b2b361">incrementIter</a> (bool IsFirstTime)</>}>
+Sets <code>CurrentDirIter</code> to the next iterator in the list, or leaves it as is (at its end position) if we&#39;ve already gone through them all. <a href="#a5f2f93276b9db1f297cb866902b2b361">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/vfs/directory-iterator">directory&#95;iterator</a></>}
+  name={<><a href="#a75f1b975f66d79af0161bcb6ca23c528">CurrentDirIter</a></>}>
+The iterator currently being traversed. <a href="#a75f1b975f66d79af0161bcb6ca23c528">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/classes/llvm/vfs/directory-iterator">directory&#95;iterator</a>, 8 &gt;</>}
+  name={<><a href="#a398a04f87f073dd3871a095bb62a56a0">IterList</a></>}>
+Iterators to combine, processed in reverse order. <a href="#a398a04f87f073dd3871a095bb62a56a0">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/stringset">llvm::StringSet</a></>}
+  name={<><a href="#a6ad5df9637e06d12d99f087c61cb75e7">SeenNames</a></>}>
+The set of names already returned as entries. <a href="#a6ad5df9637e06d12d99f087c61cb75e7">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Combines and deduplicates directory entries across multiple file systems.
+
+Definition at line 537 of file <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp">VirtualFileSystem.cpp</a>.
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### FileSystemPtr {#a733b6262596e57bc384524e33f3444de}
+
+<MemberDefinition
+  prototype={<>using anonymous&#95;namespace&#123;VirtualFileSystem.cpp&#125;::CombiningDirIterImpl::FileSystemPtr =  llvm::IntrusiveRefCntPtr&lt;llvm::vfs::FileSystem&gt;</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp/#l00538">538</a> of file <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp">VirtualFileSystem.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### CombiningDirIterImpl() {#add1e4acd30e068fc7a65f3c2be9c1855}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;VirtualFileSystem.cpp&#125;::CombiningDirIterImpl::CombiningDirIterImpl (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/intrusiverefcntptr">FileSystemPtr</a> &gt; FileSystems, std::string Dir, std::error&#95;code &amp; EC)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp/#l00589">589</a> of file <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp">VirtualFileSystem.cpp</a>.
+</MemberDefinition>
+
+### CombiningDirIterImpl() {#a96ad1ece88bc5aa08748719dfedb1f72}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;VirtualFileSystem.cpp&#125;::CombiningDirIterImpl::CombiningDirIterImpl (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/vfs/directory-iterator">directory&#95;iterator</a> &gt; DirIters, std::error&#95;code &amp; EC)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp/#l00604">604</a> of file <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp">VirtualFileSystem.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### increment() {#ad8a53f1ef68a1a1afce7b963b6595f35}
+
+<MemberDefinition
+  prototype={<>std::error&#95;code anonymous&#95;namespace&#123;VirtualFileSystem.cpp&#125;::CombiningDirIterImpl::increment ()</>}
+  labels = {["inline", "virtual"]}>
+Sets <code>CurrentEntry</code> to the next entry in the directory on success, to directory&#95;entry() at end, or returns a system-defined <code>error&#95;code</code>.
+
+Definition at line <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp/#l00610">610</a> of file <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp">VirtualFileSystem.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### incrementDirIter() {#a7a10bf78fcb3a2346bb8a5ea3f9e5bb5}
+
+<MemberDefinition
+  prototype={<>std::error&#95;code anonymous&#95;namespace&#123;VirtualFileSystem.cpp&#125;::CombiningDirIterImpl::incrementDirIter (bool IsFirstTime)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp/#l00562">562</a> of file <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp">VirtualFileSystem.cpp</a>.
+</MemberDefinition>
+
+### incrementImpl() {#a1f714c92e6306858050d7aadb02ea517}
+
+<MemberDefinition
+  prototype={<>std::error&#95;code anonymous&#95;namespace&#123;VirtualFileSystem.cpp&#125;::CombiningDirIterImpl::incrementImpl (bool IsFirstTime)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp/#l00573">573</a> of file <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp">VirtualFileSystem.cpp</a>.
+</MemberDefinition>
+
+### incrementIter() {#a5f2f93276b9db1f297cb866902b2b361}
+
+<MemberDefinition
+  prototype={<>std::error&#95;code anonymous&#95;namespace&#123;VirtualFileSystem.cpp&#125;::CombiningDirIterImpl::incrementIter (bool IsFirstTime)</>}
+  labels = {["inline"]}>
+Sets <code>CurrentDirIter</code> to the next iterator in the list, or leaves it as is (at its end position) if we&#39;ve already gone through them all.
+
+Definition at line <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp/#l00549">549</a> of file <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp">VirtualFileSystem.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### CurrentDirIter {#a75f1b975f66d79af0161bcb6ca23c528}
+
+<MemberDefinition
+  prototype={<>directory&#95;iterator anonymous&#95;namespace&#123;VirtualFileSystem.cpp&#125;::CombiningDirIterImpl::CurrentDirIter</>}>
+The iterator currently being traversed.
+
+Definition at line <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp/#l00543">543</a> of file <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp">VirtualFileSystem.cpp</a>.
+</MemberDefinition>
+
+### IterList {#a398a04f87f073dd3871a095bb62a56a0}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;directory&#95;iterator, 8&gt; anonymous&#95;namespace&#123;VirtualFileSystem.cpp&#125;::CombiningDirIterImpl::IterList</>}>
+Iterators to combine, processed in reverse order.
+
+Definition at line <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp/#l00541">541</a> of file <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp">VirtualFileSystem.cpp</a>.
+</MemberDefinition>
+
+### SeenNames {#a6ad5df9637e06d12d99f087c61cb75e7}
+
+<MemberDefinition
+  prototype={<>llvm::StringSet anonymous&#95;namespace&#123;VirtualFileSystem.cpp&#125;::CombiningDirIterImpl::SeenNames</>}>
+The set of names already returned as entries.
+
+Definition at line <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp/#l00545">545</a> of file <a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp">VirtualFileSystem.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/support/virtualfilesystem-cpp">VirtualFileSystem.cpp</a></li>
+</ul>
+
+</DoxygenPage>

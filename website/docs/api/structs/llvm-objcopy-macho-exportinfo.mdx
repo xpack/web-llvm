@@ -1,0 +1,88 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/objcopy/macho/exportinfo
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ExportInfo` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+The location of the export info inside the binary is described by LC&#95;DYLD&#95;INFO load command. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct llvm::objcopy::macho::ExportInfo</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="ObjCopy/MachO/MachOObject.h"
+  permalink="/docs/api/files/lib/lib/objcopy/lib/objcopy/macho/machoobject-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; uint8&#95;t &gt;</>}
+  name={<><a href="#aa185fe5f6e7a83126aecc73067527a1f">Trie</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+The location of the export info inside the binary is described by LC&#95;DYLD&#95;INFO load command.
+
+The symbols exported by a dylib are encoded in a trie. This is a compact representation that factors out common prefixes. It also reduces LINKEDIT pages in RAM because it encodes all information (name, address, flags) in one small, contiguous range. The export area is a stream of nodes. The first node sequentially is the start node for the trie. Nodes for a symbol start with a uleb128 that is the length of the exported symbol information for the string so far. If there is no exported symbol, the node starts with a zero byte. If there is exported info, it follows the length. First is a uleb128 containing flags. Normally, it is followed by a uleb128 encoded offset which is location of the content named by the symbol from the mach&#95;header for the image. If the flags is EXPORT&#95;SYMBOL&#95;FLAGS&#95;REEXPORT, then following the flags is a uleb128 encoded library ordinal, then a zero terminated <a href="/docs/api/namespaces/llvm/#ad9748bf198e8fae8a64c80a0720d4012">UTF8</a> string. If the string is zero length, then the symbol is re-export from the specified dylib with the same name. If the flags is EXPORT&#95;SYMBOL&#95;FLAGS&#95;STUB&#95;AND&#95;RESOLVER, then following the flags is two uleb128s: the stub offset and the resolver offset. The stub is used by non-lazy pointers. The resolver is used by lazy pointers and must be called to get the actual address to use. After the optional exported symbol information is a byte of how many edges (0-255) that this node has leaving it, followed by each edge. Each edge is a zero terminated <a href="/docs/api/namespaces/llvm/#ad9748bf198e8fae8a64c80a0720d4012">UTF8</a> of the addition chars in the symbol, followed by a uleb128 offset for the node that edge points to.
+
+Definition at line 291 of file <a href="/docs/api/files/lib/lib/objcopy/lib/objcopy/macho/machoobject-h">MachOObject.h</a>.
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### Trie {#aa185fe5f6e7a83126aecc73067527a1f}
+
+<MemberDefinition
+  prototype={<>ArrayRef&lt;uint8&#95;t&gt; llvm::objcopy::macho::ExportInfo::Trie</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/objcopy/lib/objcopy/macho/machoobject-h/#l00292">292</a> of file <a href="/docs/api/files/lib/lib/objcopy/lib/objcopy/macho/machoobject-h">MachOObject.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/objcopy/lib/objcopy/macho/machoobject-h">MachOObject.h</a></li>
+</ul>
+
+</DoxygenPage>

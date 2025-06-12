@@ -1,0 +1,258 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/orc/trampolinepool
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `TrampolinePool` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Base class for pools of compiler re-entry trampolines. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::orc::TrampolinePool</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/IndirectionUtils.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h"
+  isLocal="true" />
+</IncludesList>
+
+## Derived Classes
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-epcindirectionutils-cpp-/epctrampolinepool">EPCTrampolinePool</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/orc/localtrampolinepool">LocalTrampolinePool&lt;ORCABI&gt;</a></>}>
+A trampoline pool for trampolines within the current process. <a href="/docs/api/classes/llvm/orc/localtrampolinepool/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#ab8c17480cc7f86d2102ce3cb526dcdf1">NotifyLandingResolvedFunction</a> = <a href="/docs/api/classes/llvm/unique-function">unique&#95;function</a>&lt; void(<a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a>) <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a>  &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a83c081d3058ae4422db7692b857021b9">ResolveLandingFunction</a> = <a href="/docs/api/classes/llvm/unique-function">unique&#95;function</a>&lt; void( <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> TrampolineAddr, <a href="#ab8c17480cc7f86d2102ce3cb526dcdf1">NotifyLandingResolvedFunction</a> OnLandingResolved) <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a>  &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Destructor Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a74a77da357bc4c4402bf88e44d05acb6">~TrampolinePool</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/expected">Expected</a>&lt; <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> &gt;</>}
+  name={<><a href="#aded99b342abab09d0207e7d13ca110ea">getTrampoline</a> ()</>}>
+Get an available trampoline address. <a href="#aded99b342abab09d0207e7d13ca110ea">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ada023824d31c38fb62101dd96547f1be">releaseTrampoline</a> (ExecutorAddr TrampolineAddr)</>}>
+Returns the given trampoline to the pool for re-use. <a href="#ada023824d31c38fb62101dd96547f1be">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Protected Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/error">Error</a></>}
+  name={<><a href="#a69bfaf4ebd9abb1b4c2f1e2e0e8f3a2d">grow</a> ()=0</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Protected Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::vector&lt; <a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> &gt;</>}
+  name={<><a href="#a21e470ebe990337ac5917986ae91c5a6">AvailableTrampolines</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="std::mutex"
+  name={<><a href="#a457caecfc8ff3e197adb12b53ec2a753">TPMutex</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Base class for pools of compiler re-entry trampolines.
+
+These trampolines are callable addresses that save all register state before calling a supplied function to return the trampoline landing address, then restore all state before jumping to that address. They are used by various ORC APIs to support lazy compilation
+
+Definition at line 64 of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h">IndirectionUtils.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### NotifyLandingResolvedFunction {#ab8c17480cc7f86d2102ce3cb526dcdf1}
+
+<MemberDefinition
+  prototype={<>using llvm::orc::TrampolinePool::NotifyLandingResolvedFunction = 
+      unique&#95;function&lt;void(ExecutorAddr) const&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h/#l00066">66</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h">IndirectionUtils.h</a>.
+</MemberDefinition>
+
+### ResolveLandingFunction {#a83c081d3058ae4422db7692b857021b9}
+
+<MemberDefinition
+  prototype={<>using llvm::orc::TrampolinePool::ResolveLandingFunction =  unique&#95;function&lt;void(
+      ExecutorAddr TrampolineAddr,
+      NotifyLandingResolvedFunction OnLandingResolved) const&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h/#l00069">69</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h">IndirectionUtils.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Destructor
+
+### ~TrampolinePool() {#a74a77da357bc4c4402bf88e44d05acb6}
+
+<MemberDefinition
+  prototype="llvm::orc::TrampolinePool::~TrampolinePool ()"
+  labels = {["virtual"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h/#l00073">73</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h">IndirectionUtils.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### getTrampoline() {#aded99b342abab09d0207e7d13ca110ea}
+
+<MemberDefinition
+  prototype={<>Expected&lt; ExecutorAddr &gt; llvm::orc::TrampolinePool::getTrampoline ()</>}
+  labels = {["inline"]}>
+Get an available trampoline address.
+
+Returns an error if no trampoline can be created.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h/#l00077">77</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h">IndirectionUtils.h</a>.
+</MemberDefinition>
+
+### releaseTrampoline() {#ada023824d31c38fb62101dd96547f1be}
+
+<MemberDefinition
+  prototype={<>void llvm::orc::TrampolinePool::releaseTrampoline (<a href="/docs/api/classes/llvm/orc/executoraddr">ExecutorAddr</a> TrampolineAddr)</>}
+  labels = {["inline"]}>
+Returns the given trampoline to the pool for re-use.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h/#l00090">90</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h">IndirectionUtils.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Protected Member Functions
+
+### grow() {#a69bfaf4ebd9abb1b4c2f1e2e0e8f3a2d}
+
+<MemberDefinition
+  prototype="virtual Error llvm::orc::TrampolinePool::grow ()"
+  labels = {["protected"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h/#l00096">96</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h">IndirectionUtils.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Protected Member Attributes
+
+### AvailableTrampolines {#a21e470ebe990337ac5917986ae91c5a6}
+
+<MemberDefinition
+  prototype={<>std::vector&lt;ExecutorAddr&gt; llvm::orc::TrampolinePool::AvailableTrampolines</>}
+  labels = {["protected"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h/#l00099">99</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h">IndirectionUtils.h</a>.
+</MemberDefinition>
+
+### TPMutex {#a457caecfc8ff3e197adb12b53ec2a753}
+
+<MemberDefinition
+  prototype="std::mutex llvm::orc::TrampolinePool::TPMutex"
+  labels = {["protected"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h/#l00098">98</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h">IndirectionUtils.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/indirectionutils-h">IndirectionUtils.h</a></li>
+</ul>
+
+</DoxygenPage>

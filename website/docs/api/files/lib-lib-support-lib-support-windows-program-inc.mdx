@@ -1,0 +1,618 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/support/lib/support/windows/program-inc
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `Program.inc` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- Win32/Program.cpp - Win32 Program Implementation ------- -&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file provides the Win32 specific implementation of the Program class.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/bitvector-h">llvm/ADT/BitVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringextras-h">llvm/ADT/StringExtras.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/convertutf-h">llvm/Support/ConvertUTF.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/errc-h">llvm/Support/Errc.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/filesystem-h">llvm/Support/FileSystem.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/path-h">llvm/Support/Path.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/include/llvm/support/windows/windowssupport-h">llvm/Support/Windows/WindowsSupport.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/windowserror-h">llvm/Support/WindowsError.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h">llvm/Support/raw&#95;ostream.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstdio&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;fcntl.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;io.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;malloc.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;numeric&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;psapi.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="comment">//=== WARNING: Implementation here must contain only Win32 specific code</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===          and must not be UNIX code</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"><a href="/docs/api/structs/llvm/sys/processinfo/#a8f904a7e686cd044958b4eceb4297cde">ProcessInfo::ProcessInfo</a>() : Pid(0), <a href="/docs/api/classes/llvm/sys/process">Process</a>(0), ReturnCode(0) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">ErrorOr&lt;std::string&gt; sys::findProgramByName(StringRef Name,</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">                                            ArrayRef&lt;StringRef&gt; Paths) &#123;</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!<a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.empty() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Must have a name!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.find&#95;first&#95;of(</Highlight><Highlight kind="stringliteral">&quot;/\\\\&quot;</Highlight><Highlight kind="normal">) != <a href="/docs/api/classes/anonymous-namespace-path-cpp-/stringref/#ad0f54a163ac500b144590640c6f1eb6b">StringRef::npos</a>)</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::string(Name);</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">wchar&#95;t</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/namespaces/llvm/pdb/#ac10322dc19a928c2dbb83ec9689dc23caac70412e939d72a9234cdebb1af5867b">Path</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  std::wstring PathStorage;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/namespaces/anonymous-textstubv5-cpp-/#ad2f3f81faa370c8bf9a1f81612c90adfaa55015f2b0063e2314caede4ac9df141">Paths</a>.empty()) &#123;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">    PathStorage.reserve(<a href="/docs/api/namespaces/anonymous-textstubv5-cpp-/#ad2f3f81faa370c8bf9a1f81612c90adfaa55015f2b0063e2314caede4ac9df141">Paths</a>.size() &#42; MAX&#95;PATH);</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i = 0; i &lt; <a href="/docs/api/namespaces/anonymous-textstubv5-cpp-/#ad2f3f81faa370c8bf9a1f81612c90adfaa55015f2b0063e2314caede4ac9df141">Paths</a>.size(); ++i) &#123;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (i)</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">        PathStorage.push&#95;back(L</Highlight><Highlight kind="charliteral">&#39;;&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">      StringRef <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a> = <a href="/docs/api/namespaces/anonymous-textstubv5-cpp-/#ad2f3f81faa370c8bf9a1f81612c90adfaa55015f2b0063e2314caede4ac9df141">Paths</a>&#91;i&#93;;</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">      SmallVector&lt;wchar&#95;t, MAX&#95;PATH&gt; TmpPath;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (std::error&#95;code EC = windows::UTF8ToUTF16(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, TmpPath))</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">      PathStorage.append(TmpPath.begin(), TmpPath.end());</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/pdb/#ac10322dc19a928c2dbb83ec9689dc23caac70412e939d72a9234cdebb1af5867b">Path</a> = PathStorage.c&#95;str();</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">  SmallVector&lt;wchar&#95;t, MAX&#95;PATH&gt; U16Name;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (std::error&#95;code EC = windows::UTF8ToUTF16(Name, U16Name))</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  SmallVector&lt;StringRef, 12&gt; PathExts;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  PathExts.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  PathExts.push&#95;back(</Highlight><Highlight kind="stringliteral">&quot;.exe&quot;</Highlight><Highlight kind="normal">); </Highlight><Highlight kind="comment">// FIXME: This must be in %PATHEXT%.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;PathExtEnv = std::getenv(</Highlight><Highlight kind="stringliteral">&quot;PATHEXT&quot;</Highlight><Highlight kind="normal">))</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a544056717f2471026a27c31adb99df74">SplitString</a>(PathExtEnv, PathExts, </Highlight><Highlight kind="stringliteral">&quot;;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  SmallVector&lt;char, MAX&#95;PATH&gt; U8Result;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (StringRef Ext : PathExts) &#123;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    SmallVector&lt;wchar&#95;t, MAX&#95;PATH&gt; U16Result;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">    DWORD <a href="/docs/api/namespaces/llvm/omp/#a16d7c5f77008a84ae20bf4a5c41e51f0ae88b4464fe326a51e6e6dfae28dd536d">Len</a> = MAX&#95;PATH;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">do</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">      U16Result.resize&#95;for&#95;overwrite(Len);</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Lets attach the extension manually. That is needed for files</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// with a point in name like aaa.bbb. SearchPathW will not add extension</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// from its argument to such files because it thinks they already had one.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">      SmallVector&lt;wchar&#95;t, MAX&#95;PATH&gt; U16NameExt;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (std::error&#95;code EC =</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">              windows::UTF8ToUTF16(Twine(Name + Ext).str(), U16NameExt))</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/omp/#a16d7c5f77008a84ae20bf4a5c41e51f0ae88b4464fe326a51e6e6dfae28dd536d">Len</a> = ::SearchPathW(Path, <a href="/docs/api/namespaces/llvm/#a2e3d3da964f7eb14ef2eabf0c4a08ba5">c&#95;str</a>(U16NameExt), </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, U16Result.size(),</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">                          U16Result.data(), </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (Len &gt; U16Result.size());</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Len == 0)</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">    U16Result.truncate(Len);</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (std::error&#95;code EC =</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">            windows::UTF16ToUTF8(U16Result.data(), U16Result.size(), U8Result))</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (sys::fs::can&#95;execute(U8Result))</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="comment">// Found it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">    U8Result.clear();</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (U8Result.empty())</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#af0799d74677708a87dee45acdd40bab2">mapWindowsError</a>(::GetLastError());</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/sys/path/#a58dcbf859a69b30932a6ed45806f8a5b">llvm::sys::path::make&#95;preferred</a>(U8Result);</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::string(U8Result.begin(), U8Result.end());</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a4a66e59cba198d78f4f5a80c1284a666">MakeErrMsg</a>(std::string &#42;ErrMsg, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;prefix) &#123;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!ErrMsg)</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;buffer = NULL;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  DWORD LastError = GetLastError();</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  DWORD <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a> = FormatMessageA(FORMAT&#95;MESSAGE&#95;ALLOCATE&#95;BUFFER |</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">                               FORMAT&#95;MESSAGE&#95;FROM&#95;SYSTEM |</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">                               FORMAT&#95;MESSAGE&#95;MAX&#95;WIDTH&#95;MASK,</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">                           NULL, LastError, 0, (LPSTR)&amp;buffer, 1, NULL);</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (R)</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">    &#42;ErrMsg = prefix + </Highlight><Highlight kind="stringliteral">&quot;: &quot;</Highlight><Highlight kind="normal"> + buffer;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    &#42;ErrMsg = prefix + </Highlight><Highlight kind="stringliteral">&quot;: Unknown error&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  &#42;ErrMsg += </Highlight><Highlight kind="stringliteral">&quot; (0x&quot;</Highlight><Highlight kind="normal"> + <a href="/docs/api/namespaces/llvm/#a3beda524b0772ca36035db4399a6a571">llvm::utohexstr</a>(LastError) + </Highlight><Highlight kind="stringliteral">&quot;)&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  LocalFree(buffer);</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a> != 0;</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> HANDLE RedirectIO(std::optional&lt;StringRef&gt; Path, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> fd,</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">                         std::string &#42;ErrMsg) &#123;</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">  HANDLE h;</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Path) &#123;</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!DuplicateHandle(GetCurrentProcess(), (HANDLE)&#95;get&#95;osfhandle(fd),</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">                         GetCurrentProcess(), &amp;h, 0, TRUE,</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">                         DUPLICATE&#95;SAME&#95;ACCESS))</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> INVALID&#95;HANDLE&#95;VALUE;</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> h;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">  std::string fname;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/pdb/#ac10322dc19a928c2dbb83ec9689dc23caac70412e939d72a9234cdebb1af5867b">Path</a>-&gt;empty())</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">    fname = </Highlight><Highlight kind="stringliteral">&quot;NUL&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">    fname = std::string(&#42;Path);</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">  SECURITY&#95;ATTRIBUTES sa;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">  sa.nLength = </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(sa);</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">  sa.lpSecurityDescriptor = 0;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">  sa.bInheritHandle = TRUE;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  SmallVector&lt;wchar&#95;t, 128&gt; fnameUnicode;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/pdb/#ac10322dc19a928c2dbb83ec9689dc23caac70412e939d72a9234cdebb1af5867b">Path</a>-&gt;empty()) &#123;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Don&#39;t play long-path tricks on &quot;NUL&quot;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (windows::UTF8ToUTF16(fname, fnameUnicode))</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> INVALID&#95;HANDLE&#95;VALUE;</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (sys::windows::widenPath(fname, fnameUnicode))</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> INVALID&#95;HANDLE&#95;VALUE;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">  h = CreateFileW(fnameUnicode.data(), fd ? GENERIC&#95;WRITE : GENERIC&#95;READ,</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">                  FILE&#95;SHARE&#95;READ, &amp;sa, fd == 0 ? OPEN&#95;EXISTING : CREATE&#95;ALWAYS,</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">                  FILE&#95;ATTRIBUTE&#95;NORMAL, NULL);</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (h == INVALID&#95;HANDLE&#95;VALUE) &#123;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a4a66e59cba198d78f4f5a80c1284a666">MakeErrMsg</a>(ErrMsg,</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">               fname + </Highlight><Highlight kind="stringliteral">&quot;: Can&#39;t open file for &quot;</Highlight><Highlight kind="normal"> + (fd ? </Highlight><Highlight kind="stringliteral">&quot;input&quot;</Highlight><Highlight kind="normal"> : </Highlight><Highlight kind="stringliteral">&quot;output&quot;</Highlight><Highlight kind="normal">));</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> h;</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/program-cpp/#a3cc4767a85e498eea6b41bfbbdb4d2e9">Execute</a>(ProcessInfo &amp;PI, StringRef Program,</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">                    ArrayRef&lt;StringRef&gt; Args,</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">                    std::optional&lt;ArrayRef&lt;StringRef&gt;&gt; Env,</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">                    ArrayRef&lt;std::optional&lt;StringRef&gt;&gt; Redirects,</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">                    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> MemoryLimit, std::string &#42;ErrMsg,</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">                    BitVector &#42;AffinityMask, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> DetachProcess) &#123;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!sys::fs::can&#95;execute(Program)) &#123;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ErrMsg)</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">      &#42;ErrMsg = </Highlight><Highlight kind="stringliteral">&quot;program not executable&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// can&#95;execute may succeed by looking at Program + &quot;.exe&quot;. CreateProcessW</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// will implicitly add the .exe if we provide a command line without an</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// executable path, but since we use an explicit executable, we have to add</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// &quot;.exe&quot; ourselves.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">  SmallString&lt;64&gt; ProgramStorage;</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!sys::fs::exists(Program))</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">    Program = Twine(Program + </Highlight><Highlight kind="stringliteral">&quot;.exe&quot;</Highlight><Highlight kind="normal">).toStringRef(ProgramStorage);</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Windows wants a command line, not an array of args, to pass to the new</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// process.  We have to concatenate them all, while quoting the args that</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// have embedded spaces (or are empty).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a> = flattenWindowsCommandLine(Args);</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (std::error&#95;code ec = <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>.getError()) &#123;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">    SetLastError(ec.value());</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a4a66e59cba198d78f4f5a80c1284a666">MakeErrMsg</a>(ErrMsg, std::string(</Highlight><Highlight kind="stringliteral">&quot;Unable to convert command-line to UTF-16&quot;</Highlight><Highlight kind="normal">));</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">  std::wstring Command = &#42;<a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>;</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The pointer to the environment block for the new process.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">  std::vector&lt;wchar&#95;t&gt; EnvBlock;</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Env) &#123;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// An environment block consists of a null-terminated block of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// null-terminated strings. Convert the array of environment variables to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// an environment block by concatenating them.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (StringRef <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a> : &#42;Env) &#123;</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">      SmallVector&lt;wchar&#95;t, MAX&#95;PATH&gt; EnvString;</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (std::error&#95;code ec = windows::UTF8ToUTF16(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>, EnvString)) &#123;</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">        SetLastError(ec.value());</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a4a66e59cba198d78f4f5a80c1284a666">MakeErrMsg</a>(ErrMsg, </Highlight><Highlight kind="stringliteral">&quot;Unable to convert environment variable to UTF-16&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a39d3d23a084c4544ee5903203db10e8a">llvm::append&#95;range</a>(EnvBlock, EnvString);</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">      EnvBlock.push&#95;back(0);</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">    EnvBlock.push&#95;back(0);</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Create a child process.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">  STARTUPINFOW si;</Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">  memset(&amp;si, 0, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(si));</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">  si.cb = </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(si);</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">  si.hStdInput = INVALID&#95;HANDLE&#95;VALUE;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">  si.hStdOutput = INVALID&#95;HANDLE&#95;VALUE;</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">  si.hStdError = INVALID&#95;HANDLE&#95;VALUE;</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Redirects.empty()) &#123;</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">    si.dwFlags = STARTF&#95;USESTDHANDLES;</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">    si.hStdInput = RedirectIO(Redirects&#91;0&#93;, 0, ErrMsg);</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (si.hStdInput == INVALID&#95;HANDLE&#95;VALUE) &#123;</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a4a66e59cba198d78f4f5a80c1284a666">MakeErrMsg</a>(ErrMsg, </Highlight><Highlight kind="stringliteral">&quot;can&#39;t redirect stdin&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">    si.hStdOutput = RedirectIO(Redirects&#91;1&#93;, 1, ErrMsg);</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (si.hStdOutput == INVALID&#95;HANDLE&#95;VALUE) &#123;</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">      CloseHandle(si.hStdInput);</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a4a66e59cba198d78f4f5a80c1284a666">MakeErrMsg</a>(ErrMsg, </Highlight><Highlight kind="stringliteral">&quot;can&#39;t redirect stdout&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Redirects&#91;1&#93; &amp;&amp; Redirects&#91;2&#93; &amp;&amp; &#42;Redirects&#91;1&#93; == &#42;Redirects&#91;2&#93;) &#123;</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// If stdout and stderr should go to the same place, redirect stderr</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// to the handle already open for stdout.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!DuplicateHandle(GetCurrentProcess(), si.hStdOutput,</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">                           GetCurrentProcess(), &amp;si.hStdError, 0, TRUE,</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal">                           DUPLICATE&#95;SAME&#95;ACCESS)) &#123;</Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">        CloseHandle(si.hStdInput);</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">        CloseHandle(si.hStdOutput);</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a4a66e59cba198d78f4f5a80c1284a666">MakeErrMsg</a>(ErrMsg, </Highlight><Highlight kind="stringliteral">&quot;can&#39;t dup stderr to stdout&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Just redirect stderr</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">      si.hStdError = RedirectIO(Redirects&#91;2&#93;, 2, ErrMsg);</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (si.hStdError == INVALID&#95;HANDLE&#95;VALUE) &#123;</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">        CloseHandle(si.hStdInput);</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">        CloseHandle(si.hStdOutput);</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a4a66e59cba198d78f4f5a80c1284a666">MakeErrMsg</a>(ErrMsg, </Highlight><Highlight kind="stringliteral">&quot;can&#39;t redirect stderr&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">  PROCESS&#95;INFORMATION <a href="/docs/api/namespaces/llvm/numbers/#aeedab8a7355d9f65b7c2ba263ddc2065">pi</a>;</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">  memset(&amp;pi, 0, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(pi));</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">  fflush(stdout);</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">  fflush(stderr);</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">  SmallVector&lt;wchar&#95;t, MAX&#95;PATH&gt; ProgramUtf16;</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (std::error&#95;code ec = sys::windows::widenPath(Program, ProgramUtf16)) &#123;</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">    SetLastError(ec.value());</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a4a66e59cba198d78f4f5a80c1284a666">MakeErrMsg</a>(ErrMsg,</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">               std::string(</Highlight><Highlight kind="stringliteral">&quot;Unable to convert application name to UTF-16&quot;</Highlight><Highlight kind="normal">));</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> CreateFlags = CREATE&#95;UNICODE&#95;ENVIRONMENT;</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (AffinityMask)</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">    CreateFlags |= CREATE&#95;SUSPENDED;</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DetachProcess)</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">    CreateFlags |= DETACHED&#95;PROCESS;</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">  std::vector&lt;wchar&#95;t&gt; CommandUtf16(Command.size() + 1, 0);</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">  std::copy(Command.begin(), Command.end(), CommandUtf16.begin());</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">  BOOL <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbittracker-cpp/#a2e1b5bd9424a1d1082d4bd670b1a0be6">rc</a> = CreateProcessW(ProgramUtf16.data(), CommandUtf16.data(), 0, 0, TRUE,</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">                           CreateFlags, EnvBlock.empty() ? 0 : EnvBlock.data(),</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">                           0, &amp;si, &amp;pi);</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">  DWORD err = GetLastError();</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Regardless of whether the process got created or not, we are done with</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// the handles we created for it to inherit.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">  CloseHandle(si.hStdInput);</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">  CloseHandle(si.hStdOutput);</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">  CloseHandle(si.hStdError);</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Now return an error if the process didn&#39;t get created.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbittracker-cpp/#a2e1b5bd9424a1d1082d4bd670b1a0be6">rc</a>) &#123;</Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">    SetLastError(err);</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a4a66e59cba198d78f4f5a80c1284a666">MakeErrMsg</a>(ErrMsg,</Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">               std::string(</Highlight><Highlight kind="stringliteral">&quot;Couldn&#39;t execute program &#39;&quot;</Highlight><Highlight kind="normal">) + Program.str() + </Highlight><Highlight kind="stringliteral">&quot;&#39;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal">  PI.Pid = <a href="/docs/api/namespaces/llvm/numbers/#aeedab8a7355d9f65b7c2ba263ddc2065">pi</a>.dwProcessId;</Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal">  PI.Process = <a href="/docs/api/namespaces/llvm/numbers/#aeedab8a7355d9f65b7c2ba263ddc2065">pi</a>.hProcess;</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Make sure these get closed no matter what.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a1b31339301d33bf27bd0bdddeb289738">ScopedCommonHandle</a> hThread(<a href="/docs/api/namespaces/llvm/numbers/#aeedab8a7355d9f65b7c2ba263ddc2065">pi</a>.hThread);</Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Assign the process to a job if a memory limit is defined.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a52d5a456ff24b34840b071b305691f24">ScopedJobHandle</a> hJob;</Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (MemoryLimit != 0) &#123;</Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal">    hJob = CreateJobObjectW(0, 0);</Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aea6e51b13067f27d5b9bd39d1f44b670">success</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (hJob) &#123;</Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">      JOBOBJECT&#95;EXTENDED&#95;LIMIT&#95;INFORMATION jeli;</Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal">      memset(&amp;jeli, 0, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(jeli));</Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">      jeli.BasicLimitInformation.LimitFlags = JOB&#95;OBJECT&#95;LIMIT&#95;PROCESS&#95;MEMORY;</Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal">      jeli.ProcessMemoryLimit = uintptr&#95;t(MemoryLimit) &#42; 1048576;</Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SetInformationJobObject(hJob, JobObjectExtendedLimitInformation,</Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal">                                  &amp;jeli, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(jeli))) &#123;</Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (AssignProcessToJobObject(hJob, <a href="/docs/api/namespaces/llvm/numbers/#aeedab8a7355d9f65b7c2ba263ddc2065">pi</a>.hProcess))</Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal">          <a href="/docs/api/namespaces/llvm/#aea6e51b13067f27d5b9bd39d1f44b670">success</a> = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!success) &#123;</Highlight></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">      SetLastError(GetLastError());</Highlight></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a4a66e59cba198d78f4f5a80c1284a666">MakeErrMsg</a>(ErrMsg, std::string(</Highlight><Highlight kind="stringliteral">&quot;Unable to set memory limit&quot;</Highlight><Highlight kind="normal">));</Highlight></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal">      TerminateProcess(<a href="/docs/api/namespaces/llvm/numbers/#aeedab8a7355d9f65b7c2ba263ddc2065">pi</a>.hProcess, 1);</Highlight></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="normal">      WaitForSingleObject(<a href="/docs/api/namespaces/llvm/numbers/#aeedab8a7355d9f65b7c2ba263ddc2065">pi</a>.hProcess, INFINITE);</Highlight></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Set the affinity mask</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (AffinityMask) &#123;</Highlight></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal">    ::SetProcessAffinityMask(<a href="/docs/api/namespaces/llvm/numbers/#aeedab8a7355d9f65b7c2ba263ddc2065">pi</a>.hProcess,</Highlight></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal">                             (DWORD&#95;PTR)AffinityMask-&gt;getData().front());</Highlight></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">    ::ResumeThread(<a href="/docs/api/namespaces/llvm/numbers/#aeedab8a7355d9f65b7c2ba263ddc2065">pi</a>.hThread);</Highlight></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> argNeedsQuotes(StringRef Arg) &#123;</Highlight></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Arg.empty())</Highlight></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-path-cpp-/stringref/#ad0f54a163ac500b144590640c6f1eb6b">StringRef::npos</a> != Arg.find&#95;first&#95;of(</Highlight><Highlight kind="stringliteral">&quot;\\t \\&quot;&amp;\\&#39;()&#42;&lt;&gt;\\\\&#96;^|\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> std::string quoteSingleArg(StringRef Arg) &#123;</Highlight></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="normal">  std::string <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>;</Highlight></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>.push&#95;back(</Highlight><Highlight kind="charliteral">&#39;&quot;&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (!Arg.empty()) &#123;</Highlight></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> FirstNonBackslash = Arg.find&#95;first&#95;not&#95;of(</Highlight><Highlight kind="charliteral">&#39;\\\\&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> BackslashCount = FirstNonBackslash;</Highlight></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (FirstNonBackslash == <a href="/docs/api/classes/anonymous-namespace-path-cpp-/stringref/#ad0f54a163ac500b144590640c6f1eb6b">StringRef::npos</a>) &#123;</Highlight></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// The entire remainder of the argument is backslashes.  Escape all of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// them and just early out.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal">      BackslashCount = Arg.size();</Highlight></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>.append(BackslashCount &#42; 2, </Highlight><Highlight kind="charliteral">&#39;\\\\&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Arg&#91;FirstNonBackslash&#93; == </Highlight><Highlight kind="charliteral">&#39;\\&quot;&#39;</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// This is an embedded quote.  Escape all preceding backslashes, then</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// add one additional backslash to escape the quote.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>.append(BackslashCount &#42; 2 + 1, </Highlight><Highlight kind="charliteral">&#39;\\\\&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>.push&#95;back(</Highlight><Highlight kind="charliteral">&#39;\\&quot;&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// This is just a normal character.  Don&#39;t escape any of the preceding</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// backslashes, just append them as they are and then append the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// character.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>.append(BackslashCount, </Highlight><Highlight kind="charliteral">&#39;\\\\&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>.push&#95;back(Arg&#91;FirstNonBackslash&#93;);</Highlight></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Drop all the backslashes, plus the following character.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388"><Highlight kind="normal">    Arg = Arg.drop&#95;front(FirstNonBackslash + 1);</Highlight></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>.push&#95;back(</Highlight><Highlight kind="charliteral">&#39;&quot;&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>;</Highlight></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="normal"><a href="/docs/api/classes/llvm/erroror">ErrorOr&lt;std::wstring&gt;</a> sys::flattenWindowsCommandLine(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;StringRef&gt;</a> Args) &#123;</Highlight></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397"><Highlight kind="normal">  std::string Command;</Highlight></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/stringref">StringRef</a> Arg : Args) &#123;</Highlight></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (argNeedsQuotes(Arg))</Highlight></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="normal">      Command += quoteSingleArg(Arg);</Highlight></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="normal">      Command += Arg;</Highlight></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="normal">    Command.push&#95;back(</Highlight><Highlight kind="charliteral">&#39; &#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;wchar&#95;t, MAX&#95;PATH&gt;</a> CommandUtf16;</Highlight></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (std::error&#95;code ec = windows::UTF8ToUTF16(Command, CommandUtf16))</Highlight></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ec;</Highlight></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::wstring(CommandUtf16.begin(), CommandUtf16.end());</Highlight></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="normal"><a href="/docs/api/structs/llvm/sys/processinfo">ProcessInfo</a> <a href="/docs/api/namespaces/llvm/sys/#a7defb51d8d6a2eba7a428d1a22f08bad">sys::Wait</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sys/processinfo">ProcessInfo</a> &amp;PI,</Highlight></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="normal">                      std::optional&lt;unsigned&gt; SecondsToWait,</Highlight></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="normal">                      std::string &#42;ErrMsg,</Highlight></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417"><Highlight kind="normal">                      std::optional&lt;ProcessStatistics&gt; &#42;ProcStat,</Highlight></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="normal">                      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Polling) &#123;</Highlight></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(PI.Pid &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;invalid pid to wait on, process not started?&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((PI.Process &amp;&amp; PI.Process != INVALID&#95;HANDLE&#95;VALUE) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421"><Highlight kind="normal">         </Highlight><Highlight kind="stringliteral">&quot;invalid process handle to wait on, process not started?&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00422" /><CodeLine lineNumber="422"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/amdgpu/sdwa/#a487d59303b94fbf4adddd9a08c30da0aaddbc3f8d705f646af626fd73cdf3618b">DWORD</a> milliSecondsToWait = SecondsToWait ? &#42;SecondsToWait &#42; 1000 : INFINITE;</Highlight></CodeLine>
+<Link id="l00423" /><CodeLine lineNumber="423"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00424" /><CodeLine lineNumber="424"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/sys/processinfo">ProcessInfo</a> WaitResult = PI;</Highlight></CodeLine>
+<Link id="l00425" /><CodeLine lineNumber="425"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ProcStat)</Highlight></CodeLine>
+<Link id="l00426" /><CodeLine lineNumber="426"><Highlight kind="normal">    ProcStat-&gt;reset();</Highlight></CodeLine>
+<Link id="l00427" /><CodeLine lineNumber="427"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/amdgpu/sdwa/#a487d59303b94fbf4adddd9a08c30da0aaddbc3f8d705f646af626fd73cdf3618b">DWORD</a> WaitStatus = WaitForSingleObject(PI.Process, milliSecondsToWait);</Highlight></CodeLine>
+<Link id="l00428" /><CodeLine lineNumber="428"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (WaitStatus == WAIT&#95;TIMEOUT) &#123;</Highlight></CodeLine>
+<Link id="l00429" /><CodeLine lineNumber="429"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Polling &amp;&amp; &#42;SecondsToWait &gt; 0) &#123;</Highlight></CodeLine>
+<Link id="l00430" /><CodeLine lineNumber="430"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!TerminateProcess(PI.Process, 1)) &#123;</Highlight></CodeLine>
+<Link id="l00431" /><CodeLine lineNumber="431"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ErrMsg)</Highlight></CodeLine>
+<Link id="l00432" /><CodeLine lineNumber="432"><Highlight kind="normal">          <a href="/docs/api/namespaces/llvm/#a737f46882195837060ea24b51019969d">MakeErrMsg</a>(ErrMsg, </Highlight><Highlight kind="stringliteral">&quot;Failed to terminate timed-out program&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00433" /><CodeLine lineNumber="433"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00434" /><CodeLine lineNumber="434"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// -2 indicates a crash or timeout as opposed to failure to execute.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00435" /><CodeLine lineNumber="435"><Highlight kind="normal">        WaitResult.ReturnCode = -2;</Highlight></CodeLine>
+<Link id="l00436" /><CodeLine lineNumber="436"><Highlight kind="normal">        CloseHandle(PI.Process);</Highlight></CodeLine>
+<Link id="l00437" /><CodeLine lineNumber="437"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> WaitResult;</Highlight></CodeLine>
+<Link id="l00438" /><CodeLine lineNumber="438"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00439" /><CodeLine lineNumber="439"><Highlight kind="normal">      WaitForSingleObject(PI.Process, INFINITE);</Highlight></CodeLine>
+<Link id="l00440" /><CodeLine lineNumber="440"><Highlight kind="normal">      CloseHandle(PI.Process);</Highlight></CodeLine>
+<Link id="l00441" /><CodeLine lineNumber="441"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00442" /><CodeLine lineNumber="442"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Non-blocking wait.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00443" /><CodeLine lineNumber="443"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/sys/processinfo">ProcessInfo</a>();</Highlight></CodeLine>
+<Link id="l00444" /><CodeLine lineNumber="444"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00445" /><CodeLine lineNumber="445"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00446" /><CodeLine lineNumber="446"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00447" /><CodeLine lineNumber="447"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Get process execution statistics.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00448" /><CodeLine lineNumber="448"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ProcStat) &#123;</Highlight></CodeLine>
+<Link id="l00449" /><CodeLine lineNumber="449"><Highlight kind="normal">    FILETIME CreationTime, ExitTime, KernelTime, UserTime;</Highlight></CodeLine>
+<Link id="l00450" /><CodeLine lineNumber="450"><Highlight kind="normal">    PROCESS&#95;MEMORY&#95;COUNTERS MemInfo;</Highlight></CodeLine>
+<Link id="l00451" /><CodeLine lineNumber="451"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (GetProcessTimes(PI.Process, &amp;CreationTime, &amp;ExitTime, &amp;KernelTime,</Highlight></CodeLine>
+<Link id="l00452" /><CodeLine lineNumber="452"><Highlight kind="normal">                        &amp;UserTime) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00453" /><CodeLine lineNumber="453"><Highlight kind="normal">        GetProcessMemoryInfo(PI.Process, &amp;MemInfo, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(MemInfo))) &#123;</Highlight></CodeLine>
+<Link id="l00454" /><CodeLine lineNumber="454"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> UserT = std::chrono::duration&#95;cast&lt;std::chrono::microseconds&gt;(</Highlight></CodeLine>
+<Link id="l00455" /><CodeLine lineNumber="455"><Highlight kind="normal">          <a href="/docs/api/namespaces/llvm/sys/#a1a420333641cfdaa22a032c78e92aa55">toDuration</a>(UserTime));</Highlight></CodeLine>
+<Link id="l00456" /><CodeLine lineNumber="456"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> KernelT = std::chrono::duration&#95;cast&lt;std::chrono::microseconds&gt;(</Highlight></CodeLine>
+<Link id="l00457" /><CodeLine lineNumber="457"><Highlight kind="normal">          <a href="/docs/api/namespaces/llvm/sys/#a1a420333641cfdaa22a032c78e92aa55">toDuration</a>(KernelTime));</Highlight></CodeLine>
+<Link id="l00458" /><CodeLine lineNumber="458"><Highlight kind="normal">      uint64&#95;t PeakMemory = MemInfo.PeakPagefileUsage / 1024;</Highlight></CodeLine>
+<Link id="l00459" /><CodeLine lineNumber="459"><Highlight kind="normal">      &#42;ProcStat = <a href="/docs/api/structs/llvm/sys/processstatistics">ProcessStatistics</a>&#123;UserT + KernelT, UserT, PeakMemory&#125;;</Highlight></CodeLine>
+<Link id="l00460" /><CodeLine lineNumber="460"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00461" /><CodeLine lineNumber="461"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00462" /><CodeLine lineNumber="462"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00463" /><CodeLine lineNumber="463"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Get its exit status.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00464" /><CodeLine lineNumber="464"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/amdgpu/sdwa/#a487d59303b94fbf4adddd9a08c30da0aaddbc3f8d705f646af626fd73cdf3618b">DWORD</a> <a href="/docs/api/namespaces/llvm/sys/fs/#a5f126cc7b64d31cd709215b48656d83d">status</a>;</Highlight></CodeLine>
+<Link id="l00465" /><CodeLine lineNumber="465"><Highlight kind="normal">  BOOL <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbittracker-cpp/#a2e1b5bd9424a1d1082d4bd670b1a0be6">rc</a> = GetExitCodeProcess(PI.Process, &amp;status);</Highlight></CodeLine>
+<Link id="l00466" /><CodeLine lineNumber="466"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/amdgpu/sdwa/#a487d59303b94fbf4adddd9a08c30da0aaddbc3f8d705f646af626fd73cdf3618b">DWORD</a> err = GetLastError();</Highlight></CodeLine>
+<Link id="l00467" /><CodeLine lineNumber="467"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (err != ERROR&#95;INVALID&#95;HANDLE)</Highlight></CodeLine>
+<Link id="l00468" /><CodeLine lineNumber="468"><Highlight kind="normal">    CloseHandle(PI.Process);</Highlight></CodeLine>
+<Link id="l00469" /><CodeLine lineNumber="469"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00470" /><CodeLine lineNumber="470"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbittracker-cpp/#a2e1b5bd9424a1d1082d4bd670b1a0be6">rc</a>) &#123;</Highlight></CodeLine>
+<Link id="l00471" /><CodeLine lineNumber="471"><Highlight kind="normal">    SetLastError(err);</Highlight></CodeLine>
+<Link id="l00472" /><CodeLine lineNumber="472"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ErrMsg)</Highlight></CodeLine>
+<Link id="l00473" /><CodeLine lineNumber="473"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a737f46882195837060ea24b51019969d">MakeErrMsg</a>(ErrMsg, </Highlight><Highlight kind="stringliteral">&quot;Failed getting status for program&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00474" /><CodeLine lineNumber="474"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00475" /><CodeLine lineNumber="475"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// -2 indicates a crash or timeout as opposed to failure to execute.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00476" /><CodeLine lineNumber="476"><Highlight kind="normal">    WaitResult.ReturnCode = -2;</Highlight></CodeLine>
+<Link id="l00477" /><CodeLine lineNumber="477"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> WaitResult;</Highlight></CodeLine>
+<Link id="l00478" /><CodeLine lineNumber="478"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00479" /><CodeLine lineNumber="479"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00480" /><CodeLine lineNumber="480"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!status)</Highlight></CodeLine>
+<Link id="l00481" /><CodeLine lineNumber="481"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> WaitResult;</Highlight></CodeLine>
+<Link id="l00482" /><CodeLine lineNumber="482"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00483" /><CodeLine lineNumber="483"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Pass 10(Warning) and 11(Error) to the callee as negative value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00484" /><CodeLine lineNumber="484"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((status &amp; 0xBFFF0000U) == 0x80000000U)</Highlight></CodeLine>
+<Link id="l00485" /><CodeLine lineNumber="485"><Highlight kind="normal">    WaitResult.ReturnCode = </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(<a href="/docs/api/namespaces/llvm/sys/fs/#a5f126cc7b64d31cd709215b48656d83d">status</a>);</Highlight></CodeLine>
+<Link id="l00486" /><CodeLine lineNumber="486"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (status &amp; 0xFF)</Highlight></CodeLine>
+<Link id="l00487" /><CodeLine lineNumber="487"><Highlight kind="normal">    WaitResult.ReturnCode = <a href="/docs/api/namespaces/llvm/sys/fs/#a5f126cc7b64d31cd709215b48656d83d">status</a> &amp; 0x7FFFFFFF;</Highlight></CodeLine>
+<Link id="l00488" /><CodeLine lineNumber="488"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00489" /><CodeLine lineNumber="489"><Highlight kind="normal">    WaitResult.ReturnCode = 1;</Highlight></CodeLine>
+<Link id="l00490" /><CodeLine lineNumber="490"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00491" /><CodeLine lineNumber="491"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> WaitResult;</Highlight></CodeLine>
+<Link id="l00492" /><CodeLine lineNumber="492"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00493" /><CodeLine lineNumber="493"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00494" /><CodeLine lineNumber="494"><Highlight kind="normal">std::error&#95;code <a href="/docs/api/namespaces/llvm/sys/#a1b6956e6c738949193efee28bffe29f5">llvm::sys::ChangeStdinMode</a>(<a href="/docs/api/namespaces/llvm/sys/fs/#a662978c0cdf81de0d448032f142a3695">sys::fs::OpenFlags</a> Flags) &#123;</Highlight></CodeLine>
+<Link id="l00495" /><CodeLine lineNumber="495"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!(Flags &amp; <a href="/docs/api/namespaces/llvm/sys/fs/#a662978c0cdf81de0d448032f142a3695a8e4195851e96284a52d5270ff40950b7">fs::OF&#95;CRLF</a>))</Highlight></CodeLine>
+<Link id="l00496" /><CodeLine lineNumber="496"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/sys/#a74b492689c767075c865526e04296d02">ChangeStdinToBinary</a>();</Highlight></CodeLine>
+<Link id="l00497" /><CodeLine lineNumber="497"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::error&#95;code();</Highlight></CodeLine>
+<Link id="l00498" /><CodeLine lineNumber="498"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00499" /><CodeLine lineNumber="499"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00500" /><CodeLine lineNumber="500"><Highlight kind="normal">std::error&#95;code <a href="/docs/api/namespaces/llvm/sys/#aa8e20bc263db62de532feb3d46aead63">llvm::sys::ChangeStdoutMode</a>(<a href="/docs/api/namespaces/llvm/sys/fs/#a662978c0cdf81de0d448032f142a3695">sys::fs::OpenFlags</a> Flags) &#123;</Highlight></CodeLine>
+<Link id="l00501" /><CodeLine lineNumber="501"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!(Flags &amp; <a href="/docs/api/namespaces/llvm/sys/fs/#a662978c0cdf81de0d448032f142a3695a8e4195851e96284a52d5270ff40950b7">fs::OF&#95;CRLF</a>))</Highlight></CodeLine>
+<Link id="l00502" /><CodeLine lineNumber="502"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/sys/#ac35445acb02a4d09fe5aeaeaa3ad5165">ChangeStdoutToBinary</a>();</Highlight></CodeLine>
+<Link id="l00503" /><CodeLine lineNumber="503"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::error&#95;code();</Highlight></CodeLine>
+<Link id="l00504" /><CodeLine lineNumber="504"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00505" /><CodeLine lineNumber="505"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00506" /><CodeLine lineNumber="506"><Highlight kind="normal">std::error&#95;code <a href="/docs/api/namespaces/llvm/sys/#a74b492689c767075c865526e04296d02">sys::ChangeStdinToBinary</a>() &#123;</Highlight></CodeLine>
+<Link id="l00507" /><CodeLine lineNumber="507"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> result = &#95;setmode(&#95;fileno(stdin), &#95;O&#95;BINARY);</Highlight></CodeLine>
+<Link id="l00508" /><CodeLine lineNumber="508"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (result == -1)</Highlight></CodeLine>
+<Link id="l00509" /><CodeLine lineNumber="509"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ae075c94db10b09d6d5876d32219eaf0d">errnoAsErrorCode</a>();</Highlight></CodeLine>
+<Link id="l00510" /><CodeLine lineNumber="510"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::error&#95;code();</Highlight></CodeLine>
+<Link id="l00511" /><CodeLine lineNumber="511"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00512" /><CodeLine lineNumber="512"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00513" /><CodeLine lineNumber="513"><Highlight kind="normal">std::error&#95;code <a href="/docs/api/namespaces/llvm/sys/#ac35445acb02a4d09fe5aeaeaa3ad5165">sys::ChangeStdoutToBinary</a>() &#123;</Highlight></CodeLine>
+<Link id="l00514" /><CodeLine lineNumber="514"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> result = &#95;setmode(&#95;fileno(stdout), &#95;O&#95;BINARY);</Highlight></CodeLine>
+<Link id="l00515" /><CodeLine lineNumber="515"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (result == -1)</Highlight></CodeLine>
+<Link id="l00516" /><CodeLine lineNumber="516"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ae075c94db10b09d6d5876d32219eaf0d">errnoAsErrorCode</a>();</Highlight></CodeLine>
+<Link id="l00517" /><CodeLine lineNumber="517"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::error&#95;code();</Highlight></CodeLine>
+<Link id="l00518" /><CodeLine lineNumber="518"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00519" /><CodeLine lineNumber="519"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00520" /><CodeLine lineNumber="520"><Highlight kind="normal">std::error&#95;code</Highlight></CodeLine>
+<Link id="l00521" /><CodeLine lineNumber="521"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/sys/#ae1fa64c0bf9c723c5960fdd815df37df">llvm::sys::writeFileWithEncoding</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> FileName, <a href="/docs/api/classes/llvm/stringref">StringRef</a> Contents,</Highlight></CodeLine>
+<Link id="l00522" /><CodeLine lineNumber="522"><Highlight kind="normal">                                 <a href="/docs/api/namespaces/llvm/sys/#aad87650fa22966074a3b341d0e5cef6c">WindowsEncodingMethod</a> Encoding) &#123;</Highlight></CodeLine>
+<Link id="l00523" /><CodeLine lineNumber="523"><Highlight kind="normal">  std::error&#95;code <a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>;</Highlight></CodeLine>
+<Link id="l00524" /><CodeLine lineNumber="524"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/raw-fd-ostream">llvm::raw&#95;fd&#95;ostream</a> OS(FileName, EC, <a href="/docs/api/namespaces/llvm/sys/fs/#a662978c0cdf81de0d448032f142a3695ab505c2c79499fbe180989bffbf108a50">llvm::sys::fs::OF&#95;TextWithCRLF</a>);</Highlight></CodeLine>
+<Link id="l00525" /><CodeLine lineNumber="525"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (EC)</Highlight></CodeLine>
+<Link id="l00526" /><CodeLine lineNumber="526"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>;</Highlight></CodeLine>
+<Link id="l00527" /><CodeLine lineNumber="527"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00528" /><CodeLine lineNumber="528"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Encoding == <a href="/docs/api/namespaces/llvm/sys/#aad87650fa22966074a3b341d0e5cef6caf0fd365beea6ebcbd1e26eb24015da53">WEM&#95;UTF8</a>) &#123;</Highlight></CodeLine>
+<Link id="l00529" /><CodeLine lineNumber="529"><Highlight kind="normal">    OS &lt;&lt; Contents;</Highlight></CodeLine>
+<Link id="l00530" /><CodeLine lineNumber="530"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Encoding == <a href="/docs/api/namespaces/llvm/sys/#aad87650fa22966074a3b341d0e5cef6ca4a36ece054fa83562738192455180088">WEM&#95;CurrentCodePage</a>) &#123;</Highlight></CodeLine>
+<Link id="l00531" /><CodeLine lineNumber="531"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;wchar&#95;t, 1&gt;</a> ArgsUTF16;</Highlight></CodeLine>
+<Link id="l00532" /><CodeLine lineNumber="532"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;char, 1&gt;</a> ArgsCurCP;</Highlight></CodeLine>
+<Link id="l00533" /><CodeLine lineNumber="533"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00534" /><CodeLine lineNumber="534"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((EC = windows::UTF8ToUTF16(Contents, ArgsUTF16)))</Highlight></CodeLine>
+<Link id="l00535" /><CodeLine lineNumber="535"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>;</Highlight></CodeLine>
+<Link id="l00536" /><CodeLine lineNumber="536"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00537" /><CodeLine lineNumber="537"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((EC = windows::UTF16ToCurCP(ArgsUTF16.data(), ArgsUTF16.size(),</Highlight></CodeLine>
+<Link id="l00538" /><CodeLine lineNumber="538"><Highlight kind="normal">                                    ArgsCurCP)))</Highlight></CodeLine>
+<Link id="l00539" /><CodeLine lineNumber="539"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>;</Highlight></CodeLine>
+<Link id="l00540" /><CodeLine lineNumber="540"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00541" /><CodeLine lineNumber="541"><Highlight kind="normal">    OS.write(ArgsCurCP.data(), ArgsCurCP.size());</Highlight></CodeLine>
+<Link id="l00542" /><CodeLine lineNumber="542"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Encoding == <a href="/docs/api/namespaces/llvm/sys/#aad87650fa22966074a3b341d0e5cef6ca89ceaeaaf604a94c4691ea915ada8c3c">WEM&#95;UTF16</a>) &#123;</Highlight></CodeLine>
+<Link id="l00543" /><CodeLine lineNumber="543"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;wchar&#95;t, 1&gt;</a> ArgsUTF16;</Highlight></CodeLine>
+<Link id="l00544" /><CodeLine lineNumber="544"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00545" /><CodeLine lineNumber="545"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((EC = windows::UTF8ToUTF16(Contents, ArgsUTF16)))</Highlight></CodeLine>
+<Link id="l00546" /><CodeLine lineNumber="546"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>;</Highlight></CodeLine>
+<Link id="l00547" /><CodeLine lineNumber="547"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00548" /><CodeLine lineNumber="548"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Endianness guessing</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00549" /><CodeLine lineNumber="549"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> BOM&#91;2&#93;;</Highlight></CodeLine>
+<Link id="l00550" /><CodeLine lineNumber="550"><Highlight kind="normal">    uint16&#95;t src = <a href="/docs/api/files/include/include/llvm/include/llvm/support/convertutf-h/#af04ebcc9bd96acb50f34a94772fa4dbb">UNI&#95;UTF16&#95;BYTE&#95;ORDER&#95;MARK&#95;NATIVE</a>;</Highlight></CodeLine>
+<Link id="l00551" /><CodeLine lineNumber="551"><Highlight kind="normal">    memcpy(BOM, &amp;src, 2);</Highlight></CodeLine>
+<Link id="l00552" /><CodeLine lineNumber="552"><Highlight kind="normal">    OS.write(BOM, 2);</Highlight></CodeLine>
+<Link id="l00553" /><CodeLine lineNumber="553"><Highlight kind="normal">    OS.write((</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;)ArgsUTF16.data(), ArgsUTF16.size() &lt;&lt; 1);</Highlight></CodeLine>
+<Link id="l00554" /><CodeLine lineNumber="554"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00555" /><CodeLine lineNumber="555"><Highlight kind="normal">    <a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm&#95;unreachable</a>(</Highlight><Highlight kind="stringliteral">&quot;Unknown encoding&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00556" /><CodeLine lineNumber="556"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00557" /><CodeLine lineNumber="557"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00558" /><CodeLine lineNumber="558"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (OS.has&#95;error())</Highlight></CodeLine>
+<Link id="l00559" /><CodeLine lineNumber="559"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a20e3e08c7de6a230cd66f9e4322c3fbe">make&#95;error&#95;code</a>(<a href="/docs/api/namespaces/llvm/#a59739a4f15fb2ec57a6b7fcfe938546bacccc32f2a5f7dc7b87d2f85daea66789">errc::io&#95;error</a>);</Highlight></CodeLine>
+<Link id="l00560" /><CodeLine lineNumber="560"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00561" /><CodeLine lineNumber="561"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>;</Highlight></CodeLine>
+<Link id="l00562" /><CodeLine lineNumber="562"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00563" /><CodeLine lineNumber="563"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00564" /><CodeLine lineNumber="564"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/sys/#a8f03c560e53b510e60a472723126bb52">llvm::sys::commandLineFitsWithinSystemLimits</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Program,</Highlight></CodeLine>
+<Link id="l00565" /><CodeLine lineNumber="565"><Highlight kind="normal">                                                  <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;StringRef&gt;</a> Args) &#123;</Highlight></CodeLine>
+<Link id="l00566" /><CodeLine lineNumber="566"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The documentation on CreateProcessW states that the size of the argument</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00567" /><CodeLine lineNumber="567"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// lpCommandLine must not be greater than 32767 characters, including the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00568" /><CodeLine lineNumber="568"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Unicode terminating null character. We use smaller value to reduce risk</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00569" /><CodeLine lineNumber="569"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// of getting invalid command line due to unaccounted factors.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00570" /><CodeLine lineNumber="570"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> MaxCommandStringLength = 32000;</Highlight></CodeLine>
+<Link id="l00571" /><CodeLine lineNumber="571"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;StringRef, 8&gt;</a> FullArgs;</Highlight></CodeLine>
+<Link id="l00572" /><CodeLine lineNumber="572"><Highlight kind="normal">  FullArgs.<a href="/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">push&#95;back</a>(Program);</Highlight></CodeLine>
+<Link id="l00573" /><CodeLine lineNumber="573"><Highlight kind="normal">  FullArgs.append(<a href="/docs/api/namespaces/llvm/amdgpu/hsamd/kernel/key/#a1958a762261549463a280bac3274d6d5">Args</a>.begin(), <a href="/docs/api/namespaces/llvm/amdgpu/hsamd/kernel/key/#a1958a762261549463a280bac3274d6d5">Args</a>.end());</Highlight></CodeLine>
+<Link id="l00574" /><CodeLine lineNumber="574"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a> = flattenWindowsCommandLine(FullArgs);</Highlight></CodeLine>
+<Link id="l00575" /><CodeLine lineNumber="575"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!<a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>.getError());</Highlight></CodeLine>
+<Link id="l00576" /><CodeLine lineNumber="576"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>-&gt;size() + 1) &lt;= MaxCommandStringLength;</Highlight></CodeLine>
+<Link id="l00577" /><CodeLine lineNumber="577"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00578" /><CodeLine lineNumber="578"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

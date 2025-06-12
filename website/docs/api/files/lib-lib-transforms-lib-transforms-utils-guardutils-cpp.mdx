@@ -1,0 +1,239 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/transforms/lib/transforms/utils/guardutils-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `GuardUtils.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Transforms/Utils/GuardUtils.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/guardutils-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Analysis/GuardUtils.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/guardutils-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Function.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/function-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/IRBuilder.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/irbuilder-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Instructions.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/instructions-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/MDBuilder.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/mdbuilder-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/PatternMatch.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/patternmatch-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/CommandLine.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/commandline-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Transforms/Utils/BasicBlockUtils.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/basicblockutils-h"
+  isLocal="true" />
+</IncludesList>
+
+## Variables Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/cl/opt">cl::opt</a>&lt; uint32&#95;t &gt;</>}
+  name={<><a href="#ac7655ca44d6070a9e44cac8500a46f72">PredicatePassBranchWeight</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Variables
+
+### PredicatePassBranchWeight {#ac7655ca44d6070a9e44cac8500a46f72}
+
+<MemberDefinition
+  prototype={<>cl::opt&lt; uint32&#95;t &gt; PredicatePassBranchWeight(&quot;guards-predicate-pass-branch-weight&quot;, cl::Hidden, cl::init(1&lt;&lt; 20), cl::desc(&quot;The probability of a guard failing is assumed to be the &quot; &quot;reciprocal of this value (default = 1 &lt;&lt; 20)&quot;))</>}
+  labels = {["static"]}>
+
+Definition at line <a href="#l00025">25</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/guardutils-cpp">GuardUtils.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- GuardUtils.cpp - Utils for work with guards -------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Utils that are used to perform transformations related to guards and their</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// conditions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/guardutils-h">llvm/Transforms/Utils/GuardUtils.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/guardutils-h">llvm/Analysis/GuardUtils.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/function-h">llvm/IR/Function.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/irbuilder-h">llvm/IR/IRBuilder.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/instructions-h">llvm/IR/Instructions.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/mdbuilder-h">llvm/IR/MDBuilder.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/patternmatch-h">llvm/IR/PatternMatch.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/commandline-h">llvm/Support/CommandLine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/basicblockutils-h">llvm/Transforms/Utils/BasicBlockUtils.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/patternmatch">llvm::PatternMatch</a>;</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25" lineLink="#ac7655ca44d6070a9e44cac8500a46f72"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/cl/opt">cl::opt&lt;uint32&#95;t&gt;</a> <a href="#ac7655ca44d6070a9e44cac8500a46f72">PredicatePassBranchWeight</a>(</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal">    </Highlight><Highlight kind="stringliteral">&quot;guards-predicate-pass-branch-weight&quot;</Highlight><Highlight kind="normal">, <a href="/docs/api/namespaces/llvm/cl/#a68075925a54790e71ca790e1d4f21a40a263ac008d8d31f13ce460395fc4cf7e6">cl::Hidden</a>, <a href="/docs/api/namespaces/llvm/cl/#ac12e6a8f3a1b511f0dee2ed6de0ae806">cl::init</a>(1 &lt;&lt; 20),</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/cl/desc">cl::desc</a>(</Highlight><Highlight kind="stringliteral">&quot;The probability of a guard failing is assumed to be the &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">             </Highlight><Highlight kind="stringliteral">&quot;reciprocal of this value (default = 1 &lt;&lt; 20)&quot;</Highlight><Highlight kind="normal">));</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30" lineLink="/docs/api/namespaces/llvm/#a27aee52717271be9e79135bfaab890ce"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a27aee52717271be9e79135bfaab890ce">llvm::makeGuardControlFlowExplicit</a>(<a href="/docs/api/classes/llvm/function">Function</a> &#42;DeoptIntrinsic,</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">                                        <a href="/docs/api/classes/llvm/callinst">CallInst</a> &#42;Guard, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UseWC) &#123;</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#aa97c65466bdd34abda6772dd32eb5d19">OperandBundleDef</a> DeoptOB(&#42;Guard-&gt;<a href="/docs/api/classes/llvm/callbase/#a23ab5f34fb7b9476d45da0102ecbfae6">getOperandBundle</a>(<a href="/docs/api/classes/llvm/llvmcontext/#a44d727ac5fccf852bfb2bae3e06adc9ca3f6df86c6efab701ade7abbc3134c25a">LLVMContext::OB&#95;deopt</a>));</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;Value &#42;, 4&gt;</a> Args(<a href="/docs/api/namespaces/llvm/#a02981de53fb6ffd384d39addc4d25f37">drop&#95;begin</a>(Guard-&gt;<a href="/docs/api/classes/llvm/callbase/#ad027ea8803d83ee19b9a2e13aec6d655">args</a>()));</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;CheckBB = Guard-&gt;<a href="/docs/api/classes/llvm/ilist-detail/node-parent-access/#a7e19e7508415378ad9523e0339b23e22">getParent</a>();</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;DeoptBlockTerm =</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#ad957413955739c91204c96e33e0cc933">SplitBlockAndInsertIfThen</a>(Guard-&gt;<a href="/docs/api/classes/llvm/callbase/#aabd76e6a8a23a5af1ce4d3c310d88bcd">getArgOperand</a>(0), Guard, </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;CheckBI = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;BranchInst&gt;</a>(CheckBB-&gt;getTerminator());</Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// SplitBlockAndInsertIfThen inserts control flow that branches to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// DeoptBlockTerm if the condition is true.  We want the opposite.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  CheckBI-&gt;swapSuccessors();</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  CheckBI-&gt;getSuccessor(0)-&gt;setName(</Highlight><Highlight kind="stringliteral">&quot;guarded&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  CheckBI-&gt;getSuccessor(1)-&gt;setName(</Highlight><Highlight kind="stringliteral">&quot;deopt&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;MD = Guard-&gt;<a href="/docs/api/classes/llvm/instruction/#a6c09737e146b2d816c911a047ac67ba4">getMetadata</a>(LLVMContext::MD&#95;make&#95;implicit))</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">    CheckBI-&gt;setMetadata(LLVMContext::MD&#95;make&#95;implicit, MD);</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mdbuilder">MDBuilder</a> MDB(Guard-&gt;<a href="/docs/api/classes/llvm/value/#ab3fc0225d8aaf8434026c3573f961f2c">getContext</a>());</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">  CheckBI-&gt;setMetadata(LLVMContext::MD&#95;prof,</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">                       MDB.<a href="/docs/api/classes/llvm/mdbuilder/#a75043d12a76b84200e9ed593719dc5eb">createBranchWeights</a>(<a href="#ac7655ca44d6070a9e44cac8500a46f72">PredicatePassBranchWeight</a>, 1));</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/irbuilder">IRBuilder&lt;&gt;</a> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>(DeoptBlockTerm);</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;DeoptCall = <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.CreateCall(DeoptIntrinsic, Args, &#123;DeoptOB&#125;, </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DeoptIntrinsic-&gt;<a href="/docs/api/classes/llvm/function/#acdd05db170cbfee8a0fcbc047b8504e5">getReturnType</a>()-&gt;<a href="/docs/api/classes/llvm/type/#ae8eaa0b4eeac52a2b2282cb1bfd981ae">isVoidTy</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.CreateRetVoid();</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">    DeoptCall-&gt;setName(</Highlight><Highlight kind="stringliteral">&quot;deoptcall&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.CreateRet(DeoptCall);</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  DeoptCall-&gt;setCallingConv(Guard-&gt;<a href="/docs/api/classes/llvm/callbase/#a3ff92cec76009e859cb0c419d6e8ba5f">getCallingConv</a>());</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  DeoptBlockTerm-&gt;eraseFromParent();</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (UseWC) &#123;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// We want the guard to be expressed as explicit control flow, but still be</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// widenable. For that, we add Widenable Condition intrinsic call to the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// guard&#39;s condition.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/irbuilder">IRBuilder&lt;&gt;</a> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>(CheckBI);</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;WC = <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.CreateIntrinsic(Intrinsic::experimental&#95;widenable&#95;condition,</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">                                 &#123;&#125;, &#123;&#125;, </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;widenable&#95;cond&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    CheckBI-&gt;setCondition(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.CreateAnd(CheckBI-&gt;getCondition(), WC,</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">                                      </Highlight><Highlight kind="stringliteral">&quot;exiplicit&#95;guard&#95;cond&quot;</Highlight><Highlight kind="normal">));</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/#a9d7f27a51d40f21ec17a854a6a5d5d4f">isWidenableBranch</a>(CheckBI) &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Branch must be widenable.&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82" lineLink="/docs/api/namespaces/llvm/#a27f63a779f3bcae1f300371e33227bed"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a27f63a779f3bcae1f300371e33227bed">llvm::widenWidenableBranch</a>(<a href="/docs/api/classes/llvm/branchinst">BranchInst</a> &#42;WidenableBR, <a href="/docs/api/classes/llvm/value">Value</a> &#42;NewCond) &#123;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/#a9d7f27a51d40f21ec17a854a6a5d5d4f">isWidenableBranch</a>(WidenableBR) &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;precondition&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The tempting trivially option is to produce something like this:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// br (and oldcond, newcond) where oldcond is assumed to contain a widenable</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// condition, but that doesn&#39;t match the pattern parseWidenableBranch expects</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// so we have to be more sophisticated.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/use">Use</a> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, &#42;WC;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;IfTrueBB, &#42;IfFalseBB;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a745200db7bc2a7a3c17fa379fb1b56c3">parseWidenableBranch</a>(WidenableBR, <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, WC, IfTrueBB, IfFalseBB);</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>) &#123;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// br (wc()), ... form</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/irbuilder">IRBuilder&lt;&gt;</a> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>(WidenableBR);</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">    WidenableBR-&gt;<a href="/docs/api/classes/llvm/branchinst/#a3505dab06f59c36142a234321cdc3411">setCondition</a>(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.CreateAnd(NewCond, WC-&gt;get()));</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// br (wc &amp; C), ... form</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/irbuilder">IRBuilder&lt;&gt;</a> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>(WidenableBR);</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>-&gt;set(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.CreateAnd(NewCond, <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>-&gt;get()));</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;WCAnd = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;Instruction&gt;</a>(WidenableBR-&gt;<a href="/docs/api/classes/llvm/branchinst/#aebd4af5642453ce3169094f08dd3d7b8">getCondition</a>());</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Condition is only guaranteed to dominate branch</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">    WCAnd-&gt;<a href="/docs/api/classes/llvm/instruction/#af67d1f3a518964d80a109bb3d9d5cf1e">moveBefore</a>(WidenableBR-&gt;<a href="/docs/api/classes/llvm/ilist-node-impl/#af719fc783be6589465137d997701a432">getIterator</a>());</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/#a9d7f27a51d40f21ec17a854a6a5d5d4f">isWidenableBranch</a>(WidenableBR) &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;preserve widenabiliy&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108" lineLink="/docs/api/namespaces/llvm/#a63f2a772f8b7a673be8aa85f4ea406d7"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a63f2a772f8b7a673be8aa85f4ea406d7">llvm::setWidenableBranchCond</a>(<a href="/docs/api/classes/llvm/branchinst">BranchInst</a> &#42;WidenableBR, <a href="/docs/api/classes/llvm/value">Value</a> &#42;NewCond) &#123;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/#a9d7f27a51d40f21ec17a854a6a5d5d4f">isWidenableBranch</a>(WidenableBR) &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;precondition&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/use">Use</a> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, &#42;WC;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;IfTrueBB, &#42;IfFalseBB;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a745200db7bc2a7a3c17fa379fb1b56c3">parseWidenableBranch</a>(WidenableBR, <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, WC, IfTrueBB, IfFalseBB);</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>) &#123;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// br (wc()), ... form</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/irbuilder">IRBuilder&lt;&gt;</a> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>(WidenableBR);</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">    WidenableBR-&gt;<a href="/docs/api/classes/llvm/branchinst/#a3505dab06f59c36142a234321cdc3411">setCondition</a>(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.CreateAnd(NewCond, WC-&gt;get()));</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// br (wc &amp; C), ... form</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;WCAnd = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;Instruction&gt;</a>(WidenableBR-&gt;<a href="/docs/api/classes/llvm/branchinst/#aebd4af5642453ce3169094f08dd3d7b8">getCondition</a>());</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Condition is only guaranteed to dominate branch</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">    WCAnd-&gt;<a href="/docs/api/classes/llvm/instruction/#af67d1f3a518964d80a109bb3d9d5cf1e">moveBefore</a>(WidenableBR-&gt;<a href="/docs/api/classes/llvm/ilist-node-impl/#af719fc783be6589465137d997701a432">getIterator</a>());</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>-&gt;set(NewCond);</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/#a9d7f27a51d40f21ec17a854a6a5d5d4f">isWidenableBranch</a>(WidenableBR) &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;preserve widenabiliy&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

@@ -1,0 +1,205 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/globalnumberstate
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `GlobalNumberState` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+<a href="/docs/api/classes/llvm/globalnumberstate">GlobalNumberState</a> assigns an integer to each global value in the program, which is used by the comparison routine to order references to globals. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::GlobalNumberState</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Transforms/Utils/FunctionComparator.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h"
+  isLocal="true" />
+</IncludesList>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#adfae77808d3046fb44dedb11a73c66ca">ValueNumberMap</a> = <a href="/docs/api/classes/llvm/valuemap">ValueMap</a>&lt; <a href="/docs/api/classes/llvm/globalvalue">GlobalValue</a> &#42;, uint64&#95;t, Config &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a0a7bcd4ca9779d35aad65231c24fc5b4">GlobalNumberState</a> ()=default</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a34037931a3cd9d916f934c7c2173d8cf">clear</a> ()</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aac1fb2d1a8279a80df4b543f28135906">erase</a> (GlobalValue &#42;Global)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>uint64&#95;t</>}
+  name={<><a href="#aff38ff15fc840b8ddd78b0d1a9799f62">getNumber</a> (GlobalValue &#42;Global)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/valuemap">ValueNumberMap</a></>}
+  name={<><a href="#a19f25df9b3788368a03a9b5c418e47c9">GlobalNumbers</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>uint64&#95;t</>}
+  name={<><a href="#ac614878060da3be3056a203aea8221bd">NextNumber</a> = 0</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+<a href="/docs/api/classes/llvm/globalnumberstate">GlobalNumberState</a> assigns an integer to each global value in the program, which is used by the comparison routine to order references to globals.
+
+This state must be preserved throughout the pass, because Functions and other globals need to maintain their relative order. Globals are assigned a number when they are first visited. This order is deterministic, and so the assigned numbers are as well. When two functions are merged, neither number is updated. If the symbols are weak, this would be incorrect. If they are strong, then one will be replaced at all references to the other, and so direct callsites will now see one or the other symbol, and no update is necessary. Note that if we were guaranteed unique names, we could just compare those, but this would not work for stripped bitcodes or for those few symbols without a name.
+
+Definition at line 54 of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h">FunctionComparator.h</a>.
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### ValueNumberMap {#adfae77808d3046fb44dedb11a73c66ca}
+
+<MemberDefinition
+  prototype={<>using llvm::GlobalNumberState::ValueNumberMap =  ValueMap&lt;GlobalValue &#42;, uint64&#95;t, Config&gt;</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h/#l00062">62</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h">FunctionComparator.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### GlobalNumberState() {#a0a7bcd4ca9779d35aad65231c24fc5b4}
+
+<MemberDefinition
+  prototype="llvm::GlobalNumberState::GlobalNumberState ()"
+  labels = {["default"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h/#l00069">69</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h">FunctionComparator.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### clear() {#a34037931a3cd9d916f934c7c2173d8cf}
+
+<MemberDefinition
+  prototype="void llvm::GlobalNumberState::clear ()"
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h/#l00084">84</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h">FunctionComparator.h</a>.
+</MemberDefinition>
+
+### erase() {#aac1fb2d1a8279a80df4b543f28135906}
+
+<MemberDefinition
+  prototype={<>void llvm::GlobalNumberState::erase (<a href="/docs/api/classes/llvm/globalvalue">GlobalValue</a> &#42; Global)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h/#l00080">80</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h">FunctionComparator.h</a>.
+</MemberDefinition>
+
+### getNumber() {#aff38ff15fc840b8ddd78b0d1a9799f62}
+
+<MemberDefinition
+  prototype={<>uint64&#95;t llvm::GlobalNumberState::getNumber (<a href="/docs/api/classes/llvm/globalvalue">GlobalValue</a> &#42; Global)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h/#l00071">71</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h">FunctionComparator.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### GlobalNumbers {#a19f25df9b3788368a03a9b5c418e47c9}
+
+<MemberDefinition
+  prototype="ValueNumberMap llvm::GlobalNumberState::GlobalNumbers">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h/#l00063">63</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h">FunctionComparator.h</a>.
+</MemberDefinition>
+
+### NextNumber {#ac614878060da3be3056a203aea8221bd}
+
+<MemberDefinition
+  prototype={<>uint64&#95;t llvm::GlobalNumberState::NextNumber = 0</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h/#l00066">66</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h">FunctionComparator.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/functioncomparator-h">FunctionComparator.h</a></li>
+</ul>
+
+</DoxygenPage>

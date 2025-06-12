@@ -1,0 +1,56 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/yaml/polymorphictraits
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `PolymorphicTraits` Struct Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This class should be specialized by any type that can be represented as a scalar, map, or sequence, decided dynamically. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;typename T&gt;
+struct llvm::yaml::PolymorphicTraits&lt;T&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/YAMLTraits.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/yamltraits-h"
+  isLocal="true" />
+</IncludesList>
+
+## Description {#details}
+
+This class should be specialized by any type that can be represented as a scalar, map, or sequence, decided dynamically.
+
+For example:
+
+typedef std::unique&#95;ptr&lt;MyBase&gt; MyPoly;
+
+template&lt;&gt; struct <a href="/docs/api/structs/llvm/yaml/polymorphictraits">PolymorphicTraits&lt;MyPoly&gt;</a> &#123; static <a href="/docs/api/structs/nodekind">NodeKind</a> getKind(const MyPoly &amp;poly) &#123; return poly-&gt;getKind(); &#125; static MyScalar&amp; getAsScalar(MyPoly &amp;poly) &#123; if (!poly || !isa&lt;MyScalar&gt;(poly)) poly.reset(new MyScalar()); return &#42;cast&lt;MyScalar&gt;(poly.get()); &#125; // ... &#125;;
+
+Definition at line 300 of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/yamltraits-h">YAMLTraits.h</a>.
+
+</DoxygenPage>

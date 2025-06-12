@@ -1,0 +1,392 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/passinstrumentation
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `PassInstrumentation` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This class provides instrumentation entry points for the <a href="/docs/api/classes/llvm/pass">Pass</a> Manager, doing calls to callbacks registered in <a href="/docs/api/classes/llvm/passinstrumentationcallbacks">PassInstrumentationCallbacks</a>. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::PassInstrumentation</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/IR/PassInstrumentation.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h"
+  isLocal="true" />
+</IncludesList>
+
+## Private Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename PassT&gt;</>}
+  type="using"
+  name={<><a href="#a932d2ac7d58bdfa6e7088b84563f94db">has&#95;required&#95;t</a> = decltype(std::declval&lt; PassT &amp; &gt;().isRequired())</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a405394a2ffc8cc85cd6e6be0e64d1408">PassInstrumentation</a> (PassInstrumentationCallbacks &#42;CB=nullptr)</>}>
+Callbacks object is not owned by <a href="/docs/api/classes/llvm/passinstrumentation">PassInstrumentation</a>, its life-time should at least match the life-time of corresponding <a href="/docs/api/classes/llvm/passinstrumentationanalysis">PassInstrumentationAnalysis</a> (which usually is till the end of current compilation). <a href="#a405394a2ffc8cc85cd6e6be0e64d1408">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/stringref">StringRef</a></>}
+  name={<><a href="#a79b8b2488fca01c969f40f133c416e99">getPassNameForClassName</a> (StringRef ClassName) const</>}>
+Get the pass name for a given pass class name. <a href="#a79b8b2488fca01c969f40f133c416e99">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgsT&gt;</>}
+  type="bool"
+  name={<><a href="#a58242b7112ed65072c3a1e77568d1a6a">invalidate</a> (IRUnitT &amp;, const class llvm::PreservedAnalyses &amp;, ExtraArgsT...)</>}>
+Handle invalidation from the pass manager when <a href="/docs/api/classes/llvm/passinstrumentation">PassInstrumentation</a> is used as the result of <a href="/docs/api/classes/llvm/passinstrumentationanalysis">PassInstrumentationAnalysis</a>. <a href="#a58242b7112ed65072c3a1e77568d1a6a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ab20a8985d0c6fff641ddf9b933b2a886">popBeforeNonSkippedPassCallback</a> ()</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename CallableT&gt;</>}
+  type="void"
+  name={<><a href="#a3e9514787a065c96294f645b1967f450">pushBeforeNonSkippedPassCallback</a> (CallableT C)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename PassT&gt;</>}
+  type="void"
+  name={<><a href="#adda8476ef0007c61013ba8e5c46c6693">runAfterAnalysis</a> (const PassT &amp;Analysis, const IRUnitT &amp;IR) const</>}>
+AfterAnalysis instrumentation point - takes <code>Analysis</code> instance that has just been executed and constant reference to IR it operated on. <a href="#adda8476ef0007c61013ba8e5c46c6693">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename PassT&gt;</>}
+  type="void"
+  name={<><a href="#acec038dce9072b64301f6e5226c5579a">runAfterPass</a> (const PassT &amp;Pass, const IRUnitT &amp;IR, const PreservedAnalyses &amp;PA) const</>}>
+AfterPass instrumentation point - takes <code><a href="/docs/api/classes/llvm/pass">Pass</a></code> instance that has just been executed and constant reference to <code>IR</code> it operates on. <a href="#acec038dce9072b64301f6e5226c5579a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename PassT&gt;</>}
+  type="void"
+  name={<><a href="#a055d7d34f26a121bd6cd03073cda6529">runAfterPassInvalidated</a> (const PassT &amp;Pass, const PreservedAnalyses &amp;PA) const</>}>
+AfterPassInvalidated instrumentation point - takes <code><a href="/docs/api/classes/llvm/pass">Pass</a></code> instance that has just been executed. <a href="#a055d7d34f26a121bd6cd03073cda6529">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a79746b86dd505966e089c0b90e810053">runAnalysesCleared</a> (StringRef Name) const</>}>
+AnalysesCleared instrumentation point - takes name of IR that analyses operated on. <a href="#a79746b86dd505966e089c0b90e810053">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename PassT&gt;</>}
+  type="void"
+  name={<><a href="#a698253acb40299131fecdb9489f88fcd">runAnalysisInvalidated</a> (const PassT &amp;Analysis, const IRUnitT &amp;IR) const</>}>
+AnalysisInvalidated instrumentation point - takes <code>Analysis</code> instance that has just been invalidated and constant reference to IR it operated on. <a href="#a698253acb40299131fecdb9489f88fcd">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename PassT&gt;</>}
+  type="void"
+  name={<><a href="#a5a2cc6fe0017dd7067b103118a7bc914">runBeforeAnalysis</a> (const PassT &amp;Analysis, const IRUnitT &amp;IR) const</>}>
+BeforeAnalysis instrumentation point - takes <code>Analysis</code> instance to be executed and constant reference to IR it operates on. <a href="#a5a2cc6fe0017dd7067b103118a7bc914">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename IRUnitT, typename PassT&gt;</>}
+  type="bool"
+  name={<><a href="#aead32b9af4b66a742d37585c6d6b4cbc">runBeforePass</a> (const PassT &amp;Pass, const IRUnitT &amp;IR) const</>}>
+BeforePass instrumentation point - takes <code><a href="/docs/api/classes/llvm/pass">Pass</a></code> instance to be executed and constant reference to IR it operates on. <a href="#aead32b9af4b66a742d37585c6d6b4cbc">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/passinstrumentationcallbacks">PassInstrumentationCallbacks</a> &#42;</>}
+  name={<><a href="#aa36c9efbd63670be8da8a1e26336fe16">Callbacks</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename PassT&gt;</>}
+  type="auto "
+  name={<><a href="#a13d4175f125b5c6a43696bd187fd9f2d">isRequired</a> (const PassT &amp;Pass) -&gt; std::enable&#95;if&#95;t&lt; <a href="/docs/api/namespaces/llvm/#abf1ad174f29a434886594433ce8a787f">is&#95;detected</a>&lt; has&#95;required&#95;t, PassT &gt;::value, bool &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename PassT&gt;</>}
+  type="auto "
+  name={<><a href="#a3bce34071dc79eb763c69816b78980f5">isRequired</a> (const PassT &amp;Pass) -&gt; std::enable&#95;if&#95;t&lt;!<a href="/docs/api/namespaces/llvm/#abf1ad174f29a434886594433ce8a787f">is&#95;detected</a>&lt; has&#95;required&#95;t, PassT &gt;::value, bool &gt;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This class provides instrumentation entry points for the <a href="/docs/api/classes/llvm/pass">Pass</a> Manager, doing calls to callbacks registered in <a href="/docs/api/classes/llvm/passinstrumentationcallbacks">PassInstrumentationCallbacks</a>.
+
+Definition at line 207 of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+
+<SectionDefinition>
+
+## Private Member Typedefs
+
+### has&#95;required&#95;t {#a932d2ac7d58bdfa6e7088b84563f94db}
+
+<MemberDefinition
+  template={<>template &lt;typename PassT&gt;</>}
+  prototype={<>using llvm::PassInstrumentation::has&#95;required&#95;t =  decltype(std::declval&lt;PassT &amp;&gt;().isRequired())</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00217">217</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### PassInstrumentation() {#a405394a2ffc8cc85cd6e6be0e64d1408}
+
+<MemberDefinition
+  prototype={<>llvm::PassInstrumentation::PassInstrumentation (<a href="/docs/api/classes/llvm/passinstrumentationcallbacks">PassInstrumentationCallbacks</a> &#42; CB=nullptr)</>}
+  labels = {["inline"]}>
+Callbacks object is not owned by <a href="/docs/api/classes/llvm/passinstrumentation">PassInstrumentation</a>, its life-time should at least match the life-time of corresponding <a href="/docs/api/classes/llvm/passinstrumentationanalysis">PassInstrumentationAnalysis</a> (which usually is till the end of current compilation).
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00235">235</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### getPassNameForClassName() {#a79b8b2488fca01c969f40f133c416e99}
+
+<MemberDefinition
+  prototype={<>StringRef llvm::PassInstrumentation::getPassNameForClassName (<a href="/docs/api/classes/llvm/stringref">StringRef</a> ClassName) const</>}
+  labels = {["inline"]}>
+Get the pass name for a given pass class name.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00345">345</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+### invalidate() {#a58242b7112ed65072c3a1e77568d1a6a}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename... ExtraArgsT&gt;</>}
+  prototype={<>bool llvm::PassInstrumentation::invalidate (IRUnitT &amp;, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> class <a href="/docs/api/classes/llvm/preservedanalyses">llvm::PreservedAnalyses</a> &amp;, ExtraArgsT...)</>}
+  labels = {["inline"]}>
+Handle invalidation from the pass manager when <a href="/docs/api/classes/llvm/passinstrumentation">PassInstrumentation</a> is used as the result of <a href="/docs/api/classes/llvm/passinstrumentationanalysis">PassInstrumentationAnalysis</a>.
+
+On attempt to invalidate just return false. There is nothing to become invalid here.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00329">329</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+### popBeforeNonSkippedPassCallback() {#ab20a8985d0c6fff641ddf9b933b2a886}
+
+<MemberDefinition
+  prototype="void llvm::PassInstrumentation::popBeforeNonSkippedPassCallback ()"
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00339">339</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+### pushBeforeNonSkippedPassCallback() {#a3e9514787a065c96294f645b1967f450}
+
+<MemberDefinition
+  template={<>template &lt;typename CallableT&gt;</>}
+  prototype="void llvm::PassInstrumentation::pushBeforeNonSkippedPassCallback (CallableT C)"
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00335">335</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+### runAfterAnalysis() {#adda8476ef0007c61013ba8e5c46c6693}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename PassT&gt;</>}
+  prototype={<>void llvm::PassInstrumentation::runAfterAnalysis (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PassT &amp; Analysis, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> IRUnitT &amp; IR) const</>}
+  labels = {["inline"]}>
+AfterAnalysis instrumentation point - takes <code>Analysis</code> instance that has just been executed and constant reference to IR it operated on.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00299">299</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+### runAfterPass() {#acec038dce9072b64301f6e5226c5579a}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename PassT&gt;</>}
+  prototype={<>void llvm::PassInstrumentation::runAfterPass (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PassT &amp; Pass, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> IRUnitT &amp; IR, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA) const</>}
+  labels = {["inline"]}>
+AfterPass instrumentation point - takes <code><a href="/docs/api/classes/llvm/pass">Pass</a></code> instance that has just been executed and constant reference to <code>IR</code> it operates on.
+
+<code>IR</code> is guaranteed to be valid at this point.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00269">269</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+### runAfterPassInvalidated() {#a055d7d34f26a121bd6cd03073cda6529}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename PassT&gt;</>}
+  prototype={<>void llvm::PassInstrumentation::runAfterPassInvalidated (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PassT &amp; Pass, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> &amp; PA) const</>}
+  labels = {["inline"]}>
+AfterPassInvalidated instrumentation point - takes <code><a href="/docs/api/classes/llvm/pass">Pass</a></code> instance that has just been executed.
+
+For use when IR has been invalidated by <code><a href="/docs/api/classes/llvm/pass">Pass</a></code> execution.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00280">280</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+### runAnalysesCleared() {#a79746b86dd505966e089c0b90e810053}
+
+<MemberDefinition
+  prototype={<>void llvm::PassInstrumentation::runAnalysesCleared (<a href="/docs/api/classes/llvm/stringref">StringRef</a> Name) const</>}
+  labels = {["inline"]}>
+AnalysesCleared instrumentation point - takes name of IR that analyses operated on.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00317">317</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+### runAnalysisInvalidated() {#a698253acb40299131fecdb9489f88fcd}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename PassT&gt;</>}
+  prototype={<>void llvm::PassInstrumentation::runAnalysisInvalidated (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PassT &amp; Analysis, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> IRUnitT &amp; IR) const</>}
+  labels = {["inline"]}>
+AnalysisInvalidated instrumentation point - takes <code>Analysis</code> instance that has just been invalidated and constant reference to IR it operated on.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00309">309</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+### runBeforeAnalysis() {#a5a2cc6fe0017dd7067b103118a7bc914}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename PassT&gt;</>}
+  prototype={<>void llvm::PassInstrumentation::runBeforeAnalysis (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PassT &amp; Analysis, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> IRUnitT &amp; IR) const</>}
+  labels = {["inline"]}>
+BeforeAnalysis instrumentation point - takes <code>Analysis</code> instance to be executed and constant reference to IR it operates on.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00290">290</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+### runBeforePass() {#aead32b9af4b66a742d37585c6d6b4cbc}
+
+<MemberDefinition
+  template={<>template &lt;typename IRUnitT, typename PassT&gt;</>}
+  prototype={<>bool llvm::PassInstrumentation::runBeforePass (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PassT &amp; Pass, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> IRUnitT &amp; IR) const</>}
+  labels = {["inline"]}>
+BeforePass instrumentation point - takes <code><a href="/docs/api/classes/llvm/pass">Pass</a></code> instance to be executed and constant reference to IR it operates on.
+
+\\Returns true if pass is allowed to be executed. These are only run on optional pass since required passes must always be run. This allows these callbacks to print info when they want to skip a pass.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00244">244</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### Callbacks {#aa36c9efbd63670be8da8a1e26336fe16}
+
+<MemberDefinition
+  prototype={<>PassInstrumentationCallbacks&#42; llvm::PassInstrumentation::Callbacks</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00208">208</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Static Functions
+
+### isRequired() {#a13d4175f125b5c6a43696bd187fd9f2d}
+
+<MemberDefinition
+  template={<>template &lt;typename PassT&gt;</>}
+  prototype={<>static std::enable&#95;if&#95;t&lt; is&#95;detected&lt; has&#95;required&#95;t, PassT &gt;::value, bool &gt; llvm::PassInstrumentation::isRequired (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PassT &amp; Pass)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00221">221</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+### isRequired() {#a3bce34071dc79eb763c69816b78980f5}
+
+<MemberDefinition
+  template={<>template &lt;typename PassT&gt;</>}
+  prototype={<>static std::enable&#95;if&#95;t&lt;!is&#95;detected&lt; has&#95;required&#95;t, PassT &gt;::value, bool &gt; llvm::PassInstrumentation::isRequired (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> PassT &amp; Pass)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h/#l00226">226</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/ir/passinstrumentation-h">PassInstrumentation.h</a></li>
+</ul>
+
+</DoxygenPage>

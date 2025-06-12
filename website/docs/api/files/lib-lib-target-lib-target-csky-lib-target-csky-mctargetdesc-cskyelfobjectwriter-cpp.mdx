@@ -1,0 +1,277 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/target/lib/target/csky/lib/target/csky/mctargetdesc/cskyelfobjectwriter-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `CSKYELFObjectWriter.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="CSKYFixupKinds.h"
+  permalink="/docs/api/files/lib/lib/target/lib/target/csky/lib/target/csky/mctargetdesc/cskyfixupkinds-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="CSKYMCExpr.h"
+  permalink="/docs/api/files/lib/lib/target/lib/target/csky/lib/target/csky/mctargetdesc/cskymcexpr-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="CSKYMCTargetDesc.h"
+  permalink="/docs/api/files/lib/lib/target/lib/target/csky/lib/target/csky/mctargetdesc/cskymctargetdesc-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/MC/MCContext.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mccontext-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/MC/MCELFObjectWriter.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mcelfobjectwriter-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/MC/MCObjectWriter.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/mc/mcobjectwriter-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/anonymous-cskyelfobjectwriter-cpp-">anonymous&#123;CSKYELFObjectWriter.cpp&#125;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-cskyelfobjectwriter-cpp-/cskyelfobjectwriter">CSKYELFObjectWriter</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Defines Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="#define"
+  name={<><a href="#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG&#95;TYPE</a>&nbsp;&nbsp;&nbsp;&quot;csky-elf-object-writer&quot;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Defines
+
+### DEBUG&#95;TYPE {#ad78e062f62e0d6e453941fb4ca843e4d}
+
+<MemberDefinition
+  prototype={<>#define DEBUG&#95;TYPE&nbsp;&nbsp;&nbsp;&quot;csky-elf-object-writer&quot;</>}>
+
+Definition at line <a href="#l00016">16</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/csky/lib/target/csky/mctargetdesc/cskyelfobjectwriter-cpp">CSKYELFObjectWriter.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- CSKYELFObjectWriter.cpp - CSKY ELF Writer -------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/target/lib/target/csky/lib/target/csky/mctargetdesc/cskyfixupkinds-h">CSKYFixupKinds.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/target/lib/target/csky/lib/target/csky/mctargetdesc/cskymcexpr-h">CSKYMCExpr.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/target/lib/target/csky/lib/target/csky/mctargetdesc/cskymctargetdesc-h">CSKYMCTargetDesc.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mccontext-h">llvm/MC/MCContext.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcelfobjectwriter-h">llvm/MC/MCELFObjectWriter.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcobjectwriter-h">llvm/MC/MCObjectWriter.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16" lineLink="#ad78e062f62e0d6e453941fb4ca843e4d"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEBUG&#95;TYPE &quot;csky-elf-object-writer&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20" lineLink="/docs/api/namespaces/anonymous-cskyelfobjectwriter-cpp-"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22" lineLink="/docs/api/classes/anonymous-namespace-cskyelfobjectwriter-cpp-/cskyelfobjectwriter"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/anonymous-namespace-cskyelfobjectwriter-cpp-/cskyelfobjectwriter/#ac36af2b9b75f5c30a0885f97b4043e7d">CSKYELFObjectWriter</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcelfobjecttargetwriter/#ae6c6e76c9d8e0c912542fe4f8375e8ce">MCELFObjectTargetWriter</a> &#123;</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24" lineLink="/docs/api/classes/anonymous-namespace-cskyelfobjectwriter-cpp-/cskyelfobjectwriter/#ac36af2b9b75f5c30a0885f97b4043e7d"><Highlight kind="normal">  <a href="/docs/api/classes/anonymous-namespace-cskyelfobjectwriter-cpp-/cskyelfobjectwriter/#ac36af2b9b75f5c30a0885f97b4043e7d">CSKYELFObjectWriter</a>(uint8&#95;t OSABI = 0)</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal">      : <a href="/docs/api/classes/llvm/mcelfobjecttargetwriter/#ae6c6e76c9d8e0c912542fe4f8375e8ce">MCELFObjectTargetWriter</a>(<a href="/docs/api/namespaces/false">false</a>, OSABI, <a href="/docs/api/namespaces/llvm/elf">ELF</a>::EM&#95;CSKY, <a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>)&#123;&#125;;</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26" lineLink="/docs/api/classes/anonymous-namespace-cskyelfobjectwriter-cpp-/cskyelfobjectwriter/#ad164476015d5b05cbf5d959fcc52fdee"><Highlight kind="normal">  <a href="/docs/api/classes/anonymous-namespace-cskyelfobjectwriter-cpp-/cskyelfobjectwriter/#ad164476015d5b05cbf5d959fcc52fdee">~CSKYELFObjectWriter</a>() &#123;&#125;</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> getRelocType(<a href="/docs/api/classes/llvm/mccontext">MCContext</a> &amp;Ctx, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcvalue">MCValue</a> &amp;<a href="/docs/api/classes/llvm/target">Target</a>,</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">                        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfixup">MCFixup</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/powerpc/ppctlsdynamiccall-cpp/#a4a235aedca5bbfc39934045b6cbf9c70">Fixup</a>, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsPCRel) </Highlight><Highlight kind="keyword">const override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34" lineLink="/docs/api/classes/anonymous-namespace-cskyelfobjectwriter-cpp-/cskyelfobjectwriter/#adcfdb6cf22cdaa14533e19d6c71d71a1"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-cskyelfobjectwriter-cpp-/cskyelfobjectwriter/#adcfdb6cf22cdaa14533e19d6c71d71a1">CSKYELFObjectWriter::getRelocType</a>(<a href="/docs/api/classes/llvm/mccontext">MCContext</a> &amp;Ctx,</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">                                           </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcvalue">MCValue</a> &amp;<a href="/docs/api/classes/llvm/target">Target</a>,</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">                                           </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcfixup">MCFixup</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/powerpc/ppctlsdynamiccall-cpp/#a4a235aedca5bbfc39934045b6cbf9c70">Fixup</a>,</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">                                           </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsPCRel)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcexpr">MCExpr</a> &#42;Expr = <a href="/docs/api/files/lib/lib/target/lib/target/powerpc/ppctlsdynamiccall-cpp/#a4a235aedca5bbfc39934045b6cbf9c70">Fixup</a>.getValue();</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Determine the type of the relocation</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Kind = <a href="/docs/api/files/lib/lib/target/lib/target/powerpc/ppctlsdynamiccall-cpp/#a4a235aedca5bbfc39934045b6cbf9c70">Fixup</a>.getTargetKind();</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mcsymbolrefexpr/#a5c463f6352570ee778c35c40949c4985">MCSymbolRefExpr::VariantKind</a> Modifier = <a href="/docs/api/classes/llvm/target">Target</a>.getAccessVariant();</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (IsPCRel) &#123;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (Kind) &#123;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">      <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Unknown Kind1  = &quot;</Highlight><Highlight kind="normal"> &lt;&lt; Kind);</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">      Ctx.reportError(<a href="/docs/api/files/lib/lib/target/lib/target/powerpc/ppctlsdynamiccall-cpp/#a4a235aedca5bbfc39934045b6cbf9c70">Fixup</a>.getLoc(), </Highlight><Highlight kind="stringliteral">&quot;Unsupported relocation type&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;NONE;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a84cef097f15848752272d38769011f58a5d58ab615cde98af13deb16dbc09f42d">FK&#95;Data&#95;4</a>:</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a84cef097f15848752272d38769011f58a0f7a8485c2c761bc5e870fe2b6466372">FK&#95;PCRel&#95;4</a>:</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;PCREL32;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2a8ebf6cafce7b2282b6db2e6b568518f5">CSKY::fixup&#95;csky&#95;pcrel&#95;uimm16&#95;scale4</a>:</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;PCREL&#95;IMM16&#95;4;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2ac3502715f5dd21573ae7085cdb2a7c3e">CSKY::fixup&#95;csky&#95;pcrel&#95;uimm8&#95;scale4</a>:</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;PCREL&#95;IMM8&#95;4;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2aa11a4036cb9536c4ed8991e3fb2d126c">CSKY::fixup&#95;csky&#95;pcrel&#95;imm26&#95;scale2</a>:</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;PCREL&#95;IMM26&#95;2;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2a8548ad738cfd027c7759b8c2e0396c49">CSKY::fixup&#95;csky&#95;pcrel&#95;imm18&#95;scale2</a>:</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;PCREL&#95;IMM18&#95;2;</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2a536ed49406b71ec231209116d1459a92">CSKY::fixup&#95;csky&#95;pcrel&#95;imm16&#95;scale2</a>:</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;PCREL&#95;IMM16&#95;2;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2a36c5d2cff2efb3e83227a9dca61accc1">CSKY::fixup&#95;csky&#95;pcrel&#95;imm10&#95;scale2</a>:</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;PCREL&#95;IMM10&#95;2;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2a4c2d802607ee153939c71f832414931c">CSKY::fixup&#95;csky&#95;pcrel&#95;uimm7&#95;scale4</a>:</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;PCREL&#95;IMM7&#95;4;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (Kind) &#123;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">    <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Unknown Kind2  = &quot;</Highlight><Highlight kind="normal"> &lt;&lt; Kind);</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    Ctx.reportError(<a href="/docs/api/files/lib/lib/target/lib/target/powerpc/ppctlsdynamiccall-cpp/#a4a235aedca5bbfc39934045b6cbf9c70">Fixup</a>.getLoc(), </Highlight><Highlight kind="stringliteral">&quot;Unsupported relocation type&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;NONE;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a84cef097f15848752272d38769011f58a4aee2a3e203379bbb0c9639d4ef31b6e">FK&#95;Data&#95;1</a>:</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    Ctx.reportError(<a href="/docs/api/files/lib/lib/target/lib/target/powerpc/ppctlsdynamiccall-cpp/#a4a235aedca5bbfc39934045b6cbf9c70">Fixup</a>.getLoc(), </Highlight><Highlight kind="stringliteral">&quot;1-byte data relocations not supported&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;NONE;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a84cef097f15848752272d38769011f58afe607fbae154a24e4b463cf9fd5916f7">FK&#95;Data&#95;2</a>:</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">    Ctx.reportError(<a href="/docs/api/files/lib/lib/target/lib/target/powerpc/ppctlsdynamiccall-cpp/#a4a235aedca5bbfc39934045b6cbf9c70">Fixup</a>.getLoc(), </Highlight><Highlight kind="stringliteral">&quot;2-byte data relocations not supported&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;NONE;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a84cef097f15848752272d38769011f58a5d58ab615cde98af13deb16dbc09f42d">FK&#95;Data&#95;4</a>:</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Expr-&gt;<a href="/docs/api/classes/llvm/mcexpr/#af5d6e67c11188675c1309e098afac194">getKind</a>() == <a href="/docs/api/classes/llvm/mcexpr/#a83112ba0cecd7a7add9f1f9c441d606faa65560b8224a92e80f422df090f07c55">MCExpr::Target</a>) &#123;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> TK = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;CSKYMCExpr&gt;</a>(Expr)-&gt;getKind();</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TK == <a href="/docs/api/classes/llvm/cskymcexpr/#a93a07cb47b5fa9cdb2cc05126cd3d56da00b43daca1c50769fde2954c18a6a08d">CSKYMCExpr::VK&#95;CSKY&#95;ADDR</a>)</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;ADDR32;</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TK == <a href="/docs/api/classes/llvm/cskymcexpr/#a93a07cb47b5fa9cdb2cc05126cd3d56da6f6264903a5cd681bef075a10d80830c">CSKYMCExpr::VK&#95;CSKY&#95;GOT</a>)</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;GOT32;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TK == <a href="/docs/api/classes/llvm/cskymcexpr/#a93a07cb47b5fa9cdb2cc05126cd3d56da459851e1e27ad13079a564826c441637">CSKYMCExpr::VK&#95;CSKY&#95;GOTOFF</a>)</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;GOTOFF;</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TK == <a href="/docs/api/classes/llvm/cskymcexpr/#a93a07cb47b5fa9cdb2cc05126cd3d56da69348b1cbd18fce5aff9db7f91d273b9">CSKYMCExpr::VK&#95;CSKY&#95;PLT</a>)</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;PLT32;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TK == <a href="/docs/api/classes/llvm/cskymcexpr/#a93a07cb47b5fa9cdb2cc05126cd3d56da40d2178a63dd0ff09242ab5496938e95">CSKYMCExpr::VK&#95;CSKY&#95;TLSIE</a>)</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;TLS&#95;IE32;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TK == <a href="/docs/api/classes/llvm/cskymcexpr/#a93a07cb47b5fa9cdb2cc05126cd3d56da63f14a876cfe0a7d880dfcf341584a30">CSKYMCExpr::VK&#95;CSKY&#95;TLSLE</a>)</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;TLS&#95;LE32;</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TK == <a href="/docs/api/classes/llvm/cskymcexpr/#a93a07cb47b5fa9cdb2cc05126cd3d56da62b16a80d6774adcf5795e1f444f8481">CSKYMCExpr::VK&#95;CSKY&#95;TLSGD</a>)</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;TLS&#95;GD32;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TK == <a href="/docs/api/classes/llvm/cskymcexpr/#a93a07cb47b5fa9cdb2cc05126cd3d56da6bb8f22442c3370bcba69b73a07fdc21">CSKYMCExpr::VK&#95;CSKY&#95;TLSLDM</a>)</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;TLS&#95;LDM32;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TK == <a href="/docs/api/classes/llvm/cskymcexpr/#a93a07cb47b5fa9cdb2cc05126cd3d56dafea681928cdde2355e1b87f6ed63761b">CSKYMCExpr::VK&#95;CSKY&#95;TLSLDO</a>)</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;TLS&#95;LDO32;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TK == <a href="/docs/api/classes/llvm/cskymcexpr/#a93a07cb47b5fa9cdb2cc05126cd3d56dab1b698cbe7df1349a4dd7b50bc879c59">CSKYMCExpr::VK&#95;CSKY&#95;GOTPC</a>)</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;GOTPC;</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TK == <a href="/docs/api/classes/llvm/cskymcexpr/#a93a07cb47b5fa9cdb2cc05126cd3d56da9651ea71fd4490018e90fc7093c586b4">CSKYMCExpr::VK&#95;CSKY&#95;None</a>)</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;ADDR32;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">      <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Unknown FK&#95;Data&#95;4 TK  = &quot;</Highlight><Highlight kind="normal"> &lt;&lt; TK);</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">      Ctx.reportError(<a href="/docs/api/files/lib/lib/target/lib/target/powerpc/ppctlsdynamiccall-cpp/#a4a235aedca5bbfc39934045b6cbf9c70">Fixup</a>.getLoc(), </Highlight><Highlight kind="stringliteral">&quot;unknown target FK&#95;Data&#95;4&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (Modifier) &#123;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">        Ctx.reportError(<a href="/docs/api/files/lib/lib/target/lib/target/powerpc/ppctlsdynamiccall-cpp/#a4a235aedca5bbfc39934045b6cbf9c70">Fixup</a>.getLoc(),</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">                        </Highlight><Highlight kind="stringliteral">&quot;invalid fixup for 4-byte data relocation&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;NONE;</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbolrefexpr/#a5c463f6352570ee778c35c40949c4985aa780672c4378b10a1ef6094a4c46de10">MCSymbolRefExpr::VK&#95;GOT</a>:</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;GOT32;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbolrefexpr/#a5c463f6352570ee778c35c40949c4985a4396d69feb19b053f335f9baa4fb9b62">MCSymbolRefExpr::VK&#95;GOTOFF</a>:</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;GOTOFF;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbolrefexpr/#a5c463f6352570ee778c35c40949c4985ab5951d4b3308f406e60e2bf743b14ca4">MCSymbolRefExpr::VK&#95;PLT</a>:</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;PLT32;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbolrefexpr/#a5c463f6352570ee778c35c40949c4985ab2e079373e7edad956ec4feb0587658e">MCSymbolRefExpr::VK&#95;TLSGD</a>:</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;TLS&#95;GD32;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbolrefexpr/#a5c463f6352570ee778c35c40949c4985a3edde5344c6385f99e6b4f7606b79048">MCSymbolRefExpr::VK&#95;TLSLDM</a>:</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;TLS&#95;LDM32;</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbolrefexpr/#a5c463f6352570ee778c35c40949c4985aab276e610bb8711df7b2a9565411b2f3">MCSymbolRefExpr::VK&#95;TPOFF</a>:</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;TLS&#95;LE32;</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsymbolrefexpr/#a5c463f6352570ee778c35c40949c4985a01bc6396c4d841a7ea268c3cbf62d3b3">MCSymbolRefExpr::VK&#95;None</a>:</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;ADDR32;</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;NONE;</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a84cef097f15848752272d38769011f58a3a9388f6478ca218e5d1996e4063c8fe">FK&#95;Data&#95;8</a>:</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">    Ctx.reportError(<a href="/docs/api/files/lib/lib/target/lib/target/powerpc/ppctlsdynamiccall-cpp/#a4a235aedca5bbfc39934045b6cbf9c70">Fixup</a>.getLoc(), </Highlight><Highlight kind="stringliteral">&quot;8-byte data relocations not supported&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;NONE;</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2a6d70355097ca3e247e1aedf88d6288d1">CSKY::fixup&#95;csky&#95;addr32</a>:</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;ADDR32;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2ad1bf76d360185c7b047a69ac3ca47a31">CSKY::fixup&#95;csky&#95;addr&#95;hi16</a>:</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;ADDR&#95;HI16;</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2af2da376d6904e5f37e2f389dc295810d">CSKY::fixup&#95;csky&#95;addr&#95;lo16</a>:</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;ADDR&#95;LO16;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2afdb8ccea389463c5c685e028b9f94726">CSKY::fixup&#95;csky&#95;doffset&#95;imm18</a>:</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;DOFFSET&#95;IMM18;</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2a5302f6fa84a724caf5ad8cdf6569d8c7">CSKY::fixup&#95;csky&#95;doffset&#95;imm18&#95;scale2</a>:</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;DOFFSET&#95;IMM18&#95;2;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2a854b6d429bc64a8468194537a6f06e5f">CSKY::fixup&#95;csky&#95;doffset&#95;imm18&#95;scale4</a>:</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;DOFFSET&#95;IMM18&#95;4;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2ac16105e6ed5d02c6d9664e008c649525">CSKY::fixup&#95;csky&#95;got&#95;imm18&#95;scale4</a>:</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;GOT&#95;IMM18&#95;4;</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/csky/#ae6b0dde9ada1e7ffffed2d85168a70a2aa0247adcbb9af641dc8871d528adc437">CSKY::fixup&#95;csky&#95;plt&#95;imm18&#95;scale4</a>:</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ELF::R&#95;CKCORE&#95;PLT&#95;IMM18&#95;4;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153" lineLink="/docs/api/namespaces/llvm/#a37fabad629f21b28c2c1822508713eaa"><Highlight kind="normal">std::unique&#95;ptr&lt;MCObjectTargetWriter&gt; <a href="/docs/api/namespaces/llvm/#a37fabad629f21b28c2c1822508713eaa">llvm::createCSKYELFObjectWriter</a>() &#123;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;unique&lt;CSKYELFObjectWriter&gt;();</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

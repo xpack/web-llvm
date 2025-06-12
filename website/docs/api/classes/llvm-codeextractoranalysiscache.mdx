@@ -1,0 +1,217 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/codeextractoranalysiscache
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `CodeExtractorAnalysisCache` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+A cache for the <a href="/docs/api/classes/llvm/codeextractor">CodeExtractor</a> analysis. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::CodeExtractorAnalysisCache</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Transforms/Utils/CodeExtractor.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a6c11ef80226655b08c6203641896fa50">CodeExtractorAnalysisCache</a> (Function &amp;F)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af0ee5fce396f816a21443799205fbedd">doesBlockContainClobberOfAddr</a> (BasicBlock &amp;BB, AllocaInst &#42;Addr) const</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> whether <code>BB</code> contains an instruction thought to load from, store to, or otherwise clobber the alloca <code>Addr</code>. <a href="#af0ee5fce396f816a21443799205fbedd">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/allocainst">AllocaInst</a> &#42; &gt;</>}
+  name={<><a href="#a35fd9ad0c2debb7b171f4c61ce7bdac6">getAllocas</a> () const</>}>
+Get the allocas in the function at the time the analysis was created. <a href="#a35fd9ad0c2debb7b171f4c61ce7bdac6">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a772f553ea4059bb635b67ecf0ba35ddc">findSideEffectInfoForBlock</a> (BasicBlock &amp;BB)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; <a href="/docs/api/classes/llvm/allocainst">AllocaInst</a> &#42;, 16 &gt;</>}
+  name={<><a href="#a1c4c528fe43bd8b8de5c150dcca28e73">Allocas</a></>}>
+The allocas in the function. <a href="#a1c4c528fe43bd8b8de5c150dcca28e73">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/densemap">DenseMap</a>&lt; <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;, <a href="/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/docs/api/classes/llvm/value">Value</a> &#42; &gt; &gt;</>}
+  name={<><a href="#a7d6f048ba42645df447ee29834243a5c">BaseMemAddrs</a></>}>
+Base memory addresses of load/store instructions, grouped by block. <a href="#a7d6f048ba42645df447ee29834243a5c">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/denseset">DenseSet</a>&lt; <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; &gt;</>}
+  name={<><a href="#ab94996018a63c3d33436dd371a7f5bb1">SideEffectingBlocks</a></>}>
+Blocks which contain instructions which may have unknown side-effects on memory. <a href="#ab94996018a63c3d33436dd371a7f5bb1">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+A cache for the <a href="/docs/api/classes/llvm/codeextractor">CodeExtractor</a> analysis.
+
+The operation <a href="/docs/api/classes/llvm/codeextractor/#a8561c48aa0b397c37f9e071dad7df392">CodeExtractor::extractCodeRegion</a> is guaranteed not to invalidate this object. This object should conservatively be considered invalid if any other mutating operations on the IR occur.
+
+Constructing this object is O(n) in the size of the function.
+
+Definition at line 46 of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h">CodeExtractor.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### CodeExtractorAnalysisCache() {#a6c11ef80226655b08c6203641896fa50}
+
+<MemberDefinition
+  prototype={<>CodeExtractorAnalysisCache::CodeExtractorAnalysisCache (<a href="/docs/api/classes/llvm/function">Function</a> &amp; F)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h/#l00060">60</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h">CodeExtractor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/codeextractor-cpp/#l00298">298</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/codeextractor-cpp">CodeExtractor.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### doesBlockContainClobberOfAddr() {#af0ee5fce396f816a21443799205fbedd}
+
+<MemberDefinition
+  prototype={<>bool CodeExtractorAnalysisCache::doesBlockContainClobberOfAddr (<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; BB, <a href="/docs/api/classes/llvm/allocainst">AllocaInst</a> &#42; Addr) const</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> whether <code>BB</code> contains an instruction thought to load from, store to, or otherwise clobber the alloca <code>Addr</code>.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h/#l00069">69</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h">CodeExtractor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/codeextractor-cpp/#l00351">351</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/codeextractor-cpp">CodeExtractor.cpp</a>.
+</MemberDefinition>
+
+### getAllocas() {#a35fd9ad0c2debb7b171f4c61ce7bdac6}
+
+<MemberDefinition
+  prototype={<>ArrayRef&lt; AllocaInst &#42; &gt; llvm::CodeExtractorAnalysisCache::getAllocas () const</>}
+  labels = {["inline"]}>
+Get the allocas in the function at the time the analysis was created.
+
+Note that some of these allocas may no longer be present in the function, due to <a href="/docs/api/classes/llvm/codeextractor/#a8561c48aa0b397c37f9e071dad7df392">CodeExtractor::extractCodeRegion</a>.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h/#l00065">65</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h">CodeExtractor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### findSideEffectInfoForBlock() {#a772f553ea4059bb635b67ecf0ba35ddc}
+
+<MemberDefinition
+  prototype={<>void CodeExtractorAnalysisCache::findSideEffectInfoForBlock (<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp; BB)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h/#l00057">57</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h">CodeExtractor.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/codeextractor-cpp/#l00308">308</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/codeextractor-cpp">CodeExtractor.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### Allocas {#a1c4c528fe43bd8b8de5c150dcca28e73}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;AllocaInst &#42;, 16&gt; llvm::CodeExtractorAnalysisCache::Allocas</>}>
+The allocas in the function.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h/#l00048">48</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h">CodeExtractor.h</a>.
+</MemberDefinition>
+
+### BaseMemAddrs {#a7d6f048ba42645df447ee29834243a5c}
+
+<MemberDefinition
+  prototype={<>DenseMap&lt;BasicBlock &#42;, DenseSet&lt;Value &#42;&gt; &gt; llvm::CodeExtractorAnalysisCache::BaseMemAddrs</>}>
+Base memory addresses of load/store instructions, grouped by block.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h/#l00051">51</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h">CodeExtractor.h</a>.
+</MemberDefinition>
+
+### SideEffectingBlocks {#ab94996018a63c3d33436dd371a7f5bb1}
+
+<MemberDefinition
+  prototype={<>DenseSet&lt;BasicBlock &#42;&gt; llvm::CodeExtractorAnalysisCache::SideEffectingBlocks</>}>
+Blocks which contain instructions which may have unknown side-effects on memory.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h/#l00055">55</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h">CodeExtractor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/codeextractor-h">CodeExtractor.h</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/codeextractor-cpp">CodeExtractor.cpp</a></li>
+</ul>
+
+</DoxygenPage>

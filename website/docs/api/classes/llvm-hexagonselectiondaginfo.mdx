@@ -1,0 +1,128 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/hexagonselectiondaginfo
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `HexagonSelectionDAGInfo` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Declaration
+
+<CodeBlock>class llvm::HexagonSelectionDAGInfo</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="Target/Hexagon/HexagonSelectionDAGInfo.h"
+  permalink="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonselectiondaginfo-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/selectiondagtargetinfo">SelectionDAGTargetInfo</a></>}>
+Targets can subclass this to parameterize the <a href="/docs/api/classes/llvm/selectiondag">SelectionDAG</a> lowering and instruction selection process. <a href="/docs/api/classes/llvm/selectiondagtargetinfo/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#aa93815351f0dcf0e03e8179b498a96cd">HexagonSelectionDAGInfo</a> ()=default</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/sdvalue">SDValue</a></>}
+  name={<><a href="#a10a0dbb2ae8f208929d1f453d84cb101">EmitTargetCodeForMemcpy</a> (SelectionDAG &amp;DAG, const SDLoc &amp;dl, SDValue Chain, SDValue Dst, SDValue Src, SDValue Size, Align Alignment, bool isVolatile, bool AlwaysInline, MachinePointerInfo DstPtrInfo, MachinePointerInfo SrcPtrInfo) const override</>}>
+Emit target-specific code that performs a memcpy. <a href="#a10a0dbb2ae8f208929d1f453d84cb101">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+Definition at line 20 of file <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonselectiondaginfo-h">HexagonSelectionDAGInfo.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### HexagonSelectionDAGInfo() {#aa93815351f0dcf0e03e8179b498a96cd}
+
+<MemberDefinition
+  prototype="llvm::HexagonSelectionDAGInfo::HexagonSelectionDAGInfo ()"
+  labels = {["explicit", "default"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonselectiondaginfo-h/#l00022">22</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonselectiondaginfo-h">HexagonSelectionDAGInfo.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### EmitTargetCodeForMemcpy() {#a10a0dbb2ae8f208929d1f453d84cb101}
+
+<MemberDefinition
+  prototype={<>SDValue HexagonSelectionDAGInfo::EmitTargetCodeForMemcpy (<a href="/docs/api/classes/llvm/selectiondag">SelectionDAG</a> &amp; DAG, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/sdloc">SDLoc</a> &amp; dl, <a href="/docs/api/classes/llvm/sdvalue">SDValue</a> Chain, <a href="/docs/api/classes/llvm/sdvalue">SDValue</a> Op1, <a href="/docs/api/classes/llvm/sdvalue">SDValue</a> Op2, <a href="/docs/api/classes/llvm/sdvalue">SDValue</a> Op3, <a href="/docs/api/structs/llvm/align">Align</a> Alignment, bool isVolatile, bool AlwaysInline, <a href="/docs/api/structs/llvm/machinepointerinfo">MachinePointerInfo</a> DstPtrInfo, <a href="/docs/api/structs/llvm/machinepointerinfo">MachinePointerInfo</a> SrcPtrInfo) const</>}
+  labels = {["virtual"]}>
+Emit target-specific code that performs a memcpy.
+
+This can be used by targets to provide code sequences for cases that don&#39;t fit the target&#39;s parameters for simple loads/stores and can be more efficient than using a library call. This function can return a null <a href="/docs/api/classes/llvm/sdvalue">SDValue</a> if the target declines to use custom code and a different lowering strategy should be used.
+
+If AlwaysInline is true, the size is constant and the target should not emit any calls and is strongly encouraged to attempt to emit inline code even if it is beyond the usual threshold because this intrinsic is being expanded in a place where calls are not feasible (e.g. within the prologue for another call). If the target chooses to decline an AlwaysInline request here, legalize will resort to using simple loads and stores.
+
+Declaration at line <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonselectiondaginfo-h/#l00024">24</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonselectiondaginfo-h">HexagonSelectionDAGInfo.h</a>, definition at line <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonselectiondaginfo-cpp/#l00019">19</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonselectiondaginfo-cpp">HexagonSelectionDAGInfo.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonselectiondaginfo-cpp">HexagonSelectionDAGInfo.cpp</a></li>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonselectiondaginfo-h">HexagonSelectionDAGInfo.h</a></li>
+</ul>
+
+</DoxygenPage>

@@ -1,0 +1,178 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/anonymous-namespace-smeabipass-cpp-/smeabi
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `SMEABI` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Declaration
+
+<CodeBlock>struct anonymous_namespace{SMEABIPass.cpp}::SMEABI</CodeBlock>
+
+## Base struct
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/functionpass">FunctionPass</a></>}>
+<a href="/docs/api/classes/llvm/functionpass">FunctionPass</a> class - This class is used to implement most global optimizations. <a href="/docs/api/classes/llvm/functionpass/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#accca3fc250217cabab067305ac4e9e0a">SMEABI</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#aa765a5fc788410699fd070df2aa20319">runOnFunction</a> (Function &amp;F) override</>}>
+runOnFunction - Virtual method overriden by subclasses to do the per-function processing of the pass. <a href="#aa765a5fc788410699fd070df2aa20319">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a20216ec402c5045d41a157d238806aad">updateNewStateFunctions</a> (Module &#42;M, Function &#42;F, IRBuilder&lt;&gt; &amp;Builder, SMEAttrs FnAttrs)</>}>
+This function generates code at the beginning and end of a function marked with either <code>aarch64&#95;new&#95;za</code> or <code>aarch64&#95;new&#95;zt0</code>. <a href="#a20216ec402c5045d41a157d238806aad">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="char"
+  name={<><a href="#a282b56538bbc56c7327c3bb91a37f973">ID</a> = 0</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+Definition at line 31 of file <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp">SMEABIPass.cpp</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### SMEABI() {#accca3fc250217cabab067305ac4e9e0a}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;SMEABIPass.cpp&#125;::SMEABI::SMEABI ()</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp/#l00033">33</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp">SMEABIPass.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### runOnFunction() {#aa765a5fc788410699fd070df2aa20319}
+
+<MemberDefinition
+  prototype={<>bool SMEABI::runOnFunction (<a href="/docs/api/classes/llvm/function">Function</a> &amp; F)</>}
+  labels = {["virtual"]}>
+runOnFunction - Virtual method overriden by subclasses to do the per-function processing of the pass.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp/#l00037">37</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp">SMEABIPass.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### updateNewStateFunctions() {#a20216ec402c5045d41a157d238806aad}
+
+<MemberDefinition
+  prototype={<>bool SMEABI::updateNewStateFunctions (<a href="/docs/api/classes/llvm/module">Module</a> &#42; M, <a href="/docs/api/classes/llvm/function">Function</a> &#42; F, <a href="/docs/api/classes/llvm/irbuilder">IRBuilder</a>&lt;&gt; &amp; Builder, <a href="/docs/api/classes/llvm/smeattrs">SMEAttrs</a> FnAttrs)</>}>
+This function generates code at the beginning and end of a function marked with either <code>aarch64&#95;new&#95;za</code> or <code>aarch64&#95;new&#95;zt0</code>.
+
+At the beginning of the function, the following code is generated:
+<ul>
+<li>Commit lazy-save if active &#91;Private-ZA Interface&#42;&#93;</li>
+<li>Enable PSTATE.ZA &#91;Private-ZA Interface&#93;</li>
+<li>Zero ZA &#91;Has New ZA State&#93;</li>
+<li>Zero ZT0 &#91;Has New ZT0 State&#93;</li>
+</ul>
+
+
+A function with new ZT0 state will not change ZA, so committing the lazy-save is not strictly necessary. However, the lazy-save mechanism may be active on entry to the function, with PSTATE.ZA set to 1. If the new ZT0 function calls a function that does not share ZT0, we will need to conditionally SMSTOP ZA before the call, setting PSTATE.ZA to 0. For this reason, it&#39;s easier to always commit the lazy-save at the beginning of the function regardless of whether it has ZA state.
+
+At the end of the function, PSTATE.ZA is disabled if the function has a Private-ZA Interface. A function is considered to have a Private-ZA interface if it does not share ZA or ZT0.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp/#l00040">40</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp">SMEABIPass.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Attributes
+
+### ID {#a282b56538bbc56c7327c3bb91a37f973}
+
+<MemberDefinition
+  prototype="char SMEABI::ID = 0"
+  labels = {["static"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp/#l00032">32</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp">SMEABIPass.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp">SMEABIPass.cpp</a></li>
+</ul>
+
+</DoxygenPage>

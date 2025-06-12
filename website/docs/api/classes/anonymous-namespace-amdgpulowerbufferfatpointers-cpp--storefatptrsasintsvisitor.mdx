@@ -1,0 +1,269 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/anonymous-namespace-amdgpulowerbufferfatpointers-cpp-/storefatptrsasintsvisitor
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `StoreFatPtrsAsIntsVisitor` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Convert &#91;vectors of&#93; buffer fat pointers to integers when they are read from or stored to memory. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class anonymous_namespace{AMDGPULowerBufferFatPointers.cpp}::StoreFatPtrsAsIntsVisitor</CodeBlock>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/instvisitor">InstVisitor&lt;SubClass, RetTy&gt;</a></>}>
+Base class for instruction visitors. <a href="/docs/api/classes/llvm/instvisitor/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a80b876c4ea1bb6f548a3ecffffb95a32">StoreFatPtrsAsIntsVisitor</a> (BufferFatPtrToIntTypeMap &#42;TypeMap, LLVMContext &amp;Ctx)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#aa3fda38fb3f6f474b98450eec17d480d">processFunction</a> (Function &amp;F)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a4628c214db03c1f06ccfb45b6c5b2ffc">visitAllocaInst</a> (AllocaInst &amp;I)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af9c39d586ec7ad54c55978b8ca17ab4a">visitGetElementPtrInst</a> (GetElementPtrInst &amp;I)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a73fc630fb627f335564fb08a1994d9c9">visitInstruction</a> (Instruction &amp;I)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a77976478ff4af840d8dc298cd7bb1b65">visitLoadInst</a> (LoadInst &amp;LI)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a8c364caa7bdd20ff435e0fdcb5ec686b">visitStoreInst</a> (StoreInst &amp;SI)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#ae1f68156e8c94e645b7b4b880bdb5967">fatPtrsToInts</a> (Value &#42;V, Type &#42;From, Type &#42;To, const Twine &amp;Name)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#a93e969a9c4e04b83d5cc6a43768f7caa">intsToFatPtrs</a> (Value &#42;V, Type &#42;From, Type &#42;To, const Twine &amp;Name)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a></>}
+  name={<><a href="#a8f5c1c8004cb6604dcf8c6380b78dc74">ConvertedForStore</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/irbuilder">IRBuilder</a></>}
+  name={<><a href="#ae3bef2377e52100682a06c69aa41aa94">IRB</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/anonymous-namespace-amdgpulowerbufferfatpointers-cpp-/bufferfatptrtointtypemap">BufferFatPtrToIntTypeMap</a> &#42;</>}
+  name={<><a href="#a705d692a109dd4ea16facb43a77bfea8">TypeMap</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Convert &#91;vectors of&#93; buffer fat pointers to integers when they are read from or stored to memory.
+
+This ensures that these pointers will have the same memory layout as before they are lowered, even though they will no longer have their previous layout in registers/in the program (they&#39;ll be broken down into resource and offset parts). This has the downside of imposing marshalling costs when reading or storing these values, but since placing such pointers into memory is an uncommon operation at best, we feel that this cost is acceptable for better performance in the common case.
+
+Definition at line 434 of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### StoreFatPtrsAsIntsVisitor() {#a80b876c4ea1bb6f548a3ecffffb95a32}
+
+<MemberDefinition
+  prototype={<>anonymous&#95;namespace&#123;AMDGPULowerBufferFatPointers.cpp&#125;::StoreFatPtrsAsIntsVisitor::StoreFatPtrsAsIntsVisitor (<a href="/docs/api/classes/anonymous-namespace-amdgpulowerbufferfatpointers-cpp-/bufferfatptrtointtypemap">BufferFatPtrToIntTypeMap</a> &#42; TypeMap, <a href="/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp; Ctx)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp/#l00451">451</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### processFunction() {#aa3fda38fb3f6f474b98450eec17d480d}
+
+<MemberDefinition
+  prototype={<>bool StoreFatPtrsAsIntsVisitor::processFunction (<a href="/docs/api/classes/llvm/function">Function</a> &amp; F)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp/#l00453">453</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a>.
+</MemberDefinition>
+
+### visitAllocaInst() {#a4628c214db03c1f06ccfb45b6c5b2ffc}
+
+<MemberDefinition
+  prototype={<>bool StoreFatPtrsAsIntsVisitor::visitAllocaInst (<a href="/docs/api/classes/llvm/allocainst">AllocaInst</a> &amp; I)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp/#l00456">456</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a>.
+</MemberDefinition>
+
+### visitGetElementPtrInst() {#af9c39d586ec7ad54c55978b8ca17ab4a}
+
+<MemberDefinition
+  prototype={<>bool StoreFatPtrsAsIntsVisitor::visitGetElementPtrInst (<a href="/docs/api/classes/llvm/getelementptrinst">GetElementPtrInst</a> &amp; I)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp/#l00459">459</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a>.
+</MemberDefinition>
+
+### visitInstruction() {#a73fc630fb627f335564fb08a1994d9c9}
+
+<MemberDefinition
+  prototype={<>bool anonymous&#95;namespace&#123;AMDGPULowerBufferFatPointers.cpp&#125;::StoreFatPtrsAsIntsVisitor::visitInstruction (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp; I)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp/#l00455">455</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a>.
+</MemberDefinition>
+
+### visitLoadInst() {#a77976478ff4af840d8dc298cd7bb1b65}
+
+<MemberDefinition
+  prototype={<>bool StoreFatPtrsAsIntsVisitor::visitLoadInst (<a href="/docs/api/classes/llvm/loadinst">LoadInst</a> &amp; LI)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp/#l00457">457</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a>.
+</MemberDefinition>
+
+### visitStoreInst() {#a8c364caa7bdd20ff435e0fdcb5ec686b}
+
+<MemberDefinition
+  prototype={<>bool StoreFatPtrsAsIntsVisitor::visitStoreInst (<a href="/docs/api/classes/llvm/storeinst">StoreInst</a> &amp; SI)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp/#l00458">458</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### fatPtrsToInts() {#ae1f68156e8c94e645b7b4b880bdb5967}
+
+<MemberDefinition
+  prototype={<>Value &#42; StoreFatPtrsAsIntsVisitor::fatPtrsToInts (<a href="/docs/api/classes/llvm/value">Value</a> &#42; V, <a href="/docs/api/classes/llvm/type">Type</a> &#42; From, <a href="/docs/api/classes/llvm/type">Type</a> &#42; To, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp; Name)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp/#l00444">444</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a>.
+</MemberDefinition>
+
+### intsToFatPtrs() {#a93e969a9c4e04b83d5cc6a43768f7caa}
+
+<MemberDefinition
+  prototype={<>Value &#42; StoreFatPtrsAsIntsVisitor::intsToFatPtrs (<a href="/docs/api/classes/llvm/value">Value</a> &#42; V, <a href="/docs/api/classes/llvm/type">Type</a> &#42; From, <a href="/docs/api/classes/llvm/type">Type</a> &#42; To, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp; Name)</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp/#l00448">448</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### ConvertedForStore {#a8f5c1c8004cb6604dcf8c6380b78dc74}
+
+<MemberDefinition
+  prototype={<>ValueToValueMapTy anonymous&#95;namespace&#123;AMDGPULowerBufferFatPointers.cpp&#125;::StoreFatPtrsAsIntsVisitor::ConvertedForStore</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp/#l00438">438</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a>.
+</MemberDefinition>
+
+### IRB {#ae3bef2377e52100682a06c69aa41aa94}
+
+<MemberDefinition
+  prototype={<>IRBuilder anonymous&#95;namespace&#123;AMDGPULowerBufferFatPointers.cpp&#125;::StoreFatPtrsAsIntsVisitor::IRB</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp/#l00440">440</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a>.
+</MemberDefinition>
+
+### TypeMap {#a705d692a109dd4ea16facb43a77bfea8}
+
+<MemberDefinition
+  prototype={<>BufferFatPtrToIntTypeMap&#42; anonymous&#95;namespace&#123;AMDGPULowerBufferFatPointers.cpp&#125;::StoreFatPtrsAsIntsVisitor::TypeMap</>}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp/#l00436">436</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpulowerbufferfatpointers-cpp">AMDGPULowerBufferFatPointers.cpp</a></li>
+</ul>
+
+</DoxygenPage>

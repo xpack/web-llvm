@@ -1,0 +1,180 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/innerloopandepiloguevectorizer
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `InnerLoopAndEpilogueVectorizer` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+An extension of the inner loop vectorizer that creates a skeleton for a vectorized loop that has its epilogue (residual) also vectorized. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::InnerLoopAndEpilogueVectorizer</CodeBlock>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/innerloopvectorizer">InnerLoopVectorizer</a></>}>
+<a href="/docs/api/classes/llvm/innerloopvectorizer">InnerLoopVectorizer</a> vectorizes loops which contain only one basic block to a specified vectorization factor (VF). <a href="/docs/api/classes/llvm/innerloopvectorizer/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Derived Classes
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/epiloguevectorizerepilogueloop">EpilogueVectorizerEpilogueLoop</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/epiloguevectorizermainloop">EpilogueVectorizerMainLoop</a></>}>
+A specialized derived class of inner loop vectorizer that performs vectorization of <em>main</em> loops in the process of vectorizing loops and their epilogues. <a href="/docs/api/classes/llvm/epiloguevectorizermainloop/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a0a9465c209525e66b0e00ff32fe4495d">InnerLoopAndEpilogueVectorizer</a> (Loop &#42;OrigLoop, PredicatedScalarEvolution &amp;PSE, LoopInfo &#42;LI, DominatorTree &#42;DT, const TargetLibraryInfo &#42;TLI, const TargetTransformInfo &#42;TTI, AssumptionCache &#42;AC, OptimizationRemarkEmitter &#42;ORE, EpilogueLoopVectorizationInfo &amp;EPI, LoopVectorizationLegality &#42;LVL, llvm::LoopVectorizationCostModel &#42;CM, BlockFrequencyInfo &#42;BFI, ProfileSummaryInfo &#42;PSI, GeneratedRTChecks &amp;Checks, VPlan &amp;Plan)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;</>}
+  name={<><a href="#a89ba81e424489963bac21757a4687fe7">createEpilogueVectorizedLoopSkeleton</a> (const SCEV2ValueTy &amp;ExpandedSCEVs)=0</>}>
+The interface for creating a vectorized skeleton using one of two different strategies, each corresponding to one execution of the vplan as described above. <a href="#a89ba81e424489963bac21757a4687fe7">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;</>}
+  name={<><a href="#a513e6b49c17c28104aab6dc635ce86b3">createVectorizedLoopSkeleton</a> (const SCEV2ValueTy &amp;ExpandedSCEVs) final</>}>
+Create a new empty loop that will contain vectorized instructions later on, while the old loop will be used as the scalar remainder. <a href="#a513e6b49c17c28104aab6dc635ce86b3">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/structs/llvm/epilogueloopvectorizationinfo">EpilogueLoopVectorizationInfo</a> &amp;</>}
+  name={<><a href="#ae920fcb4fb4b5099acbbf972af04447e">EPI</a></>}>
+Holds and updates state information required to vectorize the main loop and its epilogue in two separate passes. <a href="#ae920fcb4fb4b5099acbbf972af04447e">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+An extension of the inner loop vectorizer that creates a skeleton for a vectorized loop that has its epilogue (residual) also vectorized.
+
+The idea is to run the vplan on a given loop twice, firstly to setup the skeleton and vectorize the main loop, and secondly to complete the skeleton from the first step and vectorize the epilogue. This is achieved by deriving two concrete strategy classes from this base class and invoking them in succession from the loop vectorizer planner.
+
+Definition at line 719 of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/loopvectorize-cpp">LoopVectorize.cpp</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### InnerLoopAndEpilogueVectorizer() {#a0a9465c209525e66b0e00ff32fe4495d}
+
+<MemberDefinition
+  prototype={<>llvm::InnerLoopAndEpilogueVectorizer::InnerLoopAndEpilogueVectorizer (<a href="/docs/api/classes/llvm/loop">Loop</a> &#42; OrigLoop, <a href="/docs/api/classes/llvm/predicatedscalarevolution">PredicatedScalarEvolution</a> &amp; PSE, <a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a> &#42; LI, <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &#42; DT, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetlibraryinfo">TargetLibraryInfo</a> &#42; TLI, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targettransforminfo">TargetTransformInfo</a> &#42; TTI, <a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &#42; AC, <a href="/docs/api/classes/llvm/optimizationremarkemitter">OptimizationRemarkEmitter</a> &#42; ORE, <a href="/docs/api/structs/llvm/epilogueloopvectorizationinfo">EpilogueLoopVectorizationInfo</a> &amp; EPI, <a href="/docs/api/classes/llvm/loopvectorizationlegality">LoopVectorizationLegality</a> &#42; LVL, <a href="/docs/api/classes/llvm/loopvectorizationcostmodel">llvm::LoopVectorizationCostModel</a> &#42; CM, <a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> &#42; BFI, <a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42; PSI, GeneratedRTChecks &amp; Checks, <a href="/docs/api/classes/llvm/vplan">VPlan</a> &amp; Plan)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/loopvectorize-cpp/#l00721">721</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/loopvectorize-cpp">LoopVectorize.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### createEpilogueVectorizedLoopSkeleton() {#a89ba81e424489963bac21757a4687fe7}
+
+<MemberDefinition
+  prototype={<>virtual BasicBlock &#42; llvm::InnerLoopAndEpilogueVectorizer::createEpilogueVectorizedLoopSkeleton (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> SCEV2ValueTy &amp; ExpandedSCEVs)</>}>
+The interface for creating a vectorized skeleton using one of two different strategies, each corresponding to one execution of the vplan as described above.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/loopvectorize-cpp/#l00745">745</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/loopvectorize-cpp">LoopVectorize.cpp</a>.
+</MemberDefinition>
+
+### createVectorizedLoopSkeleton() {#a513e6b49c17c28104aab6dc635ce86b3}
+
+<MemberDefinition
+  prototype={<>BasicBlock &#42; llvm::InnerLoopAndEpilogueVectorizer::createVectorizedLoopSkeleton (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> SCEV2ValueTy &amp; ExpandedSCEVs)</>}
+  labels = {["inline", "virtual"]}>
+Create a new empty loop that will contain vectorized instructions later on, while the old loop will be used as the scalar remainder.
+
+Control flow is generated around the vectorized (and scalar epilogue) loops consisting of various checks and bypasses. Return the pre-header block of the new loop. In the case of epilogue vectorization, this function is overriden to handle the more complex control flow around the loops. <code>ExpandedSCEVs</code> is used to look up <a href="/docs/api/classes/llvm/scev">SCEV</a> expansions for expressions needed during skeleton creation.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/loopvectorize-cpp/#l00737">737</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/loopvectorize-cpp">LoopVectorize.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### EPI {#ae920fcb4fb4b5099acbbf972af04447e}
+
+<MemberDefinition
+  prototype={<>EpilogueLoopVectorizationInfo&amp; llvm::InnerLoopAndEpilogueVectorizer::EPI</>}>
+Holds and updates state information required to vectorize the main loop and its epilogue in two separate passes.
+
+This setup helps us avoid regenerating and recomputing runtime safety checks. It also helps us to shorten the iteration-count-check path length for the cases where the iteration count of the loop is so small that the main vector loop is completely skipped.
+
+Definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/loopvectorize-cpp/#l00753">753</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/loopvectorize-cpp">LoopVectorize.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/loopvectorize-cpp">LoopVectorize.cpp</a></li>
+</ul>
+
+</DoxygenPage>

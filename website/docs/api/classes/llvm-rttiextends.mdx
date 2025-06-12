@@ -1,0 +1,218 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/rttiextends
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `RTTIExtends` Class Template Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Inheritance utility for extensible RTTI. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>template &lt;typename ThisT, typename ParentT, typename... ParentTs&gt;
+class llvm::RTTIExtends&lt;ThisT, ParentT, ParentTs&gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/ExtensibleRTTI.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/extensiblertti-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base classes
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/parentt">ParentT</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<>ParentTs...</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename ThisT, typename ParentT, typename... ParentTs&gt;</>}
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> void &#42;</>}
+  name={<><a href="#a7ce2323e6f112c2a7a376c62fe44deb3">dynamicClassID</a> () const override</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename QueryT&gt;</>}
+  type="bool"
+  name={<><a href="#a2e45c252a6446b0332791483e6adab1f">isA</a> () const</>}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> whether this instance is a subclass of QueryT. <a href="#a2e45c252a6446b0332791483e6adab1f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename ThisT, typename ParentT, typename... ParentTs&gt;</>}
+  type="bool"
+  name={<><a href="#a1230df8930e738492629a86cd56242aa">isA</a> (const void &#42;const ClassID) const override</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;typename ThisT, typename ParentT, typename... ParentTs&gt;</>}
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> void &#42;</>}
+  name={<><a href="#a6710d5591d45a3fe56384f0709590775">classID</a> ()</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;typename T&gt;</>}
+  type="bool"
+  name={<><a href="#a8fbf02d404b399aca2b64f4b533a3feb">classof</a> (const T &#42;R)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Inheritance utility for extensible RTTI.
+
+Multiple inheritance is supported, but <a href="/docs/api/classes/llvm/rttiextends">RTTIExtends</a> only inherits constructors from the first base class. All subsequent bases will be default constructed. Virtual and non-public inheritance are not supported.
+
+RTTIExtents uses CRTP so the first template argument to <a href="/docs/api/classes/llvm/rttiextends">RTTIExtends</a> is the newly introduced type, and the <em>second and later</em> arguments are the parent classes.
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="keyword">class </Highlight><Highlight kind="normal">MyType : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> RTTIExtends&lt;MyType, RTTIRoot&gt; &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/aarch64packey/#abf4394f452bde3f544999858d71e4b46">ID</a>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">MyDerivedType : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> RTTIExtends&lt;MyDerivedType, MyType&gt; &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/aarch64packey/#abf4394f452bde3f544999858d71e4b46">ID</a>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">MyOtherType : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> RTTIExtends&lt;MyOtherType, MyType&gt; &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/aarch64packey/#abf4394f452bde3f544999858d71e4b46">ID</a>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">MyMultipleInheritanceType</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> RTTIExtends&lt;MyMultipleInheritanceType,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">                       MyDerivedType, MyOtherType&gt; &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/aarch64packey/#abf4394f452bde3f544999858d71e4b46">ID</a>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+
+</ProgramListing>
+
+Definition at line 126 of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/extensiblertti-h">ExtensibleRTTI.h</a>.
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### dynamicClassID() {#a7ce2323e6f112c2a7a376c62fe44deb3}
+
+<MemberDefinition
+  template={<>template &lt;typename ThisT, typename ParentT, typename... ParentTs&gt;</>}
+  prototype={<>const void &#42; llvm::RTTIExtends&lt; ThisT, ParentT, ParentTs &gt;::dynamicClassID () const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/extensiblertti-h/#l00133">133</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/extensiblertti-h">ExtensibleRTTI.h</a>.
+</MemberDefinition>
+
+### isA() {#a2e45c252a6446b0332791483e6adab1f}
+
+<MemberDefinition
+  template={<>template &lt;typename QueryT&gt;</>}
+  prototype={<>bool llvm::RTTIExtends&lt; ThisT, ParentT, ParentTs &gt;::isA () const</>}
+  labels = {["inline"]}>
+<a href="/docs/api/namespaces/llvm/check">Check</a> whether this instance is a subclass of QueryT.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/extensiblertti-h/#l00136">136</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/extensiblertti-h">ExtensibleRTTI.h</a>.
+</MemberDefinition>
+
+### isA() {#a1230df8930e738492629a86cd56242aa}
+
+<MemberDefinition
+  template={<>template &lt;typename ThisT, typename ParentT, typename... ParentTs&gt;</>}
+  prototype={<>bool llvm::RTTIExtends&lt; ThisT, ParentT, ParentTs &gt;::isA (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> void &#42;<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> ClassID) const</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/extensiblertti-h/#l00138">138</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/extensiblertti-h">ExtensibleRTTI.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Functions
+
+### classID() {#a6710d5591d45a3fe56384f0709590775}
+
+<MemberDefinition
+  template={<>template &lt;typename ThisT, typename ParentT, typename... ParentTs&gt;</>}
+  prototype={<>static const void &#42; llvm::RTTIExtends&lt; ThisT, ParentT, ParentTs &gt;::classID ()</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/extensiblertti-h/#l00131">131</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/extensiblertti-h">ExtensibleRTTI.h</a>.
+</MemberDefinition>
+
+### classof() {#a8fbf02d404b399aca2b64f4b533a3feb}
+
+<MemberDefinition
+  template={<>template &lt;typename T&gt;</>}
+  prototype={<>static bool llvm::RTTIExtends&lt; ThisT, ParentT, ParentTs &gt;::classof (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> T &#42; R)</>}
+  labels = {["inline", "static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/extensiblertti-h/#l00143">143</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/extensiblertti-h">ExtensibleRTTI.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/support/extensiblertti-h">ExtensibleRTTI.h</a></li>
+</ul>
+
+</DoxygenPage>

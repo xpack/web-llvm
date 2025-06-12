@@ -1,0 +1,835 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/bitstream/bitstreamwriter-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `BitstreamWriter.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/ArrayRef.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/SmallVector.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/StringRef.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Bitstream/BitCodes.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/bitstream/bitcodes-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Casting.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/casting-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Endian.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/endian-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/MathExtras.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/mathextras-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/raw_ostream.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="algorithm"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="optional"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="vector"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/bitstreamwriter">BitstreamWriter</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/bitstreamwriter/block">Block</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/bitstreamwriter/blockinfo">BlockInfo</a></>}>
+BlockInfo - This contains information emitted to BLOCKINFO&#95;BLOCK blocks. <a href="/docs/api/structs/llvm/bitstreamwriter/blockinfo/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- BitstreamWriter.h - Low-level bitstream writer interface -&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This header defines the BitstreamWriter class.  This class can be used to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// write an arbitrary bitstream, regardless of its contents.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;BITSTREAM&#95;BITSTREAMWRITER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;BITSTREAM&#95;BITSTREAMWRITER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h">llvm/ADT/ArrayRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h">llvm/ADT/StringRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/bitstream/bitcodes-h">llvm/Bitstream/BitCodes.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">llvm/Support/Casting.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/endian-h">llvm/Support/Endian.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/mathextras-h">llvm/Support/MathExtras.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h">llvm/Support/raw&#95;ostream.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;algorithm&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;optional&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;vector&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31" lineLink="/docs/api/classes/llvm/bitstreamwriter"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/bitstreamwriter/#a5f6ee363763723bf98da451e95bb1d1c">BitstreamWriter</a> &#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">  /// Owned buffer, used to init Buffer if the provided stream doesn&#39;t happen to</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="comment">  /// be a buffer itself.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;char, 0&gt;</a> OwnBuffer;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="comment">  /// Internal buffer for unflushed bytes (unless there is no stream to flush</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="comment">  /// to, case in which these are &quot;the bytes&quot;). The writer backpatches, so it is</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">  /// efficient to buffer.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;char&gt;</a> &amp;Buffer;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">  /// FS - The file stream that Buffer flushes to. If FS is a raw&#95;fd&#95;stream, the</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">  /// writer will incrementally flush at subblock boundaries. Otherwise flushing</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">  /// will happen at the end of BitstreamWriter&#39;s lifetime.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &#42;</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> FS;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="comment">  /// FlushThreshold - this is the threshold (unit B) to flush to FS, if FS is a</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">  /// raw&#95;fd&#95;stream.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> uint64&#95;t <a href="/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/bitcodewriter-cpp/#a7a4f14026a779acb2eda1e8107a62f24">FlushThreshold</a>;</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="comment">  /// CurBit - Always between 0 and 31 inclusive, specifies the next bit to use.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> CurBit = 0;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">  /// CurValue - The current value. Only bits &lt; CurBit are valid.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">  uint32&#95;t CurValue = 0;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="comment">  /// CurCodeSize - This is the declared size of code values used for the</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="comment">  /// current block, in bits.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> CurCodeSize = 2;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">  /// BlockInfoCurBID - When emitting a BLOCKINFO&#95;BLOCK, this is the currently</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="comment">  /// selected BLOCK ID.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> BlockInfoCurBID = 0;</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="comment">  /// CurAbbrevs - Abbrevs installed at in this block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  std::vector&lt;std::shared&#95;ptr&lt;BitCodeAbbrev&gt;&gt; CurAbbrevs;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Support for retrieving a section of the output, for purposes such as</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// checksumming.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  std::optional&lt;size&#95;t&gt; BlockFlushingStartPos;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2">Block</a> &#123;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> PrevCodeSize;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> StartSizeWord;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    std::vector&lt;std::shared&#95;ptr&lt;BitCodeAbbrev&gt;&gt; PrevAbbrevs;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2">Block</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> PCS, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> SSW) : PrevCodeSize(PCS), StartSizeWord(SSW) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">  /// BlockScope - This tracks the current blocks that we have entered.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">  std::vector&lt;Block&gt; BlockScope;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="comment">  /// BlockInfo - This contains information emitted to BLOCKINFO&#95;BLOCK blocks.</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// These describe abbreviations that all blocks of the specified ID inherit.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">BlockInfo &#123;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> BlockID;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">    std::vector&lt;std::shared&#95;ptr&lt;BitCodeAbbrev&gt;&gt; Abbrevs;</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  std::vector&lt;BlockInfo&gt; BlockInfoRecords;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> WriteWord(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a>) &#123;</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/value">Value</a> =</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">        <a href="/docs/api/namespaces/llvm/support/endian/#a108ca68c609b3e8c00918a68d26905fa">support::endian::byte&#95;swap&lt;uint32&#95;t, llvm::endianness::little&gt;</a>(<a href="/docs/api/classes/llvm/value">Value</a>);</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">    Buffer.<a href="/docs/api/classes/llvm/smallvectorimpl/#a7efd1f0c1206d95e4fe01a9b49a57b82">append</a>(</Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(&amp;<a href="/docs/api/classes/llvm/value">Value</a>),</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">                  </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(&amp;<a href="/docs/api/classes/llvm/value">Value</a> + 1));</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  uint64&#95;t GetNumOfFlushedBytes()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> fdStream() ? fdStream()-&gt;tell() : 0;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> GetBufferOffset()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Buffer.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#a1c479a8c434377c2b8cb056bdfdfc201">size</a>() + GetNumOfFlushedBytes();</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> GetWordIndex()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a> = GetBufferOffset();</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((<a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a> &amp; 3) == 0 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Not 32-bit aligned&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a> / 4;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> flushAndClear() &#123;</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(FS);</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!Buffer.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#ad9a3c7bc26b130377bbafc170b5f88a2">empty</a>());</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!BlockFlushingStartPos &amp;&amp;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;a call to markAndBlockFlushing should have been paired with a &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;call to getMarkedBufferAndResumeFlushing&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">    FS-&gt;write(Buffer.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#a7b68be12c974b6b70bc86062f221a344">data</a>(), Buffer.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#a1c479a8c434377c2b8cb056bdfdfc201">size</a>());</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">    Buffer.<a href="/docs/api/classes/llvm/smallvectorimpl/#aac0ea55010b7b1a301e65a0baea057aa">clear</a>();</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">  /// If the related file stream is a raw&#95;fd&#95;stream, flush the buffer if its</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">  /// size is above a threshold. If \\p OnClosing is true, flushing happens</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">  /// regardless of thresholds.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> FlushToFile(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> OnClosing = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!FS || Buffer.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#ad9a3c7bc26b130377bbafc170b5f88a2">empty</a>())</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (OnClosing)</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> flushAndClear();</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (BlockFlushingStartPos)</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (fdStream() &amp;&amp; Buffer.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#a1c479a8c434377c2b8cb056bdfdfc201">size</a>() &gt; <a href="/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/bitcodewriter-cpp/#a7a4f14026a779acb2eda1e8107a62f24">FlushThreshold</a>)</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">      flushAndClear();</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/raw-fd-stream">raw&#95;fd&#95;stream</a> &#42;fdStream() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a5f6182886dc2f96c204299e92c1565d5">dyn&#95;cast&#95;or&#95;null&lt;raw&#95;fd&#95;stream&gt;</a>(FS); &#125;</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/raw-fd-stream">raw&#95;fd&#95;stream</a> &#42;fdStream()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a5f6182886dc2f96c204299e92c1565d5">dyn&#95;cast&#95;or&#95;null&lt;raw&#95;fd&#95;stream&gt;</a>(FS);</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;char&gt;</a> &amp;getInternalBufferFromStream(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OutStream) &#123;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;SV = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;raw&#95;svector&#95;ostream&gt;</a>(&amp;OutStream))</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> SV-&gt;buffer();</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> OwnBuffer;</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="comment">  /// Create a BitstreamWriter over a raw&#95;ostream \\p OutStream.</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="comment">  /// If \\p OutStream is a raw&#95;svector&#95;ostream, the BitstreamWriter will write</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="comment">  /// directly to the latter&#39;s buffer. In all other cases, the BitstreamWriter</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="comment">  /// will use an internal buffer and flush at the end of its lifetime.</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="comment">  /// In addition, if \\p is a raw&#95;fd&#95;stream supporting seek, tell, and read</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="comment">  /// (besides write), the BitstreamWriter will also flush incrementally, when a</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="comment">  /// subblock is finished, and if the FlushThreshold is passed.</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="comment">  /// NOTE: \\p FlushThreshold&#39;s unit is MB.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a5f6ee363763723bf98da451e95bb1d1c"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/bitstreamwriter/#a5f6ee363763723bf98da451e95bb1d1c">BitstreamWriter</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OutStream, uint32&#95;t <a href="/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/bitcodewriter-cpp/#a7a4f14026a779acb2eda1e8107a62f24">FlushThreshold</a> = 512)</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">      : Buffer(getInternalBufferFromStream(OutStream)),</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">        FS(!<a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa</a>&lt;<a href="/docs/api/classes/llvm/raw-svector-ostream">raw&#95;svector&#95;ostream</a>&gt;(OutStream) ? &amp;OutStream : nullptr),</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/bitcodewriter-cpp/#a7a4f14026a779acb2eda1e8107a62f24">FlushThreshold</a>(uint64&#95;t(<a href="/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/bitcodewriter-cpp/#a7a4f14026a779acb2eda1e8107a62f24">FlushThreshold</a>) &lt;&lt; 20) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="comment">  /// Convenience constructor for users that start with a vector - avoids</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="comment">  /// needing to wrap it in a raw&#95;svector&#95;ostream.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a3cbc68c0f33ec6c72b69a595c36d15c1"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/bitstreamwriter/#a3cbc68c0f33ec6c72b69a595c36d15c1">BitstreamWriter</a>(<a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;char&gt;</a> &amp;Buff)</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">      : Buffer(Buff), FS(nullptr), <a href="/docs/api/files/lib/lib/bitcode/lib/bitcode/writer/bitcodewriter-cpp/#a7a4f14026a779acb2eda1e8107a62f24">FlushThreshold</a>(0) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166" lineLink="/docs/api/classes/llvm/bitstreamwriter/#abf7d55f3e39ce028c1594f34967d06b3"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/bitstreamwriter/#abf7d55f3e39ce028c1594f34967d06b3">~BitstreamWriter</a>() &#123;</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a87d4d8efe6bca7b041b0837d30add275">FlushToWord</a>();</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(BlockScope.empty() &amp;&amp; CurAbbrevs.empty() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Block imbalance&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">    FlushToFile(</Highlight><Highlight kind="comment">/&#42;OnClosing=&#42;/</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="comment">  /// For scenarios where the user wants to access a section of the stream to</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="comment">  /// (for example) compute some checksum, disable flushing and remember the</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="comment">  /// position in the internal buffer where that happened. Must be paired with a</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="comment">  /// call to getMarkedBufferAndResumeFlushing.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a063bf32f685de649ee8239a8e54da868"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a063bf32f685de649ee8239a8e54da868">markAndBlockFlushing</a>() &#123;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!BlockFlushingStartPos);</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">    BlockFlushingStartPos = Buffer.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#a1c479a8c434377c2b8cb056bdfdfc201">size</a>();</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="comment">  /// resumes flushing, but does not flush, and returns the section in the</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="comment">  /// internal buffer starting from the position marked with</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="comment">  /// markAndBlockFlushing. The return should be processed before any additional</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="comment">  /// calls to this object, because those may cause a flush and invalidate the</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="comment">  /// return.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a1817d94003400d1a95d6a35a5efe574f"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/classes/llvm/bitstreamwriter/#a1817d94003400d1a95d6a35a5efe574f">getMarkedBufferAndResumeFlushing</a>() &#123;</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(BlockFlushingStartPos);</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> Start = &#42;BlockFlushingStartPos;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">    BlockFlushingStartPos.reset();</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#123;&amp;Buffer&#91;Start&#93;, Buffer.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#a1c479a8c434377c2b8cb056bdfdfc201">size</a>() - Start&#125;;</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="comment">  /// Retrieve the current position in the stream, in bits.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194" lineLink="/docs/api/classes/llvm/bitstreamwriter/#af6a2b975dd3ba4ab436c4de2199da5ee"><Highlight kind="normal">  uint64&#95;t <a href="/docs/api/classes/llvm/bitstreamwriter/#af6a2b975dd3ba4ab436c4de2199da5ee">GetCurrentBitNo</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> GetBufferOffset() &#42; 8 + CurBit; &#125;</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="comment">  /// Retrieve the number of bits currently used to encode an abbrev ID.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197" lineLink="/docs/api/classes/llvm/bitstreamwriter/#af3254f4c3d4874089f1113157cb4494e"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#af3254f4c3d4874089f1113157cb4494e">GetAbbrevIDWidth</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CurCodeSize; &#125;</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Basic Primitives for emitting bits to the stream.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="comment">  /// Backpatch a byte in the output at the given bit offset with the specified</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="comment">  /// value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a61b26222d7ecfe417406eec38edba698"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a61b26222d7ecfe417406eec38edba698">BackpatchByte</a>(uint64&#95;t BitNo, uint8&#95;t NewByte) &#123;</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/support">llvm::support</a>;</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">    uint64&#95;t ByteNo = BitNo / 8;</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">    uint64&#95;t StartBit = BitNo &amp; 7;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">    uint64&#95;t NumOfFlushedBytes = GetNumOfFlushedBytes();</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ByteNo &gt;= NumOfFlushedBytes) &#123;</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((!<a href="/docs/api/namespaces/llvm/support/endian/#a6d9995bf8da2a0fed6fa31bce97aeebd">endian::readAtBitAlignment</a>&lt;uint8&#95;t, <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dbaaae6635e044ac56046b2893a529b5114">llvm::endianness::little</a>,</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">                                          <a href="/docs/api/namespaces/llvm/support/#a92fe024386465eeb8aeb7c78371549d7af6b11e8bcea1b0b70051b197f2cb3f84">unaligned</a>&gt;(</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">                 &amp;Buffer&#91;ByteNo - NumOfFlushedBytes&#93;, StartBit)) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">             </Highlight><Highlight kind="stringliteral">&quot;Expected to be patching over 0-value placeholders&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/support/endian/#a60b7cc9c00de00b23725cfa29e75ca3f">endian::writeAtBitAlignment&lt;uint8&#95;t, llvm::endianness::little, unaligned&gt;</a>(</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">          &amp;Buffer&#91;ByteNo - NumOfFlushedBytes&#93;, NewByte, StartBit);</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// If we don&#39;t have a raw&#95;fd&#95;stream, GetNumOfFlushedBytes() should have</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// returned 0, and we shouldn&#39;t be here.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(fdStream() != </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// If the byte offset to backpatch is flushed, use seek to backfill data.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// First, save the file position to restore later.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">    uint64&#95;t CurPos = fdStream()-&gt;tell();</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Copy data to update into Bytes from the file FS and the buffer Out.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> Bytes&#91;3&#93;; </Highlight><Highlight kind="comment">// Use one more byte to silence a warning from Visual C++.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> BytesNum = StartBit ? 2 : 1;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> BytesFromDisk = std::min(</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uint64&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(BytesNum), NumOfFlushedBytes - ByteNo);</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> BytesFromBuffer = BytesNum - BytesFromDisk;</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// When unaligned, copy existing data into Bytes from the file FS and the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// buffer Buffer so that it can be updated before writing. For debug builds</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// read bytes unconditionally in order to check that the existing value is 0</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// as expected.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef NDEBUG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (StartBit)</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">      fdStream()-&gt;seek(ByteNo);</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">      ssize&#95;t BytesRead = fdStream()-&gt;read(Bytes, BytesFromDisk);</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">      (void)BytesRead; </Highlight><Highlight kind="comment">// silence warning</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(BytesRead &gt;= 0 &amp;&amp; </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(BytesRead) == BytesFromDisk);</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> i = 0; i &lt; BytesFromBuffer; ++i)</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">        Bytes&#91;BytesFromDisk + i&#93; = Buffer&#91;i&#93;;</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((!<a href="/docs/api/namespaces/llvm/support/endian/#a6d9995bf8da2a0fed6fa31bce97aeebd">endian::readAtBitAlignment</a>&lt;uint8&#95;t, <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dbaaae6635e044ac56046b2893a529b5114">llvm::endianness::little</a>,</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">                                          <a href="/docs/api/namespaces/llvm/support/#a92fe024386465eeb8aeb7c78371549d7af6b11e8bcea1b0b70051b197f2cb3f84">unaligned</a>&gt;(Bytes, StartBit)) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal">             </Highlight><Highlight kind="stringliteral">&quot;Expected to be patching over 0-value placeholders&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Update Bytes in terms of bit offset and value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/support/endian/#a60b7cc9c00de00b23725cfa29e75ca3f">endian::writeAtBitAlignment&lt;uint8&#95;t, llvm::endianness::little, unaligned&gt;</a>(</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">        Bytes, NewByte, StartBit);</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Copy updated data back to the file FS and the buffer Out.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">    fdStream()-&gt;seek(ByteNo);</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">    fdStream()-&gt;write(Bytes, BytesFromDisk);</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> i = 0; i &lt; BytesFromBuffer; ++i)</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">      Buffer&#91;i&#93; = Bytes&#91;BytesFromDisk + i&#93;;</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Restore the file position.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">    fdStream()-&gt;seek(CurPos);</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267" lineLink="/docs/api/classes/llvm/bitstreamwriter/#ae431728f61d5b52efa59fc13f834085f"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#ae431728f61d5b52efa59fc13f834085f">BackpatchHalfWord</a>(uint64&#95;t BitNo, uint16&#95;t Val) &#123;</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a61b26222d7ecfe417406eec38edba698">BackpatchByte</a>(BitNo, (uint8&#95;t)Val);</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a61b26222d7ecfe417406eec38edba698">BackpatchByte</a>(BitNo + 8, (uint8&#95;t)(Val &gt;&gt; 8));</Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a9e13da25204783390ddfc17dcf55a1c2"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a9e13da25204783390ddfc17dcf55a1c2">BackpatchWord</a>(uint64&#95;t BitNo, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Val) &#123;</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#ae431728f61d5b52efa59fc13f834085f">BackpatchHalfWord</a>(BitNo, (uint16&#95;t)Val);</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#ae431728f61d5b52efa59fc13f834085f">BackpatchHalfWord</a>(BitNo + 16, (uint16&#95;t)(Val &gt;&gt; 16));</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277" lineLink="/docs/api/classes/llvm/bitstreamwriter/#aa4ad7b052bd7dcf08ff26ad92351f1b5"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#aa4ad7b052bd7dcf08ff26ad92351f1b5">BackpatchWord64</a>(uint64&#95;t BitNo, uint64&#95;t Val) &#123;</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a9e13da25204783390ddfc17dcf55a1c2">BackpatchWord</a>(BitNo, (uint32&#95;t)Val);</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a9e13da25204783390ddfc17dcf55a1c2">BackpatchWord</a>(BitNo + 32, (uint32&#95;t)(Val &gt;&gt; 32));</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a40de93ba2d72dc6bccd7a1fdde996718"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a40de93ba2d72dc6bccd7a1fdde996718">Emit</a>(uint32&#95;t Val, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumBits) &#123;</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(NumBits &amp;&amp; NumBits &lt;= 32 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Invalid value size!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((Val &amp; ~(~0U &gt;&gt; (32-NumBits))) == 0 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;High bits set!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">    CurValue |= Val &lt;&lt; CurBit;</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CurBit + NumBits &lt; 32) &#123;</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">      CurBit += NumBits;</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Add the current word.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">    WriteWord(CurValue);</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CurBit)</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">      CurValue = Val &gt;&gt; (32-CurBit);</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal">      CurValue = 0;</Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal">    CurBit = (CurBit+NumBits) &amp; 31;</Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a87d4d8efe6bca7b041b0837d30add275"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a87d4d8efe6bca7b041b0837d30add275">FlushToWord</a>() &#123;</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CurBit) &#123;</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal">      WriteWord(CurValue);</Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal">      CurBit = 0;</Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal">      CurValue = 0;</Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a9d3d121556c01aab6e6ebfc830e17dbb"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a9d3d121556c01aab6e6ebfc830e17dbb">EmitVBR</a>(uint32&#95;t Val, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumBits) &#123;</Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(NumBits &lt;= 32 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Too many bits to emit!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal">    uint32&#95;t Threshold = 1U &lt;&lt; (NumBits-1);</Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Emit the bits with VBR encoding, NumBits-1 bits at a time.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (Val &gt;= Threshold) &#123;</Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/bitstreamwriter/#a40de93ba2d72dc6bccd7a1fdde996718">Emit</a>((Val &amp; ((1U &lt;&lt; (NumBits - 1)) - 1)) | (1U &lt;&lt; (NumBits - 1)),</Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal">           NumBits);</Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal">      Val &gt;&gt;= NumBits-1;</Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a40de93ba2d72dc6bccd7a1fdde996718">Emit</a>(Val, NumBits);</Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a765ce2a472e2eedad6b7ed02b6674a00"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a765ce2a472e2eedad6b7ed02b6674a00">EmitVBR64</a>(uint64&#95;t Val, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumBits) &#123;</Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(NumBits &lt;= 32 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Too many bits to emit!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((uint32&#95;t)Val == Val)</Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a9d3d121556c01aab6e6ebfc830e17dbb">EmitVBR</a>((uint32&#95;t)Val, NumBits);</Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal">    uint32&#95;t Threshold = 1U &lt;&lt; (NumBits-1);</Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Emit the bits with VBR encoding, NumBits-1 bits at a time.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (Val &gt;= Threshold) &#123;</Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/bitstreamwriter/#a40de93ba2d72dc6bccd7a1fdde996718">Emit</a>(((uint32&#95;t)Val &amp; ((1U &lt;&lt; (NumBits - 1)) - 1)) |</Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal">               (1U &lt;&lt; (NumBits - 1)),</Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">           NumBits);</Highlight></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">      Val &gt;&gt;= NumBits-1;</Highlight></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a40de93ba2d72dc6bccd7a1fdde996718">Emit</a>((uint32&#95;t)Val, NumBits);</Highlight></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="comment">  /// EmitCode - Emit the specified code.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a47cd6c37f5dc6cee1e2337f909452c85"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a47cd6c37f5dc6cee1e2337f909452c85">EmitCode</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Val) &#123;</Highlight></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a40de93ba2d72dc6bccd7a1fdde996718">Emit</a>(Val, CurCodeSize);</Highlight></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Block Manipulation</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="comment">  /// getBlockInfo - If there is block info for the specified ID, return it,</Highlight></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="comment">  /// otherwise return null.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a75bf3c7fbbde90c257abf2fb5a89badf"><Highlight kind="normal">  BlockInfo &#42;<a href="/docs/api/classes/llvm/bitstreamwriter/#a75bf3c7fbbde90c257abf2fb5a89badf">getBlockInfo</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> BlockID) &#123;</Highlight></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Common case, the most recent entry matches BlockID.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!BlockInfoRecords.empty() &amp;&amp; BlockInfoRecords.back().BlockID == BlockID)</Highlight></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &amp;BlockInfoRecords.back();</Highlight></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (BlockInfo &amp;BI : BlockInfoRecords)</Highlight></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (BI.BlockID == BlockID)</Highlight></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &amp;BI;</Highlight></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363" lineLink="/docs/api/classes/llvm/bitstreamwriter/#ae6a40b4a5ea89bb8b5076c26e0d0b638"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#ae6a40b4a5ea89bb8b5076c26e0d0b638">EnterSubblock</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> BlockID, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> CodeLen) &#123;</Highlight></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Block header:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">    </Highlight><Highlight kind="comment">//    &#91;ENTER&#95;SUBBLOCK, blockid, newcodelen, &lt;align4bytes&gt;, blocklen&#93;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a47cd6c37f5dc6cee1e2337f909452c85">EmitCode</a>(<a href="/docs/api/namespaces/llvm/bitc/#ab7a76f80792b96a4291e2d1dd1403887a8ade579114e64f6e93e5c2335d9790b3">bitc::ENTER&#95;SUBBLOCK</a>);</Highlight></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a9d3d121556c01aab6e6ebfc830e17dbb">EmitVBR</a>(BlockID, <a href="/docs/api/namespaces/llvm/bitc/#a9bbccfa3e710e59b93cc5a5bf8908cf9a4ae63f558586ca60ba786b672433ed5b">bitc::BlockIDWidth</a>);</Highlight></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a9d3d121556c01aab6e6ebfc830e17dbb">EmitVBR</a>(CodeLen, <a href="/docs/api/namespaces/llvm/bitc/#a9bbccfa3e710e59b93cc5a5bf8908cf9a81e88c5ec4ef96d2e57203df2ca9c7f8">bitc::CodeLenWidth</a>);</Highlight></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a87d4d8efe6bca7b041b0837d30add275">FlushToWord</a>();</Highlight></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> BlockSizeWordIndex = GetWordIndex();</Highlight></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> OldCodeSize = CurCodeSize;</Highlight></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Emit a placeholder, which will be replaced when the block is popped.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a40de93ba2d72dc6bccd7a1fdde996718">Emit</a>(0, <a href="/docs/api/namespaces/llvm/bitc/#a9bbccfa3e710e59b93cc5a5bf8908cf9aa1212eb73e20141e515bcf2f6cba192b">bitc::BlockSizeWidth</a>);</Highlight></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="normal">    CurCodeSize = CodeLen;</Highlight></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Push the outer block&#39;s abbrev set onto the stack, start out with an</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// empty abbrev set.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal">    BlockScope.emplace&#95;back(OldCodeSize, BlockSizeWordIndex);</Highlight></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal">    BlockScope.back().PrevAbbrevs.swap(CurAbbrevs);</Highlight></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// If there is a blockinfo for this BlockID, add all the predefined abbrevs</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// to the abbrev list.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (BlockInfo &#42;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a> = <a href="/docs/api/classes/llvm/bitstreamwriter/#a75bf3c7fbbde90c257abf2fb5a89badf">getBlockInfo</a>(BlockID))</Highlight></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a39d3d23a084c4544ee5903203db10e8a">append&#95;range</a>(CurAbbrevs, <a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>-&gt;Abbrevs);</Highlight></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a5e8488041d80c56389002659004c6af7"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a5e8488041d80c56389002659004c6af7">ExitBlock</a>() &#123;</Highlight></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!BlockScope.empty() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Block scope imbalance!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2">Block</a> &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a> = BlockScope.back();</Highlight></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Block tail:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="normal">    </Highlight><Highlight kind="comment">//    &#91;END&#95;BLOCK, &lt;align4bytes&gt;&#93;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a47cd6c37f5dc6cee1e2337f909452c85">EmitCode</a>(<a href="/docs/api/namespaces/llvm/bitc/#ab7a76f80792b96a4291e2d1dd1403887aee620990aa08180f9ede6fd5c8440620">bitc::END&#95;BLOCK</a>);</Highlight></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a87d4d8efe6bca7b041b0837d30add275">FlushToWord</a>();</Highlight></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Compute the size of the block, in words, not counting the size field.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> SizeInWords = GetWordIndex() - <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.StartSizeWord - 1;</Highlight></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="normal">    uint64&#95;t BitNo = uint64&#95;t(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.StartSizeWord) &#42; 32;</Highlight></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Update the block size field in the header of this sub-block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a9e13da25204783390ddfc17dcf55a1c2">BackpatchWord</a>(BitNo, SizeInWords);</Highlight></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Restore the inner block&#39;s code size and abbrev table.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="normal">    CurCodeSize = <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.PrevCodeSize;</Highlight></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="normal">    CurAbbrevs = std::move(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>.PrevAbbrevs);</Highlight></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="normal">    BlockScope.pop&#95;back();</Highlight></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="normal">    FlushToFile();</Highlight></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Record Emission</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="comment">  /// EmitAbbreviatedLiteral - Emit a literal value according to its abbrev</Highlight></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="comment">  /// record.  This is a no-op, since the abbrev specifies the literal to use.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal">&lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> u</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">ty&gt;</Highlight></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> EmitAbbreviatedLiteral(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitcodeabbrevop">BitCodeAbbrevOp</a> &amp;<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, uintty V) &#123;</Highlight></CodeLine>
+<Link id="l00422" /><CodeLine lineNumber="422"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.isLiteral() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Not a literal&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00423" /><CodeLine lineNumber="423"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// If the abbrev specifies the literal value to use, don&#39;t emit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00424" /><CodeLine lineNumber="424"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// anything.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00425" /><CodeLine lineNumber="425"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(V == <a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.getLiteralValue() &amp;&amp;</Highlight></CodeLine>
+<Link id="l00426" /><CodeLine lineNumber="426"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;Invalid abbrev for record!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00427" /><CodeLine lineNumber="427"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00428" /><CodeLine lineNumber="428"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00429" /><CodeLine lineNumber="429"><Highlight kind="comment">  /// EmitAbbreviatedField - Emit a single scalar field value with the specified</Highlight></CodeLine>
+<Link id="l00430" /><CodeLine lineNumber="430"><Highlight kind="comment">  /// encoding.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00431" /><CodeLine lineNumber="431"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal">&lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> u</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">ty&gt;</Highlight></CodeLine>
+<Link id="l00432" /><CodeLine lineNumber="432"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> EmitAbbreviatedField(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitcodeabbrevop">BitCodeAbbrevOp</a> &amp;<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, uintty V) &#123;</Highlight></CodeLine>
+<Link id="l00433" /><CodeLine lineNumber="433"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.isLiteral() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Literals should use EmitAbbreviatedLiteral!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00434" /><CodeLine lineNumber="434"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00435" /><CodeLine lineNumber="435"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Encode the value as we are commanded.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00436" /><CodeLine lineNumber="436"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.getEncoding()) &#123;</Highlight></CodeLine>
+<Link id="l00437" /><CodeLine lineNumber="437"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">: <a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm&#95;unreachable</a>(</Highlight><Highlight kind="stringliteral">&quot;Unknown encoding!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00438" /><CodeLine lineNumber="438"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitcodeabbrevop/#a8694ae7ca83441b2764d71711b17e672abfdef4054ace82e3ddb8794bc5ca471c">BitCodeAbbrevOp::Fixed</a>:</Highlight></CodeLine>
+<Link id="l00439" /><CodeLine lineNumber="439"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.getEncodingData())</Highlight></CodeLine>
+<Link id="l00440" /><CodeLine lineNumber="440"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/bitstreamwriter/#a40de93ba2d72dc6bccd7a1fdde996718">Emit</a>((</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal">)V, (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal">)<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.getEncodingData());</Highlight></CodeLine>
+<Link id="l00441" /><CodeLine lineNumber="441"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00442" /><CodeLine lineNumber="442"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitcodeabbrevop/#a8694ae7ca83441b2764d71711b17e672ade2457e8051855ad2911d62202458e20">BitCodeAbbrevOp::VBR</a>:</Highlight></CodeLine>
+<Link id="l00443" /><CodeLine lineNumber="443"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.getEncodingData())</Highlight></CodeLine>
+<Link id="l00444" /><CodeLine lineNumber="444"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/bitstreamwriter/#a765ce2a472e2eedad6b7ed02b6674a00">EmitVBR64</a>(V, (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal">)<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.getEncodingData());</Highlight></CodeLine>
+<Link id="l00445" /><CodeLine lineNumber="445"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00446" /><CodeLine lineNumber="446"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitcodeabbrevop/#a8694ae7ca83441b2764d71711b17e672a5a7811cd25e6ed838a03c49776237b4a">BitCodeAbbrevOp::Char6</a>:</Highlight></CodeLine>
+<Link id="l00447" /><CodeLine lineNumber="447"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/bitstreamwriter/#a40de93ba2d72dc6bccd7a1fdde996718">Emit</a>(<a href="/docs/api/classes/llvm/bitcodeabbrevop/#a237f73b4bae0fb3a40d99a65a77c3f27">BitCodeAbbrevOp::EncodeChar6</a>((</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">)V), 6);</Highlight></CodeLine>
+<Link id="l00448" /><CodeLine lineNumber="448"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00449" /><CodeLine lineNumber="449"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00450" /><CodeLine lineNumber="450"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00451" /><CodeLine lineNumber="451"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00452" /><CodeLine lineNumber="452"><Highlight kind="comment">  /// EmitRecordWithAbbrevImpl - This is the core implementation of the record</Highlight></CodeLine>
+<Link id="l00453" /><CodeLine lineNumber="453"><Highlight kind="comment">  /// emission code.  If BlobData is non-null, then it specifies an array of</Highlight></CodeLine>
+<Link id="l00454" /><CodeLine lineNumber="454"><Highlight kind="comment">  /// data that should be emitted as part of the Blob or Array operand that is</Highlight></CodeLine>
+<Link id="l00455" /><CodeLine lineNumber="455"><Highlight kind="comment">  /// known to exist at the end of the record. If Code is specified, then</Highlight></CodeLine>
+<Link id="l00456" /><CodeLine lineNumber="456"><Highlight kind="comment">  /// it is the record code to emit before the Vals, which must not contain</Highlight></CodeLine>
+<Link id="l00457" /><CodeLine lineNumber="457"><Highlight kind="comment">  /// the code.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00458" /><CodeLine lineNumber="458"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> u</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">ty&gt;</Highlight></CodeLine>
+<Link id="l00459" /><CodeLine lineNumber="459"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> EmitRecordWithAbbrevImpl(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Abbrev, <a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef&lt;uintty&gt;</a> Vals,</Highlight></CodeLine>
+<Link id="l00460" /><CodeLine lineNumber="460"><Highlight kind="normal">                                StringRef Blob, std::optional&lt;unsigned&gt; Code) &#123;</Highlight></CodeLine>
+<Link id="l00461" /><CodeLine lineNumber="461"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;BlobData = Blob.<a href="/docs/api/classes/llvm/stringref/#a7b0fa1a82461032cdf16b7f6c59f0a6a">data</a>();</Highlight></CodeLine>
+<Link id="l00462" /><CodeLine lineNumber="462"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> BlobLen = (unsigned) Blob.<a href="/docs/api/classes/llvm/stringref/#a5db9240c74644c67759dd0f901fc3c7d">size</a>();</Highlight></CodeLine>
+<Link id="l00463" /><CodeLine lineNumber="463"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> AbbrevNo = Abbrev-<a href="/docs/api/namespaces/llvm/bitc/#ab7a76f80792b96a4291e2d1dd1403887a81e1f263b022b7989aa71fb623b62be8">bitc::FIRST&#95;APPLICATION&#95;ABBREV</a>;</Highlight></CodeLine>
+<Link id="l00464" /><CodeLine lineNumber="464"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(AbbrevNo &lt; CurAbbrevs.size() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Invalid abbrev #!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00465" /><CodeLine lineNumber="465"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> BitCodeAbbrev &#42;Abbv = CurAbbrevs&#91;AbbrevNo&#93;.get();</Highlight></CodeLine>
+<Link id="l00466" /><CodeLine lineNumber="466"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00467" /><CodeLine lineNumber="467"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a47cd6c37f5dc6cee1e2337f909452c85">EmitCode</a>(Abbrev);</Highlight></CodeLine>
+<Link id="l00468" /><CodeLine lineNumber="468"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00469" /><CodeLine lineNumber="469"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i = 0, <a href="/docs/api/namespaces/llvm/numbers/#a92f4283d4e0e2ea1776894b3ae93640f">e</a> = </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(Abbv-&gt;<a href="/docs/api/classes/llvm/bitcodeabbrev/#a2ca29bb80c1ac943509a6d7e3cf613e2">getNumOperandInfos</a>());</Highlight></CodeLine>
+<Link id="l00470" /><CodeLine lineNumber="470"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Code) &#123;</Highlight></CodeLine>
+<Link id="l00471" /><CodeLine lineNumber="471"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(e &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Expected non-empty abbreviation&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00472" /><CodeLine lineNumber="472"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> BitCodeAbbrevOp &amp;<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a> = Abbv-&gt;<a href="/docs/api/classes/llvm/bitcodeabbrev/#a99bd594ca88426eba9b6581d9f292766">getOperandInfo</a>(i++);</Highlight></CodeLine>
+<Link id="l00473" /><CodeLine lineNumber="473"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00474" /><CodeLine lineNumber="474"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.isLiteral())</Highlight></CodeLine>
+<Link id="l00475" /><CodeLine lineNumber="475"><Highlight kind="normal">        EmitAbbreviatedLiteral(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, &#42;Code);</Highlight></CodeLine>
+<Link id="l00476" /><CodeLine lineNumber="476"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00477" /><CodeLine lineNumber="477"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.getEncoding() != <a href="/docs/api/classes/llvm/bitcodeabbrevop/#a8694ae7ca83441b2764d71711b17e672ac45cef5b964b589fb0741ccc577eaf2c">BitCodeAbbrevOp::Array</a> &amp;&amp;</Highlight></CodeLine>
+<Link id="l00478" /><CodeLine lineNumber="478"><Highlight kind="normal">               <a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.getEncoding() != <a href="/docs/api/classes/llvm/bitcodeabbrevop/#a8694ae7ca83441b2764d71711b17e672a35cc66c7fc730d5572ae851efc3f3f47">BitCodeAbbrevOp::Blob</a> &amp;&amp;</Highlight></CodeLine>
+<Link id="l00479" /><CodeLine lineNumber="479"><Highlight kind="normal">               </Highlight><Highlight kind="stringliteral">&quot;Expected literal or scalar&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00480" /><CodeLine lineNumber="480"><Highlight kind="normal">        EmitAbbreviatedField(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, &#42;Code);</Highlight></CodeLine>
+<Link id="l00481" /><CodeLine lineNumber="481"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00482" /><CodeLine lineNumber="482"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00483" /><CodeLine lineNumber="483"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00484" /><CodeLine lineNumber="484"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> RecordIdx = 0;</Highlight></CodeLine>
+<Link id="l00485" /><CodeLine lineNumber="485"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (; i != <a href="/docs/api/namespaces/llvm/numbers/#a92f4283d4e0e2ea1776894b3ae93640f">e</a>; ++i) &#123;</Highlight></CodeLine>
+<Link id="l00486" /><CodeLine lineNumber="486"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> BitCodeAbbrevOp &amp;<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a> = Abbv-&gt;<a href="/docs/api/classes/llvm/bitcodeabbrev/#a99bd594ca88426eba9b6581d9f292766">getOperandInfo</a>(i);</Highlight></CodeLine>
+<Link id="l00487" /><CodeLine lineNumber="487"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.isLiteral()) &#123;</Highlight></CodeLine>
+<Link id="l00488" /><CodeLine lineNumber="488"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(RecordIdx &lt; Vals.<a href="/docs/api/classes/llvm/arrayref/#a85ffb6531d4cda988ea81f18d4e56fb7">size</a>() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Invalid abbrev/record&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00489" /><CodeLine lineNumber="489"><Highlight kind="normal">        EmitAbbreviatedLiteral(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, Vals&#91;RecordIdx&#93;);</Highlight></CodeLine>
+<Link id="l00490" /><CodeLine lineNumber="490"><Highlight kind="normal">        ++RecordIdx;</Highlight></CodeLine>
+<Link id="l00491" /><CodeLine lineNumber="491"><Highlight kind="normal">      &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.getEncoding() == <a href="/docs/api/classes/llvm/bitcodeabbrevop/#a8694ae7ca83441b2764d71711b17e672ac45cef5b964b589fb0741ccc577eaf2c">BitCodeAbbrevOp::Array</a>) &#123;</Highlight></CodeLine>
+<Link id="l00492" /><CodeLine lineNumber="492"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Array case.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00493" /><CodeLine lineNumber="493"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(i + 2 == e &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;array op not second to last?&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00494" /><CodeLine lineNumber="494"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> BitCodeAbbrevOp &amp;EltEnc = Abbv-&gt;<a href="/docs/api/classes/llvm/bitcodeabbrev/#a99bd594ca88426eba9b6581d9f292766">getOperandInfo</a>(++i);</Highlight></CodeLine>
+<Link id="l00495" /><CodeLine lineNumber="495"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00496" /><CodeLine lineNumber="496"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// If this record has blob data, emit it, otherwise we must have record</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00497" /><CodeLine lineNumber="497"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// entries to encode this way.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00498" /><CodeLine lineNumber="498"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (BlobData) &#123;</Highlight></CodeLine>
+<Link id="l00499" /><CodeLine lineNumber="499"><Highlight kind="normal">          <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(RecordIdx == Vals.<a href="/docs/api/classes/llvm/arrayref/#a85ffb6531d4cda988ea81f18d4e56fb7">size</a>() &amp;&amp;</Highlight></CodeLine>
+<Link id="l00500" /><CodeLine lineNumber="500"><Highlight kind="normal">                 </Highlight><Highlight kind="stringliteral">&quot;Blob data and record entries specified for array!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00501" /><CodeLine lineNumber="501"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// Emit a vbr6 to indicate the number of elements present.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00502" /><CodeLine lineNumber="502"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/bitstreamwriter/#a9d3d121556c01aab6e6ebfc830e17dbb">EmitVBR</a>(</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uint32&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(BlobLen), 6);</Highlight></CodeLine>
+<Link id="l00503" /><CodeLine lineNumber="503"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00504" /><CodeLine lineNumber="504"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// Emit each field.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00505" /><CodeLine lineNumber="505"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i = 0; i != BlobLen; ++i)</Highlight></CodeLine>
+<Link id="l00506" /><CodeLine lineNumber="506"><Highlight kind="normal">            EmitAbbreviatedField(EltEnc, (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">)BlobData&#91;i&#93;);</Highlight></CodeLine>
+<Link id="l00507" /><CodeLine lineNumber="507"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00508" /><CodeLine lineNumber="508"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// Know that blob data is consumed for assertion below.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00509" /><CodeLine lineNumber="509"><Highlight kind="normal">          BlobData = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00510" /><CodeLine lineNumber="510"><Highlight kind="normal">        &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00511" /><CodeLine lineNumber="511"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// Emit a vbr6 to indicate the number of elements present.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00512" /><CodeLine lineNumber="512"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/bitstreamwriter/#a9d3d121556c01aab6e6ebfc830e17dbb">EmitVBR</a>(</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uint32&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(Vals.<a href="/docs/api/classes/llvm/arrayref/#a85ffb6531d4cda988ea81f18d4e56fb7">size</a>()-RecordIdx), 6);</Highlight></CodeLine>
+<Link id="l00513" /><CodeLine lineNumber="513"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00514" /><CodeLine lineNumber="514"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// Emit each field.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00515" /><CodeLine lineNumber="515"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> e = Vals.<a href="/docs/api/classes/llvm/arrayref/#a85ffb6531d4cda988ea81f18d4e56fb7">size</a>(); RecordIdx != e; ++RecordIdx)</Highlight></CodeLine>
+<Link id="l00516" /><CodeLine lineNumber="516"><Highlight kind="normal">            EmitAbbreviatedField(EltEnc, Vals&#91;RecordIdx&#93;);</Highlight></CodeLine>
+<Link id="l00517" /><CodeLine lineNumber="517"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00518" /><CodeLine lineNumber="518"><Highlight kind="normal">      &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.getEncoding() == <a href="/docs/api/classes/llvm/bitcodeabbrevop/#a8694ae7ca83441b2764d71711b17e672a35cc66c7fc730d5572ae851efc3f3f47">BitCodeAbbrevOp::Blob</a>) &#123;</Highlight></CodeLine>
+<Link id="l00519" /><CodeLine lineNumber="519"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// If this record has blob data, emit it, otherwise we must have record</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00520" /><CodeLine lineNumber="520"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// entries to encode this way.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00521" /><CodeLine lineNumber="521"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00522" /><CodeLine lineNumber="522"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (BlobData) &#123;</Highlight></CodeLine>
+<Link id="l00523" /><CodeLine lineNumber="523"><Highlight kind="normal">          <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(RecordIdx == Vals.<a href="/docs/api/classes/llvm/arrayref/#a85ffb6531d4cda988ea81f18d4e56fb7">size</a>() &amp;&amp;</Highlight></CodeLine>
+<Link id="l00524" /><CodeLine lineNumber="524"><Highlight kind="normal">                 </Highlight><Highlight kind="stringliteral">&quot;Blob data and record entries specified for blob operand!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00525" /><CodeLine lineNumber="525"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00526" /><CodeLine lineNumber="526"><Highlight kind="normal">          <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Blob.<a href="/docs/api/classes/llvm/stringref/#a7b0fa1a82461032cdf16b7f6c59f0a6a">data</a>() == BlobData &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;BlobData got moved&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00527" /><CodeLine lineNumber="527"><Highlight kind="normal">          <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Blob.<a href="/docs/api/classes/llvm/stringref/#a5db9240c74644c67759dd0f901fc3c7d">size</a>() == BlobLen &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;BlobLen got changed&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00528" /><CodeLine lineNumber="528"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/bitstreamwriter/#a42a0cfa56ebe2de750170da9db67f927">emitBlob</a>(Blob);</Highlight></CodeLine>
+<Link id="l00529" /><CodeLine lineNumber="529"><Highlight kind="normal">          BlobData = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00530" /><CodeLine lineNumber="530"><Highlight kind="normal">        &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00531" /><CodeLine lineNumber="531"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/bitstreamwriter/#a42a0cfa56ebe2de750170da9db67f927">emitBlob</a>(Vals.<a href="/docs/api/classes/llvm/arrayref/#aebf6ca7590d4f766b894044015a0fa31">slice</a>(RecordIdx));</Highlight></CodeLine>
+<Link id="l00532" /><CodeLine lineNumber="532"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00533" /><CodeLine lineNumber="533"><Highlight kind="normal">      &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;  </Highlight><Highlight kind="comment">// Single scalar field.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00534" /><CodeLine lineNumber="534"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(RecordIdx &lt; Vals.<a href="/docs/api/classes/llvm/arrayref/#a85ffb6531d4cda988ea81f18d4e56fb7">size</a>() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Invalid abbrev/record&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00535" /><CodeLine lineNumber="535"><Highlight kind="normal">        EmitAbbreviatedField(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, Vals&#91;RecordIdx&#93;);</Highlight></CodeLine>
+<Link id="l00536" /><CodeLine lineNumber="536"><Highlight kind="normal">        ++RecordIdx;</Highlight></CodeLine>
+<Link id="l00537" /><CodeLine lineNumber="537"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00538" /><CodeLine lineNumber="538"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00539" /><CodeLine lineNumber="539"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(RecordIdx == Vals.<a href="/docs/api/classes/llvm/arrayref/#a85ffb6531d4cda988ea81f18d4e56fb7">size</a>() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Not all record operands emitted!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00540" /><CodeLine lineNumber="540"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(BlobData == </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal"> &amp;&amp;</Highlight></CodeLine>
+<Link id="l00541" /><CodeLine lineNumber="541"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;Blob data specified for record that doesn&#39;t use it!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00542" /><CodeLine lineNumber="542"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00543" /><CodeLine lineNumber="543"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00544" /><CodeLine lineNumber="544"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00545" /><CodeLine lineNumber="545"><Highlight kind="comment">  /// Emit a blob, including flushing before and tail-padding.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00546" /><CodeLine lineNumber="546"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> UIntTy&gt;</Highlight></CodeLine>
+<Link id="l00547" /><CodeLine lineNumber="547" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a42a0cfa56ebe2de750170da9db67f927"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a42a0cfa56ebe2de750170da9db67f927">emitBlob</a>(<a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;UIntTy&gt;</a> Bytes, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> ShouldEmitSize = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00548" /><CodeLine lineNumber="548"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Emit a vbr6 to indicate the number of elements present.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00549" /><CodeLine lineNumber="549"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ShouldEmitSize)</Highlight></CodeLine>
+<Link id="l00550" /><CodeLine lineNumber="550"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/bitstreamwriter/#a9d3d121556c01aab6e6ebfc830e17dbb">EmitVBR</a>(</Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uint32&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(Bytes.<a href="/docs/api/classes/llvm/arrayref/#a85ffb6531d4cda988ea81f18d4e56fb7">size</a>()), 6);</Highlight></CodeLine>
+<Link id="l00551" /><CodeLine lineNumber="551"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00552" /><CodeLine lineNumber="552"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Flush to a 32-bit alignment boundary.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00553" /><CodeLine lineNumber="553"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a87d4d8efe6bca7b041b0837d30add275">FlushToWord</a>();</Highlight></CodeLine>
+<Link id="l00554" /><CodeLine lineNumber="554"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00555" /><CodeLine lineNumber="555"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Emit literal bytes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00556" /><CodeLine lineNumber="556"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/#a0d10fe510ced2849a8074fe81e5d04ce">llvm::all&#95;of</a>(Bytes, &#91;&#93;(UIntTy <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a87e65296f2a6d9570117a852af342764">isUInt&lt;8&gt;</a>(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>); &#125;));</Highlight></CodeLine>
+<Link id="l00557" /><CodeLine lineNumber="557"><Highlight kind="normal">    Buffer.<a href="/docs/api/classes/llvm/smallvectorimpl/#a7efd1f0c1206d95e4fe01a9b49a57b82">append</a>(Bytes.<a href="/docs/api/classes/llvm/arrayref/#aab36927882fbfdcbb860d87fd9c30da8">begin</a>(), Bytes.<a href="/docs/api/classes/llvm/arrayref/#a7ca5197533a9c1fb8a2bd30587fcec6b">end</a>());</Highlight></CodeLine>
+<Link id="l00558" /><CodeLine lineNumber="558"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00559" /><CodeLine lineNumber="559"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Align end to 32-bits.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00560" /><CodeLine lineNumber="560"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (GetBufferOffset() &amp; 3)</Highlight></CodeLine>
+<Link id="l00561" /><CodeLine lineNumber="561"><Highlight kind="normal">      Buffer.<a href="/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">push&#95;back</a>(0);</Highlight></CodeLine>
+<Link id="l00562" /><CodeLine lineNumber="562"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00563" /><CodeLine lineNumber="563" lineLink="/docs/api/classes/llvm/bitstreamwriter/#ac7a72ed69b91577b81089ff1a7a57197"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#ac7a72ed69b91577b81089ff1a7a57197">emitBlob</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Bytes, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> ShouldEmitSize = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
+<Link id="l00564" /><CodeLine lineNumber="564"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a42a0cfa56ebe2de750170da9db67f927">emitBlob</a>(<a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef</a>((</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> uint8&#95;t &#42;)Bytes.<a href="/docs/api/classes/llvm/stringref/#a7b0fa1a82461032cdf16b7f6c59f0a6a">data</a>(), Bytes.<a href="/docs/api/classes/llvm/stringref/#a5db9240c74644c67759dd0f901fc3c7d">size</a>()),</Highlight></CodeLine>
+<Link id="l00565" /><CodeLine lineNumber="565"><Highlight kind="normal">             ShouldEmitSize);</Highlight></CodeLine>
+<Link id="l00566" /><CodeLine lineNumber="566"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00567" /><CodeLine lineNumber="567"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00568" /><CodeLine lineNumber="568"><Highlight kind="comment">  /// EmitRecord - Emit the specified record to the stream, using an abbrev if</Highlight></CodeLine>
+<Link id="l00569" /><CodeLine lineNumber="569"><Highlight kind="comment">  /// we have one to compress the output.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00570" /><CodeLine lineNumber="570"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Container&gt;</Highlight></CodeLine>
+<Link id="l00571" /><CodeLine lineNumber="571" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a2a492ce167a19107e75ec372f68e8d7a"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a2a492ce167a19107e75ec372f68e8d7a">EmitRecord</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Code, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Container &amp;Vals, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Abbrev = 0) &#123;</Highlight></CodeLine>
+<Link id="l00572" /><CodeLine lineNumber="572"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Abbrev) &#123;</Highlight></CodeLine>
+<Link id="l00573" /><CodeLine lineNumber="573"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// If we don&#39;t have an abbrev to use, emit this in its fully unabbreviated</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00574" /><CodeLine lineNumber="574"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// form.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00575" /><CodeLine lineNumber="575"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a845e08be4b0320d66901a66b0c0e9509">Count</a> = </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uint32&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(std::size(Vals));</Highlight></CodeLine>
+<Link id="l00576" /><CodeLine lineNumber="576"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/bitstreamwriter/#a47cd6c37f5dc6cee1e2337f909452c85">EmitCode</a>(<a href="/docs/api/namespaces/llvm/bitc/#ab7a76f80792b96a4291e2d1dd1403887a5436567dadf1048914764efde6bcc891">bitc::UNABBREV&#95;RECORD</a>);</Highlight></CodeLine>
+<Link id="l00577" /><CodeLine lineNumber="577"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/bitstreamwriter/#a9d3d121556c01aab6e6ebfc830e17dbb">EmitVBR</a>(Code, 6);</Highlight></CodeLine>
+<Link id="l00578" /><CodeLine lineNumber="578"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/bitstreamwriter/#a9d3d121556c01aab6e6ebfc830e17dbb">EmitVBR</a>(<a href="/docs/api/namespaces/llvm/#a845e08be4b0320d66901a66b0c0e9509">Count</a>, 6);</Highlight></CodeLine>
+<Link id="l00579" /><CodeLine lineNumber="579"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i = 0, e = <a href="/docs/api/namespaces/llvm/#a845e08be4b0320d66901a66b0c0e9509">Count</a>; i != e; ++i)</Highlight></CodeLine>
+<Link id="l00580" /><CodeLine lineNumber="580"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/bitstreamwriter/#a765ce2a472e2eedad6b7ed02b6674a00">EmitVBR64</a>(Vals&#91;i&#93;, 6);</Highlight></CodeLine>
+<Link id="l00581" /><CodeLine lineNumber="581"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00582" /><CodeLine lineNumber="582"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00583" /><CodeLine lineNumber="583"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00584" /><CodeLine lineNumber="584"><Highlight kind="normal">    EmitRecordWithAbbrevImpl(Abbrev, <a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef</a>(Vals), <a href="/docs/api/classes/llvm/stringref">StringRef</a>(), Code);</Highlight></CodeLine>
+<Link id="l00585" /><CodeLine lineNumber="585"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00586" /><CodeLine lineNumber="586"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00587" /><CodeLine lineNumber="587"><Highlight kind="comment">  /// EmitRecordWithAbbrev - Emit a record with the specified abbreviation.</Highlight></CodeLine>
+<Link id="l00588" /><CodeLine lineNumber="588"><Highlight kind="comment">  /// Unlike EmitRecord, the code for the record should be included in Vals as</Highlight></CodeLine>
+<Link id="l00589" /><CodeLine lineNumber="589"><Highlight kind="comment">  /// the first entry.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00590" /><CodeLine lineNumber="590"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Container&gt;</Highlight></CodeLine>
+<Link id="l00591" /><CodeLine lineNumber="591" lineLink="/docs/api/classes/llvm/bitstreamwriter/#af948971b2d980eb419383bc379a757fd"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#af948971b2d980eb419383bc379a757fd">EmitRecordWithAbbrev</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Abbrev, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Container &amp;Vals) &#123;</Highlight></CodeLine>
+<Link id="l00592" /><CodeLine lineNumber="592"><Highlight kind="normal">    EmitRecordWithAbbrevImpl(Abbrev, <a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef</a>(Vals), <a href="/docs/api/classes/llvm/stringref">StringRef</a>(), std::nullopt);</Highlight></CodeLine>
+<Link id="l00593" /><CodeLine lineNumber="593"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00594" /><CodeLine lineNumber="594"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00595" /><CodeLine lineNumber="595"><Highlight kind="comment">  /// EmitRecordWithBlob - Emit the specified record to the stream, using an</Highlight></CodeLine>
+<Link id="l00596" /><CodeLine lineNumber="596"><Highlight kind="comment">  /// abbrev that includes a blob at the end.  The blob data to emit is</Highlight></CodeLine>
+<Link id="l00597" /><CodeLine lineNumber="597"><Highlight kind="comment">  /// specified by the pointer and length specified at the end.  In contrast to</Highlight></CodeLine>
+<Link id="l00598" /><CodeLine lineNumber="598"><Highlight kind="comment">  /// EmitRecord, this routine expects that the first entry in Vals is the code</Highlight></CodeLine>
+<Link id="l00599" /><CodeLine lineNumber="599"><Highlight kind="comment">  /// of the record.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00600" /><CodeLine lineNumber="600"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Container&gt;</Highlight></CodeLine>
+<Link id="l00601" /><CodeLine lineNumber="601" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a5f4f488b3478316b8d6bb3582b158673"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a5f4f488b3478316b8d6bb3582b158673">EmitRecordWithBlob</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Abbrev, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Container &amp;Vals,</Highlight></CodeLine>
+<Link id="l00602" /><CodeLine lineNumber="602"><Highlight kind="normal">                          <a href="/docs/api/classes/llvm/stringref">StringRef</a> Blob) &#123;</Highlight></CodeLine>
+<Link id="l00603" /><CodeLine lineNumber="603"><Highlight kind="normal">    EmitRecordWithAbbrevImpl(Abbrev, <a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef</a>(Vals), Blob, std::nullopt);</Highlight></CodeLine>
+<Link id="l00604" /><CodeLine lineNumber="604"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00605" /><CodeLine lineNumber="605"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Container&gt;</Highlight></CodeLine>
+<Link id="l00606" /><CodeLine lineNumber="606" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a4e635d4d3026cb830212fb071e2024a1"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a4e635d4d3026cb830212fb071e2024a1">EmitRecordWithBlob</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Abbrev, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Container &amp;Vals,</Highlight></CodeLine>
+<Link id="l00607" /><CodeLine lineNumber="607"><Highlight kind="normal">                          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;BlobData, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> BlobLen) &#123;</Highlight></CodeLine>
+<Link id="l00608" /><CodeLine lineNumber="608"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> EmitRecordWithAbbrevImpl(Abbrev, <a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef</a>(Vals),</Highlight></CodeLine>
+<Link id="l00609" /><CodeLine lineNumber="609"><Highlight kind="normal">                                    <a href="/docs/api/classes/llvm/stringref">StringRef</a>(BlobData, BlobLen), std::nullopt);</Highlight></CodeLine>
+<Link id="l00610" /><CodeLine lineNumber="610"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00611" /><CodeLine lineNumber="611"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00612" /><CodeLine lineNumber="612"><Highlight kind="comment">  /// EmitRecordWithArray - Just like EmitRecordWithBlob, works with records</Highlight></CodeLine>
+<Link id="l00613" /><CodeLine lineNumber="613"><Highlight kind="comment">  /// that end with an array.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00614" /><CodeLine lineNumber="614"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Container&gt;</Highlight></CodeLine>
+<Link id="l00615" /><CodeLine lineNumber="615" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a78a7f3e3174bd721b9b3c268e621273c"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a78a7f3e3174bd721b9b3c268e621273c">EmitRecordWithArray</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Abbrev, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Container &amp;Vals,</Highlight></CodeLine>
+<Link id="l00616" /><CodeLine lineNumber="616"><Highlight kind="normal">                           <a href="/docs/api/classes/llvm/stringref">StringRef</a> Array) &#123;</Highlight></CodeLine>
+<Link id="l00617" /><CodeLine lineNumber="617"><Highlight kind="normal">    EmitRecordWithAbbrevImpl(Abbrev, <a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef</a>(Vals), Array, std::nullopt);</Highlight></CodeLine>
+<Link id="l00618" /><CodeLine lineNumber="618"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00619" /><CodeLine lineNumber="619"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Container&gt;</Highlight></CodeLine>
+<Link id="l00620" /><CodeLine lineNumber="620" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a4f8ae2680f67165a8ab818db76e89967"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a4f8ae2680f67165a8ab818db76e89967">EmitRecordWithArray</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Abbrev, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Container &amp;Vals,</Highlight></CodeLine>
+<Link id="l00621" /><CodeLine lineNumber="621"><Highlight kind="normal">                           </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;ArrayData, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> ArrayLen) &#123;</Highlight></CodeLine>
+<Link id="l00622" /><CodeLine lineNumber="622"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> EmitRecordWithAbbrevImpl(</Highlight></CodeLine>
+<Link id="l00623" /><CodeLine lineNumber="623"><Highlight kind="normal">        Abbrev, <a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef</a>(Vals), <a href="/docs/api/classes/llvm/stringref">StringRef</a>(ArrayData, ArrayLen), std::nullopt);</Highlight></CodeLine>
+<Link id="l00624" /><CodeLine lineNumber="624"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00625" /><CodeLine lineNumber="625"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00626" /><CodeLine lineNumber="626"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00627" /><CodeLine lineNumber="627"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Abbrev Emission</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00628" /><CodeLine lineNumber="628"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00629" /><CodeLine lineNumber="629"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00630" /><CodeLine lineNumber="630"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00631" /><CodeLine lineNumber="631"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Emit the abbreviation as a DEFINE&#95;ABBREV record.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00632" /><CodeLine lineNumber="632"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> EncodeAbbrev(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitcodeabbrev">BitCodeAbbrev</a> &amp;Abbv) &#123;</Highlight></CodeLine>
+<Link id="l00633" /><CodeLine lineNumber="633"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a47cd6c37f5dc6cee1e2337f909452c85">EmitCode</a>(<a href="/docs/api/namespaces/llvm/bitc/#ab7a76f80792b96a4291e2d1dd1403887a0353c03d98b211f15e10bad35397bf8d">bitc::DEFINE&#95;ABBREV</a>);</Highlight></CodeLine>
+<Link id="l00634" /><CodeLine lineNumber="634"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a9d3d121556c01aab6e6ebfc830e17dbb">EmitVBR</a>(Abbv.<a href="/docs/api/classes/llvm/bitcodeabbrev/#a2ca29bb80c1ac943509a6d7e3cf613e2">getNumOperandInfos</a>(), 5);</Highlight></CodeLine>
+<Link id="l00635" /><CodeLine lineNumber="635"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i = 0, e = </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(Abbv.<a href="/docs/api/classes/llvm/bitcodeabbrev/#a2ca29bb80c1ac943509a6d7e3cf613e2">getNumOperandInfos</a>());</Highlight></CodeLine>
+<Link id="l00636" /><CodeLine lineNumber="636"><Highlight kind="normal">         i != e; ++i) &#123;</Highlight></CodeLine>
+<Link id="l00637" /><CodeLine lineNumber="637"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitcodeabbrevop">BitCodeAbbrevOp</a> &amp;<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a> = Abbv.<a href="/docs/api/classes/llvm/bitcodeabbrev/#a99bd594ca88426eba9b6581d9f292766">getOperandInfo</a>(i);</Highlight></CodeLine>
+<Link id="l00638" /><CodeLine lineNumber="638"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/bitstreamwriter/#a40de93ba2d72dc6bccd7a1fdde996718">Emit</a>(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.isLiteral(), 1);</Highlight></CodeLine>
+<Link id="l00639" /><CodeLine lineNumber="639"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.isLiteral()) &#123;</Highlight></CodeLine>
+<Link id="l00640" /><CodeLine lineNumber="640"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/bitstreamwriter/#a765ce2a472e2eedad6b7ed02b6674a00">EmitVBR64</a>(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.getLiteralValue(), 8);</Highlight></CodeLine>
+<Link id="l00641" /><CodeLine lineNumber="641"><Highlight kind="normal">      &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00642" /><CodeLine lineNumber="642"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/bitstreamwriter/#a40de93ba2d72dc6bccd7a1fdde996718">Emit</a>(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.getEncoding(), 3);</Highlight></CodeLine>
+<Link id="l00643" /><CodeLine lineNumber="643"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.hasEncodingData())</Highlight></CodeLine>
+<Link id="l00644" /><CodeLine lineNumber="644"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/bitstreamwriter/#a765ce2a472e2eedad6b7ed02b6674a00">EmitVBR64</a>(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>.getEncodingData(), 5);</Highlight></CodeLine>
+<Link id="l00645" /><CodeLine lineNumber="645"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00646" /><CodeLine lineNumber="646"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00647" /><CodeLine lineNumber="647"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00648" /><CodeLine lineNumber="648"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00649" /><CodeLine lineNumber="649"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00650" /><CodeLine lineNumber="650"><Highlight kind="comment">  /// Emits the abbreviation \\p Abbv to the stream.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00651" /><CodeLine lineNumber="651" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a032ac42ce93b41ccad6f2380a3efa207"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a032ac42ce93b41ccad6f2380a3efa207">EmitAbbrev</a>(std::shared&#95;ptr&lt;BitCodeAbbrev&gt; Abbv) &#123;</Highlight></CodeLine>
+<Link id="l00652" /><CodeLine lineNumber="652"><Highlight kind="normal">    EncodeAbbrev(&#42;Abbv);</Highlight></CodeLine>
+<Link id="l00653" /><CodeLine lineNumber="653"><Highlight kind="normal">    CurAbbrevs.push&#95;back(std::move(Abbv));</Highlight></CodeLine>
+<Link id="l00654" /><CodeLine lineNumber="654"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(CurAbbrevs.size())-1 +</Highlight></CodeLine>
+<Link id="l00655" /><CodeLine lineNumber="655"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/bitc/#ab7a76f80792b96a4291e2d1dd1403887a81e1f263b022b7989aa71fb623b62be8">bitc::FIRST&#95;APPLICATION&#95;ABBREV</a>;</Highlight></CodeLine>
+<Link id="l00656" /><CodeLine lineNumber="656"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00657" /><CodeLine lineNumber="657"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00658" /><CodeLine lineNumber="658"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00659" /><CodeLine lineNumber="659"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// BlockInfo Block Emission</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00660" /><CodeLine lineNumber="660"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00661" /><CodeLine lineNumber="661"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00662" /><CodeLine lineNumber="662"><Highlight kind="comment">  /// EnterBlockInfoBlock - Start emitting the BLOCKINFO&#95;BLOCK.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00663" /><CodeLine lineNumber="663" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a8d9f43e5e75f1cd3eac411cd4dc2c6a3"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a8d9f43e5e75f1cd3eac411cd4dc2c6a3">EnterBlockInfoBlock</a>() &#123;</Highlight></CodeLine>
+<Link id="l00664" /><CodeLine lineNumber="664"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#ae6a40b4a5ea89bb8b5076c26e0d0b638">EnterSubblock</a>(<a href="/docs/api/namespaces/llvm/bitc/#a8cd4dd534ba6c31e93a88ca286c4f0e5a9c269366c4dc4af235c9bb24fa46f915">bitc::BLOCKINFO&#95;BLOCK&#95;ID</a>, 2);</Highlight></CodeLine>
+<Link id="l00665" /><CodeLine lineNumber="665"><Highlight kind="normal">    BlockInfoCurBID = ~0U;</Highlight></CodeLine>
+<Link id="l00666" /><CodeLine lineNumber="666"><Highlight kind="normal">    BlockInfoRecords.clear();</Highlight></CodeLine>
+<Link id="l00667" /><CodeLine lineNumber="667"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00668" /><CodeLine lineNumber="668"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00669" /><CodeLine lineNumber="669"><Highlight kind="comment">  /// SwitchToBlockID - If we aren&#39;t already talking about the specified block</Highlight></CodeLine>
+<Link id="l00670" /><CodeLine lineNumber="670"><Highlight kind="comment">  /// ID, emit a BLOCKINFO&#95;CODE&#95;SETBID record.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00671" /><CodeLine lineNumber="671"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> SwitchToBlockID(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> BlockID) &#123;</Highlight></CodeLine>
+<Link id="l00672" /><CodeLine lineNumber="672"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (BlockInfoCurBID == BlockID) </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00673" /><CodeLine lineNumber="673"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;unsigned, 2&gt;</a> V;</Highlight></CodeLine>
+<Link id="l00674" /><CodeLine lineNumber="674"><Highlight kind="normal">    V.<a href="/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">push&#95;back</a>(BlockID);</Highlight></CodeLine>
+<Link id="l00675" /><CodeLine lineNumber="675"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/bitstreamwriter/#a2a492ce167a19107e75ec372f68e8d7a">EmitRecord</a>(<a href="/docs/api/namespaces/llvm/bitc/#a6860684558cab9835254eba26b2f7963acf72b4b5b2c1c5b1310721a6715ab010">bitc::BLOCKINFO&#95;CODE&#95;SETBID</a>, V);</Highlight></CodeLine>
+<Link id="l00676" /><CodeLine lineNumber="676"><Highlight kind="normal">    BlockInfoCurBID = BlockID;</Highlight></CodeLine>
+<Link id="l00677" /><CodeLine lineNumber="677"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00678" /><CodeLine lineNumber="678"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00679" /><CodeLine lineNumber="679"><Highlight kind="normal">  BlockInfo &amp;getOrCreateBlockInfo(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> BlockID) &#123;</Highlight></CodeLine>
+<Link id="l00680" /><CodeLine lineNumber="680"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (BlockInfo &#42;BI = <a href="/docs/api/classes/llvm/bitstreamwriter/#a75bf3c7fbbde90c257abf2fb5a89badf">getBlockInfo</a>(BlockID))</Highlight></CodeLine>
+<Link id="l00681" /><CodeLine lineNumber="681"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;BI;</Highlight></CodeLine>
+<Link id="l00682" /><CodeLine lineNumber="682"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00683" /><CodeLine lineNumber="683"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Otherwise, add a new record.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00684" /><CodeLine lineNumber="684"><Highlight kind="normal">    BlockInfoRecords.emplace&#95;back();</Highlight></CodeLine>
+<Link id="l00685" /><CodeLine lineNumber="685"><Highlight kind="normal">    BlockInfoRecords.back().BlockID = BlockID;</Highlight></CodeLine>
+<Link id="l00686" /><CodeLine lineNumber="686"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> BlockInfoRecords.back();</Highlight></CodeLine>
+<Link id="l00687" /><CodeLine lineNumber="687"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00688" /><CodeLine lineNumber="688"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00689" /><CodeLine lineNumber="689"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00690" /><CodeLine lineNumber="690"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00691" /><CodeLine lineNumber="691"><Highlight kind="comment">  /// EmitBlockInfoAbbrev - Emit a DEFINE&#95;ABBREV record for the specified</Highlight></CodeLine>
+<Link id="l00692" /><CodeLine lineNumber="692"><Highlight kind="comment">  /// BlockID.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00693" /><CodeLine lineNumber="693" lineLink="/docs/api/classes/llvm/bitstreamwriter/#a7507fea7693cf3d8124918eca60eef85"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/bitstreamwriter/#a7507fea7693cf3d8124918eca60eef85">EmitBlockInfoAbbrev</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> BlockID, std::shared&#95;ptr&lt;BitCodeAbbrev&gt; Abbv) &#123;</Highlight></CodeLine>
+<Link id="l00694" /><CodeLine lineNumber="694"><Highlight kind="normal">    SwitchToBlockID(BlockID);</Highlight></CodeLine>
+<Link id="l00695" /><CodeLine lineNumber="695"><Highlight kind="normal">    EncodeAbbrev(&#42;Abbv);</Highlight></CodeLine>
+<Link id="l00696" /><CodeLine lineNumber="696"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00697" /><CodeLine lineNumber="697"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Add the abbrev to the specified block record.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00698" /><CodeLine lineNumber="698"><Highlight kind="normal">    BlockInfo &amp;<a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a> = getOrCreateBlockInfo(BlockID);</Highlight></CodeLine>
+<Link id="l00699" /><CodeLine lineNumber="699"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>.Abbrevs.push&#95;back(std::move(Abbv));</Highlight></CodeLine>
+<Link id="l00700" /><CodeLine lineNumber="700"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00701" /><CodeLine lineNumber="701"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/cseinfo-cpp/#a75f8a8519c2c9b30e7c06dc5e256fffa">Info</a>.Abbrevs.size()-1+<a href="/docs/api/namespaces/llvm/bitc/#ab7a76f80792b96a4291e2d1dd1403887a81e1f263b022b7989aa71fb623b62be8">bitc::FIRST&#95;APPLICATION&#95;ABBREV</a>;</Highlight></CodeLine>
+<Link id="l00702" /><CodeLine lineNumber="702"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00703" /><CodeLine lineNumber="703"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00704" /><CodeLine lineNumber="704"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00705" /><CodeLine lineNumber="705"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00706" /><CodeLine lineNumber="706"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// End llvm namespace</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00707" /><CodeLine lineNumber="707"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00708" /><CodeLine lineNumber="708"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

@@ -1,0 +1,177 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/intervalpressure
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `IntervalPressure` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+<a href="/docs/api/structs/llvm/registerpressure">RegisterPressure</a> computed within a region of instructions delimited by TopIdx and BottomIdx. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct llvm::IntervalPressure</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/CodeGen/RegisterPressure.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/codegen/registerpressure-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base struct
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/registerpressure">RegisterPressure</a></>}>
+Base class for register pressure results. <a href="/docs/api/structs/llvm/registerpressure/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a0fb4cf12022684a5149e2fba6b65a522">openBottom</a> (SlotIndex PrevBottom)</>}>
+If the current bottom is not greater than the previous index, open it. <a href="#a0fb4cf12022684a5149e2fba6b65a522">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#ad388da0eac059da0c6cf642204a6308a">openTop</a> (SlotIndex NextTop)</>}>
+If the current top is not less than or equal to the next index, open it. <a href="#ad388da0eac059da0c6cf642204a6308a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a08225fe2adf56bf962e71483729fd99c">reset</a> ()</>}>
+Clear the result so it can be used for another round of pressure tracking. <a href="#a08225fe2adf56bf962e71483729fd99c">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/slotindex">SlotIndex</a></>}
+  name={<><a href="#a60f833a5cb8a08708e1a2d0aadc373c5">BottomIdx</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/slotindex">SlotIndex</a></>}
+  name={<><a href="#abf1e1810feaee0a0a5b54040ad46d0d8">TopIdx</a></>}>
+<a href="/docs/api/classes/llvm/record">Record</a> the boundary of the region being tracked. <a href="#abf1e1810feaee0a0a5b54040ad46d0d8">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+<a href="/docs/api/structs/llvm/registerpressure">RegisterPressure</a> computed within a region of instructions delimited by TopIdx and BottomIdx.
+
+During pressure computation, the maximum pressure per register pressure set is increased. Once pressure within a region is fully computed, the live-in and live-out sets are recorded.
+
+This is preferable to <a href="/docs/api/structs/llvm/regionpressure">RegionPressure</a> when <a href="/docs/api/classes/llvm/liveintervals">LiveIntervals</a> are available, because delimiting regions by <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> is more robust and convenient than holding block iterators. The block contents can change without invalidating the pressure result.
+
+Definition at line 67 of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/registerpressure-h">RegisterPressure.h</a>.
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### openBottom() {#a0fb4cf12022684a5149e2fba6b65a522}
+
+<MemberDefinition
+  prototype={<>void IntervalPressure::openBottom (<a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> PrevBottom)</>}>
+If the current bottom is not greater than the previous index, open it.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/registerpressure-h/#l00076">76</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/registerpressure-h">RegisterPressure.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/registerpressure-cpp/#l00209">209</a> of file <a href="/docs/api/files/lib/lib/codegen/registerpressure-cpp">RegisterPressure.cpp</a>.
+</MemberDefinition>
+
+### openTop() {#ad388da0eac059da0c6cf642204a6308a}
+
+<MemberDefinition
+  prototype={<>void IntervalPressure::openTop (<a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> NextTop)</>}>
+If the current top is not less than or equal to the next index, open it.
+
+We happen to need the <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> for the next top for pressure update.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/registerpressure-h/#l00074">74</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/registerpressure-h">RegisterPressure.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/registerpressure-cpp/#l00193">193</a> of file <a href="/docs/api/files/lib/lib/codegen/registerpressure-cpp">RegisterPressure.cpp</a>.
+</MemberDefinition>
+
+### reset() {#a08225fe2adf56bf962e71483729fd99c}
+
+<MemberDefinition
+  prototype="void IntervalPressure::reset ()">
+Clear the result so it can be used for another round of pressure tracking.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/registerpressure-h/#l00072">72</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/registerpressure-h">RegisterPressure.h</a>, definition at line <a href="/docs/api/files/lib/lib/codegen/registerpressure-cpp/#l00176">176</a> of file <a href="/docs/api/files/lib/lib/codegen/registerpressure-cpp">RegisterPressure.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### BottomIdx {#a60f833a5cb8a08708e1a2d0aadc373c5}
+
+<MemberDefinition
+  prototype="SlotIndex llvm::IntervalPressure::BottomIdx">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/registerpressure-h/#l00070">70</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/registerpressure-h">RegisterPressure.h</a>.
+</MemberDefinition>
+
+### TopIdx {#abf1e1810feaee0a0a5b54040ad46d0d8}
+
+<MemberDefinition
+  prototype="SlotIndex llvm::IntervalPressure::TopIdx">
+<a href="/docs/api/classes/llvm/record">Record</a> the boundary of the region being tracked.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/registerpressure-h/#l00069">69</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/codegen/registerpressure-h">RegisterPressure.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/codegen/registerpressure-h">RegisterPressure.h</a></li>
+<li><a href="/docs/api/files/lib/lib/codegen/registerpressure-cpp">RegisterPressure.cpp</a></li>
+</ul>
+
+</DoxygenPage>

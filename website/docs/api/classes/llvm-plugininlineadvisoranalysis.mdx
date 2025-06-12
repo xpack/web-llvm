@@ -1,0 +1,228 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/plugininlineadvisoranalysis
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `PluginInlineAdvisorAnalysis` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Used for dynamically registering InlineAdvisors as plugins. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::PluginInlineAdvisorAnalysis</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Analysis/InlineAdvisor.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/analysisinfomixin">AnalysisInfoMixin&lt;DerivedT&gt;</a></>}>
+A CRTP mix-in that provides informational APIs needed for analysis passes. <a href="/docs/api/structs/llvm/analysisinfomixin/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="typedef"
+  name={<><a href="/docs/api/classes/llvm/inlineadvisor">InlineAdvisor</a> &#42;(&#42; <a href="#a93eea258d63139c33eb8c616cbf874d0">AdvisorFactory</a>)(Module &M, FunctionAnalysisManager &FAM, InlineParams Params, InlineContext IC)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a7c259a023b8d44574a5726f7ff1f760d">PluginInlineAdvisorAnalysis</a> (AdvisorFactory Factory)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/structs/llvm/plugininlineadvisoranalysis/result">Result</a></>}
+  name={<><a href="#a4c451730ff64747dd678febfd9a74f6f">getResult</a> ()</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/structs/llvm/plugininlineadvisoranalysis/result">Result</a></>}
+  name={<><a href="#a9b307241d77fee693b65e68353a8d286">run</a> (Module &amp;M, ModuleAnalysisManager &amp;MAM)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="#a93eea258d63139c33eb8c616cbf874d0">AdvisorFactory</a></>}
+  name={<><a href="#a9a53db400cf8017551d8672d88d9ff33">Factory</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/structs/llvm/analysiskey">AnalysisKey</a></>}
+  name={<><a href="#ace1abfb5551903e801246b4d4f227e46">Key</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Used for dynamically registering InlineAdvisors as plugins.
+
+An advisor plugin adds a new advisor at runtime by registering an instance of <a href="/docs/api/classes/llvm/plugininlineadvisoranalysis">PluginInlineAdvisorAnalysis</a> in the current <a href="/docs/api/namespaces/llvm/#af9c9208365fd9ce11392b4d79485e259">ModuleAnalysisManager</a>. For example, the following code dynamically registers a <a href="/docs/api/classes/llvm/defaultinlineadvisor">DefaultInlineAdvisor</a>:
+
+namespace &#123;
+
+<a href="/docs/api/classes/llvm/inlineadvisor">InlineAdvisor</a> &#42;defaultAdvisorFactory(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/namespaces/llvm/#adce09a5a0de0e3177eb00e932734af2f">FunctionAnalysisManager</a> &amp;FAM, <a href="/docs/api/structs/llvm/inlineparams">InlineParams</a> Params, <a href="/docs/api/structs/llvm/inlinecontext">InlineContext</a> IC) &#123; return new DefaultInlineAdvisor(M, FAM, Params, IC); &#125;
+
+&#125; // namespace
+
+extern &quot;C&quot; LLVM&#95;ATTRIBUTE&#95;WEAK <a href="/docs/api/structs/llvm/passpluginlibraryinfo">llvm::PassPluginLibraryInfo</a> <a href="/docs/api/files/include/include/llvm/include/llvm/passes/passplugin-h/#a2d26765d5eb741ed4b6f72c7fef51c99">llvmGetPassPluginInfo()</a> &#123; return &#123;LLVM&#95;PLUGIN&#95;API&#95;VERSION, &quot;DynamicDefaultAdvisor&quot;, LLVM&#95;VERSION&#95;STRING, &#91;&#93;(<a href="/docs/api/classes/llvm/passbuilder">PassBuilder</a> &amp;PB) &#123; PB.registerAnalysisRegistrationCallback( &#91;&#93;(<a href="/docs/api/namespaces/llvm/#af9c9208365fd9ce11392b4d79485e259">ModuleAnalysisManager</a> &amp;MAM) &#123; <a href="/docs/api/classes/llvm/plugininlineadvisoranalysis">PluginInlineAdvisorAnalysis</a> PA(defaultAdvisorFactory); MAM.registerPass(&#91;&amp;&#93; &#123; return PA; &#125;); &#125;); &#125;&#125;; &#125;
+
+A plugin must implement an <a href="#a93eea258d63139c33eb8c616cbf874d0">AdvisorFactory</a> and register it with a PluginInlineAdvisorAnlysis to the provided <a href="/docs/api/namespaces/llvm/#af9c9208365fd9ce11392b4d79485e259">ModuleAnalysisManager</a>.
+
+If such a plugin has been registered <a href="/docs/api/structs/llvm/inlineadvisoranalysis/result/#a64e2a53c670b4531950c994d84bc4e39">InlineAdvisorAnalysis::Result::tryCreate</a> will return the dynamically loaded advisor.
+
+Definition at line 279 of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h">InlineAdvisor.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### AdvisorFactory {#a93eea258d63139c33eb8c616cbf874d0}
+
+<MemberDefinition
+  prototype={<>typedef InlineAdvisor &#42;(&#42; llvm::PluginInlineAdvisorAnalysis::AdvisorFactory) (Module &amp;M, FunctionAnalysisManager &amp;FAM, InlineParams Params, InlineContext IC)</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h/#l00284">284</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h">InlineAdvisor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### PluginInlineAdvisorAnalysis() {#a7c259a023b8d44574a5726f7ff1f760d}
+
+<MemberDefinition
+  prototype={<>llvm::PluginInlineAdvisorAnalysis::PluginInlineAdvisorAnalysis (<a href="#a93eea258d63139c33eb8c616cbf874d0">AdvisorFactory</a> Factory)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h/#l00289">289</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h">InlineAdvisor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### getResult() {#a4c451730ff64747dd678febfd9a74f6f}
+
+<MemberDefinition
+  prototype="Result llvm::PluginInlineAdvisorAnalysis::getResult ()"
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h/#l00299">299</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h">InlineAdvisor.h</a>.
+</MemberDefinition>
+
+### run() {#a9b307241d77fee693b65e68353a8d286}
+
+<MemberDefinition
+  prototype={<>Result llvm::PluginInlineAdvisorAnalysis::run (<a href="/docs/api/classes/llvm/module">Module</a> &amp; M, <a href="/docs/api/namespaces/llvm/#af9c9208365fd9ce11392b4d79485e259">ModuleAnalysisManager</a> &amp; MAM)</>}
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h/#l00298">298</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h">InlineAdvisor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### Factory {#a9a53db400cf8017551d8672d88d9ff33}
+
+<MemberDefinition
+  prototype="AdvisorFactory llvm::PluginInlineAdvisorAnalysis::Factory">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h/#l00302">302</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h">InlineAdvisor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Attributes
+
+### Key {#ace1abfb5551903e801246b4d4f227e46}
+
+<MemberDefinition
+  prototype="AnalysisKey PluginInlineAdvisorAnalysis::Key"
+  labels = {["static"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h/#l00282">282</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h">InlineAdvisor.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following file:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlineadvisor-h">InlineAdvisor.h</a></li>
+</ul>
+
+</DoxygenPage>

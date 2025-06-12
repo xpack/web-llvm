@@ -1,0 +1,361 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/include/llvm/include/llvm/adt/allocatorlist-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `AllocatorList.h` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ADT/ilist_node.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/ilist-node-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/iterator.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/iterator-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/simple_ilist.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/simple-ilist-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Allocator.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/allocator-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cassert"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="cstddef"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="iterator"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="type_traits"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="utility"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/allocatorlist">AllocatorList&lt;T, AllocatorT&gt;</a></>}>
+A linked-list with a custom, local allocator. <a href="/docs/api/classes/llvm/allocatorlist/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/allocatorlist/node">Node</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/allocatorlist/cloner">Cloner</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/llvm/allocatorlist/disposer">Disposer</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/allocatorlist/iteratorimpl">IteratorImpl&lt;ValueT, IteratorBase&gt;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/ADT/AllocatorList.h - Custom allocator list ---------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;ADT&#95;ALLOCATORLIST&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;ADT&#95;ALLOCATORLIST&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/ilist-node-h">llvm/ADT/ilist&#95;node.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/iterator-h">llvm/ADT/iterator.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/simple-ilist-h">llvm/ADT/simple&#95;ilist.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/allocator-h">llvm/Support/Allocator.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cassert&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstddef&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;iterator&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;type&#95;traits&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;utility&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="comment">/// A linked-list with a custom, local allocator.</Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="comment">/// Expose a std::list-like interface that owns and uses a custom LLVM-style</Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="comment">/// allocator (e.g., BumpPtrAllocator), leveraging \\a simple&#95;ilist for the</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="comment">/// implementation details.</Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="comment">/// Because this list owns the allocator, calling \\a splice() with a different</Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="comment">/// list isn&#39;t generally safe.  As such, \\a splice has been left out of the</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">/// interface entirely.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33" lineLink="/docs/api/classes/llvm/allocatorlist"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> AllocatorT&gt; </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a> : AllocatorT &#123;</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">Node : <a href="/docs/api/classes/llvm/ilist-node">ilist&#95;node</a>&lt;Node&gt; &#123;</Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">    Node(Node &amp;&amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">    Node(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Node &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">    Node &amp;<a href="/docs/api/classes/llvm/allocatorlist/#aab9b0e4699e83accc6da1570253b5224">operator=</a>(Node &amp;&amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">    Node &amp;<a href="/docs/api/classes/llvm/allocatorlist/#aab9b0e4699e83accc6da1570253b5224">operator=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Node &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">    Node(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;&amp;V) : V(std::move(V)) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">    Node(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;V) : V(V) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal">... Ts&gt; Node(Ts &amp;&amp;... Vs) : V(std::forward&lt;Ts&gt;(Vs)...) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> V;</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">list&#95;type = <a href="/docs/api/classes/llvm/simple-ilist">simple&#95;ilist&lt;Node&gt;</a>;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  list&#95;type List;</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  AllocatorT &amp;getAlloc() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> AllocatorT &amp;getAlloc()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal">... ArgTs&gt; Node &#42;create(ArgTs &amp;&amp;... Args) &#123;</Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> (getAlloc()) Node(std::forward&lt;ArgTs&gt;(Args)...);</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">Cloner &#123;</Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a> &amp;AL;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    Cloner(<a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a> &amp;AL) : AL(AL) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">    Node &#42;operator()(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Node &amp;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> AL.create(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>.V); &#125;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">Disposer &#123;</Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a> &amp;AL;</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">    Disposer(<a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a> &amp;AL) : AL(AL) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> operator()(Node &#42;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>-&gt;~Node();</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">      AL.getAlloc().Deallocate(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>);</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77" lineLink="/docs/api/classes/llvm/allocatorlist/#ad28d2a85481b9626c49097643f248763"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#ad28d2a85481b9626c49097643f248763">value&#95;type</a> = <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a>;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78" lineLink="/docs/api/classes/llvm/allocatorlist/#afacbf3d6b740db0fd339309db9eb347d"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#afacbf3d6b740db0fd339309db9eb347d">pointer</a> = <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;;</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/classes/llvm/allocatorlist/#aae40e1b1b3653d5feb9c8f0823a839fa"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#aae40e1b1b3653d5feb9c8f0823a839fa">reference</a> = <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;;</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/classes/llvm/allocatorlist/#a99ad51fe6f3634026693353132dd91cb"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#a99ad51fe6f3634026693353132dd91cb">const&#95;pointer</a> = </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &#42;;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81" lineLink="/docs/api/classes/llvm/allocatorlist/#abbfd96e7e3df879029d411eea4942cad"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#abbfd96e7e3df879029d411eea4942cad">const&#95;reference</a> = </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82" lineLink="/docs/api/classes/llvm/allocatorlist/#a403a0ed03eca3d114d9e0c2e270bd6c5"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#a403a0ed03eca3d114d9e0c2e270bd6c5">size&#95;type</a> = </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/simple-ilist/#a1bf59040e990a6ef68062aa6d2bb0b12">list&#95;type::size&#95;type</a>;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/classes/llvm/allocatorlist/#a931bba675494b9bc429d480b9d7edcc8"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#a931bba675494b9bc429d480b9d7edcc8">difference&#95;type</a> = </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/simple-ilist/#a5da3239917a2962e7d5981cd659a8927">list&#95;type::difference&#95;type</a>;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> ValueT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> IteratorBase&gt;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">IteratorImpl</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">      : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-adaptor-base">iterator&#95;adaptor&#95;base</a>&lt;IteratorImpl&lt;ValueT, IteratorBase&gt;,</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">                                     IteratorBase,</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">                                     std::bidirectional&#95;iterator&#95;tag, ValueT&gt; &#123;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> OtherValueT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> OtherIteratorBase&gt;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">IteratorImpl;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a>;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">base&#95;type =</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/iterator-adaptor-base">iterator&#95;adaptor&#95;base&lt;IteratorImpl&lt;ValueT, IteratorBase&gt;</a>, IteratorBase,</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">                              std::bidirectional&#95;iterator&#95;tag, ValueT&gt;;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#ad28d2a85481b9626c49097643f248763">value&#95;type</a> = ValueT;</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#afacbf3d6b740db0fd339309db9eb347d">pointer</a> = ValueT &#42;;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#aae40e1b1b3653d5feb9c8f0823a839fa">reference</a> = ValueT &amp;;</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">    IteratorImpl() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">    IteratorImpl(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> IteratorImpl &amp;) = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">    IteratorImpl &amp;<a href="/docs/api/classes/llvm/allocatorlist/#aab9b0e4699e83accc6da1570253b5224">operator=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> IteratorImpl &amp;) = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> IteratorImpl(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> IteratorBase &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>) : base&#95;type(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> OtherValueT, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> OtherIteratorBase&gt;</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">    IteratorImpl(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> IteratorImpl&lt;OtherValueT, OtherIteratorBase&gt; &amp;<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>,</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">                 std::enable&#95;if&#95;t&lt;std::is&#95;convertible&lt;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">                     OtherIteratorBase, IteratorBase&gt;::value&gt; &#42; = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">        : base&#95;type(<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>.wrapped()) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">    ~IteratorImpl() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/allocatorlist/#aae40e1b1b3653d5feb9c8f0823a839fa">reference</a> <a href="/docs/api/classes/llvm/iterator-adaptor-base/#ae47be6b8b03bf4680ea855ac805373a2">operator&#42;</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/iterator-adaptor-base/#a0b53ab0bf798b3740b3d2b0fea0c49ed">base&#95;type::wrapped</a>()-&gt;V; &#125;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/allocatorlist/#afacbf3d6b740db0fd339309db9eb347d">pointer</a> <a href="/docs/api/classes/llvm/iterator-facade-base/#a01eb14835f6bcb17f051721a0ebb80fc">operator-&gt;</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/classes/llvm/iterator-adaptor-base/#ae47be6b8b03bf4680ea855ac805373a2">operator&#42;</a>(); &#125;</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123" lineLink="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> = IteratorImpl&lt;T, typename list&#95;type::iterator&gt;;</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124" lineLink="/docs/api/classes/llvm/allocatorlist/#a3ed0f896e250f11d46b55bab578366b1"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#a3ed0f896e250f11d46b55bab578366b1">reverse&#95;iterator</a> =</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">      IteratorImpl&lt;T, typename list&#95;type::reverse&#95;iterator&gt;;</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126" lineLink="/docs/api/classes/llvm/allocatorlist/#afe5408803494ad0a03cdf4bfc0229c84"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#afe5408803494ad0a03cdf4bfc0229c84">const&#95;iterator</a> =</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">      IteratorImpl&lt;const T, typename list&#95;type::const&#95;iterator&gt;;</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128" lineLink="/docs/api/classes/llvm/allocatorlist/#a9c858334e766522d993539b112695774"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocatorlist/#a9c858334e766522d993539b112695774">const&#95;reverse&#95;iterator</a> =</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">      IteratorImpl&lt;const T, typename list&#95;type::const&#95;reverse&#95;iterator&gt;;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131" lineLink="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132" lineLink="/docs/api/classes/llvm/allocatorlist/#a10102e090227015372b98263e122ac3e"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a10102e090227015372b98263e122ac3e">AllocatorList</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a> &amp;&amp;<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>)</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">      : AllocatorT(<a href="/docs/api/namespaces/std">std</a>::<a href="/docs/api/namespaces/llvm/#abfc9c7ecf70f66901e439f7c04ef3dbb">move</a>(<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>.getAlloc())), List(<a href="/docs/api/namespaces/std">std</a>::<a href="/docs/api/namespaces/llvm/#abfc9c7ecf70f66901e439f7c04ef3dbb">move</a>(<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>.List)) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135" lineLink="/docs/api/classes/llvm/allocatorlist/#ad8a508ae85cec16a3354e0e2fc5bcb96"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#ad8a508ae85cec16a3354e0e2fc5bcb96">AllocatorList</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a> &amp;<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>) &#123;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">    List.cloneFrom(<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>.List, Cloner(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">), Disposer(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">));</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139" lineLink="/docs/api/classes/llvm/allocatorlist/#aab9b0e4699e83accc6da1570253b5224"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a> &amp;<a href="/docs/api/classes/llvm/allocatorlist/#aab9b0e4699e83accc6da1570253b5224">operator=</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a> &amp;&amp;<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>) &#123;</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/allocatorlist/#ae8ad5f07308cf0dca49e8fad30b2aea7">clear</a>(); </Highlight><Highlight kind="comment">// Dispose of current nodes explicitly.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">    List = std::move(<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>.List);</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">    getAlloc() = std::move(<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>.getAlloc());</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146" lineLink="/docs/api/classes/llvm/allocatorlist/#a48d6fc5a8000f4d21c5173c29fd43b71"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a> &amp;<a href="/docs/api/classes/llvm/allocatorlist/#a48d6fc5a8000f4d21c5173c29fd43b71">operator=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a> &amp;<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>) &#123;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">    List.cloneFrom(<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#ab60f28d7a141ac46ccc200176a1bca8b">X</a>.List, Cloner(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">), Disposer(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">));</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151" lineLink="/docs/api/classes/llvm/allocatorlist/#a30bfbe7bc7afd0f0f6afe8540a222d41"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a30bfbe7bc7afd0f0f6afe8540a222d41">~AllocatorList</a>() &#123; <a href="/docs/api/classes/llvm/allocatorlist/#ae8ad5f07308cf0dca49e8fad30b2aea7">clear</a>(); &#125;</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153" lineLink="/docs/api/classes/llvm/allocatorlist/#addee1b8043160cf254cd40be6c174161"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#addee1b8043160cf254cd40be6c174161">swap</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a631b3cb9ff2c6850984fce7dd4f69f85">AllocatorList</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>) &#123;</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">    List.swap(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>.List);</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">    <a href="/docs/api/namespaces/std/#ab8424022895aee3e366fb9a32f2883cb">std::swap</a>(getAlloc(), <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#a87b8bfbbe9d8f7146d7f20a5fb42efd0">RHS</a>.getAlloc());</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158" lineLink="/docs/api/classes/llvm/allocatorlist/#abc82a0e3b4b02f4377b70b862c27c6a1"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#abc82a0e3b4b02f4377b70b862c27c6a1">empty</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> List.empty(); &#125;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159" lineLink="/docs/api/classes/llvm/allocatorlist/#abdfe5c8c2edcc986135bf3692131bbb6"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#abdfe5c8c2edcc986135bf3692131bbb6">size</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> List.size(); &#125;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161" lineLink="/docs/api/classes/llvm/allocatorlist/#a5136f4c492fba7d61b4411e991d01cd3"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/classes/llvm/allocatorlist/#a5136f4c492fba7d61b4411e991d01cd3">begin</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a>(List.begin()); &#125;</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162" lineLink="/docs/api/classes/llvm/allocatorlist/#a8da73198411870830fe3a7058a983f95"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/classes/llvm/allocatorlist/#a8da73198411870830fe3a7058a983f95">end</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a>(List.end()); &#125;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163" lineLink="/docs/api/classes/llvm/allocatorlist/#a47eb4abf375d1ff979da2bf2b78fac6e"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#afe5408803494ad0a03cdf4bfc0229c84">const&#95;iterator</a> <a href="/docs/api/classes/llvm/allocatorlist/#a47eb4abf375d1ff979da2bf2b78fac6e">begin</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#afe5408803494ad0a03cdf4bfc0229c84">const&#95;iterator</a>(List.begin()); &#125;</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164" lineLink="/docs/api/classes/llvm/allocatorlist/#a0a7d83e5217810cad0c14b8fdafd2d54"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#afe5408803494ad0a03cdf4bfc0229c84">const&#95;iterator</a> <a href="/docs/api/classes/llvm/allocatorlist/#a0a7d83e5217810cad0c14b8fdafd2d54">end</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#afe5408803494ad0a03cdf4bfc0229c84">const&#95;iterator</a>(List.end()); &#125;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165" lineLink="/docs/api/classes/llvm/allocatorlist/#af1d2fbb99f942fe101a18ecdce642620"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a3ed0f896e250f11d46b55bab578366b1">reverse&#95;iterator</a> <a href="/docs/api/classes/llvm/allocatorlist/#af1d2fbb99f942fe101a18ecdce642620">rbegin</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a3ed0f896e250f11d46b55bab578366b1">reverse&#95;iterator</a>(List.rbegin()); &#125;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166" lineLink="/docs/api/classes/llvm/allocatorlist/#a9926a000b688950cc29718ecb6186458"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a3ed0f896e250f11d46b55bab578366b1">reverse&#95;iterator</a> <a href="/docs/api/classes/llvm/allocatorlist/#a9926a000b688950cc29718ecb6186458">rend</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a3ed0f896e250f11d46b55bab578366b1">reverse&#95;iterator</a>(List.rend()); &#125;</Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167" lineLink="/docs/api/classes/llvm/allocatorlist/#a8bf8cef63081bd277cf3b00d16e1eb40"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a9c858334e766522d993539b112695774">const&#95;reverse&#95;iterator</a> <a href="/docs/api/classes/llvm/allocatorlist/#a8bf8cef63081bd277cf3b00d16e1eb40">rbegin</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a9c858334e766522d993539b112695774">const&#95;reverse&#95;iterator</a>(List.rbegin());</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170" lineLink="/docs/api/classes/llvm/allocatorlist/#a2ccdf2fa43f67206b7d843ca68efc8a2"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a9c858334e766522d993539b112695774">const&#95;reverse&#95;iterator</a> <a href="/docs/api/classes/llvm/allocatorlist/#a2ccdf2fa43f67206b7d843ca68efc8a2">rend</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a9c858334e766522d993539b112695774">const&#95;reverse&#95;iterator</a>(List.rend());</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174" lineLink="/docs/api/classes/llvm/allocatorlist/#adf33ce5f713c4c371f572781c84c6b32"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;<a href="/docs/api/classes/llvm/allocatorlist/#adf33ce5f713c4c371f572781c84c6b32">back</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> List.back().V; &#125;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175" lineLink="/docs/api/classes/llvm/allocatorlist/#aa5d7e7fe547ee46b288909f6a4c0fad9"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;<a href="/docs/api/classes/llvm/allocatorlist/#aa5d7e7fe547ee46b288909f6a4c0fad9">front</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> List.front().V; &#125;</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176" lineLink="/docs/api/classes/llvm/allocatorlist/#a2a158158ba55e2c852fcc8348009771c"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;<a href="/docs/api/classes/llvm/allocatorlist/#a2a158158ba55e2c852fcc8348009771c">back</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> List.back().V; &#125;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177" lineLink="/docs/api/classes/llvm/allocatorlist/#aa37a7b7d7cf353c946691f424fbe0cec"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;<a href="/docs/api/classes/llvm/allocatorlist/#aa37a7b7d7cf353c946691f424fbe0cec">front</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> List.front().V; &#125;</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179" lineLink="/docs/api/classes/llvm/allocatorlist/#a76b862e8eb292aaae9f01c3e7f517e76"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal">... Ts&gt; <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/classes/llvm/allocatorlist/#a76b862e8eb292aaae9f01c3e7f517e76">emplace</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, Ts &amp;&amp;... Vs) &#123;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a>(List.insert(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.wrapped(), &#42;create(std::forward&lt;Ts&gt;(Vs)...)));</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183" lineLink="/docs/api/classes/llvm/allocatorlist/#a7f60e4ad9091cb675c76e1e7cad31ef4"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/classes/llvm/allocatorlist/#a7f60e4ad9091cb675c76e1e7cad31ef4">insert</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;&amp;V) &#123;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a>(List.insert(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.wrapped(), &#42;create(std::move(V))));</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186" lineLink="/docs/api/classes/llvm/allocatorlist/#aaf63747aea52626b6325771b2d9b3ca7"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/classes/llvm/allocatorlist/#aaf63747aea52626b6325771b2d9b3ca7">insert</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;V) &#123;</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a>(List.insert(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.wrapped(), &#42;create(V)));</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> Iterator&gt;</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191" lineLink="/docs/api/classes/llvm/allocatorlist/#a1650ed4597245e5ac5043364d92f2f56"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a1650ed4597245e5ac5043364d92f2f56">insert</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, Iterator <a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04">First</a>, Iterator <a href="/docs/api/namespaces/llvm/#ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b">Last</a>) &#123;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (; <a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04">First</a> != <a href="/docs/api/namespaces/llvm/#ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b">Last</a>; ++<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04">First</a>)</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">      List.insert(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.wrapped(), &#42;create(&#42;<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04">First</a>));</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196" lineLink="/docs/api/classes/llvm/allocatorlist/#a6bcd40172aa1791180bfebc9173784cf"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/classes/llvm/allocatorlist/#a6bcd40172aa1791180bfebc9173784cf">erase</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>) &#123;</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a>(List.eraseAndDispose(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.wrapped(), Disposer(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)));</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200" lineLink="/docs/api/classes/llvm/allocatorlist/#a47b111fc5cc5b904e958500621aedc47"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/classes/llvm/allocatorlist/#a47b111fc5cc5b904e958500621aedc47">erase</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04">First</a>, <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a> <a href="/docs/api/namespaces/llvm/#ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b">Last</a>) &#123;</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a8cf6516b2732f1ba16dc5694bf3194d0">iterator</a>(</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">        List.eraseAndDispose(<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa7fb55ed0b7a30342ba6da306428cae04">First</a>.wrapped(), <a href="/docs/api/namespaces/llvm/#ac10d13c57a7adf4a1f140afd5321309bad55b30607c2a9a2616347d6edb789f6b">Last</a>.wrapped(), Disposer(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)));</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205" lineLink="/docs/api/classes/llvm/allocatorlist/#ae8ad5f07308cf0dca49e8fad30b2aea7"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#ae8ad5f07308cf0dca49e8fad30b2aea7">clear</a>() &#123; List.clearAndDispose(Disposer(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)); &#125;</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206" lineLink="/docs/api/classes/llvm/allocatorlist/#a50f0a0f2afd0038031244a465b4d163b"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a50f0a0f2afd0038031244a465b4d163b">pop&#95;back</a>() &#123; List.eraseAndDispose(--List.end(), Disposer(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)); &#125;</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207" lineLink="/docs/api/classes/llvm/allocatorlist/#a6aa20301b5fcc2ac50be033b8a1736c2"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a6aa20301b5fcc2ac50be033b8a1736c2">pop&#95;front</a>() &#123; List.eraseAndDispose(List.begin(), Disposer(&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)); &#125;</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208" lineLink="/docs/api/classes/llvm/allocatorlist/#a2f69e6c2951bb826a5787c7a6f75233b"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a2f69e6c2951bb826a5787c7a6f75233b">push&#95;back</a>(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;&amp;V) &#123; <a href="/docs/api/classes/llvm/allocatorlist/#a7f60e4ad9091cb675c76e1e7cad31ef4">insert</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a8da73198411870830fe3a7058a983f95">end</a>(), std::move(V)); &#125;</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209" lineLink="/docs/api/classes/llvm/allocatorlist/#ab1065b65e9db8d2784bac809f0ffbc01"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#ab1065b65e9db8d2784bac809f0ffbc01">push&#95;front</a>(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;&amp;V) &#123; <a href="/docs/api/classes/llvm/allocatorlist/#a7f60e4ad9091cb675c76e1e7cad31ef4">insert</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a5136f4c492fba7d61b4411e991d01cd3">begin</a>(), std::move(V)); &#125;</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210" lineLink="/docs/api/classes/llvm/allocatorlist/#a4a76e2c78335223d4d6ef7cd19cd1f6c"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a4a76e2c78335223d4d6ef7cd19cd1f6c">push&#95;back</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;V) &#123; <a href="/docs/api/classes/llvm/allocatorlist/#a7f60e4ad9091cb675c76e1e7cad31ef4">insert</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a8da73198411870830fe3a7058a983f95">end</a>(), V); &#125;</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211" lineLink="/docs/api/classes/llvm/allocatorlist/#aaa3d53eecf963fce7f89b24618af098a"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#aaa3d53eecf963fce7f89b24618af098a">push&#95;front</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> &amp;V) &#123; <a href="/docs/api/classes/llvm/allocatorlist/#a7f60e4ad9091cb675c76e1e7cad31ef4">insert</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a5136f4c492fba7d61b4411e991d01cd3">begin</a>(), V); &#125;</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212" lineLink="/docs/api/classes/llvm/allocatorlist/#a069757aa7aee042ee62d9e520988bab2"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal">... Ts&gt; </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a069757aa7aee042ee62d9e520988bab2">emplace&#95;back</a>(Ts &amp;&amp;... Vs) &#123;</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/allocatorlist/#a76b862e8eb292aaae9f01c3e7f517e76">emplace</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a8da73198411870830fe3a7058a983f95">end</a>(), std::forward&lt;Ts&gt;(Vs)...);</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215" lineLink="/docs/api/classes/llvm/allocatorlist/#a5eef856f8505db43ec21326f9ac9ae4c"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal">... Ts&gt; </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a5eef856f8505db43ec21326f9ac9ae4c">emplace&#95;front</a>(Ts &amp;&amp;... Vs) &#123;</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/allocatorlist/#a76b862e8eb292aaae9f01c3e7f517e76">emplace</a>(<a href="/docs/api/classes/llvm/allocatorlist/#a5136f4c492fba7d61b4411e991d01cd3">begin</a>(), std::forward&lt;Ts&gt;(Vs)...);</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="comment">  /// Reset the underlying allocator.</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="comment">  ///</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="comment">  /// \\pre \\c empty()</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222" lineLink="/docs/api/classes/llvm/allocatorlist/#a8b4058111246bcdc315ee7ca07a6fabd"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/allocatorlist/#a8b4058111246bcdc315ee7ca07a6fabd">resetAlloc</a>() &#123;</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/classes/llvm/allocatorlist/#abc82a0e3b4b02f4377b70b862c27c6a1">empty</a>() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Cannot reset allocator if not empty&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">    getAlloc().Reset();</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228" lineLink="/docs/api/namespaces/llvm/#af7dca6236dc4685d19780a150377258d"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt; </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#af7dca6236dc4685d19780a150377258d">BumpPtrList</a> = <a href="/docs/api/classes/llvm/allocatorlist">AllocatorList&lt;T, BumpPtrAllocator&gt;</a>;</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;ADT&#95;ALLOCATORLIST&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

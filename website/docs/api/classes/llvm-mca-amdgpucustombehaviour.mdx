@@ -1,0 +1,300 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/mca/amdgpucustombehaviour
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `AMDGPUCustomBehaviour` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Declaration
+
+<CodeBlock>class llvm::mca::AMDGPUCustomBehaviour</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="Target/AMDGPU/MCA/AMDGPUCustomBehaviour.h"
+  permalink="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/mca/custombehaviour">CustomBehaviour</a></>}>
+Class which can be overriden by targets to enforce instruction dependencies and behaviours that aren&#39;t expressed well enough within the scheduling model for mca to automatically simulate them properly. <a href="/docs/api/classes/llvm/mca/custombehaviour/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a8c616a0039f36b38c197da02e179797b">AMDGPUCustomBehaviour</a> (const MCSubtargetInfo &amp;STI, const mca::SourceMgr &amp;SrcMgr, const MCInstrInfo &amp;MCII)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Destructor Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a690f1af5fe823121581fc0f21e8dd21c">~AMDGPUCustomBehaviour</a> ()=default</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a17cb5a2e79bf568a343e0beb4176cbec">checkCustomHazard</a> (ArrayRef&lt; InstRef &gt; IssuedInst, const InstRef &amp;IR) override</>}>
+This method is used to determine if an instruction should be allowed to be dispatched. <a href="#a17cb5a2e79bf568a343e0beb4176cbec">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aa1bd15f9c19775ad86dfba4300357780">computeWaitCnt</a> (const InstRef &amp;IR, unsigned &amp;Vmcnt, unsigned &amp;Expcnt, unsigned &amp;Lgkmcnt, unsigned &amp;Vscnt)</>}>
+Based on the type of s&#95;waitcnt instruction we are looking at, and what its operands are, this method will set the values for each of the cnt references provided as arguments. <a href="#aa1bd15f9c19775ad86dfba4300357780">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a352f54154e8ea1de0446e8243cdc5de6">generateWaitCntInfo</a> ()</>}>
+This method gets called from the constructor and is where we setup the InstrWaitCntInfo vector. <a href="#a352f54154e8ea1de0446e8243cdc5de6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#abb75f007353bc54d84736c92c3942a90">handleWaitCnt</a> (ArrayRef&lt; InstRef &gt; IssuedInst, const InstRef &amp;IR)</>}>
+This method gets called from checkCustomHazard when mca is attempting to dispatch an s&#95;waitcnt instruction (or one of its variants). <a href="#abb75f007353bc54d84736c92c3942a90">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a269f1cda7a5364e40c04934a1c204698">hasModifiersSet</a> (const std::unique&#95;ptr&lt; Instruction &gt; &amp;Inst, unsigned OpName) const</>}>
+Helper function used in generateWaitCntInfo() <a href="#a269f1cda7a5364e40c04934a1c204698">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#ae82b59b7c08ecf264a4bafdc58d4c8b6">isAlwaysGDS</a> (uint16&#95;t Opcode) const</>}>
+Helper function used in generateWaitCntInfo() <a href="#ae82b59b7c08ecf264a4bafdc58d4c8b6">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#afd92dbe010c60f6bfc6a550e9ed65158">isGWS</a> (uint16&#95;t Opcode) const</>}>
+Helper function used in generateWaitCntInfo() <a href="#afd92dbe010c60f6bfc6a550e9ed65158">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#af98df5fc6c2139bb5b3994083829afc7">isVMEM</a> (const MCInstrDesc &amp;MCID)</>}>
+Helper function used in generateWaitCntInfo() <a href="#af98df5fc6c2139bb5b3994083829afc7">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::vector&lt; <a href="/docs/api/structs/llvm/mca/waitcntinfo">WaitCntInfo</a> &gt;</>}
+  name={<><a href="#ac288f5f70c1a88169b7979f7d4e5b493">InstrWaitCntInfo</a></>}>
+Whenever MCA would like to dispatch an s&#95;waitcnt instructions, we must check all the instruction that are still executing to see if they modify the same CNT as we need to wait for. <a href="#ac288f5f70c1a88169b7979f7d4e5b493">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+Definition at line 47 of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h">AMDGPUCustomBehaviour.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### AMDGPUCustomBehaviour() {#a8c616a0039f36b38c197da02e179797b}
+
+<MemberDefinition
+  prototype={<>llvm::mca::AMDGPUCustomBehaviour::AMDGPUCustomBehaviour (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/mcsubtargetinfo">MCSubtargetInfo</a> &amp; STI, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/structs/llvm/mca/sourcemgr">mca::SourceMgr</a> &amp; SrcMgr, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/mcinstrinfo">MCInstrInfo</a> &amp; MCII)</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h/#l00088">88</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h">AMDGPUCustomBehaviour.h</a>, definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp/#l00061">61</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp">AMDGPUCustomBehaviour.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Destructor
+
+### ~AMDGPUCustomBehaviour() {#a690f1af5fe823121581fc0f21e8dd21c}
+
+<MemberDefinition
+  prototype="llvm::mca::AMDGPUCustomBehaviour::~AMDGPUCustomBehaviour ()"
+  labels = {["default"]}>
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h/#l00091">91</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h">AMDGPUCustomBehaviour.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### checkCustomHazard() {#a17cb5a2e79bf568a343e0beb4176cbec}
+
+<MemberDefinition
+  prototype={<>unsigned llvm::mca::AMDGPUCustomBehaviour::checkCustomHazard (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/mca/instref">InstRef</a> &gt; IssuedInst, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/mca/instref">InstRef</a> &amp; IR)</>}
+  labels = {["virtual"]}>
+This method is used to determine if an instruction should be allowed to be dispatched.
+
+The return value is how many cycles until the instruction can be dispatched. This method is called after MCA has already checked for register and hardware dependencies so this method should only implement custom behaviour and dependencies that are not picked up by MCA naturally.
+
+Declaration at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h/#l00099">99</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h">AMDGPUCustomBehaviour.h</a>, definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp/#l00068">68</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp">AMDGPUCustomBehaviour.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### computeWaitCnt() {#aa1bd15f9c19775ad86dfba4300357780}
+
+<MemberDefinition
+  prototype={<>void llvm::mca::AMDGPUCustomBehaviour::computeWaitCnt (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/mca/instref">InstRef</a> &amp; IR, unsigned &amp; Vmcnt, unsigned &amp; Expcnt, unsigned &amp; Lgkmcnt, unsigned &amp; Vscnt)</>}>
+Based on the type of s&#95;waitcnt instruction we are looking at, and what its operands are, this method will set the values for each of the cnt references provided as arguments.
+
+Declaration at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h/#l00084">84</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h">AMDGPUCustomBehaviour.h</a>, definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp/#l00176">176</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp">AMDGPUCustomBehaviour.cpp</a>.
+</MemberDefinition>
+
+### generateWaitCntInfo() {#a352f54154e8ea1de0446e8243cdc5de6}
+
+<MemberDefinition
+  prototype="void llvm::mca::AMDGPUCustomBehaviour::generateWaitCntInfo ()">
+This method gets called from the constructor and is where we setup the InstrWaitCntInfo vector.
+
+The core logic for determining which CNTs an instruction interacts with is taken from <a href="/docs/api/classes/anonymous-namespace-siinsertwaitcnts-cpp-/siinsertwaitcnts/#a3f5e55facd89c7c4e29803a545e13716">SIInsertWaitcnts::updateEventWaitcntAfter()</a>. Unfortunately, some of the logic from that function is not available to us in this scope so we conservatively end up assuming that some instructions interact with more CNTs than they do in reality.
+
+Declaration at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h/#l00066">66</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h">AMDGPUCustomBehaviour.h</a>, definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp/#l00231">231</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp">AMDGPUCustomBehaviour.cpp</a>.
+</MemberDefinition>
+
+### handleWaitCnt() {#abb75f007353bc54d84736c92c3942a90}
+
+<MemberDefinition
+  prototype={<>unsigned llvm::mca::AMDGPUCustomBehaviour::handleWaitCnt (<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt; <a href="/docs/api/classes/llvm/mca/instref">InstRef</a> &gt; IssuedInst, <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/mca/instref">InstRef</a> &amp; IR)</>}>
+This method gets called from checkCustomHazard when mca is attempting to dispatch an s&#95;waitcnt instruction (or one of its variants).
+
+The method looks at each of the instructions that are still executing in the pipeline to determine if the waitcnt should force a wait.
+
+Declaration at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h/#l00080">80</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h">AMDGPUCustomBehaviour.h</a>, definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp/#l00104">104</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp">AMDGPUCustomBehaviour.cpp</a>.
+</MemberDefinition>
+
+### hasModifiersSet() {#a269f1cda7a5364e40c04934a1c204698}
+
+<MemberDefinition
+  prototype={<>bool llvm::mca::AMDGPUCustomBehaviour::hasModifiersSet (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> std::unique&#95;ptr&lt; <a href="/docs/api/classes/llvm/mca/instruction">Instruction</a> &gt; &amp; Inst, unsigned OpName) const</>}>
+Helper function used in generateWaitCntInfo()
+
+Declaration at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h/#l00068">68</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h">AMDGPUCustomBehaviour.h</a>, definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp/#l00310">310</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp">AMDGPUCustomBehaviour.cpp</a>.
+</MemberDefinition>
+
+### isAlwaysGDS() {#ae82b59b7c08ecf264a4bafdc58d4c8b6}
+
+<MemberDefinition
+  prototype={<>bool llvm::mca::AMDGPUCustomBehaviour::isAlwaysGDS (uint16&#95;t Opcode) const</>}>
+Helper function used in generateWaitCntInfo()
+
+Declaration at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h/#l00073">73</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h">AMDGPUCustomBehaviour.h</a>, definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp/#l00330">330</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp">AMDGPUCustomBehaviour.cpp</a>.
+</MemberDefinition>
+
+### isGWS() {#afd92dbe010c60f6bfc6a550e9ed65158}
+
+<MemberDefinition
+  prototype={<>bool llvm::mca::AMDGPUCustomBehaviour::isGWS (uint16&#95;t Opcode) const</>}>
+Helper function used in generateWaitCntInfo()
+
+Declaration at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h/#l00071">71</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h">AMDGPUCustomBehaviour.h</a>, definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp/#l00324">324</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp">AMDGPUCustomBehaviour.cpp</a>.
+</MemberDefinition>
+
+### isVMEM() {#af98df5fc6c2139bb5b3994083829afc7}
+
+<MemberDefinition
+  prototype={<>bool llvm::mca::AMDGPUCustomBehaviour::isVMEM (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/mcinstrdesc">MCInstrDesc</a> &amp; MCID)</>}>
+Helper function used in generateWaitCntInfo()
+
+Declaration at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h/#l00075">75</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h">AMDGPUCustomBehaviour.h</a>, definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp/#l00303">303</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp">AMDGPUCustomBehaviour.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### InstrWaitCntInfo {#ac288f5f70c1a88169b7979f7d4e5b493}
+
+<MemberDefinition
+  prototype={<>std::vector&lt;WaitCntInfo&gt; llvm::mca::AMDGPUCustomBehaviour::InstrWaitCntInfo</>}>
+Whenever MCA would like to dispatch an s&#95;waitcnt instructions, we must check all the instruction that are still executing to see if they modify the same CNT as we need to wait for.
+
+This vector gets built in the constructor and contains 1 <a href="/docs/api/structs/llvm/mca/waitcntinfo">WaitCntInfo</a> struct for each instruction within the SrcManager. Each element tells us which CNTs that instruction may interact with. We conservatively assume some instructions interact with more CNTs than they do in reality, so we will occasionally wait longer than necessary, but we shouldn&#39;t ever wait for shorter.
+
+Definition at line <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h/#l00057">57</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h">AMDGPUCustomBehaviour.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-cpp">AMDGPUCustomBehaviour.cpp</a></li>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/lib/target/amdgpu/mca/amdgpucustombehaviour-h">AMDGPUCustomBehaviour.h</a></li>
+</ul>
+
+</DoxygenPage>

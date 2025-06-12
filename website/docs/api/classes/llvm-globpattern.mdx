@@ -1,0 +1,200 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/globpattern
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `GlobPattern` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This class implements a glob pattern matcher similar to the one found in bash, but with some key differences. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::GlobPattern</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Support/GlobPattern.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/globpattern-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a8e2e456cd7f0e9ff0fd5798719b4d6fe">isTrivialMatchAll</a> () const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><a href="#a7bcd47fe233f29521e2d33adc1bf45e0">match</a> (StringRef S) const</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/stringref">StringRef</a></>}
+  name={<><a href="#a4951ff28ba8a00df54bd471c3cadc1a3">Prefix</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; SubGlobPattern, 1 &gt;</>}
+  name={<><a href="#ac04cf62bbbacedc4d102f459897f4f7a">SubGlobs</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/expected">Expected</a>&lt; <a href="/docs/api/classes/llvm/globpattern">GlobPattern</a> &gt;</>}
+  name={<><a href="#ad853cb6a2e5807ae5006c0f5ba1e7b49">create</a> (StringRef Pat, std::optional&lt; size&#95;t &gt; MaxSubPatterns=&#123;&#125;)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This class implements a glob pattern matcher similar to the one found in bash, but with some key differences.
+
+Namely, that <code>&quot;&#42;&quot;</code> matches all characters and does not exclude path separators.
+
+
+<ul>
+<li><code>&quot;?&quot;</code> matches a single character.</li>
+<li><code>&quot;&#42;&quot;</code> matches zero or more characters.</li>
+<li><code>&quot;&#91;&lt;chars&gt;&#93;&quot;</code> matches one character in the bracket. Character ranges, e.g., <code>&quot;&#91;a-z&#93;&quot;</code>, and negative sets via <code>&quot;&#91;^ab&#93;&quot;</code> or <code>&quot;&#91;!ab&#93;&quot;</code> are also supported.</li>
+<li><code>&quot;&#123;&lt;glob&gt;,...&#125;&quot;</code> matches one of the globs in the list. Nested brace expansions are not supported. If <code>MaxSubPatterns</code> is empty then brace expansions are not supported and characters <code>&quot;&#123;,&#125;&quot;</code> are treated as literals.</li>
+<li><code>&quot;\\\\&quot; (a single backslash) escapes the next character so it is treated
+  as a literal.
+
+Some known edge cases are:
+&#42; \\p &quot;</code>&#93;&quot; is allowed as the first character in a character class, i.e.,
+  \\p &quot;&#91;&#93;&#93;&quot; is valid and matches the literal \\p &quot;&#93;&quot;.
+&#42; The empty character class, i.e., \\p &quot;&#91;&#93;&quot;, is invalid.
+&#42; Empty or singleton brace expansions, e.g., \\p &quot;&#123;&#125;&quot;, \\p &quot;&#123;a&#125;&quot;, are invalid.
+&#42; \\p &quot;&#125;&quot; and \\p &quot;,&quot; that are not inside a brace expansion are taken as
+  literals, e.g., \\p &quot;,&#125;&quot; is valid but \\p &quot;&#123;&quot; is not.
+
+For example, \\p &quot;&#42;&#91;/\\\\&#93;foo.&#123;c,cpp&#125;&quot; (with two backslashes) will match
+(unix or windows) paths to all files named \\p &quot;foo.c&quot; or \\p &quot;foo.cpp&quot;.</li>
+</ul>
+
+Definition at line 50 of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/globpattern-h">GlobPattern.h</a>.
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### isTrivialMatchAll() {#a8e2e456cd7f0e9ff0fd5798719b4d6fe}
+
+<MemberDefinition
+  prototype="bool llvm::GlobPattern::isTrivialMatchAll () const"
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/globpattern-h/#l00063">63</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/globpattern-h">GlobPattern.h</a>.
+</MemberDefinition>
+
+### match() {#a7bcd47fe233f29521e2d33adc1bf45e0}
+
+<MemberDefinition
+  prototype={<>bool GlobPattern::match (<a href="/docs/api/classes/llvm/stringref">StringRef</a> S) const</>}>
+
+<SectionUser title="Returns">
+<code>true</code> if <code>S</code> matches this glob pattern
+</SectionUser>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/globpattern-h/#l00059">59</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/globpattern-h">GlobPattern.h</a>, definition at line <a href="/docs/api/files/lib/lib/support/globpattern-cpp/#l00193">193</a> of file <a href="/docs/api/files/lib/lib/support/globpattern-cpp">GlobPattern.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### Prefix {#a4951ff28ba8a00df54bd471c3cadc1a3}
+
+<MemberDefinition
+  prototype="StringRef llvm::GlobPattern::Prefix">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/globpattern-h/#l00072">72</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/globpattern-h">GlobPattern.h</a>.
+</MemberDefinition>
+
+### SubGlobs {#ac04cf62bbbacedc4d102f459897f4f7a}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;SubGlobPattern, 1&gt; llvm::GlobPattern::SubGlobs</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/globpattern-h/#l00089">89</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/globpattern-h">GlobPattern.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Functions
+
+### create() {#ad853cb6a2e5807ae5006c0f5ba1e7b49}
+
+<MemberDefinition
+  prototype={<>Expected&lt; GlobPattern &gt; GlobPattern::create (<a href="/docs/api/classes/llvm/stringref">StringRef</a> Pat, std::optional&lt; size&#95;t &gt; MaxSubPatterns=&#123;&#125;)</>}
+  labels = {["static"]}>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="Pat">the pattern to match against</ParametersListItem>
+<ParametersListItem name="MaxSubPatterns">if provided limit the number of allowed subpatterns created from expanding braces otherwise disable brace expansion</ParametersListItem>
+</ParametersList>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/support/globpattern-h/#l00057">57</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/support/globpattern-h">GlobPattern.h</a>, definition at line <a href="/docs/api/files/lib/lib/support/globpattern-cpp/#l00136">136</a> of file <a href="/docs/api/files/lib/lib/support/globpattern-cpp">GlobPattern.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/support/globpattern-h">GlobPattern.h</a></li>
+<li><a href="/docs/api/files/lib/lib/support/globpattern-cpp">GlobPattern.cpp</a></li>
+</ul>
+
+</DoxygenPage>

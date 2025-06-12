@@ -1,0 +1,207 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/lowertypetests/bytearraybuilder
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import EnumerationList from '@xpack/docusaurus-plugin-doxygen/components/EnumerationList'
+import EnumerationListItem from '@xpack/docusaurus-plugin-doxygen/components/EnumerationListItem'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ByteArrayBuilder` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This class is used to build a byte array containing overlapping bit sets. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>struct llvm::lowertypetests::ByteArrayBuilder</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Transforms/IPO/LowerTypeTests.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h"
+  isLocal="true" />
+</IncludesList>
+
+## Enumerations Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="anonymous enum"
+  name={<>:  &#123; <a href="#a456d9afc9af28332a92e0a67cbbc7098">...</a> &#125;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a7e7d04e07fc7f640097f08663ec3ccee">ByteArrayBuilder</a> ()</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#aefcc42b423b9473d155867e579682a9e">allocate</a> (const std::set&lt; uint64&#95;t &gt; &amp;Bits, uint64&#95;t BitSize, uint64&#95;t &amp;AllocByteOffset, uint8&#95;t &amp;AllocMask)</>}>
+Allocate BitSize bits in the byte array where Bits contains the bits to set. <a href="#aefcc42b423b9473d155867e579682a9e">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>uint64&#95;t</>}
+  name={<><a href="#a49082c502ad79672b9f721424779a643">BitAllocs</a></>}>
+The number of bytes allocated so far for each of the bits. <a href="#a49082c502ad79672b9f721424779a643">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>std::vector&lt; uint8&#95;t &gt;</>}
+  name={<><a href="#ab9bf25f047271def1203635a5725eeff">Bytes</a></>}>
+The byte array built so far. <a href="#ab9bf25f047271def1203635a5725eeff">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This class is used to build a byte array containing overlapping bit sets.
+
+By loading from indexed offsets into the byte array and applying a mask, a program can test bits from the bit set with a relatively short instruction sequence. For example, suppose we have 15 bit sets to lay out:
+
+A (16 bits), B (15 bits), C (14 bits), D (13 bits), E (12 bits), F (11 bits), G (10 bits), H (9 bits), I (7 bits), J (6 bits), K (5 bits), L (4 bits), M (3 bits), N (2 bits), O (1 bit)
+
+These bits can be laid out in a 16-byte array like this: <CodeBlock>  Byte Offset
+0123456789ABCDEF
+</CodeBlock> Bit 7 HHHHHHHHHIIIIIII 6 GGGGGGGGGGJJJJJJ 5 FFFFFFFFFFFKKKKK 4 EEEEEEEEEEEELLLL 3 DDDDDDDDDDDDDMMM 2 CCCCCCCCCCCCCCNN 1 BBBBBBBBBBBBBBBO 0 AAAAAAAAAAAAAAAA
+
+For example, to test bit X of A, we evaluate ((bits&#91;X&#93; &amp; 1) != 0), or to test bit X of I, we evaluate ((bits&#91;9 + X&#93; &amp; 0x80) != 0). This can be done in 1-2 machine instructions on x86, or 4-6 instructions on <a href="/docs/api/namespaces/llvm/arm">ARM</a>.
+
+This is a byte array, rather than (say) a 2-byte array or a 4-byte array, because for one thing it gives us better packing (the more bins there are, the less evenly they will be filled), and for another, the instruction sequences can be slightly shorter, both on x86 and <a href="/docs/api/namespaces/llvm/arm">ARM</a>.
+
+Definition at line 174 of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h">LowerTypeTests.h</a>.
+
+<SectionDefinition>
+
+## Enumerations
+
+### anonymous enum  {#a456d9afc9af28332a92e0a67cbbc7098}
+
+<MemberDefinition
+  prototype="anonymous enum ">
+
+<EnumerationList title="Enumeration values">
+
+<Link id="a456d9afc9af28332a92e0a67cbbc7098a961b1f972e23c16ecc4ddffe1ddfbdca" />
+<EnumerationListItem name="BitsPerByte">
+ (= 8)
+</EnumerationListItem>
+
+</EnumerationList>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h/#l00178">178</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h">LowerTypeTests.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Constructors
+
+### ByteArrayBuilder() {#a7e7d04e07fc7f640097f08663ec3ccee}
+
+<MemberDefinition
+  prototype="llvm::lowertypetests::ByteArrayBuilder::ByteArrayBuilder ()"
+  labels = {["inline"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h/#l00183">183</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h">LowerTypeTests.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### allocate() {#aefcc42b423b9473d155867e579682a9e}
+
+<MemberDefinition
+  prototype={<>void ByteArrayBuilder::allocate (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> std::set&lt; uint64&#95;t &gt; &amp; Bits, uint64&#95;t BitSize, uint64&#95;t &amp; AllocByteOffset, uint8&#95;t &amp; AllocMask)</>}>
+Allocate BitSize bits in the byte array where Bits contains the bits to set.
+
+AllocByteOffset is set to the offset within the byte array and AllocMask is set to the bitmask for those bits. This uses the LPT (Longest Processing Time) multiprocessor scheduling algorithm to lay out the bits efficiently; the pass allocates bit sets in decreasing size order.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h/#l00192">192</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h">LowerTypeTests.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/lowertypetests-cpp/#l00223">223</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/lowertypetests-cpp">LowerTypeTests.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### BitAllocs {#a49082c502ad79672b9f721424779a643}
+
+<MemberDefinition
+  prototype={<>uint64&#95;t llvm::lowertypetests::ByteArrayBuilder::BitAllocs&#91;BitsPerByte&#93;</>}>
+The number of bytes allocated so far for each of the bits.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h/#l00181">181</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h">LowerTypeTests.h</a>.
+</MemberDefinition>
+
+### Bytes {#ab9bf25f047271def1203635a5725eeff}
+
+<MemberDefinition
+  prototype={<>std::vector&lt;uint8&#95;t&gt; llvm::lowertypetests::ByteArrayBuilder::Bytes</>}>
+The byte array built so far.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h/#l00176">176</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h">LowerTypeTests.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/ipo/lowertypetests-h">LowerTypeTests.h</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/lowertypetests-cpp">LowerTypeTests.cpp</a></li>
+</ul>
+
+</DoxygenPage>

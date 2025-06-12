@@ -1,0 +1,998 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/analysis/callgraphsccpass-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `CallGraphSCCPass.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Analysis/CallGraphSCCPass.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/callgraphsccpass-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/DenseMap.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/SCCIterator.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/scciterator-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/Statistic.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/statistic-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/StringExtras.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/stringextras-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Analysis/CallGraph.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/callgraph-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/AbstractCallSite.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/abstractcallsite-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Function.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/function-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Intrinsics.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/intrinsics-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/LLVMContext.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/llvmcontext-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/LegacyPassManagers.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/legacypassmanagers-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Module.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/module-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/OptBisect.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/optbisect-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/PassTimingInfo.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/passtiminginfo-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/PrintPasses.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/printpasses-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Pass.h"
+  permalink="/docs/api/files/include/include/llvm/pass-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/CommandLine.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/commandline-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Debug.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/debug-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/Timer.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/timer-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Support/raw_ostream.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="cassert"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="string"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="utility"
+  permalink=""
+  isLocal="false" />
+<IncludesListItem
+  filePath="vector"
+  permalink=""
+  isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/llvm">llvm</a></>}>
+This is an optimization pass for GlobalISel generic memory operations. <a href="/docs/api/namespaces/llvm/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/anonymous-callgraphsccpass-cpp-">anonymous&#123;CallGraphSCCPass.cpp&#125;</a></>}>
+<a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager">CGPassManager</a> manages FPPassManagers and CallGraphSCCPasses. <a href="/docs/api/namespaces/anonymous-callgraphsccpass-cpp-/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager">CGPassManager</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass">PrintCallGraphPass</a></>}>
+<a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass">PrintCallGraphPass</a> - Print a <a href="/docs/api/classes/llvm/module">Module</a> corresponding to a call graph. <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/include/include/llvm/include/llvm/demangle/itaniumdemangle-h/#ae2b0d0345572d6718e219aa76d1d54edab45cffe084dd3d20d928bee85e7b0f21">std::string</a></>}
+  name={<><a href="#a2bd4f0ba04228d5fb919734abb9ca1af">getDescription</a> (const CallGraphSCC &amp;SCC)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  name={<><a href="#ad6190879f8ab09845852407066453e4f">STATISTIC</a> (MaxSCCIterations, &quot;Maximum CGSCCPassMgr iterations on one SCC&quot;)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Defines Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="#define"
+  name={<><a href="#ad78e062f62e0d6e453941fb4ca843e4d">DEBUG&#95;TYPE</a>&nbsp;&nbsp;&nbsp;&quot;cgscc-passmgr&quot;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+<SectionDefinition>
+
+## Functions
+
+### getDescription() {#a2bd4f0ba04228d5fb919734abb9ca1af}
+
+<MemberDefinition
+  prototype={<>static std::string getDescription (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> &amp; SCC)</>}
+  labels = {["static"]}>
+
+Definition at line <a href="#l00728">728</a> of file <a href="/docs/api/files/lib/lib/analysis/callgraphsccpass-cpp">CallGraphSCCPass.cpp</a>.
+</MemberDefinition>
+
+### STATISTIC() {#ad6190879f8ab09845852407066453e4f}
+
+<MemberDefinition
+  prototype={<>STATISTIC (MaxSCCIterations, &quot;Maximum CGSCCPassMgr iterations on one SCC&quot;)</>}>
+
+Definition at line <a href="#l00051">51</a> of file <a href="/docs/api/files/lib/lib/analysis/callgraphsccpass-cpp">CallGraphSCCPass.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Defines
+
+### DEBUG&#95;TYPE {#ad78e062f62e0d6e453941fb4ca843e4d}
+
+<MemberDefinition
+  prototype={<>#define DEBUG&#95;TYPE&nbsp;&nbsp;&nbsp;&quot;cgscc-passmgr&quot;</>}>
+
+Definition at line <a href="#l00044">44</a> of file <a href="/docs/api/files/lib/lib/analysis/callgraphsccpass-cpp">CallGraphSCCPass.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- CallGraphSCCPass.cpp - Pass that operates BU on call graph ---------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements the CallGraphSCCPass class, which is used for passes</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// which are implemented as bottom-up traversals on the call graph.  Because</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// there may be cycles in the call graph, passes of this type operate on the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// call-graph in SCC order: that is, they process function bottom-up, except for</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// recursive functions, which they process all at once.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/callgraphsccpass-h">llvm/Analysis/CallGraphSCCPass.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h">llvm/ADT/DenseMap.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/scciterator-h">llvm/ADT/SCCIterator.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/statistic-h">llvm/ADT/Statistic.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringextras-h">llvm/ADT/StringExtras.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/callgraph-h">llvm/Analysis/CallGraph.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/abstractcallsite-h">llvm/IR/AbstractCallSite.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/function-h">llvm/IR/Function.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/intrinsics-h">llvm/IR/Intrinsics.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/llvmcontext-h">llvm/IR/LLVMContext.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/legacypassmanagers-h">llvm/IR/LegacyPassManagers.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/module-h">llvm/IR/Module.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/optbisect-h">llvm/IR/OptBisect.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/passtiminginfo-h">llvm/IR/PassTimingInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/printpasses-h">llvm/IR/PrintPasses.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/pass-h">llvm/Pass.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/commandline-h">llvm/Support/CommandLine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h">llvm/Support/Debug.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/timer-h">llvm/Support/Timer.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h">llvm/Support/raw&#95;ostream.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cassert&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;string&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;utility&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;vector&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44" lineLink="#ad78e062f62e0d6e453941fb4ca843e4d"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEBUG&#95;TYPE &quot;cgscc-passmgr&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"><a href="/docs/api/classes/llvm/cl/opt">cl::opt&lt;unsigned&gt;</a> <a href="/docs/api/namespaces/llvm/#aec6409a70645bde7c81ab78a13ddbf62">MaxDevirtIterations</a>(</Highlight><Highlight kind="stringliteral">&quot;max-devirt-iterations&quot;</Highlight><Highlight kind="normal">, <a href="/docs/api/namespaces/llvm/cl/#a68075925a54790e71ca790e1d4f21a40ab81f279502bb9ca74e6629cfb62844be">cl::ReallyHidden</a>,</Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">                                      <a href="/docs/api/namespaces/llvm/cl/#ac12e6a8f3a1b511f0dee2ed6de0ae806">cl::init</a>(4));</Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51" lineLink="#ad6190879f8ab09845852407066453e4f"><Highlight kind="normal"><a href="/docs/api/files/include/include/llvm/include/llvm/adt/statistic-h/#ad6117415b93e5675d5a6c8e1855b3b2f">STATISTIC</a>(MaxSCCIterations, </Highlight><Highlight kind="stringliteral">&quot;Maximum CGSCCPassMgr iterations on one SCC&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight><Highlight kind="comment">// CGPassManager</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="comment">/// CGPassManager manages FPPassManagers and CallGraphSCCPasses.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58" lineLink="/docs/api/namespaces/anonymous-callgraphsccpass-cpp-"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a46813b9b0cc8e92d425a4051629a6faf">CGPassManager</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/modulepass/#a723659a08d210f4f566887bda3f9f976">ModulePass</a>, </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/pmdatamanager/#a04fbd0afa6857fe697dd28e93bdfec07">PMDataManager</a> &#123;</Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a64242286713b4f504b054b1e13f87aaf"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a64242286713b4f504b054b1e13f87aaf">ID</a>;</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a46813b9b0cc8e92d425a4051629a6faf"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a46813b9b0cc8e92d425a4051629a6faf">CGPassManager</a>() : <a href="/docs/api/classes/llvm/modulepass/#a723659a08d210f4f566887bda3f9f976">ModulePass</a>(<a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a64242286713b4f504b054b1e13f87aaf">ID</a>) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="comment">  /// Execute all of the passes scheduled for execution.  Keep track of</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="comment">  /// whether any of the passes modifies the module, and if so, return true.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> runOnModule(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/pass/#ab007d6c51634eb65e4f4f9dab4eb6a8c">ModulePass::doInitialization</a>;</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/pass/#ac7811985250c75d7e2a244292d615fff">ModulePass::doFinalization</a>;</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> doInitialization(<a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG);</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> doFinalization(<a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG);</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">  /// Pass Manager itself does not invalidate any analysis info.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#adf630d8224dd75b3d7126b5570583993"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#adf630d8224dd75b3d7126b5570583993">getAnalysisUsage</a>(<a href="/docs/api/classes/llvm/analysisusage">AnalysisUsage</a> &amp;Info)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// CGPassManager walks SCC and it needs CallGraph.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">    Info.addRequired&lt;<a href="/docs/api/classes/llvm/callgraphwrapperpass">CallGraphWrapperPass</a>&gt;();</Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">    Info.setPreservesAll();</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a4de0a330feac0dfbe56a432708a4466b"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a4de0a330feac0dfbe56a432708a4466b">getPassName</a>()</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="stringliteral">&quot;CallGraph Pass Manager&quot;</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a0be65bf69e5ca2c5991ce27de19edfd2"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pmdatamanager/#a04fbd0afa6857fe697dd28e93bdfec07">PMDataManager</a> &#42;<a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a0be65bf69e5ca2c5991ce27de19edfd2">getAsPMDataManager</a>()</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#ab3cbde4fa9325acf3d46bcd036e7fc87"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pass/#a16baa169d062524be5a6b67609266174">Pass</a> &#42;<a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#ab3cbde4fa9325acf3d46bcd036e7fc87">getAsPass</a>()</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Print passes managed by this manager</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a4efbb82e436e90c66cc02d1630c0c528"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a4efbb82e436e90c66cc02d1630c0c528">dumpPassStructure</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>)</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a9a7b5c68c90f85baaedaa854cc5002cc">errs</a>().<a href="/docs/api/classes/llvm/raw-ostream/#a8fdf5cdf041c8aded7e3308c1c3efacc">indent</a>(<a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>&#42;2) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Call Graph SCC Pass Manager\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Index = 0; Index &lt; <a href="/docs/api/classes/llvm/pmdatamanager/#aa37440cfb2bd92a0b361cb2a6e1232e2">getNumContainedPasses</a>(); ++Index) &#123;</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/pass/#a16baa169d062524be5a6b67609266174">Pass</a> &#42;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a> = <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a4b1bfae8468f5272b17dbfa99b21d8cf">getContainedPass</a>(Index);</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>-&gt;dumpPassStructure(<a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a> + 1);</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/pmdatamanager/#a0ced924c11b3eddbfccd9c186f38a389">dumpLastUses</a>(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>+1);</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a4b1bfae8468f5272b17dbfa99b21d8cf"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pass/#a16baa169d062524be5a6b67609266174">Pass</a> &#42;<a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a4b1bfae8468f5272b17dbfa99b21d8cf">getContainedPass</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>) &#123;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a> &lt; <a href="/docs/api/classes/llvm/pmdatamanager/#a433bcef3e3a89059a3510632b640525d">PassVector</a>.size() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Pass number out of range!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/pass/#a16baa169d062524be5a6b67609266174">Pass</a> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/pmdatamanager/#a433bcef3e3a89059a3510632b640525d">PassVector</a>&#91;<a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>&#93;);</Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#abc34f807b2f181d7bec482d48e573b1e"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a3948b4d0759f9852502b466d6cfb4ebb">PassManagerType</a> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#abc34f807b2f181d7bec482d48e573b1e">getPassManagerType</a>()</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a3948b4d0759f9852502b466d6cfb4ebbacfbf7d6825e58faf3673dc5e5a7a2465">PMT&#95;CallGraphPassManager</a>;</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> RunAllPassesOnSCC(<a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> &amp;CurSCC, <a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG,</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">                         </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> &amp;DevirtualizedCall);</Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> RunPassOnSCC(<a href="/docs/api/classes/llvm/pass">Pass</a> &#42;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> &amp;CurSCC,</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">                    <a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> &amp;CallGraphUpToDate,</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">                    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> &amp;DevirtualizedCall);</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> RefreshCallGraph(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> &amp;CurSCC, <a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG,</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">                        </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsCheckingMode);</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end anonymous namespace.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a64242286713b4f504b054b1e13f87aaf">CGPassManager::ID</a> = 0;</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> CGPassManager::RunPassOnSCC(<a href="/docs/api/classes/llvm/pass">Pass</a> &#42;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> &amp;CurSCC,</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">                                 <a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> &amp;CallGraphUpToDate,</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">                                 </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> &amp;DevirtualizedCall) &#123;</Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/pmdatamanager">PMDataManager</a> &#42;PM = <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>-&gt;getAsPMDataManager();</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/module">Module</a> &amp;M = CG.<a href="/docs/api/classes/llvm/callgraph/#ac6148a4c6df56af41c63c0c3a798c447">getModule</a>();</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!PM) &#123;</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/callgraphsccpass">CallGraphSCCPass</a> &#42;CGSP = (<a href="/docs/api/classes/llvm/callgraphsccpass">CallGraphSCCPass</a> &#42;)<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>;</Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!CallGraphUpToDate) &#123;</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">      DevirtualizedCall |= RefreshCallGraph(CurSCC, CG, </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">      CallGraphUpToDate = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/codegen/dfapacketizer-cpp/#acc16edf21eddec420cd4b27adb3111c6">InstrCount</a>, SCCCount = 0;</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/stringmap">StringMap&lt;std::pair&lt;unsigned, unsigned&gt;</a>&gt; FunctionToInstrCount;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> EmitICRemark = M.shouldEmitInstrCountChangedRemark();</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/timeregion">TimeRegion</a> PassTimer(<a href="/docs/api/namespaces/llvm/#a67d0285e03a80731db23ba77d291942d">getPassTimer</a>(CGSP));</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (EmitICRemark)</Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/codegen/dfapacketizer-cpp/#acc16edf21eddec420cd4b27adb3111c6">InstrCount</a> = initSizeRemarkInfo(M, FunctionToInstrCount);</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">      <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> = CGSP-&gt;<a href="/docs/api/classes/llvm/callgraphsccpass/#a5ab09f122afda68d4c0d86e8e5877465">runOnSCC</a>(CurSCC);</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (EmitICRemark) &#123;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// FIXME: Add getInstructionCount to CallGraphSCC.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">        SCCCount = M.getInstructionCount();</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Is there a difference in the number of instructions in the module?</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SCCCount != <a href="/docs/api/files/lib/lib/codegen/dfapacketizer-cpp/#acc16edf21eddec420cd4b27adb3111c6">InstrCount</a>) &#123;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// Yep. Emit a remark and update InstrCount.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">          int64&#95;t Delta =</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">              </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">int64&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(SCCCount) - </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">int64&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(<a href="/docs/api/files/lib/lib/codegen/dfapacketizer-cpp/#acc16edf21eddec420cd4b27adb3111c6">InstrCount</a>);</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">          emitInstrCountChangedRemark(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, M, Delta, <a href="/docs/api/files/lib/lib/codegen/dfapacketizer-cpp/#acc16edf21eddec420cd4b27adb3111c6">InstrCount</a>,</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">                                      FunctionToInstrCount);</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">          <a href="/docs/api/files/lib/lib/codegen/dfapacketizer-cpp/#acc16edf21eddec420cd4b27adb3111c6">InstrCount</a> = SCCCount;</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// After the CGSCCPass is done, when assertions are enabled, use</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// RefreshCallGraph to verify that the callgraph was correctly updated.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef NDEBUG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>)</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">      RefreshCallGraph(CurSCC, CG, </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>;</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(PM-&gt;<a href="/docs/api/classes/llvm/pmdatamanager/#aa877f351376c696b385fdeba9b93a5f1">getPassManagerType</a>() == <a href="/docs/api/namespaces/llvm/#a3948b4d0759f9852502b466d6cfb4ebbaf92a84a9aa3cca1378d1a12fc3664396">PMT&#95;FunctionPassManager</a> &amp;&amp;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">         </Highlight><Highlight kind="stringliteral">&quot;Invalid CGPassManager member&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/fppassmanager">FPPassManager</a> &#42;FPP = (<a href="/docs/api/classes/llvm/fppassmanager">FPPassManager</a>&#42;)<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>;</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Run pass P on all functions in the current SCC.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;CGN : CurSCC) &#123;</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = CGN-&gt;getFunction()) &#123;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">      dumpPassInfo(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="/docs/api/namespaces/llvm/#a7e7283c48f393f907c761d39cb7f0b51a3f3116bde1268f9e1cd78d9010e4ff26">EXECUTION&#95;MSG</a>, <a href="/docs/api/namespaces/llvm/#a7e7283c48f393f907c761d39cb7f0b51a4772c843cba89638b5f424e728acadee">ON&#95;FUNCTION&#95;MSG</a>, <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;getName());</Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/timeregion">TimeRegion</a> PassTimer(<a href="/docs/api/namespaces/llvm/#a67d0285e03a80731db23ba77d291942d">getPassTimer</a>(FPP));</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">        <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> |= FPP-&gt;<a href="/docs/api/classes/llvm/fppassmanager/#a0dec4e6b40dec12d8c6a17040ee73021">runOnFunction</a>(&#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;getContext().yield();</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The function pass(es) modified the IR, they may have clobbered the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// callgraph.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> &amp;&amp; CallGraphUpToDate) &#123;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">    <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;CGSCCPASSMGR: Pass Dirtied SCC: &quot;</Highlight><Highlight kind="normal"> &lt;&lt; <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>-&gt;getPassName()</Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">                      &lt;&lt; </Highlight><Highlight kind="charliteral">&#39;\\n&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">    CallGraphUpToDate = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>;</Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="comment">/// Scan the functions in the specified CFG and resync the</Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="comment">/// callgraph with the call sites found in it.  This is used after</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="comment">/// FunctionPasses have potentially munged the callgraph, and can be used after</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="comment">/// CallGraphSCC passes to verify that they correctly updated the callgraph.</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="comment">/// This function returns true if it devirtualized an existing function call,</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="comment">/// meaning it turned an indirect call into a direct call.  This happens when</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="comment">/// a function pass like GVN optimizes away stuff feeding the indirect call.</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="comment">/// This never happens in checking mode.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> CGPassManager::RefreshCallGraph(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> &amp;CurSCC, <a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG,</Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">                                     </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> CheckingMode) &#123;</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;Value &#42;, CallGraphNode &#42;&gt;</a> Calls;</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;CGSCCPASSMGR: Refreshing SCC with &quot;</Highlight><Highlight kind="normal"> &lt;&lt; CurSCC.<a href="/docs/api/classes/llvm/callgraphscc/#a919970e65e098ac01a9056015c199f40">size</a>()</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">                    &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; nodes:\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">             <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64expandpseudoinsts-cpp/#a4cfc8b177e8521a4b496ae2edff6244f">for</a> (<a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;CGN</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">                  : CurSCC) CGN-&gt;dump(););</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> MadeChange = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> DevirtualizedCall = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Scan all functions in the SCC.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> FunctionNo = 0;</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/callgraphscc/#a0c828c12476af8ca29c04bcffb0642ae">CallGraphSCC::iterator</a> SCCIdx = CurSCC.<a href="/docs/api/classes/llvm/callgraphscc/#abc1462ee74423b01bf6afa30d85cca9e">begin</a>(), <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a> = CurSCC.<a href="/docs/api/classes/llvm/callgraphscc/#aebb35c664157dd1a6c8b58e715498015">end</a>();</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">       SCCIdx != <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>; ++SCCIdx, ++FunctionNo) &#123;</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;CGN = &#42;SCCIdx;</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = CGN-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#aab57958df49938baa45ec4fb890cebac">getFunction</a>();</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> || <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;isDeclaration()) </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Walk the function body looking for call sites.  Sync up the call sites in</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// CGN with those actually in the function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Keep track of the number of direct and indirect calls that were</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// invalidated and removed.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumDirectRemoved = 0, NumIndirectRemoved = 0;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/callgraphnode/#abc0ebbee3aae4365ed714cb589fd4a5d">CallGraphNode::iterator</a> CGNEnd = CGN-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#a72b2e4575a6de8f1550d057ff1c23ea1">end</a>();</Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> RemoveAndCheckForDone = &#91;&amp;&#93;(<a href="/docs/api/classes/llvm/callgraphnode/#abc0ebbee3aae4365ed714cb589fd4a5d">CallGraphNode::iterator</a> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>) &#123;</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Just remove the edge from the set of callees, keep track of whether</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// I points to the last element of the vector.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> WasLast = <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> + 1 == CGNEnd;</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">      CGN-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#ae4b8c37522c8e190c125cfd9b578bff0">removeCallEdge</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// If I pointed to the last element of the vector, we have to bail out:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// iterator checking rejects comparisons of the resultant pointer with</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// end.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (WasLast)</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">      CGNEnd = CGN-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#a72b2e4575a6de8f1550d057ff1c23ea1">end</a>();</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Get the set of call sites currently in the function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/callgraphnode/#abc0ebbee3aae4365ed714cb589fd4a5d">CallGraphNode::iterator</a> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = CGN-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#a4f29edc585030005e8215897bb1e792f">begin</a>(); <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> != CGNEnd;) &#123;</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Delete &quot;reference&quot; call records that do not have call instruction. We</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// reinsert them as needed later. However, keep them in checking mode.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;first) &#123;</Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CheckingMode) &#123;</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">          ++<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>;</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (RemoveAndCheckForDone(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>))</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// If this call site is null, then the function pass deleted the call</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// entirely and the WeakTrackingVH nulled it out.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> = <a href="/docs/api/namespaces/llvm/#a5f6182886dc2f96c204299e92c1565d5">dyn&#95;cast&#95;or&#95;null&lt;CallBase&gt;</a>(&#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;first);</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> ||</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// If we&#39;ve already seen this call site, then the FunctionPass RAUW&#39;d</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// one call with another, which resulted in two &quot;uses&quot; in the edge</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// list of the same call.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">          Calls.<a href="/docs/api/classes/llvm/densemapbase/#a53408c95a7bfb5443b43fb2134c3eb23">count</a>(<a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>)) &#123;</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!CheckingMode &amp;&amp;</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">               </Highlight><Highlight kind="stringliteral">&quot;CallGraphSCCPass did not update the CallGraph correctly!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// If this was an indirect call site, count it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;second-&gt;getFunction())</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">          ++NumIndirectRemoved;</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">          ++NumDirectRemoved;</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (RemoveAndCheckForDone(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>))</Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!Calls.<a href="/docs/api/classes/llvm/densemapbase/#a53408c95a7bfb5443b43fb2134c3eb23">count</a>(<a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>) &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Call site occurs in node multiple times&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>) &#123;</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/namespaces/llvm/pdb/#a33e853ec74d48b1340d1d4bae772d30bac8ff9e15a93f800c74c05e7b37364816">Callee</a> = <a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>-&gt;getCalledFunction();</Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Ignore intrinsics because they&#39;re not really function calls.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Callee || !(<a href="/docs/api/namespaces/llvm/pdb/#a33e853ec74d48b1340d1d4bae772d30bac8ff9e15a93f800c74c05e7b37364816">Callee</a>-&gt;isIntrinsic()))</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">          Calls.<a href="/docs/api/classes/llvm/densemapbase/#adb33f3ede2f5bfc9b3ee658aaf648492">insert</a>(std::make&#95;pair(<a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>-&gt;second));</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">      ++<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>;</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Loop over all of the instructions in the function, getting the callsites.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Keep track of the number of direct/indirect calls added.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumDirectAdded = 0, NumIndirectAdded = 0;</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &amp;BB : &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/instruction">Instruction</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> : BB) &#123;</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a> = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;CallBase&gt;</a>(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>)</Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/namespaces/llvm/pdb/#a33e853ec74d48b1340d1d4bae772d30bac8ff9e15a93f800c74c05e7b37364816">Callee</a> = <a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>-&gt;getCalledFunction();</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Callee &amp;&amp; <a href="/docs/api/namespaces/llvm/pdb/#a33e853ec74d48b1340d1d4bae772d30bac8ff9e15a93f800c74c05e7b37364816">Callee</a>-&gt;isIntrinsic())</Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// If we are not in checking mode, insert potential callback calls as</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// references. This is not a requirement but helps to iterate over the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// functions in the right order.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!CheckingMode) &#123;</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal">          <a href="/docs/api/namespaces/llvm/#aa273a7c3463d96e7f545c205ff3b50e3">forEachCallbackFunction</a>(&#42;<a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, &#91;&amp;&#93;(<a href="/docs/api/classes/llvm/function">Function</a> &#42;CB) &#123;</Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal">            CGN-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#a5787c4d1e5de6878c95c13873b8e863a">addCalledFunction</a>(</Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, CG.<a href="/docs/api/classes/llvm/callgraph/#a91eed9199c5b0e56a1fc1f3487431c9c">getOrInsertFunction</a>(CB));</Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal">          &#125;);</Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// If this call site already existed in the callgraph, just verify it</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// matches up to expectations and remove it from Calls.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;Value &#42;, CallGraphNode &#42;&gt;::iterator</a> ExistingIt =</Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">            Calls.<a href="/docs/api/classes/llvm/densemapbase/#a0c047f127ed4380a6f383d70bec4eb94">find</a>(<a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>);</Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ExistingIt != Calls.<a href="/docs/api/classes/llvm/densemapbase/#a65520b9c67759099e313d0f4e7b5ff9e">end</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;ExistingNode = ExistingIt-&gt;second;</Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// Remove from Calls since we have now seen it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal">          Calls.<a href="/docs/api/classes/llvm/densemapbase/#a1eb8504bab5f794778d82db6ac829923">erase</a>(ExistingIt);</Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// Verify that the callee is right.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ExistingNode-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#aab57958df49938baa45ec4fb890cebac">getFunction</a>() == <a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>-&gt;getCalledFunction())</Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal">            </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// If we are in checking mode, we are not allowed to actually mutate</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// the callgraph.  If this is a case where we can infer that the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// callgraph is less precise than it could be (e.g. an indirect call</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// site could be turned direct), don&#39;t reject it in checking mode, and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// don&#39;t tweak it to be more precise.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CheckingMode &amp;&amp; <a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>-&gt;getCalledFunction() &amp;&amp;</Highlight></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="normal">              ExistingNode-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#aab57958df49938baa45ec4fb890cebac">getFunction</a>() == </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal">            </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="normal">          <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!CheckingMode &amp;&amp;</Highlight></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="normal">                 </Highlight><Highlight kind="stringliteral">&quot;CallGraphSCCPass did not update the CallGraph correctly!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// If not, we either went from a direct call to indirect, indirect to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// direct, or direct to different direct.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">          <a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;CalleeNode;</Highlight></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/function">Function</a> &#42;Callee = <a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>-&gt;getCalledFunction()) &#123;</Highlight></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="normal">            CalleeNode = CG.<a href="/docs/api/classes/llvm/callgraph/#a91eed9199c5b0e56a1fc1f3487431c9c">getOrInsertFunction</a>(Callee);</Highlight></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="normal">            </Highlight><Highlight kind="comment">// Keep track of whether we turned an indirect call into a direct</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="normal">            </Highlight><Highlight kind="comment">// one.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="normal">            </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!ExistingNode-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#aab57958df49938baa45ec4fb890cebac">getFunction</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal">              DevirtualizedCall = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="normal">              <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;  CGSCCPASSMGR: Devirtualized call to &#39;&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal">                                &lt;&lt; <a href="/docs/api/namespaces/llvm/pdb/#a33e853ec74d48b1340d1d4bae772d30bac8ff9e15a93f800c74c05e7b37364816">Callee</a>-&gt;getName() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;&#39;\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal">            &#125;</Highlight></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="normal">          &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal">            CalleeNode = CG.<a href="/docs/api/classes/llvm/callgraph/#abd0599a7756561b720a3b6c336dca4e8">getCallsExternalNode</a>();</Highlight></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="normal">          &#125;</Highlight></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="normal">          </Highlight><Highlight kind="comment">// Update the edge target in CGN.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal">          CGN-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#a61a20bdec19cf182df0c3b23bb1895b7">replaceCallEdge</a>(&#42;<a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, &#42;<a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, CalleeNode);</Highlight></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal">          MadeChange = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!CheckingMode &amp;&amp;</Highlight></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="normal">               </Highlight><Highlight kind="stringliteral">&quot;CallGraphSCCPass did not update the CallGraph correctly!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// If the call site didn&#39;t exist in the CGN yet, add it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;CalleeNode;</Highlight></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/function">Function</a> &#42;Callee = <a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>-&gt;getCalledFunction()) &#123;</Highlight></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="normal">          CalleeNode = CG.<a href="/docs/api/classes/llvm/callgraph/#a91eed9199c5b0e56a1fc1f3487431c9c">getOrInsertFunction</a>(Callee);</Highlight></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="normal">          ++NumDirectAdded;</Highlight></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal">        &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal">          CalleeNode = CG.<a href="/docs/api/classes/llvm/callgraph/#abd0599a7756561b720a3b6c336dca4e8">getCallsExternalNode</a>();</Highlight></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="normal">          ++NumIndirectAdded;</Highlight></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="normal">        CGN-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#a5787c4d1e5de6878c95c13873b8e863a">addCalledFunction</a>(<a href="/docs/api/groups/arcopt/#ga9c9cf6ad55eb23d77d083a184e416c09">Call</a>, CalleeNode);</Highlight></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal">        MadeChange = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// We scanned the old callgraph node, removing invalidated call sites and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// then added back newly found call sites.  One thing that can happen is</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// that an old indirect call site was deleted and replaced with a new direct</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// call.  In this case, we have devirtualized a call, and CGSCCPM would like</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// to iteratively optimize the new code.  Unfortunately, we don&#39;t really</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// have a great way to detect when this happens.  As an approximation, we</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// just look at whether the number of indirect calls is reduced and the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// number of direct calls is increased.  There are tons of ways to fool this</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// (e.g. DCE&#39;ing an indirect call and duplicating an unrelated block with a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// direct call) but this is close enough.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (NumIndirectRemoved &gt; NumIndirectAdded &amp;&amp;</Highlight></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="normal">        NumDirectRemoved &lt; NumDirectAdded)</Highlight></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="normal">      DevirtualizedCall = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// After scanning this function, if we still have entries in callsites, then</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// they are dangling pointers.  WeakTrackingVH should save us for this, so</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// abort if</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// this happens.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Calls.<a href="/docs/api/classes/llvm/densemapbase/#a49c487a9395a6c384be8544cfb2cfccf">empty</a>() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Dangling pointers found in call sites map&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Periodically do an explicit clear to remove tombstones when processing</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// large scc&#39;s.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((FunctionNo &amp; 15) == 15)</Highlight></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="normal">      Calls.<a href="/docs/api/classes/llvm/densemapbase/#adf4e7878fc0b3b8dcde545178564190d">clear</a>();</Highlight></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(</Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (MadeChange) &#123;</Highlight></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;CGSCCPASSMGR: Refreshed SCC is now:\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;CGN : CurSCC)</Highlight></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="normal">      CGN-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#a6ea4c567ae49efda9dabf4830750d17b">dump</a>();</Highlight></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DevirtualizedCall)</Highlight></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;CGSCCPASSMGR: Refresh devirtualized a call!\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;CGSCCPASSMGR: SCC Refresh didn&#39;t change call graph.\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="normal">  &#125;);</Highlight></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="normal">  (void)MadeChange;</Highlight></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> DevirtualizedCall;</Highlight></CodeLine>
+<Link id="l00422" /><CodeLine lineNumber="422"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00423" /><CodeLine lineNumber="423"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00424" /><CodeLine lineNumber="424"><Highlight kind="comment">/// Execute the body of the entire pass manager on the specified SCC.</Highlight></CodeLine>
+<Link id="l00425" /><CodeLine lineNumber="425"><Highlight kind="comment">/// This keeps track of whether a function pass devirtualizes</Highlight></CodeLine>
+<Link id="l00426" /><CodeLine lineNumber="426"><Highlight kind="comment">/// any calls and returns it in DevirtualizedCall.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00427" /><CodeLine lineNumber="427"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> CGPassManager::RunAllPassesOnSCC(<a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> &amp;CurSCC, <a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG,</Highlight></CodeLine>
+<Link id="l00428" /><CodeLine lineNumber="428"><Highlight kind="normal">                                      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> &amp;DevirtualizedCall) &#123;</Highlight></CodeLine>
+<Link id="l00429" /><CodeLine lineNumber="429"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00430" /><CodeLine lineNumber="430"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00431" /><CodeLine lineNumber="431"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Keep track of whether the callgraph is known to be up-to-date or not.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00432" /><CodeLine lineNumber="432"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The CGSSC pass manager runs two types of passes:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00433" /><CodeLine lineNumber="433"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// CallGraphSCC Passes and other random function passes.  Because other</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00434" /><CodeLine lineNumber="434"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// random function passes are not CallGraph aware, they may clobber the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00435" /><CodeLine lineNumber="435"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// call graph by introducing new calls or deleting other ones.  This flag</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00436" /><CodeLine lineNumber="436"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// is set to false when we run a function pass so that we know to clean up</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00437" /><CodeLine lineNumber="437"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// the callgraph when we need to run a CGSCCPass again.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00438" /><CodeLine lineNumber="438"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> CallGraphUpToDate = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00439" /><CodeLine lineNumber="439"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00440" /><CodeLine lineNumber="440"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Run all passes on current SCC.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00441" /><CodeLine lineNumber="441"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> PassNo = 0, e = getNumContainedPasses();</Highlight></CodeLine>
+<Link id="l00442" /><CodeLine lineNumber="442"><Highlight kind="normal">       PassNo != <a href="/docs/api/namespaces/llvm/numbers/#a92f4283d4e0e2ea1776894b3ae93640f">e</a>; ++PassNo) &#123;</Highlight></CodeLine>
+<Link id="l00443" /><CodeLine lineNumber="443"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pass">Pass</a> &#42;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a> = <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a4b1bfae8468f5272b17dbfa99b21d8cf">getContainedPass</a>(PassNo);</Highlight></CodeLine>
+<Link id="l00444" /><CodeLine lineNumber="444"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00445" /><CodeLine lineNumber="445"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// If we&#39;re in -debug-pass=Executions mode, construct the SCC node list,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00446" /><CodeLine lineNumber="446"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// otherwise avoid constructing this string as it is expensive.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00447" /><CodeLine lineNumber="447"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (isPassDebuggingExecutionsOrMore()) &#123;</Highlight></CodeLine>
+<Link id="l00448" /><CodeLine lineNumber="448"><Highlight kind="normal">      std::string Functions;</Highlight></CodeLine>
+<Link id="l00449" /><CodeLine lineNumber="449"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">  #ifndef NDEBUG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00450" /><CodeLine lineNumber="450"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/raw-string-ostream">raw&#95;string&#95;ostream</a> OS(Functions);</Highlight></CodeLine>
+<Link id="l00451" /><CodeLine lineNumber="451"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/listseparator">ListSeparator</a> <a href="/docs/api/namespaces/llvm/aarch64cc/#abfa1f7dce576430da99eed57807c7f28afdd8238d6005774fe2bb9067de76eb8c">LS</a>;</Highlight></CodeLine>
+<Link id="l00452" /><CodeLine lineNumber="452"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;CGN : CurSCC) &#123;</Highlight></CodeLine>
+<Link id="l00453" /><CodeLine lineNumber="453"><Highlight kind="normal">        OS &lt;&lt; <a href="/docs/api/namespaces/llvm/aarch64cc/#abfa1f7dce576430da99eed57807c7f28afdd8238d6005774fe2bb9067de76eb8c">LS</a>;</Highlight></CodeLine>
+<Link id="l00454" /><CodeLine lineNumber="454"><Highlight kind="normal">        CGN-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#a2dc0148b02abf2b88fd9c80c48cddce0">print</a>(OS);</Highlight></CodeLine>
+<Link id="l00455" /><CodeLine lineNumber="455"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00456" /><CodeLine lineNumber="456"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">  #endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00457" /><CodeLine lineNumber="457"><Highlight kind="normal">      dumpPassInfo(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="/docs/api/namespaces/llvm/#a7e7283c48f393f907c761d39cb7f0b51a3f3116bde1268f9e1cd78d9010e4ff26">EXECUTION&#95;MSG</a>, <a href="/docs/api/namespaces/llvm/#a7e7283c48f393f907c761d39cb7f0b51a95cb7399d5b41b1ddd09c72c0ab53d1c">ON&#95;CG&#95;MSG</a>, Functions);</Highlight></CodeLine>
+<Link id="l00458" /><CodeLine lineNumber="458"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00459" /><CodeLine lineNumber="459"><Highlight kind="normal">    dumpRequiredSet(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>);</Highlight></CodeLine>
+<Link id="l00460" /><CodeLine lineNumber="460"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00461" /><CodeLine lineNumber="461"><Highlight kind="normal">    initializeAnalysisImpl(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>);</Highlight></CodeLine>
+<Link id="l00462" /><CodeLine lineNumber="462"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00463" /><CodeLine lineNumber="463"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef EXPENSIVE&#95;CHECKS</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00464" /><CodeLine lineNumber="464"><Highlight kind="normal">    uint64&#95;t RefHash = <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>-&gt;structuralHash(CG.<a href="/docs/api/classes/llvm/callgraph/#ac6148a4c6df56af41c63c0c3a798c447">getModule</a>());</Highlight></CodeLine>
+<Link id="l00465" /><CodeLine lineNumber="465"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00466" /><CodeLine lineNumber="466"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00467" /><CodeLine lineNumber="467"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Actually run this pass on the current SCC.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00468" /><CodeLine lineNumber="468"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> LocalChanged =</Highlight></CodeLine>
+<Link id="l00469" /><CodeLine lineNumber="469"><Highlight kind="normal">        RunPassOnSCC(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, CurSCC, CG, CallGraphUpToDate, DevirtualizedCall);</Highlight></CodeLine>
+<Link id="l00470" /><CodeLine lineNumber="470"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00471" /><CodeLine lineNumber="471"><Highlight kind="normal">    <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> |= LocalChanged;</Highlight></CodeLine>
+<Link id="l00472" /><CodeLine lineNumber="472"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00473" /><CodeLine lineNumber="473"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef EXPENSIVE&#95;CHECKS</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00474" /><CodeLine lineNumber="474"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!LocalChanged &amp;&amp; (RefHash != <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>-&gt;structuralHash(CG.<a href="/docs/api/classes/llvm/callgraph/#ac6148a4c6df56af41c63c0c3a798c447">getModule</a>()))) &#123;</Highlight></CodeLine>
+<Link id="l00475" /><CodeLine lineNumber="475"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a9a7b5c68c90f85baaedaa854cc5002cc">llvm::errs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Pass modifies its input and doesn&#39;t report it: &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00476" /><CodeLine lineNumber="476"><Highlight kind="normal">                   &lt;&lt; <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>-&gt;getPassName() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00477" /><CodeLine lineNumber="477"><Highlight kind="normal">      <a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm&#95;unreachable</a>(</Highlight><Highlight kind="stringliteral">&quot;Pass modifies its input and doesn&#39;t report it&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00478" /><CodeLine lineNumber="478"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00479" /><CodeLine lineNumber="479"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00480" /><CodeLine lineNumber="480"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LocalChanged)</Highlight></CodeLine>
+<Link id="l00481" /><CodeLine lineNumber="481"><Highlight kind="normal">      dumpPassInfo(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, <a href="/docs/api/namespaces/llvm/#a7e7283c48f393f907c761d39cb7f0b51a72e482d46273910cd5a3a02b0f65647f">MODIFICATION&#95;MSG</a>, <a href="/docs/api/namespaces/llvm/#a7e7283c48f393f907c761d39cb7f0b51a95cb7399d5b41b1ddd09c72c0ab53d1c">ON&#95;CG&#95;MSG</a>, </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00482" /><CodeLine lineNumber="482"><Highlight kind="normal">    dumpPreservedSet(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>);</Highlight></CodeLine>
+<Link id="l00483" /><CodeLine lineNumber="483"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00484" /><CodeLine lineNumber="484"><Highlight kind="normal">    verifyPreservedAnalysis(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>);</Highlight></CodeLine>
+<Link id="l00485" /><CodeLine lineNumber="485"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LocalChanged)</Highlight></CodeLine>
+<Link id="l00486" /><CodeLine lineNumber="486"><Highlight kind="normal">      removeNotPreservedAnalysis(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>);</Highlight></CodeLine>
+<Link id="l00487" /><CodeLine lineNumber="487"><Highlight kind="normal">    recordAvailableAnalysis(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>);</Highlight></CodeLine>
+<Link id="l00488" /><CodeLine lineNumber="488"><Highlight kind="normal">    removeDeadPasses(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>, </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">, <a href="/docs/api/namespaces/llvm/#a7e7283c48f393f907c761d39cb7f0b51a95cb7399d5b41b1ddd09c72c0ab53d1c">ON&#95;CG&#95;MSG</a>);</Highlight></CodeLine>
+<Link id="l00489" /><CodeLine lineNumber="489"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00490" /><CodeLine lineNumber="490"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00491" /><CodeLine lineNumber="491"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// If the callgraph was left out of date (because the last pass run was a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00492" /><CodeLine lineNumber="492"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// functionpass), refresh it before we move on to the next SCC.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00493" /><CodeLine lineNumber="493"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!CallGraphUpToDate)</Highlight></CodeLine>
+<Link id="l00494" /><CodeLine lineNumber="494"><Highlight kind="normal">    DevirtualizedCall |= RefreshCallGraph(CurSCC, CG, </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00495" /><CodeLine lineNumber="495"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>;</Highlight></CodeLine>
+<Link id="l00496" /><CodeLine lineNumber="496"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00497" /><CodeLine lineNumber="497"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00498" /><CodeLine lineNumber="498"><Highlight kind="comment">/// Execute all of the passes scheduled for execution.  Keep track of</Highlight></CodeLine>
+<Link id="l00499" /><CodeLine lineNumber="499"><Highlight kind="comment">/// whether any of the passes modifies the module, and if so, return true.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00500" /><CodeLine lineNumber="500" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a1f2ac01d6e79a5eff1623936ef49847c"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a1f2ac01d6e79a5eff1623936ef49847c">CGPassManager::runOnModule</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M) &#123;</Highlight></CodeLine>
+<Link id="l00501" /><CodeLine lineNumber="501"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG = <a href="/docs/api/classes/llvm/pass/#a4863e5e463fb79955269fbf7fbf52b80">getAnalysis&lt;CallGraphWrapperPass&gt;</a>().getCallGraph();</Highlight></CodeLine>
+<Link id="l00502" /><CodeLine lineNumber="502"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> = <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a2330998b675c05167dc0a94a9f197599">doInitialization</a>(CG);</Highlight></CodeLine>
+<Link id="l00503" /><CodeLine lineNumber="503"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00504" /><CodeLine lineNumber="504"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Walk the callgraph in bottom-up SCC order.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00505" /><CodeLine lineNumber="505"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/scc-iterator">scc&#95;iterator&lt;CallGraph&#42;&gt;</a> CGI = <a href="/docs/api/namespaces/llvm/#a3c1a67796e24a843db8a6766baa54c21">scc&#95;begin</a>(&amp;CG);</Highlight></CodeLine>
+<Link id="l00506" /><CodeLine lineNumber="506"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00507" /><CodeLine lineNumber="507"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> CurSCC(CG, &amp;CGI);</Highlight></CodeLine>
+<Link id="l00508" /><CodeLine lineNumber="508"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (!CGI.<a href="/docs/api/classes/llvm/scc-iterator/#a7d6ec03718a5e48f3ec7ce22fefcb91d">isAtEnd</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00509" /><CodeLine lineNumber="509"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Copy the current SCC and increment past it so that the pass can hack</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00510" /><CodeLine lineNumber="510"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// on the SCC if it wants to without invalidating our iterator.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00511" /><CodeLine lineNumber="511"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::vector&lt;CallGraphNode &#42;&gt; &amp;NodeVec = &#42;CGI;</Highlight></CodeLine>
+<Link id="l00512" /><CodeLine lineNumber="512"><Highlight kind="normal">    CurSCC.<a href="/docs/api/classes/llvm/callgraphscc/#a87e1b8515d22eb833375761e19a2d0fe">initialize</a>(NodeVec);</Highlight></CodeLine>
+<Link id="l00513" /><CodeLine lineNumber="513"><Highlight kind="normal">    ++CGI;</Highlight></CodeLine>
+<Link id="l00514" /><CodeLine lineNumber="514"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00515" /><CodeLine lineNumber="515"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// At the top level, we run all the passes in this pass manager on the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00516" /><CodeLine lineNumber="516"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// functions in this SCC.  However, we support iterative compilation in the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00517" /><CodeLine lineNumber="517"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// case where a function pass devirtualizes a call to a function.  For</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00518" /><CodeLine lineNumber="518"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// example, it is very common for a function pass (often GVN or instcombine)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00519" /><CodeLine lineNumber="519"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// to eliminate the addressing that feeds into a call.  With that improved</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00520" /><CodeLine lineNumber="520"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// information, we would like the call to be an inline candidate, infer</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00521" /><CodeLine lineNumber="521"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// mod-ref information etc.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00522" /><CodeLine lineNumber="522"><Highlight kind="normal">    </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00523" /><CodeLine lineNumber="523"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Because of this, we allow iteration up to a specified iteration count.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00524" /><CodeLine lineNumber="524"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// This only happens in the case of a devirtualized call, so we only burn</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00525" /><CodeLine lineNumber="525"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// compile time in the case that we&#39;re making progress.  We also have a hard</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00526" /><CodeLine lineNumber="526"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// iteration count limit in case there is crazy code.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00527" /><CodeLine lineNumber="527"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Iteration = 0;</Highlight></CodeLine>
+<Link id="l00528" /><CodeLine lineNumber="528"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> DevirtualizedCall = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00529" /><CodeLine lineNumber="529"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">do</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00530" /><CodeLine lineNumber="530"><Highlight kind="normal">      <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(</Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Iteration) <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>()</Highlight></CodeLine>
+<Link id="l00531" /><CodeLine lineNumber="531"><Highlight kind="normal">                 &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;  SCCPASSMGR: Re-visiting SCC, iteration #&quot;</Highlight><Highlight kind="normal"> &lt;&lt; Iteration</Highlight></CodeLine>
+<Link id="l00532" /><CodeLine lineNumber="532"><Highlight kind="normal">                 &lt;&lt; </Highlight><Highlight kind="charliteral">&#39;\\n&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00533" /><CodeLine lineNumber="533"><Highlight kind="normal">      DevirtualizedCall = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00534" /><CodeLine lineNumber="534"><Highlight kind="normal">      <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> |= RunAllPassesOnSCC(CurSCC, CG, DevirtualizedCall);</Highlight></CodeLine>
+<Link id="l00535" /><CodeLine lineNumber="535"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (Iteration++ &lt; <a href="/docs/api/namespaces/llvm/#aec6409a70645bde7c81ab78a13ddbf62">MaxDevirtIterations</a> &amp;&amp; DevirtualizedCall);</Highlight></CodeLine>
+<Link id="l00536" /><CodeLine lineNumber="536"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00537" /><CodeLine lineNumber="537"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DevirtualizedCall)</Highlight></CodeLine>
+<Link id="l00538" /><CodeLine lineNumber="538"><Highlight kind="normal">      <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;  CGSCCPASSMGR: Stopped iteration after &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00539" /><CodeLine lineNumber="539"><Highlight kind="normal">                        &lt;&lt; Iteration</Highlight></CodeLine>
+<Link id="l00540" /><CodeLine lineNumber="540"><Highlight kind="normal">                        &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot; times, due to -max-devirt-iterations\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00541" /><CodeLine lineNumber="541"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00542" /><CodeLine lineNumber="542"><Highlight kind="normal">    MaxSCCIterations.updateMax(Iteration);</Highlight></CodeLine>
+<Link id="l00543" /><CodeLine lineNumber="543"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00544" /><CodeLine lineNumber="544"><Highlight kind="normal">  <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> |= <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#ae8841a51c6b06a2a29e8e51024e9bc19">doFinalization</a>(CG);</Highlight></CodeLine>
+<Link id="l00545" /><CodeLine lineNumber="545"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>;</Highlight></CodeLine>
+<Link id="l00546" /><CodeLine lineNumber="546"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00547" /><CodeLine lineNumber="547"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00548" /><CodeLine lineNumber="548"><Highlight kind="comment">/// Initialize CG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00549" /><CodeLine lineNumber="549" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a2330998b675c05167dc0a94a9f197599"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a2330998b675c05167dc0a94a9f197599">CGPassManager::doInitialization</a>(<a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG) &#123;</Highlight></CodeLine>
+<Link id="l00550" /><CodeLine lineNumber="550"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00551" /><CodeLine lineNumber="551"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i = 0, e = <a href="/docs/api/classes/llvm/pmdatamanager/#aa37440cfb2bd92a0b361cb2a6e1232e2">getNumContainedPasses</a>(); i != e; ++i) &#123;</Highlight></CodeLine>
+<Link id="l00552" /><CodeLine lineNumber="552"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/pmdatamanager/#a04fbd0afa6857fe697dd28e93bdfec07">PMDataManager</a> &#42;PM = <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a4b1bfae8468f5272b17dbfa99b21d8cf">getContainedPass</a>(i)-&gt;<a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a0be65bf69e5ca2c5991ce27de19edfd2">getAsPMDataManager</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00553" /><CodeLine lineNumber="553"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(PM-&gt;<a href="/docs/api/classes/llvm/pmdatamanager/#aa877f351376c696b385fdeba9b93a5f1">getPassManagerType</a>() == <a href="/docs/api/namespaces/llvm/#a3948b4d0759f9852502b466d6cfb4ebbaf92a84a9aa3cca1378d1a12fc3664396">PMT&#95;FunctionPassManager</a> &amp;&amp;</Highlight></CodeLine>
+<Link id="l00554" /><CodeLine lineNumber="554"><Highlight kind="normal">             </Highlight><Highlight kind="stringliteral">&quot;Invalid CGPassManager member&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00555" /><CodeLine lineNumber="555"><Highlight kind="normal">      <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> |= ((<a href="/docs/api/classes/llvm/fppassmanager">FPPassManager</a>&#42;)PM)-&gt;doInitialization(CG.<a href="/docs/api/classes/llvm/callgraph/#ac6148a4c6df56af41c63c0c3a798c447">getModule</a>());</Highlight></CodeLine>
+<Link id="l00556" /><CodeLine lineNumber="556"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00557" /><CodeLine lineNumber="557"><Highlight kind="normal">      <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> |= ((<a href="/docs/api/classes/llvm/callgraphsccpass">CallGraphSCCPass</a>&#42;)<a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a4b1bfae8468f5272b17dbfa99b21d8cf">getContainedPass</a>(i))-&gt;doInitialization(CG);</Highlight></CodeLine>
+<Link id="l00558" /><CodeLine lineNumber="558"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00559" /><CodeLine lineNumber="559"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00560" /><CodeLine lineNumber="560"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>;</Highlight></CodeLine>
+<Link id="l00561" /><CodeLine lineNumber="561"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00562" /><CodeLine lineNumber="562"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00563" /><CodeLine lineNumber="563"><Highlight kind="comment">/// Finalize CG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00564" /><CodeLine lineNumber="564" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#ae8841a51c6b06a2a29e8e51024e9bc19"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#ae8841a51c6b06a2a29e8e51024e9bc19">CGPassManager::doFinalization</a>(<a href="/docs/api/classes/llvm/callgraph">CallGraph</a> &amp;CG) &#123;</Highlight></CodeLine>
+<Link id="l00565" /><CodeLine lineNumber="565"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00566" /><CodeLine lineNumber="566"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i = 0, e = <a href="/docs/api/classes/llvm/pmdatamanager/#aa37440cfb2bd92a0b361cb2a6e1232e2">getNumContainedPasses</a>(); i != e; ++i) &#123;</Highlight></CodeLine>
+<Link id="l00567" /><CodeLine lineNumber="567"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/pmdatamanager/#a04fbd0afa6857fe697dd28e93bdfec07">PMDataManager</a> &#42;PM = <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a4b1bfae8468f5272b17dbfa99b21d8cf">getContainedPass</a>(i)-&gt;<a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a0be65bf69e5ca2c5991ce27de19edfd2">getAsPMDataManager</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00568" /><CodeLine lineNumber="568"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(PM-&gt;<a href="/docs/api/classes/llvm/pmdatamanager/#aa877f351376c696b385fdeba9b93a5f1">getPassManagerType</a>() == <a href="/docs/api/namespaces/llvm/#a3948b4d0759f9852502b466d6cfb4ebbaf92a84a9aa3cca1378d1a12fc3664396">PMT&#95;FunctionPassManager</a> &amp;&amp;</Highlight></CodeLine>
+<Link id="l00569" /><CodeLine lineNumber="569"><Highlight kind="normal">             </Highlight><Highlight kind="stringliteral">&quot;Invalid CGPassManager member&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00570" /><CodeLine lineNumber="570"><Highlight kind="normal">      <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> |= ((<a href="/docs/api/classes/llvm/fppassmanager">FPPassManager</a>&#42;)PM)-&gt;doFinalization(CG.<a href="/docs/api/classes/llvm/callgraph/#ac6148a4c6df56af41c63c0c3a798c447">getModule</a>());</Highlight></CodeLine>
+<Link id="l00571" /><CodeLine lineNumber="571"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00572" /><CodeLine lineNumber="572"><Highlight kind="normal">      <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a> |= ((<a href="/docs/api/classes/llvm/callgraphsccpass">CallGraphSCCPass</a>&#42;)<a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/cgpassmanager/#a4b1bfae8468f5272b17dbfa99b21d8cf">getContainedPass</a>(i))-&gt;doFinalization(CG);</Highlight></CodeLine>
+<Link id="l00573" /><CodeLine lineNumber="573"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00574" /><CodeLine lineNumber="574"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00575" /><CodeLine lineNumber="575"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/groups/arcopt/#gaa57b1a4e6a1c79233913139635169cf1">Changed</a>;</Highlight></CodeLine>
+<Link id="l00576" /><CodeLine lineNumber="576"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00577" /><CodeLine lineNumber="577"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00578" /><CodeLine lineNumber="578"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00579" /><CodeLine lineNumber="579"><Highlight kind="normal"></Highlight><Highlight kind="comment">// CallGraphSCC Implementation</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00580" /><CodeLine lineNumber="580"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00581" /><CodeLine lineNumber="581"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00582" /><CodeLine lineNumber="582"><Highlight kind="comment">/// This informs the SCC and the pass manager that the specified</Highlight></CodeLine>
+<Link id="l00583" /><CodeLine lineNumber="583"><Highlight kind="comment">/// Old node has been deleted, and New is to be used in its place.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00584" /><CodeLine lineNumber="584" lineLink="/docs/api/classes/llvm/callgraphscc/#a78d3ea30abf1bae03b398ec1b266eeeb"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphscc/#a78d3ea30abf1bae03b398ec1b266eeeb">CallGraphSCC::ReplaceNode</a>(<a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;Old, <a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;New) &#123;</Highlight></CodeLine>
+<Link id="l00585" /><CodeLine lineNumber="585"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Old != New &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Should not replace node with self&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00586" /><CodeLine lineNumber="586"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i = 0; ; ++i) &#123;</Highlight></CodeLine>
+<Link id="l00587" /><CodeLine lineNumber="587"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(i != Nodes.size() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Node not in SCC&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00588" /><CodeLine lineNumber="588"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Nodes&#91;i&#93; != Old) </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00589" /><CodeLine lineNumber="589"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (New)</Highlight></CodeLine>
+<Link id="l00590" /><CodeLine lineNumber="590"><Highlight kind="normal">      Nodes&#91;i&#93; = New;</Highlight></CodeLine>
+<Link id="l00591" /><CodeLine lineNumber="591"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00592" /><CodeLine lineNumber="592"><Highlight kind="normal">      Nodes.erase(Nodes.begin() + i);</Highlight></CodeLine>
+<Link id="l00593" /><CodeLine lineNumber="593"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00594" /><CodeLine lineNumber="594"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00595" /><CodeLine lineNumber="595"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00596" /><CodeLine lineNumber="596"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Update the active scc&#95;iterator so that it doesn&#39;t contain dangling</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00597" /><CodeLine lineNumber="597"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// pointers to the old CallGraphNode.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00598" /><CodeLine lineNumber="598"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/scc-iterator">scc&#95;iterator&lt;CallGraph&#42;&gt;</a> &#42;CGI = (<a href="/docs/api/classes/llvm/scc-iterator">scc&#95;iterator&lt;CallGraph&#42;&gt;</a>&#42;)Context;</Highlight></CodeLine>
+<Link id="l00599" /><CodeLine lineNumber="599"><Highlight kind="normal">  CGI-&gt;<a href="/docs/api/classes/llvm/scc-iterator/#ab0a9c37a5fefddebfa09db6591b17d49">ReplaceNode</a>(Old, New);</Highlight></CodeLine>
+<Link id="l00600" /><CodeLine lineNumber="600"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00601" /><CodeLine lineNumber="601"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00602" /><CodeLine lineNumber="602" lineLink="/docs/api/classes/llvm/callgraphscc/#a87d83af4037cb4deb9b4bd7164e3843f"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphscc/#a87d83af4037cb4deb9b4bd7164e3843f">CallGraphSCC::DeleteNode</a>(<a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;Old) &#123;</Highlight></CodeLine>
+<Link id="l00603" /><CodeLine lineNumber="603"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/callgraphscc/#a78d3ea30abf1bae03b398ec1b266eeeb">ReplaceNode</a>(Old, </Highlight><Highlight kind="comment">/&#42;New=&#42;/</Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00604" /><CodeLine lineNumber="604"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00605" /><CodeLine lineNumber="605"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00606" /><CodeLine lineNumber="606"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00607" /><CodeLine lineNumber="607"><Highlight kind="normal"></Highlight><Highlight kind="comment">// CallGraphSCCPass Implementation</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00608" /><CodeLine lineNumber="608"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00609" /><CodeLine lineNumber="609"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00610" /><CodeLine lineNumber="610"><Highlight kind="comment">/// Assign pass manager to manage this pass.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00611" /><CodeLine lineNumber="611" lineLink="/docs/api/classes/llvm/callgraphsccpass/#af6897bd5a86b78fc12f93cdfb04c9e6a"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphsccpass/#af6897bd5a86b78fc12f93cdfb04c9e6a">CallGraphSCCPass::assignPassManager</a>(<a href="/docs/api/classes/llvm/pmstack">PMStack</a> &amp;PMS,</Highlight></CodeLine>
+<Link id="l00612" /><CodeLine lineNumber="612"><Highlight kind="normal">                                         <a href="/docs/api/namespaces/llvm/#a3948b4d0759f9852502b466d6cfb4ebb">PassManagerType</a> PreferredType) &#123;</Highlight></CodeLine>
+<Link id="l00613" /><CodeLine lineNumber="613"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Find CGPassManager</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00614" /><CodeLine lineNumber="614"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (!PMS.<a href="/docs/api/classes/llvm/pmstack/#a8d1f11a06b6d13adb9c09c7487ec5d5a">empty</a>() &amp;&amp;</Highlight></CodeLine>
+<Link id="l00615" /><CodeLine lineNumber="615"><Highlight kind="normal">         PMS.<a href="/docs/api/classes/llvm/pmstack/#a5c88be47ebb28074149e618ba3dedaa2">top</a>()-&gt;<a href="/docs/api/classes/llvm/pmdatamanager/#aa877f351376c696b385fdeba9b93a5f1">getPassManagerType</a>() &gt; <a href="/docs/api/namespaces/llvm/#a3948b4d0759f9852502b466d6cfb4ebbacfbf7d6825e58faf3673dc5e5a7a2465">PMT&#95;CallGraphPassManager</a>)</Highlight></CodeLine>
+<Link id="l00616" /><CodeLine lineNumber="616"><Highlight kind="normal">    PMS.<a href="/docs/api/classes/llvm/pmstack/#a4953e532d6f86ceb1f38ee2503be46a0">pop</a>();</Highlight></CodeLine>
+<Link id="l00617" /><CodeLine lineNumber="617"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00618" /><CodeLine lineNumber="618"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!PMS.<a href="/docs/api/classes/llvm/pmstack/#a8d1f11a06b6d13adb9c09c7487ec5d5a">empty</a>() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Unable to handle Call Graph Pass&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00619" /><CodeLine lineNumber="619"><Highlight kind="normal">  CGPassManager &#42;CGP;</Highlight></CodeLine>
+<Link id="l00620" /><CodeLine lineNumber="620"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00621" /><CodeLine lineNumber="621"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (PMS.<a href="/docs/api/classes/llvm/pmstack/#a5c88be47ebb28074149e618ba3dedaa2">top</a>()-&gt;<a href="/docs/api/classes/llvm/pmdatamanager/#aa877f351376c696b385fdeba9b93a5f1">getPassManagerType</a>() == <a href="/docs/api/namespaces/llvm/#a3948b4d0759f9852502b466d6cfb4ebbacfbf7d6825e58faf3673dc5e5a7a2465">PMT&#95;CallGraphPassManager</a>)</Highlight></CodeLine>
+<Link id="l00622" /><CodeLine lineNumber="622"><Highlight kind="normal">    CGP = (CGPassManager&#42;)PMS.<a href="/docs/api/classes/llvm/pmstack/#a5c88be47ebb28074149e618ba3dedaa2">top</a>();</Highlight></CodeLine>
+<Link id="l00623" /><CodeLine lineNumber="623"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00624" /><CodeLine lineNumber="624"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Create new Call Graph SCC Pass Manager if it does not exist.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00625" /><CodeLine lineNumber="625"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!PMS.<a href="/docs/api/classes/llvm/pmstack/#a8d1f11a06b6d13adb9c09c7487ec5d5a">empty</a>() &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Unable to create Call Graph Pass Manager&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00626" /><CodeLine lineNumber="626"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pmdatamanager">PMDataManager</a> &#42;PMD = PMS.<a href="/docs/api/classes/llvm/pmstack/#a5c88be47ebb28074149e618ba3dedaa2">top</a>();</Highlight></CodeLine>
+<Link id="l00627" /><CodeLine lineNumber="627"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00628" /><CodeLine lineNumber="628"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// &#91;1&#93; Create new Call Graph Pass Manager</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00629" /><CodeLine lineNumber="629"><Highlight kind="normal">    CGP = </Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> CGPassManager();</Highlight></CodeLine>
+<Link id="l00630" /><CodeLine lineNumber="630"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00631" /><CodeLine lineNumber="631"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// &#91;2&#93; Set up new manager&#39;s top level manager</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00632" /><CodeLine lineNumber="632"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pmtoplevelmanager">PMTopLevelManager</a> &#42;TPM = PMD-&gt;<a href="/docs/api/classes/llvm/pmdatamanager/#a49d2392d2b8e3a2792ea40a12a4be5a4">getTopLevelManager</a>();</Highlight></CodeLine>
+<Link id="l00633" /><CodeLine lineNumber="633"><Highlight kind="normal">    TPM-&gt;<a href="/docs/api/classes/llvm/pmtoplevelmanager/#a022d0f8afbecd48458168e3a419d2048">addIndirectPassManager</a>(CGP);</Highlight></CodeLine>
+<Link id="l00634" /><CodeLine lineNumber="634"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00635" /><CodeLine lineNumber="635"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// &#91;3&#93; Assign manager to manage this new manager. This may create</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00636" /><CodeLine lineNumber="636"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// and push new managers into PMS</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00637" /><CodeLine lineNumber="637"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/pass/#a16baa169d062524be5a6b67609266174">Pass</a> &#42;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a> = CGP;</Highlight></CodeLine>
+<Link id="l00638" /><CodeLine lineNumber="638"><Highlight kind="normal">    TPM-&gt;<a href="/docs/api/classes/llvm/pmtoplevelmanager/#a5fb719fc8062d116b93091d9c9addd43">schedulePass</a>(<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>);</Highlight></CodeLine>
+<Link id="l00639" /><CodeLine lineNumber="639"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00640" /><CodeLine lineNumber="640"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// &#91;4&#93; Push new manager into PMS</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00641" /><CodeLine lineNumber="641"><Highlight kind="normal">    PMS.<a href="/docs/api/classes/llvm/pmstack/#a9579e452cf1995463c7e29dfeae5cc2a">push</a>(CGP);</Highlight></CodeLine>
+<Link id="l00642" /><CodeLine lineNumber="642"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00643" /><CodeLine lineNumber="643"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00644" /><CodeLine lineNumber="644"><Highlight kind="normal">  CGP-&gt;<a href="/docs/api/classes/llvm/pmdatamanager/#ab7c7120f48a91e5972592b16ee7fd81b">add</a>(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00645" /><CodeLine lineNumber="645"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00646" /><CodeLine lineNumber="646"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00647" /><CodeLine lineNumber="647"><Highlight kind="comment">/// For this class, we declare that we require and preserve the call graph.</Highlight></CodeLine>
+<Link id="l00648" /><CodeLine lineNumber="648"><Highlight kind="comment">/// If the derived class implements this method, it should</Highlight></CodeLine>
+<Link id="l00649" /><CodeLine lineNumber="649"><Highlight kind="comment">/// always explicitly call the implementation here.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00650" /><CodeLine lineNumber="650" lineLink="/docs/api/classes/llvm/callgraphsccpass/#a6cc67c5a27b53bc940d292c0aeb6aba3"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphsccpass/#a6cc67c5a27b53bc940d292c0aeb6aba3">CallGraphSCCPass::getAnalysisUsage</a>(<a href="/docs/api/classes/llvm/analysisusage">AnalysisUsage</a> &amp;AU)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00651" /><CodeLine lineNumber="651"><Highlight kind="normal">  AU.<a href="/docs/api/classes/llvm/analysisusage/#ae0adcccca08fb686c9ce00f9397b660c">addRequired</a>&lt;<a href="/docs/api/classes/llvm/callgraphwrapperpass">CallGraphWrapperPass</a>&gt;();</Highlight></CodeLine>
+<Link id="l00652" /><CodeLine lineNumber="652"><Highlight kind="normal">  AU.<a href="/docs/api/classes/llvm/analysisusage/#ae9356b720f6fbab112d809738dcc4f2a">addPreserved</a>&lt;<a href="/docs/api/classes/llvm/callgraphwrapperpass">CallGraphWrapperPass</a>&gt;();</Highlight></CodeLine>
+<Link id="l00653" /><CodeLine lineNumber="653"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00654" /><CodeLine lineNumber="654"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00655" /><CodeLine lineNumber="655"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00656" /><CodeLine lineNumber="656"><Highlight kind="normal"></Highlight><Highlight kind="comment">// PrintCallGraphPass Implementation</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00657" /><CodeLine lineNumber="657"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00658" /><CodeLine lineNumber="658"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00659" /><CodeLine lineNumber="659"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00660" /><CodeLine lineNumber="660"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00661" /><CodeLine lineNumber="661"><Highlight kind="comment">  /// PrintCallGraphPass - Print a Module corresponding to a call graph.</Highlight></CodeLine>
+<Link id="l00662" /><CodeLine lineNumber="662"><Highlight kind="comment">  ///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00663" /><CodeLine lineNumber="663" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#a37734b288fcf9e84b807065947aa7e18">PrintCallGraphPass</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphsccpass/#a480100967dadb2b532fc863b7a4a80a1">CallGraphSCCPass</a> &#123;</Highlight></CodeLine>
+<Link id="l00664" /><CodeLine lineNumber="664"><Highlight kind="normal">    std::string Banner;</Highlight></CodeLine>
+<Link id="l00665" /><CodeLine lineNumber="665"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS;       </Highlight><Highlight kind="comment">// raw&#95;ostream to print on.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00666" /><CodeLine lineNumber="666"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00667" /><CodeLine lineNumber="667"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00668" /><CodeLine lineNumber="668" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#adfe953c214bed8f725ec023a85214ee3"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#adfe953c214bed8f725ec023a85214ee3">ID</a>;</Highlight></CodeLine>
+<Link id="l00669" /><CodeLine lineNumber="669"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00670" /><CodeLine lineNumber="670" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#a37734b288fcf9e84b807065947aa7e18"><Highlight kind="normal">    <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#a37734b288fcf9e84b807065947aa7e18">PrintCallGraphPass</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>, <a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS)</Highlight></CodeLine>
+<Link id="l00671" /><CodeLine lineNumber="671"><Highlight kind="normal">      : <a href="/docs/api/classes/llvm/callgraphsccpass/#a480100967dadb2b532fc863b7a4a80a1">CallGraphSCCPass</a>(<a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#adfe953c214bed8f725ec023a85214ee3">ID</a>), Banner(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#ae76959fe811ba090de4cba69ac00f1da">B</a>), OS(OS) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00672" /><CodeLine lineNumber="672"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00673" /><CodeLine lineNumber="673" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#a9738492e9f76329e7cb119273957e576"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#a9738492e9f76329e7cb119273957e576">getAnalysisUsage</a>(<a href="/docs/api/classes/llvm/analysisusage">AnalysisUsage</a> &amp;AU)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00674" /><CodeLine lineNumber="674"><Highlight kind="normal">      AU.<a href="/docs/api/classes/llvm/analysisusage/#af22b06a6a4f9df80454071685a0d6a02">setPreservesAll</a>();</Highlight></CodeLine>
+<Link id="l00675" /><CodeLine lineNumber="675"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00676" /><CodeLine lineNumber="676"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00677" /><CodeLine lineNumber="677" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#a58d637c47fe74e2af765db0fa448a885"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#a58d637c47fe74e2af765db0fa448a885">runOnSCC</a>(<a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> &amp;SCC)</Highlight><Highlight kind="keyword"> override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00678" /><CodeLine lineNumber="678"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> BannerPrinted = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00679" /><CodeLine lineNumber="679"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> PrintBannerOnce = &#91;&amp;&#93;() &#123;</Highlight></CodeLine>
+<Link id="l00680" /><CodeLine lineNumber="680"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (BannerPrinted)</Highlight></CodeLine>
+<Link id="l00681" /><CodeLine lineNumber="681"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00682" /><CodeLine lineNumber="682"><Highlight kind="normal">        OS &lt;&lt; Banner;</Highlight></CodeLine>
+<Link id="l00683" /><CodeLine lineNumber="683"><Highlight kind="normal">        BannerPrinted = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00684" /><CodeLine lineNumber="684"><Highlight kind="normal">      &#125;;</Highlight></CodeLine>
+<Link id="l00685" /><CodeLine lineNumber="685"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00686" /><CodeLine lineNumber="686"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> NeedModule = <a href="/docs/api/namespaces/llvm/#a14de763ca0235935ff458accc41d94d7">llvm::forcePrintModuleIR</a>();</Highlight></CodeLine>
+<Link id="l00687" /><CodeLine lineNumber="687"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#a7d104c3a6510178d34b2d3f0ae67b4d5">isFunctionInPrintList</a>(</Highlight><Highlight kind="stringliteral">&quot;&#42;&quot;</Highlight><Highlight kind="normal">) &amp;&amp; NeedModule) &#123;</Highlight></CodeLine>
+<Link id="l00688" /><CodeLine lineNumber="688"><Highlight kind="normal">        PrintBannerOnce();</Highlight></CodeLine>
+<Link id="l00689" /><CodeLine lineNumber="689"><Highlight kind="normal">        OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00690" /><CodeLine lineNumber="690"><Highlight kind="normal">        SCC.getCallGraph().getModule().print(OS, </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00691" /><CodeLine lineNumber="691"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00692" /><CodeLine lineNumber="692"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00693" /><CodeLine lineNumber="693"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> FoundFunction = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00694" /><CodeLine lineNumber="694"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;CGN : SCC) &#123;</Highlight></CodeLine>
+<Link id="l00695" /><CodeLine lineNumber="695"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = CGN-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#aab57958df49938baa45ec4fb890cebac">getFunction</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00696" /><CodeLine lineNumber="696"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;isDeclaration() &amp;&amp; <a href="/docs/api/namespaces/llvm/#a7d104c3a6510178d34b2d3f0ae67b4d5">isFunctionInPrintList</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;getName())) &#123;</Highlight></CodeLine>
+<Link id="l00697" /><CodeLine lineNumber="697"><Highlight kind="normal">            FoundFunction = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00698" /><CodeLine lineNumber="698"><Highlight kind="normal">            </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!NeedModule) &#123;</Highlight></CodeLine>
+<Link id="l00699" /><CodeLine lineNumber="699"><Highlight kind="normal">              PrintBannerOnce();</Highlight></CodeLine>
+<Link id="l00700" /><CodeLine lineNumber="700"><Highlight kind="normal">              <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;print(OS);</Highlight></CodeLine>
+<Link id="l00701" /><CodeLine lineNumber="701"><Highlight kind="normal">            &#125;</Highlight></CodeLine>
+<Link id="l00702" /><CodeLine lineNumber="702"><Highlight kind="normal">          &#125;</Highlight></CodeLine>
+<Link id="l00703" /><CodeLine lineNumber="703"><Highlight kind="normal">        &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#a7d104c3a6510178d34b2d3f0ae67b4d5">isFunctionInPrintList</a>(</Highlight><Highlight kind="stringliteral">&quot;&#42;&quot;</Highlight><Highlight kind="normal">)) &#123;</Highlight></CodeLine>
+<Link id="l00704" /><CodeLine lineNumber="704"><Highlight kind="normal">          PrintBannerOnce();</Highlight></CodeLine>
+<Link id="l00705" /><CodeLine lineNumber="705"><Highlight kind="normal">          OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\nPrinting &lt;null&gt; Function\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00706" /><CodeLine lineNumber="706"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00707" /><CodeLine lineNumber="707"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00708" /><CodeLine lineNumber="708"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (NeedModule &amp;&amp; FoundFunction) &#123;</Highlight></CodeLine>
+<Link id="l00709" /><CodeLine lineNumber="709"><Highlight kind="normal">        PrintBannerOnce();</Highlight></CodeLine>
+<Link id="l00710" /><CodeLine lineNumber="710"><Highlight kind="normal">        OS &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00711" /><CodeLine lineNumber="711"><Highlight kind="normal">        SCC.getCallGraph().getModule().print(OS, </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00712" /><CodeLine lineNumber="712"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00713" /><CodeLine lineNumber="713"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00714" /><CodeLine lineNumber="714"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00715" /><CodeLine lineNumber="715"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00716" /><CodeLine lineNumber="716" lineLink="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#a2f43732a7fca227900ed72e1fbc57d29"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#a2f43732a7fca227900ed72e1fbc57d29">getPassName</a>()</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="stringliteral">&quot;Print CallGraph IR&quot;</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
+<Link id="l00717" /><CodeLine lineNumber="717"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00718" /><CodeLine lineNumber="718"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00719" /><CodeLine lineNumber="719"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end anonymous namespace.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00720" /><CodeLine lineNumber="720"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00721" /><CodeLine lineNumber="721"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-callgraphsccpass-cpp-/printcallgraphpass/#adfe953c214bed8f725ec023a85214ee3">PrintCallGraphPass::ID</a> = 0;</Highlight></CodeLine>
+<Link id="l00722" /><CodeLine lineNumber="722"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00723" /><CodeLine lineNumber="723" lineLink="/docs/api/classes/llvm/callgraphsccpass/#a5377370c7153008ccd1f5c04536051e2"><Highlight kind="normal"><a href="/docs/api/classes/llvm/pass/#a16baa169d062524be5a6b67609266174">Pass</a> &#42;<a href="/docs/api/classes/llvm/callgraphsccpass/#a5377370c7153008ccd1f5c04536051e2">CallGraphSCCPass::createPrinterPass</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS,</Highlight></CodeLine>
+<Link id="l00724" /><CodeLine lineNumber="724"><Highlight kind="normal">                                          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;Banner)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00725" /><CodeLine lineNumber="725"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> PrintCallGraphPass(Banner, OS);</Highlight></CodeLine>
+<Link id="l00726" /><CodeLine lineNumber="726"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00727" /><CodeLine lineNumber="727"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00728" /><CodeLine lineNumber="728" lineLink="#a2bd4f0ba04228d5fb919734abb9ca1af"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> std::string <a href="#a2bd4f0ba04228d5fb919734abb9ca1af">getDescription</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> &amp;SCC) &#123;</Highlight></CodeLine>
+<Link id="l00729" /><CodeLine lineNumber="729"><Highlight kind="normal">  std::string <a href="/docs/api/namespaces/llvm/#a4de98a9acffcef5bb4b31862cb8c72ac">Desc</a> = </Highlight><Highlight kind="stringliteral">&quot;SCC (&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00730" /><CodeLine lineNumber="730"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/listseparator">ListSeparator</a> LS;</Highlight></CodeLine>
+<Link id="l00731" /><CodeLine lineNumber="731"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/callgraphnode">CallGraphNode</a> &#42;CGN : SCC) &#123;</Highlight></CodeLine>
+<Link id="l00732" /><CodeLine lineNumber="732"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a4de98a9acffcef5bb4b31862cb8c72ac">Desc</a> += LS;</Highlight></CodeLine>
+<Link id="l00733" /><CodeLine lineNumber="733"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = CGN-&gt;<a href="/docs/api/classes/llvm/callgraphnode/#aab57958df49938baa45ec4fb890cebac">getFunction</a>();</Highlight></CodeLine>
+<Link id="l00734" /><CodeLine lineNumber="734"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>)</Highlight></CodeLine>
+<Link id="l00735" /><CodeLine lineNumber="735"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a4de98a9acffcef5bb4b31862cb8c72ac">Desc</a> += <a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>-&gt;getName();</Highlight></CodeLine>
+<Link id="l00736" /><CodeLine lineNumber="736"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00737" /><CodeLine lineNumber="737"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a4de98a9acffcef5bb4b31862cb8c72ac">Desc</a> += </Highlight><Highlight kind="stringliteral">&quot;&lt;&lt;null function&gt;&gt;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00738" /><CodeLine lineNumber="738"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00739" /><CodeLine lineNumber="739"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a4de98a9acffcef5bb4b31862cb8c72ac">Desc</a> += </Highlight><Highlight kind="stringliteral">&quot;)&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00740" /><CodeLine lineNumber="740"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4de98a9acffcef5bb4b31862cb8c72ac">Desc</a>;</Highlight></CodeLine>
+<Link id="l00741" /><CodeLine lineNumber="741"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00742" /><CodeLine lineNumber="742"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00743" /><CodeLine lineNumber="743" lineLink="/docs/api/classes/llvm/callgraphsccpass/#a978ee5e9b5b33e10cea60aea38f80788"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/callgraphsccpass/#a978ee5e9b5b33e10cea60aea38f80788">CallGraphSCCPass::skipSCC</a>(<a href="/docs/api/classes/llvm/callgraphscc">CallGraphSCC</a> &amp;SCC)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00744" /><CodeLine lineNumber="744"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/optpassgate">OptPassGate</a> &amp;Gate =</Highlight></CodeLine>
+<Link id="l00745" /><CodeLine lineNumber="745"><Highlight kind="normal">      SCC.getCallGraph().getModule().getContext().getOptPassGate();</Highlight></CodeLine>
+<Link id="l00746" /><CodeLine lineNumber="746"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Gate.<a href="/docs/api/classes/llvm/optpassgate/#a0324a149fd3db35e2f789c91a4d30da4">isEnabled</a>() &amp;&amp;</Highlight></CodeLine>
+<Link id="l00747" /><CodeLine lineNumber="747"><Highlight kind="normal">         !Gate.<a href="/docs/api/classes/llvm/optpassgate/#a59de8deea51271200bbfc1e5be45ee3c">shouldRunPass</a>(this-&gt;<a href="/docs/api/classes/llvm/pass/#ad729b39eacf070a9bca84533b3c743bf">getPassName</a>(), <a href="#a2bd4f0ba04228d5fb919734abb9ca1af">getDescription</a>(SCC));</Highlight></CodeLine>
+<Link id="l00748" /><CodeLine lineNumber="748"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00749" /><CodeLine lineNumber="749"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00750" /><CodeLine lineNumber="750"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/dummycgsccpass/#ada2cb9288208c2d1fb93d6471cc7c3a0">DummyCGSCCPass::ID</a> = 0;</Highlight></CodeLine>
+<Link id="l00751" /><CodeLine lineNumber="751"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00752" /><CodeLine lineNumber="752"><Highlight kind="normal"><a href="/docs/api/files/include/include/llvm/passsupport-h/#af807c9595d50b45c0008924c4679c85c">INITIALIZE&#95;PASS</a>(<a href="/docs/api/classes/llvm/dummycgsccpass">DummyCGSCCPass</a>, </Highlight><Highlight kind="stringliteral">&quot;DummyCGSCCPass&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;DummyCGSCCPass&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
+<Link id="l00753" /><CodeLine lineNumber="753"><Highlight kind="normal">                </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

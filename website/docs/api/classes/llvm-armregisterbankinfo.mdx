@@ -1,0 +1,142 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/armregisterbankinfo
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `ARMRegisterBankInfo` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This class provides the information for the target register banks. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::ARMRegisterBankInfo</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="Target/ARM/ARMRegisterBankInfo.h"
+  permalink="/docs/api/files/lib/lib/target/lib/target/arm/armregisterbankinfo-h"
+  isLocal="true" />
+</IncludesList>
+
+## Base class
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/armgenregisterbankinfo">ARMGenRegisterBankInfo</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#aa2bbc28e24343e76c9a993bed3190ba2">ARMRegisterBankInfo</a> (const TargetRegisterInfo &amp;TRI)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/registerbankinfo/instructionmapping">InstructionMapping</a> &amp;</>}
+  name={<><a href="#af59ec25334715d44d5eecd8568b29e36">getInstrMapping</a> (const MachineInstr &amp;MI) const override</>}>
+Get the mapping of the different operands of <code>MI</code> on the register bank. <a href="#af59ec25334715d44d5eecd8568b29e36">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This class provides the information for the target register banks.
+
+Definition at line 31 of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armregisterbankinfo-h">ARMRegisterBankInfo.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### ARMRegisterBankInfo() {#aa2bbc28e24343e76c9a993bed3190ba2}
+
+<MemberDefinition
+  prototype={<>ARMRegisterBankInfo::ARMRegisterBankInfo (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &amp; TRI)</>}>
+
+Declaration at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armregisterbankinfo-h/#l00033">33</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armregisterbankinfo-h">ARMRegisterBankInfo.h</a>, definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armregisterbankinfo-cpp/#l00133">133</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armregisterbankinfo-cpp">ARMRegisterBankInfo.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### getInstrMapping() {#af59ec25334715d44d5eecd8568b29e36}
+
+<MemberDefinition
+  prototype={<>const RegisterBankInfo::InstructionMapping &amp; ARMRegisterBankInfo::getInstrMapping (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a> &amp; MI) const</>}
+  labels = {["virtual"]}>
+Get the mapping of the different operands of <code>MI</code> on the register bank.
+
+This mapping should be the direct translation of <code>MI</code>. In other words, when <code>MI</code> is mapped with the returned mapping, only the register banks of the operands of <code>MI</code> need to be updated. In particular, neither the opcode nor the type of <code>MI</code> needs to be updated for this direct mapping.
+
+The target independent implementation gives a mapping based on the register classes for the target specific opcode. It uses the <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> <a href="/docs/api/classes/llvm/registerbankinfo/#abe7d332de484fcc6cdc4c2a5e7bdd31b">RegisterBankInfo::DefaultMappingID</a> for that mapping. Make sure you do not use that <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> for the alternative mapping for MI. See getInstrAlternativeMappings for the alternative mappings.
+
+For instance, if <code>MI</code> is a vector add, the mapping should not be a scalarization of the add.
+
+
+<SectionUser title="Postcondition">
+returnedVal.verify(MI).
+</SectionUser>
+
+
+:::info
+If returnedVal does not verify MI, this would probably mean that the target does not support that instruction.
+:::
+
+Declaration at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armregisterbankinfo-h/#l00036">36</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armregisterbankinfo-h">ARMRegisterBankInfo.h</a>, definition at line <a href="/docs/api/files/lib/lib/target/lib/target/arm/armregisterbankinfo-cpp/#l00174">174</a> of file <a href="/docs/api/files/lib/lib/target/lib/target/arm/armregisterbankinfo-cpp">ARMRegisterBankInfo.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/arm/armregisterbankinfo-cpp">ARMRegisterBankInfo.cpp</a></li>
+<li><a href="/docs/api/files/lib/lib/target/lib/target/arm/armregisterbankinfo-h">ARMRegisterBankInfo.h</a></li>
+</ul>
+
+</DoxygenPage>

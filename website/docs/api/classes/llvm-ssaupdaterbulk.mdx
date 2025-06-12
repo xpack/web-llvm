@@ -1,0 +1,296 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/ssaupdaterbulk
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `SSAUpdaterBulk` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Helper class for SSA formation on a set of values defined in multiple blocks. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::SSAUpdaterBulk</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/Transforms/Utils/SSAUpdaterBulk.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Constructors Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a0037fd27eddece14c36773afcc9e5721">SSAUpdaterBulk</a> ()=default</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  name={<><a href="#a8e216fe4be54f5cd26865e1b25fc982e">SSAUpdaterBulk</a> (const SSAUpdaterBulk &amp;)=delete</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Destructor Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  name={<><a href="#a243fa3bde7c652d41bb2834e71b6d7dd">~SSAUpdaterBulk</a> ()=default</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Operators Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/ssaupdaterbulk">SSAUpdaterBulk</a> &amp;</>}
+  name={<><a href="#a1341b52a3332fa3c3b18e575f771fff7">operator=</a> (const SSAUpdaterBulk &amp;)=delete</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a60ded14ad5409c193178f8c72201a6cb">AddAvailableValue</a> (unsigned Var, BasicBlock &#42;BB, Value &#42;V)</>}>
+Indicate that a rewritten value is available in the specified block with the specified value. <a href="#a60ded14ad5409c193178f8c72201a6cb">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a95c1eb0b213b4b0f797053144466f06d">AddUse</a> (unsigned Var, Use &#42;U)</>}>
+<a href="/docs/api/classes/llvm/record">Record</a> a use of the symbolic value. <a href="#a95c1eb0b213b4b0f797053144466f06d">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="unsigned"
+  name={<><a href="#a3cb0a3b834b52c941090bb14e7f33fdf">AddVariable</a> (StringRef Name, Type &#42;Ty)</>}>
+Add a new variable to the SSA rewriter. <a href="#a3cb0a3b834b52c941090bb14e7f33fdf">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#a60fac14032181eef9fe2f3e790ce9c28">RewriteAllUses</a> (DominatorTree &#42;DT, SmallVectorImpl&lt; PHINode &#42; &gt; &#42;InsertedPHIs=nullptr)</>}>
+Perform all the necessary updates, including new PHI-nodes insertion and the requested uses update. <a href="#a60fac14032181eef9fe2f3e790ce9c28">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/value">Value</a> &#42;</>}
+  name={<><a href="#a52a6c302a52db861531a36bd5d11a043">computeValueAt</a> (BasicBlock &#42;BB, RewriteInfo &amp;R, DominatorTree &#42;DT)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Private Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/prediteratorcache">PredIteratorCache</a></>}
+  name={<><a href="#accb1609f560770596dc52bdca3e8b364">PredCache</a></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/smallvector">SmallVector</a>&lt; RewriteInfo, 4 &gt;</>}
+  name={<><a href="#a9371f209077da14675a83cb7f3613ffe">Rewrites</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Helper class for SSA formation on a set of values defined in multiple blocks.
+
+This is used when code duplication or another unstructured transformation wants to rewrite a set of uses of one value with uses of a set of values. The update is done only when RewriteAllUses is called, all other methods are used for book-keeping. That helps to share some common computations between updates of different uses (which is not the case when traditional <a href="/docs/api/classes/llvm/ssaupdater">SSAUpdater</a> is used).
+
+Definition at line 39 of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h">SSAUpdaterBulk.h</a>.
+
+<SectionDefinition>
+
+## Public Constructors
+
+### SSAUpdaterBulk() {#a0037fd27eddece14c36773afcc9e5721}
+
+<MemberDefinition
+  prototype="llvm::SSAUpdaterBulk::SSAUpdaterBulk ()"
+  labels = {["explicit", "default"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h/#l00055">55</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h">SSAUpdaterBulk.h</a>.
+</MemberDefinition>
+
+### SSAUpdaterBulk() {#a8e216fe4be54f5cd26865e1b25fc982e}
+
+<MemberDefinition
+  prototype={<>llvm::SSAUpdaterBulk::SSAUpdaterBulk (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/ssaupdaterbulk">SSAUpdaterBulk</a> &amp;)</>}
+  labels = {["delete"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h/#l00056">56</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h">SSAUpdaterBulk.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Destructor
+
+### ~SSAUpdaterBulk() {#a243fa3bde7c652d41bb2834e71b6d7dd}
+
+<MemberDefinition
+  prototype="llvm::SSAUpdaterBulk::~SSAUpdaterBulk ()"
+  labels = {["default"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h/#l00058">58</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h">SSAUpdaterBulk.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Operators
+
+### operator=() {#a1341b52a3332fa3c3b18e575f771fff7}
+
+<MemberDefinition
+  prototype={<>SSAUpdaterBulk &amp; llvm::SSAUpdaterBulk::operator= (<a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a> <a href="/docs/api/classes/llvm/ssaupdaterbulk">SSAUpdaterBulk</a> &amp;)</>}
+  labels = {["delete"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h/#l00057">57</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h">SSAUpdaterBulk.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### AddAvailableValue() {#a60ded14ad5409c193178f8c72201a6cb}
+
+<MemberDefinition
+  prototype={<>void SSAUpdaterBulk::AddAvailableValue (unsigned Var, <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB, <a href="/docs/api/classes/llvm/value">Value</a> &#42; V)</>}>
+Indicate that a rewritten value is available in the specified block with the specified value.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h/#l00067">67</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h">SSAUpdaterBulk.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/ssaupdaterbulk-cpp/#l00051">51</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/ssaupdaterbulk-cpp">SSAUpdaterBulk.cpp</a>.
+</MemberDefinition>
+
+### AddUse() {#a95c1eb0b213b4b0f797053144466f06d}
+
+<MemberDefinition
+  prototype={<>void SSAUpdaterBulk::AddUse (unsigned Var, <a href="/docs/api/classes/llvm/use">Use</a> &#42; U)</>}>
+<a href="/docs/api/classes/llvm/record">Record</a> a use of the symbolic value.
+
+This use will be updated with a rewritten value when RewriteAllUses is called.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h/#l00071">71</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h">SSAUpdaterBulk.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/ssaupdaterbulk-cpp/#l00061">61</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/ssaupdaterbulk-cpp">SSAUpdaterBulk.cpp</a>.
+</MemberDefinition>
+
+### AddVariable() {#a3cb0a3b834b52c941090bb14e7f33fdf}
+
+<MemberDefinition
+  prototype={<>unsigned SSAUpdaterBulk::AddVariable (<a href="/docs/api/classes/llvm/stringref">StringRef</a> Name, <a href="/docs/api/classes/llvm/type">Type</a> &#42; Ty)</>}>
+Add a new variable to the SSA rewriter.
+
+This needs to be called before AddAvailableValue or AddUse calls. The return value is the variable <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>, which needs to be passed to AddAvailableValue and AddUse.
+
+This needs to be called before AddAvailableValue or AddUse calls.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h/#l00063">63</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h">SSAUpdaterBulk.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/ssaupdaterbulk-cpp/#l00040">40</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/ssaupdaterbulk-cpp">SSAUpdaterBulk.cpp</a>.
+</MemberDefinition>
+
+### RewriteAllUses() {#a60fac14032181eef9fe2f3e790ce9c28}
+
+<MemberDefinition
+  prototype={<>void SSAUpdaterBulk::RewriteAllUses (<a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &#42; DT, <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>&lt; <a href="/docs/api/classes/llvm/phinode">PHINode</a> &#42; &gt; &#42; InsertedPHIs=nullptr)</>}>
+Perform all the necessary updates, including new PHI-nodes insertion and the requested uses update.
+
+The function requires dominator tree DT, which is used for computing locations for new phi-nodes insertions. If a nonnull pointer to a vector InsertedPHIs is passed, all the new phi-nodes will be added to this vector.
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h/#l00080">80</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h">SSAUpdaterBulk.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/ssaupdaterbulk-cpp/#l00122">122</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/ssaupdaterbulk-cpp">SSAUpdaterBulk.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Functions
+
+### computeValueAt() {#a52a6c302a52db861531a36bd5d11a043}
+
+<MemberDefinition
+  prototype={<>Value &#42; SSAUpdaterBulk::computeValueAt (<a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42; BB, RewriteInfo &amp; R, <a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a> &#42; DT)</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h/#l00052">52</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h">SSAUpdaterBulk.h</a>, definition at line <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/ssaupdaterbulk-cpp/#l00070">70</a> of file <a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/ssaupdaterbulk-cpp">SSAUpdaterBulk.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Private Member Attributes
+
+### PredCache {#accb1609f560770596dc52bdca3e8b364}
+
+<MemberDefinition
+  prototype="PredIteratorCache llvm::SSAUpdaterBulk::PredCache">
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h/#l00050">50</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h">SSAUpdaterBulk.h</a>.
+</MemberDefinition>
+
+### Rewrites {#a9371f209077da14675a83cb7f3613ffe}
+
+<MemberDefinition
+  prototype={<>SmallVector&lt;RewriteInfo, 4&gt; llvm::SSAUpdaterBulk::Rewrites</>}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h/#l00048">48</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h">SSAUpdaterBulk.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/ssaupdaterbulk-h">SSAUpdaterBulk.h</a></li>
+<li><a href="/docs/api/files/lib/lib/transforms/lib/transforms/utils/ssaupdaterbulk-cpp">SSAUpdaterBulk.cpp</a></li>
+</ul>
+
+</DoxygenPage>

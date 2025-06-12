@@ -1,0 +1,212 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/llvm/orc/localcxxruntimeoverridesbase
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `LocalCXXRuntimeOverridesBase` Class Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Support class for static dtor execution. <a href="#details">More...</a>
+
+## Declaration
+
+<CodeBlock>class llvm::orc::LocalCXXRuntimeOverridesBase</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/ExecutionEngine/Orc/ExecutionUtils.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h"
+  isLocal="true" />
+</IncludesList>
+
+## Derived Classes
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/llvm/orc/localcxxruntimeoverrides">LocalCXXRuntimeOverrides</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Protected Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#aef5603c98eee50419372982078eb77d9">CXXDestructorDataPair</a> = std::pair&lt; <a href="#a2ea138afefeb12981d4216d5afcc4f1d">DestructorPtr</a>, void &#42; &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a98da520b28f7630edbd8d5985786b4a7">CXXDestructorDataPairList</a> = std::vector&lt; <a href="#aef5603c98eee50419372982078eb77d9">CXXDestructorDataPair</a> &gt;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><a href="#a2ea138afefeb12981d4216d5afcc4f1d">DestructorPtr</a> = void(&#42;)(void &#42;)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><a href="#af6660e6f3ac5389aff5f76aca3d986b6">runDestructors</a> ()</>}>
+Run any destructors recorded by the overriden &#95;&#95;cxa&#95;atexit function (CXAAtExitOverride). <a href="#af6660e6f3ac5389aff5f76aca3d986b6">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Protected Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="#a98da520b28f7630edbd8d5985786b4a7">CXXDestructorDataPairList</a></>}
+  name={<><a href="#abd5477cfeb6c50bd9f23c6cfceac3742">DSOHandleOverride</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Protected Static Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="int"
+  name={<><a href="#a54cc84e2b76f2afd9e616e835dac8159">CXAAtExitOverride</a> (DestructorPtr Destructor, void &#42;Arg, void &#42;DSOHandle)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Support class for static dtor execution.
+
+For hosted (in-process) JITs only!
+
+If a &#95;&#95;cxa&#95;atexit function isn&#39;t found C++ programs that use static destructors will fail to link. However, we don&#39;t want to use the host process&#39;s &#95;&#95;cxa&#95;atexit, because it will schedule JIT&#39;d destructors to run after the JIT has been torn down, which is no good. This class makes it easy to override &#95;&#95;cxa&#95;atexit (and the related &#95;&#95;dso&#95;handle).
+
+To use, clients should manually call searchOverrides from their symbol resolver. This should generally be done after attempting symbol resolution inside the JIT, but before searching the host process&#39;s symbol table. When the client determines that destructors should be run (generally at JIT teardown or after a return from main), the runDestructors method should be called.
+
+Definition at line 175 of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h">ExecutionUtils.h</a>.
+
+<SectionDefinition>
+
+## Protected Member Typedefs
+
+### CXXDestructorDataPair {#aef5603c98eee50419372982078eb77d9}
+
+<MemberDefinition
+  prototype={<>using llvm::orc::LocalCXXRuntimeOverridesBase::CXXDestructorDataPair =  std::pair&lt;DestructorPtr, void &#42;&gt;</>}
+  labels = {["protected"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h/#l00183">183</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h">ExecutionUtils.h</a>.
+</MemberDefinition>
+
+### CXXDestructorDataPairList {#a98da520b28f7630edbd8d5985786b4a7}
+
+<MemberDefinition
+  prototype={<>using llvm::orc::LocalCXXRuntimeOverridesBase::CXXDestructorDataPairList =  std::vector&lt;CXXDestructorDataPair&gt;</>}
+  labels = {["protected"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h/#l00184">184</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h">ExecutionUtils.h</a>.
+</MemberDefinition>
+
+### DestructorPtr {#a2ea138afefeb12981d4216d5afcc4f1d}
+
+<MemberDefinition
+  prototype={<>using llvm::orc::LocalCXXRuntimeOverridesBase::DestructorPtr =  void (&#42;)(void &#42;)</>}
+  labels = {["protected"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h/#l00182">182</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h">ExecutionUtils.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### runDestructors() {#af6660e6f3ac5389aff5f76aca3d986b6}
+
+<MemberDefinition
+  prototype="void llvm::orc::LocalCXXRuntimeOverridesBase::runDestructors ()">
+Run any destructors recorded by the overriden &#95;&#95;cxa&#95;atexit function (CXAAtExitOverride).
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h/#l00179">179</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h">ExecutionUtils.h</a>, definition at line <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/orc/executionutils-cpp/#l00173">173</a> of file <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/orc/executionutils-cpp">ExecutionUtils.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Protected Member Attributes
+
+### DSOHandleOverride {#abd5477cfeb6c50bd9f23c6cfceac3742}
+
+<MemberDefinition
+  prototype="CXXDestructorDataPairList llvm::orc::LocalCXXRuntimeOverridesBase::DSOHandleOverride"
+  labels = {["protected"]}>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h/#l00185">185</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h">ExecutionUtils.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Protected Static Functions
+
+### CXAAtExitOverride() {#a54cc84e2b76f2afd9e616e835dac8159}
+
+<MemberDefinition
+  prototype={<>int llvm::orc::LocalCXXRuntimeOverridesBase::CXAAtExitOverride (<a href="#a2ea138afefeb12981d4216d5afcc4f1d">DestructorPtr</a> Destructor, void &#42; Arg, void &#42; DSOHandle)</>}
+  labels = {["protected", "static"]}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h/#l00186">186</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h">ExecutionUtils.h</a>, definition at line <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/orc/executionutils-cpp/#l00180">180</a> of file <a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/orc/executionutils-cpp">ExecutionUtils.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/executionutils-h">ExecutionUtils.h</a></li>
+<li><a href="/docs/api/files/lib/lib/executionengine/lib/executionengine/orc/executionutils-cpp">ExecutionUtils.cpp</a></li>
+</ul>
+
+</DoxygenPage>

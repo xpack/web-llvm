@@ -1,0 +1,67 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/namespaces/anonymous-deltatree-cpp-
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - namespace
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `anonymous{DeltaTree.cpp}` Namespace Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+The <a href="/docs/api/classes/llvm/deltatree">DeltaTree</a> class is a multiway search tree (BTree) structure with some fancy features. <a href="#details">More...</a>
+
+## Definition
+
+<CodeBlock>namespace &#123; ... &#125;</CodeBlock>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-deltatree-cpp-/deltatreeinteriornode">DeltaTreeInteriorNode</a></>}>
+<a href="/docs/api/classes/anonymous-namespace-deltatree-cpp-/deltatreeinteriornode">DeltaTreeInteriorNode</a> - When isLeaf = false, a node has child pointers. <a href="/docs/api/classes/anonymous-namespace-deltatree-cpp-/deltatreeinteriornode/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-deltatree-cpp-/deltatreenode">DeltaTreeNode</a></>}>
+<a href="/docs/api/classes/anonymous-namespace-deltatree-cpp-/deltatreenode">DeltaTreeNode</a> - The common part of all nodes. <a href="/docs/api/classes/anonymous-namespace-deltatree-cpp-/deltatreenode/#details">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="struct"
+  name={<><a href="/docs/api/structs/anonymous-namespace-deltatree-cpp-/sourcedelta">SourceDelta</a></>}>
+<a href="/docs/api/structs/anonymous-namespace-deltatree-cpp-/sourcedelta">SourceDelta</a> - As code in the original input buffer is added and deleted, <a href="/docs/api/structs/anonymous-namespace-deltatree-cpp-/sourcedelta">SourceDelta</a> records are used to keep track of how the input SourceLocation object is mapped into the output buffer. <a href="/docs/api/structs/anonymous-namespace-deltatree-cpp-/sourcedelta/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+The <a href="/docs/api/classes/llvm/deltatree">DeltaTree</a> class is a multiway search tree (BTree) structure with some fancy features.
+
+B-Trees are generally more memory and cache efficient than binary trees, because they store multiple keys/values in each node.
+
+<a href="/docs/api/classes/llvm/deltatree">DeltaTree</a> implements a key/value mapping from FileIndex to Delta, allowing fast lookup by FileIndex. However, an added (important) bonus is that it can also efficiently tell us the full accumulated delta for a specific file offset as well, without traversing the whole tree.
+
+The nodes of the tree are made up of instances of two classes: <a href="/docs/api/classes/anonymous-namespace-deltatree-cpp-/deltatreenode">DeltaTreeNode</a> and <a href="/docs/api/classes/anonymous-namespace-deltatree-cpp-/deltatreeinteriornode">DeltaTreeInteriorNode</a>. The later subclasses the former and adds children pointers. Each node knows the full delta of all entries (recursively) contained inside of it, which allows us to get the full delta implied by a whole subtree in constant time.
+
+</DoxygenPage>

@@ -1,0 +1,85 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/namespaces/anonymous-ppcbranchcoalescing-cpp-
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - namespace
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `anonymous{PPCBranchCoalescing.cpp}` Namespace Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+Improve scheduling by coalescing branches that depend on the same condition. <a href="#details">More...</a>
+
+## Definition
+
+<CodeBlock>namespace &#123; ... &#125;</CodeBlock>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-ppcbranchcoalescing-cpp-/ppcbranchcoalescing">PPCBranchCoalescing</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Improve scheduling by coalescing branches that depend on the same condition.
+
+This pass looks for blocks that are guarded by the same branch condition and attempts to merge the blocks together. Such opportunities arise from the expansion of select statements in the IR.
+
+This pass does not handle implicit operands on branch statements. In order to run on targets that use implicit operands, changes need to be made in the canCoalesceBranch and canMerge methods.
+
+Example: the following LLVM IR <CodeBlock>%test = icmp eq i32 %x 0
+%tmp1 = select i1 %test, double %a, double 2.000000e-03
+%tmp2 = select i1 %test, double %b, double 5.000000e-03
+</CodeBlock>
+
+expands to the following machine code:
+
+bb.0: derived from LLVM BB entry liveins: f1 f3 x6 &lt;SNIP1&gt; %0 = COPY f1; F8RC:%0 %5 = CMPLWI killed %4, 0; CRRC:%5 GPRC:%4 %8 = LXSDX zero8, killed %7, implicit rm; mem:LD8&#91;<a href="/docs/api/classes/llvm/constantpool">ConstantPool</a>&#93; F8RC:%8 G8RC:%7 BCC 76, %5, &lt;bb.2&gt;; CRRC:%5 Successors according to CFG: bb.1(?%) bb.2(?%)
+
+bb.1: derived from LLVM BB entry Predecessors according to CFG: bb.0 Successors according to CFG: bb.2(?%)
+
+bb.2: derived from LLVM BB entry Predecessors according to CFG: bb.0 bb.1 %9 = PHI %8, &lt;bb.1&gt;, %0, &lt;bb.0&gt;; F8RC:%9,%8,%0 &lt;SNIP2&gt; BCC 76, %5, &lt;bb.4&gt;; CRRC:%5 Successors according to CFG: bb.3(?%) bb.4(?%)
+
+bb.3: derived from LLVM BB entry Predecessors according to CFG: bb.2 Successors according to CFG: bb.4(?%)
+
+bb.4: derived from LLVM BB entry Predecessors according to CFG: bb.2 bb.3 %13 = PHI %12, &lt;bb.3&gt;, %2, &lt;bb.2&gt;; F8RC:%13,%12,%2 &lt;SNIP3&gt; BLR8 implicit lr8, implicit rm, implicit f1
+
+When this pattern is detected, branch coalescing will try to collapse it by moving code in bb.2 to bb.0 and/or bb.4 and removing bb.3.
+
+If all conditions are meet, IR should collapse to:
+
+bb.0: derived from LLVM BB entry liveins: f1 f3 x6 &lt;SNIP1&gt; %0 = COPY f1; F8RC:%0 %5 = CMPLWI killed %4, 0; CRRC:%5 GPRC:%4 %8 = LXSDX zero8, killed %7, implicit rm; mem:LD8&#91;<a href="/docs/api/classes/llvm/constantpool">ConstantPool</a>&#93; F8RC:%8 G8RC:%7 &lt;SNIP2&gt; BCC 76, %5, &lt;bb.4&gt;; CRRC:%5 Successors according to CFG: bb.1(0x2aaaaaaa / 0x80000000 = 33.33%) bb.4(0x55555554 / 0x80000000 = 66.67%)
+
+bb.1: derived from LLVM BB entry Predecessors according to CFG: bb.0 Successors according to CFG: bb.4(0x40000000 / 0x80000000 = 50.00%)
+
+bb.4: derived from LLVM BB entry Predecessors according to CFG: bb.0 bb.1 %9 = PHI %8, &lt;bb.1&gt;, %0, &lt;bb.0&gt;; F8RC:%9,%8,%0 %13 = PHI %12, &lt;bb.1&gt;, %2, &lt;bb.0&gt;; F8RC:%13,%12,%2 &lt;SNIP3&gt; BLR8 implicit lr8, implicit rm, implicit f1
+
+Branch Coalescing does not split blocks, it moves everything in the same direction ensuring it does not break use/definition semantics.
+
+PHI nodes and its corresponding use instructions are moved to its successor block if there are no uses within the successor block PHI nodes. PHI node ordering cannot be assumed.
+
+Non-PHI can be moved up to the predecessor basic block or down to the successor basic block following any PHI instructions. Whether it moves up or down depends on whether the register(s) defined in the instructions are used in current block or in any PHI instructions at the beginning of the successor block.
+
+</DoxygenPage>

@@ -1,0 +1,569 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/lib/lib/transforms/lib/transforms/vectorize/vplanunroll-cpp
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `VPlanUnroll.cpp` File Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+This file implements explicit unrolling for VPlans. <a href="#details">More...</a>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="VPRecipeBuilder.h"
+  permalink="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vprecipebuilder-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="VPlan.h"
+  permalink="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="VPlanAnalysis.h"
+  permalink="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplananalysis-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="VPlanCFG.h"
+  permalink="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplancfg-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="VPlanPatternMatch.h"
+  permalink="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanpatternmatch-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="VPlanTransforms.h"
+  permalink="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplantransforms-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="VPlanUtils.h"
+  permalink="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/PostOrderIterator.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/postorderiterator-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/STLExtras.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/stlextras-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/ADT/ScopeExit.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/adt/scopeexit-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/Analysis/IVDescriptors.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/analysis/ivdescriptors-h"
+  isLocal="true" />
+<IncludesListItem
+  filePath="llvm/IR/Intrinsics.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/ir/intrinsics-h"
+  isLocal="true" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<><a href="/docs/api/namespaces/anonymous-vplanunroll-cpp-">anonymous&#123;VPlanUnroll.cpp&#125;</a></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<><a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate">UnrollState</a></>}>
+Helper to hold state needed for unrolling. <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#details">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+This file implements explicit unrolling for VPlans.
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- VPlanUnroll.cpp - VPlan unroller ----------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="comment">///</Highlight></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="comment">/// \\file</Highlight></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="comment">/// This file implements explicit unrolling for VPlans.</Highlight></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vprecipebuilder-h">VPRecipeBuilder.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplan-h">VPlan.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplananalysis-h">VPlanAnalysis.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplancfg-h">VPlanCFG.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanpatternmatch-h">VPlanPatternMatch.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplantransforms-h">VPlanTransforms.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/transforms/lib/transforms/vectorize/vplanutils-h">VPlanUtils.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/postorderiterator-h">llvm/ADT/PostOrderIterator.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stlextras-h">llvm/ADT/STLExtras.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/scopeexit-h">llvm/ADT/ScopeExit.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/ivdescriptors-h">llvm/Analysis/IVDescriptors.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/intrinsics-h">llvm/IR/Intrinsics.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29" lineLink="/docs/api/namespaces/anonymous-vplanunroll-cpp-"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="comment">/// Helper to hold state needed for unrolling. It holds the Plan to unroll by</Highlight></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">/// UF. It also holds copies of VPValues across UF-1 unroll parts to facilitate</Highlight></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="comment">/// the unrolling transformation, where the original VPValues are retained for</Highlight></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="comment">/// part zero.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35" lineLink="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ae04902368ea328ca1b0eb393a0f0dd4e">UnrollState</a> &#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="comment">  /// Plan to unroll.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/vplan">VPlan</a> &amp;Plan;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">  /// Unroll factor to unroll by.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> UF;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">  /// Analysis for types.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/vptypeanalysis">VPTypeAnalysis</a> TypeInfo;</Highlight></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">  /// Unrolling may create recipes that should not be unrolled themselves.</Highlight></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">  /// Those are tracked in ToSkip.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet&lt;VPRecipeBase &#42;, 8&gt;</a> ToSkip;</Highlight></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Associate with each VPValue of part 0 its unrolled instances of parts 1,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// ..., UF-1.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;VPValue &#42;, SmallVector&lt;VPValue &#42;&gt;</a>&gt; VPV2Parts;</Highlight></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="comment">  /// Unroll replicate region \\p VPR by cloning the region UF - 1 times.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> unrollReplicateRegionByUF(<a href="/docs/api/classes/llvm/vpregionblock">VPRegionBlock</a> &#42;VPR);</Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="comment">  /// Unroll recipe \\p R by cloning it UF - 1 times, unless it is uniform across</Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="comment">  /// all parts.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> unrollRecipeByUF(<a href="/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a> &amp;R);</Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">  /// Unroll header phi recipe \\p R. How exactly the recipe gets unrolled</Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">  /// depends on the concrete header phi. Inserts newly created recipes at \\p</Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="comment">  /// InsertPtForPhi.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> unrollHeaderPHIByUF(<a href="/docs/api/classes/llvm/vpheaderphirecipe">VPHeaderPHIRecipe</a> &#42;R,</Highlight></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">                           <a href="/docs/api/classes/llvm/vpbasicblock/#a2fc75e7b63babbf776ed29cfed87ae65">VPBasicBlock::iterator</a> InsertPtForPhi);</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="comment">  /// Unroll a widen induction recipe \\p IV. This introduces recipes to compute</Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="comment">  /// the induction steps for each part.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> unrollWidenInductionByUF(<a href="/docs/api/classes/llvm/vpwidenintorfpinductionrecipe">VPWidenIntOrFpInductionRecipe</a> &#42;<a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>,</Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">                                <a href="/docs/api/classes/llvm/vpbasicblock/#a2fc75e7b63babbf776ed29cfed87ae65">VPBasicBlock::iterator</a> InsertPtForPhi);</Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;getConstantVPV(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Part) &#123;</Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/type">Type</a> &#42;CanIVIntTy = Plan.getCanonicalIV()-&gt;<a href="/docs/api/classes/llvm/type/#a7c742b32ebcd73d6dc851afac295b0f2">getScalarType</a>();</Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Plan.getOrAddLiveIn(ConstantInt::get(CanIVIntTy, Part));</Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75" lineLink="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ae04902368ea328ca1b0eb393a0f0dd4e"><Highlight kind="normal">  <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ae04902368ea328ca1b0eb393a0f0dd4e">UnrollState</a>(<a href="/docs/api/classes/llvm/vplan">VPlan</a> &amp;Plan, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> UF, <a href="/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp;Ctx)</Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">      : Plan(Plan), UF(UF), TypeInfo(Plan.getCanonicalIV()-&gt;getScalarType()) &#123;&#125;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> unrollBlock(<a href="/docs/api/classes/llvm/vpblockbase">VPBlockBase</a> &#42;VPB);</Highlight></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#a8defa175c07f36ea3c3cf47dfdd4c349"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;<a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#a8defa175c07f36ea3c3cf47dfdd4c349">getValueForPart</a>(<a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;V, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Part) &#123;</Highlight></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Part == 0 || V-&gt;isLiveIn())</Highlight></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> V;</Highlight></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((VPV2Parts.contains(V) &amp;&amp; VPV2Parts&#91;V&#93;.size() &gt;= Part) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;accessed value does not exist&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> VPV2Parts&#91;V&#93;&#91;Part - 1&#93;;</Highlight></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">  /// Given a single original recipe \\p OrigR (of part zero), and its copy \\p</Highlight></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">  /// CopyR for part \\p Part, map every VPValue defined by \\p OrigR to its</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">  /// corresponding VPValue defined by \\p CopyR.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91" lineLink="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ab9d451e46e072fa57afbc34788c93f44"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ab9d451e46e072fa57afbc34788c93f44">addRecipeForPart</a>(<a href="/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a> &#42;OrigR, <a href="/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a> &#42;CopyR,</Highlight></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">                        </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Part) &#123;</Highlight></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;&#91;Idx, VPV&#93; : <a href="/docs/api/namespaces/llvm/#a206e2134ddd2312c3488d0632d98f554">enumerate</a>(OrigR-&gt;<a href="/docs/api/classes/llvm/vpdef/#a5b7aa8b207f721cee2e80ebd99682563">definedValues</a>())) &#123;</Highlight></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Ins = VPV2Parts.insert(&#123;VPV, &#123;&#125;&#125;);</Highlight></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Ins.first-&gt;second.size() == Part - 1 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;earlier parts not set&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">      Ins.first-&gt;second.push&#95;back(CopyR-&gt;<a href="/docs/api/classes/llvm/vpdef/#a9264a7c042631ed72c3bca345fc24003">getVPValue</a>(Idx));</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">  /// Given a uniform recipe \\p R, add it for all parts.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101" lineLink="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ad84a0ee13c95a817ac63639f9754dd33"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ad84a0ee13c95a817ac63639f9754dd33">addUniformForAllParts</a>(<a href="/docs/api/classes/llvm/vpsingledefrecipe">VPSingleDefRecipe</a> &#42;R) &#123;</Highlight></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Ins = VPV2Parts.insert(&#123;R, &#123;&#125;&#125;);</Highlight></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Ins.second &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;uniform value already added&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Part = 0; Part != UF; ++Part)</Highlight></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">      Ins.first-&gt;second.push&#95;back(R);</Highlight></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108" lineLink="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ad9f6dc4785a445bb17b9726ecdefd607"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ad9f6dc4785a445bb17b9726ecdefd607">contains</a>(<a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;VPV)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> VPV2Parts.contains(VPV); &#125;</Highlight></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="comment">  /// Update \\p R&#39;s operand at \\p OpIdx with its corresponding VPValue for part</Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">  /// \\p P.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112" lineLink="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#a97d25d446423ce3582fb7179d309d88b"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#a97d25d446423ce3582fb7179d309d88b">remapOperand</a>(<a href="/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a> &#42;R, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> OpIdx, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Part) &#123;</Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a> = R-&gt;getOperand(OpIdx);</Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">    R-&gt;setOperand(OpIdx, <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#a8defa175c07f36ea3c3cf47dfdd4c349">getValueForPart</a>(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, Part));</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">  /// Update \\p R&#39;s operands with their corresponding VPValues for part \\p P.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118" lineLink="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ab38da9aa6896dbc776952fcb8ea1d1aa"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ab38da9aa6896dbc776952fcb8ea1d1aa">remapOperands</a>(<a href="/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a> &#42;R, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Part) &#123;</Highlight></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;&#91;OpIdx, <a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>&#93; : <a href="/docs/api/namespaces/llvm/#a206e2134ddd2312c3488d0632d98f554">enumerate</a>(R-&gt;operands()))</Highlight></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">      R-&gt;setOperand(OpIdx, <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#a8defa175c07f36ea3c3cf47dfdd4c349">getValueForPart</a>(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, Part));</Highlight></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> UnrollState::unrollReplicateRegionByUF(<a href="/docs/api/classes/llvm/vpregionblock">VPRegionBlock</a> &#42;VPR) &#123;</Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/vpblockbase">VPBlockBase</a> &#42;InsertPt = VPR-&gt;<a href="/docs/api/classes/llvm/vpblockbase/#aebc0e1a3379ed4fd614889e24b8ea48c">getSingleSuccessor</a>();</Highlight></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Part = 1; Part != UF; ++Part) &#123;</Highlight></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a> = VPR-&gt;<a href="/docs/api/classes/llvm/vpregionblock/#a0001ec4686be34ad7e56cb0798bef1b0">clone</a>();</Highlight></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/vpblockutils/#a69d51be488551c2983a022bb98494901">VPBlockUtils::insertBlockBefore</a>(Copy, InsertPt);</Highlight></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> PartI = <a href="/docs/api/namespaces/llvm/#a4474bfb1e0ca062e5bfe2a35980e7d19">vp&#95;depth&#95;first&#95;shallow</a>(<a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a>-&gt;getEntry());</Highlight></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Part0 = <a href="/docs/api/namespaces/llvm/#a4474bfb1e0ca062e5bfe2a35980e7d19">vp&#95;depth&#95;first&#95;shallow</a>(VPR-&gt;<a href="/docs/api/classes/llvm/vpregionblock/#a1ae2cb3c63b4d67324ddc947fb9696fc">getEntry</a>());</Highlight></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;&#91;PartIVPBB, Part0VPBB&#93; :</Highlight></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">         <a href="/docs/api/namespaces/llvm/#a06041e3bf4b0a9e8984809413ddd9506">zip</a>(<a href="/docs/api/classes/llvm/vpblockutils/#a0360eea6cebcb1470f84b11f7ba51f16">VPBlockUtils::blocksOnly&lt;VPBasicBlock&gt;</a>(PartI),</Highlight></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">             <a href="/docs/api/classes/llvm/vpblockutils/#a0360eea6cebcb1470f84b11f7ba51f16">VPBlockUtils::blocksOnly&lt;VPBasicBlock&gt;</a>(Part0))) &#123;</Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;&#91;PartIR, Part0R&#93; : <a href="/docs/api/namespaces/llvm/#a06041e3bf4b0a9e8984809413ddd9506">zip</a>(&#42;PartIVPBB, &#42;Part0VPBB)) &#123;</Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">        <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ab38da9aa6896dbc776952fcb8ea1d1aa">remapOperands</a>(&amp;PartIR, Part);</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;ScalarIVSteps = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;VPScalarIVStepsRecipe&gt;</a>(&amp;PartIR)) &#123;</Highlight></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">          ScalarIVSteps-&gt;addOperand(getConstantVPV(Part));</Highlight></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">        <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ab9d451e46e072fa57afbc34788c93f44">addRecipeForPart</a>(&amp;Part0R, &amp;PartIR, Part);</Highlight></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> UnrollState::unrollWidenInductionByUF(</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/vpwidenintorfpinductionrecipe">VPWidenIntOrFpInductionRecipe</a> &#42;<a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>, <a href="/docs/api/classes/llvm/vpbasicblock/#a2fc75e7b63babbf776ed29cfed87ae65">VPBasicBlock::iterator</a> InsertPtForPhi) &#123;</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/vpbasicblock">VPBasicBlock</a> &#42;PH = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;VPBasicBlock&gt;</a>(</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>-&gt;getParent()-&gt;getEnclosingLoopRegion()-&gt;getSinglePredecessor());</Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/type">Type</a> &#42;IVTy = TypeInfo.inferScalarType(<a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>);</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a> = <a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>-&gt;getInductionDescriptor();</Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  std::optional&lt;FastMathFlags&gt; FMFs;</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#a7c36204b4ae6bbd9edda208f271aa569">isa&#95;and&#95;present&lt;FPMathOperator&gt;</a>(<a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>.getInductionBinOp()))</Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">    FMFs = <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>.getInductionBinOp()-&gt;getFastMathFlags();</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;VectorStep = &amp;Plan.getVF();</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/vpbuilder">VPBuilder</a> Builder(PH);</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TypeInfo.inferScalarType(VectorStep) != IVTy) &#123;</Highlight></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/instruction/#afa0b2fa29ba074f2b6ec9ac11163f2d9">Instruction::CastOps</a> CastOp =</Highlight></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">        IVTy-&gt;<a href="/docs/api/classes/llvm/type/#aac5759c83abd6a4af236401a7cfe7a0f">isFloatingPointTy</a>() ? Instruction::UIToFP : Instruction::Trunc;</Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">    VectorStep = Builder.createWidenCast(CastOp, VectorStep, IVTy);</Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">    ToSkip.insert(VectorStep-&gt;<a href="/docs/api/classes/llvm/vpvalue/#a3be8d7833df422f3538ddb13af69bd70">getDefiningRecipe</a>());</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;ScalarStep = <a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>-&gt;getStepValue();</Highlight></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;ConstStep = ScalarStep-&gt;<a href="/docs/api/classes/llvm/vpvalue/#add6179d3564ac5ea4736366b93d23829">isLiveIn</a>()</Highlight></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">                        ? <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;ConstantInt&gt;</a>(ScalarStep-&gt;<a href="/docs/api/classes/llvm/vpvalue/#ac6f0bd9ed63fe4a784697d73ae3b6fa0">getLiveInIRValue</a>())</Highlight></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">                        : nullptr;</Highlight></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!ConstStep || ConstStep-&gt;getValue() != 1) &#123;</Highlight></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TypeInfo.inferScalarType(ScalarStep) != IVTy) &#123;</Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">      ScalarStep =</Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">          Builder.createWidenCast(Instruction::Trunc, ScalarStep, IVTy);</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">      ToSkip.insert(ScalarStep-&gt;<a href="/docs/api/classes/llvm/vpvalue/#a3be8d7833df422f3538ddb13af69bd70">getDefiningRecipe</a>());</Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> MulOpc =</Highlight></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">        IVTy-&gt;<a href="/docs/api/classes/llvm/type/#aac5759c83abd6a4af236401a7cfe7a0f">isFloatingPointTy</a>() ? Instruction::FMul : Instruction::Mul;</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/vpinstruction">VPInstruction</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#ae0f503db91504a3f3440ab81260e4134">Mul</a> = Builder.createNaryOp(MulOpc, &#123;VectorStep, ScalarStep&#125;,</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">                                              FMFs, <a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>-&gt;getDebugLoc());</Highlight></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">    VectorStep = <a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#ae0f503db91504a3f3440ab81260e4134">Mul</a>;</Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">    ToSkip.insert(<a href="/docs/api/files/lib/lib/target/lib/target/x86/x86partialreduction-cpp/#ae0f503db91504a3f3440ab81260e4134">Mul</a>);</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Now create recipes to compute the induction steps for part 1 .. UF. Part 0</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// remains the header phi. Parts &gt; 0 are computed by adding Step to the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// previous part. The header phi recipe will get 2 new operands: the step</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// value for a single part and the last part, used to compute the backedge</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// value during VPWidenIntOrFpInductionRecipe::execute. %Part.0 =</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// VPWidenIntOrFpInductionRecipe %Start, %ScalarStep, %VectorStep, %Part.3</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// %Part.1 = %Part.0 + %VectorStep</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// %Part.2 = %Part.1 + %VectorStep</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// %Part.3 = %Part.2 + %VectorStep</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The newly added recipes are added to ToSkip to avoid interleaving them</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// again.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;Prev = <a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>;</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">  Builder.setInsertPoint(<a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>-&gt;getParent(), InsertPtForPhi);</Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> AddOpc =</Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">      IVTy-&gt;<a href="/docs/api/classes/llvm/type/#aac5759c83abd6a4af236401a7cfe7a0f">isFloatingPointTy</a>() ? <a href="/docs/api/namespaces/llvm/callingconv/#abdf8cf606905c10634e831390981b0ed">ID</a>.getInductionOpcode() : Instruction::Add;</Highlight></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Part = 1; Part != UF; ++Part) &#123;</Highlight></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">    std::string <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a> =</Highlight></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">        Part &gt; 1 ? </Highlight><Highlight kind="stringliteral">&quot;step.add.&quot;</Highlight><Highlight kind="normal"> + std::to&#95;string(Part) : </Highlight><Highlight kind="stringliteral">&quot;step.add&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/vpinstruction">VPInstruction</a> &#42;<a href="/docs/api/namespaces/llvm/#aac36edd0f1ce976f0025c98e88d3830eaec211f7c20af43e742bf2570c3cb84f9">Add</a> = Builder.createNaryOp(AddOpc,</Highlight></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">                                              &#123;</Highlight></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">                                                  Prev,</Highlight></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">                                                  VectorStep,</Highlight></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">                                              &#125;,</Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">                                              FMFs, <a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>-&gt;getDebugLoc(), Name);</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">    ToSkip.insert(<a href="/docs/api/namespaces/llvm/#aac36edd0f1ce976f0025c98e88d3830eaec211f7c20af43e742bf2570c3cb84f9">Add</a>);</Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">    <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ab9d451e46e072fa57afbc34788c93f44">addRecipeForPart</a>(<a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>, <a href="/docs/api/namespaces/llvm/#aac36edd0f1ce976f0025c98e88d3830eaec211f7c20af43e742bf2570c3cb84f9">Add</a>, Part);</Highlight></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">    Prev = <a href="/docs/api/namespaces/llvm/#aac36edd0f1ce976f0025c98e88d3830eaec211f7c20af43e742bf2570c3cb84f9">Add</a>;</Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>-&gt;addOperand(VectorStep);</Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>-&gt;addOperand(Prev);</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> UnrollState::unrollHeaderPHIByUF(<a href="/docs/api/classes/llvm/vpheaderphirecipe">VPHeaderPHIRecipe</a> &#42;R,</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">                                      <a href="/docs/api/classes/llvm/vpbasicblock/#a2fc75e7b63babbf776ed29cfed87ae65">VPBasicBlock::iterator</a> InsertPtForPhi) &#123;</Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// First-order recurrences pass a single vector or scalar through their header</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// phis, irrespective of interleaving.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa&lt;VPFirstOrderRecurrencePHIRecipe&gt;</a>(R))</Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Generate step vectors for each unrolled part.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a> = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;VPWidenIntOrFpInductionRecipe&gt;</a>(R)) &#123;</Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">    unrollWidenInductionByUF(<a href="/docs/api/files/lib/lib/support/lib/support/blake3/blake3-impl-h/#a78823051d1dad34b9b3d8120112e674d">IV</a>, InsertPtForPhi);</Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;RdxPhi = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;VPReductionPHIRecipe&gt;</a>(R);</Highlight></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (RdxPhi &amp;&amp; RdxPhi-&gt;isOrdered())</Highlight></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> InsertPt = std::next(<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>-&gt;getIterator());</Highlight></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Part = 1; Part != UF; ++Part) &#123;</Highlight></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a> &#42;<a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a> = <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>-&gt;clone();</Highlight></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a>-&gt;insertBefore(&#42;<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>-&gt;getParent(), InsertPt);</Highlight></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">    <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ab9d451e46e072fa57afbc34788c93f44">addRecipeForPart</a>(R, Copy, Part);</Highlight></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa&lt;VPWidenPointerInductionRecipe&gt;</a>(R)) &#123;</Highlight></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a>-&gt;addOperand(R);</Highlight></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a>-&gt;addOperand(getConstantVPV(Part));</Highlight></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (RdxPhi) &#123;</Highlight></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a>-&gt;addOperand(getConstantVPV(Part));</Highlight></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa&lt;VPActiveLaneMaskPHIRecipe&gt;</a>(R) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">             </Highlight><Highlight kind="stringliteral">&quot;unexpected header phi recipe not needing unrolled part&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="comment">/// Handle non-header-phi recipes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> UnrollState::unrollRecipeByUF(<a href="/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a> &amp;R) &#123;</Highlight></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/vplanpatternmatch">llvm::VPlanPatternMatch</a>;</Highlight></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/patternmatch/#a25d956d9e0beadd47ce4bc255dfa811d">match</a>(&amp;R, <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#ab0e78b42dfbac0cbe15c785c4b815ba4">m&#95;BranchOnCond</a>(<a href="/docs/api/namespaces/llvm/vplanpatternmatch/#abce81cbd0e36ab26b74909f7d9135bf5">m&#95;VPValue</a>())) ||</Highlight></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/patternmatch/#a25d956d9e0beadd47ce4bc255dfa811d">match</a>(&amp;R, <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#a781b43897f427e5c19a39c57259146ed">m&#95;BranchOnCount</a>(<a href="/docs/api/namespaces/llvm/vplanpatternmatch/#abce81cbd0e36ab26b74909f7d9135bf5">m&#95;VPValue</a>(), <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#abce81cbd0e36ab26b74909f7d9135bf5">m&#95;VPValue</a>())))</Highlight></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;VPI = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;VPInstruction&gt;</a>(&amp;R)) &#123;</Highlight></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/vputils/#a513233e0bcf9aaf36f9672eff75514ea">vputils::onlyFirstPartUsed</a>(VPI)) &#123;</Highlight></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">      <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ad84a0ee13c95a817ac63639f9754dd33">addUniformForAllParts</a>(VPI);</Highlight></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;RepR = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;VPReplicateRecipe&gt;</a>(&amp;R)) &#123;</Highlight></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa&lt;StoreInst&gt;</a>(RepR-&gt;getUnderlyingValue()) &amp;&amp;</Highlight></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">        RepR-&gt;getOperand(1)-&gt;isDefinedOutsideLoopRegions()) &#123;</Highlight></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Stores to an invariant address only need to store the last part.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">      <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ab38da9aa6896dbc776952fcb8ea1d1aa">remapOperands</a>(&amp;R, UF - 1);</Highlight></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a> = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;IntrinsicInst&gt;</a>(RepR-&gt;getUnderlyingValue())) &#123;</Highlight></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a>-&gt;getIntrinsicID() == Intrinsic::experimental&#95;noalias&#95;scope&#95;decl) &#123;</Highlight></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal">        <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ad84a0ee13c95a817ac63639f9754dd33">addUniformForAllParts</a>(RepR);</Highlight></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Unroll non-uniform recipes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> InsertPt = std::next(<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.getIterator());</Highlight></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/vpbasicblock">VPBasicBlock</a> &amp;VPBB = &#42;<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.getParent();</Highlight></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Part = 1; Part != UF; ++Part) &#123;</Highlight></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a> &#42;<a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a> = <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.clone();</Highlight></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a>-&gt;insertBefore(VPBB, InsertPt);</Highlight></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">    <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ab9d451e46e072fa57afbc34788c93f44">addRecipeForPart</a>(&amp;R, Copy, Part);</Highlight></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>;</Highlight></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/patternmatch/#a25d956d9e0beadd47ce4bc255dfa811d">match</a>(&amp;R, <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#a5438a63c52f3576904c86e1bf0c7a9ab">m&#95;VPInstruction&lt;VPInstruction::FirstOrderRecurrenceSplice&gt;</a>(</Highlight></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">                      <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#abce81cbd0e36ab26b74909f7d9135bf5">m&#95;VPValue</a>(), <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#abce81cbd0e36ab26b74909f7d9135bf5">m&#95;VPValue</a>(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>)))) &#123;</Highlight></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a>-&gt;setOperand(0, <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#a8defa175c07f36ea3c3cf47dfdd4c349">getValueForPart</a>(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, Part - 1));</Highlight></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a>-&gt;setOperand(1, <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#a8defa175c07f36ea3c3cf47dfdd4c349">getValueForPart</a>(<a href="/docs/api/namespaces/llvm/#ab471937b9a227e70c7fe8bd9604014d6">Op</a>, Part));</Highlight></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;Red = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;VPReductionRecipe&gt;</a>(&amp;R)) &#123;</Highlight></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/namespaces/llvm/rdf/#a379bee2dadbfd1d7a599f003c4275dd8">Phi</a> = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;VPReductionPHIRecipe&gt;</a>(<a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.getOperand(0));</Highlight></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/rdf/#a379bee2dadbfd1d7a599f003c4275dd8">Phi</a>-&gt;isOrdered()) &#123;</Highlight></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;Parts = VPV2Parts&#91;<a href="/docs/api/namespaces/llvm/rdf/#a379bee2dadbfd1d7a599f003c4275dd8">Phi</a>&#93;;</Highlight></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Part == 1) &#123;</Highlight></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">          Parts.clear();</Highlight></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal">          Parts.push&#95;back(Red);</Highlight></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal">        Parts.push&#95;back(<a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a>-&gt;getVPSingleValue());</Highlight></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">        <a href="/docs/api/namespaces/llvm/rdf/#a379bee2dadbfd1d7a599f003c4275dd8">Phi</a>-&gt;setOperand(1, <a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a>-&gt;getVPSingleValue());</Highlight></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal">    <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ab38da9aa6896dbc776952fcb8ea1d1aa">remapOperands</a>(Copy, Part);</Highlight></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Add operand indicating the part to generate code for, to recipes still</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// requiring it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa</a>&lt;<a href="/docs/api/classes/llvm/vpscalarivstepsrecipe">VPScalarIVStepsRecipe</a>, <a href="/docs/api/classes/llvm/vpwidencanonicalivrecipe">VPWidenCanonicalIVRecipe</a>,</Highlight></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal">            <a href="/docs/api/classes/llvm/vpvectorpointerrecipe">VPVectorPointerRecipe</a>, <a href="/docs/api/classes/llvm/vpreversevectorpointerrecipe">VPReverseVectorPointerRecipe</a>&gt;(Copy) ||</Highlight></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal">        <a href="/docs/api/namespaces/llvm/patternmatch/#a25d956d9e0beadd47ce4bc255dfa811d">match</a>(Copy, <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#a5438a63c52f3576904c86e1bf0c7a9ab">m&#95;VPInstruction&lt;VPInstruction::CanonicalIVIncrementForPart&gt;</a>(</Highlight></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal">                        <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#abce81cbd0e36ab26b74909f7d9135bf5">m&#95;VPValue</a>())))</Highlight></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a>-&gt;addOperand(getConstantVPV(Part));</Highlight></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa&lt;VPVectorPointerRecipe, VPReverseVectorPointerRecipe&gt;</a>(R))</Highlight></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/codeview/#ad37302702bbcf0028581d2655698c27aa5fb63579fc981698f97d55bfecb213ea">Copy</a>-&gt;setOperand(0, <a href="/docs/api/namespaces/llvm/riscvfencefield/#a147be9e9780c1e33363ea572d4c7b25fa1835091d83e0e052cd1a32c99b2be731">R</a>.getOperand(0));</Highlight></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/vplanpatternmatch">llvm::VPlanPatternMatch</a>;</Highlight></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325" lineLink="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#a9965cb8e010ad82f02434a0762cddf1e"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#a9965cb8e010ad82f02434a0762cddf1e">UnrollState::unrollBlock</a>(<a href="/docs/api/classes/llvm/vpblockbase">VPBlockBase</a> &#42;VPB) &#123;</Highlight></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;VPR = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;VPRegionBlock&gt;</a>(VPB);</Highlight></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (VPR) &#123;</Highlight></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (VPR-&gt;<a href="/docs/api/classes/llvm/vpregionblock/#a24555c6ed92715d80348f0991a6d55df">isReplicator</a>())</Highlight></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> unrollReplicateRegionByUF(VPR);</Highlight></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Traverse blocks in region in RPO to ensure defs are visited before uses</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// across blocks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/reversepostordertraversal">ReversePostOrderTraversal&lt;VPBlockShallowTraversalWrapper&lt;VPBlockBase &#42;&gt;</a>&gt;</Highlight></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">        RPOT(VPR-&gt;<a href="/docs/api/classes/llvm/vpregionblock/#a1ae2cb3c63b4d67324ddc947fb9696fc">getEntry</a>());</Highlight></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/vpblockbase">VPBlockBase</a> &#42;VPB : RPOT)</Highlight></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal">      <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#a9965cb8e010ad82f02434a0762cddf1e">unrollBlock</a>(VPB);</Highlight></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// VPB is a VPBasicBlock; unroll it, i.e., unroll its recipes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;VPBB = <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;VPBasicBlock&gt;</a>(VPB);</Highlight></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> InsertPtForPhi = VPBB-&gt;<a href="/docs/api/classes/llvm/vpbasicblock/#a72533c6b54501809628b9daee79b9d18">getFirstNonPhi</a>();</Highlight></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a> &amp;R : <a href="/docs/api/namespaces/llvm/#a3d2cdc4a0db233678e7141c9d6ea3419">make&#95;early&#95;inc&#95;range</a>(&#42;VPBB)) &#123;</Highlight></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ToSkip.contains(&amp;R) || <a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa&lt;VPIRInstruction&gt;</a>(&amp;R))</Highlight></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Add all VPValues for all parts to ComputeReductionResult which combines</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// the parts to compute the final reduction value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;Op1;</Highlight></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/patternmatch/#a25d956d9e0beadd47ce4bc255dfa811d">match</a>(&amp;R, <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#a5438a63c52f3576904c86e1bf0c7a9ab">m&#95;VPInstruction&lt;VPInstruction::ComputeReductionResult&gt;</a>(</Highlight></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="normal">                      <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#abce81cbd0e36ab26b74909f7d9135bf5">m&#95;VPValue</a>(), <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#abce81cbd0e36ab26b74909f7d9135bf5">m&#95;VPValue</a>(Op1)))) &#123;</Highlight></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="normal">      <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ad84a0ee13c95a817ac63639f9754dd33">addUniformForAllParts</a>(<a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;VPInstruction&gt;</a>(&amp;R));</Highlight></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Part = 1; Part != UF; ++Part)</Highlight></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="normal">        R.addOperand(<a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#a8defa175c07f36ea3c3cf47dfdd4c349">getValueForPart</a>(Op1, Part));</Highlight></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/vpvalue">VPValue</a> &#42;Op0;</Highlight></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/patternmatch/#a25d956d9e0beadd47ce4bc255dfa811d">match</a>(&amp;R, <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#a5438a63c52f3576904c86e1bf0c7a9ab">m&#95;VPInstruction&lt;VPInstruction::ExtractFromEnd&gt;</a>(</Highlight></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="normal">                      <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#abce81cbd0e36ab26b74909f7d9135bf5">m&#95;VPValue</a>(Op0), <a href="/docs/api/namespaces/llvm/vplanpatternmatch/#abce81cbd0e36ab26b74909f7d9135bf5">m&#95;VPValue</a>(Op1)))) &#123;</Highlight></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="normal">      <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ad84a0ee13c95a817ac63639f9754dd33">addUniformForAllParts</a>(<a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;VPSingleDefRecipe&gt;</a>(&amp;R));</Highlight></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Plan.hasScalarVFOnly()) &#123;</Highlight></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Extracting from end with VF = 1 implies retrieving the scalar part UF</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// - Op1.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal">        </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a> =</Highlight></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">            <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;ConstantInt&gt;</a>(Op1-&gt;<a href="/docs/api/classes/llvm/vpvalue/#ac6f0bd9ed63fe4a784697d73ae3b6fa0">getLiveInIRValue</a>())-&gt;getZExtValue();</Highlight></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal">        R.getVPSingleValue()-&gt;replaceAllUsesWith(</Highlight></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal">            <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#a8defa175c07f36ea3c3cf47dfdd4c349">getValueForPart</a>(Op0, UF - <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>));</Highlight></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="normal">        R.eraseFromParent();</Highlight></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal">      &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Otherwise we extract from the last part.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal">        <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ab38da9aa6896dbc776952fcb8ea1d1aa">remapOperands</a>(&amp;R, UF - 1);</Highlight></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;SingleDef = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;VPSingleDefRecipe&gt;</a>(&amp;R);</Highlight></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (SingleDef &amp;&amp; <a href="/docs/api/namespaces/llvm/vputils/#a0c663bf15e8398176f591270e7676f96">vputils::isUniformAcrossVFsAndUFs</a>(SingleDef)) &#123;</Highlight></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="normal">      <a href="/docs/api/classes/anonymous-namespace-vplanunroll-cpp-/unrollstate/#ad84a0ee13c95a817ac63639f9754dd33">addUniformForAllParts</a>(SingleDef);</Highlight></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a> = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;VPHeaderPHIRecipe&gt;</a>(&amp;R)) &#123;</Highlight></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="normal">      unrollHeaderPHIByUF(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>, InsertPtForPhi);</Highlight></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="normal">    unrollRecipeByUF(R);</Highlight></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391" lineLink="/docs/api/structs/llvm/vplantransforms/#a7a1cca51bb9bce4efad1063dcf158967"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/vplantransforms/#a7a1cca51bb9bce4efad1063dcf158967">VPlanTransforms::unrollByUF</a>(<a href="/docs/api/classes/llvm/vplan">VPlan</a> &amp;Plan, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> UF, <a href="/docs/api/classes/llvm/llvmcontext">LLVMContext</a> &amp;Ctx) &#123;</Highlight></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(UF &gt; 0 &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Unroll factor must be positive&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="normal">  Plan.<a href="/docs/api/classes/llvm/vplan/#af1d539e508015e09e4b9fdb7d020da0e">setUF</a>(UF);</Highlight></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/debuginfod/httpclient-cpp/#a0b91b2b50d54e38aa1e8e31e56c31357">Cleanup</a> = <a href="/docs/api/namespaces/llvm/#a1af45c4dc83c083c5ae914d96fd3ce96">make&#95;scope&#95;exit</a>(&#91;&amp;Plan&#93;() &#123;</Highlight></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Iter = <a href="/docs/api/namespaces/llvm/#a495c27cd70886cb8647df0ecdd9cc63d">vp&#95;depth&#95;first&#95;deep</a>(Plan.<a href="/docs/api/classes/llvm/vplan/#a1c868dfd250ff9592c06dd61a7fb0bcf">getEntry</a>());</Highlight></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Remove recipes that are redundant after unrolling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/vpbasicblock">VPBasicBlock</a> &#42;VPBB : <a href="/docs/api/classes/llvm/vpblockutils/#a0360eea6cebcb1470f84b11f7ba51f16">VPBlockUtils::blocksOnly&lt;VPBasicBlock&gt;</a>(Iter)) &#123;</Highlight></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a> &amp;R : <a href="/docs/api/namespaces/llvm/#a3d2cdc4a0db233678e7141c9d6ea3419">make&#95;early&#95;inc&#95;range</a>(&#42;VPBB)) &#123;</Highlight></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;VPI = <a href="/docs/api/namespaces/llvm/#a22eeee01734061ac1b31ccd994c49eef">dyn&#95;cast&lt;VPInstruction&gt;</a>(&amp;R);</Highlight></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (VPI &amp;&amp;</Highlight></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="normal">            VPI-&gt;getOpcode() == <a href="/docs/api/classes/llvm/vpinstruction/#a507f9482c01673384c0c203530dad6f2ad271d9d05bf5644dfa1487b3fc42a131">VPInstruction::CanonicalIVIncrementForPart</a> &amp;&amp;</Highlight></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="normal">            VPI-&gt;getNumOperands() == 1) &#123;</Highlight></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="normal">          VPI-&gt;replaceAllUsesWith(VPI-&gt;getOperand(0));</Highlight></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="normal">          VPI-&gt;eraseFromParent();</Highlight></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="normal">  &#125;);</Highlight></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (UF == 1) &#123;</Highlight></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="normal">  UnrollState Unroller(Plan, UF, Ctx);</Highlight></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Iterate over all blocks in the plan starting from Entry, and unroll</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// recipes inside them. This includes the vector preheader and middle blocks,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// which may set up or post-process per-part values.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/reversepostordertraversal">ReversePostOrderTraversal&lt;VPBlockShallowTraversalWrapper&lt;VPBlockBase &#42;&gt;</a>&gt; RPOT(</Highlight></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="normal">      Plan.<a href="/docs/api/classes/llvm/vplan/#a1c868dfd250ff9592c06dd61a7fb0bcf">getEntry</a>());</Highlight></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/vpblockbase">VPBlockBase</a> &#42;VPB : RPOT)</Highlight></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421"><Highlight kind="normal">    Unroller.unrollBlock(VPB);</Highlight></CodeLine>
+<Link id="l00422" /><CodeLine lineNumber="422"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00423" /><CodeLine lineNumber="423"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Part = 1;</Highlight></CodeLine>
+<Link id="l00424" /><CodeLine lineNumber="424"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Remap operands of cloned header phis to update backedge values. The header</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00425" /><CodeLine lineNumber="425"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// phis cloned during unrolling are just after the header phi for part 0</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00426" /><CodeLine lineNumber="426"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Reset Part to 1 when reaching the first (part 0) recipe of a block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00427" /><CodeLine lineNumber="427"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/vprecipebase">VPRecipeBase</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a> :</Highlight></CodeLine>
+<Link id="l00428" /><CodeLine lineNumber="428"><Highlight kind="normal">       Plan.<a href="/docs/api/classes/llvm/vplan/#a89f94c49b2cb5daaa93d19c89307c307">getVectorLoopRegion</a>()-&gt;<a href="/docs/api/classes/llvm/vpblockbase/#ad928235da3a32b50ba65140da09daf5d">getEntryBasicBlock</a>()-&gt;<a href="/docs/api/classes/llvm/vpbasicblock/#a668c6f14a461ccf0ee11c9c7a076a901">phis</a>()) &#123;</Highlight></CodeLine>
+<Link id="l00429" /><CodeLine lineNumber="429"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// The second operand of Fixed Order Recurrence phi&#39;s, feeding the spliced</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00430" /><CodeLine lineNumber="430"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// value across the backedge, needs to remap to the last part of the spliced</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00431" /><CodeLine lineNumber="431"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00432" /><CodeLine lineNumber="432"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa&lt;VPFirstOrderRecurrencePHIRecipe&gt;</a>(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>)) &#123;</Highlight></CodeLine>
+<Link id="l00433" /><CodeLine lineNumber="433"><Highlight kind="normal">      Unroller.remapOperand(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>, 1, UF - 1);</Highlight></CodeLine>
+<Link id="l00434" /><CodeLine lineNumber="434"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00435" /><CodeLine lineNumber="435"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00436" /><CodeLine lineNumber="436"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Unroller.contains(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>.getVPSingleValue()) ||</Highlight></CodeLine>
+<Link id="l00437" /><CodeLine lineNumber="437"><Highlight kind="normal">        <a href="/docs/api/namespaces/llvm/#a92ca992e52dddc420f4b069cae06dfbe">isa&lt;VPWidenPointerInductionRecipe&gt;</a>(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>)) &#123;</Highlight></CodeLine>
+<Link id="l00438" /><CodeLine lineNumber="438"><Highlight kind="normal">      Part = 1;</Highlight></CodeLine>
+<Link id="l00439" /><CodeLine lineNumber="439"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00440" /><CodeLine lineNumber="440"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00441" /><CodeLine lineNumber="441"><Highlight kind="normal">    Unroller.remapOperands(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ae42219072d798876e6b08e6b78614ff6">H</a>, Part);</Highlight></CodeLine>
+<Link id="l00442" /><CodeLine lineNumber="442"><Highlight kind="normal">    Part++;</Highlight></CodeLine>
+<Link id="l00443" /><CodeLine lineNumber="443"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<Link id="l00444" /><CodeLine lineNumber="444"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00445" /><CodeLine lineNumber="445"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/vplantransforms/#aaca9dd97d4c523d8c65274654abe4eb9">VPlanTransforms::removeDeadRecipes</a>(Plan);</Highlight></CodeLine>
+<Link id="l00446" /><CodeLine lineNumber="446"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

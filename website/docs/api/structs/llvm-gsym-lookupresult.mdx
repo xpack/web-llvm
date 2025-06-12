@@ -1,0 +1,203 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/llvm/gsym/lookupresult
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+# The `LookupResult` Struct Reference
+
+<DoxygenPage pluginConfig={pluginConfig}>
+
+
+
+## Declaration
+
+<CodeBlock>struct llvm::gsym::LookupResult</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem
+  filePath="llvm/DebugInfo/GSYM/LookupResult.h"
+  permalink="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h"
+  isLocal="true" />
+</IncludesList>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="std::string"
+  name={<><a href="#a4bf35524898c34b917e813177d64d735">getSourceFile</a> (uint32&#95;t Index) const</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::vector&lt; <a href="/docs/api/classes/llvm/stringref">StringRef</a> &gt;</>}
+  name={<><a href="#a5e530bef09b9dc59f44888c60bdd82a0">CallSiteFuncRegex</a></>}>
+<a href="/docs/api/classes/llvm/function">Function</a> name regex patterns associated with a call site at the lookup address. <a href="#a5e530bef09b9dc59f44888c60bdd82a0">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/stringref">StringRef</a></>}
+  name={<><a href="#a75d91d0e18eade33e855b488992f550e">FuncName</a></>}>
+The concrete function name that contains LookupAddr. <a href="#a75d91d0e18eade33e855b488992f550e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/classes/llvm/addressrange">AddressRange</a></>}
+  name={<><a href="#a5aea1cf15f8a7f3f908ac755883139f3">FuncRange</a></>}>
+The concrete function address range. <a href="#a5aea1cf15f8a7f3f908ac755883139f3">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/docs/api/namespaces/llvm/gsym/#af56cdce2bbbfcdafb057bce7c90bf419">SourceLocations</a></>}
+  name={<><a href="#a8b0145407164f660bd71c3189087006f">Locations</a></>}>
+The source locations that match this address. <a href="#a8b0145407164f660bd71c3189087006f">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>uint64&#95;t</>}
+  name={<><a href="#a2c2d38a017ea83399938350483968ae1">LookupAddr</a> = 0</>}>
+The address that this lookup pertains to. <a href="#a2c2d38a017ea83399938350483968ae1">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+
+Definition at line 38 of file <a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h">LookupResult.h</a>.
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### getSourceFile() {#a4bf35524898c34b917e813177d64d735}
+
+<MemberDefinition
+  prototype={<>std::string LookupResult::getSourceFile (uint32&#95;t Index) const</>}>
+
+Declaration at line <a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h/#l00079">79</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h">LookupResult.h</a>, definition at line <a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/gsym/lookupresult-cpp/#l00018">18</a> of file <a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/gsym/lookupresult-cpp">LookupResult.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### CallSiteFuncRegex {#a5e530bef09b9dc59f44888c60bdd82a0}
+
+<MemberDefinition
+  prototype={<>std::vector&lt;StringRef&gt; llvm::gsym::LookupResult::CallSiteFuncRegex</>}>
+<a href="/docs/api/classes/llvm/function">Function</a> name regex patterns associated with a call site at the lookup address.
+
+This vector will be populated when:
+<ul>
+<li>The lookup address matches a call site&#39;s return address in a function</li>
+<li>The call site has associated regex patterns that describe what functions can be called from that location</li>
+</ul>
+
+
+The regex patterns can be used to validate function calls during runtime checking or symbolication. For example:
+<ul>
+<li>Patterns like &quot;^foo$&quot; indicate the call site can only call function &quot;foo&quot;</li>
+<li>Patterns like &quot;^std::&quot; indicate the call site can call any function in the std namespace</li>
+<li>Multiple patterns allow matching against a set of allowed functions</li>
+</ul>
+
+
+The patterns are stored as string references into the GSYM string table. This information is typically loaded from:
+<ul>
+<li>DWARF debug info call site entries</li>
+<li>External YAML files specifying call site patterns</li>
+<li>Other debug info formats that encode call site constraints</li>
+</ul>
+
+
+The patterns will be empty if:
+<ul>
+<li>The lookup address is not at the return address of a call site</li>
+<li>The call site has no associated function name constraints</li>
+<li>Call site info was not included when creating the GSYM file</li>
+</ul>
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h/#l00077">77</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h">LookupResult.h</a>.
+</MemberDefinition>
+
+### FuncName {#a75d91d0e18eade33e855b488992f550e}
+
+<MemberDefinition
+  prototype="StringRef llvm::gsym::LookupResult::FuncName">
+The concrete function name that contains LookupAddr.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h/#l00041">41</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h">LookupResult.h</a>.
+</MemberDefinition>
+
+### FuncRange {#a5aea1cf15f8a7f3f908ac755883139f3}
+
+<MemberDefinition
+  prototype="AddressRange llvm::gsym::LookupResult::FuncRange">
+The concrete function address range.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h/#l00040">40</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h">LookupResult.h</a>.
+</MemberDefinition>
+
+### Locations {#a8b0145407164f660bd71c3189087006f}
+
+<MemberDefinition
+  prototype="SourceLocations llvm::gsym::LookupResult::Locations">
+The source locations that match this address.
+
+This information will only be filled in if the <a href="/docs/api/structs/llvm/gsym/functioninfo">FunctionInfo</a> contains a line table. If an address is for a concrete function with no inlined functions, this array will have one entry. If an address points to an inline function, there will be one <a href="/docs/api/structs/llvm/gsym/sourcelocation">SourceLocation</a> for each inlined function with the last entry pointing to the concrete function itself. This allows one address to generate multiple locations and allows unwinding of inline call stacks. The deepest inline function will appear at index zero in the source locations array, and the concrete function will appear at the end of the array.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h/#l00051">51</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h">LookupResult.h</a>.
+</MemberDefinition>
+
+### LookupAddr {#a2c2d38a017ea83399938350483968ae1}
+
+<MemberDefinition
+  prototype={<>uint64&#95;t llvm::gsym::LookupResult::LookupAddr = 0</>}>
+The address that this lookup pertains to.
+
+Definition at line <a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h/#l00039">39</a> of file <a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h">LookupResult.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following files:
+
+<ul>
+<li><a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/lookupresult-h">LookupResult.h</a></li>
+<li><a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/gsym/lookupresult-cpp">LookupResult.cpp</a></li>
+</ul>
+
+</DoxygenPage>
