@@ -11,7 +11,20 @@ The builds were attempted on a macOS with 32 GB of RAM.
 The problem is a huge memory consumption, with the machine starting to swap
 and eventually the build hanging or crashing.
 
-The test is a bit extreme, trying to build a site with the LLVM reference pages.
+The test is a bit extreme, trying to build a large site (the LLVM reference
+pages).
+
+## tl;dr
+
+To run the build, the only required steps are the usual
+
+- `npm install`
+- `npm run build`
+
+in the `website` folder.
+
+The steps below are for completeness, and document how to generate the
+Doxygen documentation and convert it to Docusaurus MDX.
 
 ## LLVM
 
