@@ -12,16 +12,19 @@ const config: Config = {
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+      useCssCascadeLayers: false,
+    },
     experimental_faster: {
       // Verbose object: easier to independently test single attributes
       swcJsLoader: true,
       swcJsMinimizer: true,
       swcHtmlMinimizer: true,
       lightningCssMinimizer: true,
-      mdxCrossCompilerCache: true,
+      mdxCrossCompilerCache: false,
       rspackBundler: true,
-      rspackPersistentCache: true,
+      rspackPersistentCache: false,
       ssgWorkerThreads: true,
     },
   },
