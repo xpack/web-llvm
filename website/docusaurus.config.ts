@@ -13,6 +13,7 @@ const config: Config = {
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    experimental_faster: true,
   },
 
   // Set the production url of your site here
@@ -71,6 +72,18 @@ const config: Config = {
   ],
 
   plugins: [
+    function disableExpensiveBundlerOptimizationPlugin() {
+      return {
+        name: "disable-expensive-bundler-optimizations",
+        configureWebpack(_config, isServer) {
+          return {
+            optimization: {
+              concatenateModules: false,
+            },
+          };
+        },
+      };
+    },
     [
       '@xpack/docusaurus-plugin-doxygen',
       {
