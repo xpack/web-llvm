@@ -82,18 +82,6 @@ const config: Config = {
   ],
 
   plugins: [
-    function disableExpensiveBundlerOptimizationPlugin() {
-      return {
-        name: "disable-expensive-bundler-optimizations",
-        configureWebpack(_config, isServer) {
-          return {
-            optimization: {
-              concatenateModules: false,
-            },
-          };
-        },
-      };
-    },
     [
       '@xpack/docusaurus-plugin-doxygen',
       {
