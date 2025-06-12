@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+// import doxygenApiMenu from './docusaurus-config-doxygen-menu-dropdown.json'
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -69,6 +70,29 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@xpack/docusaurus-plugin-doxygen',
+      {
+        doxygenXmlInputFolderPath: '../docs-build/docs/doxygen/xml',
+        verbose: false,
+        debug: false
+      },
+    ],
+    function disableExpensiveBundlerOptimizationPlugin() {
+      return {
+        name: "disable-expensive-bundler-optimizations",
+        configureWebpack(_config, isServer) {
+          return {
+            optimization: {
+              concatenateModules: false,
+            },
+          };
+        },
+      };
+    },
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -86,6 +110,7 @@ const config: Config = {
           label: 'Tutorial',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        // doxygenApiMenu,
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
