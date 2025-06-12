@@ -101,7 +101,7 @@ To install it (and its react-markdown dependency), run:
 
 Add it to `website/docusaurus-config.ts` and make it point to the xml folder:
 
-```json
+```js
   plugins: [
     [
       '@xpack/docusaurus-plugin-doxygen',
