@@ -10,6 +10,10 @@ const config: Config = {
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
+  markdown: {
+    format: "md",
+  },
+
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: {
@@ -23,7 +27,7 @@ const config: Config = {
       swcHtmlMinimizer: true,
       lightningCssMinimizer: true,
       mdxCrossCompilerCache: false,
-      rspackBundler: true,
+      rspackBundler: false,
       rspackPersistentCache: false,
       ssgWorkerThreads: true,
     },
@@ -57,11 +61,18 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          exclude: [
-            '**/_*.{js,jsx,ts,tsx,md,mdx}',
-            '**/_*/**',
-            '**/*.test.{js,jsx,ts,tsx}',
-            '**/__tests__/**',
+
+          include: [
+            'api/classes/**/*.{md,mdx}',
+            'api/files/**/*.{md,mdx}',
+            'api/folders/**/*.{md,mdx}',
+            'api/groups/**/*.{md,mdx}',
+            'api/index/**/*.{md,mdx}',
+            'api/namespaces/**/*.{md,mdx}',
+            'api/pages/**/*.{md,mdx}',
+            'api/structs/**/*.{md,mdx}',
+            'api/unions/**/*.{md,mdx}',
+            'api/index.{md,mdx}',
           ],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
