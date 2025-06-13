@@ -27,7 +27,7 @@ const config: Config = {
       swcHtmlMinimizer: true,
       lightningCssMinimizer: true,
       mdxCrossCompilerCache: false,
-      rspackBundler: false,
+      rspackBundler: true,
       rspackPersistentCache: false,
       ssgWorkerThreads: true,
     },
@@ -74,6 +74,15 @@ const config: Config = {
             'api/unions/**/*.{md,mdx}',
             'api/index.{md,mdx}',
           ],
+          exclude: [
+            '**/lib-lib-*.{js,jsx,ts,tsx,md,mdx}',
+
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+          ],
+
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
