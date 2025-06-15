@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -80,214 +79,214 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/Support/TimeProfiler.h - Hierarchical Time Profiler -&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This provides lightweight and dependency-free machinery to trace execution</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// time around arbitrary code. Two API flavors are available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The primary API uses a RAII object to trigger tracing:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">// \\code</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">//   &#123;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">//     TimeTraceScope scope(&quot;my&#95;event&#95;name&quot;);</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">//     ...my code...</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="comment">//   &#125;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="comment">// \\endcode</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="comment">// If the code to be profiled does not have a natural lexical scope then</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="comment">// it is also possible to start and end events with respect to an implicit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="comment">// per-thread stack of profiling entries:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="comment">// \\code</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="comment">//   timeTraceProfilerBegin(&quot;my&#95;event&#95;name&quot;);</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="comment">//   ...my code...</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="comment">//   timeTraceProfilerEnd();  // must be called on all control flow paths</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="comment">// \\endcode</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Time profiling entries can be given an arbitrary name and, optionally,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="comment">// an arbitrary &#39;detail&#39; string. The resulting trace will include &#39;Total&#39;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="comment">// entries summing the time spent for each name. Thus, it&#39;s best to choose</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="comment">// names to be fairly generic, and rely on the detail field to capture</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="comment">// everything else of interest.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="comment">// To avoid lifetime issues name and detail strings are copied into the event</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="comment">// entries at their time of creation. Care should be taken to make string</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="comment">// construction cheap to prevent &#39;Heisenperf&#39; effects. In particular, the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="comment">// &#39;detail&#39; argument may be a string-returning closure:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight><Highlight kind="comment">// \\code</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="comment">//   int n;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight><Highlight kind="comment">//   &#123;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="comment">//     TimeTraceScope scope(&quot;my&#95;event&#95;name&quot;,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="comment">//                          &#91;n&#93;() &#123; return (Twine(&quot;x=&quot;) + Twine(n)).str(); &#125;);</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="comment">//     ...my code...</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight><Highlight kind="comment">//   &#125;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight><Highlight kind="comment">// \\endcode</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The closure will not be called if tracing is disabled. Otherwise, the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="comment">// resulting string will be directly moved into the entry.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The main process should begin with a timeTraceProfilerInitialize, and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight><Highlight kind="comment">// finish with timeTraceProfileWrite and timeTraceProfilerCleanup calls.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Each new thread should begin with a timeTraceProfilerInitialize, and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight><Highlight kind="comment">// finish with a timeTraceProfilerFinishThread call.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Timestamps come from std::chrono::stable&#95;clock. Note that threads need</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight><Highlight kind="comment">// not see the same time from that clock, and the resolution may not be</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight><Highlight kind="comment">// the best available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Currently, there are a number of compatible viewers:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight><Highlight kind="comment">//  - chrome://tracing is the original chromium trace viewer.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight><Highlight kind="comment">//  - http://ui.perfetto.dev is the replacement for the above, under active</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight><Highlight kind="comment">//    development by Google as part of the &#39;Perfetto&#39; project.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="comment">//  - https://www.speedscope.app/ has also been reported as an option.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Future work:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight><Highlight kind="comment">//  - Support akin to LLVM&#95;DEBUG for runtime enable/disable of named tracing</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight><Highlight kind="comment">//    families for non-debug builds which wish to support optional tracing.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="comment">//  - Evaluate the detail closures at profile write time to avoid</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal"></Highlight><Highlight kind="comment">//    stringification costs interfering with tracing.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;SUPPORT&#95;TIMEPROFILER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;SUPPORT&#95;TIMEPROFILER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stlfunctionalextras-h">llvm/ADT/STLFunctionalExtras.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/error-h">llvm/Support/Error.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/raw-pwrite-stream">raw&#95;pwrite&#95;stream</a>;</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Type of the time trace event.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87" lineLink="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41"><Highlight kind="normal"></Highlight><Highlight kind="keyword">enum class</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41">TimeTraceEventType</a> &#123;</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Complete events have a duration (start and end time points) and are marked</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// by the &quot;X&quot; phase type.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41a119b8a171a57a705aba9b074d88db9b1"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41a119b8a171a57a705aba9b074d88db9b1">CompleteEvent</a>,</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Instant events don&#39;t have a duration, they happen at an instant in time.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// They are marked with &quot;i&quot; phase type. The field End is ignored for them.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93" lineLink="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41a2c177ecf931044783d5d8d64c65ee263"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41a2c177ecf931044783d5d8d64c65ee263">InstantEvent</a>,</Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Async events mark asynchronous operations and are specified by the &quot;b&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// (start) and &quot;e&quot; (end) phase types.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96" lineLink="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41ae68f4ecc5b67fb22797237d95bcdbdd5"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41ae68f4ecc5b67fb22797237d95bcdbdd5">AsyncEvent</a></Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99" lineLink="/docs/api/structs/llvm/timetracemetadata"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/timetracemetadata">TimeTraceMetadata</a> &#123;</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100" lineLink="/docs/api/structs/llvm/timetracemetadata/#aa9f33a616d180313a37ded2d53edf7ed"><Highlight kind="normal">  std::string <a href="/docs/api/structs/llvm/timetracemetadata/#aa9f33a616d180313a37ded2d53edf7ed">Detail</a>;</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Source file and line number information for the event.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102" lineLink="/docs/api/structs/llvm/timetracemetadata/#a760c0ac785a256817bae69d135ba7755"><Highlight kind="normal">  std::string <a href="/docs/api/structs/llvm/timetracemetadata/#a760c0ac785a256817bae69d135ba7755">File</a>;</Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103" lineLink="/docs/api/structs/llvm/timetracemetadata/#ac3d7a6a40c225ff36fb92b6adb889019"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/timetracemetadata/#ac3d7a6a40c225ff36fb92b6adb889019">Line</a> = 0;</Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105" lineLink="/docs/api/structs/llvm/timetracemetadata/#aa0b43b31e9cda1e661f6b0cc9cc2bf21"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/timetracemetadata/#aa0b43b31e9cda1e661f6b0cc9cc2bf21">isEmpty</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/timetracemetadata/#aa9f33a616d180313a37ded2d53edf7ed">Detail</a>.empty() &amp;&amp; <a href="/docs/api/structs/llvm/timetracemetadata/#a760c0ac785a256817bae69d135ba7755">File</a>.empty(); &#125;</Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">TimeTraceProfiler;</Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">TimeTraceProfiler &#42;<a href="/docs/api/namespaces/llvm/#a5989ded64c534859a29ac7591af344de">getTimeTraceProfilerInstance</a>();</Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aa7db90a41d181a3755d0e29312b8e066">isTimeTraceVerbose</a>();</Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">TimeTraceProfilerEntry;</Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">/// Initialize the time trace profiler.</Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">/// This sets up the global \\p TimeTraceProfilerInstance</Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">/// variable to be the profiler instance.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a69b4f7af261bc6ace511b775a3cb41f6">timeTraceProfilerInitialize</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> TimeTraceGranularity,</Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">                                 StringRef ProcName,</Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">                                 </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> TimeTraceVerbose = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="comment">/// Cleanup the time trace profiler, if it was initialized.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ac8745d28fad8ca10c8ccfa1d839bf0ce">timeTraceProfilerCleanup</a>();</Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">/// Finish a time trace profiler running on a worker thread.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a6e4bd81e19cb403568eeb49955889e2b">timeTraceProfilerFinishThread</a>();</Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="comment">/// Is the time trace profiler enabled, i.e. initialized?</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129" lineLink="/docs/api/namespaces/llvm/#a7a549190cfe0e048f25068f4532398fc"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a7a549190cfe0e048f25068f4532398fc">timeTraceProfilerEnabled</a>() &#123;</Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a5989ded64c534859a29ac7591af344de">getTimeTraceProfilerInstance</a>() != </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">/// Write profiling data to output stream.</Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">/// Data produced is JSON, in Chrome &quot;Trace Event&quot; format, see</Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">/// https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU/preview</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ad4b54dbf227646e844fa454931b02ff9">timeTraceProfilerWrite</a>(raw&#95;pwrite&#95;stream &amp;OS);</Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">/// Write profiling data to a file.</Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="comment">/// The function will write to \\p PreferredFileName if provided, if not</Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="comment">/// then will write to \\p FallbackFileName appending .time-trace.</Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="comment">/// Returns a StringError indicating a failure if the function is</Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">/// unable to open the file for writing.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> <a href="/docs/api/namespaces/llvm/#ad4b54dbf227646e844fa454931b02ff9">timeTraceProfilerWrite</a>(StringRef PreferredFileName,</Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">                             StringRef FallbackFileName);</Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="comment">/// Manually begin a time section, with the given \\p Name and \\p Detail.</Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="comment">/// Profiler copies the string data, so the pointers can be given into</Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="comment">/// temporaries. Time sections can be hierarchical; every Begin must have a</Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="comment">/// matching End pair but they can nest.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">TimeTraceProfilerEntry &#42;<a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(StringRef Name,</Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">                                               StringRef Detail);</Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">TimeTraceProfilerEntry &#42;</Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(StringRef Name,</Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/function-ref">llvm::function&#95;ref</a>&lt;std::string()&gt; Detail);</Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">TimeTraceProfilerEntry &#42;</Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(StringRef Name,</Highlight></CodeLine>
-<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/function-ref">llvm::function&#95;ref</a>&lt;TimeTraceMetadata()&gt; MetaData);</Highlight></CodeLine>
-<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="comment">/// Manually begin a time section, with the given \\p Name and \\p Detail.</Highlight></CodeLine>
-<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="comment">/// This starts Async Events having \\p Name as a category which is shown</Highlight></CodeLine>
-<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="comment">/// separately from other traces. See</Highlight></CodeLine>
-<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="comment">/// https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU/preview#heading=h.jh64i9l3vwa1</Highlight></CodeLine>
-<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="comment">/// for more details.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">TimeTraceProfilerEntry &#42;<a href="/docs/api/namespaces/llvm/#aa741455d0c8f7b47561d088ac6ffcac7">timeTraceAsyncProfilerBegin</a>(StringRef Name,</Highlight></CodeLine>
-<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">                                                    StringRef Detail);</Highlight></CodeLine>
-<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Mark an instant event.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a8fa9dbbdfaf6cc3897267308ba80e002">timeTraceAddInstantEvent</a>(StringRef Name,</Highlight></CodeLine>
-<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">                              <a href="/docs/api/classes/llvm/function-ref">llvm::function&#95;ref</a>&lt;std::string()&gt; Detail);</Highlight></CodeLine>
-<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="comment">/// Manually end the last time section.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a8d90de68ff5b5762833013e83e14bec5">timeTraceProfilerEnd</a>();</Highlight></CodeLine>
-<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a8d90de68ff5b5762833013e83e14bec5">timeTraceProfilerEnd</a>(TimeTraceProfilerEntry &#42;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>);</Highlight></CodeLine>
-<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="comment">/// The TimeTraceScope is a helper class to call the begin and end functions</Highlight></CodeLine>
-<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="comment">/// of the time trace profiler.  When the object is constructed, it begins</Highlight></CodeLine>
-<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="comment">/// the section; and when it is destroyed, it stops it. If the time profiler</Highlight></CodeLine>
-<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="comment">/// is not initialized, the overhead is a single branch.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00180" /><CodeLine lineNumber="180" lineLink="/docs/api/classes/llvm/timetracescope"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &#123;</Highlight></CodeLine>
-<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00182" /><CodeLine lineNumber="182" lineLink="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a>() = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00183" /><CodeLine lineNumber="183" lineLink="/docs/api/classes/llvm/timetracescope/#a0f50fce64b3e1ceda93e3aa0edca2af9"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/timetracescope/#a0f50fce64b3e1ceda93e3aa0edca2af9">TimeTraceScope</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00184" /><CodeLine lineNumber="184" lineLink="/docs/api/classes/llvm/timetracescope/#ae0c75857bd1423507b6a31b77c1adf7d"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &amp;<a href="/docs/api/classes/llvm/timetracescope/#ae0c75857bd1423507b6a31b77c1adf7d">operator=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00185" /><CodeLine lineNumber="185" lineLink="/docs/api/classes/llvm/timetracescope/#a962382755a8365b2267ac7b7d318f26c"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/timetracescope/#a962382755a8365b2267ac7b7d318f26c">TimeTraceScope</a>(<a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &amp;&amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00186" /><CodeLine lineNumber="186" lineLink="/docs/api/classes/llvm/timetracescope/#a2cb8da18cdd289624f19cab6e5781e64"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &amp;<a href="/docs/api/classes/llvm/timetracescope/#a2cb8da18cdd289624f19cab6e5781e64">operator=</a>(<a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &amp;&amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00188" /><CodeLine lineNumber="188" lineLink="/docs/api/classes/llvm/timetracescope/#a174cbb8b033b221507c76853595b8923"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/timetracescope/#a174cbb8b033b221507c76853595b8923">TimeTraceScope</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Name)</Highlight></CodeLine>
-<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">      : Entry(<a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(Name, <a href="/docs/api/classes/llvm/stringref">StringRef</a>())) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00190" /><CodeLine lineNumber="190" lineLink="/docs/api/classes/llvm/timetracescope/#a02dcd5cfafa9af5f41b87fe9781a7362"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/timetracescope/#a02dcd5cfafa9af5f41b87fe9781a7362">TimeTraceScope</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Name, <a href="/docs/api/classes/llvm/stringref">StringRef</a> Detail)</Highlight></CodeLine>
-<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">      : Entry(<a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(Name, Detail)) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00192" /><CodeLine lineNumber="192" lineLink="/docs/api/classes/llvm/timetracescope/#acb73cd040805adeb12483d6466741ffa"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/timetracescope/#acb73cd040805adeb12483d6466741ffa">TimeTraceScope</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Name, <a href="/docs/api/classes/llvm/function-ref">llvm::function&#95;ref</a>&lt;std::string()&gt; Detail)</Highlight></CodeLine>
-<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">      : Entry(<a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(Name, Detail)) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00194" /><CodeLine lineNumber="194" lineLink="/docs/api/classes/llvm/timetracescope/#ac34835603a67b18aefab5bce5a9a91ba"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/timetracescope/#ac34835603a67b18aefab5bce5a9a91ba">TimeTraceScope</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Name,</Highlight></CodeLine>
-<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">                 <a href="/docs/api/classes/llvm/function-ref">llvm::function&#95;ref</a>&lt;<a href="/docs/api/structs/llvm/timetracemetadata">TimeTraceMetadata</a>()&gt; <a href="/docs/api/classes/llvm/metadata">Metadata</a>)</Highlight></CodeLine>
-<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">      : Entry(<a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(Name, <a href="/docs/api/classes/llvm/metadata">Metadata</a>)) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00197" /><CodeLine lineNumber="197" lineLink="/docs/api/classes/llvm/timetracescope/#a5b1ffb5452d69e2d56fdf08e1c8c8c8a"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/timetracescope/#a5b1ffb5452d69e2d56fdf08e1c8c8c8a">~TimeTraceScope</a>() &#123;</Highlight></CodeLine>
-<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Entry)</Highlight></CodeLine>
-<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a8d90de68ff5b5762833013e83e14bec5">timeTraceProfilerEnd</a>(Entry);</Highlight></CodeLine>
-<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/timetraceprofilerentry">TimeTraceProfilerEntry</a> &#42;Entry = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- llvm/Support/TimeProfiler.h - Hierarchical Time Profiler -&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This provides lightweight and dependency-free machinery to trace execution</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">// time around arbitrary code. Two API flavors are available.</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">// The primary API uses a RAII object to trigger tracing:</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightComment">// \\code</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightComment">//   &#123;</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightComment">//     TimeTraceScope scope(&quot;my&#95;event&#95;name&quot;);</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightComment">//     ...my code...</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightComment">//   &#125;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightComment">// \\endcode</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightComment">// If the code to be profiled does not have a natural lexical scope then</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightComment">// it is also possible to start and end events with respect to an implicit</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightComment">// per-thread stack of profiling entries:</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightComment">// \\code</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightComment">//   timeTraceProfilerBegin(&quot;my&#95;event&#95;name&quot;);</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightComment">//   ...my code...</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightComment">//   timeTraceProfilerEnd();  // must be called on all control flow paths</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightComment">// \\endcode</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightComment">// Time profiling entries can be given an arbitrary name and, optionally,</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlightComment">// an arbitrary &#39;detail&#39; string. The resulting trace will include &#39;Total&#39;</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightComment">// entries summing the time spent for each name. Thus, it&#39;s best to choose</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightComment">// names to be fairly generic, and rely on the detail field to capture</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlightComment">// everything else of interest.</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlightComment">// To avoid lifetime issues name and detail strings are copied into the event</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightComment">// entries at their time of creation. Care should be taken to make string</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightComment">// construction cheap to prevent &#39;Heisenperf&#39; effects. In particular, the</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightComment">// &#39;detail&#39; argument may be a string-returning closure:</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlightComment">// \\code</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlightComment">//   int n;</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlightComment">//   &#123;</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlightComment">//     TimeTraceScope scope(&quot;my&#95;event&#95;name&quot;,</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlightComment">//                          &#91;n&#93;() &#123; return (Twine(&quot;x=&quot;) + Twine(n)).str(); &#125;);</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlightComment">//     ...my code...</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlightComment">//   &#125;</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlightComment">// \\endcode</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlightComment">// The closure will not be called if tracing is disabled. Otherwise, the</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlightComment">// resulting string will be directly moved into the entry.</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlightComment">// The main process should begin with a timeTraceProfilerInitialize, and</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlightComment">// finish with timeTraceProfileWrite and timeTraceProfilerCleanup calls.</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlightComment">// Each new thread should begin with a timeTraceProfilerInitialize, and</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlightComment">// finish with a timeTraceProfilerFinishThread call.</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlightComment">// Timestamps come from std::chrono::stable&#95;clock. Note that threads need</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlightComment">// not see the same time from that clock, and the resolution may not be</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlightComment">// the best available.</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlightComment">// Currently, there are a number of compatible viewers:</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><span class="doxyHighlightComment">//  - chrome://tracing is the original chromium trace viewer.</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlightComment">//  - http://ui.perfetto.dev is the replacement for the above, under active</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlightComment">//    development by Google as part of the &#39;Perfetto&#39; project.</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlightComment">//  - https://www.speedscope.app/ has also been reported as an option.</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlightComment">// Future work:</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlightComment">//  - Support akin to LLVM&#95;DEBUG for runtime enable/disable of named tracing</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlightComment">//    families for non-debug builds which wish to support optional tracing.</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlightComment">//  - Evaluate the detail closures at profile write time to avoid</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlightComment">//    stringification costs interfering with tracing.</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;SUPPORT&#95;TIMEPROFILER&#95;H</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlightPreprocessor">#define LLVM&#95;SUPPORT&#95;TIMEPROFILER&#95;H</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stlfunctionalextras-h">llvm/ADT/STLFunctionalExtras.h</a>&quot;</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/error-h">llvm/Support/Error.h</a>&quot;</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/raw-pwrite-stream">raw&#95;pwrite&#95;stream</a>;</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlightComment">// Type of the time trace event.</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87" lineLink="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41"><span class="doxyHighlightKeyword">enum class</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41">TimeTraceEventType</a> &#123;</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Complete events have a duration (start and end time points) and are marked</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// by the &quot;X&quot; phase type.</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41a119b8a171a57a705aba9b074d88db9b1"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41a119b8a171a57a705aba9b074d88db9b1">CompleteEvent</a>,</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Instant events don&#39;t have a duration, they happen at an instant in time.</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// They are marked with &quot;i&quot; phase type. The field End is ignored for them.</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93" lineLink="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41a2c177ecf931044783d5d8d64c65ee263"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41a2c177ecf931044783d5d8d64c65ee263">InstantEvent</a>,</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Async events mark asynchronous operations and are specified by the &quot;b&quot;</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// (start) and &quot;e&quot; (end) phase types.</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96" lineLink="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41ae68f4ecc5b67fb22797237d95bcdbdd5"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#aad35af14abc5748960dd055e5c04aa41ae68f4ecc5b67fb22797237d95bcdbdd5">AsyncEvent</a></span></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99" lineLink="/docs/api/structs/llvm/timetracemetadata"><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/docs/api/structs/llvm/timetracemetadata">TimeTraceMetadata</a> &#123;</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100" lineLink="/docs/api/structs/llvm/timetracemetadata/#aa9f33a616d180313a37ded2d53edf7ed"><span class="doxyHighlight">  std::string <a href="/docs/api/structs/llvm/timetracemetadata/#aa9f33a616d180313a37ded2d53edf7ed">Detail</a>;</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Source file and line number information for the event.</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102" lineLink="/docs/api/structs/llvm/timetracemetadata/#a760c0ac785a256817bae69d135ba7755"><span class="doxyHighlight">  std::string <a href="/docs/api/structs/llvm/timetracemetadata/#a760c0ac785a256817bae69d135ba7755">File</a>;</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103" lineLink="/docs/api/structs/llvm/timetracemetadata/#ac3d7a6a40c225ff36fb92b6adb889019"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/timetracemetadata/#ac3d7a6a40c225ff36fb92b6adb889019">Line</a> = 0;</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105" lineLink="/docs/api/structs/llvm/timetracemetadata/#aa0b43b31e9cda1e661f6b0cc9cc2bf21"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/timetracemetadata/#aa0b43b31e9cda1e661f6b0cc9cc2bf21">isEmpty</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/timetracemetadata/#aa9f33a616d180313a37ded2d53edf7ed">Detail</a>.empty() &amp;&amp; <a href="/docs/api/structs/llvm/timetracemetadata/#a760c0ac785a256817bae69d135ba7755">File</a>.empty(); &#125;</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">TimeTraceProfiler;</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlight">TimeTraceProfiler &#42;<a href="/docs/api/namespaces/llvm/#a5989ded64c534859a29ac7591af344de">getTimeTraceProfilerInstance</a>();</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#aa7db90a41d181a3755d0e29312b8e066">isTimeTraceVerbose</a>();</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">TimeTraceProfilerEntry;</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlightComment">/// Initialize the time trace profiler.</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlightComment">/// This sets up the global \\p TimeTraceProfilerInstance</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlightComment">/// variable to be the profiler instance.</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a69b4f7af261bc6ace511b775a3cb41f6">timeTraceProfilerInitialize</a>(</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> TimeTraceGranularity,</span></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><span class="doxyHighlight">                                 StringRef ProcName,</span></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlight">                                 </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> TimeTraceVerbose = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlightComment">/// Cleanup the time trace profiler, if it was initialized.</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ac8745d28fad8ca10c8ccfa1d839bf0ce">timeTraceProfilerCleanup</a>();</span></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlightComment">/// Finish a time trace profiler running on a worker thread.</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a6e4bd81e19cb403568eeb49955889e2b">timeTraceProfilerFinishThread</a>();</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><span class="doxyHighlightComment">/// Is the time trace profiler enabled, i.e. initialized?</span></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129" lineLink="/docs/api/namespaces/llvm/#a7a549190cfe0e048f25068f4532398fc"><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a7a549190cfe0e048f25068f4532398fc">timeTraceProfilerEnabled</a>() &#123;</span></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a5989ded64c534859a29ac7591af344de">getTimeTraceProfilerInstance</a>() != </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><span class="doxyHighlightComment">/// Write profiling data to output stream.</span></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><span class="doxyHighlightComment">/// Data produced is JSON, in Chrome &quot;Trace Event&quot; format, see</span></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><span class="doxyHighlightComment">/// https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU/preview</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ad4b54dbf227646e844fa454931b02ff9">timeTraceProfilerWrite</a>(raw&#95;pwrite&#95;stream &amp;OS);</span></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><span class="doxyHighlightComment">/// Write profiling data to a file.</span></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><span class="doxyHighlightComment">/// The function will write to \\p PreferredFileName if provided, if not</span></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><span class="doxyHighlightComment">/// then will write to \\p FallbackFileName appending .time-trace.</span></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><span class="doxyHighlightComment">/// Returns a StringError indicating a failure if the function is</span></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><span class="doxyHighlightComment">/// unable to open the file for writing.</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/#ac226f3d2b9ca090171a8e0a8cb92c343a902b0d55fddef6f8d651fe1035b7d4bd">Error</a> <a href="/docs/api/namespaces/llvm/#ad4b54dbf227646e844fa454931b02ff9">timeTraceProfilerWrite</a>(StringRef PreferredFileName,</span></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><span class="doxyHighlight">                             StringRef FallbackFileName);</span></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlightComment">/// Manually begin a time section, with the given \\p Name and \\p Detail.</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlightComment">/// Profiler copies the string data, so the pointers can be given into</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><span class="doxyHighlightComment">/// temporaries. Time sections can be hierarchical; every Begin must have a</span></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><span class="doxyHighlightComment">/// matching End pair but they can nest.</span></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><span class="doxyHighlight">TimeTraceProfilerEntry &#42;<a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(StringRef Name,</span></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><span class="doxyHighlight">                                               StringRef Detail);</span></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><span class="doxyHighlight">TimeTraceProfilerEntry &#42;</span></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(StringRef Name,</span></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><span class="doxyHighlight">                       <a href="/docs/api/classes/llvm/function-ref">llvm::function&#95;ref</a>&lt;std::string()&gt; Detail);</span></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><span class="doxyHighlight">TimeTraceProfilerEntry &#42;</span></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(StringRef Name,</span></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><span class="doxyHighlight">                       <a href="/docs/api/classes/llvm/function-ref">llvm::function&#95;ref</a>&lt;TimeTraceMetadata()&gt; MetaData);</span></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><span class="doxyHighlightComment">/// Manually begin a time section, with the given \\p Name and \\p Detail.</span></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><span class="doxyHighlightComment">/// This starts Async Events having \\p Name as a category which is shown</span></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><span class="doxyHighlightComment">/// separately from other traces. See</span></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><span class="doxyHighlightComment">/// https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU/preview#heading=h.jh64i9l3vwa1</span></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><span class="doxyHighlightComment">/// for more details.</span></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><span class="doxyHighlight">TimeTraceProfilerEntry &#42;<a href="/docs/api/namespaces/llvm/#aa741455d0c8f7b47561d088ac6ffcac7">timeTraceAsyncProfilerBegin</a>(StringRef Name,</span></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><span class="doxyHighlight">                                                    StringRef Detail);</span></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><span class="doxyHighlightComment">// Mark an instant event.</span></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a8fa9dbbdfaf6cc3897267308ba80e002">timeTraceAddInstantEvent</a>(StringRef Name,</span></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><span class="doxyHighlight">                              <a href="/docs/api/classes/llvm/function-ref">llvm::function&#95;ref</a>&lt;std::string()&gt; Detail);</span></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><span class="doxyHighlightComment">/// Manually end the last time section.</span></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a8d90de68ff5b5762833013e83e14bec5">timeTraceProfilerEnd</a>();</span></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a8d90de68ff5b5762833013e83e14bec5">timeTraceProfilerEnd</a>(TimeTraceProfilerEntry &#42;<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>);</span></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><span class="doxyHighlightComment">/// The TimeTraceScope is a helper class to call the begin and end functions</span></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><span class="doxyHighlightComment">/// of the time trace profiler.  When the object is constructed, it begins</span></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><span class="doxyHighlightComment">/// the section; and when it is destroyed, it stops it. If the time profiler</span></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><span class="doxyHighlightComment">/// is not initialized, the overhead is a single branch.</span></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180" lineLink="/docs/api/classes/llvm/timetracescope"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &#123;</span></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182" lineLink="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a>() = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183" lineLink="/docs/api/classes/llvm/timetracescope/#a0f50fce64b3e1ceda93e3aa0edca2af9"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/timetracescope/#a0f50fce64b3e1ceda93e3aa0edca2af9">TimeTraceScope</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &amp;) = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184" lineLink="/docs/api/classes/llvm/timetracescope/#ae0c75857bd1423507b6a31b77c1adf7d"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &amp;<a href="/docs/api/classes/llvm/timetracescope/#ae0c75857bd1423507b6a31b77c1adf7d">operator=</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &amp;) = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185" lineLink="/docs/api/classes/llvm/timetracescope/#a962382755a8365b2267ac7b7d318f26c"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/timetracescope/#a962382755a8365b2267ac7b7d318f26c">TimeTraceScope</a>(<a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &amp;&amp;) = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186" lineLink="/docs/api/classes/llvm/timetracescope/#a2cb8da18cdd289624f19cab6e5781e64"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &amp;<a href="/docs/api/classes/llvm/timetracescope/#a2cb8da18cdd289624f19cab6e5781e64">operator=</a>(<a href="/docs/api/classes/llvm/timetracescope/#a713661a7f3aa1981ae06ff6f7a257cb2">TimeTraceScope</a> &amp;&amp;) = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188" lineLink="/docs/api/classes/llvm/timetracescope/#a174cbb8b033b221507c76853595b8923"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/timetracescope/#a174cbb8b033b221507c76853595b8923">TimeTraceScope</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Name)</span></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><span class="doxyHighlight">      : Entry(<a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(Name, <a href="/docs/api/classes/llvm/stringref">StringRef</a>())) &#123;&#125;</span></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190" lineLink="/docs/api/classes/llvm/timetracescope/#a02dcd5cfafa9af5f41b87fe9781a7362"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/timetracescope/#a02dcd5cfafa9af5f41b87fe9781a7362">TimeTraceScope</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Name, <a href="/docs/api/classes/llvm/stringref">StringRef</a> Detail)</span></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><span class="doxyHighlight">      : Entry(<a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(Name, Detail)) &#123;&#125;</span></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192" lineLink="/docs/api/classes/llvm/timetracescope/#acb73cd040805adeb12483d6466741ffa"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/timetracescope/#acb73cd040805adeb12483d6466741ffa">TimeTraceScope</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Name, <a href="/docs/api/classes/llvm/function-ref">llvm::function&#95;ref</a>&lt;std::string()&gt; Detail)</span></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><span class="doxyHighlight">      : Entry(<a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(Name, Detail)) &#123;&#125;</span></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194" lineLink="/docs/api/classes/llvm/timetracescope/#ac34835603a67b18aefab5bce5a9a91ba"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/timetracescope/#ac34835603a67b18aefab5bce5a9a91ba">TimeTraceScope</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Name,</span></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><span class="doxyHighlight">                 <a href="/docs/api/classes/llvm/function-ref">llvm::function&#95;ref</a>&lt;<a href="/docs/api/structs/llvm/timetracemetadata">TimeTraceMetadata</a>()&gt; <a href="/docs/api/classes/llvm/metadata">Metadata</a>)</span></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><span class="doxyHighlight">      : Entry(<a href="/docs/api/namespaces/llvm/#afa36dba6382bf8735dc3b034d699c1ab">timeTraceProfilerBegin</a>(Name, <a href="/docs/api/classes/llvm/metadata">Metadata</a>)) &#123;&#125;</span></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197" lineLink="/docs/api/classes/llvm/timetracescope/#a5b1ffb5452d69e2d56fdf08e1c8c8c8a"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/timetracescope/#a5b1ffb5452d69e2d56fdf08e1c8c8c8a">~TimeTraceScope</a>() &#123;</span></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Entry)</span></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><span class="doxyHighlight">      <a href="/docs/api/namespaces/llvm/#a8d90de68ff5b5762833013e83e14bec5">timeTraceProfilerEnd</a>(Entry);</span></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><span class="doxyHighlightKeyword">private</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><span class="doxyHighlight">  <a href="/docs/api/structs/llvm/timetraceprofilerentry">TimeTraceProfilerEntry</a> &#42;Entry = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace llvm</span></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
 
 </ProgramListing>
 

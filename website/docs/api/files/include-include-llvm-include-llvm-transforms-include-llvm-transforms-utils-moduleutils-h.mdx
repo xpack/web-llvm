@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -79,163 +78,163 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- ModuleUtils.h - Functions to manipulate Modules ---------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This family of functions perform manipulations on Modules.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;TRANSFORMS&#95;UTILS&#95;MODULEUTILS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;TRANSFORMS&#95;UTILS&#95;MODULEUTILS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stlfunctionalextras-h">llvm/ADT/STLFunctionalExtras.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h">llvm/ADT/StringRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/globalifunc-h">llvm/IR/GlobalIFunc.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/alignment-h">llvm/Support/Alignment.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/memorybufferref-h">llvm/Support/MemoryBufferRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;utility&gt;</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="comment">// for std::pair</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> T&gt; </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>;</Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> T&gt; </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>;</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/module">Module</a>;</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/function">Function</a>;</Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/functioncallee">FunctionCallee</a>;</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/globalifunc">GlobalIFunc</a>;</Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/globalvalue">GlobalValue</a>;</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/constant">Constant</a>;</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/constantstruct">ConstantStruct</a>;</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/value">Value</a>;</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/type">Type</a>;</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">/// Append F to the list of global ctors of module M with the given Priority.</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">/// This wraps the function in the appropriate structure and stores it along</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">/// side other global constructors. For details see</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">/// https://llvm.org/docs/LangRef.html#the-llvm-global-ctors-global-variable</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ac030f6d03b674c2d132fd54fb60c9f26">appendToGlobalCtors</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> Priority,</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">                         <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">/// Same as appendToGlobalCtors(), but for global dtors.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aece96440bab42936aa9cf334fb0054cc">appendToGlobalDtors</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> Priority,</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">                         <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="comment">/// Apply &#39;Fn&#39; to the list of global ctors of module M and replace contructor</Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="comment">/// record with the one returned by &#96;Fn&#96;. If &#96;nullptr&#96; was returned, the</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="comment">/// corresponding constructor will be removed from the array. For details see</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="comment">/// https://llvm.org/docs/LangRef.html#the-llvm-global-ctors-global-variable</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52" lineLink="/docs/api/namespaces/llvm/#ae2d92b44a96fcdd0031985f1a0e82f69"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#ae2d92b44a96fcdd0031985f1a0e82f69">GlobalCtorTransformFn</a> = <a href="/docs/api/classes/llvm/function-ref">llvm::function&#95;ref</a>&lt;<a href="/docs/api/classes/llvm/constant">Constant</a> &#42;(<a href="/docs/api/classes/llvm/constant">Constant</a> &#42;)&gt;;</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ac5aba122cc560cafe1311b775b7361b6">transformGlobalCtors</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ae2d92b44a96fcdd0031985f1a0e82f69">GlobalCtorTransformFn</a> &amp;Fn);</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a6a65fab6786c67bfcb8a87a4c3b183a9">transformGlobalDtors</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ae2d92b44a96fcdd0031985f1a0e82f69">GlobalCtorTransformFn</a> &amp;Fn);</Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="comment">/// Sets the KCFI type for the function. Used for compiler-generated functions</Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="comment">/// that are indirectly called in instrumented code.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ac3dadc94dc9df93690ba937226744797">setKCFIType</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/docs/api/classes/llvm/stringref">StringRef</a> MangledType);</Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"><a href="/docs/api/classes/llvm/functioncallee">FunctionCallee</a> <a href="/docs/api/namespaces/llvm/#a67d90c79914c0bdfadad630647f8843b">declareSanitizerInitFunction</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/stringref">StringRef</a> InitName,</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">                                            <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Type &#42;&gt;</a> InitArgTypes,</Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">                                            </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Weak = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="comment">/// Creates sanitizer constructor function.</Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="comment">/// \\return Returns pointer to constructor.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"><a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/namespaces/llvm/#a256980e987af753b4c497757fad18000">createSanitizerCtor</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/stringref">StringRef</a> CtorName);</Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="comment">/// Creates sanitizer constructor function, and calls sanitizer&#39;s init</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="comment">/// function from it.</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="comment">/// \\return Returns pair of pointers to constructor, and init functions</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">/// respectively.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">std::pair&lt;Function &#42;, FunctionCallee&gt; <a href="/docs/api/namespaces/llvm/#a7260773aac0c8769857f551c78b439a3">createSanitizerCtorAndInitFunctions</a>(</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/stringref">StringRef</a> CtorName, <a href="/docs/api/classes/llvm/stringref">StringRef</a> InitName,</Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Type &#42;&gt;</a> InitArgTypes, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Value &#42;&gt;</a> InitArgs,</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/stringref">StringRef</a> VersionCheckName = <a href="/docs/api/classes/llvm/stringref">StringRef</a>(), </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Weak = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">/// Creates sanitizer constructor function lazily. If a constructor and init</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="comment">/// function already exist, this function returns it. Otherwise it calls \\c</Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="comment">/// createSanitizerCtorAndInitFunctions. The FunctionsCreatedCallback is invoked</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="comment">/// in that case, passing the new Ctor and Init function.</Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">/// \\return Returns pair of pointers to constructor, and init functions</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">/// respectively.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">std::pair&lt;Function &#42;, FunctionCallee&gt; <a href="/docs/api/namespaces/llvm/#a717a199ea9514d956fa87fd23c13a228">getOrCreateSanitizerCtorAndInitFunctions</a>(</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/stringref">StringRef</a> CtorName, <a href="/docs/api/classes/llvm/stringref">StringRef</a> InitName,</Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Type &#42;&gt;</a> InitArgTypes, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Value &#42;&gt;</a> InitArgs,</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt;</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/function">Function</a> &#42;, <a href="/docs/api/classes/llvm/functioncallee">FunctionCallee</a>)&gt; FunctionsCreatedCallback,</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/stringref">StringRef</a> VersionCheckName = <a href="/docs/api/classes/llvm/stringref">StringRef</a>(), </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Weak = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">/// Rename all the anon globals in the module using a hash computed from</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">/// the list of public globals in the module.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9313b138ec3c2d3fa58a3ba1611e3812">nameUnamedGlobals</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M);</Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">/// Adds global values to the llvm.used list.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ae879dd14ccc28696f3d8c7b484df3c9a">appendToUsed</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;GlobalValue &#42;&gt;</a> Values);</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">/// Adds global values to the llvm.compiler.used list.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aab730f72aa213d5ecc7d1101efda8811">appendToCompilerUsed</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;GlobalValue &#42;&gt;</a> Values);</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">/// Removes global values from the llvm.used and llvm.compiler.used arrays. \\p</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="comment">/// ShouldRemove should return true for any initializer field that should not be</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">/// included in the replacement global.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a93421534a6486ff3e80f748446756ce5">removeFromUsedLists</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M,</Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">                         <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt;</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">(<a href="/docs/api/classes/llvm/constant">Constant</a> &#42;)&gt; ShouldRemove);</Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">/// Filter out potentially dead comdat functions where other entries keep the</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="comment">/// entire comdat group alive.</Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="comment">/// This is designed for cases where functions appear to become dead but remain</Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="comment">/// alive due to other live entries in their comdat group.</Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">/// The \\p DeadComdatFunctions container should only have pointers to</Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">/// &#96;Function&#96;s which are members of a comdat group and are believed to be</Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">/// dead.</Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">/// After this routine finishes, the only remaining &#96;Function&#96;s in \\p</Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">/// DeadComdatFunctions are those where every member of the comdat is listed</Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="comment">/// and thus removing them is safe (provided &#42;all&#42; are removed).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ad1d412633e05b10c6b4be309b010a13f">filterDeadComdatFunctions</a>(</Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;Function &#42;&gt;</a> &amp;DeadComdatFunctions);</Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="comment">/// Produce a unique identifier for this module by taking the MD5 sum of</Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="comment">/// the names of the module&#39;s strong external symbols that are not comdat</Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="comment">/// members.</Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="comment">/// This identifier is normally guaranteed to be unique, or the program would</Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="comment">/// fail to link due to multiply defined symbols.</Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="comment">/// If the module has no strong external symbols (such a module may still have a</Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="comment">/// semantic effect if it performs global initialization), we cannot produce a</Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="comment">/// unique identifier for this module, so we return the empty string.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">std::string <a href="/docs/api/namespaces/llvm/#a6b8599f07b1b0181899c650b7b385b26">getUniqueModuleId</a>(<a href="/docs/api/classes/llvm/module">Module</a> &#42;M);</Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">/// Embed the memory buffer \\p Buf into the module \\p M as a global using the</Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">/// specified section name. Also provide a metadata entry to identify it in the</Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">/// module using the same section name.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ae744a53dbb2720e5678fb879156761e9">embedBufferInModule</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/memorybufferref">MemoryBufferRef</a> Buf, <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/structs/llvm/sectionname">SectionName</a>,</Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">                         <a href="/docs/api/structs/llvm/align">Align</a> Alignment = <a href="/docs/api/structs/llvm/align">Align</a>(1));</Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="comment">/// Lower all calls to ifuncs by replacing uses with indirect calls loaded out</Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="comment">/// of a global table initialized in a global constructor. This will introduce</Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">/// one constructor function and adds it to llvm.global&#95;ctors. The constructor</Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="comment">/// will call the resolver function once for each ifunc.</Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="comment">/// Leaves any unhandled constant initializer uses as-is.</Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="comment">/// If \\p IFuncsToLower is empty, all ifuncs in the module will be lowered.</Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="comment">/// If \\p IFuncsToLower is non-empty, only the selected ifuncs will be lowered.</Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="comment">/// The processed ifuncs without remaining users will be removed from the</Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="comment">/// module.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ae819b62ec706cb229654ea5fb6553501">lowerGlobalIFuncUsersAsGlobalCtor</a>(</Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;GlobalIFunc &#42;&gt;</a> IFuncsToLower = &#123;&#125;);</Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// End llvm namespace</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;TRANSFORMS&#95;UTILS&#95;MODULEUTILS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===-- ModuleUtils.h - Functions to manipulate Modules ---------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This family of functions perform manipulations on Modules.</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;TRANSFORMS&#95;UTILS&#95;MODULEUTILS&#95;H</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#define LLVM&#95;TRANSFORMS&#95;UTILS&#95;MODULEUTILS&#95;H</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stlfunctionalextras-h">llvm/ADT/STLFunctionalExtras.h</a>&quot;</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h">llvm/ADT/StringRef.h</a>&quot;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/globalifunc-h">llvm/IR/GlobalIFunc.h</a>&quot;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/alignment-h">llvm/Support/Alignment.h</a>&quot;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/memorybufferref-h">llvm/Support/MemoryBufferRef.h</a>&quot;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightPreprocessor">#include &lt;utility&gt;</span><span class="doxyHighlight"> </span><span class="doxyHighlightComment">// for std::pair</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> T&gt; </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl</a>;</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> T&gt; </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/module">Module</a>;</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/function">Function</a>;</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/functioncallee">FunctionCallee</a>;</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/globalifunc">GlobalIFunc</a>;</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/globalvalue">GlobalValue</a>;</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/constant">Constant</a>;</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/constantstruct">ConstantStruct</a>;</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/value">Value</a>;</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/type">Type</a>;</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlightComment">/// Append F to the list of global ctors of module M with the given Priority.</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightComment">/// This wraps the function in the appropriate structure and stores it along</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightComment">/// side other global constructors. For details see</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightComment">/// https://llvm.org/docs/LangRef.html#the-llvm-global-ctors-global-variable</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ac030f6d03b674c2d132fd54fb60c9f26">appendToGlobalCtors</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> Priority,</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlight">                         <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a> = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlightComment">/// Same as appendToGlobalCtors(), but for global dtors.</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#aece96440bab42936aa9cf334fb0054cc">appendToGlobalDtors</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> Priority,</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlight">                         <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a> = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlightComment">/// Apply &#39;Fn&#39; to the list of global ctors of module M and replace contructor</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlightComment">/// record with the one returned by &#96;Fn&#96;. If &#96;nullptr&#96; was returned, the</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlightComment">/// corresponding constructor will be removed from the array. For details see</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlightComment">/// https://llvm.org/docs/LangRef.html#the-llvm-global-ctors-global-variable</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52" lineLink="/docs/api/namespaces/llvm/#ae2d92b44a96fcdd0031985f1a0e82f69"><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/#ae2d92b44a96fcdd0031985f1a0e82f69">GlobalCtorTransformFn</a> = <a href="/docs/api/classes/llvm/function-ref">llvm::function&#95;ref</a>&lt;<a href="/docs/api/classes/llvm/constant">Constant</a> &#42;(<a href="/docs/api/classes/llvm/constant">Constant</a> &#42;)&gt;;</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ac5aba122cc560cafe1311b775b7361b6">transformGlobalCtors</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ae2d92b44a96fcdd0031985f1a0e82f69">GlobalCtorTransformFn</a> &amp;Fn);</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a6a65fab6786c67bfcb8a87a4c3b183a9">transformGlobalDtors</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ae2d92b44a96fcdd0031985f1a0e82f69">GlobalCtorTransformFn</a> &amp;Fn);</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlightComment">/// Sets the KCFI type for the function. Used for compiler-generated functions</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlightComment">/// that are indirectly called in instrumented code.</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ac3dadc94dc9df93690ba937226744797">setKCFIType</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/function">Function</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/docs/api/classes/llvm/stringref">StringRef</a> MangledType);</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/functioncallee">FunctionCallee</a> <a href="/docs/api/namespaces/llvm/#a67d90c79914c0bdfadad630647f8843b">declareSanitizerInitFunction</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/stringref">StringRef</a> InitName,</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlight">                                            <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Type &#42;&gt;</a> InitArgTypes,</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlight">                                            </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> Weak = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlightComment">/// Creates sanitizer constructor function.</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlightComment">/// \\return Returns pointer to constructor.</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/function">Function</a> &#42;<a href="/docs/api/namespaces/llvm/#a256980e987af753b4c497757fad18000">createSanitizerCtor</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/stringref">StringRef</a> CtorName);</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlightComment">/// Creates sanitizer constructor function, and calls sanitizer&#39;s init</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlightComment">/// function from it.</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlightComment">/// \\return Returns pair of pointers to constructor, and init functions</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlightComment">/// respectively.</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlight">std::pair&lt;Function &#42;, FunctionCallee&gt; <a href="/docs/api/namespaces/llvm/#a7260773aac0c8769857f551c78b439a3">createSanitizerCtorAndInitFunctions</a>(</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/stringref">StringRef</a> CtorName, <a href="/docs/api/classes/llvm/stringref">StringRef</a> InitName,</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Type &#42;&gt;</a> InitArgTypes, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Value &#42;&gt;</a> InitArgs,</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/stringref">StringRef</a> VersionCheckName = <a href="/docs/api/classes/llvm/stringref">StringRef</a>(), </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> Weak = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlightComment">/// Creates sanitizer constructor function lazily. If a constructor and init</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlightComment">/// function already exist, this function returns it. Otherwise it calls \\c</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlightComment">/// createSanitizerCtorAndInitFunctions. The FunctionsCreatedCallback is invoked</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlightComment">/// in that case, passing the new Ctor and Init function.</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlightComment">/// \\return Returns pair of pointers to constructor, and init functions</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlightComment">/// respectively.</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlight">std::pair&lt;Function &#42;, FunctionCallee&gt; <a href="/docs/api/namespaces/llvm/#a717a199ea9514d956fa87fd23c13a228">getOrCreateSanitizerCtorAndInitFunctions</a>(</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/stringref">StringRef</a> CtorName, <a href="/docs/api/classes/llvm/stringref">StringRef</a> InitName,</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Type &#42;&gt;</a> InitArgTypes, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Value &#42;&gt;</a> InitArgs,</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt;</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">(<a href="/docs/api/classes/llvm/function">Function</a> &#42;, <a href="/docs/api/classes/llvm/functioncallee">FunctionCallee</a>)&gt; FunctionsCreatedCallback,</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/stringref">StringRef</a> VersionCheckName = <a href="/docs/api/classes/llvm/stringref">StringRef</a>(), </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> Weak = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlightComment">/// Rename all the anon globals in the module using a hash computed from</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlightComment">/// the list of public globals in the module.</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9313b138ec3c2d3fa58a3ba1611e3812">nameUnamedGlobals</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M);</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlightComment">/// Adds global values to the llvm.used list.</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ae879dd14ccc28696f3d8c7b484df3c9a">appendToUsed</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;GlobalValue &#42;&gt;</a> Values);</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlightComment">/// Adds global values to the llvm.compiler.used list.</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#aab730f72aa213d5ecc7d1101efda8811">appendToCompilerUsed</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;GlobalValue &#42;&gt;</a> Values);</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlightComment">/// Removes global values from the llvm.used and llvm.compiler.used arrays. \\p</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlightComment">/// ShouldRemove should return true for any initializer field that should not be</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlightComment">/// included in the replacement global.</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a93421534a6486ff3e80f748446756ce5">removeFromUsedLists</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M,</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><span class="doxyHighlight">                         <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt;</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight">(<a href="/docs/api/classes/llvm/constant">Constant</a> &#42;)&gt; ShouldRemove);</span></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlightComment">/// Filter out potentially dead comdat functions where other entries keep the</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><span class="doxyHighlightComment">/// entire comdat group alive.</span></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlightComment">/// This is designed for cases where functions appear to become dead but remain</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><span class="doxyHighlightComment">/// alive due to other live entries in their comdat group.</span></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><span class="doxyHighlightComment">/// The \\p DeadComdatFunctions container should only have pointers to</span></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlightComment">/// &#96;Function&#96;s which are members of a comdat group and are believed to be</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlightComment">/// dead.</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlightComment">/// After this routine finishes, the only remaining &#96;Function&#96;s in \\p</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlightComment">/// DeadComdatFunctions are those where every member of the comdat is listed</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><span class="doxyHighlightComment">/// and thus removing them is safe (provided &#42;all&#42; are removed).</span></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ad1d412633e05b10c6b4be309b010a13f">filterDeadComdatFunctions</a>(</span></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;Function &#42;&gt;</a> &amp;DeadComdatFunctions);</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlightComment">/// Produce a unique identifier for this module by taking the MD5 sum of</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><span class="doxyHighlightComment">/// the names of the module&#39;s strong external symbols that are not comdat</span></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlightComment">/// members.</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlightComment">/// This identifier is normally guaranteed to be unique, or the program would</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><span class="doxyHighlightComment">/// fail to link due to multiply defined symbols.</span></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><span class="doxyHighlightComment">/// If the module has no strong external symbols (such a module may still have a</span></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlightComment">/// semantic effect if it performs global initialization), we cannot produce a</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><span class="doxyHighlightComment">/// unique identifier for this module, so we return the empty string.</span></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><span class="doxyHighlight">std::string <a href="/docs/api/namespaces/llvm/#a6b8599f07b1b0181899c650b7b385b26">getUniqueModuleId</a>(<a href="/docs/api/classes/llvm/module">Module</a> &#42;M);</span></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><span class="doxyHighlightComment">/// Embed the memory buffer \\p Buf into the module \\p M as a global using the</span></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><span class="doxyHighlightComment">/// specified section name. Also provide a metadata entry to identify it in the</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><span class="doxyHighlightComment">/// module using the same section name.</span></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ae744a53dbb2720e5678fb879156761e9">embedBufferInModule</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/memorybufferref">MemoryBufferRef</a> Buf, <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/structs/llvm/sectionname">SectionName</a>,</span></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><span class="doxyHighlight">                         <a href="/docs/api/structs/llvm/align">Align</a> Alignment = <a href="/docs/api/structs/llvm/align">Align</a>(1));</span></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><span class="doxyHighlightComment">/// Lower all calls to ifuncs by replacing uses with indirect calls loaded out</span></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><span class="doxyHighlightComment">/// of a global table initialized in a global constructor. This will introduce</span></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><span class="doxyHighlightComment">/// one constructor function and adds it to llvm.global&#95;ctors. The constructor</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><span class="doxyHighlightComment">/// will call the resolver function once for each ifunc.</span></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><span class="doxyHighlightComment">/// Leaves any unhandled constant initializer uses as-is.</span></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlightComment">/// If \\p IFuncsToLower is empty, all ifuncs in the module will be lowered.</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><span class="doxyHighlightComment">/// If \\p IFuncsToLower is non-empty, only the selected ifuncs will be lowered.</span></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><span class="doxyHighlightComment">/// The processed ifuncs without remaining users will be removed from the</span></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><span class="doxyHighlightComment">/// module.</span></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ae819b62ec706cb229654ea5fb6553501">lowerGlobalIFuncUsersAsGlobalCtor</a>(</span></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;GlobalIFunc &#42;&gt;</a> IFuncsToLower = &#123;&#125;);</span></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// End llvm namespace</span></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;TRANSFORMS&#95;UTILS&#95;MODULEUTILS&#95;H</span></CodeLine>
 
 </ProgramListing>
 

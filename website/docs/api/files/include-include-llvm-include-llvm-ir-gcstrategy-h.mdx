@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -79,157 +78,157 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/CodeGen/GCStrategy.h - Garbage collection -----------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// GCStrategy coordinates code generation algorithms and implements some itself</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// in order to generate code compatible with a target code generator as</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// specified in a function&#39;s &#39;gc&#39; attribute. Algorithms are enabled by setting</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// flags in a subclass&#39;s constructor, and some virtual methods can be</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// overridden.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">// GCStrategy is relevant for implementations using either gc.root or</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">// gc.statepoint based lowering strategies, but is currently focused mostly on</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">// options for gc.root.  This will change over time.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="comment">// When requested by a subclass of GCStrategy, the gc.root implementation will</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="comment">// populate GCModuleInfo and GCFunctionInfo with that about each Function in</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="comment">// the Module that opts in to garbage collection.  Specifically:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="comment">// - Safe points</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="comment">//   Garbage collection is generally only possible at certain points in code.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="comment">//   GCStrategy can request that the collector insert such points:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="comment">//     - At and after any call to a subroutine</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="comment">//     - Before returning from the current function</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="comment">//     - Before backwards branches (loops)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="comment">// - Roots</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="comment">//   When a reference to a GC-allocated object exists on the stack, it must be</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="comment">//   stored in an alloca registered with llvm.gcoot.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This information can used to emit the metadata tables which are required by</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="comment">// the target garbage collector runtime.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="comment">// When used with gc.statepoint, information about safepoint and roots can be</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="comment">// found in the binary StackMap section after code generation.  Safepoint</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="comment">// placement is currently the responsibility of the frontend, though late</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="comment">// insertion support is planned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The read and write barrier support can be used with either implementation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;IR&#95;GCSTRATEGY&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;IR&#95;GCSTRATEGY&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/registry-h">llvm/Support/Registry.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;optional&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;string&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/type">Type</a>;</Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">/// GCStrategy describes a garbage collector algorithm&#39;s code generation</Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">/// requirements, and provides overridable hooks for those needs which cannot</Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="comment">/// be abstractly described.  GCStrategy objects must be looked up through</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="comment">/// the Function.  The objects themselves are owned by the Context and must</Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="comment">/// be immutable.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/classes/llvm/gcstrategy"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/gcstrategy/#abc5b7efa0f9360dac6bbd35ab553cb0d">GCStrategy</a> &#123;</Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/classes/llvm/gcstrategy/#a5b0052c613569d8b1bd3b87a3e133423"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/gcstrategy/#a5b0052c613569d8b1bd3b87a3e133423">GCModuleInfo</a>;</Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  std::string Name;</Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/classes/llvm/gcstrategy/#a6d4b88865bc96bd6a93c3076e210af61"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcstrategy/#a6d4b88865bc96bd6a93c3076e210af61">UseStatepoints</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="comment">/// Uses gc.statepoints as opposed to gc.roots,</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">                               /// if set, NeededSafePoints and UsesMetadata</Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">                               /// should be left at their default values.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/classes/llvm/gcstrategy/#a32c75ebeabf283b9a98b1b5641a2885e"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcstrategy/#a32c75ebeabf283b9a98b1b5641a2885e">UseRS4GC</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="comment">/// If UseStatepoints is set, this determines whether</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">                         /// the RewriteStatepointsForGC pass should rewrite</Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">                         /// this function&#39;s calls.</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">                         /// This should only be set if UseStatepoints is set.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/classes/llvm/gcstrategy/#a876df2ee9b43a6e37c7e25cdbc5ee458"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcstrategy/#a876df2ee9b43a6e37c7e25cdbc5ee458">NeededSafePoints</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;    </Highlight><Highlight kind="comment">///&lt; if set, calls are inferred to be safepoints</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/classes/llvm/gcstrategy/#a5d53780e41b87b0b8cb0e4a822f38281"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcstrategy/#a5d53780e41b87b0b8cb0e4a822f38281">UsesMetadata</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;     </Highlight><Highlight kind="comment">///&lt; If set, backend must emit metadata tables.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/classes/llvm/gcstrategy/#abc5b7efa0f9360dac6bbd35ab553cb0d"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/gcstrategy/#abc5b7efa0f9360dac6bbd35ab553cb0d">GCStrategy</a>();</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84" lineLink="/docs/api/classes/llvm/gcstrategy/#aed755642573059053607d5642eb99da9"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcstrategy/#aed755642573059053607d5642eb99da9">~GCStrategy</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="comment">  /// Return the name of the GC strategy.  This is the value of the collector</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="comment">  /// name string specified on functions which use this strategy.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88" lineLink="/docs/api/classes/llvm/gcstrategy/#ae253aa14fb9f8582e089850f07616599"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;<a href="/docs/api/classes/llvm/gcstrategy/#ae253aa14fb9f8582e089850f07616599">getName</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Name; &#125;</Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">  /// Returns true if this strategy is expecting the use of gc.statepoints,</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">  /// and false otherwise.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92" lineLink="/docs/api/classes/llvm/gcstrategy/#a7b2fe86699990ff4cec0233e3daf651d"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcstrategy/#a7b2fe86699990ff4cec0233e3daf651d">useStatepoints</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcstrategy/#a6d4b88865bc96bd6a93c3076e210af61">UseStatepoints</a>; &#125;</Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">  /&#42;&#42; @name Statepoint Specific Properties &#42;/</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">  ///@&#123;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">  /// If the type specified can be reliably distinguished, returns true for</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">  /// pointers to GC managed locations and false for pointers to non-GC</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  /// managed locations.  Note a GCStrategy can always return &#39;std::nullopt&#39;</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">  /// (i.e. an empty optional indicating it can&#39;t reliably distinguish.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101" lineLink="/docs/api/classes/llvm/gcstrategy/#a6bbb5320403c4748de766cc6efc5e55e"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> std::optional&lt;bool&gt; <a href="/docs/api/classes/llvm/gcstrategy/#a6bbb5320403c4748de766cc6efc5e55e">isGCManagedPointer</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/type">Type</a> &#42;Ty)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::nullopt;</Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">  /// Returns true if the RewriteStatepointsForGC pass should run on functions</Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">  /// using this GC.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107" lineLink="/docs/api/classes/llvm/gcstrategy/#a86859e2cfd56ae04d6baef2f512e22fd"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcstrategy/#a86859e2cfd56ae04d6baef2f512e22fd">useRS4GC</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((!<a href="/docs/api/classes/llvm/gcstrategy/#a32c75ebeabf283b9a98b1b5641a2885e">UseRS4GC</a> || <a href="/docs/api/classes/llvm/gcstrategy/#a7b2fe86699990ff4cec0233e3daf651d">useStatepoints</a>()) &amp;&amp;</Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;GC strategy has useRS4GC but not useStatepoints set&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcstrategy/#a32c75ebeabf283b9a98b1b5641a2885e">UseRS4GC</a>;</Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">  ///@&#125;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">  /// If set, appropriate metadata tables must be emitted by the back-end</Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">  /// (assembler, JIT, or otherwise). The default stackmap information can be</Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">  /// found in the StackMap section as described in the documentation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118" lineLink="/docs/api/classes/llvm/gcstrategy/#a79b51aca35066f7e941e54bb504d8755"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcstrategy/#a79b51aca35066f7e941e54bb504d8755">usesMetadata</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcstrategy/#a5d53780e41b87b0b8cb0e4a822f38281">UsesMetadata</a>; &#125;</Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">  /&#42;&#42; @name GCRoot Specific Properties</Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">   &#42; These properties and overrides only apply to collector strategies using</Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="comment">   &#42; GCRoot.</Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="comment">   &#42;/</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="comment">  ///@&#123;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="comment">  /// True if safe points need to be inferred on call sites</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127" lineLink="/docs/api/classes/llvm/gcstrategy/#a80ea3bc520b9a03eae28fc6857a79f24"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcstrategy/#a80ea3bc520b9a03eae28fc6857a79f24">needsSafePoints</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gcstrategy/#a876df2ee9b43a6e37c7e25cdbc5ee458">NeededSafePoints</a>; &#125;</Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="comment">  ///@&#125;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">/// Subclasses of GCStrategy are made available for use during compilation by</Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">/// adding them to the global GCRegistry.  This can done either within the</Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">/// LLVM source tree or via a loadable plugin.  An example registeration</Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">/// would be:</Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">/// static GCRegistry::Add&lt;CustomGC&gt; X(&quot;custom-name&quot;,</Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="comment">///        &quot;my custom supper fancy gc strategy&quot;);</Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="comment">/// Note that to use a custom GCMetadataPrinter, you must also</Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="comment">/// register your GCMetadataPrinter subclass with the</Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="comment">/// GCMetadataPrinterRegistery as well.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142" lineLink="/docs/api/namespaces/llvm/#a1eb8b495122b2f5f1a34d10615fb4578"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a1eb8b495122b2f5f1a34d10615fb4578">GCRegistry</a> = <a href="/docs/api/classes/llvm/registry">Registry&lt;GCStrategy&gt;</a>;</Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal"></Highlight><Highlight kind="keyword">extern</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">LLVM&#95;TEMPLATE&#95;ABI <a href="/docs/api/classes/llvm/registry">Registry&lt;GCStrategy&gt;</a>;</Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="comment">/// Lookup the GCStrategy object associated with the given gc name.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">std::unique&#95;ptr&lt;GCStrategy&gt; <a href="/docs/api/namespaces/llvm/#ac94cf747f5fb3d8bef69ba5168873f55">getGCStrategy</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/stringref">StringRef</a> Name);</Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;IR&#95;GCSTRATEGY&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- llvm/CodeGen/GCStrategy.h - Garbage collection -----------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// GCStrategy coordinates code generation algorithms and implements some itself</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">// in order to generate code compatible with a target code generator as</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">// specified in a function&#39;s &#39;gc&#39; attribute. Algorithms are enabled by setting</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">// flags in a subclass&#39;s constructor, and some virtual methods can be</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightComment">// overridden.</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightComment">// GCStrategy is relevant for implementations using either gc.root or</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightComment">// gc.statepoint based lowering strategies, but is currently focused mostly on</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightComment">// options for gc.root.  This will change over time.</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightComment">// When requested by a subclass of GCStrategy, the gc.root implementation will</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightComment">// populate GCModuleInfo and GCFunctionInfo with that about each Function in</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightComment">// the Module that opts in to garbage collection.  Specifically:</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightComment">// - Safe points</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightComment">//   Garbage collection is generally only possible at certain points in code.</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightComment">//   GCStrategy can request that the collector insert such points:</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightComment">//     - At and after any call to a subroutine</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightComment">//     - Before returning from the current function</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightComment">//     - Before backwards branches (loops)</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightComment">// - Roots</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlightComment">//   When a reference to a GC-allocated object exists on the stack, it must be</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightComment">//   stored in an alloca registered with llvm.gcoot.</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlightComment">// This information can used to emit the metadata tables which are required by</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlightComment">// the target garbage collector runtime.</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightComment">// When used with gc.statepoint, information about safepoint and roots can be</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightComment">// found in the binary StackMap section after code generation.  Safepoint</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightComment">// placement is currently the responsibility of the frontend, though late</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlightComment">// insertion support is planned.</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlightComment">// The read and write barrier support can be used with either implementation.</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;IR&#95;GCSTRATEGY&#95;H</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlightPreprocessor">#define LLVM&#95;IR&#95;GCSTRATEGY&#95;H</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/registry-h">llvm/Support/Registry.h</a>&quot;</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlightPreprocessor">#include &lt;optional&gt;</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlightPreprocessor">#include &lt;string&gt;</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/type">Type</a>;</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlightComment">/// GCStrategy describes a garbage collector algorithm&#39;s code generation</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlightComment">/// requirements, and provides overridable hooks for those needs which cannot</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlightComment">/// be abstractly described.  GCStrategy objects must be looked up through</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlightComment">/// the Function.  The objects themselves are owned by the Context and must</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlightComment">/// be immutable.</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/classes/llvm/gcstrategy"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/gcstrategy/#abc5b7efa0f9360dac6bbd35ab553cb0d">GCStrategy</a> &#123;</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlightKeyword">private</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/classes/llvm/gcstrategy/#a5b0052c613569d8b1bd3b87a3e133423"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">friend</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/gcstrategy/#a5b0052c613569d8b1bd3b87a3e133423">GCModuleInfo</a>;</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlight">  std::string Name;</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlightKeyword">protected</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/classes/llvm/gcstrategy/#a6d4b88865bc96bd6a93c3076e210af61"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gcstrategy/#a6d4b88865bc96bd6a93c3076e210af61">UseStatepoints</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">; </span><span class="doxyHighlightComment">/// Uses gc.statepoints as opposed to gc.roots,</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlightComment">                               /// if set, NeededSafePoints and UsesMetadata</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlightComment">                               /// should be left at their default values.</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/classes/llvm/gcstrategy/#a32c75ebeabf283b9a98b1b5641a2885e"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gcstrategy/#a32c75ebeabf283b9a98b1b5641a2885e">UseRS4GC</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">; </span><span class="doxyHighlightComment">/// If UseStatepoints is set, this determines whether</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlightComment">                         /// the RewriteStatepointsForGC pass should rewrite</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlightComment">                         /// this function&#39;s calls.</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlightComment">                         /// This should only be set if UseStatepoints is set.</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/classes/llvm/gcstrategy/#a876df2ee9b43a6e37c7e25cdbc5ee458"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gcstrategy/#a876df2ee9b43a6e37c7e25cdbc5ee458">NeededSafePoints</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;    </span><span class="doxyHighlightComment">///&lt; if set, calls are inferred to be safepoints</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/classes/llvm/gcstrategy/#a5d53780e41b87b0b8cb0e4a822f38281"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gcstrategy/#a5d53780e41b87b0b8cb0e4a822f38281">UsesMetadata</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;     </span><span class="doxyHighlightComment">///&lt; If set, backend must emit metadata tables.</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/classes/llvm/gcstrategy/#abc5b7efa0f9360dac6bbd35ab553cb0d"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/gcstrategy/#abc5b7efa0f9360dac6bbd35ab553cb0d">GCStrategy</a>();</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84" lineLink="/docs/api/classes/llvm/gcstrategy/#aed755642573059053607d5642eb99da9"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">virtual</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gcstrategy/#aed755642573059053607d5642eb99da9">~GCStrategy</a>() = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlightComment">  /// Return the name of the GC strategy.  This is the value of the collector</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlightComment">  /// name string specified on functions which use this strategy.</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88" lineLink="/docs/api/classes/llvm/gcstrategy/#ae253aa14fb9f8582e089850f07616599"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::string &amp;<a href="/docs/api/classes/llvm/gcstrategy/#ae253aa14fb9f8582e089850f07616599">getName</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> Name; &#125;</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlightComment">  /// Returns true if this strategy is expecting the use of gc.statepoints,</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlightComment">  /// and false otherwise.</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92" lineLink="/docs/api/classes/llvm/gcstrategy/#a7b2fe86699990ff4cec0233e3daf651d"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gcstrategy/#a7b2fe86699990ff4cec0233e3daf651d">useStatepoints</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gcstrategy/#a6d4b88865bc96bd6a93c3076e210af61">UseStatepoints</a>; &#125;</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlightComment">  /&#42;&#42; @name Statepoint Specific Properties &#42;/</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlightComment">  ///@&#123;</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlightComment">  /// If the type specified can be reliably distinguished, returns true for</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlightComment">  /// pointers to GC managed locations and false for pointers to non-GC</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlightComment">  /// managed locations.  Note a GCStrategy can always return &#39;std::nullopt&#39;</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlightComment">  /// (i.e. an empty optional indicating it can&#39;t reliably distinguish.</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101" lineLink="/docs/api/classes/llvm/gcstrategy/#a6bbb5320403c4748de766cc6efc5e55e"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">virtual</span><span class="doxyHighlight"> std::optional&lt;bool&gt; <a href="/docs/api/classes/llvm/gcstrategy/#a6bbb5320403c4748de766cc6efc5e55e">isGCManagedPointer</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/type">Type</a> &#42;Ty)</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::nullopt;</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlightComment">  /// Returns true if the RewriteStatepointsForGC pass should run on functions</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlightComment">  /// using this GC.</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107" lineLink="/docs/api/classes/llvm/gcstrategy/#a86859e2cfd56ae04d6baef2f512e22fd"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gcstrategy/#a86859e2cfd56ae04d6baef2f512e22fd">useRS4GC</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((!<a href="/docs/api/classes/llvm/gcstrategy/#a32c75ebeabf283b9a98b1b5641a2885e">UseRS4GC</a> || <a href="/docs/api/classes/llvm/gcstrategy/#a7b2fe86699990ff4cec0233e3daf651d">useStatepoints</a>()) &amp;&amp;</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlight">           </span><span class="doxyHighlightStringLiteral">&quot;GC strategy has useRS4GC but not useStatepoints set&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gcstrategy/#a32c75ebeabf283b9a98b1b5641a2885e">UseRS4GC</a>;</span></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlightComment">  ///@&#125;</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlightComment">  /// If set, appropriate metadata tables must be emitted by the back-end</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlightComment">  /// (assembler, JIT, or otherwise). The default stackmap information can be</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlightComment">  /// found in the StackMap section as described in the documentation.</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118" lineLink="/docs/api/classes/llvm/gcstrategy/#a79b51aca35066f7e941e54bb504d8755"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gcstrategy/#a79b51aca35066f7e941e54bb504d8755">usesMetadata</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gcstrategy/#a5d53780e41b87b0b8cb0e4a822f38281">UsesMetadata</a>; &#125;</span></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlightComment">  /&#42;&#42; @name GCRoot Specific Properties</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><span class="doxyHighlightComment">   &#42; These properties and overrides only apply to collector strategies using</span></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlightComment">   &#42; GCRoot.</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><span class="doxyHighlightComment">   &#42;/</span></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlightComment">  ///@&#123;</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlightComment">  /// True if safe points need to be inferred on call sites</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127" lineLink="/docs/api/classes/llvm/gcstrategy/#a80ea3bc520b9a03eae28fc6857a79f24"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gcstrategy/#a80ea3bc520b9a03eae28fc6857a79f24">needsSafePoints</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gcstrategy/#a876df2ee9b43a6e37c7e25cdbc5ee458">NeededSafePoints</a>; &#125;</span></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><span class="doxyHighlightComment">  ///@&#125;</span></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><span class="doxyHighlightComment">/// Subclasses of GCStrategy are made available for use during compilation by</span></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><span class="doxyHighlightComment">/// adding them to the global GCRegistry.  This can done either within the</span></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><span class="doxyHighlightComment">/// LLVM source tree or via a loadable plugin.  An example registeration</span></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><span class="doxyHighlightComment">/// would be:</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><span class="doxyHighlightComment">/// static GCRegistry::Add&lt;CustomGC&gt; X(&quot;custom-name&quot;,</span></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><span class="doxyHighlightComment">///        &quot;my custom supper fancy gc strategy&quot;);</span></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><span class="doxyHighlightComment">/// Note that to use a custom GCMetadataPrinter, you must also</span></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><span class="doxyHighlightComment">/// register your GCMetadataPrinter subclass with the</span></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><span class="doxyHighlightComment">/// GCMetadataPrinterRegistery as well.</span></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142" lineLink="/docs/api/namespaces/llvm/#a1eb8b495122b2f5f1a34d10615fb4578"><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/#a1eb8b495122b2f5f1a34d10615fb4578">GCRegistry</a> = <a href="/docs/api/classes/llvm/registry">Registry&lt;GCStrategy&gt;</a>;</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><span class="doxyHighlightKeyword">extern</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">LLVM&#95;TEMPLATE&#95;ABI <a href="/docs/api/classes/llvm/registry">Registry&lt;GCStrategy&gt;</a>;</span></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlightComment">/// Lookup the GCStrategy object associated with the given gc name.</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlight">std::unique&#95;ptr&lt;GCStrategy&gt; <a href="/docs/api/namespaces/llvm/#ac94cf747f5fb3d8bef69ba5168873f55">getGCStrategy</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/stringref">StringRef</a> Name);</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace llvm</span></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;IR&#95;GCSTRATEGY&#95;H</span></CodeLine>
 
 </ProgramListing>
 

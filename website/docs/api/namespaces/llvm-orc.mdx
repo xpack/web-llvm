@@ -19,7 +19,6 @@ import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
 import EnumerationList from '@xpack/docusaurus-plugin-doxygen/components/EnumerationList'
 import EnumerationListItem from '@xpack/docusaurus-plugin-doxygen/components/EnumerationListItem'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
@@ -3379,14 +3378,14 @@ Create an <a href="/docs/api/classes/llvm/orc/absolutesymbolsmaterializationunit
 Useful for inserting absolute symbols into a <a href="/docs/api/classes/llvm/orc/jitdylib">JITDylib</a>. E.g.: 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/jitdylib">JITDylib</a> &amp;JD = ...;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/symbolstringptr">SymbolStringPtr</a> Foo = ...;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/executorsymboldef">ExecutorSymbolDef</a> FooSym = ...;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = JD.<a href="/docs/api/classes/llvm/orc/jitdylib/#a5ec8631eb0c37168d6f85c4ecad77747">define</a>(<a href="#a3a6ca0ed8ac3267e0579452013a2e82d">absoluteSymbols</a>(&#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      &#123; Foo, FooSym &#125;,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      &#123; Bar, BarSym &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#125;)))</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Err;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="/docs/api/classes/llvm/orc/jitdylib">JITDylib</a> &amp;JD = ...;</span></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="/docs/api/classes/llvm/orc/symbolstringptr">SymbolStringPtr</a> Foo = ...;</span></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="/docs/api/classes/llvm/orc/executorsymboldef">ExecutorSymbolDef</a> FooSym = ...;</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> Err = JD.<a href="/docs/api/classes/llvm/orc/jitdylib/#a5ec8631eb0c37168d6f85c4ecad77747">define</a>(<a href="#a3a6ca0ed8ac3267e0579452013a2e82d">absoluteSymbols</a>(&#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      &#123; Foo, FooSym &#125;,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      &#123; Bar, BarSym &#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#125;)))</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> Err;</span></CodeLine>
 
 </ProgramListing>
 
@@ -3439,10 +3438,10 @@ This is useful when introducing indirection via a stub function at link time wit
 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">&#95;foo:</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  leaq -7(%rip), rax # form pointer to &#95;foo without relocation</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#95;bar:</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  leaq (%rip), %rax  # uses X86&#95;64&#95;RELOC&#95;SIGNED to </Highlight><Highlight kind="stringliteral">&#39;&#95;foo&#39;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">&#95;foo:</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  leaq -7(%rip), rax # form pointer to &#95;foo without relocation</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#95;bar:</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  leaq (%rip), %rax  # uses X86&#95;64&#95;RELOC&#95;SIGNED to </span><span class="doxyHighlightStringLiteral">&#39;&#95;foo&#39;</span></CodeLine>
 
 </ProgramListing>
 
@@ -4194,12 +4193,12 @@ Create a <a href="/docs/api/classes/llvm/orc/reexportsmaterializationunit">ReExp
 Useful for defining symbol aliases.: E.g., given a <a href="/docs/api/classes/llvm/orc/jitdylib">JITDylib</a> JD containing symbols &quot;foo&quot; and &quot;bar&quot;, we can define aliases &quot;baz&quot; (for &quot;foo&quot;) and &quot;qux&quot; (for &quot;bar&quot;) with: 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/symbolstringptr">SymbolStringPtr</a> Baz = ...;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/symbolstringptr">SymbolStringPtr</a> Qux = ...;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Err = JD.define(<a href="#a2c212cdbe134087fcaa385aad1bc8a9e">symbolAliases</a>(&#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#123;Baz, &#123; Foo, <a href="/docs/api/classes/llvm/jitsymbolflags/#ad509c6d010720c4f71aeac1fba93f8cbaeb59403a31ee3f63734a411e9e42ddd8">JITSymbolFlags::Exported</a> &#125;&#125;,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#123;Qux, &#123; Bar, <a href="/docs/api/classes/llvm/jitsymbolflags/#ad509c6d010720c4f71aeac1fba93f8cbabe8fbc5eba26a22d11d3ed68f8ada397">JITSymbolFlags::Weak</a> &#125;&#125;&#125;))</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Err;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="/docs/api/classes/llvm/orc/symbolstringptr">SymbolStringPtr</a> Baz = ...;</span></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="/docs/api/classes/llvm/orc/symbolstringptr">SymbolStringPtr</a> Qux = ...;</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> Err = JD.define(<a href="#a2c212cdbe134087fcaa385aad1bc8a9e">symbolAliases</a>(&#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#123;Baz, &#123; Foo, <a href="/docs/api/classes/llvm/jitsymbolflags/#ad509c6d010720c4f71aeac1fba93f8cbaeb59403a31ee3f63734a411e9e42ddd8">JITSymbolFlags::Exported</a> &#125;&#125;,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#123;Qux, &#123; Bar, <a href="/docs/api/classes/llvm/jitsymbolflags/#ad509c6d010720c4f71aeac1fba93f8cbabe8fbc5eba26a22d11d3ed68f8ada397">JITSymbolFlags::Weak</a> &#125;&#125;&#125;))</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> Err;</span></CodeLine>
 
 </ProgramListing>
 

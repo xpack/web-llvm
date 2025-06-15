@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -144,242 +143,242 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- GenericConvergenceVerifierImpl.h -----------------------&#42;- C++ -&#42;---===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="comment">/// \\file</Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="comment">/// A verifier for the static rules of convergence control tokens that works</Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="comment">/// with both LLVM IR and MIR.</Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="comment">/// This template implementation resides in a separate file so that it does not</Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="comment">/// get injected into every .cpp file that includes the generic header.</Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="comment">/// DO NOT INCLUDE THIS FILE WHEN MERELY USING CYCLEINFO.</Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="comment">/// This file should only be included by files that implement a</Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="comment">/// specialization of the relevant templates. Currently these are:</Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="comment">/// - llvm/lib/IR/Verifier.cpp</Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="comment">/// - llvm/lib/CodeGen/MachineVerifier.cpp</Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;IR&#95;GENERICCONVERGENCEVERIFIERIMPL&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;IR&#95;GENERICCONVERGENCEVERIFIERIMPL&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/genericconvergenceverifier-h">llvm/ADT/GenericConvergenceVerifier.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/postorderiterator-h">llvm/ADT/PostOrderIterator.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h">llvm/ADT/Twine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/intrinsicinst-h">llvm/IR/IntrinsicInst.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34" lineLink="#a2bb73b5d562083dde29e9091dd81bef3"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define Check(C, ...)                                                          \\</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="preprocessor">  do &#123;                                                                         \\</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="preprocessor">    if (!(C)) &#123;                                                                \\</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="preprocessor">      reportFailure(&#95;&#95;VA&#95;ARGS&#95;&#95;);                                              \\</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="preprocessor">      return;                                                                  \\</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="preprocessor">    &#125;                                                                          \\</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="preprocessor">  &#125; while (false)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42" lineLink="#a2fee20ad578f1c6d3061e37925fe7275"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define CheckOrNull(C, ...)                                                    \\</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="preprocessor">  do &#123;                                                                         \\</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="preprocessor">    if (!(C)) &#123;                                                                \\</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="preprocessor">      reportFailure(&#95;&#95;VA&#95;ARGS&#95;&#95;);                                              \\</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="preprocessor">      return &#123;&#125;;                                                               \\</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="preprocessor">    &#125;                                                                          \\</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="preprocessor">  &#125; while (false)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51" lineLink="/docs/api/classes/llvm/genericconvergenceverifier/#ae9f8e59fb3ae365c4c016660a893dbc4"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> ContextT&gt; </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#ae9f8e59fb3ae365c4c016660a893dbc4">GenericConvergenceVerifier&lt;ContextT&gt;::clear</a>() &#123;</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">  Tokens.clear();</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">  CI.clear();</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  ConvergenceKind = NoConvergence;</Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> ContextT&gt;</Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58" lineLink="/docs/api/classes/llvm/genericconvergenceverifier/#ac0b5a1f3e83cf95798dc939ba51d4fe4"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#ac0b5a1f3e83cf95798dc939ba51d4fe4">GenericConvergenceVerifier&lt;ContextT&gt;::visit</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#a40c82b0838b9735f74113deb97536f44">BlockT</a> &amp;BB) &#123;</Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">  SeenFirstConvOp = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> ContextT&gt;</Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/classes/llvm/genericconvergenceverifier/#ac7c809ed5719c60771ad3a8b6531eb70"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#ac0b5a1f3e83cf95798dc939ba51d4fe4">GenericConvergenceVerifier&lt;ContextT&gt;::visit</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#a0ea0ad7fef4739e0c788e5122c5e1448">InstructionT</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>) &#123;</Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  ConvOpKind ConvOp = getConvOp(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;TokenDef = findAndCheckConvergenceTokenUsed(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (ConvOp) &#123;</Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> CONV&#95;ENTRY:</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(isInsideConvergentFunction(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>),</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Entry intrinsic can occur only in a convergent function.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.getParent()-&gt;isEntryBlock(),</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Entry intrinsic can occur only in the entry block.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">          &#123;Context.print(&amp;I)&#125;);</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(!SeenFirstConvOp,</Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Entry intrinsic cannot be preceded by a convergent operation in the &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;same basic block.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">    &#91;&#91;fallthrough&#93;&#93;;</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> CONV&#95;ANCHOR:</Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(!TokenDef,</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Entry or anchor intrinsic cannot have a convergencectrl token &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;operand.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> CONV&#95;LOOP:</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(TokenDef, </Highlight><Highlight kind="stringliteral">&quot;Loop intrinsic must have a convergencectrl token operand.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(!SeenFirstConvOp,</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Loop intrinsic cannot be preceded by a convergent operation in the &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;same basic block.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ConvOp != CONV&#95;NONE)</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">    checkConvergenceTokenProduced(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (isConvergent(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>))</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    SeenFirstConvOp = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TokenDef || ConvOp != CONV&#95;NONE) &#123;</Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(isConvergent(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>),</Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Convergence control token can only be used in a convergent call.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(ConvergenceKind != UncontrolledConvergence,</Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Cannot mix controlled and uncontrolled convergence in the same &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;function.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">    ConvergenceKind = ControlledConvergence;</Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (isConvergent(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)) &#123;</Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(ConvergenceKind != ControlledConvergence,</Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Cannot mix controlled and uncontrolled convergence in the same &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;function.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">    ConvergenceKind = UncontrolledConvergence;</Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> ContextT&gt;</Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> GenericConvergenceVerifier&lt;ContextT&gt;::reportFailure(</Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp;Message, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Printable&gt;</a> DumpedValues) &#123;</Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  FailureCB(Message);</Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (OS) &#123;</Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> V : DumpedValues)</Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">      &#42;OS &lt;&lt; V &lt;&lt; </Highlight><Highlight kind="charliteral">&#39;\\n&#39;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> ContextT&gt;</Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133" lineLink="/docs/api/classes/llvm/genericconvergenceverifier/#aa4780afea204d004b4ce95dd76dbca7f"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#aa4780afea204d004b4ce95dd76dbca7f">GenericConvergenceVerifier&lt;ContextT&gt;::verify</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#a100024edbe43ce10b4d5897406e8be92">DominatorTreeT</a> &amp;DT) &#123;</Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Context.getFunction());</Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = &#42;Context.getFunction();</Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;const BlockT &#42;, SmallVector&lt;const InstructionT &#42;, 8&gt;</a>&gt; LiveTokenMap;</Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;const CycleT &#42;, const InstructionT &#42;&gt;</a> CycleHearts;</Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Just like the DominatorTree, compute the CycleInfo locally so that we</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// can run the verifier outside of a pass manager and we don&#39;t rely on</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// potentially out-dated analysis results.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">  CI.compute(</Highlight><Highlight kind="keyword">const&#95;cast&lt;</Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/genericconvergenceverifier/#a934c31f0eea274fcc8f52665b90ab592">FunctionT</a> &amp;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>));</Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> checkToken = &#91;&amp;&#93;(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#a0ea0ad7fef4739e0c788e5122c5e1448">InstructionT</a> &#42;Token, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#a0ea0ad7fef4739e0c788e5122c5e1448">InstructionT</a> &#42;<a href="/docs/api/classes/llvm/user">User</a>,</Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">                        <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;const InstructionT &#42;&gt;</a> &amp;LiveTokens) &#123;</Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(DT.dominates(Token-&gt;getParent(), <a href="/docs/api/classes/llvm/user">User</a>-&gt;getParent()),</Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Convergence control token must dominate all its uses.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">          &#123;Context.print(Token), Context.print(User)&#125;);</Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(<a href="/docs/api/namespaces/llvm/#acd1cd968cb420c82d70926920fcdc7d7">llvm::is&#95;contained</a>(LiveTokens, Token),</Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Convergence region is not well-nested.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">          &#123;Context.print(Token), Context.print(<a href="/docs/api/classes/llvm/user">User</a>)&#125;);</Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (LiveTokens.back() != Token)</Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">      LiveTokens.pop&#95;back();</Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Check static rules about cycles.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;BB = <a href="/docs/api/classes/llvm/user">User</a>-&gt;getParent();</Highlight></CodeLine>
-<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;BBCycle = CI.getCycle(BB);</Highlight></CodeLine>
-<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!BBCycle)</Highlight></CodeLine>
-<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;DefBB = Token-&gt;getParent();</Highlight></CodeLine>
-<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DefBB == BB || BBCycle-&gt;contains(DefBB)) &#123;</Highlight></CodeLine>
-<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// degenerate occurrence of a loop intrinsic</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(getConvOp(&#42;<a href="/docs/api/classes/llvm/user">User</a>) == CONV&#95;LOOP,</Highlight></CodeLine>
-<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Convergence token used by an instruction other than &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;llvm.experimental.convergence.loop in a cycle that does &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;not contain the token&#39;s definition.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">          &#123;Context.print(<a href="/docs/api/classes/llvm/user">User</a>), CI.print(BBCycle)&#125;);</Highlight></CodeLine>
-<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
-<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;Parent = BBCycle-&gt;getParentCycle();</Highlight></CodeLine>
-<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Parent || Parent-&gt;contains(DefBB))</Highlight></CodeLine>
-<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">      BBCycle = Parent;</Highlight></CodeLine>
-<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
-<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(BBCycle-&gt;isReducible() &amp;&amp; BB == BBCycle-&gt;getHeader(),</Highlight></CodeLine>
-<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Cycle heart must dominate all blocks in the cycle.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">          &#123;Context.print(User), Context.printAsOperand(BB), CI.print(BBCycle)&#125;);</Highlight></CodeLine>
-<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/check">Check</a>(!CycleHearts.<a href="/docs/api/classes/llvm/densemapbase/#a53408c95a7bfb5443b43fb2134c3eb23">count</a>(BBCycle),</Highlight></CodeLine>
-<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Two static convergence token uses in a cycle that does &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;not contain either token&#39;s definition.&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">          &#123;Context.print(User), Context.print(CycleHearts&#91;BBCycle&#93;),</Highlight></CodeLine>
-<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">           CI.print(BBCycle)&#125;);</Highlight></CodeLine>
-<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">    CycleHearts&#91;BBCycle&#93; = <a href="/docs/api/classes/llvm/user">User</a>;</Highlight></CodeLine>
-<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
-<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/reversepostordertraversal">ReversePostOrderTraversal&lt;const FunctionT &#42;&gt;</a> RPOT(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</Highlight></CodeLine>
-<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;const InstructionT &#42;, 8&gt;</a> LiveTokens;</Highlight></CodeLine>
-<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;BB : RPOT) &#123;</Highlight></CodeLine>
-<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">    LiveTokens.<a href="/docs/api/classes/llvm/smallvectorimpl/#aac0ea55010b7b1a301e65a0baea057aa">clear</a>();</Highlight></CodeLine>
-<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> LTIt = LiveTokenMap.<a href="/docs/api/classes/llvm/densemapbase/#a0c047f127ed4380a6f383d70bec4eb94">find</a>(BB);</Highlight></CodeLine>
-<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (LTIt != LiveTokenMap.<a href="/docs/api/classes/llvm/densemapbase/#a65520b9c67759099e313d0f4e7b5ff9e">end</a>()) &#123;</Highlight></CodeLine>
-<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">      LiveTokens = std::move(LTIt-&gt;second);</Highlight></CodeLine>
-<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">      LiveTokenMap.<a href="/docs/api/classes/llvm/densemapbase/#a1eb8504bab5f794778d82db6ac829923">erase</a>(LTIt);</Highlight></CodeLine>
-<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> : &#42;BB) &#123;</Highlight></CodeLine>
-<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;Token = Tokens.lookup(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>))</Highlight></CodeLine>
-<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">        checkToken(Token, &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, LiveTokens);</Highlight></CodeLine>
-<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (getConvOp(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>) != CONV&#95;NONE)</Highlight></CodeLine>
-<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">        LiveTokens.<a href="/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">push&#95;back</a>(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</Highlight></CodeLine>
-<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Propagate token liveness</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;Succ : <a href="/docs/api/namespaces/llvm/#a26e2a938b431eaa6eca2beaa96410c9d">successors</a>(BB)) &#123;</Highlight></CodeLine>
-<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#42;SuccNode = DT.getNode(Succ);</Highlight></CodeLine>
-<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> &#91;LTIt, Inserted&#93; = LiveTokenMap.<a href="/docs/api/classes/llvm/densemapbase/#a1a245b31aced1374f28f45d2b297f402">try&#95;emplace</a>(Succ);</Highlight></CodeLine>
-<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Inserted) &#123;</Highlight></CodeLine>
-<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// We&#39;re the first predecessor: all tokens which dominate the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// successor are live for now.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> LiveToken : LiveTokens) &#123;</Highlight></CodeLine>
-<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!DT.dominates(DT.getNode(LiveToken-&gt;getParent()), SuccNode))</Highlight></CodeLine>
-<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">            </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">          LTIt-&gt;second.push&#95;back(LiveToken);</Highlight></CodeLine>
-<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
-<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">      &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
-<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Compute the intersection of live tokens.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">        </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> It = <a href="/docs/api/namespaces/llvm/#abc14fa925bdbae07ef7bbd16ca82ce3d">llvm::partition</a>(</Highlight></CodeLine>
-<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">            LTIt-&gt;second, &#91;&amp;LiveTokens&#93;(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#a0ea0ad7fef4739e0c788e5122c5e1448">InstructionT</a> &#42;Token) &#123;</Highlight></CodeLine>
-<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">              return llvm::is&#95;contained(LiveTokens, Token);</Highlight></CodeLine>
-<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">            &#125;);</Highlight></CodeLine>
-<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">        LTIt-&gt;second.erase(It, LTIt-&gt;second.end());</Highlight></CodeLine>
-<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;IR&#95;GENERICCONVERGENCEVERIFIERIMPL&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- GenericConvergenceVerifierImpl.h -----------------------&#42;- C++ -&#42;---===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">/// \\file</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">/// A verifier for the static rules of convergence control tokens that works</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">/// with both LLVM IR and MIR.</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightComment">/// This template implementation resides in a separate file so that it does not</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightComment">/// get injected into every .cpp file that includes the generic header.</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightComment">/// DO NOT INCLUDE THIS FILE WHEN MERELY USING CYCLEINFO.</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightComment">/// This file should only be included by files that implement a</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightComment">/// specialization of the relevant templates. Currently these are:</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightComment">/// - llvm/lib/IR/Verifier.cpp</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightComment">/// - llvm/lib/CodeGen/MachineVerifier.cpp</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;IR&#95;GENERICCONVERGENCEVERIFIERIMPL&#95;H</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightPreprocessor">#define LLVM&#95;IR&#95;GENERICCONVERGENCEVERIFIERIMPL&#95;H</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/genericconvergenceverifier-h">llvm/ADT/GenericConvergenceVerifier.h</a>&quot;</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/postorderiterator-h">llvm/ADT/PostOrderIterator.h</a>&quot;</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h">llvm/ADT/Twine.h</a>&quot;</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/intrinsicinst-h">llvm/IR/IntrinsicInst.h</a>&quot;</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34" lineLink="#a2bb73b5d562083dde29e9091dd81bef3"><span class="doxyHighlightPreprocessor">#define Check(C, ...)                                                          \\</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlightPreprocessor">  do &#123;                                                                         \\</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlightPreprocessor">    if (!(C)) &#123;                                                                \\</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlightPreprocessor">      reportFailure(&#95;&#95;VA&#95;ARGS&#95;&#95;);                                              \\</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightPreprocessor">      return;                                                                  \\</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightPreprocessor">    &#125;                                                                          \\</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightPreprocessor">  &#125; while (false)</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42" lineLink="#a2fee20ad578f1c6d3061e37925fe7275"><span class="doxyHighlightPreprocessor">#define CheckOrNull(C, ...)                                                    \\</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlightPreprocessor">  do &#123;                                                                         \\</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlightPreprocessor">    if (!(C)) &#123;                                                                \\</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlightPreprocessor">      reportFailure(&#95;&#95;VA&#95;ARGS&#95;&#95;);                                              \\</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlightPreprocessor">      return &#123;&#125;;                                                               \\</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlightPreprocessor">    &#125;                                                                          \\</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlightPreprocessor">  &#125; while (false)</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51" lineLink="/docs/api/classes/llvm/genericconvergenceverifier/#ae9f8e59fb3ae365c4c016660a893dbc4"><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> ContextT&gt; </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#ae9f8e59fb3ae365c4c016660a893dbc4">GenericConvergenceVerifier&lt;ContextT&gt;::clear</a>() &#123;</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlight">  Tokens.clear();</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlight">  CI.clear();</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlight">  ConvergenceKind = NoConvergence;</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> ContextT&gt;</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58" lineLink="/docs/api/classes/llvm/genericconvergenceverifier/#ac0b5a1f3e83cf95798dc939ba51d4fe4"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#ac0b5a1f3e83cf95798dc939ba51d4fe4">GenericConvergenceVerifier&lt;ContextT&gt;::visit</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#a40c82b0838b9735f74113deb97536f44">BlockT</a> &amp;BB) &#123;</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlight">  SeenFirstConvOp = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> ContextT&gt;</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/classes/llvm/genericconvergenceverifier/#ac7c809ed5719c60771ad3a8b6531eb70"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#ac0b5a1f3e83cf95798dc939ba51d4fe4">GenericConvergenceVerifier&lt;ContextT&gt;::visit</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#a0ea0ad7fef4739e0c788e5122c5e1448">InstructionT</a> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>) &#123;</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlight">  ConvOpKind ConvOp = getConvOp(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> &#42;TokenDef = findAndCheckConvergenceTokenUsed(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">switch</span><span class="doxyHighlight"> (ConvOp) &#123;</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">case</span><span class="doxyHighlight"> CONV&#95;ENTRY:</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(isInsideConvergentFunction(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>),</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Entry intrinsic can occur only in a convergent function.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlight">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>.getParent()-&gt;isEntryBlock(),</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Entry intrinsic can occur only in the entry block.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlight">          &#123;Context.print(&amp;I)&#125;);</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(!SeenFirstConvOp,</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Entry intrinsic cannot be preceded by a convergent operation in the &quot;</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;same basic block.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlight">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlight">    &#91;&#91;fallthrough&#93;&#93;;</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">case</span><span class="doxyHighlight"> CONV&#95;ANCHOR:</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(!TokenDef,</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Entry or anchor intrinsic cannot have a convergencectrl token &quot;</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;operand.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlight">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">break</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">case</span><span class="doxyHighlight"> CONV&#95;LOOP:</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(TokenDef, </span><span class="doxyHighlightStringLiteral">&quot;Loop intrinsic must have a convergencectrl token operand.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlight">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(!SeenFirstConvOp,</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Loop intrinsic cannot be preceded by a convergent operation in the &quot;</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;same basic block.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlight">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">break</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">break</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (ConvOp != CONV&#95;NONE)</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlight">    checkConvergenceTokenProduced(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (isConvergent(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>))</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlight">    SeenFirstConvOp = </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (TokenDef || ConvOp != CONV&#95;NONE) &#123;</span></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(isConvergent(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>),</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Convergence control token can only be used in a convergent call.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><span class="doxyHighlight">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</span></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(ConvergenceKind != UncontrolledConvergence,</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Cannot mix controlled and uncontrolled convergence in the same &quot;</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;function.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlight">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><span class="doxyHighlight">    ConvergenceKind = ControlledConvergence;</span></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlight">  &#125; </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (isConvergent(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)) &#123;</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(ConvergenceKind != ControlledConvergence,</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Cannot mix controlled and uncontrolled convergence in the same &quot;</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;function.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlight">          &#123;Context.print(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)&#125;);</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><span class="doxyHighlight">    ConvergenceKind = UncontrolledConvergence;</span></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> ContextT&gt;</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> GenericConvergenceVerifier&lt;ContextT&gt;::reportFailure(</span></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp;Message, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;Printable&gt;</a> DumpedValues) &#123;</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlight">  FailureCB(Message);</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (OS) &#123;</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> V : DumpedValues)</span></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><span class="doxyHighlight">      &#42;OS &lt;&lt; V &lt;&lt; </span><span class="doxyHighlightCharLiteral">&#39;\\n&#39;</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> ContextT&gt;</span></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133" lineLink="/docs/api/classes/llvm/genericconvergenceverifier/#aa4780afea204d004b4ce95dd76dbca7f"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#aa4780afea204d004b4ce95dd76dbca7f">GenericConvergenceVerifier&lt;ContextT&gt;::verify</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#a100024edbe43ce10b4d5897406e8be92">DominatorTreeT</a> &amp;DT) &#123;</span></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><span class="doxyHighlight">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(Context.getFunction());</span></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = &#42;Context.getFunction();</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;const BlockT &#42;, SmallVector&lt;const InstructionT &#42;, 8&gt;</a>&gt; LiveTokenMap;</span></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;const CycleT &#42;, const InstructionT &#42;&gt;</a> CycleHearts;</span></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Just like the DominatorTree, compute the CycleInfo locally so that we</span></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// can run the verifier outside of a pass manager and we don&#39;t rely on</span></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// potentially out-dated analysis results.</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><span class="doxyHighlight">  CI.compute(</span><span class="doxyHighlightKeyword">const&#95;cast&lt;</span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/genericconvergenceverifier/#a934c31f0eea274fcc8f52665b90ab592">FunctionT</a> &amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>));</span></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> checkToken = &#91;&amp;&#93;(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#a0ea0ad7fef4739e0c788e5122c5e1448">InstructionT</a> &#42;Token, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#a0ea0ad7fef4739e0c788e5122c5e1448">InstructionT</a> &#42;<a href="/docs/api/classes/llvm/user">User</a>,</span></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlight">                        <a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;const InstructionT &#42;&gt;</a> &amp;LiveTokens) &#123;</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(DT.dominates(Token-&gt;getParent(), <a href="/docs/api/classes/llvm/user">User</a>-&gt;getParent()),</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Convergence control token must dominate all its uses.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><span class="doxyHighlight">          &#123;Context.print(Token), Context.print(User)&#125;);</span></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(<a href="/docs/api/namespaces/llvm/#acd1cd968cb420c82d70926920fcdc7d7">llvm::is&#95;contained</a>(LiveTokens, Token),</span></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Convergence region is not well-nested.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><span class="doxyHighlight">          &#123;Context.print(Token), Context.print(<a href="/docs/api/classes/llvm/user">User</a>)&#125;);</span></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">while</span><span class="doxyHighlight"> (LiveTokens.back() != Token)</span></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><span class="doxyHighlight">      LiveTokens.pop&#95;back();</span></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Check static rules about cycles.</span></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> &#42;BB = <a href="/docs/api/classes/llvm/user">User</a>-&gt;getParent();</span></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> &#42;BBCycle = CI.getCycle(BB);</span></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!BBCycle)</span></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> &#42;DefBB = Token-&gt;getParent();</span></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (DefBB == BB || BBCycle-&gt;contains(DefBB)) &#123;</span></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// degenerate occurrence of a loop intrinsic</span></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(getConvOp(&#42;<a href="/docs/api/classes/llvm/user">User</a>) == CONV&#95;LOOP,</span></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Convergence token used by an instruction other than &quot;</span></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;llvm.experimental.convergence.loop in a cycle that does &quot;</span></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;not contain the token&#39;s definition.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><span class="doxyHighlight">          &#123;Context.print(<a href="/docs/api/classes/llvm/user">User</a>), CI.print(BBCycle)&#125;);</span></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">while</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">) &#123;</span></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> &#42;Parent = BBCycle-&gt;getParentCycle();</span></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!Parent || Parent-&gt;contains(DefBB))</span></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">break</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><span class="doxyHighlight">      BBCycle = Parent;</span></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><span class="doxyHighlight">    &#125;;</span></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(BBCycle-&gt;isReducible() &amp;&amp; BB == BBCycle-&gt;getHeader(),</span></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Cycle heart must dominate all blocks in the cycle.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><span class="doxyHighlight">          &#123;Context.print(User), Context.printAsOperand(BB), CI.print(BBCycle)&#125;);</span></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/check">Check</a>(!CycleHearts.<a href="/docs/api/classes/llvm/densemapbase/#a53408c95a7bfb5443b43fb2134c3eb23">count</a>(BBCycle),</span></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Two static convergence token uses in a cycle that does &quot;</span></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;not contain either token&#39;s definition.&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><span class="doxyHighlight">          &#123;Context.print(User), Context.print(CycleHearts&#91;BBCycle&#93;),</span></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><span class="doxyHighlight">           CI.print(BBCycle)&#125;);</span></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><span class="doxyHighlight">    CycleHearts&#91;BBCycle&#93; = <a href="/docs/api/classes/llvm/user">User</a>;</span></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><span class="doxyHighlight">  &#125;;</span></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/reversepostordertraversal">ReversePostOrderTraversal&lt;const FunctionT &#42;&gt;</a> RPOT(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>);</span></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;const InstructionT &#42;, 8&gt;</a> LiveTokens;</span></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> &#42;BB : RPOT) &#123;</span></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><span class="doxyHighlight">    LiveTokens.<a href="/docs/api/classes/llvm/smallvectorimpl/#aac0ea55010b7b1a301e65a0baea057aa">clear</a>();</span></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> LTIt = LiveTokenMap.<a href="/docs/api/classes/llvm/densemapbase/#a0c047f127ed4380a6f383d70bec4eb94">find</a>(BB);</span></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (LTIt != LiveTokenMap.<a href="/docs/api/classes/llvm/densemapbase/#a65520b9c67759099e313d0f4e7b5ff9e">end</a>()) &#123;</span></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><span class="doxyHighlight">      LiveTokens = std::move(LTIt-&gt;second);</span></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><span class="doxyHighlight">      LiveTokenMap.<a href="/docs/api/classes/llvm/densemapbase/#a1eb8504bab5f794778d82db6ac829923">erase</a>(LTIt);</span></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> : &#42;BB) &#123;</span></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> &#42;Token = Tokens.lookup(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>))</span></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><span class="doxyHighlight">        checkToken(Token, &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, LiveTokens);</span></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (getConvOp(<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>) != CONV&#95;NONE)</span></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><span class="doxyHighlight">        LiveTokens.<a href="/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">push&#95;back</a>(&amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>);</span></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Propagate token liveness</span></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> &#42;Succ : <a href="/docs/api/namespaces/llvm/#a26e2a938b431eaa6eca2beaa96410c9d">successors</a>(BB)) &#123;</span></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> &#42;SuccNode = DT.getNode(Succ);</span></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> &#91;LTIt, Inserted&#93; = LiveTokenMap.<a href="/docs/api/classes/llvm/densemapbase/#a1a245b31aced1374f28f45d2b297f402">try&#95;emplace</a>(Succ);</span></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Inserted) &#123;</span></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// We&#39;re the first predecessor: all tokens which dominate the</span></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// successor are live for now.</span></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> LiveToken : LiveTokens) &#123;</span></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!DT.dominates(DT.getNode(LiveToken-&gt;getParent()), SuccNode))</span></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><span class="doxyHighlight">            </span><span class="doxyHighlightKeywordFlow">break</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><span class="doxyHighlight">          LTIt-&gt;second.push&#95;back(LiveToken);</span></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><span class="doxyHighlight">        &#125;</span></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><span class="doxyHighlight">      &#125; </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> &#123;</span></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// Compute the intersection of live tokens.</span></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><span class="doxyHighlight">        </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> It = <a href="/docs/api/namespaces/llvm/#abc14fa925bdbae07ef7bbd16ca82ce3d">llvm::partition</a>(</span></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><span class="doxyHighlight">            LTIt-&gt;second, &#91;&amp;LiveTokens&#93;(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/genericconvergenceverifier/#a0ea0ad7fef4739e0c788e5122c5e1448">InstructionT</a> &#42;Token) &#123;</span></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><span class="doxyHighlight">              return llvm::is&#95;contained(LiveTokens, Token);</span></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><span class="doxyHighlight">            &#125;);</span></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><span class="doxyHighlight">        LTIt-&gt;second.erase(It, LTIt-&gt;second.end());</span></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace llvm</span></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;IR&#95;GENERICCONVERGENCEVERIFIERIMPL&#95;H</span></CodeLine>
 
 </ProgramListing>
 

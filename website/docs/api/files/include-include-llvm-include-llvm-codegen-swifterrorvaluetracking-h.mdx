@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -90,114 +89,114 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- SwiftErrorValueTracking.h - Track swifterror VReg vals --&#42;- C++ -&#42;--===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This implements a limited mem2reg-like analysis to promote uses of function</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// arguments and allocas marked with swiftalloc from memory into virtual</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// registers tracked by this class.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;CODEGEN&#95;SWIFTERRORVALUETRACKING&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;CODEGEN&#95;SWIFTERRORVALUETRACKING&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h">llvm/ADT/DenseMap.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/register-h">llvm/CodeGen/Register.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/basicblock-h">llvm/IR/BasicBlock.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/debugloc-h">llvm/IR/DebugLoc.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;utility&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/function">Function</a>;</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a>;</Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a>;</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a>;</Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a>;</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/targetlowering">TargetLowering</a>;</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34" lineLink="/docs/api/classes/llvm/swifterrorvaluetracking"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/swifterrorvaluetracking">SwiftErrorValueTracking</a> &#123;</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Some useful objects to reduce the number of function arguments needed.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42;MF;</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/function">Function</a> &#42;Fn;</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetlowering">TargetLowering</a> &#42;TLI;</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;TII;</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">  /// A map from swifterror value in a basic block to the virtual register it is</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">  /// currently represented by.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;std::pair&lt;const MachineBasicBlock &#42;, const Value &#42;&gt;</a>, <a href="/docs/api/classes/llvm/register">Register</a>&gt;</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">      VRegDefMap;</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">  /// A list of upward exposed vreg uses that need to be satisfied by either a</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="comment">  /// copy def or a phi node at the beginning of the basic block representing</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="comment">  /// the predecessor(s) swifterror value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;std::pair&lt;const MachineBasicBlock &#42;, const Value &#42;&gt;</a>, <a href="/docs/api/classes/llvm/register">Register</a>&gt;</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">      VRegUpwardsUse;</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">  /// A map from instructions that define/use a swifterror value to the virtual</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">  /// register that represents that def/use.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">llvm::DenseMap&lt;PointerIntPair&lt;const Instruction &#42;, 1, bool&gt;</a>, <a href="/docs/api/classes/llvm/register">Register</a>&gt;</Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">      VRegDefUses;</Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="comment">  /// The swifterror argument of the current function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;SwiftErrorArg;</Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">SwiftErrorValues = <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;const Value&#42;, 1&gt;</a>;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="comment">  /// A function can only have a single swifterror argument. And if it does</Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="comment">  /// have a swifterror argument, it must be the first entry in</Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="comment">  /// SwiftErrorVals.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  SwiftErrorValues SwiftErrorVals;</Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="comment">  /// Initialize data structures for specified new function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a24c5af064959f82c481aa7411748e5db">setFunction</a>(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF);</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="comment">  /// Get the (unique) function argument that was marked swifterror, or nullptr</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">  /// if this function has no swifterror args.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72" lineLink="/docs/api/classes/llvm/swifterrorvaluetracking/#add20888684c8fba171c2fd340a2af117"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/swifterrorvaluetracking/#add20888684c8fba171c2fd340a2af117">getFunctionArg</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> SwiftErrorArg;</Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">  /// Get or create the swifterror value virtual register in</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">  /// VRegDefMap for this basic block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/register">Register</a> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a2ac39142a29cd5b2c98260c7de28550d">getOrCreateVReg</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;);</Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="comment">  /// Set the swifterror virtual register in the VRegDefMap for this</Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// basic block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a66f2e8beece1a113332dbc94eb85f045">setCurrentVReg</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;, <a href="/docs/api/classes/llvm/register">Register</a>);</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  /// Get or create the swifterror value virtual register for a def of a</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="comment">  /// swifterror by an instruction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/register">Register</a> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a92683da838265b16493908a7d40e77da">getOrCreateVRegDefAt</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;,</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">                                </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;);</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">  /// Get or create the swifterror value virtual register for a use of a</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">  /// swifterror by an instruction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/register">Register</a> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a72423412c65ab93787c19457470cf429">getOrCreateVRegUseAt</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;,</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">                                </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;);</Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">  /// Create initial definitions of swifterror values in the entry block of the</Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">  /// current function.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a1c4dd162e1545ca0cecfc65a26a536bb">createEntriesInEntryBlock</a>(<a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> DbgLoc);</Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">  /// Propagate assigned swifterror vregs through a function, synthesizing PHI</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  /// nodes when needed to maintain consistency.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#afc960ff953a4a9d9fbf91baf590222d2">propagateVRegs</a>();</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a7c0e62d20df8bb7c81815f187e1df1eb">preassignVRegs</a>(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/docs/api/classes/llvm/basicblock/#a42a7d51fdde6913db72d098356c2c019">BasicBlock::const&#95;iterator</a> Begin,</Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">                      <a href="/docs/api/classes/llvm/basicblock/#a42a7d51fdde6913db72d098356c2c019">BasicBlock::const&#95;iterator</a> End);</Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- SwiftErrorValueTracking.h - Track swifterror VReg vals --&#42;- C++ -&#42;--===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This implements a limited mem2reg-like analysis to promote uses of function</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">// arguments and allocas marked with swiftalloc from memory into virtual</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">// registers tracked by this class.</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;CODEGEN&#95;SWIFTERRORVALUETRACKING&#95;H</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#define LLVM&#95;CODEGEN&#95;SWIFTERRORVALUETRACKING&#95;H</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h">llvm/ADT/DenseMap.h</a>&quot;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/register-h">llvm/CodeGen/Register.h</a>&quot;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/basicblock-h">llvm/IR/BasicBlock.h</a>&quot;</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/debugloc-h">llvm/IR/DebugLoc.h</a>&quot;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightPreprocessor">#include &lt;utility&gt;</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/function">Function</a>;</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a>;</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a>;</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/machineinstr">MachineInstr</a>;</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a>;</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/targetlowering">TargetLowering</a>;</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34" lineLink="/docs/api/classes/llvm/swifterrorvaluetracking"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/swifterrorvaluetracking">SwiftErrorValueTracking</a> &#123;</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Some useful objects to reduce the number of function arguments needed.</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42;MF;</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/function">Function</a> &#42;Fn;</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/targetlowering">TargetLowering</a> &#42;TLI;</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;TII;</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlightComment">  /// A map from swifterror value in a basic block to the virtual register it is</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlightComment">  /// currently represented by.</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;std::pair&lt;const MachineBasicBlock &#42;, const Value &#42;&gt;</a>, <a href="/docs/api/classes/llvm/register">Register</a>&gt;</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlight">      VRegDefMap;</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlightComment">  /// A list of upward exposed vreg uses that need to be satisfied by either a</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlightComment">  /// copy def or a phi node at the beginning of the basic block representing</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlightComment">  /// the predecessor(s) swifterror value.</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;std::pair&lt;const MachineBasicBlock &#42;, const Value &#42;&gt;</a>, <a href="/docs/api/classes/llvm/register">Register</a>&gt;</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlight">      VRegUpwardsUse;</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlightComment">  /// A map from instructions that define/use a swifterror value to the virtual</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlightComment">  /// register that represents that def/use.</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/densemap">llvm::DenseMap&lt;PointerIntPair&lt;const Instruction &#42;, 1, bool&gt;</a>, <a href="/docs/api/classes/llvm/register">Register</a>&gt;</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlight">      VRegDefUses;</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlightComment">  /// The swifterror argument of the current function.</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;SwiftErrorArg;</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight">SwiftErrorValues = <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;const Value&#42;, 1&gt;</a>;</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlightComment">  /// A function can only have a single swifterror argument. And if it does</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlightComment">  /// have a swifterror argument, it must be the first entry in</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><span class="doxyHighlightComment">  /// SwiftErrorVals.</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlight">  SwiftErrorValues SwiftErrorVals;</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlightComment">  /// Initialize data structures for specified new function.</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a24c5af064959f82c481aa7411748e5db">setFunction</a>(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF);</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlightComment">  /// Get the (unique) function argument that was marked swifterror, or nullptr</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlightComment">  /// if this function has no swifterror args.</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72" lineLink="/docs/api/classes/llvm/swifterrorvaluetracking/#add20888684c8fba171c2fd340a2af117"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/classes/llvm/swifterrorvaluetracking/#add20888684c8fba171c2fd340a2af117">getFunctionArg</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> SwiftErrorArg;</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlightComment">  /// Get or create the swifterror value virtual register in</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlightComment">  /// VRegDefMap for this basic block.</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/register">Register</a> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a2ac39142a29cd5b2c98260c7de28550d">getOrCreateVReg</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;);</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlightComment">  /// Set the swifterror virtual register in the VRegDefMap for this</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlightComment">  /// basic block.</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a66f2e8beece1a113332dbc94eb85f045">setCurrentVReg</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;, <a href="/docs/api/classes/llvm/register">Register</a>);</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlightComment">  /// Get or create the swifterror value virtual register for a def of a</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><span class="doxyHighlightComment">  /// swifterror by an instruction.</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/register">Register</a> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a92683da838265b16493908a7d40e77da">getOrCreateVRegDefAt</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;,</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlight">                                </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;);</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlightComment">  /// Get or create the swifterror value virtual register for a use of a</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlightComment">  /// swifterror by an instruction.</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/register">Register</a> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a72423412c65ab93787c19457470cf429">getOrCreateVRegUseAt</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/instruction">Instruction</a> &#42;, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;,</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlight">                                </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;);</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlightComment">  /// Create initial definitions of swifterror values in the entry block of the</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlightComment">  /// current function.</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a1c4dd162e1545ca0cecfc65a26a536bb">createEntriesInEntryBlock</a>(<a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> DbgLoc);</span></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlightComment">  /// Propagate assigned swifterror vregs through a function, synthesizing PHI</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlightComment">  /// nodes when needed to maintain consistency.</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#afc960ff953a4a9d9fbf91baf590222d2">propagateVRegs</a>();</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/swifterrorvaluetracking/#a7c0e62d20df8bb7c81815f187e1df1eb">preassignVRegs</a>(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/docs/api/classes/llvm/basicblock/#a42a7d51fdde6913db72d098356c2c019">BasicBlock::const&#95;iterator</a> Begin,</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><span class="doxyHighlight">                      <a href="/docs/api/classes/llvm/basicblock/#a42a7d51fdde6913db72d098356c2c019">BasicBlock::const&#95;iterator</a> End);</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
 
 </ProgramListing>
 

@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -113,435 +112,435 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- Cloning.h - Clone various parts of LLVM programs ---------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file defines various functions that are used to clone chunks of LLVM</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// code for various purposes.  This varies from copying whole modules into new</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// modules, to cloning functions with different arguments, to inlining</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// functions, to copying basic blocks to support loop unrolling or superblock</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// formation, etc.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;TRANSFORMS&#95;UTILS&#95;CLONING&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;TRANSFORMS&#95;UTILS&#95;CLONING&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h">llvm/ADT/Twine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/assumptioncache-h">llvm/Analysis/AssumptionCache.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlinecost-h">llvm/Analysis/InlineCost.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/basicblock-h">llvm/IR/BasicBlock.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/valuehandle-h">llvm/IR/ValueHandle.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/valuemapper-h">llvm/Transforms/Utils/ValueMapper.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;functional&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;memory&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;vector&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/aaresults">AAResults</a>;</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/allocainst">AllocaInst</a>;</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/basicblock">BasicBlock</a>;</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a>;</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/debuginfofinder">DebugInfoFinder</a>;</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a>;</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/function">Function</a>;</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/instruction">Instruction</a>;</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/loop">Loop</a>;</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a>;</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/module">Module</a>;</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/pgocontextualprofile">PGOContextualProfile</a>;</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a>;</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/returninst">ReturnInst</a>;</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a>;</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="comment">/// Return an exact copy of the specified module</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">std::unique&#95;ptr&lt;Module&gt; <a href="/docs/api/namespaces/llvm/#ae13b67a51d9f8061d598e82272b79b80">CloneModule</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/module">Module</a> &amp;M);</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">std::unique&#95;ptr&lt;Module&gt; <a href="/docs/api/namespaces/llvm/#ae13b67a51d9f8061d598e82272b79b80">CloneModule</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap);</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">/// Return a copy of the specified module. The ShouldCloneDefinition function</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="comment">/// controls whether a specific GlobalValue&#39;s definition is cloned. If the</Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="comment">/// function returns false, the module copy will contain an external reference</Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="comment">/// in place of the global definition.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">std::unique&#95;ptr&lt;Module&gt;</Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#ae13b67a51d9f8061d598e82272b79b80">CloneModule</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap,</Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">            <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt;</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/globalvalue">GlobalValue</a> &#42;)&gt; ShouldCloneDefinition);</Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="comment">/// This struct can be used to capture information about code</Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="comment">/// being cloned, while it is being cloned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/structs/llvm/clonedcodeinfo"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/clonedcodeinfo/#a2dc783e12bddecb56ec6125a6e71ca2d">ClonedCodeInfo</a> &#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="comment">  /// This is set to true if the cloned code contains a normal call instruction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#a6bbe5e652464ac9213907e3446874900"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/clonedcodeinfo/#a6bbe5e652464ac9213907e3446874900">ContainsCalls</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="comment">  /// This is set to true if there is memprof related metadata (memprof or</Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="comment">  /// callsite metadata) in the cloned code.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#a94c735687f007da4731abf87dc9fd8e5"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/clonedcodeinfo/#a94c735687f007da4731abf87dc9fd8e5">ContainsMemProfMetadata</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">  /// This is set to true if the cloned code contains a &#39;dynamic&#39; alloca.</Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">  /// Dynamic allocas are allocas that are either not in the entry block or they</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="comment">  /// are in the entry block but are not a constant size.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#a2eea9c7c9cadaa593a7a71c8d44aac25"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/clonedcodeinfo/#a2eea9c7c9cadaa593a7a71c8d44aac25">ContainsDynamicAllocas</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">  /// All cloned call sites that have operand bundles attached are appended to</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">  /// this vector.  This vector may contain nulls or undefs if some of the</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="comment">  /// originally inserted callsites were DCE&#39;ed after they were cloned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#aee51f754e9da74f168cd4d12e1eb5c7b"><Highlight kind="normal">  std::vector&lt;WeakTrackingVH&gt; <a href="/docs/api/structs/llvm/clonedcodeinfo/#aee51f754e9da74f168cd4d12e1eb5c7b">OperandBundleCallSites</a>;</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// Like VMap, but maps only unsimplified instructions. Values in the map</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">  /// may be dangling, it is only intended to be used via isSimplified(), to</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">  /// check whether the main VMap mapping involves simplification or not.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#ad8a5535c2cc3a16e630cc54aeb988f03"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;const Value &#42;, const Value &#42;&gt;</a> <a href="/docs/api/structs/llvm/clonedcodeinfo/#ad8a5535c2cc3a16e630cc54aeb988f03">OrigVMap</a>;</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#a2dc783e12bddecb56ec6125a6e71ca2d"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/clonedcodeinfo/#a2dc783e12bddecb56ec6125a6e71ca2d">ClonedCodeInfo</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#a6711ec71d15ab34fb6eedc26d5b5da80"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/clonedcodeinfo/#a6711ec71d15ab34fb6eedc26d5b5da80">isSimplified</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;From, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;To)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/clonedcodeinfo/#ad8a5535c2cc3a16e630cc54aeb988f03">OrigVMap</a>.lookup(From) != To;</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="comment">/// Return a copy of the specified basic block, but without</Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">/// embedding the block into a particular function.  The block returned is an</Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">/// exact copy of the specified basic block, without any remapping having been</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="comment">/// performed.  Because of this, this is only suitable for applications where</Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">/// the basic block will be inserted into the same function that it was cloned</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">/// from (loop unrolling would use this, for example).</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">/// Also, note that this function makes a direct copy of the basic block, and</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="comment">/// can thus produce illegal LLVM code.  In particular, it will copy any PHI</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">/// nodes from the original block, even though there are no predecessors for the</Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="comment">/// newly cloned block (thus, phi nodes will have to be updated).  Also, this</Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="comment">/// block will branch to the old successors of the original block: these</Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">/// successors will have to have any PHI nodes updated to account for the new</Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">/// incoming edges.</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="comment">/// The correlation between instructions in the source and result basic blocks</Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="comment">/// is recorded in the VMap map.</Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">/// If you have a particular suffix you&#39;d like to use to add to any cloned</Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">/// names, specify it as the optional third parameter.</Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">/// If you would like the basic block to be auto-inserted into the end of a</Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">/// function, you can specify it as the optional fourth parameter.</Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">/// If you would like to collect additional information about the cloned</Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="comment">/// function, you can specify a ClonedCodeInfo object with the optional fifth</Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">/// parameter.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">BasicBlock &#42;<a href="/docs/api/namespaces/llvm/#aa1c8d384f90fc9d69d7fcdf920138cf2">CloneBasicBlock</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> BasicBlock &#42;BB, <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap,</Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">                            </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Twine &amp;NameSuffix = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">, Function &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">                            ClonedCodeInfo &#42;CodeInfo = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="comment">/// Return a copy of the specified function and add it to that</Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">/// function&#39;s module.  Also, any references specified in the VMap are changed</Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="comment">/// to refer to their mapped value instead of the original one.  If any of the</Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="comment">/// arguments to the function are in the VMap, the arguments are deleted from</Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="comment">/// the resultant function.  The VMap is updated to include mappings from all of</Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="comment">/// the instructions and basicblocks in the function from their old to new</Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="comment">/// values.  The final argument captures information about the cloned code if</Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="comment">/// non-null.</Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">/// \\pre VMap contains no non-identity GlobalValue mappings.</Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">Function &#42;<a href="/docs/api/namespaces/llvm/#aedeb89fa4ceb608d9d49bcd53ddcd2c1">CloneFunction</a>(Function &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap,</Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">                        ClonedCodeInfo &#42;CodeInfo = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138" lineLink="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30a"><Highlight kind="normal"></Highlight><Highlight kind="keyword">enum class</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30a">CloneFunctionChangeType</a> &#123;</Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139" lineLink="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aa68b46a44773674a07e6730fac74fc46b"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aa68b46a44773674a07e6730fac74fc46b">LocalChangesOnly</a>,</Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140" lineLink="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aaf8a2344584759e9392a20bf44e9e0d1c"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aaf8a2344584759e9392a20bf44e9e0d1c">GlobalChanges</a>,</Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141" lineLink="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aa1e500d8286088d431dc693a52a29d6aa"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aa1e500d8286088d431dc693a52a29d6aa">DifferentModule</a>,</Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142" lineLink="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aaf0d5faa20364ccfc550a2eb37254e7d9"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aaf0d5faa20364ccfc550a2eb37254e7d9">ClonedModule</a>,</Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="comment">/// Clone OldFunc into NewFunc, transforming the old arguments into references</Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="comment">/// to VMap values.  Note that if NewFunc already has basic blocks, the ones</Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="comment">/// cloned into it will be added to the end of the function.  This function</Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="comment">/// fills in a list of return instructions, and can optionally remap types</Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="comment">/// and/or append the specified suffix to all values cloned.</Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="comment">/// If \\p Changes is \\a CloneFunctionChangeType::LocalChangesOnly, VMap is</Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="comment">/// required to contain no non-identity GlobalValue mappings. Otherwise,</Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="comment">/// referenced metadata will be cloned.</Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="comment">/// If \\p Changes is less than \\a CloneFunctionChangeType::DifferentModule</Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="comment">/// indicating cloning into the same module (even if it&#39;s LocalChangesOnly), if</Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="comment">/// debug info metadata transitively references a \\a DISubprogram, it will be</Highlight></CodeLine>
-<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="comment">/// cloned, effectively upgrading \\p Changes to GlobalChanges while suppressing</Highlight></CodeLine>
-<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="comment">/// cloning of types and compile units.</Highlight></CodeLine>
-<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="comment">/// If \\p Changes is \\a CloneFunctionChangeType::DifferentModule, the new</Highlight></CodeLine>
-<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="comment">/// module&#39;s \\c !llvm.dbg.cu will get updated with any newly created compile</Highlight></CodeLine>
-<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="comment">/// units. (\\a CloneFunctionChangeType::ClonedModule leaves that work for the</Highlight></CodeLine>
-<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="comment">/// caller.)</Highlight></CodeLine>
-<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="comment">/// FIXME: Consider simplifying this function by splitting out \\a</Highlight></CodeLine>
-<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="comment">/// CloneFunctionMetadataInto() and expecting / updating callers to call it</Highlight></CodeLine>
-<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="comment">/// first when / how it&#39;s needed.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ac1b2be839460bb277d4f07f4aa5225ac">CloneFunctionInto</a>(Function &#42;NewFunc, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Function &#42;OldFunc,</Highlight></CodeLine>
-<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">                       <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap, <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30a">CloneFunctionChangeType</a> Changes,</Highlight></CodeLine>
-<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">                       SmallVectorImpl&lt;ReturnInst &#42;&gt; &amp;Returns,</Highlight></CodeLine>
-<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">                       </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;NameSuffix = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">                       ClonedCodeInfo &#42;CodeInfo = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">                       ValueMapTypeRemapper &#42;TypeMapper = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">                       ValueMaterializer &#42;Materializer = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="comment">/// Clone OldFunc&#39;s attributes into NewFunc, transforming values based on the</Highlight></CodeLine>
-<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="comment">/// mappings in VMap.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a0a9ae7045e9bc2bab2a756c683a24f45">CloneFunctionAttributesInto</a>(Function &#42;NewFunc, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Function &#42;OldFunc,</Highlight></CodeLine>
-<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">                                 <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap,</Highlight></CodeLine>
-<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">                                 </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> ModuleLevelChanges,</Highlight></CodeLine>
-<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">                                 ValueMapTypeRemapper &#42;TypeMapper = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">                                 ValueMaterializer &#42;Materializer = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="comment">/// Clone OldFunc&#39;s metadata into NewFunc.</Highlight></CodeLine>
-<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="comment">/// The caller is expected to populate \\p VMap beforehand and set an appropriate</Highlight></CodeLine>
-<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="comment">/// \\p RemapFlag. Subprograms/CUs/types that were already mapped to themselves</Highlight></CodeLine>
-<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="comment">/// won&#39;t be duplicated.</Highlight></CodeLine>
-<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="comment">/// NOTE: This function doesn&#39;t clone !llvm.dbg.cu when cloning into a different</Highlight></CodeLine>
-<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="comment">/// module. Use CloneFunctionInto for that behavior.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9d39db97de33dc64cd40be3d37fc8ed9">CloneFunctionMetadataInto</a>(Function &amp;NewFunc, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Function &amp;OldFunc,</Highlight></CodeLine>
-<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">                               <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap, RemapFlags RemapFlag,</Highlight></CodeLine>
-<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">                               ValueMapTypeRemapper &#42;TypeMapper = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">                               ValueMaterializer &#42;Materializer = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">                               </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a91897d2d0da113b016f14ae110586ab1">MetadataSetTy</a> &#42;IdentityMD = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="comment">/// Clone OldFunc&#39;s body into NewFunc.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#af97d9ff977792ae671987a9a95f942f2">CloneFunctionBodyInto</a>(Function &amp;NewFunc, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Function &amp;OldFunc,</Highlight></CodeLine>
-<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">                           <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap, RemapFlags RemapFlag,</Highlight></CodeLine>
-<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">                           SmallVectorImpl&lt;ReturnInst &#42;&gt; &amp;Returns,</Highlight></CodeLine>
-<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">                           </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;NameSuffix = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">                           ClonedCodeInfo &#42;CodeInfo = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">                           ValueMapTypeRemapper &#42;TypeMapper = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">                           ValueMaterializer &#42;Materializer = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">                           </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a91897d2d0da113b016f14ae110586ab1">MetadataSetTy</a> &#42;IdentityMD = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ae1a030c9a70b99fced16cc726e1ef9f9">CloneAndPruneIntoFromInst</a>(Function &#42;NewFunc, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Function &#42;OldFunc,</Highlight></CodeLine>
-<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">                               </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Instruction &#42;StartingInst,</Highlight></CodeLine>
-<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">                               <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> ModuleLevelChanges,</Highlight></CodeLine>
-<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">                               SmallVectorImpl&lt;ReturnInst &#42;&gt; &amp;Returns,</Highlight></CodeLine>
-<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">                               </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;NameSuffix = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">                               ClonedCodeInfo &#42;CodeInfo = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="comment">/// This works exactly like CloneFunctionInto,</Highlight></CodeLine>
-<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="comment">/// except that it does some simple constant prop and DCE on the fly.  The</Highlight></CodeLine>
-<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="comment">/// effect of this is to copy significantly less code in cases where (for</Highlight></CodeLine>
-<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="comment">/// example) a function call with constant arguments is inlined, and those</Highlight></CodeLine>
-<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="comment">/// constant arguments cause a significant amount of code in the callee to be</Highlight></CodeLine>
-<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="comment">/// dead.  Since this doesn&#39;t produce an exactly copy of the input, it can&#39;t be</Highlight></CodeLine>
-<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="comment">/// used for things like CloneFunction or CloneModule.</Highlight></CodeLine>
-<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="comment">/// If ModuleLevelChanges is false, VMap contains no non-identity GlobalValue</Highlight></CodeLine>
-<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="comment">/// mappings.</Highlight></CodeLine>
-<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a7a6386c071e1087512cdc8a4071a02b5">CloneAndPruneFunctionInto</a>(Function &#42;NewFunc, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Function &#42;OldFunc,</Highlight></CodeLine>
-<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">                               <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> ModuleLevelChanges,</Highlight></CodeLine>
-<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">                               SmallVectorImpl&lt;ReturnInst&#42;&gt; &amp;Returns,</Highlight></CodeLine>
-<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">                               </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;NameSuffix = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">                               ClonedCodeInfo &#42;CodeInfo = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="comment">/// Collect debug information such as types, compile units, and other</Highlight></CodeLine>
-<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="comment">/// subprograms that are reachable from \\p F and can be considered global for</Highlight></CodeLine>
-<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="comment">/// the purposes of cloning (and hence not needing to be cloned).</Highlight></CodeLine>
-<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="comment">/// What debug information should be processed depends on \\p Changes: when</Highlight></CodeLine>
-<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="comment">/// cloning into the same module we process \\p F&#39;s subprogram and instructions;</Highlight></CodeLine>
-<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="comment">/// when into a cloned module, neither of those.</Highlight></CodeLine>
-<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="comment">/// Returns DISubprogram of the cloned function when cloning into the same</Highlight></CodeLine>
-<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="comment">/// module or nullptr otherwise.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">DISubprogram &#42;<a href="/docs/api/namespaces/llvm/#ad9d4e85b3abfbf1a3dd8a7fd45057cce">CollectDebugInfoForCloning</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Function &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>,</Highlight></CodeLine>
-<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">                                         <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30a">CloneFunctionChangeType</a> Changes,</Highlight></CodeLine>
-<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">                                         DebugInfoFinder &amp;DIFinder);</Highlight></CodeLine>
-<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="comment">/// Based on \\p Changes and \\p DIFinder return debug info that needs to be</Highlight></CodeLine>
-<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="comment">/// identity mapped during Metadata cloning.</Highlight></CodeLine>
-<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="comment">/// NOTE: Such \\a MetadataSetTy can be used by \\a CloneFunction&#42; to directly</Highlight></CodeLine>
-<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="comment">/// specify metadata that should be identity mapped (and hence not cloned). The</Highlight></CodeLine>
-<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="comment">/// metadata will be identity mapped in \\a ValueToValueMapTy on first use. There</Highlight></CodeLine>
-<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="comment">/// are several reasons for doing it this way rather than eagerly identity</Highlight></CodeLine>
-<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="comment">/// mapping metadata nodes in a \\a ValueMap:</Highlight></CodeLine>
-<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="comment">/// 1 Mapping metadata is not cheap, particularly because of tracking.</Highlight></CodeLine>
-<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="comment">/// 2 When cloning a Function we identity map lots of global module-level</Highlight></CodeLine>
-<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="comment">///    metadata to avoid cloning it, while only a fraction of it is actually</Highlight></CodeLine>
-<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="comment">///    used by the function. Mapping on first use is a lot faster for modules</Highlight></CodeLine>
-<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="comment">///    with meaningful amount of debug info.</Highlight></CodeLine>
-<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="comment">/// 3 Eagerly identity mapping metadata makes it harder to cache module-level</Highlight></CodeLine>
-<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="comment">///    data (e.g. a set of metadata nodes in a \\a DICompileUnit).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a91897d2d0da113b016f14ae110586ab1">MetadataSetTy</a> <a href="/docs/api/namespaces/llvm/#a954c742913f42266852b86ca04547929">FindDebugInfoToIdentityMap</a>(<a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30a">CloneFunctionChangeType</a> Changes,</Highlight></CodeLine>
-<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">                                         DebugInfoFinder &amp;DIFinder,</Highlight></CodeLine>
-<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">                                         DISubprogram &#42;SPClonedWithinModule);</Highlight></CodeLine>
-<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="comment">/// This class captures the data input to the InlineFunction call, and records</Highlight></CodeLine>
-<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="comment">/// the auxiliary results produced by it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00268" /><CodeLine lineNumber="268" lineLink="/docs/api/classes/llvm/inlinefunctioninfo"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/inlinefunctioninfo/#aceae3b1baa2bc3708ab3e793dd74a7cb">InlineFunctionInfo</a> &#123;</Highlight></CodeLine>
-<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00270" /><CodeLine lineNumber="270" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#aceae3b1baa2bc3708ab3e793dd74a7cb"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#aceae3b1baa2bc3708ab3e793dd74a7cb">InlineFunctionInfo</a>(</Highlight></CodeLine>
-<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt;<a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &amp;(<a href="/docs/api/classes/llvm/function">Function</a> &amp;)&gt; <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a6d3c3f9f13bd38d8aa6410841d2b99c0">GetAssumptionCache</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42;<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a200d08643d2038b04aa16716e8cd154b">PSI</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> &#42;<a href="/docs/api/classes/llvm/inlinefunctioninfo/#ad01658587132e4b44ba8414b3a87fde5">CallerBFI</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> &#42;<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a82c69d5928263cabdebf13ea93008be4">CalleeBFI</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a2479f3ea47eee2627b24bddfa6333415">UpdateProfile</a> = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
-<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">      : <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a6d3c3f9f13bd38d8aa6410841d2b99c0">GetAssumptionCache</a>(<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a6d3c3f9f13bd38d8aa6410841d2b99c0">GetAssumptionCache</a>), <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a200d08643d2038b04aa16716e8cd154b">PSI</a>(<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a200d08643d2038b04aa16716e8cd154b">PSI</a>), <a href="/docs/api/classes/llvm/inlinefunctioninfo/#ad01658587132e4b44ba8414b3a87fde5">CallerBFI</a>(<a href="/docs/api/classes/llvm/inlinefunctioninfo/#ad01658587132e4b44ba8414b3a87fde5">CallerBFI</a>),</Highlight></CodeLine>
-<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal">        <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a82c69d5928263cabdebf13ea93008be4">CalleeBFI</a>(<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a82c69d5928263cabdebf13ea93008be4">CalleeBFI</a>), <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a2479f3ea47eee2627b24bddfa6333415">UpdateProfile</a>(<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a2479f3ea47eee2627b24bddfa6333415">UpdateProfile</a>) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="comment">  /// If non-null, InlineFunction will update the callgraph to reflect the</Highlight></CodeLine>
-<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="comment">  /// changes it makes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00280" /><CodeLine lineNumber="280" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#a6d3c3f9f13bd38d8aa6410841d2b99c0"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt;<a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &amp;(<a href="/docs/api/classes/llvm/function">Function</a> &amp;)&gt; <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a6d3c3f9f13bd38d8aa6410841d2b99c0">GetAssumptionCache</a>;</Highlight></CodeLine>
-<Link id="l00281" /><CodeLine lineNumber="281" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#a200d08643d2038b04aa16716e8cd154b"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42;<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a200d08643d2038b04aa16716e8cd154b">PSI</a>;</Highlight></CodeLine>
-<Link id="l00282" /><CodeLine lineNumber="282" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#a82c69d5928263cabdebf13ea93008be4"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> &#42;<a href="/docs/api/classes/llvm/inlinefunctioninfo/#ad01658587132e4b44ba8414b3a87fde5">CallerBFI</a>, &#42;<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a82c69d5928263cabdebf13ea93008be4">CalleeBFI</a>;</Highlight></CodeLine>
-<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="comment">  /// InlineFunction fills this in with all static allocas that get copied into</Highlight></CodeLine>
-<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="comment">  /// the caller.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00286" /><CodeLine lineNumber="286" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#a9c259c76065eb3b4ce3697ce346008ce"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;AllocaInst &#42;, 4&gt;</a> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a9c259c76065eb3b4ce3697ce346008ce">StaticAllocas</a>;</Highlight></CodeLine>
-<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="comment">  /// InlineFunction fills this in with callsites that were inlined from the</Highlight></CodeLine>
-<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="comment">  /// callee. This is only filled in if CG is non-null.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00290" /><CodeLine lineNumber="290" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#ae6918eedce7edea74c67aa164a7d198d"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;WeakTrackingVH, 8&gt;</a> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#ae6918eedce7edea74c67aa164a7d198d">InlinedCalls</a>;</Highlight></CodeLine>
-<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="comment">  /// All of the new call sites inlined into the caller.</Highlight></CodeLine>
-<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="comment">  /// &#39;InlineFunction&#39; fills this in by scanning the inlined instructions, and</Highlight></CodeLine>
-<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="comment">  /// only if CG is null. If CG is non-null, instead the value handle</Highlight></CodeLine>
-<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="comment">  /// &#96;InlinedCalls&#96; above is used.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00297" /><CodeLine lineNumber="297" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#afee77c39305987451e9495b749863d07"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;CallBase &#42;, 8&gt;</a> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#afee77c39305987451e9495b749863d07">InlinedCallSites</a>;</Highlight></CodeLine>
-<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="comment">  /// Update profile for callee as well as cloned version. We need to do this</Highlight></CodeLine>
-<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="comment">  /// for regular inlining, but not for inlining from sample profile loader.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00301" /><CodeLine lineNumber="301" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#a2479f3ea47eee2627b24bddfa6333415"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a2479f3ea47eee2627b24bddfa6333415">UpdateProfile</a>;</Highlight></CodeLine>
-<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00303" /><CodeLine lineNumber="303" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#acbbc7320e82682aed3c325a08b187a2f"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#acbbc7320e82682aed3c325a08b187a2f">reset</a>() &#123;</Highlight></CodeLine>
-<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a9c259c76065eb3b4ce3697ce346008ce">StaticAllocas</a>.clear();</Highlight></CodeLine>
-<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/inlinefunctioninfo/#ae6918eedce7edea74c67aa164a7d198d">InlinedCalls</a>.clear();</Highlight></CodeLine>
-<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/inlinefunctioninfo/#afee77c39305987451e9495b749863d07">InlinedCallSites</a>.clear();</Highlight></CodeLine>
-<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="comment">/// This function inlines the called function into the basic</Highlight></CodeLine>
-<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="comment">/// block of the caller.  This returns false if it is not possible to inline</Highlight></CodeLine>
-<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="comment">/// this call.  The program is still in a well defined state if this occurs</Highlight></CodeLine>
-<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="comment">/// though.</Highlight></CodeLine>
-<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="comment">/// Note that this only does one level of inlining.  For example, if the</Highlight></CodeLine>
-<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="comment">/// instruction &#39;call B&#39; is inlined, and &#39;B&#39; calls &#39;C&#39;, then the call to &#39;C&#39; now</Highlight></CodeLine>
-<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="comment">/// exists in the instruction stream.  Similarly this will inline a recursive</Highlight></CodeLine>
-<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="comment">/// function by one level.</Highlight></CodeLine>
-<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="comment">/// Note that while this routine is allowed to cleanup and optimize the</Highlight></CodeLine>
-<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="comment">/// &#42;inlined&#42; code to minimize the actual inserted code, it must not delete</Highlight></CodeLine>
-<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="comment">/// code in the caller as users of this routine may have pointers to</Highlight></CodeLine>
-<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="comment">/// instructions in the caller that need to remain stable.</Highlight></CodeLine>
-<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="comment">/// If ForwardVarArgsTo is passed, inlining a function with varargs is allowed</Highlight></CodeLine>
-<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="comment">/// and all varargs at the callsite will be passed to any calls to</Highlight></CodeLine>
-<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="comment">/// ForwardVarArgsTo. The caller of InlineFunction has to make sure any varargs</Highlight></CodeLine>
-<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="comment">/// are only used by ForwardVarArgsTo.</Highlight></CodeLine>
-<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="comment">/// The callee&#39;s function attributes are merged into the callers&#39; if</Highlight></CodeLine>
-<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="comment">/// MergeAttributes is set to true.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal">InlineResult <a href="/docs/api/namespaces/llvm/#ab5a3ac0a249da0743dac1bd816d8e5d5">InlineFunction</a>(CallBase &amp;CB, InlineFunctionInfo &amp;IFI,</Highlight></CodeLine>
-<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal">                            </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> MergeAttributes = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">                            AAResults &#42;CalleeAAR = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">                            </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> InsertLifetime = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal">                            Function &#42;ForwardVarArgsTo = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="comment">/// Same as above, but it will update the contextual profile. If the contextual</Highlight></CodeLine>
-<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="comment">/// profile is invalid (i.e. not loaded because it is not present), it defaults</Highlight></CodeLine>
-<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="comment">/// to the behavior of the non-contextual profile updating variant above. This</Highlight></CodeLine>
-<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="comment">/// makes it easy to drop-in replace uses of the non-contextual overload.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="normal">InlineResult <a href="/docs/api/namespaces/llvm/#ab5a3ac0a249da0743dac1bd816d8e5d5">InlineFunction</a>(CallBase &amp;CB, InlineFunctionInfo &amp;IFI,</Highlight></CodeLine>
-<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="normal">                            PGOContextualProfile &amp;CtxProf,</Highlight></CodeLine>
-<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal">                            </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> MergeAttributes = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal">                            AAResults &#42;CalleeAAR = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal">                            </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> InsertLifetime = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">                            Function &#42;ForwardVarArgsTo = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="comment">/// Clones a loop \\p OrigLoop.  Returns the loop and the blocks in \\p</Highlight></CodeLine>
-<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="comment">/// Blocks.</Highlight></CodeLine>
-<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="comment">/// Updates LoopInfo and DominatorTree assuming the loop is dominated by block</Highlight></CodeLine>
-<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="comment">/// \\p LoopDomBB.  Insert the new blocks before block specified in \\p Before.</Highlight></CodeLine>
-<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="comment">/// Note: Only innermost loops are supported.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal">Loop &#42;<a href="/docs/api/namespaces/llvm/#a6f244e1d6d34701da1f29d3a762974fd">cloneLoopWithPreheader</a>(BasicBlock &#42;<a href="/docs/api/files/lib/lib/passes/standardinstrumentations-cpp/#a6f1bbcae7288f05872dcfe811d0388baa9060587edeb01a63e3d3edc959678d1e">Before</a>, BasicBlock &#42;LoopDomBB,</Highlight></CodeLine>
-<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal">                             Loop &#42;OrigLoop, <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap,</Highlight></CodeLine>
-<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="normal">                             </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Twine &amp;NameSuffix, LoopInfo &#42;LI,</Highlight></CodeLine>
-<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal">                             DominatorTree &#42;DT,</Highlight></CodeLine>
-<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="normal">                             SmallVectorImpl&lt;BasicBlock &#42;&gt; &amp;Blocks);</Highlight></CodeLine>
-<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="comment">/// Remaps instructions in \\p Blocks using the mapping in \\p VMap.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ab8ec5c940fbc440c992716fbe4a48636">remapInstructionsInBlocks</a>(ArrayRef&lt;BasicBlock &#42;&gt; Blocks,</Highlight></CodeLine>
-<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal">                               <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap);</Highlight></CodeLine>
-<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="comment">/// Split edge between BB and PredBB and duplicate all non-Phi instructions</Highlight></CodeLine>
-<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="comment">/// from BB between its beginning and the StopAt instruction into the split</Highlight></CodeLine>
-<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="comment">/// block. Phi nodes are not duplicated, but their uses are handled correctly:</Highlight></CodeLine>
-<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="comment">/// we replace them with the uses of corresponding Phi inputs. ValueMapping</Highlight></CodeLine>
-<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="comment">/// is used to map the original instructions from BB to their newly-created</Highlight></CodeLine>
-<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="comment">/// copies. Returns the split block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal">BasicBlock &#42;<a href="/docs/api/namespaces/llvm/#a4cd89ca702a817aac3a4521dd2462a2e">DuplicateInstructionsInSplitBetween</a>(BasicBlock &#42;BB,</Highlight></CodeLine>
-<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">                                                BasicBlock &#42;PredBB,</Highlight></CodeLine>
-<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="normal">                                                Instruction &#42;StopAt,</Highlight></CodeLine>
-<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="normal">                                                <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;ValueMapping,</Highlight></CodeLine>
-<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal">                                                DomTreeUpdater &amp;DTU);</Highlight></CodeLine>
-<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="comment">/// Updates profile information by adjusting the entry count by adding</Highlight></CodeLine>
-<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="comment">/// EntryDelta then scaling callsite information by the new count divided by the</Highlight></CodeLine>
-<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="comment">/// old count. VMap is used during inlinng to also update the new clone</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aa7cd2cc36098475563ad0fd3371df2a6">updateProfileCallee</a>(</Highlight></CodeLine>
-<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal">    Function &#42;Callee, int64&#95;t EntryDelta,</Highlight></CodeLine>
-<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ValueMap&lt;const Value &#42;, WeakTrackingVH&gt; &#42;VMap = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00384" /><CodeLine lineNumber="384"><Highlight kind="comment">/// Find the &#39;llvm.experimental.noalias.scope.decl&#39; intrinsics in the specified</Highlight></CodeLine>
-<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="comment">/// basic blocks and extract their scope. These are candidates for duplication</Highlight></CodeLine>
-<Link id="l00386" /><CodeLine lineNumber="386"><Highlight kind="comment">/// when cloning.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ade9551bcb1121539a279452fec71f9eb">identifyNoAliasScopesToClone</a>(</Highlight></CodeLine>
-<Link id="l00388" /><CodeLine lineNumber="388"><Highlight kind="normal">    ArrayRef&lt;BasicBlock &#42;&gt; BBs, SmallVectorImpl&lt;MDNode &#42;&gt; &amp;NoAliasDeclScopes);</Highlight></CodeLine>
-<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00390" /><CodeLine lineNumber="390"><Highlight kind="comment">/// Find the &#39;llvm.experimental.noalias.scope.decl&#39; intrinsics in the specified</Highlight></CodeLine>
-<Link id="l00391" /><CodeLine lineNumber="391"><Highlight kind="comment">/// instruction range and extract their scope. These are candidates for</Highlight></CodeLine>
-<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="comment">/// duplication when cloning.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ade9551bcb1121539a279452fec71f9eb">identifyNoAliasScopesToClone</a>(</Highlight></CodeLine>
-<Link id="l00394" /><CodeLine lineNumber="394"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> Start, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> End,</Highlight></CodeLine>
-<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="normal">    SmallVectorImpl&lt;MDNode &#42;&gt; &amp;NoAliasDeclScopes);</Highlight></CodeLine>
-<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00397" /><CodeLine lineNumber="397"><Highlight kind="comment">/// Duplicate the specified list of noalias decl scopes.</Highlight></CodeLine>
-<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="comment">/// The &#39;Ext&#39; string is added as an extension to the name.</Highlight></CodeLine>
-<Link id="l00399" /><CodeLine lineNumber="399"><Highlight kind="comment">/// Afterwards, the ClonedScopes contains the mapping of the original scope</Highlight></CodeLine>
-<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="comment">/// MDNode onto the cloned scope.</Highlight></CodeLine>
-<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="comment">/// Be aware that the cloned scopes are still part of the original scope domain.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a8eade0f2933d0684681065b3960122e2">cloneNoAliasScopes</a>(</Highlight></CodeLine>
-<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef&lt;MDNode &#42;&gt;</a> NoAliasDeclScopes,</Highlight></CodeLine>
-<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="normal">    DenseMap&lt;MDNode &#42;, MDNode &#42;&gt; &amp;ClonedScopes,</Highlight></CodeLine>
-<Link id="l00405" /><CodeLine lineNumber="405"><Highlight kind="normal">    StringRef Ext, LLVMContext &amp;Context);</Highlight></CodeLine>
-<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="comment">/// Adapt the metadata for the specified instruction according to the</Highlight></CodeLine>
-<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="comment">/// provided mapping. This is normally used after cloning an instruction, when</Highlight></CodeLine>
-<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="comment">/// some noalias scopes needed to be cloned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ab1c40e35dfc36395c37921107003128b">adaptNoAliasScopes</a>(</Highlight></CodeLine>
-<Link id="l00411" /><CodeLine lineNumber="411"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/instruction">llvm::Instruction</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> DenseMap&lt;MDNode &#42;, MDNode &#42;&gt; &amp;ClonedScopes,</Highlight></CodeLine>
-<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="normal">    LLVMContext &amp;Context);</Highlight></CodeLine>
-<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="comment">/// Clone the specified noalias decl scopes. Then adapt all instructions in the</Highlight></CodeLine>
-<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="comment">/// NewBlocks basicblocks to the cloned versions.</Highlight></CodeLine>
-<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="comment">/// &#39;Ext&#39; will be added to the duplicate scope names.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00417" /><CodeLine lineNumber="417"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ab7abd0e34c17dcb201a4138dc65cc067">cloneAndAdaptNoAliasScopes</a>(<a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef&lt;MDNode &#42;&gt;</a> NoAliasDeclScopes,</Highlight></CodeLine>
-<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="normal">                                ArrayRef&lt;BasicBlock &#42;&gt; NewBlocks,</Highlight></CodeLine>
-<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="normal">                                LLVMContext &amp;Context, StringRef Ext);</Highlight></CodeLine>
-<Link id="l00420" /><CodeLine lineNumber="420"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00421" /><CodeLine lineNumber="421"><Highlight kind="comment">/// Clone the specified noalias decl scopes. Then adapt all instructions in the</Highlight></CodeLine>
-<Link id="l00422" /><CodeLine lineNumber="422"><Highlight kind="comment">/// &#91;IStart, IEnd&#93; (IEnd included !) range to the cloned versions. &#39;Ext&#39; will be</Highlight></CodeLine>
-<Link id="l00423" /><CodeLine lineNumber="423"><Highlight kind="comment">/// added to the duplicate scope names.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00424" /><CodeLine lineNumber="424"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ab7abd0e34c17dcb201a4138dc65cc067">cloneAndAdaptNoAliasScopes</a>(<a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef&lt;MDNode &#42;&gt;</a> NoAliasDeclScopes,</Highlight></CodeLine>
-<Link id="l00425" /><CodeLine lineNumber="425"><Highlight kind="normal">                                Instruction &#42;IStart, Instruction &#42;IEnd,</Highlight></CodeLine>
-<Link id="l00426" /><CodeLine lineNumber="426"><Highlight kind="normal">                                LLVMContext &amp;Context, StringRef Ext);</Highlight></CodeLine>
-<Link id="l00427" /><CodeLine lineNumber="427"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00428" /><CodeLine lineNumber="428"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00429" /><CodeLine lineNumber="429"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;TRANSFORMS&#95;UTILS&#95;CLONING&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- Cloning.h - Clone various parts of LLVM programs ---------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This file defines various functions that are used to clone chunks of LLVM</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">// code for various purposes.  This varies from copying whole modules into new</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">// modules, to cloning functions with different arguments, to inlining</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">// functions, to copying basic blocks to support loop unrolling or superblock</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightComment">// formation, etc.</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;TRANSFORMS&#95;UTILS&#95;CLONING&#95;H</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightPreprocessor">#define LLVM&#95;TRANSFORMS&#95;UTILS&#95;CLONING&#95;H</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h">llvm/ADT/Twine.h</a>&quot;</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/assumptioncache-h">llvm/Analysis/AssumptionCache.h</a>&quot;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/analysis/inlinecost-h">llvm/Analysis/InlineCost.h</a>&quot;</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/basicblock-h">llvm/IR/BasicBlock.h</a>&quot;</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/valuehandle-h">llvm/IR/ValueHandle.h</a>&quot;</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/transforms/include/llvm/transforms/utils/valuemapper-h">llvm/Transforms/Utils/ValueMapper.h</a>&quot;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightPreprocessor">#include &lt;functional&gt;</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightPreprocessor">#include &lt;memory&gt;</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightPreprocessor">#include &lt;vector&gt;</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/aaresults">AAResults</a>;</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/allocainst">AllocaInst</a>;</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/basicblock">BasicBlock</a>;</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a>;</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/debuginfofinder">DebugInfoFinder</a>;</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/dominatortree">DominatorTree</a>;</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/function">Function</a>;</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/instruction">Instruction</a>;</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/loop">Loop</a>;</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/loopinfo">LoopInfo</a>;</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/module">Module</a>;</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/pgocontextualprofile">PGOContextualProfile</a>;</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a>;</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/returninst">ReturnInst</a>;</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/domtreeupdater">DomTreeUpdater</a>;</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlightComment">/// Return an exact copy of the specified module</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlight">std::unique&#95;ptr&lt;Module&gt; <a href="/docs/api/namespaces/llvm/#ae13b67a51d9f8061d598e82272b79b80">CloneModule</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/module">Module</a> &amp;M);</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlight">std::unique&#95;ptr&lt;Module&gt; <a href="/docs/api/namespaces/llvm/#ae13b67a51d9f8061d598e82272b79b80">CloneModule</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap);</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlightComment">/// Return a copy of the specified module. The ShouldCloneDefinition function</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlightComment">/// controls whether a specific GlobalValue&#39;s definition is cloned. If the</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlightComment">/// function returns false, the module copy will contain an external reference</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlightComment">/// in place of the global definition.</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlight">std::unique&#95;ptr&lt;Module&gt;</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/#ae13b67a51d9f8061d598e82272b79b80">CloneModule</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap,</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlight">            <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt;</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight">(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/globalvalue">GlobalValue</a> &#42;)&gt; ShouldCloneDefinition);</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlightComment">/// This struct can be used to capture information about code</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlightComment">/// being cloned, while it is being cloned.</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/structs/llvm/clonedcodeinfo"><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/docs/api/structs/llvm/clonedcodeinfo/#a2dc783e12bddecb56ec6125a6e71ca2d">ClonedCodeInfo</a> &#123;</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlightComment">  /// This is set to true if the cloned code contains a normal call instruction.</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#a6bbe5e652464ac9213907e3446874900"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/clonedcodeinfo/#a6bbe5e652464ac9213907e3446874900">ContainsCalls</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlightComment">  /// This is set to true if there is memprof related metadata (memprof or</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlightComment">  /// callsite metadata) in the cloned code.</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#a94c735687f007da4731abf87dc9fd8e5"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/clonedcodeinfo/#a94c735687f007da4731abf87dc9fd8e5">ContainsMemProfMetadata</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlightComment">  /// This is set to true if the cloned code contains a &#39;dynamic&#39; alloca.</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlightComment">  /// Dynamic allocas are allocas that are either not in the entry block or they</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlightComment">  /// are in the entry block but are not a constant size.</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#a2eea9c7c9cadaa593a7a71c8d44aac25"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/clonedcodeinfo/#a2eea9c7c9cadaa593a7a71c8d44aac25">ContainsDynamicAllocas</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlightComment">  /// All cloned call sites that have operand bundles attached are appended to</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlightComment">  /// this vector.  This vector may contain nulls or undefs if some of the</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlightComment">  /// originally inserted callsites were DCE&#39;ed after they were cloned.</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#aee51f754e9da74f168cd4d12e1eb5c7b"><span class="doxyHighlight">  std::vector&lt;WeakTrackingVH&gt; <a href="/docs/api/structs/llvm/clonedcodeinfo/#aee51f754e9da74f168cd4d12e1eb5c7b">OperandBundleCallSites</a>;</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlightComment">  /// Like VMap, but maps only unsimplified instructions. Values in the map</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlightComment">  /// may be dangling, it is only intended to be used via isSimplified(), to</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlightComment">  /// check whether the main VMap mapping involves simplification or not.</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#ad8a5535c2cc3a16e630cc54aeb988f03"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;const Value &#42;, const Value &#42;&gt;</a> <a href="/docs/api/structs/llvm/clonedcodeinfo/#ad8a5535c2cc3a16e630cc54aeb988f03">OrigVMap</a>;</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#a2dc783e12bddecb56ec6125a6e71ca2d"><span class="doxyHighlight">  <a href="/docs/api/structs/llvm/clonedcodeinfo/#a2dc783e12bddecb56ec6125a6e71ca2d">ClonedCodeInfo</a>() = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88" lineLink="/docs/api/structs/llvm/clonedcodeinfo/#a6711ec71d15ab34fb6eedc26d5b5da80"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/clonedcodeinfo/#a6711ec71d15ab34fb6eedc26d5b5da80">isSimplified</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;From, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;To)</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/clonedcodeinfo/#ad8a5535c2cc3a16e630cc54aeb988f03">OrigVMap</a>.lookup(From) != To;</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlightComment">/// Return a copy of the specified basic block, but without</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlightComment">/// embedding the block into a particular function.  The block returned is an</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlightComment">/// exact copy of the specified basic block, without any remapping having been</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><span class="doxyHighlightComment">/// performed.  Because of this, this is only suitable for applications where</span></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlightComment">/// the basic block will be inserted into the same function that it was cloned</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlightComment">/// from (loop unrolling would use this, for example).</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlightComment">/// Also, note that this function makes a direct copy of the basic block, and</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlightComment">/// can thus produce illegal LLVM code.  In particular, it will copy any PHI</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlightComment">/// nodes from the original block, even though there are no predecessors for the</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><span class="doxyHighlightComment">/// newly cloned block (thus, phi nodes will have to be updated).  Also, this</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><span class="doxyHighlightComment">/// block will branch to the old successors of the original block: these</span></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlightComment">/// successors will have to have any PHI nodes updated to account for the new</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlightComment">/// incoming edges.</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlightComment">/// The correlation between instructions in the source and result basic blocks</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlightComment">/// is recorded in the VMap map.</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlightComment">/// If you have a particular suffix you&#39;d like to use to add to any cloned</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><span class="doxyHighlightComment">/// names, specify it as the optional third parameter.</span></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlightComment">/// If you would like the basic block to be auto-inserted into the end of a</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlightComment">/// function, you can specify it as the optional fourth parameter.</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlightComment">/// If you would like to collect additional information about the cloned</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><span class="doxyHighlightComment">/// function, you can specify a ClonedCodeInfo object with the optional fifth</span></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><span class="doxyHighlightComment">/// parameter.</span></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlight">BasicBlock &#42;<a href="/docs/api/namespaces/llvm/#aa1c8d384f90fc9d69d7fcdf920138cf2">CloneBasicBlock</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> BasicBlock &#42;BB, <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap,</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><span class="doxyHighlight">                            </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Twine &amp;NameSuffix = </span><span class="doxyHighlightStringLiteral">&quot;&quot;</span><span class="doxyHighlight">, Function &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a> = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlight">                            ClonedCodeInfo &#42;CodeInfo = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlightComment">/// Return a copy of the specified function and add it to that</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlightComment">/// function&#39;s module.  Also, any references specified in the VMap are changed</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlightComment">/// to refer to their mapped value instead of the original one.  If any of the</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><span class="doxyHighlightComment">/// arguments to the function are in the VMap, the arguments are deleted from</span></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><span class="doxyHighlightComment">/// the resultant function.  The VMap is updated to include mappings from all of</span></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><span class="doxyHighlightComment">/// the instructions and basicblocks in the function from their old to new</span></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlightComment">/// values.  The final argument captures information about the cloned code if</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><span class="doxyHighlightComment">/// non-null.</span></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><span class="doxyHighlightComment">/// \\pre VMap contains no non-identity GlobalValue mappings.</span></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><span class="doxyHighlight">Function &#42;<a href="/docs/api/namespaces/llvm/#aedeb89fa4ceb608d9d49bcd53ddcd2c1">CloneFunction</a>(Function &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>, <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap,</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><span class="doxyHighlight">                        ClonedCodeInfo &#42;CodeInfo = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138" lineLink="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30a"><span class="doxyHighlightKeyword">enum class</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30a">CloneFunctionChangeType</a> &#123;</span></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139" lineLink="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aa68b46a44773674a07e6730fac74fc46b"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aa68b46a44773674a07e6730fac74fc46b">LocalChangesOnly</a>,</span></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140" lineLink="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aaf8a2344584759e9392a20bf44e9e0d1c"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aaf8a2344584759e9392a20bf44e9e0d1c">GlobalChanges</a>,</span></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141" lineLink="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aa1e500d8286088d431dc693a52a29d6aa"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aa1e500d8286088d431dc693a52a29d6aa">DifferentModule</a>,</span></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142" lineLink="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aaf0d5faa20364ccfc550a2eb37254e7d9"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30aaf0d5faa20364ccfc550a2eb37254e7d9">ClonedModule</a>,</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><span class="doxyHighlightComment">/// Clone OldFunc into NewFunc, transforming the old arguments into references</span></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlightComment">/// to VMap values.  Note that if NewFunc already has basic blocks, the ones</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlightComment">/// cloned into it will be added to the end of the function.  This function</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><span class="doxyHighlightComment">/// fills in a list of return instructions, and can optionally remap types</span></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><span class="doxyHighlightComment">/// and/or append the specified suffix to all values cloned.</span></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><span class="doxyHighlightComment">/// If \\p Changes is \\a CloneFunctionChangeType::LocalChangesOnly, VMap is</span></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><span class="doxyHighlightComment">/// required to contain no non-identity GlobalValue mappings. Otherwise,</span></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><span class="doxyHighlightComment">/// referenced metadata will be cloned.</span></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><span class="doxyHighlightComment">/// If \\p Changes is less than \\a CloneFunctionChangeType::DifferentModule</span></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><span class="doxyHighlightComment">/// indicating cloning into the same module (even if it&#39;s LocalChangesOnly), if</span></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><span class="doxyHighlightComment">/// debug info metadata transitively references a \\a DISubprogram, it will be</span></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><span class="doxyHighlightComment">/// cloned, effectively upgrading \\p Changes to GlobalChanges while suppressing</span></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><span class="doxyHighlightComment">/// cloning of types and compile units.</span></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><span class="doxyHighlightComment">/// If \\p Changes is \\a CloneFunctionChangeType::DifferentModule, the new</span></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><span class="doxyHighlightComment">/// module&#39;s \\c !llvm.dbg.cu will get updated with any newly created compile</span></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><span class="doxyHighlightComment">/// units. (\\a CloneFunctionChangeType::ClonedModule leaves that work for the</span></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><span class="doxyHighlightComment">/// caller.)</span></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><span class="doxyHighlightComment">/// FIXME: Consider simplifying this function by splitting out \\a</span></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><span class="doxyHighlightComment">/// CloneFunctionMetadataInto() and expecting / updating callers to call it</span></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><span class="doxyHighlightComment">/// first when / how it&#39;s needed.</span></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ac1b2be839460bb277d4f07f4aa5225ac">CloneFunctionInto</a>(Function &#42;NewFunc, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Function &#42;OldFunc,</span></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><span class="doxyHighlight">                       <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap, <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30a">CloneFunctionChangeType</a> Changes,</span></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><span class="doxyHighlight">                       SmallVectorImpl&lt;ReturnInst &#42;&gt; &amp;Returns,</span></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><span class="doxyHighlight">                       </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;NameSuffix = </span><span class="doxyHighlightStringLiteral">&quot;&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><span class="doxyHighlight">                       ClonedCodeInfo &#42;CodeInfo = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><span class="doxyHighlight">                       ValueMapTypeRemapper &#42;TypeMapper = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><span class="doxyHighlight">                       ValueMaterializer &#42;Materializer = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><span class="doxyHighlightComment">/// Clone OldFunc&#39;s attributes into NewFunc, transforming values based on the</span></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><span class="doxyHighlightComment">/// mappings in VMap.</span></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a0a9ae7045e9bc2bab2a756c683a24f45">CloneFunctionAttributesInto</a>(Function &#42;NewFunc, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Function &#42;OldFunc,</span></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><span class="doxyHighlight">                                 <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap,</span></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><span class="doxyHighlight">                                 </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> ModuleLevelChanges,</span></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><span class="doxyHighlight">                                 ValueMapTypeRemapper &#42;TypeMapper = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><span class="doxyHighlight">                                 ValueMaterializer &#42;Materializer = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><span class="doxyHighlightComment">/// Clone OldFunc&#39;s metadata into NewFunc.</span></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><span class="doxyHighlightComment">/// The caller is expected to populate \\p VMap beforehand and set an appropriate</span></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><span class="doxyHighlightComment">/// \\p RemapFlag. Subprograms/CUs/types that were already mapped to themselves</span></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><span class="doxyHighlightComment">/// won&#39;t be duplicated.</span></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><span class="doxyHighlightComment">/// NOTE: This function doesn&#39;t clone !llvm.dbg.cu when cloning into a different</span></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><span class="doxyHighlightComment">/// module. Use CloneFunctionInto for that behavior.</span></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9d39db97de33dc64cd40be3d37fc8ed9">CloneFunctionMetadataInto</a>(Function &amp;NewFunc, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Function &amp;OldFunc,</span></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><span class="doxyHighlight">                               <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap, RemapFlags RemapFlag,</span></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><span class="doxyHighlight">                               ValueMapTypeRemapper &#42;TypeMapper = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><span class="doxyHighlight">                               ValueMaterializer &#42;Materializer = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><span class="doxyHighlight">                               </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a91897d2d0da113b016f14ae110586ab1">MetadataSetTy</a> &#42;IdentityMD = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><span class="doxyHighlightComment">/// Clone OldFunc&#39;s body into NewFunc.</span></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#af97d9ff977792ae671987a9a95f942f2">CloneFunctionBodyInto</a>(Function &amp;NewFunc, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Function &amp;OldFunc,</span></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><span class="doxyHighlight">                           <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap, RemapFlags RemapFlag,</span></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><span class="doxyHighlight">                           SmallVectorImpl&lt;ReturnInst &#42;&gt; &amp;Returns,</span></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><span class="doxyHighlight">                           </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;NameSuffix = </span><span class="doxyHighlightStringLiteral">&quot;&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><span class="doxyHighlight">                           ClonedCodeInfo &#42;CodeInfo = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><span class="doxyHighlight">                           ValueMapTypeRemapper &#42;TypeMapper = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><span class="doxyHighlight">                           ValueMaterializer &#42;Materializer = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><span class="doxyHighlight">                           </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a91897d2d0da113b016f14ae110586ab1">MetadataSetTy</a> &#42;IdentityMD = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ae1a030c9a70b99fced16cc726e1ef9f9">CloneAndPruneIntoFromInst</a>(Function &#42;NewFunc, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Function &#42;OldFunc,</span></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><span class="doxyHighlight">                               </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Instruction &#42;StartingInst,</span></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><span class="doxyHighlight">                               <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap, </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> ModuleLevelChanges,</span></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><span class="doxyHighlight">                               SmallVectorImpl&lt;ReturnInst &#42;&gt; &amp;Returns,</span></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><span class="doxyHighlight">                               </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;NameSuffix = </span><span class="doxyHighlightStringLiteral">&quot;&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><span class="doxyHighlight">                               ClonedCodeInfo &#42;CodeInfo = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><span class="doxyHighlightComment">/// This works exactly like CloneFunctionInto,</span></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><span class="doxyHighlightComment">/// except that it does some simple constant prop and DCE on the fly.  The</span></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><span class="doxyHighlightComment">/// effect of this is to copy significantly less code in cases where (for</span></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><span class="doxyHighlightComment">/// example) a function call with constant arguments is inlined, and those</span></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><span class="doxyHighlightComment">/// constant arguments cause a significant amount of code in the callee to be</span></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><span class="doxyHighlightComment">/// dead.  Since this doesn&#39;t produce an exactly copy of the input, it can&#39;t be</span></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><span class="doxyHighlightComment">/// used for things like CloneFunction or CloneModule.</span></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><span class="doxyHighlightComment">/// If ModuleLevelChanges is false, VMap contains no non-identity GlobalValue</span></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><span class="doxyHighlightComment">/// mappings.</span></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a7a6386c071e1087512cdc8a4071a02b5">CloneAndPruneFunctionInto</a>(Function &#42;NewFunc, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Function &#42;OldFunc,</span></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><span class="doxyHighlight">                               <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap, </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> ModuleLevelChanges,</span></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><span class="doxyHighlight">                               SmallVectorImpl&lt;ReturnInst&#42;&gt; &amp;Returns,</span></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><span class="doxyHighlight">                               </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;NameSuffix = </span><span class="doxyHighlightStringLiteral">&quot;&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><span class="doxyHighlight">                               ClonedCodeInfo &#42;CodeInfo = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><span class="doxyHighlightComment">/// Collect debug information such as types, compile units, and other</span></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><span class="doxyHighlightComment">/// subprograms that are reachable from \\p F and can be considered global for</span></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><span class="doxyHighlightComment">/// the purposes of cloning (and hence not needing to be cloned).</span></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><span class="doxyHighlightComment">/// What debug information should be processed depends on \\p Changes: when</span></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><span class="doxyHighlightComment">/// cloning into the same module we process \\p F&#39;s subprogram and instructions;</span></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><span class="doxyHighlightComment">/// when into a cloned module, neither of those.</span></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><span class="doxyHighlightComment">/// Returns DISubprogram of the cloned function when cloning into the same</span></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><span class="doxyHighlightComment">/// module or nullptr otherwise.</span></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><span class="doxyHighlight">DISubprogram &#42;<a href="/docs/api/namespaces/llvm/#ad9d4e85b3abfbf1a3dd8a7fd45057cce">CollectDebugInfoForCloning</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Function &amp;<a href="/docs/api/files/lib/lib/support/md5-cpp/#a96d73bbd7af15cb1fc38c3f4a3bd82e9">F</a>,</span></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><span class="doxyHighlight">                                         <a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30a">CloneFunctionChangeType</a> Changes,</span></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><span class="doxyHighlight">                                         DebugInfoFinder &amp;DIFinder);</span></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><span class="doxyHighlightComment">/// Based on \\p Changes and \\p DIFinder return debug info that needs to be</span></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><span class="doxyHighlightComment">/// identity mapped during Metadata cloning.</span></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><span class="doxyHighlightComment">/// NOTE: Such \\a MetadataSetTy can be used by \\a CloneFunction&#42; to directly</span></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><span class="doxyHighlightComment">/// specify metadata that should be identity mapped (and hence not cloned). The</span></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><span class="doxyHighlightComment">/// metadata will be identity mapped in \\a ValueToValueMapTy on first use. There</span></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><span class="doxyHighlightComment">/// are several reasons for doing it this way rather than eagerly identity</span></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><span class="doxyHighlightComment">/// mapping metadata nodes in a \\a ValueMap:</span></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><span class="doxyHighlightComment">/// 1 Mapping metadata is not cheap, particularly because of tracking.</span></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><span class="doxyHighlightComment">/// 2 When cloning a Function we identity map lots of global module-level</span></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><span class="doxyHighlightComment">///    metadata to avoid cloning it, while only a fraction of it is actually</span></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><span class="doxyHighlightComment">///    used by the function. Mapping on first use is a lot faster for modules</span></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><span class="doxyHighlightComment">///    with meaningful amount of debug info.</span></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><span class="doxyHighlightComment">/// 3 Eagerly identity mapping metadata makes it harder to cache module-level</span></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><span class="doxyHighlightComment">///    data (e.g. a set of metadata nodes in a \\a DICompileUnit).</span></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/#a91897d2d0da113b016f14ae110586ab1">MetadataSetTy</a> <a href="/docs/api/namespaces/llvm/#a954c742913f42266852b86ca04547929">FindDebugInfoToIdentityMap</a>(<a href="/docs/api/namespaces/llvm/#abe00617fc34ceb1aa0eb62995732b30a">CloneFunctionChangeType</a> Changes,</span></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><span class="doxyHighlight">                                         DebugInfoFinder &amp;DIFinder,</span></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><span class="doxyHighlight">                                         DISubprogram &#42;SPClonedWithinModule);</span></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><span class="doxyHighlightComment">/// This class captures the data input to the InlineFunction call, and records</span></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><span class="doxyHighlightComment">/// the auxiliary results produced by it.</span></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268" lineLink="/docs/api/classes/llvm/inlinefunctioninfo"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/inlinefunctioninfo/#aceae3b1baa2bc3708ab3e793dd74a7cb">InlineFunctionInfo</a> &#123;</span></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#aceae3b1baa2bc3708ab3e793dd74a7cb"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">explicit</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#aceae3b1baa2bc3708ab3e793dd74a7cb">InlineFunctionInfo</a>(</span></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><span class="doxyHighlight">      <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt;<a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &amp;(<a href="/docs/api/classes/llvm/function">Function</a> &amp;)&gt; <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a6d3c3f9f13bd38d8aa6410841d2b99c0">GetAssumptionCache</a> = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><span class="doxyHighlight">      <a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42;<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a200d08643d2038b04aa16716e8cd154b">PSI</a> = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><span class="doxyHighlight">      <a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> &#42;<a href="/docs/api/classes/llvm/inlinefunctioninfo/#ad01658587132e4b44ba8414b3a87fde5">CallerBFI</a> = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><span class="doxyHighlight">      <a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> &#42;<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a82c69d5928263cabdebf13ea93008be4">CalleeBFI</a> = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">, </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a2479f3ea47eee2627b24bddfa6333415">UpdateProfile</a> = </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">)</span></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><span class="doxyHighlight">      : <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a6d3c3f9f13bd38d8aa6410841d2b99c0">GetAssumptionCache</a>(<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a6d3c3f9f13bd38d8aa6410841d2b99c0">GetAssumptionCache</a>), <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a200d08643d2038b04aa16716e8cd154b">PSI</a>(<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a200d08643d2038b04aa16716e8cd154b">PSI</a>), <a href="/docs/api/classes/llvm/inlinefunctioninfo/#ad01658587132e4b44ba8414b3a87fde5">CallerBFI</a>(<a href="/docs/api/classes/llvm/inlinefunctioninfo/#ad01658587132e4b44ba8414b3a87fde5">CallerBFI</a>),</span></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><span class="doxyHighlight">        <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a82c69d5928263cabdebf13ea93008be4">CalleeBFI</a>(<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a82c69d5928263cabdebf13ea93008be4">CalleeBFI</a>), <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a2479f3ea47eee2627b24bddfa6333415">UpdateProfile</a>(<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a2479f3ea47eee2627b24bddfa6333415">UpdateProfile</a>) &#123;&#125;</span></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><span class="doxyHighlightComment">  /// If non-null, InlineFunction will update the callgraph to reflect the</span></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><span class="doxyHighlightComment">  /// changes it makes.</span></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#a6d3c3f9f13bd38d8aa6410841d2b99c0"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/function-ref">function&#95;ref</a>&lt;<a href="/docs/api/classes/llvm/assumptioncache">AssumptionCache</a> &amp;(<a href="/docs/api/classes/llvm/function">Function</a> &amp;)&gt; <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a6d3c3f9f13bd38d8aa6410841d2b99c0">GetAssumptionCache</a>;</span></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#a200d08643d2038b04aa16716e8cd154b"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42;<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a200d08643d2038b04aa16716e8cd154b">PSI</a>;</span></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#a82c69d5928263cabdebf13ea93008be4"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/blockfrequencyinfo">BlockFrequencyInfo</a> &#42;<a href="/docs/api/classes/llvm/inlinefunctioninfo/#ad01658587132e4b44ba8414b3a87fde5">CallerBFI</a>, &#42;<a href="/docs/api/classes/llvm/inlinefunctioninfo/#a82c69d5928263cabdebf13ea93008be4">CalleeBFI</a>;</span></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><span class="doxyHighlightComment">  /// InlineFunction fills this in with all static allocas that get copied into</span></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><span class="doxyHighlightComment">  /// the caller.</span></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#a9c259c76065eb3b4ce3697ce346008ce"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;AllocaInst &#42;, 4&gt;</a> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a9c259c76065eb3b4ce3697ce346008ce">StaticAllocas</a>;</span></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><span class="doxyHighlightComment">  /// InlineFunction fills this in with callsites that were inlined from the</span></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><span class="doxyHighlightComment">  /// callee. This is only filled in if CG is non-null.</span></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#ae6918eedce7edea74c67aa164a7d198d"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;WeakTrackingVH, 8&gt;</a> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#ae6918eedce7edea74c67aa164a7d198d">InlinedCalls</a>;</span></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><span class="doxyHighlightComment">  /// All of the new call sites inlined into the caller.</span></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><span class="doxyHighlightComment">  /// &#39;InlineFunction&#39; fills this in by scanning the inlined instructions, and</span></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><span class="doxyHighlightComment">  /// only if CG is null. If CG is non-null, instead the value handle</span></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><span class="doxyHighlightComment">  /// &#96;InlinedCalls&#96; above is used.</span></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#afee77c39305987451e9495b749863d07"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;CallBase &#42;, 8&gt;</a> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#afee77c39305987451e9495b749863d07">InlinedCallSites</a>;</span></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><span class="doxyHighlightComment">  /// Update profile for callee as well as cloned version. We need to do this</span></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><span class="doxyHighlightComment">  /// for regular inlining, but not for inlining from sample profile loader.</span></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#a2479f3ea47eee2627b24bddfa6333415"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a2479f3ea47eee2627b24bddfa6333415">UpdateProfile</a>;</span></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303" lineLink="/docs/api/classes/llvm/inlinefunctioninfo/#acbbc7320e82682aed3c325a08b187a2f"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/inlinefunctioninfo/#acbbc7320e82682aed3c325a08b187a2f">reset</a>() &#123;</span></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/inlinefunctioninfo/#a9c259c76065eb3b4ce3697ce346008ce">StaticAllocas</a>.clear();</span></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/inlinefunctioninfo/#ae6918eedce7edea74c67aa164a7d198d">InlinedCalls</a>.clear();</span></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/inlinefunctioninfo/#afee77c39305987451e9495b749863d07">InlinedCallSites</a>.clear();</span></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><span class="doxyHighlightComment">/// This function inlines the called function into the basic</span></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><span class="doxyHighlightComment">/// block of the caller.  This returns false if it is not possible to inline</span></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><span class="doxyHighlightComment">/// this call.  The program is still in a well defined state if this occurs</span></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><span class="doxyHighlightComment">/// though.</span></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><span class="doxyHighlightComment">/// Note that this only does one level of inlining.  For example, if the</span></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><span class="doxyHighlightComment">/// instruction &#39;call B&#39; is inlined, and &#39;B&#39; calls &#39;C&#39;, then the call to &#39;C&#39; now</span></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><span class="doxyHighlightComment">/// exists in the instruction stream.  Similarly this will inline a recursive</span></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><span class="doxyHighlightComment">/// function by one level.</span></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><span class="doxyHighlightComment">/// Note that while this routine is allowed to cleanup and optimize the</span></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><span class="doxyHighlightComment">/// &#42;inlined&#42; code to minimize the actual inserted code, it must not delete</span></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><span class="doxyHighlightComment">/// code in the caller as users of this routine may have pointers to</span></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><span class="doxyHighlightComment">/// instructions in the caller that need to remain stable.</span></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><span class="doxyHighlightComment">/// If ForwardVarArgsTo is passed, inlining a function with varargs is allowed</span></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><span class="doxyHighlightComment">/// and all varargs at the callsite will be passed to any calls to</span></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><span class="doxyHighlightComment">/// ForwardVarArgsTo. The caller of InlineFunction has to make sure any varargs</span></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><span class="doxyHighlightComment">/// are only used by ForwardVarArgsTo.</span></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><span class="doxyHighlightComment">/// The callee&#39;s function attributes are merged into the callers&#39; if</span></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><span class="doxyHighlightComment">/// MergeAttributes is set to true.</span></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><span class="doxyHighlight">InlineResult <a href="/docs/api/namespaces/llvm/#ab5a3ac0a249da0743dac1bd816d8e5d5">InlineFunction</a>(CallBase &amp;CB, InlineFunctionInfo &amp;IFI,</span></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><span class="doxyHighlight">                            </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> MergeAttributes = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><span class="doxyHighlight">                            AAResults &#42;CalleeAAR = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><span class="doxyHighlight">                            </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> InsertLifetime = </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><span class="doxyHighlight">                            Function &#42;ForwardVarArgsTo = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><span class="doxyHighlightComment">/// Same as above, but it will update the contextual profile. If the contextual</span></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><span class="doxyHighlightComment">/// profile is invalid (i.e. not loaded because it is not present), it defaults</span></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><span class="doxyHighlightComment">/// to the behavior of the non-contextual profile updating variant above. This</span></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><span class="doxyHighlightComment">/// makes it easy to drop-in replace uses of the non-contextual overload.</span></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><span class="doxyHighlight">InlineResult <a href="/docs/api/namespaces/llvm/#ab5a3ac0a249da0743dac1bd816d8e5d5">InlineFunction</a>(CallBase &amp;CB, InlineFunctionInfo &amp;IFI,</span></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><span class="doxyHighlight">                            PGOContextualProfile &amp;CtxProf,</span></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><span class="doxyHighlight">                            </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> MergeAttributes = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><span class="doxyHighlight">                            AAResults &#42;CalleeAAR = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><span class="doxyHighlight">                            </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> InsertLifetime = </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><span class="doxyHighlight">                            Function &#42;ForwardVarArgsTo = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><span class="doxyHighlightComment">/// Clones a loop \\p OrigLoop.  Returns the loop and the blocks in \\p</span></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><span class="doxyHighlightComment">/// Blocks.</span></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><span class="doxyHighlightComment">/// Updates LoopInfo and DominatorTree assuming the loop is dominated by block</span></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><span class="doxyHighlightComment">/// \\p LoopDomBB.  Insert the new blocks before block specified in \\p Before.</span></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><span class="doxyHighlightComment">/// Note: Only innermost loops are supported.</span></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><span class="doxyHighlight">Loop &#42;<a href="/docs/api/namespaces/llvm/#a6f244e1d6d34701da1f29d3a762974fd">cloneLoopWithPreheader</a>(BasicBlock &#42;<a href="/docs/api/files/lib/lib/passes/standardinstrumentations-cpp/#a6f1bbcae7288f05872dcfe811d0388baa9060587edeb01a63e3d3edc959678d1e">Before</a>, BasicBlock &#42;LoopDomBB,</span></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><span class="doxyHighlight">                             Loop &#42;OrigLoop, <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap,</span></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><span class="doxyHighlight">                             </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Twine &amp;NameSuffix, LoopInfo &#42;LI,</span></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><span class="doxyHighlight">                             DominatorTree &#42;DT,</span></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><span class="doxyHighlight">                             SmallVectorImpl&lt;BasicBlock &#42;&gt; &amp;Blocks);</span></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><span class="doxyHighlightComment">/// Remaps instructions in \\p Blocks using the mapping in \\p VMap.</span></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ab8ec5c940fbc440c992716fbe4a48636">remapInstructionsInBlocks</a>(ArrayRef&lt;BasicBlock &#42;&gt; Blocks,</span></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><span class="doxyHighlight">                               <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;VMap);</span></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><span class="doxyHighlightComment">/// Split edge between BB and PredBB and duplicate all non-Phi instructions</span></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><span class="doxyHighlightComment">/// from BB between its beginning and the StopAt instruction into the split</span></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><span class="doxyHighlightComment">/// block. Phi nodes are not duplicated, but their uses are handled correctly:</span></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><span class="doxyHighlightComment">/// we replace them with the uses of corresponding Phi inputs. ValueMapping</span></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><span class="doxyHighlightComment">/// is used to map the original instructions from BB to their newly-created</span></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><span class="doxyHighlightComment">/// copies. Returns the split block.</span></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><span class="doxyHighlight">BasicBlock &#42;<a href="/docs/api/namespaces/llvm/#a4cd89ca702a817aac3a4521dd2462a2e">DuplicateInstructionsInSplitBetween</a>(BasicBlock &#42;BB,</span></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><span class="doxyHighlight">                                                BasicBlock &#42;PredBB,</span></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><span class="doxyHighlight">                                                Instruction &#42;StopAt,</span></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><span class="doxyHighlight">                                                <a href="/docs/api/namespaces/llvm/#abf0f52ae29f87b5e0f2b95ff961cdae1">ValueToValueMapTy</a> &amp;ValueMapping,</span></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><span class="doxyHighlight">                                                DomTreeUpdater &amp;DTU);</span></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><span class="doxyHighlightComment">/// Updates profile information by adjusting the entry count by adding</span></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><span class="doxyHighlightComment">/// EntryDelta then scaling callsite information by the new count divided by the</span></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><span class="doxyHighlightComment">/// old count. VMap is used during inlinng to also update the new clone</span></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#aa7cd2cc36098475563ad0fd3371df2a6">updateProfileCallee</a>(</span></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><span class="doxyHighlight">    Function &#42;Callee, int64&#95;t EntryDelta,</span></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> ValueMap&lt;const Value &#42;, WeakTrackingVH&gt; &#42;VMap = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384"><span class="doxyHighlightComment">/// Find the &#39;llvm.experimental.noalias.scope.decl&#39; intrinsics in the specified</span></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><span class="doxyHighlightComment">/// basic blocks and extract their scope. These are candidates for duplication</span></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386"><span class="doxyHighlightComment">/// when cloning.</span></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ade9551bcb1121539a279452fec71f9eb">identifyNoAliasScopesToClone</a>(</span></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388"><span class="doxyHighlight">    ArrayRef&lt;BasicBlock &#42;&gt; BBs, SmallVectorImpl&lt;MDNode &#42;&gt; &amp;NoAliasDeclScopes);</span></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390"><span class="doxyHighlightComment">/// Find the &#39;llvm.experimental.noalias.scope.decl&#39; intrinsics in the specified</span></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391"><span class="doxyHighlightComment">/// instruction range and extract their scope. These are candidates for</span></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><span class="doxyHighlightComment">/// duplication when cloning.</span></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ade9551bcb1121539a279452fec71f9eb">identifyNoAliasScopesToClone</a>(</span></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> Start, <a href="/docs/api/classes/llvm/basicblock/#a98c0a84a5dfa8bce341c829709f171e5">BasicBlock::iterator</a> End,</span></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"><span class="doxyHighlight">    SmallVectorImpl&lt;MDNode &#42;&gt; &amp;NoAliasDeclScopes);</span></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397"><span class="doxyHighlightComment">/// Duplicate the specified list of noalias decl scopes.</span></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><span class="doxyHighlightComment">/// The &#39;Ext&#39; string is added as an extension to the name.</span></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399"><span class="doxyHighlightComment">/// Afterwards, the ClonedScopes contains the mapping of the original scope</span></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"><span class="doxyHighlightComment">/// MDNode onto the cloned scope.</span></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><span class="doxyHighlightComment">/// Be aware that the cloned scopes are still part of the original scope domain.</span></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a8eade0f2933d0684681065b3960122e2">cloneNoAliasScopes</a>(</span></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef&lt;MDNode &#42;&gt;</a> NoAliasDeclScopes,</span></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><span class="doxyHighlight">    DenseMap&lt;MDNode &#42;, MDNode &#42;&gt; &amp;ClonedScopes,</span></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405"><span class="doxyHighlight">    StringRef Ext, LLVMContext &amp;Context);</span></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"><span class="doxyHighlightComment">/// Adapt the metadata for the specified instruction according to the</span></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><span class="doxyHighlightComment">/// provided mapping. This is normally used after cloning an instruction, when</span></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><span class="doxyHighlightComment">/// some noalias scopes needed to be cloned.</span></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ab1c40e35dfc36395c37921107003128b">adaptNoAliasScopes</a>(</span></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/instruction">llvm::Instruction</a> &#42;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> DenseMap&lt;MDNode &#42;, MDNode &#42;&gt; &amp;ClonedScopes,</span></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><span class="doxyHighlight">    LLVMContext &amp;Context);</span></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"><span class="doxyHighlightComment">/// Clone the specified noalias decl scopes. Then adapt all instructions in the</span></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><span class="doxyHighlightComment">/// NewBlocks basicblocks to the cloned versions.</span></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"><span class="doxyHighlightComment">/// &#39;Ext&#39; will be added to the duplicate scope names.</span></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ab7abd0e34c17dcb201a4138dc65cc067">cloneAndAdaptNoAliasScopes</a>(<a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef&lt;MDNode &#42;&gt;</a> NoAliasDeclScopes,</span></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"><span class="doxyHighlight">                                ArrayRef&lt;BasicBlock &#42;&gt; NewBlocks,</span></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><span class="doxyHighlight">                                LLVMContext &amp;Context, StringRef Ext);</span></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420"></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421"><span class="doxyHighlightComment">/// Clone the specified noalias decl scopes. Then adapt all instructions in the</span></CodeLine>
+<Link id="l00422" /><CodeLine lineNumber="422"><span class="doxyHighlightComment">/// &#91;IStart, IEnd&#93; (IEnd included !) range to the cloned versions. &#39;Ext&#39; will be</span></CodeLine>
+<Link id="l00423" /><CodeLine lineNumber="423"><span class="doxyHighlightComment">/// added to the duplicate scope names.</span></CodeLine>
+<Link id="l00424" /><CodeLine lineNumber="424"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ab7abd0e34c17dcb201a4138dc65cc067">cloneAndAdaptNoAliasScopes</a>(<a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef&lt;MDNode &#42;&gt;</a> NoAliasDeclScopes,</span></CodeLine>
+<Link id="l00425" /><CodeLine lineNumber="425"><span class="doxyHighlight">                                Instruction &#42;IStart, Instruction &#42;IEnd,</span></CodeLine>
+<Link id="l00426" /><CodeLine lineNumber="426"><span class="doxyHighlight">                                LLVMContext &amp;Context, StringRef Ext);</span></CodeLine>
+<Link id="l00427" /><CodeLine lineNumber="427"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace llvm</span></CodeLine>
+<Link id="l00428" /><CodeLine lineNumber="428"></CodeLine>
+<Link id="l00429" /><CodeLine lineNumber="429"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;TRANSFORMS&#95;UTILS&#95;CLONING&#95;H</span></CodeLine>
 
 </ProgramListing>
 

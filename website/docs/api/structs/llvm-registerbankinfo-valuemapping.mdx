@@ -17,7 +17,6 @@ import CodeBlock from '@theme/CodeBlock'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -142,18 +141,18 @@ E.g., Let say we have a 32-bit add and a &lt;2 x 32-bit&gt; vadd. We can expand 
 Currently the TableGen-like file would look like: 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">PartialMapping&#91;&#93; = &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">/&#42;32-bit add&#42;/</Highlight><Highlight kind="normal">      &#123;0, 32, GPR&#125;, </Highlight><Highlight kind="comment">// Scalar entry repeated for first</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">                                  </Highlight><Highlight kind="comment">// vec elt.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">/&#42;2x32-bit add&#42;/</Highlight><Highlight kind="normal">    &#123;0, 32, GPR&#125;, &#123;32, 32, GPR&#125;,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">/&#42;&lt;2x32-bit&gt; vadd&#42;/</Highlight><Highlight kind="normal"> &#123;0, 64, VPR&#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;; </Highlight><Highlight kind="comment">// PartialMapping duplicated.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"><a href="#a9d25c6b19f2506311abd2ea798250afb">ValueMapping</a>&#91;&#93; &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">/&#42;plain 32-bit add&#42;/</Highlight><Highlight kind="normal">       &#123;&amp;PartialMapping&#91;0&#93;, 1&#125;,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">/&#42;expanded vadd on 2xadd&#42;/</Highlight><Highlight kind="normal"> &#123;&amp;PartialMapping&#91;1&#93;, 2&#125;,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">/&#42;plain &lt;2x32-bit&gt; vadd&#42;/</Highlight><Highlight kind="normal">  &#123;&amp;PartialMapping&#91;3&#93;, 1&#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">PartialMapping&#91;&#93; = &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">/&#42;32-bit add&#42;/</span><span class="doxyHighlight">      &#123;0, 32, GPR&#125;, </span><span class="doxyHighlightComment">// Scalar entry repeated for first</span></CodeLine>
+<CodeLine><span class="doxyHighlight">                                  </span><span class="doxyHighlightComment">// vec elt.</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">/&#42;2x32-bit add&#42;/</span><span class="doxyHighlight">    &#123;0, 32, GPR&#125;, &#123;32, 32, GPR&#125;,</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">/&#42;&lt;2x32-bit&gt; vadd&#42;/</span><span class="doxyHighlight"> &#123;0, 64, VPR&#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;; </span><span class="doxyHighlightComment">// PartialMapping duplicated.</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="#a9d25c6b19f2506311abd2ea798250afb">ValueMapping</a>&#91;&#93; &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">/&#42;plain 32-bit add&#42;/</span><span class="doxyHighlight">       &#123;&amp;PartialMapping&#91;0&#93;, 1&#125;,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">/&#42;expanded vadd on 2xadd&#42;/</span><span class="doxyHighlight"> &#123;&amp;PartialMapping&#91;1&#93;, 2&#125;,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">/&#42;plain &lt;2x32-bit&gt; vadd&#42;/</span><span class="doxyHighlight">  &#123;&amp;PartialMapping&#91;3&#93;, 1&#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;;</span></CodeLine>
 
 </ProgramListing>
 
@@ -161,23 +160,23 @@ Currently the TableGen-like file would look like:
 With the array of pointer, we would have: 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">PartialMapping&#91;&#93; = &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">/&#42;32-bit add lower &#42;/</Highlight><Highlight kind="normal"> &#123; 0, 32, GPR&#125;,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">/&#42;32-bit add upper &#42;/</Highlight><Highlight kind="normal"> &#123;32, 32, GPR&#125;,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">/&#42;&lt;2x32-bit&gt; vadd &#42;/</Highlight><Highlight kind="normal">  &#123; 0, 64, VPR&#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;; </Highlight><Highlight kind="comment">// No more duplication.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">BreakDowns&#91;&#93; = &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">/&#42;AddBreakDown&#42;/</Highlight><Highlight kind="normal">   &amp;PartialMapping&#91;0&#93;,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">/&#42;2xAddBreakDown&#42;/</Highlight><Highlight kind="normal"> &amp;PartialMapping&#91;0&#93;, &amp;PartialMapping&#91;1&#93;,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">/&#42;VAddBreakDown&#42;/</Highlight><Highlight kind="normal">  &amp;PartialMapping&#91;2&#93;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;; </Highlight><Highlight kind="comment">// Addresses of PartialMapping duplicated (smaller).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"><a href="#a9d25c6b19f2506311abd2ea798250afb">ValueMapping</a>&#91;&#93; &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">/&#42;plain 32-bit add&#42;/</Highlight><Highlight kind="normal">       &#123;&amp;BreakDowns&#91;0&#93;, 1&#125;,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">/&#42;expanded vadd on 2xadd&#42;/</Highlight><Highlight kind="normal"> &#123;&amp;BreakDowns&#91;1&#93;, 2&#125;,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">/&#42;plain &lt;2x32-bit&gt; vadd&#42;/</Highlight><Highlight kind="normal">  &#123;&amp;BreakDowns&#91;3&#93;, 1&#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">PartialMapping&#91;&#93; = &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">/&#42;32-bit add lower &#42;/</span><span class="doxyHighlight"> &#123; 0, 32, GPR&#125;,</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">/&#42;32-bit add upper &#42;/</span><span class="doxyHighlight"> &#123;32, 32, GPR&#125;,</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">/&#42;&lt;2x32-bit&gt; vadd &#42;/</span><span class="doxyHighlight">  &#123; 0, 64, VPR&#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;; </span><span class="doxyHighlightComment">// No more duplication.</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">BreakDowns&#91;&#93; = &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">/&#42;AddBreakDown&#42;/</span><span class="doxyHighlight">   &amp;PartialMapping&#91;0&#93;,</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">/&#42;2xAddBreakDown&#42;/</span><span class="doxyHighlight"> &amp;PartialMapping&#91;0&#93;, &amp;PartialMapping&#91;1&#93;,</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">/&#42;VAddBreakDown&#42;/</span><span class="doxyHighlight">  &amp;PartialMapping&#91;2&#93;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;; </span><span class="doxyHighlightComment">// Addresses of PartialMapping duplicated (smaller).</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="#a9d25c6b19f2506311abd2ea798250afb">ValueMapping</a>&#91;&#93; &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">/&#42;plain 32-bit add&#42;/</span><span class="doxyHighlight">       &#123;&amp;BreakDowns&#91;0&#93;, 1&#125;,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">/&#42;expanded vadd on 2xadd&#42;/</span><span class="doxyHighlight"> &#123;&amp;BreakDowns&#91;1&#93;, 2&#125;,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">/&#42;plain &lt;2x32-bit&gt; vadd&#42;/</span><span class="doxyHighlight">  &#123;&amp;BreakDowns&#91;3&#93;, 1&#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;;</span></CodeLine>
 
 </ProgramListing>
 

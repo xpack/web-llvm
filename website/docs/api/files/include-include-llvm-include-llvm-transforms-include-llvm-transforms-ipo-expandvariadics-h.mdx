@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -70,46 +69,46 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- ExpandVariadics.h - expand variadic functions ------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;TRANSFORMS&#95;IPO&#95;EXPANDVARIADICS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;TRANSFORMS&#95;IPO&#95;EXPANDVARIADICS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">llvm/IR/PassManager.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/module">Module</a>;</Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/modulepass">ModulePass</a>;</Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/optimizationlevel">OptimizationLevel</a>;</Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19" lineLink="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76"><Highlight kind="normal"></Highlight><Highlight kind="keyword">enum class</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76">ExpandVariadicsMode</a> &#123;</Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20" lineLink="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76a6fcdc090caeade09d0efd6253932b6f5"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76a6fcdc090caeade09d0efd6253932b6f5">Unspecified</a>, </Highlight><Highlight kind="comment">// Use the implementation defaults</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21" lineLink="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76abcfaccebf745acfd5e75351095a5394a"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#afdccf3ff7a8dfaa084b07c1fb417bbe2abcfaccebf745acfd5e75351095a5394a">Disable</a>,     </Highlight><Highlight kind="comment">// Disable the pass entirely</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22" lineLink="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76a8346db516e5f3aa534827e7d6c166744"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76a8346db516e5f3aa534827e7d6c166744">Optimize</a>,    </Highlight><Highlight kind="comment">// Optimise without changing ABI</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23" lineLink="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76a29d4416121b20dd5ccd9ffca40c05524"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76a29d4416121b20dd5ccd9ffca40c05524">Lowering</a>,    </Highlight><Highlight kind="comment">// Change variadic calling convention</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26" lineLink="/docs/api/classes/llvm/expandvariadicspass"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/expandvariadicspass/#af1b02298b8b67ec2a1141f05f91386b9">ExpandVariadicsPass</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/passinfomixin">PassInfoMixin</a>&lt;ExpandVariadicsPass&gt; &#123;</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76">ExpandVariadicsMode</a> <a href="/docs/api/files/lib/lib/codegen/regallocevictionadvisor-cpp/#aef71c4b21823f236e70cc6d62375adcd">Mode</a>;</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Operates under passed mode unless overridden on commandline</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/expandvariadicspass/#af1b02298b8b67ec2a1141f05f91386b9">ExpandVariadicsPass</a>(<a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76">ExpandVariadicsMode</a> <a href="/docs/api/files/lib/lib/codegen/regallocevictionadvisor-cpp/#aef71c4b21823f236e70cc6d62375adcd">Mode</a>);</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> <a href="/docs/api/classes/llvm/expandvariadicspass/#a2be438827ecb51c62941f87fbd3c0b79">run</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/namespaces/llvm/#af9c9208365fd9ce11392b4d79485e259">ModuleAnalysisManager</a> &amp;AM);</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36" lineLink="/docs/api/namespaces/llvm/#a1895f13235512e51a7619de25cda6f4f"><Highlight kind="normal"><a href="/docs/api/classes/llvm/modulepass">ModulePass</a> &#42;<a href="/docs/api/namespaces/llvm/#a1895f13235512e51a7619de25cda6f4f">createExpandVariadicsPass</a>(<a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76">ExpandVariadicsMode</a>);</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;TRANSFORMS&#95;IPO&#95;EXPANDVARIADICS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- ExpandVariadics.h - expand variadic functions ------------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;TRANSFORMS&#95;IPO&#95;EXPANDVARIADICS&#95;H</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightPreprocessor">#define LLVM&#95;TRANSFORMS&#95;IPO&#95;EXPANDVARIADICS&#95;H</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/passmanager-h">llvm/IR/PassManager.h</a>&quot;</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/module">Module</a>;</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/modulepass">ModulePass</a>;</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/optimizationlevel">OptimizationLevel</a>;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19" lineLink="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76"><span class="doxyHighlightKeyword">enum class</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76">ExpandVariadicsMode</a> &#123;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20" lineLink="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76a6fcdc090caeade09d0efd6253932b6f5"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76a6fcdc090caeade09d0efd6253932b6f5">Unspecified</a>, </span><span class="doxyHighlightComment">// Use the implementation defaults</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21" lineLink="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76abcfaccebf745acfd5e75351095a5394a"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#afdccf3ff7a8dfaa084b07c1fb417bbe2abcfaccebf745acfd5e75351095a5394a">Disable</a>,     </span><span class="doxyHighlightComment">// Disable the pass entirely</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22" lineLink="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76a8346db516e5f3aa534827e7d6c166744"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76a8346db516e5f3aa534827e7d6c166744">Optimize</a>,    </span><span class="doxyHighlightComment">// Optimise without changing ABI</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23" lineLink="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76a29d4416121b20dd5ccd9ffca40c05524"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76a29d4416121b20dd5ccd9ffca40c05524">Lowering</a>,    </span><span class="doxyHighlightComment">// Change variadic calling convention</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26" lineLink="/docs/api/classes/llvm/expandvariadicspass"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/expandvariadicspass/#af1b02298b8b67ec2a1141f05f91386b9">ExpandVariadicsPass</a> : </span><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/passinfomixin">PassInfoMixin</a>&lt;ExpandVariadicsPass&gt; &#123;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76">ExpandVariadicsMode</a> <a href="/docs/api/files/lib/lib/codegen/regallocevictionadvisor-cpp/#aef71c4b21823f236e70cc6d62375adcd">Mode</a>;</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Operates under passed mode unless overridden on commandline</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/expandvariadicspass/#af1b02298b8b67ec2a1141f05f91386b9">ExpandVariadicsPass</a>(<a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76">ExpandVariadicsMode</a> <a href="/docs/api/files/lib/lib/codegen/regallocevictionadvisor-cpp/#aef71c4b21823f236e70cc6d62375adcd">Mode</a>);</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/preservedanalyses">PreservedAnalyses</a> <a href="/docs/api/classes/llvm/expandvariadicspass/#a2be438827ecb51c62941f87fbd3c0b79">run</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M, <a href="/docs/api/namespaces/llvm/#af9c9208365fd9ce11392b4d79485e259">ModuleAnalysisManager</a> &amp;AM);</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36" lineLink="/docs/api/namespaces/llvm/#a1895f13235512e51a7619de25cda6f4f"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/modulepass">ModulePass</a> &#42;<a href="/docs/api/namespaces/llvm/#a1895f13235512e51a7619de25cda6f4f">createExpandVariadicsPass</a>(<a href="/docs/api/namespaces/llvm/#a4981871ea1a597d1b8aa1a8ac9326e76">ExpandVariadicsMode</a>);</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace llvm</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;TRANSFORMS&#95;IPO&#95;EXPANDVARIADICS&#95;H</span></CodeLine>
 
 </ProgramListing>
 

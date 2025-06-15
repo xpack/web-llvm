@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
@@ -61,56 +60,56 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/MC/MCSPIRVObjectWriter.cpp - SPIR-V Object Writer ----&#42;- C++ &#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcassembler-h">llvm/MC/MCAssembler.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcspirvobjectwriter-h">llvm/MC/MCSPIRVObjectWriter.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcsection-h">llvm/MC/MCSection.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcvalue-h">llvm/MC/MCValue.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/endianstream-h">llvm/Support/EndianStream.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> SPIRVObjectWriter::writeHeader(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcassembler">MCAssembler</a> &amp;Asm) &#123;</Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> uint32&#95;t <a href="/docs/api/namespaces/llvm/xcoff/#aee8f7e420a81c0a58e0febda6902a6f6">MagicNumber</a> = 0x07230203;</Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> uint32&#95;t GeneratorID = 43;</Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> uint32&#95;t GeneratorMagicNumber =</Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal">      (GeneratorID &lt;&lt; 16) | (LLVM&#95;VERSION&#95;MAJOR);</Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> uint32&#95;t Schema = 0;</Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal">  W.write&lt;uint32&#95;t&gt;(<a href="/docs/api/namespaces/llvm/xcoff/#aee8f7e420a81c0a58e0febda6902a6f6">MagicNumber</a>);</Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal">  W.write&lt;uint32&#95;t&gt;((VersionInfo.Major &lt;&lt; 16) | (VersionInfo.Minor &lt;&lt; 8));</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal">  W.write&lt;uint32&#95;t&gt;(GeneratorMagicNumber);</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal">  W.write&lt;uint32&#95;t&gt;(VersionInfo.Bound);</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">  W.write&lt;uint32&#95;t&gt;(Schema);</Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31" lineLink="/docs/api/classes/llvm/spirvobjectwriter/#ace1849570653b063c042244c177928d7"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/spirvobjectwriter/#ace1849570653b063c042244c177928d7">SPIRVObjectWriter::setBuildVersion</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Major, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Minor,</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">                                        </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Bound) &#123;</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">  VersionInfo.Major = Major;</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">  VersionInfo.Minor = Minor;</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  VersionInfo.Bound = Bound;</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">uint64&#95;t SPIRVObjectWriter::writeObject(<a href="/docs/api/classes/llvm/mcassembler">MCAssembler</a> &amp;Asm) &#123;</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  uint64&#95;t StartOffset = W.<a href="/docs/api/structs/llvm/support/endian/writer/#aea6f1003a6933f07d06dbce84a8f26cb">OS</a>.<a href="/docs/api/classes/llvm/raw-ostream/#a0f90ad570f71349466844ee9f2d06cd1">tell</a>();</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">  writeHeader(Asm);</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcsection">MCSection</a> &amp;S : Asm)</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">    Asm.writeSectionData(W.<a href="/docs/api/structs/llvm/support/endian/writer/#aea6f1003a6933f07d06dbce84a8f26cb">OS</a>, &amp;S);</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> W.<a href="/docs/api/structs/llvm/support/endian/writer/#aea6f1003a6933f07d06dbce84a8f26cb">OS</a>.<a href="/docs/api/classes/llvm/raw-ostream/#a0f90ad570f71349466844ee9f2d06cd1">tell</a>() - StartOffset;</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">std::unique&#95;ptr&lt;MCObjectWriter&gt;</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/namespaces/llvm/#aa37522936d246cdec6965c9e1c56c0b6"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#aa37522936d246cdec6965c9e1c56c0b6">llvm::createSPIRVObjectWriter</a>(std::unique&#95;ptr&lt;MCSPIRVObjectTargetWriter&gt; MOTW,</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">                              <a href="/docs/api/classes/llvm/raw-pwrite-stream">raw&#95;pwrite&#95;stream</a> &amp;OS) &#123;</Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;unique&lt;SPIRVObjectWriter&gt;(std::move(MOTW), OS);</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- llvm/MC/MCSPIRVObjectWriter.cpp - SPIR-V Object Writer ----&#42;- C++ &#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcassembler-h">llvm/MC/MCAssembler.h</a>&quot;</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcspirvobjectwriter-h">llvm/MC/MCSPIRVObjectWriter.h</a>&quot;</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcsection-h">llvm/MC/MCSection.h</a>&quot;</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcvalue-h">llvm/MC/MCValue.h</a>&quot;</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/endianstream-h">llvm/Support/EndianStream.h</a>&quot;</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightKeyword">using namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a>;</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> SPIRVObjectWriter::writeHeader(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcassembler">MCAssembler</a> &amp;Asm) &#123;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> uint32&#95;t <a href="/docs/api/namespaces/llvm/xcoff/#aee8f7e420a81c0a58e0febda6902a6f6">MagicNumber</a> = 0x07230203;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> uint32&#95;t GeneratorID = 43;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> uint32&#95;t GeneratorMagicNumber =</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlight">      (GeneratorID &lt;&lt; 16) | (LLVM&#95;VERSION&#95;MAJOR);</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> uint32&#95;t Schema = 0;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlight">  W.write&lt;uint32&#95;t&gt;(<a href="/docs/api/namespaces/llvm/xcoff/#aee8f7e420a81c0a58e0febda6902a6f6">MagicNumber</a>);</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlight">  W.write&lt;uint32&#95;t&gt;((VersionInfo.Major &lt;&lt; 16) | (VersionInfo.Minor &lt;&lt; 8));</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlight">  W.write&lt;uint32&#95;t&gt;(GeneratorMagicNumber);</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlight">  W.write&lt;uint32&#95;t&gt;(VersionInfo.Bound);</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlight">  W.write&lt;uint32&#95;t&gt;(Schema);</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31" lineLink="/docs/api/classes/llvm/spirvobjectwriter/#ace1849570653b063c042244c177928d7"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/spirvobjectwriter/#ace1849570653b063c042244c177928d7">SPIRVObjectWriter::setBuildVersion</a>(</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> Major, </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> Minor,</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlight">                                        </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> Bound) &#123;</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlight">  VersionInfo.Major = Major;</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlight">  VersionInfo.Minor = Minor;</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlight">  VersionInfo.Bound = Bound;</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlight">uint64&#95;t SPIRVObjectWriter::writeObject(<a href="/docs/api/classes/llvm/mcassembler">MCAssembler</a> &amp;Asm) &#123;</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlight">  uint64&#95;t StartOffset = W.<a href="/docs/api/structs/llvm/support/endian/writer/#aea6f1003a6933f07d06dbce84a8f26cb">OS</a>.<a href="/docs/api/classes/llvm/raw-ostream/#a0f90ad570f71349466844ee9f2d06cd1">tell</a>();</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlight">  writeHeader(Asm);</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcsection">MCSection</a> &amp;S : Asm)</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlight">    Asm.writeSectionData(W.<a href="/docs/api/structs/llvm/support/endian/writer/#aea6f1003a6933f07d06dbce84a8f26cb">OS</a>, &amp;S);</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> W.<a href="/docs/api/structs/llvm/support/endian/writer/#aea6f1003a6933f07d06dbce84a8f26cb">OS</a>.<a href="/docs/api/classes/llvm/raw-ostream/#a0f90ad570f71349466844ee9f2d06cd1">tell</a>() - StartOffset;</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlight">std::unique&#95;ptr&lt;MCObjectWriter&gt;</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/namespaces/llvm/#aa37522936d246cdec6965c9e1c56c0b6"><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/#aa37522936d246cdec6965c9e1c56c0b6">llvm::createSPIRVObjectWriter</a>(std::unique&#95;ptr&lt;MCSPIRVObjectTargetWriter&gt; MOTW,</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlight">                              <a href="/docs/api/classes/llvm/raw-pwrite-stream">raw&#95;pwrite&#95;stream</a> &amp;OS) &#123;</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::make&#95;unique&lt;SPIRVObjectWriter&gt;(std::move(MOTW), OS);</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlight">&#125;</span></CodeLine>
 
 </ProgramListing>
 

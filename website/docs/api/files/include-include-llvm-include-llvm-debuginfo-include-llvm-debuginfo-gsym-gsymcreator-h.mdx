@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -124,500 +123,500 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- GsymCreator.h --------------------------------------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;DEBUGINFO&#95;GSYM&#95;GSYMCREATOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;DEBUGINFO&#95;GSYM&#95;GSYMCREATOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;functional&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;memory&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;mutex&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;thread&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/addressranges-h">llvm/ADT/AddressRanges.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h">llvm/ADT/ArrayRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringset-h">llvm/ADT/StringSet.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/fileentry-h">llvm/DebugInfo/GSYM/FileEntry.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/functioninfo-h">llvm/DebugInfo/GSYM/FunctionInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/stringtablebuilder-h">llvm/MC/StringTableBuilder.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/endian-h">llvm/Support/Endian.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/error-h">llvm/Support/Error.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/path-h">llvm/Support/Path.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/gsym">gsym</a> &#123;</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/gsym/filewriter">FileWriter</a>;</Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/gsym/outputaggregator">OutputAggregator</a>;</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="comment">/// GsymCreator is used to emit GSYM data to a stand alone file or section</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="comment">/// within a file.</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="comment">/// The GsymCreator is designed to be used in 3 stages:</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">/// - Create FunctionInfo objects and add them</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">/// - Finalize the GsymCreator object</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">/// - Save to file or section</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">/// The first stage involves creating FunctionInfo objects from another source</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">/// of information like compiler debug info metadata, DWARF or Breakpad files.</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">/// Any strings in the FunctionInfo or contained information, like InlineInfo</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">/// or LineTable objects, should get the string table offsets by calling</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="comment">/// GsymCreator::insertString(...). Any file indexes that are needed should be</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">/// obtained by calling GsymCreator::insertFile(...). All of the function calls</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="comment">/// in GsymCreator are thread safe. This allows multiple threads to create and</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="comment">/// add FunctionInfo objects while parsing debug information.</Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="comment">/// Once all of the FunctionInfo objects have been added, the</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="comment">/// GsymCreator::finalize(...) must be called prior to saving. This function</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">/// will sort the FunctionInfo objects, finalize the string table, and do any</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">/// other passes on the information needed to prepare the information to be</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="comment">/// saved.</Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="comment">/// Once the object has been finalized, it can be saved to a file or section.</Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">/// ENCODING</Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="comment">/// GSYM files are designed to be memory mapped into a process as shared, read</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="comment">/// only data, and used as is.</Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="comment">/// The GSYM file format when in a stand alone file consists of:</Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="comment">///   - Header</Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="comment">///   - Address Table</Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="comment">///   - Function Info Offsets</Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="comment">///   - File Table</Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="comment">///   - String Table</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="comment">///   - Function Info Data</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">/// HEADER</Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="comment">/// The header is fully described in &quot;llvm/DebugInfo/GSYM/Header.h&quot;.</Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">/// ADDRESS TABLE</Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">/// The address table immediately follows the header in the file and consists</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="comment">/// of Header.NumAddresses address offsets. These offsets are sorted and can be</Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="comment">/// binary searched for efficient lookups. Addresses in the address table are</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="comment">/// stored as offsets from a 64 bit base address found in Header.BaseAddress.</Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">/// This allows the address table to contain 8, 16, or 32 offsets. This allows</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">/// the address table to not require full 64 bit addresses for each address.</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">/// The resulting GSYM size is smaller and causes fewer pages to be touched</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">/// during address lookups when the address table is smaller. The size of the</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="comment">/// address offsets in the address table is specified in the header in</Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="comment">/// Header.AddrOffSize. The first offset in the address table is aligned to</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="comment">/// Header.AddrOffSize alignment to ensure efficient access when loaded into</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">/// memory.</Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">/// FUNCTION INFO OFFSETS TABLE</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="comment">/// The function info offsets table immediately follows the address table and</Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="comment">/// consists of Header.NumAddresses 32 bit file offsets: one for each address</Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">/// in the address table. This data is aligned to a 4 byte boundary. The</Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">/// offsets in this table are the relative offsets from the start offset of the</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="comment">/// GSYM header and point to the function info data for each address in the</Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">/// address table. Keeping this data separate from the address table helps to</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">/// reduce the number of pages that are touched when address lookups occur on a</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">/// GSYM file.</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="comment">/// FILE TABLE</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="comment">/// The file table immediately follows the function info offsets table. The</Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="comment">/// encoding of the FileTable is:</Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">/// struct FileTable &#123;</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="comment">///   uint32&#95;t Count;</Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="comment">///   FileEntry Files&#91;&#93;;</Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="comment">/// &#125;;</Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">/// The file table starts with a 32 bit count of the number of files that are</Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">/// used in all of the function info, followed by that number of FileEntry</Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">/// structures. The file table is aligned to a 4 byte boundary, Each file in</Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">/// the file table is represented with a FileEntry structure.</Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">/// See &quot;llvm/DebugInfo/GSYM/FileEntry.h&quot; for details.</Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">/// STRING TABLE</Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">/// The string table follows the file table in stand alone GSYM files and</Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">/// contains all strings for everything contained in the GSYM file. Any string</Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">/// data should be added to the string table and any references to strings</Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="comment">/// inside GSYM information must be stored as 32 bit string table offsets into</Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="comment">/// this string table. The string table always starts with an empty string at</Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="comment">/// offset zero and is followed by any strings needed by the GSYM information.</Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">/// The start of the string table is not aligned to any boundary.</Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="comment">/// FUNCTION INFO DATA</Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="comment">/// The function info data is the payload that contains information about the</Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="comment">/// address that is being looked up. It contains all of the encoded</Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="comment">/// FunctionInfo objects. Each encoded FunctionInfo&#39;s data is pointed to by an</Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">/// entry in the Function Info Offsets Table. For details on the exact encoding</Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">/// of FunctionInfo objects, see &quot;llvm/DebugInfo/GSYM/FunctionInfo.h&quot;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134" lineLink="/docs/api/classes/llvm/gsym/gsymcreator"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/gsym/gsymcreator/#af85ae9f6e8c014d57c9b61519dcadcbd">GsymCreator</a> &#123;</Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Private member variables require Mutex protections</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">mutable</Highlight><Highlight kind="normal"> std::mutex Mutex;</Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  std::vector&lt;FunctionInfo&gt; Funcs;</Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringtablebuilder">StringTableBuilder</a> StrTab;</Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringset">StringSet&lt;&gt;</a> StringStorage;</Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;llvm::gsym::FileEntry, uint32&#95;t&gt;</a> FileEntryToIndex;</Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Needed for mapping string offsets back to the string stored in \\a StrTab.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;uint64&#95;t, CachedHashStringRef&gt;</a> StringOffsetMap;</Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">  std::vector&lt;llvm::gsym::FileEntry&gt; Files;</Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  std::vector&lt;uint8&#95;t&gt; <a href="/docs/api/files/lib/lib/textapi/textstubcommon-h/#a847f9d797fd06f1d451476d6362a6a41">UUID</a>;</Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">  std::optional&lt;AddressRanges&gt; ValidTextRanges;</Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">  std::optional&lt;uint64&#95;t&gt; BaseAddress;</Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsSegment = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Finalized = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a0d9d5328bc7a7ba4906fb7a366cc9a32a098753f8980036f4b936e3d4b6997111">Quiet</a>;</Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="comment">  /// Get the first function start address.</Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="comment">  /// \\returns The start address of the first FunctionInfo or std::nullopt if</Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="comment">  /// there are no function infos.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  std::optional&lt;uint64&#95;t&gt; getFirstFunctionAddress() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="comment">  /// Get the last function address.</Highlight></CodeLine>
-<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="comment">  /// \\returns The start address of the last FunctionInfo or std::nullopt if</Highlight></CodeLine>
-<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="comment">  /// there are no function infos.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">  std::optional&lt;uint64&#95;t&gt; getLastFunctionAddress() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="comment">  /// Get the base address to use for this GSYM file.</Highlight></CodeLine>
-<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="comment">  /// \\returns The base address to put into the header and to use when creating</Highlight></CodeLine>
-<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="comment">  ///          the address offset table or std::nullpt if there are no valid</Highlight></CodeLine>
-<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="comment">  ///          function infos or if the base address wasn&#39;t specified.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">  std::optional&lt;uint64&#95;t&gt; getBaseAddress() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="comment">  /// Get the size of an address offset in the address offset table.</Highlight></CodeLine>
-<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="comment">  /// GSYM files store offsets from the base address in the address offset table</Highlight></CodeLine>
-<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="comment">  /// and we store the size of the address offsets in the GSYM header. This</Highlight></CodeLine>
-<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="comment">  /// function will calculate the size in bytes of these address offsets based</Highlight></CodeLine>
-<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="comment">  /// on the current contents of the GSYM file.</Highlight></CodeLine>
-<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="comment">  /// \\returns The size in byets of the address offsets.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">  uint8&#95;t getAddressOffsetSize() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="comment">  /// Get the maximum address offset for the current address offset size.</Highlight></CodeLine>
-<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="comment">  /// This is used when creating the address offset table to ensure we have</Highlight></CodeLine>
-<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="comment">  /// values that are in range so we don&#39;t end up truncating address offsets</Highlight></CodeLine>
-<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="comment">  /// when creating GSYM files as the code evolves.</Highlight></CodeLine>
-<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="comment">  /// \\returns The maximum address offset value that will be encoded into a GSYM</Highlight></CodeLine>
-<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="comment">  /// file.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">  uint64&#95;t getMaxAddressOffset() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="comment">  /// Calculate the byte size of the GSYM header and tables sizes.</Highlight></CodeLine>
-<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="comment">  /// This function will calculate the exact size in bytes of the encocded GSYM</Highlight></CodeLine>
-<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="comment">  /// for the following items:</Highlight></CodeLine>
-<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="comment">  /// - The GSYM header</Highlight></CodeLine>
-<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="comment">  /// - The Address offset table</Highlight></CodeLine>
-<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="comment">  /// - The Address info offset table</Highlight></CodeLine>
-<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="comment">  /// - The file table</Highlight></CodeLine>
-<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="comment">  /// - The string table</Highlight></CodeLine>
-<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="comment">  /// This is used to help split GSYM files into segments.</Highlight></CodeLine>
-<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="comment">  /// \\returns Size in bytes the GSYM header and tables.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">  uint64&#95;t calculateHeaderAndTableSize() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="comment">  /// Copy a FunctionInfo from the \\a SrcGC GSYM creator into this creator.</Highlight></CodeLine>
-<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="comment">  /// Copy the function info and only the needed files and strings and add a</Highlight></CodeLine>
-<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="comment">  /// converted FunctionInfo into this object. This is used to segment GSYM</Highlight></CodeLine>
-<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="comment">  /// files into separate files while only transferring the files and strings</Highlight></CodeLine>
-<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="comment">  /// that are needed from \\a SrcGC.</Highlight></CodeLine>
-<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="comment">  /// \\param SrcGC The source gsym creator to copy from.</Highlight></CodeLine>
-<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="comment">  /// \\param FuncInfoIdx The function info index within \\a SrcGC to copy.</Highlight></CodeLine>
-<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="comment">  /// \\returns The number of bytes it will take to encode the function info in</Highlight></CodeLine>
-<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="comment">  /// this GsymCreator. This helps calculate the size of the current GSYM</Highlight></CodeLine>
-<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="comment">  /// segment file.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">  uint64&#95;t copyFunctionInfo(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af85ae9f6e8c014d57c9b61519dcadcbd">GsymCreator</a> &amp;SrcGC, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> FuncInfoIdx);</Highlight></CodeLine>
-<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="comment">  /// Copy a string from \\a SrcGC into this object.</Highlight></CodeLine>
-<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="comment">  /// Copy a string from \\a SrcGC by string table offset into this GSYM creator.</Highlight></CodeLine>
-<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="comment">  /// If a string has already been copied, the uniqued string table offset will</Highlight></CodeLine>
-<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="comment">  /// be returned, otherwise the string will be copied and a unique offset will</Highlight></CodeLine>
-<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="comment">  /// be returned.</Highlight></CodeLine>
-<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="comment">  /// \\param SrcGC The source gsym creator to copy from.</Highlight></CodeLine>
-<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="comment">  /// \\param StrOff The string table offset from \\a SrcGC to copy.</Highlight></CodeLine>
-<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="comment">  /// \\returns The new string table offset of the string within this object.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">  uint32&#95;t copyString(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af85ae9f6e8c014d57c9b61519dcadcbd">GsymCreator</a> &amp;SrcGC, uint32&#95;t StrOff);</Highlight></CodeLine>
-<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="comment">  /// Copy a file from \\a SrcGC into this object.</Highlight></CodeLine>
-<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="comment">  /// Copy a file from \\a SrcGC by file index into this GSYM creator. Files</Highlight></CodeLine>
-<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="comment">  /// consist of two string table entries, one for the directory and one for the</Highlight></CodeLine>
-<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="comment">  /// filename, this function will copy any needed strings ensure the file is</Highlight></CodeLine>
-<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="comment">  /// uniqued within this object. If a file already exists in this GSYM creator</Highlight></CodeLine>
-<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="comment">  /// the uniqued index will be returned, else the stirngs will be copied and</Highlight></CodeLine>
-<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="comment">  /// the new file index will be returned.</Highlight></CodeLine>
-<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="comment">  /// \\param SrcGC The source gsym creator to copy from.</Highlight></CodeLine>
-<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="comment">  /// \\param FileIdx The 1 based file table index within \\a SrcGC to copy. A</Highlight></CodeLine>
-<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="comment">  /// file index of zero will always return zero as the zero is a reserved file</Highlight></CodeLine>
-<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="comment">  /// index that means no file.</Highlight></CodeLine>
-<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="comment">  /// \\returns The new file index of the file within this object.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">  uint32&#95;t copyFile(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af85ae9f6e8c014d57c9b61519dcadcbd">GsymCreator</a> &amp;SrcGC, uint32&#95;t FileIdx);</Highlight></CodeLine>
-<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="comment">  /// Inserts a FileEntry into the file table.</Highlight></CodeLine>
-<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="comment">  /// This is used to insert a file entry in a thread safe way into this object.</Highlight></CodeLine>
-<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="comment">  /// \\param FE A file entry object that contains valid string table offsets</Highlight></CodeLine>
-<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="comment">  /// from this object already.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">  uint32&#95;t insertFileEntry(<a href="/docs/api/structs/llvm/gsym/fileentry">FileEntry</a> FE);</Highlight></CodeLine>
-<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="comment">  /// Fixup any string and file references by updating any file indexes and</Highlight></CodeLine>
-<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="comment">  /// strings offsets in the InlineInfo parameter.</Highlight></CodeLine>
-<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="comment">  /// When copying InlineInfo entries, we can simply make a copy of the object</Highlight></CodeLine>
-<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="comment">  /// and then fixup the files and strings for efficiency.</Highlight></CodeLine>
-<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="comment">  /// \\param SrcGC The source gsym creator to copy from.</Highlight></CodeLine>
-<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="comment">  /// \\param II The inline info that contains file indexes and string offsets</Highlight></CodeLine>
-<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="comment">  /// that come from \\a SrcGC. The entries will be updated by coping any files</Highlight></CodeLine>
-<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="comment">  /// and strings over into this object.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> fixupInlineInfo(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af85ae9f6e8c014d57c9b61519dcadcbd">GsymCreator</a> &amp;SrcGC, <a href="/docs/api/structs/llvm/gsym/inlineinfo">InlineInfo</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a>);</Highlight></CodeLine>
-<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="comment">  /// Save this GSYM file into segments that are roughly \\a SegmentSize in size.</Highlight></CodeLine>
-<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="comment">  /// When segemented GSYM files are saved to disk, they will use \\a Path as a</Highlight></CodeLine>
-<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="comment">  /// prefix and then have the first function info address appended to the path</Highlight></CodeLine>
-<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="comment">  /// when each segment is saved. Each segmented GSYM file has a only the</Highlight></CodeLine>
-<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="comment">  /// strings and files that are needed to save the function infos that are in</Highlight></CodeLine>
-<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="comment">  /// each segment. These smaller files are easy to compress and download</Highlight></CodeLine>
-<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="comment">  /// separately and allow for efficient lookups with very large GSYM files and</Highlight></CodeLine>
-<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="comment">  /// segmenting them allows servers to download only the segments that are</Highlight></CodeLine>
-<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="comment">  /// needed.</Highlight></CodeLine>
-<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="comment">  /// \\param Path The path prefix to use when saving the GSYM files.</Highlight></CodeLine>
-<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="comment">  /// \\param ByteOrder The endianness to use when saving the file.</Highlight></CodeLine>
-<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="comment">  /// \\param SegmentSize The size in bytes to segment the GSYM file into.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">llvm::Error</a> saveSegments(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Path, <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000db">llvm::endianness</a> ByteOrder,</Highlight></CodeLine>
-<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">                           uint64&#95;t SegmentSize) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="comment">  /// Let this creator know that this is a segment of another GsymCreator.</Highlight></CodeLine>
-<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="comment">  /// When we have a segment, we know that function infos will be added in</Highlight></CodeLine>
-<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="comment">  /// ascending address range order without having to be finalized. We also</Highlight></CodeLine>
-<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="comment">  /// don&#39;t need to sort and unique entries during the finalize function call.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> setIsSegment() &#123;</Highlight></CodeLine>
-<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">    IsSegment = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af85ae9f6e8c014d57c9b61519dcadcbd">GsymCreator</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a0d9d5328bc7a7ba4906fb7a366cc9a32a098753f8980036f4b936e3d4b6997111">Quiet</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="comment">  /// Save a GSYM file to a stand alone file.</Highlight></CodeLine>
-<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="comment">  /// \\param Path The file path to save the GSYM file to.</Highlight></CodeLine>
-<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="comment">  /// \\param ByteOrder The endianness to use when saving the file.</Highlight></CodeLine>
-<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="comment">  /// \\param SegmentSize The size in bytes to segment the GSYM file into. If</Highlight></CodeLine>
-<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="comment">  ///                    this option is set this function will create N segments</Highlight></CodeLine>
-<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="comment">  ///                    that are all around \\a SegmentSize bytes in size. This</Highlight></CodeLine>
-<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="comment">  ///                    allows a very large GSYM file to be broken up into</Highlight></CodeLine>
-<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="comment">  ///                    shards. Each GSYM file will have its own file table,</Highlight></CodeLine>
-<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="comment">  ///                    and string table that only have the files and strings</Highlight></CodeLine>
-<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="comment">  ///                    needed for the shared. If this argument has no value,</Highlight></CodeLine>
-<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="comment">  ///                    a single GSYM file that contains all function</Highlight></CodeLine>
-<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="comment">  ///                    information will be created.</Highlight></CodeLine>
-<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="comment">  /// \\returns An error object that indicates success or failure of the save.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">llvm::Error</a> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a5c4f8122cf59952849b4d8184df118dc">save</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Path, <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000db">llvm::endianness</a> ByteOrder,</Highlight></CodeLine>
-<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal">                   std::optional&lt;uint64&#95;t&gt; SegmentSize = std::nullopt) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="comment">  /// Encode a GSYM into the file writer stream at the current position.</Highlight></CodeLine>
-<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="comment">  /// \\param O The stream to save the binary data to</Highlight></CodeLine>
-<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="comment">  /// \\returns An error object that indicates success or failure of the save.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">llvm::Error</a> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a9ede3510dd3c4a79112fd4ff9048e04b">encode</a>(<a href="/docs/api/classes/llvm/gsym/filewriter">FileWriter</a> &amp;O) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="comment">  /// Insert a string into the GSYM string table.</Highlight></CodeLine>
-<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="comment">  /// All strings used by GSYM files must be uniqued by adding them to this</Highlight></CodeLine>
-<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="comment">  /// string pool and using the returned offset for any string values.</Highlight></CodeLine>
-<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="comment">  /// \\param S The string to insert into the string table.</Highlight></CodeLine>
-<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="comment">  /// \\param Copy If true, then make a backing copy of the string. If false,</Highlight></CodeLine>
-<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="comment">  ///             the string is owned by another object that will stay around</Highlight></CodeLine>
-<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="comment">  ///             long enough for the GsymCreator to save the GSYM file.</Highlight></CodeLine>
-<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="comment">  /// \\returns The unique 32 bit offset into the string table.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal">  uint32&#95;t <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a22638e32cb1220ddfacd7eb1bc5dfcf5">insertString</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> S, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Copy = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="comment">  /// Retrieve a string from the GSYM string table given its offset.</Highlight></CodeLine>
-<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="comment">  /// The offset is assumed to be a valid offset into the string table.</Highlight></CodeLine>
-<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="comment">  /// otherwise an assert will be triggered.</Highlight></CodeLine>
-<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="comment">  /// \\param Offset The offset of the string to retrieve, previously returned by</Highlight></CodeLine>
-<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="comment">  /// insertString.</Highlight></CodeLine>
-<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="comment">  /// \\returns The string at the given offset in the string table.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a9614258b67dc42d2f0708464bddc96dd">getString</a>(uint32&#95;t <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>);</Highlight></CodeLine>
-<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="comment">  /// Insert a file into this GSYM creator.</Highlight></CodeLine>
-<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="comment">  /// Inserts a file by adding a FileEntry into the &quot;Files&quot; member variable if</Highlight></CodeLine>
-<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="comment">  /// the file has not already been added. The file path is split into</Highlight></CodeLine>
-<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="comment">  /// directory and filename which are both added to the string table. This</Highlight></CodeLine>
-<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="comment">  /// allows paths to be stored efficiently by reusing the directories that are</Highlight></CodeLine>
-<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="comment">  /// common between multiple files.</Highlight></CodeLine>
-<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="comment">  /// \\param   Path The path to the file to insert.</Highlight></CodeLine>
-<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="comment">  /// \\param   Style The path style for the &quot;Path&quot; parameter.</Highlight></CodeLine>
-<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="comment">  /// \\returns The unique file index for the inserted file.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal">  uint32&#95;t <a href="/docs/api/classes/llvm/gsym/gsymcreator/#ac9372d27c9fb107c96a7b241848d05ed">insertFile</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Path,</Highlight></CodeLine>
-<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="normal">                      <a href="/docs/api/namespaces/llvm/sys/path/#a58cfd8a47c0ef96db27b451c2d6ec49f">sys::path::Style</a> Style = <a href="/docs/api/namespaces/llvm/sys/path/#a58cfd8a47c0ef96db27b451c2d6ec49fa8e5f3adee38c8fccc13c1f3be0143796">sys::path::Style::native</a>);</Highlight></CodeLine>
-<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="comment">  /// Add a function info to this GSYM creator.</Highlight></CodeLine>
-<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="comment">  /// All information in the FunctionInfo object must use the</Highlight></CodeLine>
-<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="comment">  /// GsymCreator::insertString(...) function when creating string table</Highlight></CodeLine>
-<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="comment">  /// offsets for names and other strings.</Highlight></CodeLine>
-<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="comment">  /// \\param   FI The function info object to emplace into our functions list.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a0255c904a2083824db32c67a98520742">addFunctionInfo</a>(<a href="/docs/api/structs/llvm/gsym/functioninfo">FunctionInfo</a> &amp;&amp;FI);</Highlight></CodeLine>
-<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="comment">  /// Load call site information from a YAML file.</Highlight></CodeLine>
-<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="comment">  /// This function reads call site information from a specified YAML file and</Highlight></CodeLine>
-<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="comment">  /// adds it to the GSYM data.</Highlight></CodeLine>
-<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="comment">  /// \\param YAMLFile The path to the YAML file containing call site</Highlight></CodeLine>
-<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="comment">  /// information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">llvm::Error</a> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a9e3037da68715a480cd7b1996f5737a8">loadCallSitesFromYAML</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> YAMLFile);</Highlight></CodeLine>
-<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="comment">  /// Organize merged FunctionInfo&#39;s</Highlight></CodeLine>
-<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="comment">  /// This method processes the list of function infos (Funcs) to identify and</Highlight></CodeLine>
-<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="comment">  /// group functions with overlapping address ranges.</Highlight></CodeLine>
-<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="comment">  /// \\param  Out Output stream to report information about how merged</Highlight></CodeLine>
-<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="comment">  /// FunctionInfo&#39;s were handled.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a7ff8f5a82defa914ab5037231e289055">prepareMergedFunctions</a>(<a href="/docs/api/classes/llvm/gsym/outputaggregator">OutputAggregator</a> &amp;Out);</Highlight></CodeLine>
-<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="comment">  /// Finalize the data in the GSYM creator prior to saving the data out.</Highlight></CodeLine>
-<Link id="l00384" /><CodeLine lineNumber="384"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="comment">  /// Finalize must be called after all FunctionInfo objects have been added</Highlight></CodeLine>
-<Link id="l00386" /><CodeLine lineNumber="386"><Highlight kind="comment">  /// and before GsymCreator::save() is called.</Highlight></CodeLine>
-<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00388" /><CodeLine lineNumber="388"><Highlight kind="comment">  /// \\param  OS Output stream to report duplicate function infos, overlapping</Highlight></CodeLine>
-<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="comment">  ///         function infos, and function infos that were merged or removed.</Highlight></CodeLine>
-<Link id="l00390" /><CodeLine lineNumber="390"><Highlight kind="comment">  /// \\returns An error object that indicates success or failure of the</Highlight></CodeLine>
-<Link id="l00391" /><CodeLine lineNumber="391"><Highlight kind="comment">  ///          finalize.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">llvm::Error</a> <a href="/docs/api/files/lib/lib/target/lib/target/arc/arcbranchfinalize-cpp/#a8e08eb3768ea6054b445ad1e5f0b9bba">finalize</a>(<a href="/docs/api/classes/llvm/gsym/outputaggregator">OutputAggregator</a> &amp;OS);</Highlight></CodeLine>
-<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00394" /><CodeLine lineNumber="394"><Highlight kind="comment">  /// Set the UUID value.</Highlight></CodeLine>
-<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="comment">  /// \\param UUIDBytes The new UUID bytes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00397" /><CodeLine lineNumber="397" lineLink="/docs/api/classes/llvm/gsym/gsymcreator/#ab85ea74b3cb2aeabcf765b1892ff9d91"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#ab85ea74b3cb2aeabcf765b1892ff9d91">setUUID</a>(<a href="/docs/api/classes/llvm/arrayref">llvm::ArrayRef&lt;uint8&#95;t&gt;</a> UUIDBytes) &#123;</Highlight></CodeLine>
-<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/textapi/textstubcommon-h/#a847f9d797fd06f1d451476d6362a6a41">UUID</a>.assign(UUIDBytes.<a href="/docs/api/classes/llvm/arrayref/#aab36927882fbfdcbb860d87fd9c30da8">begin</a>(), UUIDBytes.<a href="/docs/api/classes/llvm/arrayref/#a7ca5197533a9c1fb8a2bd30587fcec6b">end</a>());</Highlight></CodeLine>
-<Link id="l00399" /><CodeLine lineNumber="399"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="comment">  /// Thread safe iteration over all function infos.</Highlight></CodeLine>
-<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="comment">  /// \\param  Callback A callback function that will get called with each</Highlight></CodeLine>
-<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="comment">  ///         FunctionInfo. If the callback returns false, stop iterating.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00405" /><CodeLine lineNumber="405"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af56844c4beded9856bac60a414e9e998">forEachFunctionInfo</a>(</Highlight></CodeLine>
-<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="normal">      std::function&lt;</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">(<a href="/docs/api/structs/llvm/gsym/functioninfo">FunctionInfo</a> &amp;)&gt; </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> &amp;Callback);</Highlight></CodeLine>
-<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="comment">  /// Thread safe const iteration over all function infos.</Highlight></CodeLine>
-<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="comment">  /// \\param  Callback A callback function that will get called with each</Highlight></CodeLine>
-<Link id="l00411" /><CodeLine lineNumber="411"><Highlight kind="comment">  ///         FunctionInfo. If the callback returns false, stop iterating.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af56844c4beded9856bac60a414e9e998">forEachFunctionInfo</a>(</Highlight></CodeLine>
-<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="normal">      std::function&lt;</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/gsym/functioninfo">FunctionInfo</a> &amp;)&gt; </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> &amp;Callback) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="comment">  /// Get the current number of FunctionInfo objects contained in this</Highlight></CodeLine>
-<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="comment">  /// object.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00417" /><CodeLine lineNumber="417"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#adebfdaa4b1b4fa505e9b9b8b91693704">getNumFunctionInfos</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="comment">  /// Set valid .text address ranges that all functions must be contained in.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00420" /><CodeLine lineNumber="420" lineLink="/docs/api/classes/llvm/gsym/gsymcreator/#ac3c47f7d5f05e3c9778d24ad91e5e7c7"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#ac3c47f7d5f05e3c9778d24ad91e5e7c7">SetValidTextRanges</a>(<a href="/docs/api/classes/llvm/addressranges">AddressRanges</a> &amp;TextRanges) &#123;</Highlight></CodeLine>
-<Link id="l00421" /><CodeLine lineNumber="421"><Highlight kind="normal">    ValidTextRanges = TextRanges;</Highlight></CodeLine>
-<Link id="l00422" /><CodeLine lineNumber="422"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00423" /><CodeLine lineNumber="423"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00424" /><CodeLine lineNumber="424"><Highlight kind="comment">  /// Get the valid text ranges.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00425" /><CodeLine lineNumber="425" lineLink="/docs/api/classes/llvm/gsym/gsymcreator/#a3ef9c30d1566dd46fc54265f960ed1e4"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::optional&lt;AddressRanges&gt; <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a3ef9c30d1566dd46fc54265f960ed1e4">GetValidTextRanges</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00426" /><CodeLine lineNumber="426"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ValidTextRanges;</Highlight></CodeLine>
-<Link id="l00427" /><CodeLine lineNumber="427"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00428" /><CodeLine lineNumber="428"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00429" /><CodeLine lineNumber="429"><Highlight kind="comment">  /// Check if an address is a valid code address.</Highlight></CodeLine>
-<Link id="l00430" /><CodeLine lineNumber="430"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00431" /><CodeLine lineNumber="431"><Highlight kind="comment">  /// Any functions whose addresses do not exist within these function bounds</Highlight></CodeLine>
-<Link id="l00432" /><CodeLine lineNumber="432"><Highlight kind="comment">  /// will not be converted into the final GSYM. This allows the object file</Highlight></CodeLine>
-<Link id="l00433" /><CodeLine lineNumber="433"><Highlight kind="comment">  /// to figure out the valid file address ranges of all the code sections</Highlight></CodeLine>
-<Link id="l00434" /><CodeLine lineNumber="434"><Highlight kind="comment">  /// and ensure we don&#39;t add invalid functions to the final output. Many</Highlight></CodeLine>
-<Link id="l00435" /><CodeLine lineNumber="435"><Highlight kind="comment">  /// linkers have issues when dead stripping functions from DWARF debug info</Highlight></CodeLine>
-<Link id="l00436" /><CodeLine lineNumber="436"><Highlight kind="comment">  /// where they set the DW&#95;AT&#95;low&#95;pc to zero, but newer DWARF has the</Highlight></CodeLine>
-<Link id="l00437" /><CodeLine lineNumber="437"><Highlight kind="comment">  /// DW&#95;AT&#95;high&#95;pc as an offset from the DW&#95;AT&#95;low&#95;pc and these size</Highlight></CodeLine>
-<Link id="l00438" /><CodeLine lineNumber="438"><Highlight kind="comment">  /// attributes have no relocations that can be applied. This results in DWARF</Highlight></CodeLine>
-<Link id="l00439" /><CodeLine lineNumber="439"><Highlight kind="comment">  /// where many functions have an DW&#95;AT&#95;low&#95;pc of zero and a valid offset size</Highlight></CodeLine>
-<Link id="l00440" /><CodeLine lineNumber="440"><Highlight kind="comment">  /// for DW&#95;AT&#95;high&#95;pc. If we extract all valid ranges from an object file</Highlight></CodeLine>
-<Link id="l00441" /><CodeLine lineNumber="441"><Highlight kind="comment">  /// that are marked with executable permissions, we can properly ensure that</Highlight></CodeLine>
-<Link id="l00442" /><CodeLine lineNumber="442"><Highlight kind="comment">  /// these functions are removed.</Highlight></CodeLine>
-<Link id="l00443" /><CodeLine lineNumber="443"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00444" /><CodeLine lineNumber="444"><Highlight kind="comment">  /// \\param Addr An address to check.</Highlight></CodeLine>
-<Link id="l00445" /><CodeLine lineNumber="445"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00446" /><CodeLine lineNumber="446"><Highlight kind="comment">  /// \\returns True if the address is in the valid text ranges or if no valid</Highlight></CodeLine>
-<Link id="l00447" /><CodeLine lineNumber="447"><Highlight kind="comment">  ///          text ranges have been set, false otherwise.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00448" /><CodeLine lineNumber="448"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#aed7eb12c998221cb39a6a3d96e9a0e56">IsValidTextAddress</a>(uint64&#95;t Addr) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00449" /><CodeLine lineNumber="449"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00450" /><CodeLine lineNumber="450"><Highlight kind="comment">  /// Set the base address to use for the GSYM file.</Highlight></CodeLine>
-<Link id="l00451" /><CodeLine lineNumber="451"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00452" /><CodeLine lineNumber="452"><Highlight kind="comment">  /// Setting the base address to use for the GSYM file. Object files typically</Highlight></CodeLine>
-<Link id="l00453" /><CodeLine lineNumber="453"><Highlight kind="comment">  /// get loaded from a base address when the OS loads them into memory. Using</Highlight></CodeLine>
-<Link id="l00454" /><CodeLine lineNumber="454"><Highlight kind="comment">  /// GSYM files for symbolication becomes easier if the base address in the</Highlight></CodeLine>
-<Link id="l00455" /><CodeLine lineNumber="455"><Highlight kind="comment">  /// GSYM header is the same address as it allows addresses to be easily slid</Highlight></CodeLine>
-<Link id="l00456" /><CodeLine lineNumber="456"><Highlight kind="comment">  /// and allows symbolication without needing to find the original base</Highlight></CodeLine>
-<Link id="l00457" /><CodeLine lineNumber="457"><Highlight kind="comment">  /// address in the original object file.</Highlight></CodeLine>
-<Link id="l00458" /><CodeLine lineNumber="458"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00459" /><CodeLine lineNumber="459"><Highlight kind="comment">  /// \\param  Addr The address to use as the base address of the GSYM file</Highlight></CodeLine>
-<Link id="l00460" /><CodeLine lineNumber="460"><Highlight kind="comment">  ///              when it is saved to disk.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00461" /><CodeLine lineNumber="461" lineLink="/docs/api/classes/llvm/gsym/gsymcreator/#a3a20d5b08d026255dd9f7f7473cfe89b"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a3a20d5b08d026255dd9f7f7473cfe89b">setBaseAddress</a>(uint64&#95;t Addr) &#123;</Highlight></CodeLine>
-<Link id="l00462" /><CodeLine lineNumber="462"><Highlight kind="normal">    BaseAddress = Addr;</Highlight></CodeLine>
-<Link id="l00463" /><CodeLine lineNumber="463"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00464" /><CodeLine lineNumber="464"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00465" /><CodeLine lineNumber="465"><Highlight kind="comment">  /// Whether the transformation should be quiet, i.e. not output warnings.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00466" /><CodeLine lineNumber="466" lineLink="/docs/api/classes/llvm/gsym/gsymcreator/#aaf2698c4afe7c309bcae39e29649586b"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#aaf2698c4afe7c309bcae39e29649586b">isQuiet</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a0d9d5328bc7a7ba4906fb7a366cc9a32a098753f8980036f4b936e3d4b6997111">Quiet</a>; &#125;</Highlight></CodeLine>
-<Link id="l00467" /><CodeLine lineNumber="467"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00468" /><CodeLine lineNumber="468"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00469" /><CodeLine lineNumber="469"><Highlight kind="comment">  /// Create a segmented GSYM creator starting with function info index</Highlight></CodeLine>
-<Link id="l00470" /><CodeLine lineNumber="470"><Highlight kind="comment">  /// \\a FuncIdx.</Highlight></CodeLine>
-<Link id="l00471" /><CodeLine lineNumber="471"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00472" /><CodeLine lineNumber="472"><Highlight kind="comment">  /// This function will create a GsymCreator object that will encode into</Highlight></CodeLine>
-<Link id="l00473" /><CodeLine lineNumber="473"><Highlight kind="comment">  /// roughly \\a SegmentSize bytes and return it. It is used by the private</Highlight></CodeLine>
-<Link id="l00474" /><CodeLine lineNumber="474"><Highlight kind="comment">  /// saveSegments(...) function and also is used by the GSYM unit tests to test</Highlight></CodeLine>
-<Link id="l00475" /><CodeLine lineNumber="475"><Highlight kind="comment">  /// segmenting of GSYM files. The returned GsymCreator can be finalized and</Highlight></CodeLine>
-<Link id="l00476" /><CodeLine lineNumber="476"><Highlight kind="comment">  /// encoded.</Highlight></CodeLine>
-<Link id="l00477" /><CodeLine lineNumber="477"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00478" /><CodeLine lineNumber="478"><Highlight kind="comment">  /// \\param &#91;in&#93; SegmentSize The size in bytes to roughly segment the GSYM file</Highlight></CodeLine>
-<Link id="l00479" /><CodeLine lineNumber="479"><Highlight kind="comment">  /// into.</Highlight></CodeLine>
-<Link id="l00480" /><CodeLine lineNumber="480"><Highlight kind="comment">  /// \\param &#91;in,out&#93; FuncIdx The index of the first function info to encode</Highlight></CodeLine>
-<Link id="l00481" /><CodeLine lineNumber="481"><Highlight kind="comment">  /// into the returned GsymCreator. This index will be updated so it can be</Highlight></CodeLine>
-<Link id="l00482" /><CodeLine lineNumber="482"><Highlight kind="comment">  /// used in subsequent calls to this function to allow more segments to be</Highlight></CodeLine>
-<Link id="l00483" /><CodeLine lineNumber="483"><Highlight kind="comment">  /// created.</Highlight></CodeLine>
-<Link id="l00484" /><CodeLine lineNumber="484"><Highlight kind="comment">  /// \\returns An expected unique pointer to a GsymCreator or an error. The</Highlight></CodeLine>
-<Link id="l00485" /><CodeLine lineNumber="485"><Highlight kind="comment">  /// returned unique pointer can be NULL if there are no more functions to</Highlight></CodeLine>
-<Link id="l00486" /><CodeLine lineNumber="486"><Highlight kind="comment">  /// encode.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00487" /><CodeLine lineNumber="487"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/expected">llvm::Expected&lt;std::unique&#95;ptr&lt;GsymCreator&gt;</a>&gt;</Highlight></CodeLine>
-<Link id="l00488" /><CodeLine lineNumber="488"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a5a00b6c05d78359948c41de0ee1f20a4">createSegment</a>(uint64&#95;t SegmentSize, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> &amp;FuncIdx) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00489" /><CodeLine lineNumber="489"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00490" /><CodeLine lineNumber="490"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00491" /><CodeLine lineNumber="491"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace gsym</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00492" /><CodeLine lineNumber="492"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00493" /><CodeLine lineNumber="493"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00494" /><CodeLine lineNumber="494"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;DEBUGINFO&#95;GSYM&#95;GSYMCREATOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- GsymCreator.h --------------------------------------------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;DEBUGINFO&#95;GSYM&#95;GSYMCREATOR&#95;H</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightPreprocessor">#define LLVM&#95;DEBUGINFO&#95;GSYM&#95;GSYMCREATOR&#95;H</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightPreprocessor">#include &lt;functional&gt;</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightPreprocessor">#include &lt;memory&gt;</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#include &lt;mutex&gt;</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightPreprocessor">#include &lt;thread&gt;</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/addressranges-h">llvm/ADT/AddressRanges.h</a>&quot;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h">llvm/ADT/ArrayRef.h</a>&quot;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringset-h">llvm/ADT/StringSet.h</a>&quot;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/fileentry-h">llvm/DebugInfo/GSYM/FileEntry.h</a>&quot;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/debuginfo/include/llvm/debuginfo/gsym/functioninfo-h">llvm/DebugInfo/GSYM/FunctionInfo.h</a>&quot;</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/stringtablebuilder-h">llvm/MC/StringTableBuilder.h</a>&quot;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/endian-h">llvm/Support/Endian.h</a>&quot;</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/error-h">llvm/Support/Error.h</a>&quot;</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/path-h">llvm/Support/Path.h</a>&quot;</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/gsym">gsym</a> &#123;</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/gsym/filewriter">FileWriter</a>;</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/gsym/outputaggregator">OutputAggregator</a>;</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightComment">/// GsymCreator is used to emit GSYM data to a stand alone file or section</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightComment">/// within a file.</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlightComment">/// The GsymCreator is designed to be used in 3 stages:</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlightComment">/// - Create FunctionInfo objects and add them</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightComment">/// - Finalize the GsymCreator object</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightComment">/// - Save to file or section</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlightComment">/// The first stage involves creating FunctionInfo objects from another source</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlightComment">/// of information like compiler debug info metadata, DWARF or Breakpad files.</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlightComment">/// Any strings in the FunctionInfo or contained information, like InlineInfo</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlightComment">/// or LineTable objects, should get the string table offsets by calling</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlightComment">/// GsymCreator::insertString(...). Any file indexes that are needed should be</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlightComment">/// obtained by calling GsymCreator::insertFile(...). All of the function calls</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlightComment">/// in GsymCreator are thread safe. This allows multiple threads to create and</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlightComment">/// add FunctionInfo objects while parsing debug information.</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlightComment">/// Once all of the FunctionInfo objects have been added, the</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlightComment">/// GsymCreator::finalize(...) must be called prior to saving. This function</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlightComment">/// will sort the FunctionInfo objects, finalize the string table, and do any</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlightComment">/// other passes on the information needed to prepare the information to be</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlightComment">/// saved.</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlightComment">/// Once the object has been finalized, it can be saved to a file or section.</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlightComment">/// ENCODING</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlightComment">/// GSYM files are designed to be memory mapped into a process as shared, read</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlightComment">/// only data, and used as is.</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><span class="doxyHighlightComment">/// The GSYM file format when in a stand alone file consists of:</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlightComment">///   - Header</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlightComment">///   - Address Table</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlightComment">///   - Function Info Offsets</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlightComment">///   - File Table</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlightComment">///   - String Table</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlightComment">///   - Function Info Data</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlightComment">/// HEADER</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlightComment">/// The header is fully described in &quot;llvm/DebugInfo/GSYM/Header.h&quot;.</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlightComment">/// ADDRESS TABLE</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlightComment">/// The address table immediately follows the header in the file and consists</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlightComment">/// of Header.NumAddresses address offsets. These offsets are sorted and can be</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlightComment">/// binary searched for efficient lookups. Addresses in the address table are</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlightComment">/// stored as offsets from a 64 bit base address found in Header.BaseAddress.</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlightComment">/// This allows the address table to contain 8, 16, or 32 offsets. This allows</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlightComment">/// the address table to not require full 64 bit addresses for each address.</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlightComment">/// The resulting GSYM size is smaller and causes fewer pages to be touched</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlightComment">/// during address lookups when the address table is smaller. The size of the</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><span class="doxyHighlightComment">/// address offsets in the address table is specified in the header in</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlightComment">/// Header.AddrOffSize. The first offset in the address table is aligned to</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlightComment">/// Header.AddrOffSize alignment to ensure efficient access when loaded into</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlightComment">/// memory.</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlightComment">/// FUNCTION INFO OFFSETS TABLE</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlightComment">/// The function info offsets table immediately follows the address table and</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlightComment">/// consists of Header.NumAddresses 32 bit file offsets: one for each address</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlightComment">/// in the address table. This data is aligned to a 4 byte boundary. The</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlightComment">/// offsets in this table are the relative offsets from the start offset of the</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><span class="doxyHighlightComment">/// GSYM header and point to the function info data for each address in the</span></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlightComment">/// address table. Keeping this data separate from the address table helps to</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlightComment">/// reduce the number of pages that are touched when address lookups occur on a</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlightComment">/// GSYM file.</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlightComment">/// FILE TABLE</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><span class="doxyHighlightComment">/// The file table immediately follows the function info offsets table. The</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><span class="doxyHighlightComment">/// encoding of the FileTable is:</span></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlightComment">/// struct FileTable &#123;</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><span class="doxyHighlightComment">///   uint32&#95;t Count;</span></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlightComment">///   FileEntry Files&#91;&#93;;</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlightComment">/// &#125;;</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlightComment">/// The file table starts with a 32 bit count of the number of files that are</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><span class="doxyHighlightComment">/// used in all of the function info, followed by that number of FileEntry</span></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlightComment">/// structures. The file table is aligned to a 4 byte boundary, Each file in</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlightComment">/// the file table is represented with a FileEntry structure.</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlightComment">/// See &quot;llvm/DebugInfo/GSYM/FileEntry.h&quot; for details.</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlightComment">/// STRING TABLE</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><span class="doxyHighlightComment">/// The string table follows the file table in stand alone GSYM files and</span></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlightComment">/// contains all strings for everything contained in the GSYM file. Any string</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><span class="doxyHighlightComment">/// data should be added to the string table and any references to strings</span></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlightComment">/// inside GSYM information must be stored as 32 bit string table offsets into</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><span class="doxyHighlightComment">/// this string table. The string table always starts with an empty string at</span></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlightComment">/// offset zero and is followed by any strings needed by the GSYM information.</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlightComment">/// The start of the string table is not aligned to any boundary.</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><span class="doxyHighlightComment">/// FUNCTION INFO DATA</span></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><span class="doxyHighlightComment">/// The function info data is the payload that contains information about the</span></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlightComment">/// address that is being looked up. It contains all of the encoded</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><span class="doxyHighlightComment">/// FunctionInfo objects. Each encoded FunctionInfo&#39;s data is pointed to by an</span></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><span class="doxyHighlightComment">/// entry in the Function Info Offsets Table. For details on the exact encoding</span></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><span class="doxyHighlightComment">/// of FunctionInfo objects, see &quot;llvm/DebugInfo/GSYM/FunctionInfo.h&quot;.</span></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134" lineLink="/docs/api/classes/llvm/gsym/gsymcreator"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/gsym/gsymcreator/#af85ae9f6e8c014d57c9b61519dcadcbd">GsymCreator</a> &#123;</span></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Private member variables require Mutex protections</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">mutable</span><span class="doxyHighlight"> std::mutex Mutex;</span></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><span class="doxyHighlight">  std::vector&lt;FunctionInfo&gt; Funcs;</span></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/stringtablebuilder">StringTableBuilder</a> StrTab;</span></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/stringset">StringSet&lt;&gt;</a> StringStorage;</span></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;llvm::gsym::FileEntry, uint32&#95;t&gt;</a> FileEntryToIndex;</span></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Needed for mapping string offsets back to the string stored in \\a StrTab.</span></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;uint64&#95;t, CachedHashStringRef&gt;</a> StringOffsetMap;</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><span class="doxyHighlight">  std::vector&lt;llvm::gsym::FileEntry&gt; Files;</span></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><span class="doxyHighlight">  std::vector&lt;uint8&#95;t&gt; <a href="/docs/api/files/lib/lib/textapi/textstubcommon-h/#a847f9d797fd06f1d451476d6362a6a41">UUID</a>;</span></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><span class="doxyHighlight">  std::optional&lt;AddressRanges&gt; ValidTextRanges;</span></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlight">  std::optional&lt;uint64&#95;t&gt; BaseAddress;</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> IsSegment = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> Finalized = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a0d9d5328bc7a7ba4906fb7a366cc9a32a098753f8980036f4b936e3d4b6997111">Quiet</a>;</span></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><span class="doxyHighlightComment">  /// Get the first function start address.</span></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><span class="doxyHighlightComment">  /// \\returns The start address of the first FunctionInfo or std::nullopt if</span></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><span class="doxyHighlightComment">  /// there are no function infos.</span></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><span class="doxyHighlight">  std::optional&lt;uint64&#95;t&gt; getFirstFunctionAddress() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><span class="doxyHighlightComment">  /// Get the last function address.</span></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><span class="doxyHighlightComment">  /// \\returns The start address of the last FunctionInfo or std::nullopt if</span></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><span class="doxyHighlightComment">  /// there are no function infos.</span></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><span class="doxyHighlight">  std::optional&lt;uint64&#95;t&gt; getLastFunctionAddress() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><span class="doxyHighlightComment">  /// Get the base address to use for this GSYM file.</span></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><span class="doxyHighlightComment">  /// \\returns The base address to put into the header and to use when creating</span></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><span class="doxyHighlightComment">  ///          the address offset table or std::nullpt if there are no valid</span></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><span class="doxyHighlightComment">  ///          function infos or if the base address wasn&#39;t specified.</span></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><span class="doxyHighlight">  std::optional&lt;uint64&#95;t&gt; getBaseAddress() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><span class="doxyHighlightComment">  /// Get the size of an address offset in the address offset table.</span></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><span class="doxyHighlightComment">  /// GSYM files store offsets from the base address in the address offset table</span></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><span class="doxyHighlightComment">  /// and we store the size of the address offsets in the GSYM header. This</span></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><span class="doxyHighlightComment">  /// function will calculate the size in bytes of these address offsets based</span></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><span class="doxyHighlightComment">  /// on the current contents of the GSYM file.</span></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><span class="doxyHighlightComment">  /// \\returns The size in byets of the address offsets.</span></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><span class="doxyHighlight">  uint8&#95;t getAddressOffsetSize() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><span class="doxyHighlightComment">  /// Get the maximum address offset for the current address offset size.</span></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><span class="doxyHighlightComment">  /// This is used when creating the address offset table to ensure we have</span></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><span class="doxyHighlightComment">  /// values that are in range so we don&#39;t end up truncating address offsets</span></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><span class="doxyHighlightComment">  /// when creating GSYM files as the code evolves.</span></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><span class="doxyHighlightComment">  /// \\returns The maximum address offset value that will be encoded into a GSYM</span></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><span class="doxyHighlightComment">  /// file.</span></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><span class="doxyHighlight">  uint64&#95;t getMaxAddressOffset() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><span class="doxyHighlightComment">  /// Calculate the byte size of the GSYM header and tables sizes.</span></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><span class="doxyHighlightComment">  /// This function will calculate the exact size in bytes of the encocded GSYM</span></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><span class="doxyHighlightComment">  /// for the following items:</span></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><span class="doxyHighlightComment">  /// - The GSYM header</span></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><span class="doxyHighlightComment">  /// - The Address offset table</span></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><span class="doxyHighlightComment">  /// - The Address info offset table</span></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><span class="doxyHighlightComment">  /// - The file table</span></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><span class="doxyHighlightComment">  /// - The string table</span></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><span class="doxyHighlightComment">  /// This is used to help split GSYM files into segments.</span></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><span class="doxyHighlightComment">  /// \\returns Size in bytes the GSYM header and tables.</span></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><span class="doxyHighlight">  uint64&#95;t calculateHeaderAndTableSize() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><span class="doxyHighlightComment">  /// Copy a FunctionInfo from the \\a SrcGC GSYM creator into this creator.</span></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><span class="doxyHighlightComment">  /// Copy the function info and only the needed files and strings and add a</span></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><span class="doxyHighlightComment">  /// converted FunctionInfo into this object. This is used to segment GSYM</span></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><span class="doxyHighlightComment">  /// files into separate files while only transferring the files and strings</span></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><span class="doxyHighlightComment">  /// that are needed from \\a SrcGC.</span></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><span class="doxyHighlightComment">  /// \\param SrcGC The source gsym creator to copy from.</span></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><span class="doxyHighlightComment">  /// \\param FuncInfoIdx The function info index within \\a SrcGC to copy.</span></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><span class="doxyHighlightComment">  /// \\returns The number of bytes it will take to encode the function info in</span></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><span class="doxyHighlightComment">  /// this GsymCreator. This helps calculate the size of the current GSYM</span></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><span class="doxyHighlightComment">  /// segment file.</span></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><span class="doxyHighlight">  uint64&#95;t copyFunctionInfo(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af85ae9f6e8c014d57c9b61519dcadcbd">GsymCreator</a> &amp;SrcGC, </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> FuncInfoIdx);</span></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><span class="doxyHighlightComment">  /// Copy a string from \\a SrcGC into this object.</span></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><span class="doxyHighlightComment">  /// Copy a string from \\a SrcGC by string table offset into this GSYM creator.</span></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><span class="doxyHighlightComment">  /// If a string has already been copied, the uniqued string table offset will</span></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><span class="doxyHighlightComment">  /// be returned, otherwise the string will be copied and a unique offset will</span></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><span class="doxyHighlightComment">  /// be returned.</span></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><span class="doxyHighlightComment">  /// \\param SrcGC The source gsym creator to copy from.</span></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><span class="doxyHighlightComment">  /// \\param StrOff The string table offset from \\a SrcGC to copy.</span></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><span class="doxyHighlightComment">  /// \\returns The new string table offset of the string within this object.</span></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><span class="doxyHighlight">  uint32&#95;t copyString(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af85ae9f6e8c014d57c9b61519dcadcbd">GsymCreator</a> &amp;SrcGC, uint32&#95;t StrOff);</span></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><span class="doxyHighlightComment">  /// Copy a file from \\a SrcGC into this object.</span></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><span class="doxyHighlightComment">  /// Copy a file from \\a SrcGC by file index into this GSYM creator. Files</span></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><span class="doxyHighlightComment">  /// consist of two string table entries, one for the directory and one for the</span></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><span class="doxyHighlightComment">  /// filename, this function will copy any needed strings ensure the file is</span></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><span class="doxyHighlightComment">  /// uniqued within this object. If a file already exists in this GSYM creator</span></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><span class="doxyHighlightComment">  /// the uniqued index will be returned, else the stirngs will be copied and</span></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><span class="doxyHighlightComment">  /// the new file index will be returned.</span></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><span class="doxyHighlightComment">  /// \\param SrcGC The source gsym creator to copy from.</span></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><span class="doxyHighlightComment">  /// \\param FileIdx The 1 based file table index within \\a SrcGC to copy. A</span></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><span class="doxyHighlightComment">  /// file index of zero will always return zero as the zero is a reserved file</span></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><span class="doxyHighlightComment">  /// index that means no file.</span></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><span class="doxyHighlightComment">  /// \\returns The new file index of the file within this object.</span></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><span class="doxyHighlight">  uint32&#95;t copyFile(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af85ae9f6e8c014d57c9b61519dcadcbd">GsymCreator</a> &amp;SrcGC, uint32&#95;t FileIdx);</span></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><span class="doxyHighlightComment">  /// Inserts a FileEntry into the file table.</span></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><span class="doxyHighlightComment">  /// This is used to insert a file entry in a thread safe way into this object.</span></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><span class="doxyHighlightComment">  /// \\param FE A file entry object that contains valid string table offsets</span></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><span class="doxyHighlightComment">  /// from this object already.</span></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><span class="doxyHighlight">  uint32&#95;t insertFileEntry(<a href="/docs/api/structs/llvm/gsym/fileentry">FileEntry</a> FE);</span></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><span class="doxyHighlightComment">  /// Fixup any string and file references by updating any file indexes and</span></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><span class="doxyHighlightComment">  /// strings offsets in the InlineInfo parameter.</span></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><span class="doxyHighlightComment">  /// When copying InlineInfo entries, we can simply make a copy of the object</span></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><span class="doxyHighlightComment">  /// and then fixup the files and strings for efficiency.</span></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><span class="doxyHighlightComment">  /// \\param SrcGC The source gsym creator to copy from.</span></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><span class="doxyHighlightComment">  /// \\param II The inline info that contains file indexes and string offsets</span></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><span class="doxyHighlightComment">  /// that come from \\a SrcGC. The entries will be updated by coping any files</span></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><span class="doxyHighlightComment">  /// and strings over into this object.</span></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> fixupInlineInfo(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af85ae9f6e8c014d57c9b61519dcadcbd">GsymCreator</a> &amp;SrcGC, <a href="/docs/api/structs/llvm/gsym/inlineinfo">InlineInfo</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a>);</span></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><span class="doxyHighlightComment">  /// Save this GSYM file into segments that are roughly \\a SegmentSize in size.</span></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><span class="doxyHighlightComment">  /// When segemented GSYM files are saved to disk, they will use \\a Path as a</span></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><span class="doxyHighlightComment">  /// prefix and then have the first function info address appended to the path</span></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><span class="doxyHighlightComment">  /// when each segment is saved. Each segmented GSYM file has a only the</span></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><span class="doxyHighlightComment">  /// strings and files that are needed to save the function infos that are in</span></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><span class="doxyHighlightComment">  /// each segment. These smaller files are easy to compress and download</span></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><span class="doxyHighlightComment">  /// separately and allow for efficient lookups with very large GSYM files and</span></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><span class="doxyHighlightComment">  /// segmenting them allows servers to download only the segments that are</span></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><span class="doxyHighlightComment">  /// needed.</span></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><span class="doxyHighlightComment">  /// \\param Path The path prefix to use when saving the GSYM files.</span></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><span class="doxyHighlightComment">  /// \\param ByteOrder The endianness to use when saving the file.</span></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><span class="doxyHighlightComment">  /// \\param SegmentSize The size in bytes to segment the GSYM file into.</span></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/error">llvm::Error</a> saveSegments(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Path, <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000db">llvm::endianness</a> ByteOrder,</span></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><span class="doxyHighlight">                           uint64&#95;t SegmentSize) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><span class="doxyHighlightComment">  /// Let this creator know that this is a segment of another GsymCreator.</span></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><span class="doxyHighlightComment">  /// When we have a segment, we know that function infos will be added in</span></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><span class="doxyHighlightComment">  /// ascending address range order without having to be finalized. We also</span></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><span class="doxyHighlightComment">  /// don&#39;t need to sort and unique entries during the finalize function call.</span></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> setIsSegment() &#123;</span></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><span class="doxyHighlight">    IsSegment = </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af85ae9f6e8c014d57c9b61519dcadcbd">GsymCreator</a>(</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a0d9d5328bc7a7ba4906fb7a366cc9a32a098753f8980036f4b936e3d4b6997111">Quiet</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><span class="doxyHighlightComment">  /// Save a GSYM file to a stand alone file.</span></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><span class="doxyHighlightComment">  /// \\param Path The file path to save the GSYM file to.</span></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><span class="doxyHighlightComment">  /// \\param ByteOrder The endianness to use when saving the file.</span></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><span class="doxyHighlightComment">  /// \\param SegmentSize The size in bytes to segment the GSYM file into. If</span></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><span class="doxyHighlightComment">  ///                    this option is set this function will create N segments</span></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><span class="doxyHighlightComment">  ///                    that are all around \\a SegmentSize bytes in size. This</span></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><span class="doxyHighlightComment">  ///                    allows a very large GSYM file to be broken up into</span></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><span class="doxyHighlightComment">  ///                    shards. Each GSYM file will have its own file table,</span></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><span class="doxyHighlightComment">  ///                    and string table that only have the files and strings</span></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><span class="doxyHighlightComment">  ///                    needed for the shared. If this argument has no value,</span></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><span class="doxyHighlightComment">  ///                    a single GSYM file that contains all function</span></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><span class="doxyHighlightComment">  ///                    information will be created.</span></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><span class="doxyHighlightComment">  /// \\returns An error object that indicates success or failure of the save.</span></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/error">llvm::Error</a> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a5c4f8122cf59952849b4d8184df118dc">save</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Path, <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000db">llvm::endianness</a> ByteOrder,</span></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><span class="doxyHighlight">                   std::optional&lt;uint64&#95;t&gt; SegmentSize = std::nullopt) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><span class="doxyHighlightComment">  /// Encode a GSYM into the file writer stream at the current position.</span></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><span class="doxyHighlightComment">  /// \\param O The stream to save the binary data to</span></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><span class="doxyHighlightComment">  /// \\returns An error object that indicates success or failure of the save.</span></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/error">llvm::Error</a> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a9ede3510dd3c4a79112fd4ff9048e04b">encode</a>(<a href="/docs/api/classes/llvm/gsym/filewriter">FileWriter</a> &amp;O) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><span class="doxyHighlightComment">  /// Insert a string into the GSYM string table.</span></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><span class="doxyHighlightComment">  /// All strings used by GSYM files must be uniqued by adding them to this</span></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><span class="doxyHighlightComment">  /// string pool and using the returned offset for any string values.</span></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><span class="doxyHighlightComment">  /// \\param S The string to insert into the string table.</span></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><span class="doxyHighlightComment">  /// \\param Copy If true, then make a backing copy of the string. If false,</span></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><span class="doxyHighlightComment">  ///             the string is owned by another object that will stay around</span></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><span class="doxyHighlightComment">  ///             long enough for the GsymCreator to save the GSYM file.</span></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><span class="doxyHighlightComment">  /// \\returns The unique 32 bit offset into the string table.</span></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><span class="doxyHighlight">  uint32&#95;t <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a22638e32cb1220ddfacd7eb1bc5dfcf5">insertString</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> S, </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> Copy = </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><span class="doxyHighlightComment">  /// Retrieve a string from the GSYM string table given its offset.</span></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><span class="doxyHighlightComment">  /// The offset is assumed to be a valid offset into the string table.</span></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><span class="doxyHighlightComment">  /// otherwise an assert will be triggered.</span></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><span class="doxyHighlightComment">  /// \\param Offset The offset of the string to retrieve, previously returned by</span></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><span class="doxyHighlightComment">  /// insertString.</span></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><span class="doxyHighlightComment">  /// \\returns The string at the given offset in the string table.</span></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a9614258b67dc42d2f0708464bddc96dd">getString</a>(uint32&#95;t <a href="/docs/api/namespaces/llvm/#a05f5b9a11bdcc5feba62899f95dcf878a3134224cba2545bc57954d3b072aebb4">Offset</a>);</span></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><span class="doxyHighlightComment">  /// Insert a file into this GSYM creator.</span></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><span class="doxyHighlightComment">  /// Inserts a file by adding a FileEntry into the &quot;Files&quot; member variable if</span></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><span class="doxyHighlightComment">  /// the file has not already been added. The file path is split into</span></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><span class="doxyHighlightComment">  /// directory and filename which are both added to the string table. This</span></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><span class="doxyHighlightComment">  /// allows paths to be stored efficiently by reusing the directories that are</span></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><span class="doxyHighlightComment">  /// common between multiple files.</span></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><span class="doxyHighlightComment">  /// \\param   Path The path to the file to insert.</span></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><span class="doxyHighlightComment">  /// \\param   Style The path style for the &quot;Path&quot; parameter.</span></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><span class="doxyHighlightComment">  /// \\returns The unique file index for the inserted file.</span></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><span class="doxyHighlight">  uint32&#95;t <a href="/docs/api/classes/llvm/gsym/gsymcreator/#ac9372d27c9fb107c96a7b241848d05ed">insertFile</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Path,</span></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><span class="doxyHighlight">                      <a href="/docs/api/namespaces/llvm/sys/path/#a58cfd8a47c0ef96db27b451c2d6ec49f">sys::path::Style</a> Style = <a href="/docs/api/namespaces/llvm/sys/path/#a58cfd8a47c0ef96db27b451c2d6ec49fa8e5f3adee38c8fccc13c1f3be0143796">sys::path::Style::native</a>);</span></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><span class="doxyHighlightComment">  /// Add a function info to this GSYM creator.</span></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><span class="doxyHighlightComment">  /// All information in the FunctionInfo object must use the</span></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><span class="doxyHighlightComment">  /// GsymCreator::insertString(...) function when creating string table</span></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><span class="doxyHighlightComment">  /// offsets for names and other strings.</span></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><span class="doxyHighlightComment">  /// \\param   FI The function info object to emplace into our functions list.</span></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a0255c904a2083824db32c67a98520742">addFunctionInfo</a>(<a href="/docs/api/structs/llvm/gsym/functioninfo">FunctionInfo</a> &amp;&amp;FI);</span></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><span class="doxyHighlightComment">  /// Load call site information from a YAML file.</span></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><span class="doxyHighlightComment">  /// This function reads call site information from a specified YAML file and</span></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><span class="doxyHighlightComment">  /// adds it to the GSYM data.</span></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><span class="doxyHighlightComment">  /// \\param YAMLFile The path to the YAML file containing call site</span></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><span class="doxyHighlightComment">  /// information.</span></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/error">llvm::Error</a> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a9e3037da68715a480cd7b1996f5737a8">loadCallSitesFromYAML</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> YAMLFile);</span></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><span class="doxyHighlightComment">  /// Organize merged FunctionInfo&#39;s</span></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><span class="doxyHighlightComment">  /// This method processes the list of function infos (Funcs) to identify and</span></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><span class="doxyHighlightComment">  /// group functions with overlapping address ranges.</span></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><span class="doxyHighlightComment">  /// \\param  Out Output stream to report information about how merged</span></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><span class="doxyHighlightComment">  /// FunctionInfo&#39;s were handled.</span></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a7ff8f5a82defa914ab5037231e289055">prepareMergedFunctions</a>(<a href="/docs/api/classes/llvm/gsym/outputaggregator">OutputAggregator</a> &amp;Out);</span></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"><span class="doxyHighlightComment">  /// Finalize the data in the GSYM creator prior to saving the data out.</span></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><span class="doxyHighlightComment">  /// Finalize must be called after all FunctionInfo objects have been added</span></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386"><span class="doxyHighlightComment">  /// and before GsymCreator::save() is called.</span></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388"><span class="doxyHighlightComment">  /// \\param  OS Output stream to report duplicate function infos, overlapping</span></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"><span class="doxyHighlightComment">  ///         function infos, and function infos that were merged or removed.</span></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390"><span class="doxyHighlightComment">  /// \\returns An error object that indicates success or failure of the</span></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391"><span class="doxyHighlightComment">  ///          finalize.</span></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/error">llvm::Error</a> <a href="/docs/api/files/lib/lib/target/lib/target/arc/arcbranchfinalize-cpp/#a8e08eb3768ea6054b445ad1e5f0b9bba">finalize</a>(<a href="/docs/api/classes/llvm/gsym/outputaggregator">OutputAggregator</a> &amp;OS);</span></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394"><span class="doxyHighlightComment">  /// Set the UUID value.</span></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"><span class="doxyHighlightComment">  /// \\param UUIDBytes The new UUID bytes.</span></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397" lineLink="/docs/api/classes/llvm/gsym/gsymcreator/#ab85ea74b3cb2aeabcf765b1892ff9d91"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#ab85ea74b3cb2aeabcf765b1892ff9d91">setUUID</a>(<a href="/docs/api/classes/llvm/arrayref">llvm::ArrayRef&lt;uint8&#95;t&gt;</a> UUIDBytes) &#123;</span></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/textapi/textstubcommon-h/#a847f9d797fd06f1d451476d6362a6a41">UUID</a>.assign(UUIDBytes.<a href="/docs/api/classes/llvm/arrayref/#aab36927882fbfdcbb860d87fd9c30da8">begin</a>(), UUIDBytes.<a href="/docs/api/classes/llvm/arrayref/#a7ca5197533a9c1fb8a2bd30587fcec6b">end</a>());</span></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><span class="doxyHighlightComment">  /// Thread safe iteration over all function infos.</span></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"><span class="doxyHighlightComment">  /// \\param  Callback A callback function that will get called with each</span></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><span class="doxyHighlightComment">  ///         FunctionInfo. If the callback returns false, stop iterating.</span></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af56844c4beded9856bac60a414e9e998">forEachFunctionInfo</a>(</span></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"><span class="doxyHighlight">      std::function&lt;</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight">(<a href="/docs/api/structs/llvm/gsym/functioninfo">FunctionInfo</a> &amp;)&gt; </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> &amp;Callback);</span></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><span class="doxyHighlightComment">  /// Thread safe const iteration over all function infos.</span></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"><span class="doxyHighlightComment">  /// \\param  Callback A callback function that will get called with each</span></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411"><span class="doxyHighlightComment">  ///         FunctionInfo. If the callback returns false, stop iterating.</span></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#af56844c4beded9856bac60a414e9e998">forEachFunctionInfo</a>(</span></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"><span class="doxyHighlight">      std::function&lt;</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight">(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/gsym/functioninfo">FunctionInfo</a> &amp;)&gt; </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> &amp;Callback) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><span class="doxyHighlightComment">  /// Get the current number of FunctionInfo objects contained in this</span></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"><span class="doxyHighlightComment">  /// object.</span></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#adebfdaa4b1b4fa505e9b9b8b91693704">getNumFunctionInfos</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><span class="doxyHighlightComment">  /// Set valid .text address ranges that all functions must be contained in.</span></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420" lineLink="/docs/api/classes/llvm/gsym/gsymcreator/#ac3c47f7d5f05e3c9778d24ad91e5e7c7"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#ac3c47f7d5f05e3c9778d24ad91e5e7c7">SetValidTextRanges</a>(<a href="/docs/api/classes/llvm/addressranges">AddressRanges</a> &amp;TextRanges) &#123;</span></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421"><span class="doxyHighlight">    ValidTextRanges = TextRanges;</span></CodeLine>
+<Link id="l00422" /><CodeLine lineNumber="422"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00423" /><CodeLine lineNumber="423"></CodeLine>
+<Link id="l00424" /><CodeLine lineNumber="424"><span class="doxyHighlightComment">  /// Get the valid text ranges.</span></CodeLine>
+<Link id="l00425" /><CodeLine lineNumber="425" lineLink="/docs/api/classes/llvm/gsym/gsymcreator/#a3ef9c30d1566dd46fc54265f960ed1e4"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::optional&lt;AddressRanges&gt; <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a3ef9c30d1566dd46fc54265f960ed1e4">GetValidTextRanges</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00426" /><CodeLine lineNumber="426"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> ValidTextRanges;</span></CodeLine>
+<Link id="l00427" /><CodeLine lineNumber="427"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00428" /><CodeLine lineNumber="428"></CodeLine>
+<Link id="l00429" /><CodeLine lineNumber="429"><span class="doxyHighlightComment">  /// Check if an address is a valid code address.</span></CodeLine>
+<Link id="l00430" /><CodeLine lineNumber="430"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00431" /><CodeLine lineNumber="431"><span class="doxyHighlightComment">  /// Any functions whose addresses do not exist within these function bounds</span></CodeLine>
+<Link id="l00432" /><CodeLine lineNumber="432"><span class="doxyHighlightComment">  /// will not be converted into the final GSYM. This allows the object file</span></CodeLine>
+<Link id="l00433" /><CodeLine lineNumber="433"><span class="doxyHighlightComment">  /// to figure out the valid file address ranges of all the code sections</span></CodeLine>
+<Link id="l00434" /><CodeLine lineNumber="434"><span class="doxyHighlightComment">  /// and ensure we don&#39;t add invalid functions to the final output. Many</span></CodeLine>
+<Link id="l00435" /><CodeLine lineNumber="435"><span class="doxyHighlightComment">  /// linkers have issues when dead stripping functions from DWARF debug info</span></CodeLine>
+<Link id="l00436" /><CodeLine lineNumber="436"><span class="doxyHighlightComment">  /// where they set the DW&#95;AT&#95;low&#95;pc to zero, but newer DWARF has the</span></CodeLine>
+<Link id="l00437" /><CodeLine lineNumber="437"><span class="doxyHighlightComment">  /// DW&#95;AT&#95;high&#95;pc as an offset from the DW&#95;AT&#95;low&#95;pc and these size</span></CodeLine>
+<Link id="l00438" /><CodeLine lineNumber="438"><span class="doxyHighlightComment">  /// attributes have no relocations that can be applied. This results in DWARF</span></CodeLine>
+<Link id="l00439" /><CodeLine lineNumber="439"><span class="doxyHighlightComment">  /// where many functions have an DW&#95;AT&#95;low&#95;pc of zero and a valid offset size</span></CodeLine>
+<Link id="l00440" /><CodeLine lineNumber="440"><span class="doxyHighlightComment">  /// for DW&#95;AT&#95;high&#95;pc. If we extract all valid ranges from an object file</span></CodeLine>
+<Link id="l00441" /><CodeLine lineNumber="441"><span class="doxyHighlightComment">  /// that are marked with executable permissions, we can properly ensure that</span></CodeLine>
+<Link id="l00442" /><CodeLine lineNumber="442"><span class="doxyHighlightComment">  /// these functions are removed.</span></CodeLine>
+<Link id="l00443" /><CodeLine lineNumber="443"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00444" /><CodeLine lineNumber="444"><span class="doxyHighlightComment">  /// \\param Addr An address to check.</span></CodeLine>
+<Link id="l00445" /><CodeLine lineNumber="445"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00446" /><CodeLine lineNumber="446"><span class="doxyHighlightComment">  /// \\returns True if the address is in the valid text ranges or if no valid</span></CodeLine>
+<Link id="l00447" /><CodeLine lineNumber="447"><span class="doxyHighlightComment">  ///          text ranges have been set, false otherwise.</span></CodeLine>
+<Link id="l00448" /><CodeLine lineNumber="448"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#aed7eb12c998221cb39a6a3d96e9a0e56">IsValidTextAddress</a>(uint64&#95;t Addr) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00449" /><CodeLine lineNumber="449"></CodeLine>
+<Link id="l00450" /><CodeLine lineNumber="450"><span class="doxyHighlightComment">  /// Set the base address to use for the GSYM file.</span></CodeLine>
+<Link id="l00451" /><CodeLine lineNumber="451"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00452" /><CodeLine lineNumber="452"><span class="doxyHighlightComment">  /// Setting the base address to use for the GSYM file. Object files typically</span></CodeLine>
+<Link id="l00453" /><CodeLine lineNumber="453"><span class="doxyHighlightComment">  /// get loaded from a base address when the OS loads them into memory. Using</span></CodeLine>
+<Link id="l00454" /><CodeLine lineNumber="454"><span class="doxyHighlightComment">  /// GSYM files for symbolication becomes easier if the base address in the</span></CodeLine>
+<Link id="l00455" /><CodeLine lineNumber="455"><span class="doxyHighlightComment">  /// GSYM header is the same address as it allows addresses to be easily slid</span></CodeLine>
+<Link id="l00456" /><CodeLine lineNumber="456"><span class="doxyHighlightComment">  /// and allows symbolication without needing to find the original base</span></CodeLine>
+<Link id="l00457" /><CodeLine lineNumber="457"><span class="doxyHighlightComment">  /// address in the original object file.</span></CodeLine>
+<Link id="l00458" /><CodeLine lineNumber="458"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00459" /><CodeLine lineNumber="459"><span class="doxyHighlightComment">  /// \\param  Addr The address to use as the base address of the GSYM file</span></CodeLine>
+<Link id="l00460" /><CodeLine lineNumber="460"><span class="doxyHighlightComment">  ///              when it is saved to disk.</span></CodeLine>
+<Link id="l00461" /><CodeLine lineNumber="461" lineLink="/docs/api/classes/llvm/gsym/gsymcreator/#a3a20d5b08d026255dd9f7f7473cfe89b"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a3a20d5b08d026255dd9f7f7473cfe89b">setBaseAddress</a>(uint64&#95;t Addr) &#123;</span></CodeLine>
+<Link id="l00462" /><CodeLine lineNumber="462"><span class="doxyHighlight">    BaseAddress = Addr;</span></CodeLine>
+<Link id="l00463" /><CodeLine lineNumber="463"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00464" /><CodeLine lineNumber="464"></CodeLine>
+<Link id="l00465" /><CodeLine lineNumber="465"><span class="doxyHighlightComment">  /// Whether the transformation should be quiet, i.e. not output warnings.</span></CodeLine>
+<Link id="l00466" /><CodeLine lineNumber="466" lineLink="/docs/api/classes/llvm/gsym/gsymcreator/#aaf2698c4afe7c309bcae39e29649586b"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/gsym/gsymcreator/#aaf2698c4afe7c309bcae39e29649586b">isQuiet</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a0d9d5328bc7a7ba4906fb7a366cc9a32a098753f8980036f4b936e3d4b6997111">Quiet</a>; &#125;</span></CodeLine>
+<Link id="l00467" /><CodeLine lineNumber="467"></CodeLine>
+<Link id="l00468" /><CodeLine lineNumber="468"></CodeLine>
+<Link id="l00469" /><CodeLine lineNumber="469"><span class="doxyHighlightComment">  /// Create a segmented GSYM creator starting with function info index</span></CodeLine>
+<Link id="l00470" /><CodeLine lineNumber="470"><span class="doxyHighlightComment">  /// \\a FuncIdx.</span></CodeLine>
+<Link id="l00471" /><CodeLine lineNumber="471"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00472" /><CodeLine lineNumber="472"><span class="doxyHighlightComment">  /// This function will create a GsymCreator object that will encode into</span></CodeLine>
+<Link id="l00473" /><CodeLine lineNumber="473"><span class="doxyHighlightComment">  /// roughly \\a SegmentSize bytes and return it. It is used by the private</span></CodeLine>
+<Link id="l00474" /><CodeLine lineNumber="474"><span class="doxyHighlightComment">  /// saveSegments(...) function and also is used by the GSYM unit tests to test</span></CodeLine>
+<Link id="l00475" /><CodeLine lineNumber="475"><span class="doxyHighlightComment">  /// segmenting of GSYM files. The returned GsymCreator can be finalized and</span></CodeLine>
+<Link id="l00476" /><CodeLine lineNumber="476"><span class="doxyHighlightComment">  /// encoded.</span></CodeLine>
+<Link id="l00477" /><CodeLine lineNumber="477"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00478" /><CodeLine lineNumber="478"><span class="doxyHighlightComment">  /// \\param &#91;in&#93; SegmentSize The size in bytes to roughly segment the GSYM file</span></CodeLine>
+<Link id="l00479" /><CodeLine lineNumber="479"><span class="doxyHighlightComment">  /// into.</span></CodeLine>
+<Link id="l00480" /><CodeLine lineNumber="480"><span class="doxyHighlightComment">  /// \\param &#91;in,out&#93; FuncIdx The index of the first function info to encode</span></CodeLine>
+<Link id="l00481" /><CodeLine lineNumber="481"><span class="doxyHighlightComment">  /// into the returned GsymCreator. This index will be updated so it can be</span></CodeLine>
+<Link id="l00482" /><CodeLine lineNumber="482"><span class="doxyHighlightComment">  /// used in subsequent calls to this function to allow more segments to be</span></CodeLine>
+<Link id="l00483" /><CodeLine lineNumber="483"><span class="doxyHighlightComment">  /// created.</span></CodeLine>
+<Link id="l00484" /><CodeLine lineNumber="484"><span class="doxyHighlightComment">  /// \\returns An expected unique pointer to a GsymCreator or an error. The</span></CodeLine>
+<Link id="l00485" /><CodeLine lineNumber="485"><span class="doxyHighlightComment">  /// returned unique pointer can be NULL if there are no more functions to</span></CodeLine>
+<Link id="l00486" /><CodeLine lineNumber="486"><span class="doxyHighlightComment">  /// encode.</span></CodeLine>
+<Link id="l00487" /><CodeLine lineNumber="487"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/expected">llvm::Expected&lt;std::unique&#95;ptr&lt;GsymCreator&gt;</a>&gt;</span></CodeLine>
+<Link id="l00488" /><CodeLine lineNumber="488"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/gsym/gsymcreator/#a5a00b6c05d78359948c41de0ee1f20a4">createSegment</a>(uint64&#95;t SegmentSize, </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> &amp;FuncIdx) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00489" /><CodeLine lineNumber="489"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00490" /><CodeLine lineNumber="490"></CodeLine>
+<Link id="l00491" /><CodeLine lineNumber="491"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// namespace gsym</span></CodeLine>
+<Link id="l00492" /><CodeLine lineNumber="492"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// namespace llvm</span></CodeLine>
+<Link id="l00493" /><CodeLine lineNumber="493"></CodeLine>
+<Link id="l00494" /><CodeLine lineNumber="494"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;DEBUGINFO&#95;GSYM&#95;GSYMCREATOR&#95;H</span></CodeLine>
 
 </ProgramListing>
 

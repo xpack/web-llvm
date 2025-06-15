@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
 import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
@@ -48,49 +47,49 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- OverflowInstAnalysis.h - Utils to fold overflow insts ----&#42;- C++ -&#42;-==//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file holds routines to help analyse overflow instructions</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// and fold them into constants or other overflow instructions</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;ANALYSIS&#95;OVERFLOWINSTANALYSIS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;ANALYSIS&#95;OVERFLOWINSTANALYSIS&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/use">Use</a>;</Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/value">Value</a>;</Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="comment">/// Match one of the patterns up to the select/logic op:</Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="comment">///   %Op0 = icmp ne i4 %X, 0</Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="comment">///   %Agg = call &#123; i4, i1 &#125; @llvm.&#91;us&#93;mul.with.overflow.i4(i4 %X, i4 %Y)</Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="comment">///   %Op1 = extractvalue &#123; i4, i1 &#125; %Agg, 1</Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="comment">///   %ret = select i1 %Op0, i1 %Op1, i1 false / %ret = and i1 %Op0, %Op1</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="comment">///   %Op0 = icmp eq i4 %X, 0</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="comment">///   %Agg = call &#123; i4, i1 &#125; @llvm.&#91;us&#93;mul.with.overflow.i4(i4 %X, i4 %Y)</Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="comment">///   %NotOp1 = extractvalue &#123; i4, i1 &#125; %Agg, 1</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="comment">///   %Op1 = xor i1 %NotOp1, true</Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="comment">///   %ret = select i1 %Op0, i1 true, i1 %Op1 / %ret = or i1 %Op0, %Op1</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="comment">/// Callers are expected to align that with the operands of the select/logic.</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="comment">/// IsAnd is set to true if the Op0 and Op1 are used as the first pattern.</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="comment">/// If Op0 and Op1 match one of the patterns above, return true and fill Y&#39;s</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="comment">/// use.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aebd66f6649c1449adbcfcedf1651af18">isCheckForZeroAndMulWithOverflow</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Op0, <a href="/docs/api/classes/llvm/value">Value</a> &#42;Op1, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsAnd,</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">                                      <a href="/docs/api/classes/llvm/use">Use</a> &#42;&amp;<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#a262774d3e5186511427e5b2414a85f7f">Y</a>);</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aebd66f6649c1449adbcfcedf1651af18">isCheckForZeroAndMulWithOverflow</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Op0, <a href="/docs/api/classes/llvm/value">Value</a> &#42;Op1, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsAnd);</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===-- OverflowInstAnalysis.h - Utils to fold overflow insts ----&#42;- C++ -&#42;-==//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This file holds routines to help analyse overflow instructions</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">// and fold them into constants or other overflow instructions</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;ANALYSIS&#95;OVERFLOWINSTANALYSIS&#95;H</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightPreprocessor">#define LLVM&#95;ANALYSIS&#95;OVERFLOWINSTANALYSIS&#95;H</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/use">Use</a>;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/value">Value</a>;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightComment">/// Match one of the patterns up to the select/logic op:</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightComment">///   %Op0 = icmp ne i4 %X, 0</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightComment">///   %Agg = call &#123; i4, i1 &#125; @llvm.&#91;us&#93;mul.with.overflow.i4(i4 %X, i4 %Y)</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightComment">///   %Op1 = extractvalue &#123; i4, i1 &#125; %Agg, 1</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightComment">///   %ret = select i1 %Op0, i1 %Op1, i1 false / %ret = and i1 %Op0, %Op1</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightComment">///   %Op0 = icmp eq i4 %X, 0</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightComment">///   %Agg = call &#123; i4, i1 &#125; @llvm.&#91;us&#93;mul.with.overflow.i4(i4 %X, i4 %Y)</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightComment">///   %NotOp1 = extractvalue &#123; i4, i1 &#125; %Agg, 1</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightComment">///   %Op1 = xor i1 %NotOp1, true</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightComment">///   %ret = select i1 %Op0, i1 true, i1 %Op1 / %ret = or i1 %Op0, %Op1</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightComment">/// Callers are expected to align that with the operands of the select/logic.</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightComment">/// IsAnd is set to true if the Op0 and Op1 are used as the first pattern.</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlightComment">/// If Op0 and Op1 match one of the patterns above, return true and fill Y&#39;s</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlightComment">/// use.</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#aebd66f6649c1449adbcfcedf1651af18">isCheckForZeroAndMulWithOverflow</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Op0, <a href="/docs/api/classes/llvm/value">Value</a> &#42;Op1, </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> IsAnd,</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlight">                                      <a href="/docs/api/classes/llvm/use">Use</a> &#42;&amp;<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#a262774d3e5186511427e5b2414a85f7f">Y</a>);</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#aebd66f6649c1449adbcfcedf1651af18">isCheckForZeroAndMulWithOverflow</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;Op0, <a href="/docs/api/classes/llvm/value">Value</a> &#42;Op1, </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> IsAnd);</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace llvm</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
 
 </ProgramListing>
 

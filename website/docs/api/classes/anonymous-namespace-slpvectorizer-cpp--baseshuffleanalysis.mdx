@@ -17,7 +17,6 @@ import CodeBlock from '@theme/CodeBlock'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
@@ -216,15 +215,15 @@ Looks through shuffles trying to reduce final number of shuffles in the code.
 The function looks through the previously emitted shuffle instructions and properly mark indices in mask as undef. For example, given the code 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">%s1 = shufflevector &lt;2 x ty&gt; %0, poison, &lt;1, 0&gt;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">%s2 = shufflevector &lt;2 x ty&gt; %1, poison, &lt;1, 0&gt;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">%s1 = shufflevector &lt;2 x ty&gt; %0, poison, &lt;1, 0&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">%s2 = shufflevector &lt;2 x ty&gt; %1, poison, &lt;1, 0&gt;</span></CodeLine>
 
 </ProgramListing>
  and if need to emit shuffle of s1 and s2 with mask &lt;1, 0, 3, 2&gt;, it will look through s1 and s2 and select vectors %0 and %1 with mask &lt;0, 1, 2, 3&gt; for the shuffle. If 2 operands are of different size, the smallest one will be resized and the mask recalculated properly. For example, given the code 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">%s1 = shufflevector &lt;2 x ty&gt; %0, poison, &lt;1, 0, 1, 0&gt;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">%s2 = shufflevector &lt;2 x ty&gt; %1, poison, &lt;1, 0, 1, 0&gt;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">%s1 = shufflevector &lt;2 x ty&gt; %0, poison, &lt;1, 0, 1, 0&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">%s2 = shufflevector &lt;2 x ty&gt; %1, poison, &lt;1, 0, 1, 0&gt;</span></CodeLine>
 
 </ProgramListing>
  and if need to emit shuffle of s1 and s2 with mask &lt;1, 0, 5, 4&gt;, it will look through s1 and s2 and select vectors %0 and %1 with mask &lt;0, 1, 2, 3&gt; for the shuffle. So, it tries to transform permutations to simple vector merge, if possible. 

@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -104,102 +103,102 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===------ CompileUtils.cpp - Utilities for compiling IR in the JIT ------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/compileutils-h">llvm/ExecutionEngine/Orc/CompileUtils.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/objectcache-h">llvm/ExecutionEngine/ObjectCache.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/legacypassmanager-h">llvm/IR/LegacyPassManager.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/module-h">llvm/IR/Module.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mccontext-h">llvm/MC/MCContext.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/object/objectfile-h">llvm/Object/ObjectFile.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/error-h">llvm/Support/Error.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/memorybuffer-h">llvm/Support/MemoryBuffer.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/smallvectormemorybuffer-h">llvm/Support/SmallVectorMemoryBuffer.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/target/targetmachine-h">llvm/Target/TargetMachine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/orc">orc</a> &#123;</Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"><a href="/docs/api/structs/llvm/orc/irsymbolmapper/manglingoptions">IRSymbolMapper::ManglingOptions</a></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26" lineLink="/docs/api/namespaces/llvm/orc/#a0aa9eba1ffba47fd9e5ef90d81a30653"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/orc/#a0aa9eba1ffba47fd9e5ef90d81a30653">irManglingOptionsFromTargetOptions</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetoptions">TargetOptions</a> &amp;Opts) &#123;</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal">  <a href="/docs/api/structs/llvm/orc/irsymbolmapper/manglingoptions">IRSymbolMapper::ManglingOptions</a> MO;</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">  MO.<a href="/docs/api/structs/llvm/orc/irsymbolmapper/manglingoptions/#a4d4da595dfbf867a4cab51af1b4c6255">EmulatedTLS</a> = Opts.<a href="/docs/api/classes/llvm/targetoptions/#ae5ba34490ccea87c934d079ca6a8d09b">EmulatedTLS</a>;</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> MO;</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="comment">/// Compile a Module to an ObjectFile.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35" lineLink="/docs/api/classes/llvm/orc/simplecompiler/#a603ecdc5d1b7bfa7d9408896489ca31d"><Highlight kind="normal"><a href="/docs/api/classes/llvm/expected">Expected&lt;SimpleCompiler::CompileResult&gt;</a> <a href="/docs/api/classes/llvm/orc/simplecompiler/#a603ecdc5d1b7bfa7d9408896489ca31d">SimpleCompiler::operator()</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M) &#123;</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (M.getDataLayout().isDefault())</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">    M.setDataLayout(TM.<a href="/docs/api/classes/llvm/targetmachine/#a34825337fd4c67c855cfc5d6d3a87788">createDataLayout</a>());</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/simplecompiler/#a5c4e5e7b14ba24d8d4044b800b8d93b7">CompileResult</a> CachedObject = tryToLoadFromObjectCache(M);</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CachedObject)</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::move(CachedObject);</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;char, 0&gt;</a> ObjBufferSV;</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/raw-svector-ostream">raw&#95;svector&#95;ostream</a> ObjStream(ObjBufferSV);</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/legacy/passmanager">legacy::PassManager</a> PM;</Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/mccontext">MCContext</a> &#42;Ctx;</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TM.<a href="/docs/api/classes/llvm/targetmachine/#a8b157b36b2fc00d830a8b7d1546d746c">addPassesToEmitMC</a>(PM, Ctx, ObjStream))</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">make&#95;error&lt;StringError&gt;</a>(</Highlight><Highlight kind="stringliteral">&quot;Target does not support MC emission&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">                                     <a href="/docs/api/namespaces/llvm/#a2b43c21951d0948b34bcf7019949032d">inconvertibleErrorCode</a>());</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">    PM.<a href="/docs/api/classes/llvm/legacy/passmanager/#a2bdbe49f025814f15cd9c82aa08a389b">run</a>(M);</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> ObjBuffer = std::make&#95;unique&lt;SmallVectorMemoryBuffer&gt;(</Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">      std::move(ObjBufferSV), M.getModuleIdentifier() + </Highlight><Highlight kind="stringliteral">&quot;-jitted-objectbuffer&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">      </Highlight><Highlight kind="comment">/&#42;RequiresNullTerminator=&#42;/</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Obj = <a href="/docs/api/classes/llvm/object/objectfile/#a926af6aca697fdbacb3e3ea1000f0ec4">object::ObjectFile::createObjectFile</a>(ObjBuffer-&gt;getMemBufferRef());</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!Obj)</Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Obj.takeError();</Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  notifyObjectCompiled(M, &#42;ObjBuffer);</Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::move(ObjBuffer);</Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/simplecompiler/#a5c4e5e7b14ba24d8d4044b800b8d93b7">SimpleCompiler::CompileResult</a></Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">SimpleCompiler::tryToLoadFromObjectCache(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/module">Module</a> &amp;M) &#123;</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!ObjCache)</Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/orc/simplecompiler/#a5c4e5e7b14ba24d8d4044b800b8d93b7">CompileResult</a>();</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ObjCache-&gt;<a href="/docs/api/classes/llvm/objectcache/#a1b22ee117ce4d2a115ba34634461e1f1">getObject</a>(&amp;M);</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> SimpleCompiler::notifyObjectCompiled(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/module">Module</a> &amp;M,</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">                                          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/memorybuffer">MemoryBuffer</a> &amp;ObjBuffer) &#123;</Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ObjCache)</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">    ObjCache-&gt;<a href="/docs/api/classes/llvm/objectcache/#a680b6deb0dd910145b640a947e18be2d">notifyObjectCompiled</a>(&amp;M, ObjBuffer.<a href="/docs/api/classes/llvm/memorybuffer/#a8f9181a190ad7bd1e7bfb67f90c3e4d4">getMemBufferRef</a>());</Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/classes/llvm/orc/concurrentircompiler/#ae7d8fdffc446a620062561c1378c47ff"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/concurrentircompiler/#ae7d8fdffc446a620062561c1378c47ff">ConcurrentIRCompiler::ConcurrentIRCompiler</a>(<a href="/docs/api/classes/llvm/orc/jittargetmachinebuilder">JITTargetMachineBuilder</a> JTMB,</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">                                           <a href="/docs/api/classes/llvm/objectcache">ObjectCache</a> &#42;ObjCache)</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">    : <a href="/docs/api/classes/llvm/orc/ircompilelayer/ircompiler/#a9292ba890230408d0b90e798e2c1edb8">IRCompiler</a>(<a href="/docs/api/namespaces/llvm/orc/#a0aa9eba1ffba47fd9e5ef90d81a30653">irManglingOptionsFromTargetOptions</a>(JTMB.getOptions())),</Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">      JTMB(<a href="/docs/api/namespaces/std">std</a>::<a href="/docs/api/namespaces/llvm/#abfc9c7ecf70f66901e439f7c04ef3dbb">move</a>(JTMB)), ObjCache(ObjCache) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"><a href="/docs/api/classes/llvm/expected">Expected&lt;std::unique&#95;ptr&lt;MemoryBuffer&gt;</a>&gt;</Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89" lineLink="/docs/api/classes/llvm/orc/concurrentircompiler/#af352e108f2af8389cd54b2f1d6b761f3"><Highlight kind="normal"><a href="/docs/api/classes/llvm/orc/concurrentircompiler/#af352e108f2af8389cd54b2f1d6b761f3">ConcurrentIRCompiler::operator()</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M) &#123;</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> TM = <a href="/docs/api/namespaces/llvm/#aa1e1474f15df639f0d874b21f15666f7">cantFail</a>(JTMB.<a href="/docs/api/classes/llvm/orc/jittargetmachinebuilder/#ad851482024748222bc5538345ec2bd12">createTargetMachine</a>());</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/orc/simplecompiler">SimpleCompiler</a> <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>(&#42;TM, ObjCache);</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>(M);</Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace orc</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===------ CompileUtils.cpp - Utilities for compiling IR in the JIT ------===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/include/llvm/executionengine/orc/compileutils-h">llvm/ExecutionEngine/Orc/CompileUtils.h</a>&quot;</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/executionengine/objectcache-h">llvm/ExecutionEngine/ObjectCache.h</a>&quot;</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/legacypassmanager-h">llvm/IR/LegacyPassManager.h</a>&quot;</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/module-h">llvm/IR/Module.h</a>&quot;</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mccontext-h">llvm/MC/MCContext.h</a>&quot;</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/object/objectfile-h">llvm/Object/ObjectFile.h</a>&quot;</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/error-h">llvm/Support/Error.h</a>&quot;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/memorybuffer-h">llvm/Support/MemoryBuffer.h</a>&quot;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/smallvectormemorybuffer-h">llvm/Support/SmallVectorMemoryBuffer.h</a>&quot;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/target/targetmachine-h">llvm/Target/TargetMachine.h</a>&quot;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/orc">orc</a> &#123;</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlight"><a href="/docs/api/structs/llvm/orc/irsymbolmapper/manglingoptions">IRSymbolMapper::ManglingOptions</a></span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26" lineLink="/docs/api/namespaces/llvm/orc/#a0aa9eba1ffba47fd9e5ef90d81a30653"><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/orc/#a0aa9eba1ffba47fd9e5ef90d81a30653">irManglingOptionsFromTargetOptions</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/targetoptions">TargetOptions</a> &amp;Opts) &#123;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlight">  <a href="/docs/api/structs/llvm/orc/irsymbolmapper/manglingoptions">IRSymbolMapper::ManglingOptions</a> MO;</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlight">  MO.<a href="/docs/api/structs/llvm/orc/irsymbolmapper/manglingoptions/#a4d4da595dfbf867a4cab51af1b4c6255">EmulatedTLS</a> = Opts.<a href="/docs/api/classes/llvm/targetoptions/#ae5ba34490ccea87c934d079ca6a8d09b">EmulatedTLS</a>;</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> MO;</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightComment">/// Compile a Module to an ObjectFile.</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35" lineLink="/docs/api/classes/llvm/orc/simplecompiler/#a603ecdc5d1b7bfa7d9408896489ca31d"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/expected">Expected&lt;SimpleCompiler::CompileResult&gt;</a> <a href="/docs/api/classes/llvm/orc/simplecompiler/#a603ecdc5d1b7bfa7d9408896489ca31d">SimpleCompiler::operator()</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M) &#123;</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (M.getDataLayout().isDefault())</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlight">    M.setDataLayout(TM.<a href="/docs/api/classes/llvm/targetmachine/#a34825337fd4c67c855cfc5d6d3a87788">createDataLayout</a>());</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/orc/simplecompiler/#a5c4e5e7b14ba24d8d4044b800b8d93b7">CompileResult</a> CachedObject = tryToLoadFromObjectCache(M);</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (CachedObject)</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::move(CachedObject);</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;char, 0&gt;</a> ObjBufferSV;</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlight">  &#123;</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/raw-svector-ostream">raw&#95;svector&#95;ostream</a> ObjStream(ObjBufferSV);</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/legacy/passmanager">legacy::PassManager</a> PM;</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/mccontext">MCContext</a> &#42;Ctx;</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (TM.<a href="/docs/api/classes/llvm/targetmachine/#a8b157b36b2fc00d830a8b7d1546d746c">addPassesToEmitMC</a>(PM, Ctx, ObjStream))</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">make&#95;error&lt;StringError&gt;</a>(</span><span class="doxyHighlightStringLiteral">&quot;Target does not support MC emission&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlight">                                     <a href="/docs/api/namespaces/llvm/#a2b43c21951d0948b34bcf7019949032d">inconvertibleErrorCode</a>());</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlight">    PM.<a href="/docs/api/classes/llvm/legacy/passmanager/#a2bdbe49f025814f15cd9c82aa08a389b">run</a>(M);</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> ObjBuffer = std::make&#95;unique&lt;SmallVectorMemoryBuffer&gt;(</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlight">      std::move(ObjBufferSV), M.getModuleIdentifier() + </span><span class="doxyHighlightStringLiteral">&quot;-jitted-objectbuffer&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">/&#42;RequiresNullTerminator=&#42;/</span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> Obj = <a href="/docs/api/classes/llvm/object/objectfile/#a926af6aca697fdbacb3e3ea1000f0ec4">object::ObjectFile::createObjectFile</a>(ObjBuffer-&gt;getMemBufferRef());</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!Obj)</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> Obj.takeError();</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlight">  notifyObjectCompiled(M, &#42;ObjBuffer);</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::move(ObjBuffer);</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/orc/simplecompiler/#a5c4e5e7b14ba24d8d4044b800b8d93b7">SimpleCompiler::CompileResult</a></span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlight">SimpleCompiler::tryToLoadFromObjectCache(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/module">Module</a> &amp;M) &#123;</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!ObjCache)</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/orc/simplecompiler/#a5c4e5e7b14ba24d8d4044b800b8d93b7">CompileResult</a>();</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> ObjCache-&gt;<a href="/docs/api/classes/llvm/objectcache/#a1b22ee117ce4d2a115ba34634461e1f1">getObject</a>(&amp;M);</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> SimpleCompiler::notifyObjectCompiled(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/module">Module</a> &amp;M,</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlight">                                          </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/memorybuffer">MemoryBuffer</a> &amp;ObjBuffer) &#123;</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (ObjCache)</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlight">    ObjCache-&gt;<a href="/docs/api/classes/llvm/objectcache/#a680b6deb0dd910145b640a947e18be2d">notifyObjectCompiled</a>(&amp;M, ObjBuffer.<a href="/docs/api/classes/llvm/memorybuffer/#a8f9181a190ad7bd1e7bfb67f90c3e4d4">getMemBufferRef</a>());</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/classes/llvm/orc/concurrentircompiler/#ae7d8fdffc446a620062561c1378c47ff"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/orc/concurrentircompiler/#ae7d8fdffc446a620062561c1378c47ff">ConcurrentIRCompiler::ConcurrentIRCompiler</a>(<a href="/docs/api/classes/llvm/orc/jittargetmachinebuilder">JITTargetMachineBuilder</a> JTMB,</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlight">                                           <a href="/docs/api/classes/llvm/objectcache">ObjectCache</a> &#42;ObjCache)</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><span class="doxyHighlight">    : <a href="/docs/api/classes/llvm/orc/ircompilelayer/ircompiler/#a9292ba890230408d0b90e798e2c1edb8">IRCompiler</a>(<a href="/docs/api/namespaces/llvm/orc/#a0aa9eba1ffba47fd9e5ef90d81a30653">irManglingOptionsFromTargetOptions</a>(JTMB.getOptions())),</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlight">      JTMB(<a href="/docs/api/namespaces/std">std</a>::<a href="/docs/api/namespaces/llvm/#abfc9c7ecf70f66901e439f7c04ef3dbb">move</a>(JTMB)), ObjCache(ObjCache) &#123;&#125;</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/expected">Expected&lt;std::unique&#95;ptr&lt;MemoryBuffer&gt;</a>&gt;</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89" lineLink="/docs/api/classes/llvm/orc/concurrentircompiler/#af352e108f2af8389cd54b2f1d6b761f3"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/orc/concurrentircompiler/#af352e108f2af8389cd54b2f1d6b761f3">ConcurrentIRCompiler::operator()</a>(<a href="/docs/api/classes/llvm/module">Module</a> &amp;M) &#123;</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> TM = <a href="/docs/api/namespaces/llvm/#aa1e1474f15df639f0d874b21f15666f7">cantFail</a>(JTMB.<a href="/docs/api/classes/llvm/orc/jittargetmachinebuilder/#ad851482024748222bc5538345ec2bd12">createTargetMachine</a>());</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/orc/simplecompiler">SimpleCompiler</a> <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>(&#42;TM, ObjCache);</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>(M);</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace orc</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace llvm</span></CodeLine>
 
 </ProgramListing>
 

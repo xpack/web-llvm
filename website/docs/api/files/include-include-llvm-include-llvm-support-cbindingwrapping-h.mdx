@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -140,52 +139,52 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/Support/CBindingWrapping.h - C Interface Wrapping ---&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file declares the wrapping macros for the C interface.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;SUPPORT&#95;CBINDINGWRAPPING&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;SUPPORT&#95;CBINDINGWRAPPING&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm-c/types-h">llvm-c/Types.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">llvm/Support/Casting.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19" lineLink="#a65c769c08fa9fee7f298ad9c9eee5e05"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEFINE&#95;SIMPLE&#95;CONVERSION&#95;FUNCTIONS(ty, ref)     \\</Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="preprocessor">  inline ty &#42;unwrap(ref P) &#123;                            \\</Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="preprocessor">    return reinterpret&#95;cast&lt;ty&#42;&gt;(P);                    \\</Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="preprocessor">  &#125;                                                     \\</Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="preprocessor">                                                        \\</Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="preprocessor">  inline ref wrap(const ty &#42;P) &#123;                        \\</Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="preprocessor">    return reinterpret&#95;cast&lt;ref&gt;(const&#95;cast&lt;ty&#42;&gt;(P));   \\</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="preprocessor">  &#125;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28" lineLink="#a3cd2e0ce785a05f5b2f2338453640df4"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEFINE&#95;ISA&#95;CONVERSION&#95;FUNCTIONS(ty, ref)        \\</Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="preprocessor">  DEFINE&#95;SIMPLE&#95;CONVERSION&#95;FUNCTIONS(ty, ref)           \\</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="preprocessor">                                                        \\</Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="preprocessor">  template&lt;typename T&gt;                                  \\</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="preprocessor">  inline T &#42;unwrap(ref P) &#123;                             \\</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="preprocessor">    return cast&lt;T&gt;(unwrap(P));                          \\</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="preprocessor">  &#125;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36" lineLink="#a0856bab1c65467280bf8c2062de4e3d5"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEFINE&#95;STDCXX&#95;CONVERSION&#95;FUNCTIONS(ty, ref)     \\</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="preprocessor">  DEFINE&#95;SIMPLE&#95;CONVERSION&#95;FUNCTIONS(ty, ref)           \\</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="preprocessor">                                                        \\</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="preprocessor">  template&lt;typename T&gt;                                  \\</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="preprocessor">  inline T &#42;unwrap(ref P) &#123;                             \\</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="preprocessor">    T &#42;Q = (T&#42;)unwrap(P);                               \\</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="preprocessor">    assert(Q &amp;&amp; &quot;Invalid cast!&quot;);                       \\</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="preprocessor">    return Q;                                           \\</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="preprocessor">  &#125;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- llvm/Support/CBindingWrapping.h - C Interface Wrapping ---&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This file declares the wrapping macros for the C interface.</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;SUPPORT&#95;CBINDINGWRAPPING&#95;H</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#define LLVM&#95;SUPPORT&#95;CBINDINGWRAPPING&#95;H</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm-c/types-h">llvm-c/Types.h</a>&quot;</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">llvm/Support/Casting.h</a>&quot;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19" lineLink="#a65c769c08fa9fee7f298ad9c9eee5e05"><span class="doxyHighlightPreprocessor">#define DEFINE&#95;SIMPLE&#95;CONVERSION&#95;FUNCTIONS(ty, ref)     \\</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">  inline ty &#42;unwrap(ref P) &#123;                            \\</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightPreprocessor">    return reinterpret&#95;cast&lt;ty&#42;&gt;(P);                    \\</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightPreprocessor">  &#125;                                                     \\</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightPreprocessor">                                                        \\</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightPreprocessor">  inline ref wrap(const ty &#42;P) &#123;                        \\</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightPreprocessor">    return reinterpret&#95;cast&lt;ref&gt;(const&#95;cast&lt;ty&#42;&gt;(P));   \\</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightPreprocessor">  &#125;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28" lineLink="#a3cd2e0ce785a05f5b2f2338453640df4"><span class="doxyHighlightPreprocessor">#define DEFINE&#95;ISA&#95;CONVERSION&#95;FUNCTIONS(ty, ref)        \\</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightPreprocessor">  DEFINE&#95;SIMPLE&#95;CONVERSION&#95;FUNCTIONS(ty, ref)           \\</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightPreprocessor">                                                        \\</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightPreprocessor">  template&lt;typename T&gt;                                  \\</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlightPreprocessor">  inline T &#42;unwrap(ref P) &#123;                             \\</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightPreprocessor">    return cast&lt;T&gt;(unwrap(P));                          \\</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightPreprocessor">  &#125;</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36" lineLink="#a0856bab1c65467280bf8c2062de4e3d5"><span class="doxyHighlightPreprocessor">#define DEFINE&#95;STDCXX&#95;CONVERSION&#95;FUNCTIONS(ty, ref)     \\</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlightPreprocessor">  DEFINE&#95;SIMPLE&#95;CONVERSION&#95;FUNCTIONS(ty, ref)           \\</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightPreprocessor">                                                        \\</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightPreprocessor">  template&lt;typename T&gt;                                  \\</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightPreprocessor">  inline T &#42;unwrap(ref P) &#123;                             \\</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlightPreprocessor">    T &#42;Q = (T&#42;)unwrap(P);                               \\</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlightPreprocessor">    assert(Q &amp;&amp; &quot;Invalid cast!&quot;);                       \\</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlightPreprocessor">    return Q;                                           \\</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlightPreprocessor">  &#125;</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
 
 </ProgramListing>
 

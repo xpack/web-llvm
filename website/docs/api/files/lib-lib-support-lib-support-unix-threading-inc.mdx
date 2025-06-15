@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
 
 import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
@@ -34,461 +33,461 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- Unix/Threading.inc - Unix Threading Implementation ----- -&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file provides the Unix specific implementation of Threading functions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h">Unix.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/scopeexit-h">llvm/ADT/ScopeExit.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallstring-h">llvm/ADT/SmallString.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h">llvm/ADT/StringRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h">llvm/ADT/Twine.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/memorybuffer-h">llvm/Support/MemoryBuffer.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h">llvm/Support/raw&#95;ostream.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;APPLE&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;mach/mach&#95;init.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;mach/mach&#95;port.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;pthread/qos.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;sys/sysctl.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;sys/types.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;pthread.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;FreeBSD&#95;&#95;) || defined(&#95;&#95;OpenBSD&#95;&#95;) || defined(&#95;&#95;DragonFly&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;pthread&#95;np.h&gt;</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="comment">// For pthread&#95;getthreadid&#95;np() / pthread&#95;set&#95;name&#95;np()</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Must be included after Threading.inc to provide definition for llvm::thread</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="comment">// because FreeBSD&#39;s condvar.h (included by user.h) misuses the &quot;thread&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="comment">// keyword.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef &#95;&#95;FreeBSD&#95;&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/thread-h">llvm/Support/thread.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;FreeBSD&#95;&#95;) || defined(&#95;&#95;FreeBSD&#95;kernel&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;<a href="/docs/api/files/include/include/llvm/include/llvm/support/errno-h">errno.h</a>&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;sys/cpuset.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;sys/sysctl.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;sys/user.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;unistd.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;NetBSD&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;lwp.h&gt;</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="comment">// For &#95;lwp&#95;self()</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;OpenBSD&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;unistd.h&gt;</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="comment">// For getthrid()</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;linux&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;sched.h&gt;</Highlight><Highlight kind="normal">       </Highlight><Highlight kind="comment">// For sched&#95;getaffinity</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;sys/syscall.h&gt;</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="comment">// For syscall codes</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;unistd.h&gt;</Highlight><Highlight kind="normal">      </Highlight><Highlight kind="comment">// For syscall()</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;HAIKU&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;OS.h&gt;</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="comment">// For B&#95;OS&#95;NAME&#95;LENGTH</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">pthread&#95;t</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">llvm&#95;execute&#95;on&#95;thread&#95;impl(</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;(&#42;ThreadFunc)(</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;), </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;Arg,</Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">                            std::optional&lt;unsigned&gt; StackSizeInBytes) &#123;</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> errnum;</Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Construct the attributes object.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  pthread&#95;attr&#95;t Attr;</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((errnum = ::pthread&#95;attr&#95;init(&amp;Attr)) != 0) &#123;</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a5f4d47abb82dc173a756969a3399b9b8">ReportErrnumFatal</a>(</Highlight><Highlight kind="stringliteral">&quot;pthread&#95;attr&#95;init failed&quot;</Highlight><Highlight kind="normal">, errnum);</Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> AttrGuard = <a href="/docs/api/namespaces/llvm/#a1af45c4dc83c083c5ae914d96fd3ce96">llvm::make&#95;scope&#95;exit</a>(&#91;&amp;&#93; &#123;</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((errnum = ::pthread&#95;attr&#95;destroy(&amp;Attr)) != 0) &#123;</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a5f4d47abb82dc173a756969a3399b9b8">ReportErrnumFatal</a>(</Highlight><Highlight kind="stringliteral">&quot;pthread&#95;attr&#95;destroy failed&quot;</Highlight><Highlight kind="normal">, errnum);</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  &#125;);</Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Set the requested stack size, if given.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (StackSizeInBytes) &#123;</Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((errnum = ::pthread&#95;attr&#95;setstacksize(&amp;Attr, &#42;StackSizeInBytes)) != 0) &#123;</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a5f4d47abb82dc173a756969a3399b9b8">ReportErrnumFatal</a>(</Highlight><Highlight kind="stringliteral">&quot;pthread&#95;attr&#95;setstacksize failed&quot;</Highlight><Highlight kind="normal">, errnum);</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Construct and execute the thread.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  pthread&#95;t <a href="/docs/api/namespaces/llvm/nvptx/#abd325b49b8e2f00c0370b1c68cf51557a464696eb6092395b24545604b7895ade">Thread</a>;</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((errnum = ::pthread&#95;create(&amp;Thread, &amp;Attr, ThreadFunc, Arg)) != 0)</Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a5f4d47abb82dc173a756969a3399b9b8">ReportErrnumFatal</a>(</Highlight><Highlight kind="stringliteral">&quot;pthread&#95;create failed&quot;</Highlight><Highlight kind="normal">, errnum);</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/nvptx/#abd325b49b8e2f00c0370b1c68cf51557a464696eb6092395b24545604b7895ade">Thread</a>;</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> llvm&#95;thread&#95;detach&#95;impl(pthread&#95;t Thread) &#123;</Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> errnum;</Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((errnum = ::pthread&#95;detach(Thread)) != 0) &#123;</Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a5f4d47abb82dc173a756969a3399b9b8">ReportErrnumFatal</a>(</Highlight><Highlight kind="stringliteral">&quot;pthread&#95;detach failed&quot;</Highlight><Highlight kind="normal">, errnum);</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> llvm&#95;thread&#95;join&#95;impl(pthread&#95;t Thread) &#123;</Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> errnum;</Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> ((errnum = ::pthread&#95;join(Thread, </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">)) != 0) &#123;</Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a5f4d47abb82dc173a756969a3399b9b8">ReportErrnumFatal</a>(</Highlight><Highlight kind="stringliteral">&quot;pthread&#95;join failed&quot;</Highlight><Highlight kind="normal">, errnum);</Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">pthread&#95;t llvm&#95;thread&#95;get&#95;id&#95;impl(pthread&#95;t Thread) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/nvptx/#abd325b49b8e2f00c0370b1c68cf51557a464696eb6092395b24545604b7895ade">Thread</a>; &#125;</Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">pthread&#95;t llvm&#95;thread&#95;get&#95;current&#95;id&#95;impl() &#123; return ::pthread&#95;self(); &#125;</Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">uint64&#95;t <a href="/docs/api/namespaces/llvm/#aaa33daad43dedada2aa398a44b91be01">llvm::get&#95;threadid</a>() &#123;</Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;APPLE&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Calling &quot;mach&#95;thread&#95;self()&quot; bumps the reference count on the thread</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// port, so we need to deallocate it. mach&#95;task&#95;self() doesn&#39;t bump the ref</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// count.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">thread&#95;local</Highlight><Highlight kind="normal"> thread&#95;port&#95;t Self = &#91;&#93; &#123;</Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">    thread&#95;port&#95;t InitSelf = mach&#95;thread&#95;self();</Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">    mach&#95;port&#95;deallocate(mach&#95;task&#95;self(), Self);</Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> InitSelf;</Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">  &#125;();</Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Self;</Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;FreeBSD&#95;&#95;) || defined(&#95;&#95;DragonFly&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> uint64&#95;t(pthread&#95;getthreadid&#95;np());</Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;NetBSD&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> uint64&#95;t(&#95;lwp&#95;self());</Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;OpenBSD&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> uint64&#95;t(getthrid());</Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;ANDROID&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> uint64&#95;t(gettid());</Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;linux&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> uint64&#95;t(syscall(&#95;&#95;NR&#95;gettid));</Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> uint64&#95;t(pthread&#95;self());</Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> uint32&#95;t get&#95;max&#95;thread&#95;name&#95;length&#95;impl() &#123;</Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(PTHREAD&#95;MAX&#95;NAMELEN&#95;NP)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> PTHREAD&#95;MAX&#95;NAMELEN&#95;NP;</Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;HAIKU&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> B&#95;OS&#95;NAME&#95;LENGTH;</Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;APPLE&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 64;</Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;sun&#95;&#95;) &amp;&amp; defined(&#95;&#95;svr4&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 31;</Highlight></CodeLine>
-<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;linux&#95;&#95;) &amp;&amp; HAVE&#95;PTHREAD&#95;SETNAME&#95;NP</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 16;</Highlight></CodeLine>
-<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;FreeBSD&#95;&#95;) || defined(&#95;&#95;FreeBSD&#95;kernel&#95;&#95;) ||                   \\</Highlight></CodeLine>
-<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="preprocessor">    defined(&#95;&#95;DragonFly&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 16;</Highlight></CodeLine>
-<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;OpenBSD&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 24;</Highlight></CodeLine>
-<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
-<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">uint32&#95;t <a href="/docs/api/namespaces/llvm/#a28e648caeff381f571c4f282c869ccd7">llvm::get&#95;max&#95;thread&#95;name&#95;length</a>() &#123;</Highlight></CodeLine>
-<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> get&#95;max&#95;thread&#95;name&#95;length&#95;impl();</Highlight></CodeLine>
-<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a8c2b8c55bed6ebcda541d21bab7e6a42">llvm::set&#95;thread&#95;name</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Twine &amp;Name) &#123;</Highlight></CodeLine>
-<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Make sure the input is null terminated.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">  SmallString&lt;64&gt; Storage;</Highlight></CodeLine>
-<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">  StringRef NameStr = <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.toNullTerminatedStringRef(Storage);</Highlight></CodeLine>
-<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Truncate from the beginning, not the end, if the specified name is too</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// long.  For one, this ensures that the resulting string is still null</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// terminated, but additionally the end of a long thread name will usually</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// be more unique than the beginning, since a common pattern is for similar</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// threads to share a common prefix.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Note that the name length includes the null terminator.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#a28e648caeff381f571c4f282c869ccd7">get&#95;max&#95;thread&#95;name&#95;length</a>() &gt; 0)</Highlight></CodeLine>
-<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">    NameStr = NameStr.take&#95;back(<a href="/docs/api/namespaces/llvm/#a28e648caeff381f571c4f282c869ccd7">get&#95;max&#95;thread&#95;name&#95;length</a>() - 1);</Highlight></CodeLine>
-<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">  (void)NameStr;</Highlight></CodeLine>
-<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(HAVE&#95;PTHREAD&#95;SET&#95;NAME&#95;NP)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">  ::pthread&#95;set&#95;name&#95;np(::pthread&#95;self(), NameStr.data());</Highlight></CodeLine>
-<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(HAVE&#95;PTHREAD&#95;SETNAME&#95;NP)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;NetBSD&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">  ::pthread&#95;setname&#95;np(::pthread&#95;self(), </Highlight><Highlight kind="stringliteral">&quot;%s&quot;</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">                       </Highlight><Highlight kind="keyword">const&#95;cast&lt;</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(NameStr.data()));</Highlight></CodeLine>
-<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;APPLE&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">  ::pthread&#95;setname&#95;np(NameStr.data());</Highlight></CodeLine>
-<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">  ::pthread&#95;setname&#95;np(::pthread&#95;self(), NameStr.data());</Highlight></CodeLine>
-<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9f631c8bd3916d1984a0df4ccce73461">llvm::get&#95;thread&#95;name</a>(SmallVectorImpl&lt;char&gt; &amp;Name) &#123;</Highlight></CodeLine>
-<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.clear();</Highlight></CodeLine>
-<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;FreeBSD&#95;&#95;) || defined(&#95;&#95;FreeBSD&#95;kernel&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> pid = ::getpid();</Highlight></CodeLine>
-<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">  uint64&#95;t tid = <a href="/docs/api/namespaces/llvm/#aaa33daad43dedada2aa398a44b91be01">get&#95;threadid</a>();</Highlight></CodeLine>
-<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">kinfo&#95;proc &#42;kp = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, &#42;nkp;</Highlight></CodeLine>
-<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> len = 0;</Highlight></CodeLine>
-<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/codeview/symbolrecordmapping-cpp/#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a>;</Highlight></CodeLine>
-<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> ctl&#91;4&#93; = &#123;CTL&#95;KERN, KERN&#95;PROC, KERN&#95;PROC&#95;PID | KERN&#95;PROC&#95;INC&#95;THREAD,</Highlight></CodeLine>
-<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">                (int)pid&#125;;</Highlight></CodeLine>
-<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (1) &#123;</Highlight></CodeLine>
-<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/codeview/symbolrecordmapping-cpp/#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a> = sysctl(ctl, 4, kp, &amp;len, </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">, 0);</Highlight></CodeLine>
-<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (kp == </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal"> || (<a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/codeview/symbolrecordmapping-cpp/#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a> != 0 &amp;&amp; errno == ENOMEM)) &#123;</Highlight></CodeLine>
-<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Add extra space in case threads are added before next call.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">      len += </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(&#42;kp) + len / 10;</Highlight></CodeLine>
-<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">      nkp = (</Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">kinfo&#95;proc &#42;)::realloc(kp, len);</Highlight></CodeLine>
-<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (nkp == </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
-<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">        free(kp);</Highlight></CodeLine>
-<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">      kp = nkp;</Highlight></CodeLine>
-<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/codeview/symbolrecordmapping-cpp/#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a> != 0)</Highlight></CodeLine>
-<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">      len = 0;</Highlight></CodeLine>
-<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> i = 0; i &lt; len / </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(&#42;kp); i++) &#123;</Highlight></CodeLine>
-<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (kp&#91;i&#93;.ki&#95;tid == (lwpid&#95;t)tid) &#123;</Highlight></CodeLine>
-<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.append(kp&#91;i&#93;.ki&#95;tdname, kp&#91;i&#93;.ki&#95;tdname + strlen(kp&#91;i&#93;.ki&#95;tdname));</Highlight></CodeLine>
-<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">  free(kp);</Highlight></CodeLine>
-<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;linux&#95;&#95;) &amp;&amp; HAVE&#95;PTHREAD&#95;GETNAME&#95;NP</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> uint32&#95;t len = get&#95;max&#95;thread&#95;name&#95;length&#95;impl();</Highlight></CodeLine>
-<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> Buffer&#91;len&#93; = &#123;</Highlight><Highlight kind="charliteral">&#39;\\0&#39;</Highlight><Highlight kind="normal">&#125;; </Highlight><Highlight kind="comment">// FIXME: working around MSan false positive.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (0 == ::pthread&#95;getname&#95;np(::pthread&#95;self(), Buffer, len))</Highlight></CodeLine>
-<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.append(Buffer, Buffer + strlen(Buffer));</Highlight></CodeLine>
-<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(HAVE&#95;PTHREAD&#95;GET&#95;NAME&#95;NP) &amp;&amp; HAVE&#95;PTHREAD&#95;GET&#95;NAME&#95;NP</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> uint32&#95;t len = get&#95;max&#95;thread&#95;name&#95;length&#95;impl();</Highlight></CodeLine>
-<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> buf&#91;len&#93;;</Highlight></CodeLine>
-<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal">  ::pthread&#95;get&#95;name&#95;np(::pthread&#95;self(), buf, len);</Highlight></CodeLine>
-<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.append(buf, buf + strlen(buf));</Highlight></CodeLine>
-<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(HAVE&#95;PTHREAD&#95;GETNAME&#95;NP) &amp;&amp; HAVE&#95;PTHREAD&#95;GETNAME&#95;NP</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> uint32&#95;t len = get&#95;max&#95;thread&#95;name&#95;length&#95;impl();</Highlight></CodeLine>
-<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> buf&#91;len&#93;;</Highlight></CodeLine>
-<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">  ::pthread&#95;getname&#95;np(::pthread&#95;self(), buf, len);</Highlight></CodeLine>
-<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.append(buf, buf + strlen(buf));</Highlight></CodeLine>
-<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a95d9b0bc59230b7a9ecfd7b49e001f2a">SetThreadPriorityResult</a> <a href="/docs/api/namespaces/llvm/#a071c654a304712c768496d4ea8b404e9">llvm::set&#95;thread&#95;priority</a>(ThreadPriority Priority) &#123;</Highlight></CodeLine>
-<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;linux&#95;&#95;) &amp;&amp; defined(SCHED&#95;IDLE)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Some &#42;really&#42; old glibcs are missing SCHED&#95;IDLE.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// http://man7.org/linux/man-pages/man3/pthread&#95;setschedparam.3.html</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// http://man7.org/linux/man-pages/man2/sched&#95;setscheduler.2.html</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">  sched&#95;param priority;</Highlight></CodeLine>
-<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// For each of the above policies, param-&gt;sched&#95;priority must be 0</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">  priority.sched&#95;priority = 0;</Highlight></CodeLine>
-<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// SCHED&#95;IDLE    for running very low priority background jobs.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// SCHED&#95;OTHER   the standard round-robin time-sharing policy;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> !pthread&#95;setschedparam(</Highlight></CodeLine>
-<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">             pthread&#95;self(),</Highlight></CodeLine>
-<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">             </Highlight><Highlight kind="comment">// FIXME: consider SCHED&#95;BATCH for Low</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal">             Priority == ThreadPriority::Default ? SCHED&#95;OTHER : SCHED&#95;IDLE,</Highlight></CodeLine>
-<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">             &amp;priority)</Highlight></CodeLine>
-<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">             ? SetThreadPriorityResult::SUCCESS</Highlight></CodeLine>
-<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal">             : SetThreadPriorityResult::FAILURE;</Highlight></CodeLine>
-<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;APPLE&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// https://developer.apple.com/documentation/apple-silicon/tuning-your-code-s-performance-for-apple-silicon</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Background - Applies to work that isn’t visible to the user and may take</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// significant time to complete. Examples include indexing, backing up, or</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// synchronizing data. This class emphasizes energy efficiency.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Utility - Applies to work that takes anywhere from a few seconds to a few</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// minutes to complete. Examples include downloading a document or importing</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// data. This class offers a balance between responsiveness, performance, and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// energy efficiency.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> qosClass = &#91;&amp;&#93;() &#123;</Highlight></CodeLine>
-<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (Priority) &#123;</Highlight></CodeLine>
-<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> ThreadPriority::Background:</Highlight></CodeLine>
-<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> QOS&#95;CLASS&#95;BACKGROUND;</Highlight></CodeLine>
-<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> ThreadPriority::Low:</Highlight></CodeLine>
-<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> QOS&#95;CLASS&#95;UTILITY;</Highlight></CodeLine>
-<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> ThreadPriority::Default:</Highlight></CodeLine>
-<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> QOS&#95;CLASS&#95;DEFAULT;</Highlight></CodeLine>
-<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">  &#125;();</Highlight></CodeLine>
-<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> !pthread&#95;set&#95;qos&#95;class&#95;self&#95;np(qosClass, 0)</Highlight></CodeLine>
-<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">             ? SetThreadPriorityResult::SUCCESS</Highlight></CodeLine>
-<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal">             : SetThreadPriorityResult::FAILURE;</Highlight></CodeLine>
-<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> SetThreadPriorityResult::FAILURE;</Highlight></CodeLine>
-<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;thread&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> computeHostNumHardwareThreads() &#123;</Highlight></CodeLine>
-<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;FreeBSD&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal">  cpuset&#95;t <a href="/docs/api/namespaces/shuffles/#a6abf8a645bd24dfb42085db9672ac39a">mask</a>;</Highlight></CodeLine>
-<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal">  CPU&#95;ZERO(&amp;mask);</Highlight></CodeLine>
-<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (cpuset&#95;getaffinity(CPU&#95;LEVEL&#95;WHICH, CPU&#95;WHICH&#95;TID, -1, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(mask),</Highlight></CodeLine>
-<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal">                         &amp;mask) == 0)</Highlight></CodeLine>
-<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CPU&#95;COUNT(&amp;mask);</Highlight></CodeLine>
-<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;linux&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">  cpu&#95;set&#95;t <a href="/docs/api/namespaces/llvm/objcopy/#aa91a92d1d1ad7e8b84c1ecdceb0a439fa5d5b78699e57104f2fa03bbdf7b9197b">Set</a>;</Highlight></CodeLine>
-<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (sched&#95;getaffinity(0, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Set), &amp;Set) == 0)</Highlight></CodeLine>
-<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CPU&#95;COUNT(&amp;Set);</Highlight></CodeLine>
-<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Guard against std:{':thread:'}:hardware&#95;concurrency() returning 0</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Val = std:{':thread:'}:hardware&#95;concurrency())</Highlight></CodeLine>
-<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Val;</Highlight></CodeLine>
-<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 1;</Highlight></CodeLine>
-<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/threadpoolstrategy/#a91973a96c25c9148226db40b463b5681">llvm::ThreadPoolStrategy::apply&#95;thread&#95;strategy</a>(</Highlight></CodeLine>
-<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> ThreadPoolNum)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;&#125;</Highlight></CodeLine>
-<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal"><a href="/docs/api/classes/llvm/bitvector">llvm::BitVector</a> <a href="/docs/api/namespaces/llvm/#a28b7afb4a2fb8c445d23dc24b3627bd6">llvm::get&#95;thread&#95;affinity&#95;mask</a>() &#123;</Highlight></CodeLine>
-<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// FIXME: Implement</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm&#95;unreachable</a>(</Highlight><Highlight kind="stringliteral">&quot;Not implemented!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a52707521404204cff06fe8d1a663952b">llvm::get&#95;cpus</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 1; &#125;</Highlight></CodeLine>
-<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;linux&#95;&#95;) &amp;&amp; (defined(&#95;&#95;i386&#95;&#95;) || defined(&#95;&#95;x86&#95;64&#95;&#95;))</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="normal"></Highlight><Highlight kind="comment">// On Linux, the number of physical cores can be computed from /proc/cpuinfo,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal"></Highlight><Highlight kind="comment">// using the number of unique physical/core id pairs. The following</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="normal"></Highlight><Highlight kind="comment">// implementation reads the /proc/cpuinfo format on an x86&#95;64 system.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> computeHostNumPhysicalCores() &#123;</Highlight></CodeLine>
-<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Enabled represents the number of physical id/core id pairs with at least</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// one processor id enabled by the CPU affinity mask.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal">  cpu&#95;set&#95;t Affinity, <a href="/docs/api/files/lib/lib/support/statistic-cpp/#a558f5c44426d0eb7abb82a65e8892d9a">Enabled</a>;</Highlight></CodeLine>
-<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (sched&#95;getaffinity(0, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Affinity), &amp;Affinity) != 0)</Highlight></CodeLine>
-<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> -1;</Highlight></CodeLine>
-<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal">  CPU&#95;ZERO(&amp;<a href="/docs/api/files/lib/lib/support/statistic-cpp/#a558f5c44426d0eb7abb82a65e8892d9a">Enabled</a>);</Highlight></CodeLine>
-<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Read /proc/cpuinfo as a stream (until EOF reached). It cannot be</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// mmapped because it appears to have 0 size.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/erroror">llvm::ErrorOr&lt;std::unique&#95;ptr&lt;llvm::MemoryBuffer&gt;</a>&gt; <a href="/docs/api/namespaces/anonymous-textstubv5-cpp-/#ad2f3f81faa370c8bf9a1f81612c90adfa854fd39f168b7abc773a62be28560521">Text</a> =</Highlight></CodeLine>
-<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/memorybuffer/#a76b193577aa67b1fac72cdbb5343241a">llvm::MemoryBuffer::getFileAsStream</a>(</Highlight><Highlight kind="stringliteral">&quot;/proc/cpuinfo&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (std::error&#95;code EC = <a href="/docs/api/namespaces/anonymous-textstubv5-cpp-/#ad2f3f81faa370c8bf9a1f81612c90adfa854fd39f168b7abc773a62be28560521">Text</a>.getError()) &#123;</Highlight></CodeLine>
-<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a9a7b5c68c90f85baaedaa854cc5002cc">llvm::errs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Can&#39;t read &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal">                 &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;/proc/cpuinfo: &quot;</Highlight><Highlight kind="normal"> &lt;&lt; <a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>.message() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> -1;</Highlight></CodeLine>
-<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;StringRef, 8&gt;</a> strs;</Highlight></CodeLine>
-<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="normal">  (&#42;Text)-&gt;getBuffer().split(strs, </Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="comment">/&#42;MaxSplit=&#42;/</Highlight><Highlight kind="normal">-1,</Highlight></CodeLine>
-<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="normal">                             </Highlight><Highlight kind="comment">/&#42;KeepEmpty=&#42;/</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> CurProcessor = -1;</Highlight></CodeLine>
-<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> CurPhysicalId = -1;</Highlight></CodeLine>
-<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> CurSiblings = -1;</Highlight></CodeLine>
-<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> CurCoreId = -1;</Highlight></CodeLine>
-<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/stringref">StringRef</a> Line : strs) &#123;</Highlight></CodeLine>
-<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal">    std::pair&lt;StringRef, StringRef&gt; <a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a> = <a href="/docs/api/namespaces/llvm/logicalview/#af64c789b30b79a5f18889270bccef27ea4803e6b9e63dabf04de980788d6a13c4">Line</a>.split(</Highlight><Highlight kind="charliteral">&#39;:&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a> = <a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a>.first.trim();</Highlight></CodeLine>
-<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Val = <a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a>.second.trim();</Highlight></CodeLine>
-<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// These fields are available if the kernel is configured with CONFIG&#95;SMP.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Name == </Highlight><Highlight kind="stringliteral">&quot;processor&quot;</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
-<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">      Val.getAsInteger(10, CurProcessor);</Highlight></CodeLine>
-<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Name == </Highlight><Highlight kind="stringliteral">&quot;physical id&quot;</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
-<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="normal">      Val.getAsInteger(10, CurPhysicalId);</Highlight></CodeLine>
-<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Name == </Highlight><Highlight kind="stringliteral">&quot;siblings&quot;</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
-<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal">      Val.getAsInteger(10, CurSiblings);</Highlight></CodeLine>
-<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Name == </Highlight><Highlight kind="stringliteral">&quot;core id&quot;</Highlight><Highlight kind="normal">) &#123;</Highlight></CodeLine>
-<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="normal">      Val.getAsInteger(10, CurCoreId);</Highlight></CodeLine>
-<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// The processor id corresponds to an index into cpu&#95;set&#95;t.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CPU&#95;ISSET(CurProcessor, &amp;Affinity))</Highlight></CodeLine>
-<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal">        CPU&#95;SET(CurPhysicalId &#42; CurSiblings + CurCoreId, &amp;<a href="/docs/api/files/lib/lib/support/statistic-cpp/#a558f5c44426d0eb7abb82a65e8892d9a">Enabled</a>);</Highlight></CodeLine>
-<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00384" /><CodeLine lineNumber="384"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CPU&#95;COUNT(&amp;<a href="/docs/api/files/lib/lib/support/statistic-cpp/#a558f5c44426d0eb7abb82a65e8892d9a">Enabled</a>);</Highlight></CodeLine>
-<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00386" /><CodeLine lineNumber="386"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif (defined(&#95;&#95;linux&#95;&#95;) &amp;&amp; defined(&#95;&#95;s390x&#95;&#95;)) || defined(&#95;AIX)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> computeHostNumPhysicalCores() &#123;</Highlight></CodeLine>
-<Link id="l00388" /><CodeLine lineNumber="388"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> sysconf(&#95;SC&#95;NPROCESSORS&#95;ONLN);</Highlight></CodeLine>
-<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00390" /><CodeLine lineNumber="390"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;linux&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00391" /><CodeLine lineNumber="391"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> computeHostNumPhysicalCores() &#123;</Highlight></CodeLine>
-<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="normal">  cpu&#95;set&#95;t Affinity;</Highlight></CodeLine>
-<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (sched&#95;getaffinity(0, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Affinity), &amp;Affinity) == 0)</Highlight></CodeLine>
-<Link id="l00394" /><CodeLine lineNumber="394"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> CPU&#95;COUNT(&amp;Affinity);</Highlight></CodeLine>
-<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The call to sched&#95;getaffinity() may have failed because the Affinity</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00397" /><CodeLine lineNumber="397"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// mask is too small for the number of CPU&#39;s on the system (i.e. the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// system has more than 1024 CPUs). Allocate a mask large enough for</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00399" /><CodeLine lineNumber="399"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// twice as many CPUs.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="normal">  cpu&#95;set&#95;t &#42;DynAffinity;</Highlight></CodeLine>
-<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="normal">  DynAffinity = CPU&#95;ALLOC(2048);</Highlight></CodeLine>
-<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (sched&#95;getaffinity(0, CPU&#95;ALLOC&#95;SIZE(2048), DynAffinity) == 0) &#123;</Highlight></CodeLine>
-<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> NumCPUs = CPU&#95;COUNT(DynAffinity);</Highlight></CodeLine>
-<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="normal">    CPU&#95;FREE(DynAffinity);</Highlight></CodeLine>
-<Link id="l00405" /><CodeLine lineNumber="405"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> NumCPUs;</Highlight></CodeLine>
-<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> -1;</Highlight></CodeLine>
-<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;APPLE&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Gets the number of &#42;physical cores&#42; on the machine.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00411" /><CodeLine lineNumber="411"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> computeHostNumPhysicalCores() &#123;</Highlight></CodeLine>
-<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="normal">  uint32&#95;t <a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a>;</Highlight></CodeLine>
-<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> len = </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a>);</Highlight></CodeLine>
-<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="normal">  sysctlbyname(</Highlight><Highlight kind="stringliteral">&quot;hw.physicalcpu&quot;</Highlight><Highlight kind="normal">, &amp;<a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a>, &amp;len, NULL, 0);</Highlight></CodeLine>
-<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a> &lt; 1) &#123;</Highlight></CodeLine>
-<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> nm&#91;2&#93;;</Highlight></CodeLine>
-<Link id="l00417" /><CodeLine lineNumber="417"><Highlight kind="normal">    nm&#91;0&#93; = CTL&#95;HW;</Highlight></CodeLine>
-<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="normal">    nm&#91;1&#93; = HW&#95;AVAILCPU;</Highlight></CodeLine>
-<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="normal">    sysctl(nm, 2, &amp;<a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a>, &amp;len, NULL, 0);</Highlight></CodeLine>
-<Link id="l00420" /><CodeLine lineNumber="420"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a> &lt; 1)</Highlight></CodeLine>
-<Link id="l00421" /><CodeLine lineNumber="421"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> -1;</Highlight></CodeLine>
-<Link id="l00422" /><CodeLine lineNumber="422"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00423" /><CodeLine lineNumber="423"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a>;</Highlight></CodeLine>
-<Link id="l00424" /><CodeLine lineNumber="424"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00425" /><CodeLine lineNumber="425"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;MVS&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00426" /><CodeLine lineNumber="426"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> computeHostNumPhysicalCores() &#123;</Highlight></CodeLine>
-<Link id="l00427" /><CodeLine lineNumber="427"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
-<Link id="l00428" /><CodeLine lineNumber="428"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Byte offset of the pointer to the Communications Vector Table (CVT) in</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00429" /><CodeLine lineNumber="429"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// the Prefixed Save Area (PSA). The table entry is a 31-bit pointer and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00430" /><CodeLine lineNumber="430"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// will be zero-extended to uintptr&#95;t.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00431" /><CodeLine lineNumber="431"><Highlight kind="normal">    FLCCVT = 16,</Highlight></CodeLine>
-<Link id="l00432" /><CodeLine lineNumber="432"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Byte offset of the pointer to the Common System Data Area (CSD) in the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00433" /><CodeLine lineNumber="433"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// CVT. The table entry is a 31-bit pointer and will be zero-extended to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00434" /><CodeLine lineNumber="434"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// uintptr&#95;t.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00435" /><CodeLine lineNumber="435"><Highlight kind="normal">    CVTCSD = 660,</Highlight></CodeLine>
-<Link id="l00436" /><CodeLine lineNumber="436"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Byte offset to the number of live CPs in the LPAR, stored as a signed</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00437" /><CodeLine lineNumber="437"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// 32-bit value in the table.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00438" /><CodeLine lineNumber="438"><Highlight kind="normal">    CSD&#95;NUMBER&#95;ONLINE&#95;STANDARD&#95;CPS = 264,</Highlight></CodeLine>
-<Link id="l00439" /><CodeLine lineNumber="439"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
-<Link id="l00440" /><CodeLine lineNumber="440"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;PSA = 0;</Highlight></CodeLine>
-<Link id="l00441" /><CodeLine lineNumber="441"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;CVT = </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
-<Link id="l00442" /><CodeLine lineNumber="442"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uintptr&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> &amp;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(PSA&#91;FLCCVT&#93;)));</Highlight></CodeLine>
-<Link id="l00443" /><CodeLine lineNumber="443"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;CSD = </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
-<Link id="l00444" /><CodeLine lineNumber="444"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="normal">uintptr&#95;t</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> &amp;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(CVT&#91;CVTCSD&#93;)));</Highlight></CodeLine>
-<Link id="l00445" /><CodeLine lineNumber="445"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> &amp;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(CSD&#91;CSD&#95;NUMBER&#95;ONLINE&#95;STANDARD&#95;CPS&#93;);</Highlight></CodeLine>
-<Link id="l00446" /><CodeLine lineNumber="446"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00447" /><CodeLine lineNumber="447"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00448" /><CodeLine lineNumber="448"><Highlight kind="normal"></Highlight><Highlight kind="comment">// On other systems, return -1 to indicate unknown.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00449" /><CodeLine lineNumber="449"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> computeHostNumPhysicalCores() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> -1; &#125;</Highlight></CodeLine>
-<Link id="l00450" /><CodeLine lineNumber="450"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00451" /><CodeLine lineNumber="451"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00452" /><CodeLine lineNumber="452"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#aa79a8fc8721314e9f7199ca4cc22e51b">llvm::get&#95;physical&#95;cores</a>() &#123;</Highlight></CodeLine>
-<Link id="l00453" /><CodeLine lineNumber="453"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> NumCores = computeHostNumPhysicalCores();</Highlight></CodeLine>
-<Link id="l00454" /><CodeLine lineNumber="454"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> NumCores;</Highlight></CodeLine>
-<Link id="l00455" /><CodeLine lineNumber="455"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- Unix/Threading.inc - Unix Threading Implementation ----- -&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This file provides the Unix specific implementation of Threading functions.</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h">Unix.h</a>&quot;</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/scopeexit-h">llvm/ADT/ScopeExit.h</a>&quot;</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallstring-h">llvm/ADT/SmallString.h</a>&quot;</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h">llvm/ADT/StringRef.h</a>&quot;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/twine-h">llvm/ADT/Twine.h</a>&quot;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/memorybuffer-h">llvm/Support/MemoryBuffer.h</a>&quot;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h">llvm/Support/raw&#95;ostream.h</a>&quot;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightPreprocessor">#if defined(&#95;&#95;APPLE&#95;&#95;)</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightPreprocessor">#include &lt;mach/mach&#95;init.h&gt;</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightPreprocessor">#include &lt;mach/mach&#95;port.h&gt;</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightPreprocessor">#include &lt;pthread/qos.h&gt;</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightPreprocessor">#include &lt;sys/sysctl.h&gt;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightPreprocessor">#include &lt;sys/types.h&gt;</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightPreprocessor">#include &lt;pthread.h&gt;</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlightPreprocessor">#if defined(&#95;&#95;FreeBSD&#95;&#95;) || defined(&#95;&#95;OpenBSD&#95;&#95;) || defined(&#95;&#95;DragonFly&#95;&#95;)</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightPreprocessor">#include &lt;pthread&#95;np.h&gt;</span><span class="doxyHighlight"> </span><span class="doxyHighlightComment">// For pthread&#95;getthreadid&#95;np() / pthread&#95;set&#95;name&#95;np()</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlightComment">// Must be included after Threading.inc to provide definition for llvm::thread</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlightComment">// because FreeBSD&#39;s condvar.h (included by user.h) misuses the &quot;thread&quot;</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightComment">// keyword.</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightPreprocessor">#ifndef &#95;&#95;FreeBSD&#95;&#95;</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/thread-h">llvm/Support/thread.h</a>&quot;</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlightPreprocessor">#if defined(&#95;&#95;FreeBSD&#95;&#95;) || defined(&#95;&#95;FreeBSD&#95;kernel&#95;&#95;)</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlightPreprocessor">#include &lt;<a href="/docs/api/files/include/include/llvm/include/llvm/support/errno-h">errno.h</a>&gt;</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlightPreprocessor">#include &lt;sys/cpuset.h&gt;</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlightPreprocessor">#include &lt;sys/sysctl.h&gt;</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlightPreprocessor">#include &lt;sys/user.h&gt;</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlightPreprocessor">#include &lt;unistd.h&gt;</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlightPreprocessor">#if defined(&#95;&#95;NetBSD&#95;&#95;)</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlightPreprocessor">#include &lt;lwp.h&gt;</span><span class="doxyHighlight"> </span><span class="doxyHighlightComment">// For &#95;lwp&#95;self()</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlightPreprocessor">#if defined(&#95;&#95;OpenBSD&#95;&#95;)</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlightPreprocessor">#include &lt;unistd.h&gt;</span><span class="doxyHighlight"> </span><span class="doxyHighlightComment">// For getthrid()</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlightPreprocessor">#if defined(&#95;&#95;linux&#95;&#95;)</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlightPreprocessor">#include &lt;sched.h&gt;</span><span class="doxyHighlight">       </span><span class="doxyHighlightComment">// For sched&#95;getaffinity</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlightPreprocessor">#include &lt;sys/syscall.h&gt;</span><span class="doxyHighlight"> </span><span class="doxyHighlightComment">// For syscall codes</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlightPreprocessor">#include &lt;unistd.h&gt;</span><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// For syscall()</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlightPreprocessor">#if defined(&#95;&#95;HAIKU&#95;&#95;)</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlightPreprocessor">#include &lt;OS.h&gt;</span><span class="doxyHighlight"> </span><span class="doxyHighlightComment">// For B&#95;OS&#95;NAME&#95;LENGTH</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlight">pthread&#95;t</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlight">llvm&#95;execute&#95;on&#95;thread&#95;impl(</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> &#42;(&#42;ThreadFunc)(</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> &#42;), </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> &#42;Arg,</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlight">                            std::optional&lt;unsigned&gt; StackSizeInBytes) &#123;</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> errnum;</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Construct the attributes object.</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlight">  pthread&#95;attr&#95;t Attr;</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> ((errnum = ::pthread&#95;attr&#95;init(&amp;Attr)) != 0) &#123;</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a5f4d47abb82dc173a756969a3399b9b8">ReportErrnumFatal</a>(</span><span class="doxyHighlightStringLiteral">&quot;pthread&#95;attr&#95;init failed&quot;</span><span class="doxyHighlight">, errnum);</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> AttrGuard = <a href="/docs/api/namespaces/llvm/#a1af45c4dc83c083c5ae914d96fd3ce96">llvm::make&#95;scope&#95;exit</a>(&#91;&amp;&#93; &#123;</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> ((errnum = ::pthread&#95;attr&#95;destroy(&amp;Attr)) != 0) &#123;</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlight">      <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a5f4d47abb82dc173a756969a3399b9b8">ReportErrnumFatal</a>(</span><span class="doxyHighlightStringLiteral">&quot;pthread&#95;attr&#95;destroy failed&quot;</span><span class="doxyHighlight">, errnum);</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><span class="doxyHighlight">  &#125;);</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Set the requested stack size, if given.</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (StackSizeInBytes) &#123;</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> ((errnum = ::pthread&#95;attr&#95;setstacksize(&amp;Attr, &#42;StackSizeInBytes)) != 0) &#123;</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlight">      <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a5f4d47abb82dc173a756969a3399b9b8">ReportErrnumFatal</a>(</span><span class="doxyHighlightStringLiteral">&quot;pthread&#95;attr&#95;setstacksize failed&quot;</span><span class="doxyHighlight">, errnum);</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Construct and execute the thread.</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlight">  pthread&#95;t <a href="/docs/api/namespaces/llvm/nvptx/#abd325b49b8e2f00c0370b1c68cf51557a464696eb6092395b24545604b7895ade">Thread</a>;</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> ((errnum = ::pthread&#95;create(&amp;Thread, &amp;Attr, ThreadFunc, Arg)) != 0)</span></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a5f4d47abb82dc173a756969a3399b9b8">ReportErrnumFatal</a>(</span><span class="doxyHighlightStringLiteral">&quot;pthread&#95;create failed&quot;</span><span class="doxyHighlight">, errnum);</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/nvptx/#abd325b49b8e2f00c0370b1c68cf51557a464696eb6092395b24545604b7895ade">Thread</a>;</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> llvm&#95;thread&#95;detach&#95;impl(pthread&#95;t Thread) &#123;</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> errnum;</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> ((errnum = ::pthread&#95;detach(Thread)) != 0) &#123;</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a5f4d47abb82dc173a756969a3399b9b8">ReportErrnumFatal</a>(</span><span class="doxyHighlightStringLiteral">&quot;pthread&#95;detach failed&quot;</span><span class="doxyHighlight">, errnum);</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> llvm&#95;thread&#95;join&#95;impl(pthread&#95;t Thread) &#123;</span></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> errnum;</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> ((errnum = ::pthread&#95;join(Thread, </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">)) != 0) &#123;</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/support/lib/support/unix/unix-h/#a5f4d47abb82dc173a756969a3399b9b8">ReportErrnumFatal</a>(</span><span class="doxyHighlightStringLiteral">&quot;pthread&#95;join failed&quot;</span><span class="doxyHighlight">, errnum);</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><span class="doxyHighlight">pthread&#95;t llvm&#95;thread&#95;get&#95;id&#95;impl(pthread&#95;t Thread) &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/nvptx/#abd325b49b8e2f00c0370b1c68cf51557a464696eb6092395b24545604b7895ade">Thread</a>; &#125;</span></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlight">pthread&#95;t llvm&#95;thread&#95;get&#95;current&#95;id&#95;impl() &#123; return ::pthread&#95;self(); &#125;</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// namespace llvm</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlight">uint64&#95;t <a href="/docs/api/namespaces/llvm/#aaa33daad43dedada2aa398a44b91be01">llvm::get&#95;threadid</a>() &#123;</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlightPreprocessor">#if defined(&#95;&#95;APPLE&#95;&#95;)</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Calling &quot;mach&#95;thread&#95;self()&quot; bumps the reference count on the thread</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// port, so we need to deallocate it. mach&#95;task&#95;self() doesn&#39;t bump the ref</span></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// count.</span></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">thread&#95;local</span><span class="doxyHighlight"> thread&#95;port&#95;t Self = &#91;&#93; &#123;</span></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlight">    thread&#95;port&#95;t InitSelf = mach&#95;thread&#95;self();</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><span class="doxyHighlight">    mach&#95;port&#95;deallocate(mach&#95;task&#95;self(), Self);</span></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> InitSelf;</span></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><span class="doxyHighlight">  &#125;();</span></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> Self;</span></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;FreeBSD&#95;&#95;) || defined(&#95;&#95;DragonFly&#95;&#95;)</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> uint64&#95;t(pthread&#95;getthreadid&#95;np());</span></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;NetBSD&#95;&#95;)</span></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> uint64&#95;t(&#95;lwp&#95;self());</span></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;OpenBSD&#95;&#95;)</span></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> uint64&#95;t(getthrid());</span></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;ANDROID&#95;&#95;)</span></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> uint64&#95;t(gettid());</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;linux&#95;&#95;)</span></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> uint64&#95;t(syscall(&#95;&#95;NR&#95;gettid));</span></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> uint64&#95;t(pthread&#95;self());</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> uint32&#95;t get&#95;max&#95;thread&#95;name&#95;length&#95;impl() &#123;</span></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><span class="doxyHighlightPreprocessor">#if defined(PTHREAD&#95;MAX&#95;NAMELEN&#95;NP)</span></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> PTHREAD&#95;MAX&#95;NAMELEN&#95;NP;</span></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;HAIKU&#95;&#95;)</span></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> B&#95;OS&#95;NAME&#95;LENGTH;</span></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;APPLE&#95;&#95;)</span></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> 64;</span></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;sun&#95;&#95;) &amp;&amp; defined(&#95;&#95;svr4&#95;&#95;)</span></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> 31;</span></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;linux&#95;&#95;) &amp;&amp; HAVE&#95;PTHREAD&#95;SETNAME&#95;NP</span></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> 16;</span></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;FreeBSD&#95;&#95;) || defined(&#95;&#95;FreeBSD&#95;kernel&#95;&#95;) ||                   \\</span></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><span class="doxyHighlightPreprocessor">    defined(&#95;&#95;DragonFly&#95;&#95;)</span></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> 16;</span></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;OpenBSD&#95;&#95;)</span></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> 24;</span></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> 0;</span></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><span class="doxyHighlight">uint32&#95;t <a href="/docs/api/namespaces/llvm/#a28e648caeff381f571c4f282c869ccd7">llvm::get&#95;max&#95;thread&#95;name&#95;length</a>() &#123;</span></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> get&#95;max&#95;thread&#95;name&#95;length&#95;impl();</span></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a8c2b8c55bed6ebcda541d21bab7e6a42">llvm::set&#95;thread&#95;name</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Twine &amp;Name) &#123;</span></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Make sure the input is null terminated.</span></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><span class="doxyHighlight">  SmallString&lt;64&gt; Storage;</span></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><span class="doxyHighlight">  StringRef NameStr = <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.toNullTerminatedStringRef(Storage);</span></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Truncate from the beginning, not the end, if the specified name is too</span></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// long.  For one, this ensures that the resulting string is still null</span></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// terminated, but additionally the end of a long thread name will usually</span></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// be more unique than the beginning, since a common pattern is for similar</span></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// threads to share a common prefix.</span></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Note that the name length includes the null terminator.</span></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="/docs/api/namespaces/llvm/#a28e648caeff381f571c4f282c869ccd7">get&#95;max&#95;thread&#95;name&#95;length</a>() &gt; 0)</span></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><span class="doxyHighlight">    NameStr = NameStr.take&#95;back(<a href="/docs/api/namespaces/llvm/#a28e648caeff381f571c4f282c869ccd7">get&#95;max&#95;thread&#95;name&#95;length</a>() - 1);</span></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><span class="doxyHighlight">  (void)NameStr;</span></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><span class="doxyHighlightPreprocessor">#if defined(HAVE&#95;PTHREAD&#95;SET&#95;NAME&#95;NP)</span></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><span class="doxyHighlight">  ::pthread&#95;set&#95;name&#95;np(::pthread&#95;self(), NameStr.data());</span></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><span class="doxyHighlightPreprocessor">#elif defined(HAVE&#95;PTHREAD&#95;SETNAME&#95;NP)</span></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><span class="doxyHighlightPreprocessor">#if defined(&#95;&#95;NetBSD&#95;&#95;)</span></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><span class="doxyHighlight">  ::pthread&#95;setname&#95;np(::pthread&#95;self(), </span><span class="doxyHighlightStringLiteral">&quot;%s&quot;</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><span class="doxyHighlight">                       </span><span class="doxyHighlightKeyword">const&#95;cast&lt;</span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(NameStr.data()));</span></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;APPLE&#95;&#95;)</span></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><span class="doxyHighlight">  ::pthread&#95;setname&#95;np(NameStr.data());</span></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><span class="doxyHighlight">  ::pthread&#95;setname&#95;np(::pthread&#95;self(), NameStr.data());</span></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9f631c8bd3916d1984a0df4ccce73461">llvm::get&#95;thread&#95;name</a>(SmallVectorImpl&lt;char&gt; &amp;Name) &#123;</span></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.clear();</span></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><span class="doxyHighlightPreprocessor">#if defined(&#95;&#95;FreeBSD&#95;&#95;) || defined(&#95;&#95;FreeBSD&#95;kernel&#95;&#95;)</span></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> pid = ::getpid();</span></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><span class="doxyHighlight">  uint64&#95;t tid = <a href="/docs/api/namespaces/llvm/#aaa33daad43dedada2aa398a44b91be01">get&#95;threadid</a>();</span></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">kinfo&#95;proc &#42;kp = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">, &#42;nkp;</span></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> len = 0;</span></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/codeview/symbolrecordmapping-cpp/#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a>;</span></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> ctl&#91;4&#93; = &#123;CTL&#95;KERN, KERN&#95;PROC, KERN&#95;PROC&#95;PID | KERN&#95;PROC&#95;INC&#95;THREAD,</span></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><span class="doxyHighlight">                (int)pid&#125;;</span></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">while</span><span class="doxyHighlight"> (1) &#123;</span></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/codeview/symbolrecordmapping-cpp/#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a> = sysctl(ctl, 4, kp, &amp;len, </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">, 0);</span></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (kp == </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight"> || (<a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/codeview/symbolrecordmapping-cpp/#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a> != 0 &amp;&amp; errno == ENOMEM)) &#123;</span></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// Add extra space in case threads are added before next call.</span></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><span class="doxyHighlight">      len += </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(&#42;kp) + len / 10;</span></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><span class="doxyHighlight">      nkp = (</span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">kinfo&#95;proc &#42;)::realloc(kp, len);</span></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (nkp == </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">) &#123;</span></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><span class="doxyHighlight">        free(kp);</span></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><span class="doxyHighlight">      kp = nkp;</span></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">continue</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/codeview/symbolrecordmapping-cpp/#a9cdf893c7d17e47fa1ed8bebf92a5da4">error</a> != 0)</span></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><span class="doxyHighlight">      len = 0;</span></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">break</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> i = 0; i &lt; len / </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(&#42;kp); i++) &#123;</span></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (kp&#91;i&#93;.ki&#95;tid == (lwpid&#95;t)tid) &#123;</span></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><span class="doxyHighlight">      <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.append(kp&#91;i&#93;.ki&#95;tdname, kp&#91;i&#93;.ki&#95;tdname + strlen(kp&#91;i&#93;.ki&#95;tdname));</span></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">break</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><span class="doxyHighlight">  free(kp);</span></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;linux&#95;&#95;) &amp;&amp; HAVE&#95;PTHREAD&#95;GETNAME&#95;NP</span></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> uint32&#95;t len = get&#95;max&#95;thread&#95;name&#95;length&#95;impl();</span></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> Buffer&#91;len&#93; = &#123;</span><span class="doxyHighlightCharLiteral">&#39;\\0&#39;</span><span class="doxyHighlight">&#125;; </span><span class="doxyHighlightComment">// FIXME: working around MSan false positive.</span></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (0 == ::pthread&#95;getname&#95;np(::pthread&#95;self(), Buffer, len))</span></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.append(Buffer, Buffer + strlen(Buffer));</span></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><span class="doxyHighlightPreprocessor">#elif defined(HAVE&#95;PTHREAD&#95;GET&#95;NAME&#95;NP) &amp;&amp; HAVE&#95;PTHREAD&#95;GET&#95;NAME&#95;NP</span></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> uint32&#95;t len = get&#95;max&#95;thread&#95;name&#95;length&#95;impl();</span></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> buf&#91;len&#93;;</span></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><span class="doxyHighlight">  ::pthread&#95;get&#95;name&#95;np(::pthread&#95;self(), buf, len);</span></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.append(buf, buf + strlen(buf));</span></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><span class="doxyHighlightPreprocessor">#elif defined(HAVE&#95;PTHREAD&#95;GETNAME&#95;NP) &amp;&amp; HAVE&#95;PTHREAD&#95;GETNAME&#95;NP</span></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> uint32&#95;t len = get&#95;max&#95;thread&#95;name&#95;length&#95;impl();</span></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> buf&#91;len&#93;;</span></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><span class="doxyHighlight">  ::pthread&#95;getname&#95;np(::pthread&#95;self(), buf, len);</span></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a>.append(buf, buf + strlen(buf));</span></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/#a95d9b0bc59230b7a9ecfd7b49e001f2a">SetThreadPriorityResult</a> <a href="/docs/api/namespaces/llvm/#a071c654a304712c768496d4ea8b404e9">llvm::set&#95;thread&#95;priority</a>(ThreadPriority Priority) &#123;</span></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><span class="doxyHighlightPreprocessor">#if defined(&#95;&#95;linux&#95;&#95;) &amp;&amp; defined(SCHED&#95;IDLE)</span></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Some &#42;really&#42; old glibcs are missing SCHED&#95;IDLE.</span></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// http://man7.org/linux/man-pages/man3/pthread&#95;setschedparam.3.html</span></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// http://man7.org/linux/man-pages/man2/sched&#95;setscheduler.2.html</span></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><span class="doxyHighlight">  sched&#95;param priority;</span></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// For each of the above policies, param-&gt;sched&#95;priority must be 0</span></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><span class="doxyHighlight">  priority.sched&#95;priority = 0;</span></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// SCHED&#95;IDLE    for running very low priority background jobs.</span></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// SCHED&#95;OTHER   the standard round-robin time-sharing policy;</span></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> !pthread&#95;setschedparam(</span></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><span class="doxyHighlight">             pthread&#95;self(),</span></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><span class="doxyHighlight">             </span><span class="doxyHighlightComment">// FIXME: consider SCHED&#95;BATCH for Low</span></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><span class="doxyHighlight">             Priority == ThreadPriority::Default ? SCHED&#95;OTHER : SCHED&#95;IDLE,</span></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><span class="doxyHighlight">             &amp;priority)</span></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><span class="doxyHighlight">             ? SetThreadPriorityResult::SUCCESS</span></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><span class="doxyHighlight">             : SetThreadPriorityResult::FAILURE;</span></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;APPLE&#95;&#95;)</span></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// https://developer.apple.com/documentation/apple-silicon/tuning-your-code-s-performance-for-apple-silicon</span></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Background - Applies to work that isn’t visible to the user and may take</span></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// significant time to complete. Examples include indexing, backing up, or</span></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// synchronizing data. This class emphasizes energy efficiency.</span></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Utility - Applies to work that takes anywhere from a few seconds to a few</span></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// minutes to complete. Examples include downloading a document or importing</span></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// data. This class offers a balance between responsiveness, performance, and</span></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// energy efficiency.</span></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> qosClass = &#91;&amp;&#93;() &#123;</span></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">switch</span><span class="doxyHighlight"> (Priority) &#123;</span></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">case</span><span class="doxyHighlight"> ThreadPriority::Background:</span></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> QOS&#95;CLASS&#95;BACKGROUND;</span></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">case</span><span class="doxyHighlight"> ThreadPriority::Low:</span></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> QOS&#95;CLASS&#95;UTILITY;</span></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">case</span><span class="doxyHighlight"> ThreadPriority::Default:</span></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> QOS&#95;CLASS&#95;DEFAULT;</span></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><span class="doxyHighlight">  &#125;();</span></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> !pthread&#95;set&#95;qos&#95;class&#95;self&#95;np(qosClass, 0)</span></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><span class="doxyHighlight">             ? SetThreadPriorityResult::SUCCESS</span></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><span class="doxyHighlight">             : SetThreadPriorityResult::FAILURE;</span></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> SetThreadPriorityResult::FAILURE;</span></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><span class="doxyHighlightPreprocessor">#include &lt;thread&gt;</span></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> computeHostNumHardwareThreads() &#123;</span></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><span class="doxyHighlightPreprocessor">#if defined(&#95;&#95;FreeBSD&#95;&#95;)</span></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><span class="doxyHighlight">  cpuset&#95;t <a href="/docs/api/namespaces/shuffles/#a6abf8a645bd24dfb42085db9672ac39a">mask</a>;</span></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><span class="doxyHighlight">  CPU&#95;ZERO(&amp;mask);</span></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (cpuset&#95;getaffinity(CPU&#95;LEVEL&#95;WHICH, CPU&#95;WHICH&#95;TID, -1, </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(mask),</span></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><span class="doxyHighlight">                         &amp;mask) == 0)</span></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> CPU&#95;COUNT(&amp;mask);</span></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;linux&#95;&#95;)</span></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><span class="doxyHighlight">  cpu&#95;set&#95;t <a href="/docs/api/namespaces/llvm/objcopy/#aa91a92d1d1ad7e8b84c1ecdceb0a439fa5d5b78699e57104f2fa03bbdf7b9197b">Set</a>;</span></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (sched&#95;getaffinity(0, </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(Set), &amp;Set) == 0)</span></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> CPU&#95;COUNT(&amp;Set);</span></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Guard against std:{':thread:'}:hardware&#95;concurrency() returning 0</span></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> Val = std:{':thread:'}:hardware&#95;concurrency())</span></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> Val;</span></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> 1;</span></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/threadpoolstrategy/#a91973a96c25c9148226db40b463b5681">llvm::ThreadPoolStrategy::apply&#95;thread&#95;strategy</a>(</span></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> ThreadPoolNum)</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;&#125;</span></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/bitvector">llvm::BitVector</a> <a href="/docs/api/namespaces/llvm/#a28b7afb4a2fb8c445d23dc24b3627bd6">llvm::get&#95;thread&#95;affinity&#95;mask</a>() &#123;</span></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// FIXME: Implement</span></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><span class="doxyHighlight">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/errorhandling-h/#ace243f5c25697a1107cce46626b3dc94">llvm&#95;unreachable</a>(</span><span class="doxyHighlightStringLiteral">&quot;Not implemented!&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a52707521404204cff06fe8d1a663952b">llvm::get&#95;cpus</a>() &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> 1; &#125;</span></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><span class="doxyHighlightPreprocessor">#if defined(&#95;&#95;linux&#95;&#95;) &amp;&amp; (defined(&#95;&#95;i386&#95;&#95;) || defined(&#95;&#95;x86&#95;64&#95;&#95;))</span></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><span class="doxyHighlightComment">// On Linux, the number of physical cores can be computed from /proc/cpuinfo,</span></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><span class="doxyHighlightComment">// using the number of unique physical/core id pairs. The following</span></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><span class="doxyHighlightComment">// implementation reads the /proc/cpuinfo format on an x86&#95;64 system.</span></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> computeHostNumPhysicalCores() &#123;</span></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Enabled represents the number of physical id/core id pairs with at least</span></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// one processor id enabled by the CPU affinity mask.</span></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><span class="doxyHighlight">  cpu&#95;set&#95;t Affinity, <a href="/docs/api/files/lib/lib/support/statistic-cpp/#a558f5c44426d0eb7abb82a65e8892d9a">Enabled</a>;</span></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (sched&#95;getaffinity(0, </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(Affinity), &amp;Affinity) != 0)</span></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> -1;</span></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><span class="doxyHighlight">  CPU&#95;ZERO(&amp;<a href="/docs/api/files/lib/lib/support/statistic-cpp/#a558f5c44426d0eb7abb82a65e8892d9a">Enabled</a>);</span></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Read /proc/cpuinfo as a stream (until EOF reached). It cannot be</span></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// mmapped because it appears to have 0 size.</span></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/erroror">llvm::ErrorOr&lt;std::unique&#95;ptr&lt;llvm::MemoryBuffer&gt;</a>&gt; <a href="/docs/api/namespaces/anonymous-textstubv5-cpp-/#ad2f3f81faa370c8bf9a1f81612c90adfa854fd39f168b7abc773a62be28560521">Text</a> =</span></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"><span class="doxyHighlight">      <a href="/docs/api/classes/llvm/memorybuffer/#a76b193577aa67b1fac72cdbb5343241a">llvm::MemoryBuffer::getFileAsStream</a>(</span><span class="doxyHighlightStringLiteral">&quot;/proc/cpuinfo&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (std::error&#95;code EC = <a href="/docs/api/namespaces/anonymous-textstubv5-cpp-/#ad2f3f81faa370c8bf9a1f81612c90adfa854fd39f168b7abc773a62be28560521">Text</a>.getError()) &#123;</span></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/#a9a7b5c68c90f85baaedaa854cc5002cc">llvm::errs</a>() &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;Can&#39;t read &quot;</span></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><span class="doxyHighlight">                 &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;/proc/cpuinfo: &quot;</span><span class="doxyHighlight"> &lt;&lt; <a href="/docs/api/namespaces/llvm/codeview/#a2e1cbb0e2bd7a35ed99c31853dc45374a3fd6b696867d70225deda7868308679b">EC</a>.message() &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;\\n&quot;</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> -1;</span></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;StringRef, 8&gt;</a> strs;</span></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"><span class="doxyHighlight">  (&#42;Text)-&gt;getBuffer().split(strs, </span><span class="doxyHighlightStringLiteral">&quot;\\n&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightComment">/&#42;MaxSplit=&#42;/</span><span class="doxyHighlight">-1,</span></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><span class="doxyHighlight">                             </span><span class="doxyHighlightComment">/&#42;KeepEmpty=&#42;/</span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> CurProcessor = -1;</span></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> CurPhysicalId = -1;</span></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> CurSiblings = -1;</span></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> CurCoreId = -1;</span></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (<a href="/docs/api/classes/llvm/stringref">StringRef</a> Line : strs) &#123;</span></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><span class="doxyHighlight">    std::pair&lt;StringRef, StringRef&gt; <a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a> = <a href="/docs/api/namespaces/llvm/logicalview/#af64c789b30b79a5f18889270bccef27ea4803e6b9e63dabf04de980788d6a13c4">Line</a>.split(</span><span class="doxyHighlightCharLiteral">&#39;:&#39;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/graphprogram/#a0ad4685976f8c4d4a697a53fbe05d10b">Name</a> = <a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a>.first.trim();</span></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> Val = <a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a>.second.trim();</span></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// These fields are available if the kernel is configured with CONFIG&#95;SMP.</span></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Name == </span><span class="doxyHighlightStringLiteral">&quot;processor&quot;</span><span class="doxyHighlight">)</span></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><span class="doxyHighlight">      Val.getAsInteger(10, CurProcessor);</span></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Name == </span><span class="doxyHighlightStringLiteral">&quot;physical id&quot;</span><span class="doxyHighlight">)</span></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><span class="doxyHighlight">      Val.getAsInteger(10, CurPhysicalId);</span></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Name == </span><span class="doxyHighlightStringLiteral">&quot;siblings&quot;</span><span class="doxyHighlight">)</span></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"><span class="doxyHighlight">      Val.getAsInteger(10, CurSiblings);</span></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Name == </span><span class="doxyHighlightStringLiteral">&quot;core id&quot;</span><span class="doxyHighlight">) &#123;</span></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><span class="doxyHighlight">      Val.getAsInteger(10, CurCoreId);</span></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// The processor id corresponds to an index into cpu&#95;set&#95;t.</span></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (CPU&#95;ISSET(CurProcessor, &amp;Affinity))</span></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"><span class="doxyHighlight">        CPU&#95;SET(CurPhysicalId &#42; CurSiblings + CurCoreId, &amp;<a href="/docs/api/files/lib/lib/support/statistic-cpp/#a558f5c44426d0eb7abb82a65e8892d9a">Enabled</a>);</span></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> CPU&#95;COUNT(&amp;<a href="/docs/api/files/lib/lib/support/statistic-cpp/#a558f5c44426d0eb7abb82a65e8892d9a">Enabled</a>);</span></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386"><span class="doxyHighlightPreprocessor">#elif (defined(&#95;&#95;linux&#95;&#95;) &amp;&amp; defined(&#95;&#95;s390x&#95;&#95;)) || defined(&#95;AIX)</span></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> computeHostNumPhysicalCores() &#123;</span></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> sysconf(&#95;SC&#95;NPROCESSORS&#95;ONLN);</span></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;linux&#95;&#95;)</span></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> computeHostNumPhysicalCores() &#123;</span></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><span class="doxyHighlight">  cpu&#95;set&#95;t Affinity;</span></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (sched&#95;getaffinity(0, </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(Affinity), &amp;Affinity) == 0)</span></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> CPU&#95;COUNT(&amp;Affinity);</span></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// The call to sched&#95;getaffinity() may have failed because the Affinity</span></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// mask is too small for the number of CPU&#39;s on the system (i.e. the</span></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// system has more than 1024 CPUs). Allocate a mask large enough for</span></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// twice as many CPUs.</span></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"><span class="doxyHighlight">  cpu&#95;set&#95;t &#42;DynAffinity;</span></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><span class="doxyHighlight">  DynAffinity = CPU&#95;ALLOC(2048);</span></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (sched&#95;getaffinity(0, CPU&#95;ALLOC&#95;SIZE(2048), DynAffinity) == 0) &#123;</span></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> NumCPUs = CPU&#95;COUNT(DynAffinity);</span></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><span class="doxyHighlight">    CPU&#95;FREE(DynAffinity);</span></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> NumCPUs;</span></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> -1;</span></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;APPLE&#95;&#95;)</span></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"><span class="doxyHighlightComment">// Gets the number of &#42;physical cores&#42; on the machine.</span></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> computeHostNumPhysicalCores() &#123;</span></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><span class="doxyHighlight">  uint32&#95;t <a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a>;</span></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> len = </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(<a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a>);</span></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"><span class="doxyHighlight">  sysctlbyname(</span><span class="doxyHighlightStringLiteral">&quot;hw.physicalcpu&quot;</span><span class="doxyHighlight">, &amp;<a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a>, &amp;len, NULL, 0);</span></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a> &lt; 1) &#123;</span></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> nm&#91;2&#93;;</span></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417"><span class="doxyHighlight">    nm&#91;0&#93; = CTL&#95;HW;</span></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"><span class="doxyHighlight">    nm&#91;1&#93; = HW&#95;AVAILCPU;</span></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><span class="doxyHighlight">    sysctl(nm, 2, &amp;<a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a>, &amp;len, NULL, 0);</span></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a> &lt; 1)</span></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> -1;</span></CodeLine>
+<Link id="l00422" /><CodeLine lineNumber="422"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00423" /><CodeLine lineNumber="423"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ab1772fd431decccb7926d484ea223db7">count</a>;</span></CodeLine>
+<Link id="l00424" /><CodeLine lineNumber="424"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00425" /><CodeLine lineNumber="425"><span class="doxyHighlightPreprocessor">#elif defined(&#95;&#95;MVS&#95;&#95;)</span></CodeLine>
+<Link id="l00426" /><CodeLine lineNumber="426"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> computeHostNumPhysicalCores() &#123;</span></CodeLine>
+<Link id="l00427" /><CodeLine lineNumber="427"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">enum</span><span class="doxyHighlight"> &#123;</span></CodeLine>
+<Link id="l00428" /><CodeLine lineNumber="428"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Byte offset of the pointer to the Communications Vector Table (CVT) in</span></CodeLine>
+<Link id="l00429" /><CodeLine lineNumber="429"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// the Prefixed Save Area (PSA). The table entry is a 31-bit pointer and</span></CodeLine>
+<Link id="l00430" /><CodeLine lineNumber="430"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// will be zero-extended to uintptr&#95;t.</span></CodeLine>
+<Link id="l00431" /><CodeLine lineNumber="431"><span class="doxyHighlight">    FLCCVT = 16,</span></CodeLine>
+<Link id="l00432" /><CodeLine lineNumber="432"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Byte offset of the pointer to the Common System Data Area (CSD) in the</span></CodeLine>
+<Link id="l00433" /><CodeLine lineNumber="433"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// CVT. The table entry is a 31-bit pointer and will be zero-extended to</span></CodeLine>
+<Link id="l00434" /><CodeLine lineNumber="434"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// uintptr&#95;t.</span></CodeLine>
+<Link id="l00435" /><CodeLine lineNumber="435"><span class="doxyHighlight">    CVTCSD = 660,</span></CodeLine>
+<Link id="l00436" /><CodeLine lineNumber="436"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Byte offset to the number of live CPs in the LPAR, stored as a signed</span></CodeLine>
+<Link id="l00437" /><CodeLine lineNumber="437"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// 32-bit value in the table.</span></CodeLine>
+<Link id="l00438" /><CodeLine lineNumber="438"><span class="doxyHighlight">    CSD&#95;NUMBER&#95;ONLINE&#95;STANDARD&#95;CPS = 264,</span></CodeLine>
+<Link id="l00439" /><CodeLine lineNumber="439"><span class="doxyHighlight">  &#125;;</span></CodeLine>
+<Link id="l00440" /><CodeLine lineNumber="440"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;PSA = 0;</span></CodeLine>
+<Link id="l00441" /><CodeLine lineNumber="441"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;CVT = </span><span class="doxyHighlightKeyword">reinterpret&#95;cast&lt;</span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(</span></CodeLine>
+<Link id="l00442" /><CodeLine lineNumber="442"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">static&#95;cast&lt;</span><span class="doxyHighlight">uintptr&#95;t</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(</span><span class="doxyHighlightKeyword">reinterpret&#95;cast&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> &amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(PSA&#91;FLCCVT&#93;)));</span></CodeLine>
+<Link id="l00443" /><CodeLine lineNumber="443"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;CSD = </span><span class="doxyHighlightKeyword">reinterpret&#95;cast&lt;</span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(</span></CodeLine>
+<Link id="l00444" /><CodeLine lineNumber="444"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">static&#95;cast&lt;</span><span class="doxyHighlight">uintptr&#95;t</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(</span><span class="doxyHighlightKeyword">reinterpret&#95;cast&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> &amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(CVT&#91;CVTCSD&#93;)));</span></CodeLine>
+<Link id="l00445" /><CodeLine lineNumber="445"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">reinterpret&#95;cast&lt;</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> &amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(CSD&#91;CSD&#95;NUMBER&#95;ONLINE&#95;STANDARD&#95;CPS&#93;);</span></CodeLine>
+<Link id="l00446" /><CodeLine lineNumber="446"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00447" /><CodeLine lineNumber="447"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00448" /><CodeLine lineNumber="448"><span class="doxyHighlightComment">// On other systems, return -1 to indicate unknown.</span></CodeLine>
+<Link id="l00449" /><CodeLine lineNumber="449"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> computeHostNumPhysicalCores() &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> -1; &#125;</span></CodeLine>
+<Link id="l00450" /><CodeLine lineNumber="450"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00451" /><CodeLine lineNumber="451"></CodeLine>
+<Link id="l00452" /><CodeLine lineNumber="452"><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#aa79a8fc8721314e9f7199ca4cc22e51b">llvm::get&#95;physical&#95;cores</a>() &#123;</span></CodeLine>
+<Link id="l00453" /><CodeLine lineNumber="453"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> NumCores = computeHostNumPhysicalCores();</span></CodeLine>
+<Link id="l00454" /><CodeLine lineNumber="454"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> NumCores;</span></CodeLine>
+<Link id="l00455" /><CodeLine lineNumber="455"><span class="doxyHighlight">&#125;</span></CodeLine>
 
 </ProgramListing>
 

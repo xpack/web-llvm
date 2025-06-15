@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -83,65 +82,65 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===--- ToolOutputFile.cpp - Implement the ToolOutputFile class --------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This implements the ToolOutputFile class.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/tooloutputfile-h">llvm/Support/ToolOutputFile.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/filesystem-h">llvm/Support/FileSystem.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/signals-h">llvm/Support/Signals.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18" lineLink="#a718b79f3760a7f4b55a872176f9ee8d8"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="#a718b79f3760a7f4b55a872176f9ee8d8">isStdout</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Filename) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Filename == </Highlight><Highlight kind="stringliteral">&quot;-&quot;</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20" lineLink="/docs/api/classes/llvm/cleanupinstaller/#a91c9dd60a97ff0a5fde60f97e99e4315"><Highlight kind="normal"><a href="/docs/api/classes/llvm/cleanupinstaller/#a91c9dd60a97ff0a5fde60f97e99e4315">CleanupInstaller::CleanupInstaller</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>)</Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal">    : <a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>(<a href="/docs/api/namespaces/std">std</a>::string(<a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>)), <a href="/docs/api/classes/llvm/cleanupinstaller/#abaa9482c3523a6c8d5918d32347da49d">Keep</a>(<a href="/docs/api/namespaces/false">false</a>) &#123;</Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Arrange for the file to be deleted if the process is killed.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="#a718b79f3760a7f4b55a872176f9ee8d8">isStdout</a>(<a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>))</Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/sys/#aee27cc5336ecd3f21eeda4ad2826b915">sys::RemoveFileOnSignal</a>(<a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>);</Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27" lineLink="/docs/api/classes/llvm/cleanupinstaller/#a0aea26b563a856642fa6d4e8e4e2aaf9"><Highlight kind="normal"><a href="/docs/api/classes/llvm/cleanupinstaller/#a0aea26b563a856642fa6d4e8e4e2aaf9">CleanupInstaller::~CleanupInstaller</a>() &#123;</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="#a718b79f3760a7f4b55a872176f9ee8d8">isStdout</a>(<a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>))</Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Delete the file if the client hasn&#39;t told us not to.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/classes/llvm/cleanupinstaller/#abaa9482c3523a6c8d5918d32347da49d">Keep</a>)</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/sys/fs/#a921e0b01f22f9a37012450f9b5f0ccb7">sys::fs::remove</a>(<a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>);</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Ok, the file is successfully written and closed, or deleted. There&#39;s no</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// further need to clean it up on signals.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/sys/#a7936dae925973eb8b0921c01b70b16d8">sys::DontRemoveFileOnSignal</a>(<a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>);</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40" lineLink="/docs/api/classes/llvm/tooloutputfile/#aa8a96aefbfc916ad99ab353e418f79d7"><Highlight kind="normal"><a href="/docs/api/classes/llvm/tooloutputfile/#aa8a96aefbfc916ad99ab353e418f79d7">ToolOutputFile::ToolOutputFile</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Filename, std::error&#95;code &amp;EC,</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">                               <a href="/docs/api/namespaces/llvm/sys/fs/#a662978c0cdf81de0d448032f142a3695">sys::fs::OpenFlags</a> Flags)</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">    : Installer(Filename) &#123;</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="#a718b79f3760a7f4b55a872176f9ee8d8">isStdout</a>(Filename)) &#123;</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">    OS = &amp;<a href="/docs/api/namespaces/llvm/#a2d79a00fa7c56f57b87f2fe2a3f118c7">outs</a>();</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">    EC = std::error&#95;code();</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  OSHolder.emplace(Filename, EC, Flags);</Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  OS = &amp;&#42;OSHolder;</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// If open fails, no cleanup is needed.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (EC)</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">    Installer.Keep = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55" lineLink="/docs/api/classes/llvm/tooloutputfile/#aa127e0fb1a98579c7beefba26a158d47"><Highlight kind="normal"><a href="/docs/api/classes/llvm/tooloutputfile/#aa8a96aefbfc916ad99ab353e418f79d7">ToolOutputFile::ToolOutputFile</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Filename, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> FD)</Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">    : Installer(Filename) &#123;</Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  OSHolder.emplace(FD, </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">  OS = &amp;&#42;OSHolder;</Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===--- ToolOutputFile.cpp - Implement the ToolOutputFile class --------===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This implements the ToolOutputFile class.</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/tooloutputfile-h">llvm/Support/ToolOutputFile.h</a>&quot;</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/filesystem-h">llvm/Support/FileSystem.h</a>&quot;</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/signals-h">llvm/Support/Signals.h</a>&quot;</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightKeyword">using namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a>;</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18" lineLink="#a718b79f3760a7f4b55a872176f9ee8d8"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a718b79f3760a7f4b55a872176f9ee8d8">isStdout</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Filename) &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> Filename == </span><span class="doxyHighlightStringLiteral">&quot;-&quot;</span><span class="doxyHighlight">; &#125;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20" lineLink="/docs/api/classes/llvm/cleanupinstaller/#a91c9dd60a97ff0a5fde60f97e99e4315"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/cleanupinstaller/#a91c9dd60a97ff0a5fde60f97e99e4315">CleanupInstaller::CleanupInstaller</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>)</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlight">    : <a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>(<a href="/docs/api/namespaces/std">std</a>::string(<a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>)), <a href="/docs/api/classes/llvm/cleanupinstaller/#abaa9482c3523a6c8d5918d32347da49d">Keep</a>(<a href="/docs/api/namespaces/false">false</a>) &#123;</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Arrange for the file to be deleted if the process is killed.</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!<a href="#a718b79f3760a7f4b55a872176f9ee8d8">isStdout</a>(<a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>))</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/sys/#aee27cc5336ecd3f21eeda4ad2826b915">sys::RemoveFileOnSignal</a>(<a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>);</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27" lineLink="/docs/api/classes/llvm/cleanupinstaller/#a0aea26b563a856642fa6d4e8e4e2aaf9"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/cleanupinstaller/#a0aea26b563a856642fa6d4e8e4e2aaf9">CleanupInstaller::~CleanupInstaller</a>() &#123;</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#a718b79f3760a7f4b55a872176f9ee8d8">isStdout</a>(<a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>))</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Delete the file if the client hasn&#39;t told us not to.</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!<a href="/docs/api/classes/llvm/cleanupinstaller/#abaa9482c3523a6c8d5918d32347da49d">Keep</a>)</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/sys/fs/#a921e0b01f22f9a37012450f9b5f0ccb7">sys::fs::remove</a>(<a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>);</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Ok, the file is successfully written and closed, or deleted. There&#39;s no</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// further need to clean it up on signals.</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/sys/#a7936dae925973eb8b0921c01b70b16d8">sys::DontRemoveFileOnSignal</a>(<a href="/docs/api/classes/llvm/cleanupinstaller/#aafac6ba91ba40d309e7aa3f14c04cee7">Filename</a>);</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40" lineLink="/docs/api/classes/llvm/tooloutputfile/#aa8a96aefbfc916ad99ab353e418f79d7"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/tooloutputfile/#aa8a96aefbfc916ad99ab353e418f79d7">ToolOutputFile::ToolOutputFile</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Filename, std::error&#95;code &amp;EC,</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlight">                               <a href="/docs/api/namespaces/llvm/sys/fs/#a662978c0cdf81de0d448032f142a3695">sys::fs::OpenFlags</a> Flags)</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlight">    : Installer(Filename) &#123;</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#a718b79f3760a7f4b55a872176f9ee8d8">isStdout</a>(Filename)) &#123;</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlight">    OS = &amp;<a href="/docs/api/namespaces/llvm/#a2d79a00fa7c56f57b87f2fe2a3f118c7">outs</a>();</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlight">    EC = std::error&#95;code();</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlight">  OSHolder.emplace(Filename, EC, Flags);</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlight">  OS = &amp;&#42;OSHolder;</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// If open fails, no cleanup is needed.</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (EC)</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlight">    Installer.Keep = </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55" lineLink="/docs/api/classes/llvm/tooloutputfile/#aa127e0fb1a98579c7beefba26a158d47"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/tooloutputfile/#aa8a96aefbfc916ad99ab353e418f79d7">ToolOutputFile::ToolOutputFile</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Filename, </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> FD)</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlight">    : Installer(Filename) &#123;</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlight">  OSHolder.emplace(FD, </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlight">  OS = &amp;&#42;OSHolder;</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlight">&#125;</span></CodeLine>
 
 </ProgramListing>
 

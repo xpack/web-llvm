@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -100,210 +99,210 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- BranchFolding.h - Fold machine code branch instructions --&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;LIB&#95;CODEGEN&#95;BRANCHFOLDING&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;LIB&#95;CODEGEN&#95;BRANCHFOLDING&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h">llvm/ADT/DenseMap.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallptrset-h">llvm/ADT/SmallPtrSet.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/livephysregs-h">llvm/CodeGen/LivePhysRegs.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/machinebasicblock-h">llvm/CodeGen/MachineBasicBlock.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h">llvm/Support/Compiler.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;vector&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/basicblock">BasicBlock</a>;</Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machinebranchprobabilityinfo">MachineBranchProbabilityInfo</a>;</Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a>;</Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machineloopinfo">MachineLoopInfo</a>;</Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a>;</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/mbfiwrapper">MBFIWrapper</a>;</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a>;</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a>;</Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a>;</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31" lineLink="/docs/api/classes/llvm/branchfolder"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#a662e21bcce5c9c71b6cc511fa04f900f">LLVM&#95;LIBRARY&#95;VISIBILITY</a> <a href="/docs/api/classes/llvm/branchfolder/#acd1adbbf741128687beee153521c3318">BranchFolder</a> &#123;</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/branchfolder/#acd1adbbf741128687beee153521c3318">BranchFolder</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> DefaultEnableTailMerge, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> CommonHoist,</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">                          <a href="/docs/api/classes/llvm/mbfiwrapper">MBFIWrapper</a> &amp;FreqInfo,</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">                          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinebranchprobabilityinfo">MachineBranchProbabilityInfo</a> &amp;ProbInfo,</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">                          <a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42;PSI,</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">                          </Highlight><Highlight kind="comment">// Min tail length to merge. Defaults to commandline</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">                          </Highlight><Highlight kind="comment">// flag. Ignored for optsize.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">                          </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> MinTailLength = 0);</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">    /// Perhaps branch folding, tail merging and other CFG optimizations on the</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="comment">    /// given function.  Block placement changes the layout and may create new</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">    /// tail merging opportunities.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/branchfolder/#aa0d50fee4d0d41ccf591e29de109786f">OptimizeFunction</a>(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;tii,</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">                          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &#42;tri,</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">                          <a href="/docs/api/classes/llvm/machineloopinfo">MachineLoopInfo</a> &#42;mli = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">,</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">                          </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> AfterPlacement = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">MergePotentialsElt &#123;</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Hash;</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/namespaces/llvm/#a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2">Block</a>;</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> BranchDebugLoc;</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">      MergePotentialsElt(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> h, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;b, <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> bdl)</Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">          : Hash(h), <a href="/docs/api/namespaces/llvm/#a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2">Block</a>(b), BranchDebugLoc(std::move(bdl)) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> getHash()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Hash; &#125;</Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;getBlock()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2">Block</a>; &#125;</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> setBlock(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>) &#123;</Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">        <a href="/docs/api/namespaces/llvm/#a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2">Block</a> = <a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>;</Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> &amp;getBranchDebugLoc() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> BranchDebugLoc; &#125;</Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/gsym/linetable-cpp/#a74f9f8ea1f1865976d2b842a0f470a16">operator&lt;</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> MergePotentialsElt &amp;) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">MPIterator = std::vector&lt;MergePotentialsElt&gt;::iterator;</Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    std::vector&lt;MergePotentialsElt&gt; MergePotentials;</Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet&lt;const MachineBasicBlock&#42;, 2&gt;</a> TriedMerging;</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;const MachineBasicBlock &#42;, int&gt;</a> EHScopeMembership;</Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">SameTailElt &#123;</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">      MPIterator MPIter;</Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> TailStartPos;</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">      SameTailElt(MPIterator mp, <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> tsp)</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">        : MPIter(mp), TailStartPos(tsp) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">      MPIterator getMPIter()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> MPIter;</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">      MergePotentialsElt &amp;getMergePotentialsElt()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#42;getMPIter();</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> getTailStartPos()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> TailStartPos;</Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> getHash()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> getMergePotentialsElt().getHash();</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">      <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;getBlock()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> getMergePotentialsElt().getBlock();</Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> tailIsWholeBlock()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> TailStartPos == getBlock()-&gt;begin();</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> setBlock(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>) &#123;</Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">        getMergePotentialsElt().setBlock(<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>);</Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> setTailStartPos(<a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> Pos) &#123;</Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">        TailStartPos = Pos;</Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">    std::vector&lt;SameTailElt&gt; SameTails;</Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> AfterBlockPlacement = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> EnableTailMerge = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> EnableHoistCommonCode = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> UpdateLiveIns = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> MinCommonTailLength;</Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;TII = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &#42;MRI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &#42;TRI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/machineloopinfo">MachineLoopInfo</a> &#42;MLI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/livephysregs">LivePhysRegs</a> LiveRegs;</Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/mbfiwrapper">MBFIWrapper</a> &amp;MBBFreqInfo;</Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinebranchprobabilityinfo">MachineBranchProbabilityInfo</a> &amp;MBPI;</Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42;PSI;</Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> TailMergeBlocks(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF);</Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> TryTailMergeBlocks(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a>&#42; SuccBB,</Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a>&#42; PredBB,</Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">                       </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> MinCommonTailLength);</Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> setCommonTailEdgeWeights(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp;TailMBB);</Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="comment">    /// Delete the instruction OldInst and everything after it, replacing it</Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">    /// with an unconditional branch to NewDest.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> replaceTailWithBranchTo(<a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> OldInst,</Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">                                 <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp;NewDest);</Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="comment">    /// Given a machine basic block and an iterator into it, split the MBB so</Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="comment">    /// that the part before the iterator falls into the part starting at the</Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="comment">    /// iterator.  This returns the new MBB.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;SplitMBBAt(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp;CurMBB,</Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">                                  <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> BBI1,</Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">                                  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB);</Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="comment">    /// Look through all the blocks in MergePotentials that have hash CurHash</Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="comment">    /// (guaranteed to match the last element).  Build the vector SameTails of</Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="comment">    /// all those that have the (same) largest number of instructions in common</Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="comment">    /// of any pair of these blocks.  SameTails entries contain an iterator into</Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="comment">    /// MergePotentials (from which the MachineBasicBlock can be found) and a</Highlight></CodeLine>
-<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="comment">    /// MachineBasicBlock::iterator into that MBB indicating the instruction</Highlight></CodeLine>
-<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="comment">    /// where the matching code sequence begins.  Order of elements in SameTails</Highlight></CodeLine>
-<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="comment">    /// is the reverse of the order in which those blocks appear in</Highlight></CodeLine>
-<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="comment">    /// MergePotentials (where they are not necessarily consecutive).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> ComputeSameTails(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> CurHash, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> minCommonTailLength,</Highlight></CodeLine>
-<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">                              <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;SuccBB,</Highlight></CodeLine>
-<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">                              <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;PredBB);</Highlight></CodeLine>
-<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="comment">    /// Remove all blocks with hash CurHash from MergePotentials, restoring</Highlight></CodeLine>
-<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="comment">    /// branches at ends of blocks as appropriate.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> RemoveBlocksWithHash(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> CurHash, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;SuccBB,</Highlight></CodeLine>
-<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">                              <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;PredBB,</Highlight></CodeLine>
-<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">                              </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> &amp;BranchDL);</Highlight></CodeLine>
-<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="comment">    /// None of the blocks to be tail-merged consist only of the common tail.</Highlight></CodeLine>
-<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="comment">    /// Create a block that does by splitting one.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> CreateCommonTailOnlyBlock(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;&amp;PredBB,</Highlight></CodeLine>
-<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">                                   <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;SuccBB,</Highlight></CodeLine>
-<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">                                   </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> maxCommonTailLength,</Highlight></CodeLine>
-<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">                                   </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> &amp;commonTailIndex);</Highlight></CodeLine>
-<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="comment">    /// Create merged DebugLocs of identical instructions across SameTails and</Highlight></CodeLine>
-<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="comment">    /// assign it to the instruction in common tail; merge MMOs and undef flags.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> mergeCommonTails(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> commonTailIndex);</Highlight></CodeLine>
-<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> OptimizeBranches(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF);</Highlight></CodeLine>
-<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="comment">    /// Analyze and optimize control flow related to the specified block. This</Highlight></CodeLine>
-<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="comment">    /// is never called on the entry block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> OptimizeBlock(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>);</Highlight></CodeLine>
-<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="comment">    /// Remove the specified dead machine basic block from the function,</Highlight></CodeLine>
-<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="comment">    /// updating the CFG.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> RemoveDeadBlock(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>);</Highlight></CodeLine>
-<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="comment">    /// Hoist common instruction sequences at the start of basic blocks to their</Highlight></CodeLine>
-<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="comment">    /// common predecessor.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> HoistCommonCode(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF);</Highlight></CodeLine>
-<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="comment">    /// If the successors of MBB has common instruction sequence at the start of</Highlight></CodeLine>
-<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="comment">    /// the function, move the instructions before MBB terminator if it&#39;s legal.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> HoistCommonCodeInSuccs(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>);</Highlight></CodeLine>
-<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
-<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;LIB&#95;CODEGEN&#95;BRANCHFOLDING&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- BranchFolding.h - Fold machine code branch instructions --&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;LIB&#95;CODEGEN&#95;BRANCHFOLDING&#95;H</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightPreprocessor">#define LLVM&#95;LIB&#95;CODEGEN&#95;BRANCHFOLDING&#95;H</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h">llvm/ADT/DenseMap.h</a>&quot;</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallptrset-h">llvm/ADT/SmallPtrSet.h</a>&quot;</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/livephysregs-h">llvm/CodeGen/LivePhysRegs.h</a>&quot;</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/machinebasicblock-h">llvm/CodeGen/MachineBasicBlock.h</a>&quot;</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h">llvm/Support/Compiler.h</a>&quot;</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#include &lt;vector&gt;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/basicblock">BasicBlock</a>;</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/machinebranchprobabilityinfo">MachineBranchProbabilityInfo</a>;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a>;</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/machineloopinfo">MachineLoopInfo</a>;</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a>;</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/mbfiwrapper">MBFIWrapper</a>;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a>;</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a>;</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a>;</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31" lineLink="/docs/api/classes/llvm/branchfolder"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#a662e21bcce5c9c71b6cc511fa04f900f">LLVM&#95;LIBRARY&#95;VISIBILITY</a> <a href="/docs/api/classes/llvm/branchfolder/#acd1adbbf741128687beee153521c3318">BranchFolder</a> &#123;</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">explicit</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/branchfolder/#acd1adbbf741128687beee153521c3318">BranchFolder</a>(</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> DefaultEnableTailMerge, </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> CommonHoist,</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlight">                          <a href="/docs/api/classes/llvm/mbfiwrapper">MBFIWrapper</a> &amp;FreqInfo,</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlight">                          </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/machinebranchprobabilityinfo">MachineBranchProbabilityInfo</a> &amp;ProbInfo,</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlight">                          <a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42;PSI,</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlight">                          </span><span class="doxyHighlightComment">// Min tail length to merge. Defaults to commandline</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlight">                          </span><span class="doxyHighlightComment">// flag. Ignored for optsize.</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlight">                          </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> MinTailLength = 0);</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlightComment">    /// Perhaps branch folding, tail merging and other CFG optimizations on the</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlightComment">    /// given function.  Block placement changes the layout and may create new</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlightComment">    /// tail merging opportunities.</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/branchfolder/#aa0d50fee4d0d41ccf591e29de109786f">OptimizeFunction</a>(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;tii,</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlight">                          </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &#42;tri,</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlight">                          <a href="/docs/api/classes/llvm/machineloopinfo">MachineLoopInfo</a> &#42;mli = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">,</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlight">                          </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> AfterPlacement = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">private</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">MergePotentialsElt &#123;</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> Hash;</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlight">      <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/namespaces/llvm/#a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2">Block</a>;</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlight">      <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> BranchDebugLoc;</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlight">      MergePotentialsElt(</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> h, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;b, <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> bdl)</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlight">          : Hash(h), <a href="/docs/api/namespaces/llvm/#a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2">Block</a>(b), BranchDebugLoc(std::move(bdl)) &#123;&#125;</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> getHash()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> Hash; &#125;</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlight">      <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;getBlock()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2">Block</a>; &#125;</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> setBlock(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>) &#123;</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><span class="doxyHighlight">        <a href="/docs/api/namespaces/llvm/#a0e00fad9c34de40b1e31f3aa6f8e024cae1e4c8c9ccd9fc39c391da4bcd093fb2">Block</a> = <a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>;</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> &amp;getBranchDebugLoc() &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> BranchDebugLoc; &#125;</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/debuginfo/lib/debuginfo/gsym/linetable-cpp/#a74f9f8ea1f1865976d2b842a0f470a16">operator&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> MergePotentialsElt &amp;) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlight">    &#125;;</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight">MPIterator = std::vector&lt;MergePotentialsElt&gt;::iterator;</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlight">    std::vector&lt;MergePotentialsElt&gt; MergePotentials;</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/smallptrset">SmallPtrSet&lt;const MachineBasicBlock&#42;, 2&gt;</a> TriedMerging;</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;const MachineBasicBlock &#42;, int&gt;</a> EHScopeMembership;</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">SameTailElt &#123;</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlight">      MPIterator MPIter;</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlight">      <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> TailStartPos;</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlight">      SameTailElt(MPIterator mp, <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> tsp)</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlight">        : MPIter(mp), TailStartPos(tsp) &#123;&#125;</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><span class="doxyHighlight">      MPIterator getMPIter()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> MPIter;</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlight">      MergePotentialsElt &amp;getMergePotentialsElt()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> &#42;getMPIter();</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlight">      <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> getTailStartPos()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> TailStartPos;</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> getHash()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> getMergePotentialsElt().getHash();</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlight">      <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;getBlock()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> getMergePotentialsElt().getBlock();</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> tailIsWholeBlock()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> TailStartPos == getBlock()-&gt;begin();</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> setBlock(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>) &#123;</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><span class="doxyHighlight">        getMergePotentialsElt().setBlock(<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>);</span></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> setTailStartPos(<a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> Pos) &#123;</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlight">        TailStartPos = Pos;</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlight">    &#125;;</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlight">    std::vector&lt;SameTailElt&gt; SameTails;</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> AfterBlockPlacement = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> EnableTailMerge = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> EnableHoistCommonCode = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> UpdateLiveIns = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> MinCommonTailLength;</span></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/targetinstrinfo">TargetInstrInfo</a> &#42;TII = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &#42;MRI = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/targetregisterinfo">TargetRegisterInfo</a> &#42;TRI = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/machineloopinfo">MachineLoopInfo</a> &#42;MLI = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/livephysregs">LivePhysRegs</a> LiveRegs;</span></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">private</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/mbfiwrapper">MBFIWrapper</a> &amp;MBBFreqInfo;</span></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/machinebranchprobabilityinfo">MachineBranchProbabilityInfo</a> &amp;MBPI;</span></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/profilesummaryinfo">ProfileSummaryInfo</a> &#42;PSI;</span></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> TailMergeBlocks(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF);</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> TryTailMergeBlocks(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a>&#42; SuccBB,</span></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><span class="doxyHighlight">                       <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a>&#42; PredBB,</span></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><span class="doxyHighlight">                       </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> MinCommonTailLength);</span></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> setCommonTailEdgeWeights(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp;TailMBB);</span></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><span class="doxyHighlightComment">    /// Delete the instruction OldInst and everything after it, replacing it</span></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><span class="doxyHighlightComment">    /// with an unconditional branch to NewDest.</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> replaceTailWithBranchTo(<a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> OldInst,</span></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><span class="doxyHighlight">                                 <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp;NewDest);</span></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlightComment">    /// Given a machine basic block and an iterator into it, split the MBB so</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlightComment">    /// that the part before the iterator falls into the part starting at the</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><span class="doxyHighlightComment">    /// iterator.  This returns the new MBB.</span></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;SplitMBBAt(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp;CurMBB,</span></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><span class="doxyHighlight">                                  <a href="/docs/api/classes/llvm/machinebasicblock/#ae34c996b58df9b9ce6695a0c8b70c533">MachineBasicBlock::iterator</a> BBI1,</span></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><span class="doxyHighlight">                                  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/basicblock">BasicBlock</a> &#42;BB);</span></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><span class="doxyHighlightComment">    /// Look through all the blocks in MergePotentials that have hash CurHash</span></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><span class="doxyHighlightComment">    /// (guaranteed to match the last element).  Build the vector SameTails of</span></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><span class="doxyHighlightComment">    /// all those that have the (same) largest number of instructions in common</span></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><span class="doxyHighlightComment">    /// of any pair of these blocks.  SameTails entries contain an iterator into</span></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><span class="doxyHighlightComment">    /// MergePotentials (from which the MachineBasicBlock can be found) and a</span></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><span class="doxyHighlightComment">    /// MachineBasicBlock::iterator into that MBB indicating the instruction</span></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><span class="doxyHighlightComment">    /// where the matching code sequence begins.  Order of elements in SameTails</span></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><span class="doxyHighlightComment">    /// is the reverse of the order in which those blocks appear in</span></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><span class="doxyHighlightComment">    /// MergePotentials (where they are not necessarily consecutive).</span></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> ComputeSameTails(</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> CurHash, </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> minCommonTailLength,</span></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><span class="doxyHighlight">                              <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;SuccBB,</span></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><span class="doxyHighlight">                              <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;PredBB);</span></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><span class="doxyHighlightComment">    /// Remove all blocks with hash CurHash from MergePotentials, restoring</span></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><span class="doxyHighlightComment">    /// branches at ends of blocks as appropriate.</span></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> RemoveBlocksWithHash(</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> CurHash, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;SuccBB,</span></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><span class="doxyHighlight">                              <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;PredBB,</span></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><span class="doxyHighlight">                              </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/debugloc">DebugLoc</a> &amp;BranchDL);</span></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><span class="doxyHighlightComment">    /// None of the blocks to be tail-merged consist only of the common tail.</span></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><span class="doxyHighlightComment">    /// Create a block that does by splitting one.</span></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> CreateCommonTailOnlyBlock(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;&amp;PredBB,</span></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><span class="doxyHighlight">                                   <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;SuccBB,</span></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><span class="doxyHighlight">                                   </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> maxCommonTailLength,</span></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><span class="doxyHighlight">                                   </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> &amp;commonTailIndex);</span></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><span class="doxyHighlightComment">    /// Create merged DebugLocs of identical instructions across SameTails and</span></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><span class="doxyHighlightComment">    /// assign it to the instruction in common tail; merge MMOs and undef flags.</span></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> mergeCommonTails(</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> commonTailIndex);</span></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> OptimizeBranches(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF);</span></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><span class="doxyHighlightComment">    /// Analyze and optimize control flow related to the specified block. This</span></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><span class="doxyHighlightComment">    /// is never called on the entry block.</span></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> OptimizeBlock(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>);</span></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><span class="doxyHighlightComment">    /// Remove the specified dead machine basic block from the function,</span></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><span class="doxyHighlightComment">    /// updating the CFG.</span></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> RemoveDeadBlock(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>);</span></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><span class="doxyHighlightComment">    /// Hoist common instruction sequences at the start of basic blocks to their</span></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><span class="doxyHighlightComment">    /// common predecessor.</span></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> HoistCommonCode(<a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &amp;MF);</span></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><span class="doxyHighlightComment">    /// If the successors of MBB has common instruction sequence at the start of</span></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><span class="doxyHighlightComment">    /// the function, move the instructions before MBB terminator if it&#39;s legal.</span></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> HoistCommonCodeInSuccs(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>);</span></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><span class="doxyHighlight">  &#125;;</span></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace llvm</span></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;LIB&#95;CODEGEN&#95;BRANCHFOLDING&#95;H</span></CodeLine>
 
 </ProgramListing>
 

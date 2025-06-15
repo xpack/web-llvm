@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
@@ -104,116 +103,116 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/Support/Debug.h - Easy way to add debug output ------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements a handy way of adding debugging information to your</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// code, without it being enabled all of the time, and without having to add</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// command line options to enable it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// In particular, just wrap your code with the LLVM&#95;DEBUG() macro, and it will</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">// be enabled automatically if you specify &#39;-debug&#39; on the command-line.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">// LLVM&#95;DEBUG() requires the DEBUG&#95;TYPE macro to be defined. Set it to &quot;foo&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">// specify that your debug code belongs to class &quot;foo&quot;. Be careful that you only</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">// do this after including Debug.h and not around any #include of headers.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Headers should define and undef the macro acround the code that needs to use</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="comment">// the LLVM&#95;DEBUG() macro. Then, on the command line, you can specify</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="comment">// &#39;-debug-only=foo&#39; to enable JUST the debug information for the foo class.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="comment">// When compiling without assertions, the -debug-&#42; options and all code in</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="comment">// LLVM&#95;DEBUG() statements disappears, so it does not affect the runtime of the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="comment">// code.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;SUPPORT&#95;DEBUG&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;SUPPORT&#95;DEBUG&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a>;</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef NDEBUG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">/// isCurrentDebugType - Return true if the specified string is the debug type</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">/// specified on the command line, or if none was specified on the command line</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">/// with the -debug-only=X option.</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9aff64ed92b9a91f055e63ef2c25bbb8">isCurrentDebugType</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/classes/llvm/type">Type</a>);</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="comment">/// setCurrentDebugType - Set the current debug type, as if the -debug-only=X</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="comment">/// option were specified.  Note that DebugFlag also needs to be set to true for</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="comment">/// debug output to be produced.</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a81423e0e16bcd43890c7423153390951">setCurrentDebugType</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/classes/llvm/type">Type</a>);</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="comment">/// setCurrentDebugTypes - Set the current debug type, as if the</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="comment">/// -debug-only=X,Y,Z option were specified. Note that DebugFlag</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="comment">/// also needs to be set to true for debug output to be produced.</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a5badd086b5a084b6c9575a6ba29e5831">setCurrentDebugTypes</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;&#42;Types, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a845e08be4b0320d66901a66b0c0e9509">Count</a>);</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="comment">/// DEBUG&#95;WITH&#95;TYPE macro - This macro should be used by passes to emit debug</Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="comment">/// information.  If the &#39;-debug&#39; option is specified on the commandline, and if</Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="comment">/// this is a debug build, then the code specified as the option to the macro</Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">/// will be executed.  Otherwise it will not be.  Example:</Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="comment">/// DEBUG&#95;WITH&#95;TYPE(&quot;bitset&quot;, dbgs() &lt;&lt; &quot;Bitset contains: &quot; &lt;&lt; Bitset &lt;&lt; &quot;\\n&quot;);</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="comment">/// This will emit the debug information if -debug is present, and -debug-only</Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="comment">/// is not specified, or is specified as &quot;bitset&quot;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64" lineLink="#a3fcdc9f30e5e8b9ea4da99868a8ae4a9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEBUG&#95;WITH&#95;TYPE(TYPE, ...)                                             \\</Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="preprocessor">  do &#123;                                                                         \\</Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="preprocessor">    if (::llvm::DebugFlag &amp;&amp; ::llvm::isCurrentDebugType(TYPE)) &#123;               \\</Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="preprocessor">      &#95;&#95;VA&#95;ARGS&#95;&#95;;                                                             \\</Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="preprocessor">    &#125;                                                                          \\</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="preprocessor">  &#125; while (false)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define isCurrentDebugType(X) (false)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define setCurrentDebugType(X) do &#123; (void)(X); &#125; while (false)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define setCurrentDebugTypes(X, N) do &#123; (void)(X); (void)(N); &#125; while (false)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEBUG&#95;WITH&#95;TYPE(TYPE, ...)                                             \\</Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="preprocessor">  do &#123;                                                                         \\</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="preprocessor">  &#125; while (false)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="comment">/// This boolean is set to true if the &#39;-debug&#39; command line option</Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">/// is specified.  This should probably not be referenced directly, instead, use</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">/// the DEBUG macro below.</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight><Highlight kind="keyword">extern</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a58509b852790f6ca23065ec638bc30ff">DebugFlag</a>;</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="comment">/// EnableDebugBuffering - This defaults to false.  If true, the debug</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="comment">/// stream will install signal handlers to dump any buffered debug</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">/// output.  It allows clients to selectively allow the debug stream</Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">/// to install signal handlers if they are certain there will be no</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">/// conflict.</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight><Highlight kind="keyword">extern</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a14b31b0aa8f77d16dfcae8e25021383d">EnableDebugBuffering</a>;</Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">/// dbgs() - This returns a reference to a raw&#95;ostream for debugging</Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">/// messages.  If debugging is disabled it returns errs().  Use it</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="comment">/// like: dbgs() &lt;&lt; &quot;foo&quot; &lt;&lt; &quot;bar&quot;;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">raw&#95;ostream &amp;<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>();</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight><Highlight kind="comment">// DEBUG macro - This macro should be used by passes to emit debug information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal"></Highlight><Highlight kind="comment">// If the &#39;-debug&#39; option is specified on the commandline, and if this is a</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal"></Highlight><Highlight kind="comment">// debug build, then the code specified as the option to the macro will be</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight><Highlight kind="comment">// executed.  Otherwise it will not be.  Example:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight><Highlight kind="comment">// LLVM&#95;DEBUG(dbgs() &lt;&lt; &quot;Bitset contains: &quot; &lt;&lt; Bitset &lt;&lt; &quot;\\n&quot;);</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106" lineLink="#a196897517069dda1bdb549e24468f7d7"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;DEBUG(...) DEBUG&#95;WITH&#95;TYPE(DEBUG&#95;TYPE, &#95;&#95;VA&#95;ARGS&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;SUPPORT&#95;DEBUG&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- llvm/Support/Debug.h - Easy way to add debug output ------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This file implements a handy way of adding debugging information to your</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">// code, without it being enabled all of the time, and without having to add</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">// command line options to enable it.</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightComment">// In particular, just wrap your code with the LLVM&#95;DEBUG() macro, and it will</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightComment">// be enabled automatically if you specify &#39;-debug&#39; on the command-line.</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightComment">// LLVM&#95;DEBUG() requires the DEBUG&#95;TYPE macro to be defined. Set it to &quot;foo&quot;</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightComment">// specify that your debug code belongs to class &quot;foo&quot;. Be careful that you only</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightComment">// do this after including Debug.h and not around any #include of headers.</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightComment">// Headers should define and undef the macro acround the code that needs to use</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightComment">// the LLVM&#95;DEBUG() macro. Then, on the command line, you can specify</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightComment">// &#39;-debug-only=foo&#39; to enable JUST the debug information for the foo class.</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightComment">// When compiling without assertions, the -debug-&#42; options and all code in</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightComment">// LLVM&#95;DEBUG() statements disappears, so it does not affect the runtime of the</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightComment">// code.</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;SUPPORT&#95;DEBUG&#95;H</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightPreprocessor">#define LLVM&#95;SUPPORT&#95;DEBUG&#95;H</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a>;</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlightPreprocessor">#ifndef NDEBUG</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlightComment">/// isCurrentDebugType - Return true if the specified string is the debug type</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightComment">/// specified on the command line, or if none was specified on the command line</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightComment">/// with the -debug-only=X option.</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9aff64ed92b9a91f055e63ef2c25bbb8">isCurrentDebugType</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;<a href="/docs/api/classes/llvm/type">Type</a>);</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlightComment">/// setCurrentDebugType - Set the current debug type, as if the -debug-only=X</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlightComment">/// option were specified.  Note that DebugFlag also needs to be set to true for</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlightComment">/// debug output to be produced.</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a81423e0e16bcd43890c7423153390951">setCurrentDebugType</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;<a href="/docs/api/classes/llvm/type">Type</a>);</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlightComment">/// setCurrentDebugTypes - Set the current debug type, as if the</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlightComment">/// -debug-only=X,Y,Z option were specified. Note that DebugFlag</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlightComment">/// also needs to be set to true for debug output to be produced.</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a5badd086b5a084b6c9575a6ba29e5831">setCurrentDebugTypes</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;&#42;Types, </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a845e08be4b0320d66901a66b0c0e9509">Count</a>);</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlightComment">/// DEBUG&#95;WITH&#95;TYPE macro - This macro should be used by passes to emit debug</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlightComment">/// information.  If the &#39;-debug&#39; option is specified on the commandline, and if</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlightComment">/// this is a debug build, then the code specified as the option to the macro</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlightComment">/// will be executed.  Otherwise it will not be.  Example:</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlightComment">/// DEBUG&#95;WITH&#95;TYPE(&quot;bitset&quot;, dbgs() &lt;&lt; &quot;Bitset contains: &quot; &lt;&lt; Bitset &lt;&lt; &quot;\\n&quot;);</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlightComment">/// This will emit the debug information if -debug is present, and -debug-only</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><span class="doxyHighlightComment">/// is not specified, or is specified as &quot;bitset&quot;.</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64" lineLink="#a3fcdc9f30e5e8b9ea4da99868a8ae4a9"><span class="doxyHighlightPreprocessor">#define DEBUG&#95;WITH&#95;TYPE(TYPE, ...)                                             \\</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlightPreprocessor">  do &#123;                                                                         \\</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlightPreprocessor">    if (::llvm::DebugFlag &amp;&amp; ::llvm::isCurrentDebugType(TYPE)) &#123;               \\</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlightPreprocessor">      &#95;&#95;VA&#95;ARGS&#95;&#95;;                                                             \\</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlightPreprocessor">    &#125;                                                                          \\</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlightPreprocessor">  &#125; while (false)</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlightPreprocessor">#define isCurrentDebugType(X) (false)</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlightPreprocessor">#define setCurrentDebugType(X) do &#123; (void)(X); &#125; while (false)</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlightPreprocessor">#define setCurrentDebugTypes(X, N) do &#123; (void)(X); (void)(N); &#125; while (false)</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlightPreprocessor">#define DEBUG&#95;WITH&#95;TYPE(TYPE, ...)                                             \\</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlightPreprocessor">  do &#123;                                                                         \\</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlightPreprocessor">  &#125; while (false)</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlightComment">/// This boolean is set to true if the &#39;-debug&#39; command line option</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlightComment">/// is specified.  This should probably not be referenced directly, instead, use</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlightComment">/// the DEBUG macro below.</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlightKeyword">extern</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a58509b852790f6ca23065ec638bc30ff">DebugFlag</a>;</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlightComment">/// EnableDebugBuffering - This defaults to false.  If true, the debug</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlightComment">/// stream will install signal handlers to dump any buffered debug</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlightComment">/// output.  It allows clients to selectively allow the debug stream</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlightComment">/// to install signal handlers if they are certain there will be no</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlightComment">/// conflict.</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlightKeyword">extern</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a14b31b0aa8f77d16dfcae8e25021383d">EnableDebugBuffering</a>;</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlightComment">/// dbgs() - This returns a reference to a raw&#95;ostream for debugging</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlightComment">/// messages.  If debugging is disabled it returns errs().  Use it</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><span class="doxyHighlightComment">/// like: dbgs() &lt;&lt; &quot;foo&quot; &lt;&lt; &quot;bar&quot;;</span></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlight">raw&#95;ostream &amp;<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>();</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlightComment">// DEBUG macro - This macro should be used by passes to emit debug information.</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlightComment">// If the &#39;-debug&#39; option is specified on the commandline, and if this is a</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlightComment">// debug build, then the code specified as the option to the macro will be</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlightComment">// executed.  Otherwise it will not be.  Example:</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><span class="doxyHighlightComment">// LLVM&#95;DEBUG(dbgs() &lt;&lt; &quot;Bitset contains: &quot; &lt;&lt; Bitset &lt;&lt; &quot;\\n&quot;);</span></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106" lineLink="#a196897517069dda1bdb549e24468f7d7"><span class="doxyHighlightPreprocessor">#define LLVM&#95;DEBUG(...) DEBUG&#95;WITH&#95;TYPE(DEBUG&#95;TYPE, &#95;&#95;VA&#95;ARGS&#95;&#95;)</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace llvm</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;SUPPORT&#95;DEBUG&#95;H</span></CodeLine>
 
 </ProgramListing>
 

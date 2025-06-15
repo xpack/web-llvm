@@ -17,7 +17,6 @@ import CodeBlock from '@theme/CodeBlock'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -261,12 +260,12 @@ There are two ways to set the checked flag, depending on what state the <a href=
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="normal"><a href="#a7245b97586de88539c5dc656b6e7f38d">Error</a> foo(&lt;...&gt;);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a> = foo(&lt;...&gt;))</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>; </Highlight><Highlight kind="comment">// &lt;- Return E if it is in the error state.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// We have verified that E was in the success state. It can now be safely</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// destroyed.</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="#a7245b97586de88539c5dc656b6e7f38d">Error</a> foo(&lt;...&gt;);</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a> = foo(&lt;...&gt;))</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>; </span><span class="doxyHighlightComment">// &lt;- Return E if it is in the error state.</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">// We have verified that E was in the success state. It can now be safely</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">// destroyed.</span></CodeLine>
 
 </ProgramListing>
 
@@ -278,34 +277,34 @@ For <a href="/docs/api/classes/llvm/error">Error</a> instances representing fail
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="keyword">class </Highlight><Highlight kind="normal">MyErrorInfo : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> ErrorInfo&lt;MyErrorInfo&gt; &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Custom error info.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"><a href="#a7245b97586de88539c5dc656b6e7f38d">Error</a> foo(&lt;...&gt;) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">make&#95;error&lt;MyErrorInfo&gt;</a>(...); &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a> = foo(&lt;...&gt;); </Highlight><Highlight kind="comment">// &lt;- foo returns failure with MyErrorInfo.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> NewE =</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  <a href="#a2c831eabfe62504c9cc0cc16e0799c44">handleErrors</a>(std::move(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>),</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#91;&#93;(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> MyErrorInfo &amp;M) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Deal with the error.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#125;,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#91;&#93;(std::unique&#95;ptr&lt;OtherError&gt; <a href="/docs/api/namespaces/llvm/arm/#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>) -&gt; <a href="#a7245b97586de88539c5dc656b6e7f38d">Error</a> &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (canHandle(&#42;M)) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">        </Highlight><Highlight kind="comment">// handle error.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Couldn&#39;t handle this error instance. Pass it up the stack.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="#a7245b97586de88539c5dc656b6e7f38d">Error</a>(std::move(M));</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  &#125;);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// Note - The error passed to handleErrors will be marked as checked. If</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// there is no matched handler, a new error with the same payload is</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// created and returned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// The handlers take the error checked by handleErrors as an argument,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// which can be used to retrieve more information. If a new error is</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// created by a handler, it will be passed back to the caller of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// handleErrors and needs to be checked or return up to the stack.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// Otherwise, the passed-in error is considered consumed.</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">MyErrorInfo : </span><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight"> ErrorInfo&lt;MyErrorInfo&gt; &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Custom error info.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="#a7245b97586de88539c5dc656b6e7f38d">Error</a> foo(&lt;...&gt;) &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">make&#95;error&lt;MyErrorInfo&gt;</a>(...); &#125;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a> = foo(&lt;...&gt;); </span><span class="doxyHighlightComment">// &lt;- foo returns failure with MyErrorInfo.</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> NewE =</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  <a href="#a2c831eabfe62504c9cc0cc16e0799c44">handleErrors</a>(std::move(<a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#abb2b3a60ccc38a28239e19a1646e0c8a">E</a>),</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#91;&#93;(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> MyErrorInfo &amp;M) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// Deal with the error.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#125;,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#91;&#93;(std::unique&#95;ptr&lt;OtherError&gt; <a href="/docs/api/namespaces/llvm/arm/#ac2456158e5acb44477d8ecfa2d04dbdea69691c7bdcc3ce6d5d8a1361f22d04ac">M</a>) -&gt; <a href="#a7245b97586de88539c5dc656b6e7f38d">Error</a> &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (canHandle(&#42;M)) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// handle error.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a4dfd0813c3d0e0a30439b5a3e9196b59">Error::success</a>();</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      &#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// Couldn&#39;t handle this error instance. Pass it up the stack.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a7245b97586de88539c5dc656b6e7f38d">Error</a>(std::move(M));</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  &#125;);</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">// Note - The error passed to handleErrors will be marked as checked. If</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">// there is no matched handler, a new error with the same payload is</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">// created and returned.</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">// The handlers take the error checked by handleErrors as an argument,</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">// which can be used to retrieve more information. If a new error is</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">// created by a handler, it will be passed back to the caller of</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">// handleErrors and needs to be checked or return up to the stack.</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">// Otherwise, the passed-in error is considered consumed.</span></CodeLine>
 
 </ProgramListing>
 

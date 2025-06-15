@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -207,132 +206,132 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- Process.cpp - Implement OS Process Concept --------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">//  This file implements the operating system Process concept.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/process-h">llvm/Support/Process.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stlextras-h">llvm/ADT/STLExtras.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringextras-h">llvm/ADT/StringExtras.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;llvm/Config/config.h&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;llvm/Config/llvm-config.h&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/crashrecoverycontext-h">llvm/Support/CrashRecoveryContext.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/filesystem-h">llvm/Support/FileSystem.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/path-h">llvm/Support/Path.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;optional&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;stdlib.h&gt;</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="comment">// for &#95;Exit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/sys">sys</a>;</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="comment">//=== WARNING: Implementation here must contain only TRULY operating system</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===          independent code.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">std::optional&lt;std::string&gt;</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34" lineLink="/docs/api/classes/llvm/sys/process/#ab97a24142bebbcf14ce0d586645abb5e"><Highlight kind="normal"><a href="/docs/api/classes/llvm/sys/process/#a2d23569135fe239b43594b6e8b99e67e">Process::FindInEnvPath</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> EnvName, <a href="/docs/api/classes/llvm/stringref">StringRef</a> FileName, </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> Separator) &#123;</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sys/process/#a2d23569135fe239b43594b6e8b99e67e">FindInEnvPath</a>(EnvName, FileName, &#123;&#125;, Separator);</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">std::optional&lt;std::string&gt;</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39" lineLink="/docs/api/classes/llvm/sys/process/#a2d23569135fe239b43594b6e8b99e67e"><Highlight kind="normal"><a href="/docs/api/classes/llvm/sys/process/#a2d23569135fe239b43594b6e8b99e67e">Process::FindInEnvPath</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> EnvName, <a href="/docs/api/classes/llvm/stringref">StringRef</a> FileName,</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">                       <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;std::string&gt;</a> IgnoreList, </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> Separator) &#123;</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!<a href="/docs/api/namespaces/llvm/sys/path/#ac35ec1dacb408d4c65d55249c0e02474">path::is&#95;absolute</a>(FileName));</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">  std::optional&lt;std::string&gt; FoundPath;</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  std::optional&lt;std::string&gt; OptPath = <a href="/docs/api/classes/llvm/sys/process/#a8806fc38b760a88a96d5d7fb67de545f">Process::GetEnv</a>(EnvName);</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!OptPath)</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> FoundPath;</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> EnvPathSeparatorStr&#91;&#93; = &#123;Separator, </Highlight><Highlight kind="charliteral">&#39;\\0&#39;</Highlight><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;StringRef, 8&gt;</a> Dirs;</Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a544056717f2471026a27c31adb99df74">SplitString</a>(&#42;OptPath, Dirs, EnvPathSeparatorStr);</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/stringref">StringRef</a> Dir : Dirs) &#123;</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Dir.empty())</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#a61d13d6824ec46c31260a4fd0997eda0">any&#95;of</a>(IgnoreList, &#91;&amp;&#93;(<a href="/docs/api/classes/llvm/stringref">StringRef</a> S) &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/sys/fs/#a142386357a8879fc0b5041dc2e275bf5">fs::equivalent</a>(S, Dir); &#125;))</Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/smallstring">SmallString&lt;128&gt;</a> FilePath(Dir);</Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/sys/path/#acb80894344c78dacf8d5ff8c23be697d">path::append</a>(FilePath, FileName);</Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/sys/fs/#a645a607ffcccb12f16a5736db991e7d9">fs::exists</a>(<a href="/docs/api/classes/llvm/twine">Twine</a>(FilePath))) &#123;</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">      FoundPath = std::string(FilePath);</Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> FoundPath;</Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight><Highlight kind="comment">// clang-format off</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70" lineLink="#a0c423f7dfd73eddee70e281430e337b4"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define COLOR(FGBG, CODE, BOLD) &quot;\\033&#91;0;&quot; BOLD FGBG CODE &quot;m&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72" lineLink="#a81335dabba2add50bce294ac90785c88"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define ALLCOLORS(FGBG, BRIGHT, BOLD) \\</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="preprocessor">  &#123;                           \\</Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="preprocessor">    COLOR(FGBG, &quot;0&quot;, BOLD),   \\</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="preprocessor">    COLOR(FGBG, &quot;1&quot;, BOLD),   \\</Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="preprocessor">    COLOR(FGBG, &quot;2&quot;, BOLD),   \\</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="preprocessor">    COLOR(FGBG, &quot;3&quot;, BOLD),   \\</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="preprocessor">    COLOR(FGBG, &quot;4&quot;, BOLD),   \\</Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="preprocessor">    COLOR(FGBG, &quot;5&quot;, BOLD),   \\</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="preprocessor">    COLOR(FGBG, &quot;6&quot;, BOLD),   \\</Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="preprocessor">    COLOR(FGBG, &quot;7&quot;, BOLD),   \\</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="preprocessor">    COLOR(BRIGHT, &quot;0&quot;, BOLD), \\</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="preprocessor">    COLOR(BRIGHT, &quot;1&quot;, BOLD), \\</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="preprocessor">    COLOR(BRIGHT, &quot;2&quot;, BOLD), \\</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="preprocessor">    COLOR(BRIGHT, &quot;3&quot;, BOLD), \\</Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="preprocessor">    COLOR(BRIGHT, &quot;4&quot;, BOLD), \\</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="preprocessor">    COLOR(BRIGHT, &quot;5&quot;, BOLD), \\</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="preprocessor">    COLOR(BRIGHT, &quot;6&quot;, BOLD), \\</Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="preprocessor">    COLOR(BRIGHT, &quot;7&quot;, BOLD), \\</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="preprocessor">  &#125;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight><Highlight kind="comment">//                           bg</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight><Highlight kind="comment">//                           |  bold</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight><Highlight kind="comment">//                           |  |</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal"></Highlight><Highlight kind="comment">//                           |  |   codes</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight><Highlight kind="comment">//                           |  |   |</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight><Highlight kind="comment">//                           |  |   |</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98" lineLink="#a99dc017fec75afe10928b651c570c3e8"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="#a99dc017fec75afe10928b651c570c3e8">colorcodes</a>&#91;2&#93;&#91;2&#93;&#91;16&#93;&#91;11&#93; = &#123;</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">    &#123; <a href="#a81335dabba2add50bce294ac90785c88">ALLCOLORS</a>(</Highlight><Highlight kind="stringliteral">&quot;3&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;9&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">), <a href="#a81335dabba2add50bce294ac90785c88">ALLCOLORS</a>(</Highlight><Highlight kind="stringliteral">&quot;3&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;9&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;1;&quot;</Highlight><Highlight kind="normal">),&#125;,</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">    &#123; <a href="#a81335dabba2add50bce294ac90785c88">ALLCOLORS</a>(</Highlight><Highlight kind="stringliteral">&quot;4&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;10&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">), <a href="#a81335dabba2add50bce294ac90785c88">ALLCOLORS</a>(</Highlight><Highlight kind="stringliteral">&quot;4&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;10&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;1;&quot;</Highlight><Highlight kind="normal">)&#125;</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight><Highlight kind="comment">// clang-format on</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight><Highlight kind="comment">// A CMake option controls wheter we emit core dumps by default. An application</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight><Highlight kind="comment">// may disable core dumps by calling Process::PreventCoreFiles().</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106" lineLink="#a3e1976a70072c9f199a4b9ab049faf4b"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="#a3e1976a70072c9f199a4b9ab049faf4b">coreFilesPrevented</a> = !LLVM&#95;ENABLE&#95;CRASH&#95;DUMPS;</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108" lineLink="/docs/api/classes/llvm/sys/process/#a92a5bd75c81ada9ad86716daac4a4fdc"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sys/process/#a92a5bd75c81ada9ad86716daac4a4fdc">Process::AreCoreFilesPrevented</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="#a3e1976a70072c9f199a4b9ab049faf4b">coreFilesPrevented</a>; &#125;</Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110" lineLink="/docs/api/classes/llvm/sys/process/#a38ee110d150d9b436e4d01405bd7f1a9"><Highlight kind="normal">&#91;&#91;noreturn&#93;&#93; </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/sys/process/#a38ee110d150d9b436e4d01405bd7f1a9">Process::Exit</a>(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> RetCode, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> NoCleanup) &#123;</Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/classes/llvm/crashrecoverycontext">CrashRecoveryContext</a> &#42;CRC = <a href="/docs/api/classes/llvm/crashrecoverycontext/#a105fa65624c954b0a44d73615cbbeba1">CrashRecoveryContext::GetCurrent</a>())</Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">    CRC-&gt;HandleExit(RetCode);</Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (NoCleanup)</Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">    ExitNoCleanup(RetCode);</Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  else</Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">    ::exit(RetCode);</Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Include the platform-specific parts of this class.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef LLVM&#95;ON&#95;UNIX</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/support/lib/support/unix/process-inc">Unix/Process.inc</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/support/lib/support/windows/process-inc">Windows/Process.inc</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===-- Process.cpp - Implement OS Process Concept --------------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">//  This file implements the operating system Process concept.</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/process-h">llvm/Support/Process.h</a>&quot;</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stlextras-h">llvm/ADT/STLExtras.h</a>&quot;</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringextras-h">llvm/ADT/StringExtras.h</a>&quot;</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#include &quot;llvm/Config/config.h&quot;</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#include &quot;llvm/Config/llvm-config.h&quot;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/crashrecoverycontext-h">llvm/Support/CrashRecoveryContext.h</a>&quot;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/filesystem-h">llvm/Support/FileSystem.h</a>&quot;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/path-h">llvm/Support/Path.h</a>&quot;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightPreprocessor">#include &lt;optional&gt;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightPreprocessor">#include &lt;stdlib.h&gt;</span><span class="doxyHighlight"> </span><span class="doxyHighlightComment">// for &#95;Exit</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightKeyword">using namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a>;</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightKeyword">using namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/sys">sys</a>;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightComment">//=== WARNING: Implementation here must contain only TRULY operating system</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightComment">//===          independent code.</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlight">std::optional&lt;std::string&gt;</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34" lineLink="/docs/api/classes/llvm/sys/process/#ab97a24142bebbcf14ce0d586645abb5e"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/sys/process/#a2d23569135fe239b43594b6e8b99e67e">Process::FindInEnvPath</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> EnvName, <a href="/docs/api/classes/llvm/stringref">StringRef</a> FileName, </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> Separator) &#123;</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/sys/process/#a2d23569135fe239b43594b6e8b99e67e">FindInEnvPath</a>(EnvName, FileName, &#123;&#125;, Separator);</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlight">std::optional&lt;std::string&gt;</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39" lineLink="/docs/api/classes/llvm/sys/process/#a2d23569135fe239b43594b6e8b99e67e"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/sys/process/#a2d23569135fe239b43594b6e8b99e67e">Process::FindInEnvPath</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> EnvName, <a href="/docs/api/classes/llvm/stringref">StringRef</a> FileName,</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlight">                       <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;std::string&gt;</a> IgnoreList, </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> Separator) &#123;</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlight">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!<a href="/docs/api/namespaces/llvm/sys/path/#ac35ec1dacb408d4c65d55249c0e02474">path::is&#95;absolute</a>(FileName));</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlight">  std::optional&lt;std::string&gt; FoundPath;</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlight">  std::optional&lt;std::string&gt; OptPath = <a href="/docs/api/classes/llvm/sys/process/#a8806fc38b760a88a96d5d7fb67de545f">Process::GetEnv</a>(EnvName);</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!OptPath)</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> FoundPath;</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> EnvPathSeparatorStr&#91;&#93; = &#123;Separator, </span><span class="doxyHighlightCharLiteral">&#39;\\0&#39;</span><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;StringRef, 8&gt;</a> Dirs;</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#a544056717f2471026a27c31adb99df74">SplitString</a>(&#42;OptPath, Dirs, EnvPathSeparatorStr);</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (<a href="/docs/api/classes/llvm/stringref">StringRef</a> Dir : Dirs) &#123;</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Dir.empty())</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">continue</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="/docs/api/namespaces/llvm/#a61d13d6824ec46c31260a4fd0997eda0">any&#95;of</a>(IgnoreList, &#91;&amp;&#93;(<a href="/docs/api/classes/llvm/stringref">StringRef</a> S) &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/sys/fs/#a142386357a8879fc0b5041dc2e275bf5">fs::equivalent</a>(S, Dir); &#125;))</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">continue</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/smallstring">SmallString&lt;128&gt;</a> FilePath(Dir);</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/sys/path/#acb80894344c78dacf8d5ff8c23be697d">path::append</a>(FilePath, FileName);</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="/docs/api/namespaces/llvm/sys/fs/#a645a607ffcccb12f16a5736db991e7d9">fs::exists</a>(<a href="/docs/api/classes/llvm/twine">Twine</a>(FilePath))) &#123;</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlight">      FoundPath = std::string(FilePath);</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">break</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> FoundPath;</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlightComment">// clang-format off</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70" lineLink="#a0c423f7dfd73eddee70e281430e337b4"><span class="doxyHighlightPreprocessor">#define COLOR(FGBG, CODE, BOLD) &quot;\\033&#91;0;&quot; BOLD FGBG CODE &quot;m&quot;</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72" lineLink="#a81335dabba2add50bce294ac90785c88"><span class="doxyHighlightPreprocessor">#define ALLCOLORS(FGBG, BRIGHT, BOLD) \\</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlightPreprocessor">  &#123;                           \\</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlightPreprocessor">    COLOR(FGBG, &quot;0&quot;, BOLD),   \\</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlightPreprocessor">    COLOR(FGBG, &quot;1&quot;, BOLD),   \\</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlightPreprocessor">    COLOR(FGBG, &quot;2&quot;, BOLD),   \\</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlightPreprocessor">    COLOR(FGBG, &quot;3&quot;, BOLD),   \\</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlightPreprocessor">    COLOR(FGBG, &quot;4&quot;, BOLD),   \\</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlightPreprocessor">    COLOR(FGBG, &quot;5&quot;, BOLD),   \\</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlightPreprocessor">    COLOR(FGBG, &quot;6&quot;, BOLD),   \\</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlightPreprocessor">    COLOR(FGBG, &quot;7&quot;, BOLD),   \\</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlightPreprocessor">    COLOR(BRIGHT, &quot;0&quot;, BOLD), \\</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlightPreprocessor">    COLOR(BRIGHT, &quot;1&quot;, BOLD), \\</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlightPreprocessor">    COLOR(BRIGHT, &quot;2&quot;, BOLD), \\</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><span class="doxyHighlightPreprocessor">    COLOR(BRIGHT, &quot;3&quot;, BOLD), \\</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlightPreprocessor">    COLOR(BRIGHT, &quot;4&quot;, BOLD), \\</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlightPreprocessor">    COLOR(BRIGHT, &quot;5&quot;, BOLD), \\</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlightPreprocessor">    COLOR(BRIGHT, &quot;6&quot;, BOLD), \\</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlightPreprocessor">    COLOR(BRIGHT, &quot;7&quot;, BOLD), \\</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlightPreprocessor">  &#125;</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlightComment">//                           bg</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlightComment">//                           |  bold</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlightComment">//                           |  |</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlightComment">//                           |  |   codes</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><span class="doxyHighlightComment">//                           |  |   |</span></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlightComment">//                           |  |   |</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98" lineLink="#a99dc017fec75afe10928b651c570c3e8"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> <a href="#a99dc017fec75afe10928b651c570c3e8">colorcodes</a>&#91;2&#93;&#91;2&#93;&#91;16&#93;&#91;11&#93; = &#123;</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlight">    &#123; <a href="#a81335dabba2add50bce294ac90785c88">ALLCOLORS</a>(</span><span class="doxyHighlightStringLiteral">&quot;3&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightStringLiteral">&quot;9&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightStringLiteral">&quot;&quot;</span><span class="doxyHighlight">), <a href="#a81335dabba2add50bce294ac90785c88">ALLCOLORS</a>(</span><span class="doxyHighlightStringLiteral">&quot;3&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightStringLiteral">&quot;9&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightStringLiteral">&quot;1;&quot;</span><span class="doxyHighlight">),&#125;,</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlight">    &#123; <a href="#a81335dabba2add50bce294ac90785c88">ALLCOLORS</a>(</span><span class="doxyHighlightStringLiteral">&quot;4&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightStringLiteral">&quot;10&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightStringLiteral">&quot;&quot;</span><span class="doxyHighlight">), <a href="#a81335dabba2add50bce294ac90785c88">ALLCOLORS</a>(</span><span class="doxyHighlightStringLiteral">&quot;4&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightStringLiteral">&quot;10&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightStringLiteral">&quot;1;&quot;</span><span class="doxyHighlight">)&#125;</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlightComment">// clang-format on</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><span class="doxyHighlightComment">// A CMake option controls wheter we emit core dumps by default. An application</span></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlightComment">// may disable core dumps by calling Process::PreventCoreFiles().</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106" lineLink="#a3e1976a70072c9f199a4b9ab049faf4b"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a3e1976a70072c9f199a4b9ab049faf4b">coreFilesPrevented</a> = !LLVM&#95;ENABLE&#95;CRASH&#95;DUMPS;</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108" lineLink="/docs/api/classes/llvm/sys/process/#a92a5bd75c81ada9ad86716daac4a4fdc"><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/sys/process/#a92a5bd75c81ada9ad86716daac4a4fdc">Process::AreCoreFilesPrevented</a>() &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a3e1976a70072c9f199a4b9ab049faf4b">coreFilesPrevented</a>; &#125;</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110" lineLink="/docs/api/classes/llvm/sys/process/#a38ee110d150d9b436e4d01405bd7f1a9"><span class="doxyHighlight">&#91;&#91;noreturn&#93;&#93; </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/sys/process/#a38ee110d150d9b436e4d01405bd7f1a9">Process::Exit</a>(</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> RetCode, </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> NoCleanup) &#123;</span></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="/docs/api/classes/llvm/crashrecoverycontext">CrashRecoveryContext</a> &#42;CRC = <a href="/docs/api/classes/llvm/crashrecoverycontext/#a105fa65624c954b0a44d73615cbbeba1">CrashRecoveryContext::GetCurrent</a>())</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><span class="doxyHighlight">    CRC-&gt;HandleExit(RetCode);</span></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (NoCleanup)</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlight">    ExitNoCleanup(RetCode);</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlight">  else</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlight">    ::exit(RetCode);</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlightComment">// Include the platform-specific parts of this class.</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><span class="doxyHighlightPreprocessor">#ifdef LLVM&#95;ON&#95;UNIX</span></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/lib/lib/support/lib/support/unix/process-inc">Unix/Process.inc</a>&quot;</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlightPreprocessor">#ifdef &#95;WIN32</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/lib/lib/support/lib/support/windows/process-inc">Windows/Process.inc</a>&quot;</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
 
 </ProgramListing>
 

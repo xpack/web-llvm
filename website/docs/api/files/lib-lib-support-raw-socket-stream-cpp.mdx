@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -157,346 +156,346 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- llvm/Support/raw&#95;socket&#95;stream.cpp - Socket streams --&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file contains raw&#95;ostream implementations for streams to communicate</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// via UNIX sockets</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">llvm/Support/raw&#95;socket&#95;stream.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;llvm/Config/config.h&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/error-h">llvm/Support/Error.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/filesystem-h">llvm/Support/FileSystem.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;atomic&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;fcntl.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;functional&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;poll.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;sys/socket.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;sys/un.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/include/llvm/support/windows/windowssupport-h">llvm/Support/Windows/WindowsSupport.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="comment">// winsock2.h must be included before afunix.h. Briefly turn off clang-format to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="comment">// avoid error.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="comment">// clang-format off</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;winsock2.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;afunix.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="comment">// clang-format on</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;io.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(HAVE&#95;UNISTD&#95;H)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;unistd.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">WSABalancer::WSABalancer() &#123;</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  WSADATA WsaData;</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  ::memset(&amp;WsaData, 0, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(WsaData));</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (WSAStartup(MAKEWORD(2, 2), &amp;WsaData) != 0) &#123;</Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">llvm::report&#95;fatal&#95;error</a>(</Highlight><Highlight kind="stringliteral">&quot;WSAStartup failed&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">WSABalancer::~WSABalancer() &#123; WSACleanup(); &#125;</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56" lineLink="#a962923a59c6a9e8ab55ec73dc320f68f"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> std::error&#95;code <a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>() &#123;</Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::error&#95;code(::WSAGetLastError(), std::system&#95;category());</Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ae075c94db10b09d6d5876d32219eaf0d">errnoAsErrorCode</a>();</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64" lineLink="#ac93e3301780b206d83d8a7c768ce4992"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> sockaddr&#95;un <a href="#ac93e3301780b206d83d8a7c768ce4992">setSocketAddr</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> SocketPath) &#123;</Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">sockaddr&#95;un Addr;</Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  memset(&amp;Addr, 0, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Addr));</Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  Addr.sun&#95;family = AF&#95;UNIX;</Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  strncpy(Addr.sun&#95;path, SocketPath.<a href="/docs/api/classes/llvm/stringref/#a223dd14e7d12bc5cea01889b972a98b2">str</a>().c&#95;str(), </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Addr.sun&#95;path) - 1);</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Addr;</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72" lineLink="#a01d53f471176148059cb8cd09dffe690"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/expected">Expected&lt;int&gt;</a> <a href="#a01d53f471176148059cb8cd09dffe690">getSocketFD</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> SocketPath) &#123;</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  SOCKET Socket = socket(AF&#95;UNIX, SOCK&#95;STREAM, 0);</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Socket == INVALID&#95;SOCKET) &#123;</Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> Socket = socket(AF&#95;UNIX, SOCK&#95;STREAM, 0);</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Socket == -1) &#123;</Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(<a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>(),</Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">                                         </Highlight><Highlight kind="stringliteral">&quot;Create socket failed&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">sockaddr&#95;un Addr = <a href="#ac93e3301780b206d83d8a7c768ce4992">setSocketAddr</a>(SocketPath);</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (::connect(Socket, (</Highlight><Highlight kind="keyword">struct</Highlight><Highlight kind="normal"> sockaddr &#42;)&amp;Addr, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Addr)) == -1)</Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(<a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>(),</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">                                         </Highlight><Highlight kind="stringliteral">&quot;Connect socket failed&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#95;open&#95;osfhandle(Socket, 0);</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Socket;</Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">ListeningSocket::ListeningSocket(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> SocketFD, <a href="/docs/api/classes/llvm/stringref">StringRef</a> SocketPath,</Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">                                 </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> PipeFD&#91;2&#93;)</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">    : FD(SocketFD), SocketPath(SocketPath), PipeFD&#123;PipeFD&#91;0&#93;, PipeFD&#91;1&#93;&#125; &#123;&#125;</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100" lineLink="/docs/api/classes/llvm/listeningsocket/#a00e7ab1ab38cc68f656ce8a425d536bf"><Highlight kind="normal">ListeningSocket::ListeningSocket(ListeningSocket &amp;&amp;LS)</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">    : FD(LS.FD.<a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpumarklastscratchload-cpp/#a8a3fe89940744b94ffe5dacd6704c2be">load</a>()), SocketPath(LS.SocketPath),</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">      PipeFD&#123;LS.PipeFD&#91;0&#93;, LS.PipeFD&#91;1&#93;&#125; &#123;</Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  LS.FD = -1;</Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  LS.SocketPath.clear();</Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  LS.PipeFD&#91;0&#93; = -1;</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  LS.PipeFD&#91;1&#93; = -1;</Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110" lineLink="/docs/api/classes/llvm/listeningsocket/#a22cd57e089541409aa05153237a44729"><Highlight kind="normal"><a href="/docs/api/classes/llvm/expected">Expected&lt;ListeningSocket&gt;</a> <a href="/docs/api/classes/llvm/listeningsocket/#a22cd57e089541409aa05153237a44729">ListeningSocket::createUnix</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> SocketPath,</Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">                                                      </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> MaxBacklog) &#123;</Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Handle instances where the target socket address already exists and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// differentiate between a preexisting file with and without a bound socket</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// ::bind will return std::errc:address&#95;in&#95;use if a file at the socket address</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// already exists (e.g., the file was not properly unlinked due to a crash)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// even if another socket has not yet binded to that address</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/sys/fs/#a645a607ffcccb12f16a5736db991e7d9">llvm::sys::fs::exists</a>(SocketPath)) &#123;</Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/expected">Expected&lt;int&gt;</a> MaybeFD = <a href="#a01d53f471176148059cb8cd09dffe690">getSocketFD</a>(SocketPath);</Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!MaybeFD) &#123;</Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Regardless of the error, notify the caller that a file already exists</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// at the desired socket address and that there is no bound socket at that</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// address. The file must be removed before ::bind can use the address</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#aee0e70be66536b9ef7b65ae2e5a45959">consumeError</a>(MaybeFD.<a href="/docs/api/classes/llvm/expected/#a94789df4ebd03dc008e8adebaa66ac1f">takeError</a>());</Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(</Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">          std::make&#95;error&#95;code(std::errc::file&#95;exists),</Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">          </Highlight><Highlight kind="stringliteral">&quot;Socket address unavailable&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">    ::close(std::move(&#42;MaybeFD));</Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Notify caller that the provided socket address already has a bound socket</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(</Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">        std::make&#95;error&#95;code(std::errc::address&#95;in&#95;use),</Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">        </Highlight><Highlight kind="stringliteral">&quot;Socket address unavailable&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">  WSABalancer <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonmccodeemitter-cpp/#ae4dfd7b0d66121016d6466d2ff10e8ba">&#95;</a>;</Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">  SOCKET Socket = socket(AF&#95;UNIX, SOCK&#95;STREAM, 0);</Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Socket == INVALID&#95;SOCKET)</Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> Socket = socket(AF&#95;UNIX, SOCK&#95;STREAM, 0);</Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Socket == -1)</Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(<a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>(),</Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">                                         </Highlight><Highlight kind="stringliteral">&quot;socket create failed&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">sockaddr&#95;un Addr = <a href="#ac93e3301780b206d83d8a7c768ce4992">setSocketAddr</a>(SocketPath);</Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (::bind(Socket, (</Highlight><Highlight kind="keyword">struct</Highlight><Highlight kind="normal"> sockaddr &#42;)&amp;Addr, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Addr)) == -1) &#123;</Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Grab error code from call to ::bind before calling ::close</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">    std::error&#95;code EC = <a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>();</Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">    ::close(Socket);</Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(EC, </Highlight><Highlight kind="stringliteral">&quot;Bind error&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Mark socket as passive so incoming connections can be accepted</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (::listen(Socket, MaxBacklog) == -1)</Highlight></CodeLine>
-<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(<a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>(),</Highlight></CodeLine>
-<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">                                         </Highlight><Highlight kind="stringliteral">&quot;Listen error&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> PipeFD&#91;2&#93;;</Highlight></CodeLine>
-<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Reserve 1 byte for the pipe and use default textmode</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (::&#95;pipe(PipeFD, 1, 0) == -1)</Highlight></CodeLine>
-<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (::pipe(PipeFD) == -1)</Highlight></CodeLine>
-<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(<a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>(),</Highlight></CodeLine>
-<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal">                                         </Highlight><Highlight kind="stringliteral">&quot;pipe failed&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ListeningSocket&#123;&#95;open&#95;osfhandle(Socket, 0), SocketPath, PipeFD&#125;;</Highlight></CodeLine>
-<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ListeningSocket&#123;Socket, SocketPath, PipeFD&#125;;</Highlight></CodeLine>
-<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal"></Highlight><Highlight kind="comment">// If a file descriptor being monitored by ::poll is closed by another thread,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal"></Highlight><Highlight kind="comment">// the result is unspecified. In the case ::poll does not unblock and return,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal"></Highlight><Highlight kind="comment">// when ActiveFD is closed, you can provide another file descriptor via CancelFD</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal"></Highlight><Highlight kind="comment">// that when written to will cause poll to return. Typically CancelFD is the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal"></Highlight><Highlight kind="comment">// read end of a unidirectional pipe.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Timeout should be -1 to block indefinitly</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal"></Highlight><Highlight kind="comment">// getActiveFD is a callback to handle ActiveFD&#39;s of std::atomic&lt;int&gt; and int</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> std::error&#95;code</Highlight></CodeLine>
-<Link id="l00190" /><CodeLine lineNumber="190" lineLink="#ab48a833c4f2a5ebcee2b8abada3e0ac5"><Highlight kind="normal"><a href="#ab48a833c4f2a5ebcee2b8abada3e0ac5">manageTimeout</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::chrono::milliseconds &amp;Timeout,</Highlight></CodeLine>
-<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">              </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::function&lt;</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">()&gt; &amp;getActiveFD,</Highlight></CodeLine>
-<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">              </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::optional&lt;int&gt; &amp;CancelFD = std::nullopt) &#123;</Highlight></CodeLine>
-<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">pollfd FD&#91;2&#93;;</Highlight></CodeLine>
-<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">  FD&#91;0&#93;.events = POLLIN;</Highlight></CodeLine>
-<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">  SOCKET WinServerSock = &#95;get&#95;osfhandle(getActiveFD());</Highlight></CodeLine>
-<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">  FD&#91;0&#93;.fd = WinServerSock;</Highlight></CodeLine>
-<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">  FD&#91;0&#93;.fd = getActiveFD();</Highlight></CodeLine>
-<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">  uint8&#95;t FDCount = 1;</Highlight></CodeLine>
-<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CancelFD.has&#95;value()) &#123;</Highlight></CodeLine>
-<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">    FD&#91;1&#93;.events = POLLIN;</Highlight></CodeLine>
-<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">    FD&#91;1&#93;.fd = CancelFD.value();</Highlight></CodeLine>
-<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">    FDCount++;</Highlight></CodeLine>
-<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Keep track of how much time has passed in case ::poll or WSAPoll are</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// interupted by a signal and need to be recalled</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Start = std::chrono::steady&#95;clock::now();</Highlight></CodeLine>
-<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> RemainingTimeout = Timeout;</Highlight></CodeLine>
-<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> PollStatus = 0;</Highlight></CodeLine>
-<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">do</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
-<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// If Timeout is -1 then poll should block and RemainingTimeout does not</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// need to be recalculated</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (PollStatus != 0 &amp;&amp; Timeout != std::chrono::milliseconds(-1)) &#123;</Highlight></CodeLine>
-<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> TotalElapsedTime =</Highlight></CodeLine>
-<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">          std::chrono::duration&#95;cast&lt;std::chrono::milliseconds&gt;(</Highlight></CodeLine>
-<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">              std::chrono::steady&#95;clock::now() - Start);</Highlight></CodeLine>
-<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TotalElapsedTime &gt;= Timeout)</Highlight></CodeLine>
-<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;error&#95;code(std::errc::operation&#95;would&#95;block);</Highlight></CodeLine>
-<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">      RemainingTimeout = Timeout - TotalElapsedTime;</Highlight></CodeLine>
-<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">    PollStatus = WSAPoll(FD, FDCount, RemainingTimeout.count());</Highlight></CodeLine>
-<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (PollStatus == SOCKET&#95;ERROR &amp;&amp;</Highlight></CodeLine>
-<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">           <a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>() == std::errc::interrupted);</Highlight></CodeLine>
-<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">    PollStatus = ::poll(FD, FDCount, RemainingTimeout.count());</Highlight></CodeLine>
-<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (PollStatus == -1 &amp;&amp;</Highlight></CodeLine>
-<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">           <a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>() == std::errc::interrupted);</Highlight></CodeLine>
-<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// If ActiveFD equals -1 or CancelFD has data to be read then the operation</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// has been canceled by another thread</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (getActiveFD() == -1 || (CancelFD.has&#95;value() &amp;&amp; FD&#91;1&#93;.revents &amp; POLLIN))</Highlight></CodeLine>
-<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;error&#95;code(std::errc::operation&#95;canceled);</Highlight></CodeLine>
-<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (PollStatus == SOCKET&#95;ERROR)</Highlight></CodeLine>
-<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (PollStatus == -1)</Highlight></CodeLine>
-<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>();</Highlight></CodeLine>
-<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (PollStatus == 0)</Highlight></CodeLine>
-<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;error&#95;code(std::errc::timed&#95;out);</Highlight></CodeLine>
-<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (FD&#91;0&#93;.revents &amp; POLLNVAL)</Highlight></CodeLine>
-<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;error&#95;code(std::errc::bad&#95;file&#95;descriptor);</Highlight></CodeLine>
-<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::error&#95;code();</Highlight></CodeLine>
-<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal"><a href="/docs/api/classes/llvm/expected">Expected&lt;std::unique&#95;ptr&lt;raw&#95;socket&#95;stream&gt;</a>&gt;</Highlight></CodeLine>
-<Link id="l00254" /><CodeLine lineNumber="254" lineLink="/docs/api/classes/llvm/listeningsocket/#ac080084a7f9f9a2d530621e41a309967"><Highlight kind="normal"><a href="/docs/api/classes/llvm/listeningsocket/#ac080084a7f9f9a2d530621e41a309967">ListeningSocket::accept</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::chrono::milliseconds &amp;Timeout) &#123;</Highlight></CodeLine>
-<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> getActiveFD = &#91;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">&#93;() -&gt; </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> FD; &#125;;</Highlight></CodeLine>
-<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal">  std::error&#95;code TimeoutErr = <a href="#ab48a833c4f2a5ebcee2b8abada3e0ac5">manageTimeout</a>(Timeout, getActiveFD, PipeFD&#91;0&#93;);</Highlight></CodeLine>
-<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (TimeoutErr)</Highlight></CodeLine>
-<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(TimeoutErr, </Highlight><Highlight kind="stringliteral">&quot;Timeout error&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> AcceptFD;</Highlight></CodeLine>
-<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">  SOCKET WinAcceptSock = <a href="/docs/api/classes/llvm/listeningsocket/#ac080084a7f9f9a2d530621e41a309967">::accept</a>(&#95;get&#95;osfhandle(FD), NULL, NULL);</Highlight></CodeLine>
-<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">  AcceptFD = &#95;open&#95;osfhandle(WinAcceptSock, 0);</Highlight></CodeLine>
-<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">  AcceptFD = <a href="/docs/api/classes/llvm/listeningsocket/#ac080084a7f9f9a2d530621e41a309967">::accept</a>(FD, NULL, NULL);</Highlight></CodeLine>
-<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (AcceptFD == -1)</Highlight></CodeLine>
-<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(<a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>(),</Highlight></CodeLine>
-<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">                                         </Highlight><Highlight kind="stringliteral">&quot;Socket accept failed&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;unique&lt;raw&#95;socket&#95;stream&gt;(AcceptFD);</Highlight></CodeLine>
-<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00274" /><CodeLine lineNumber="274" lineLink="/docs/api/classes/llvm/listeningsocket/#a682299af2a92a43ba340ce4a0ce736ba"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/listeningsocket/#a682299af2a92a43ba340ce4a0ce736ba">ListeningSocket::shutdown</a>() &#123;</Highlight></CodeLine>
-<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> ObservedFD = FD.load();</Highlight></CodeLine>
-<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ObservedFD == -1)</Highlight></CodeLine>
-<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// If FD equals ObservedFD set FD to -1; If FD doesn&#39;t equal ObservedFD then</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// another thread is responsible for shutdown so return</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!FD.compare&#95;exchange&#95;strong(ObservedFD, -1))</Highlight></CodeLine>
-<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">  ::close(ObservedFD);</Highlight></CodeLine>
-<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">  ::unlink(SocketPath.c&#95;str());</Highlight></CodeLine>
-<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Ensure ::poll returns if shutdown is called by a separate thread</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> Byte = </Highlight><Highlight kind="charliteral">&#39;A&#39;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">  ssize&#95;t written = <a href="/docs/api/namespaces/llvm/#a7363e46d4dd6c78affffabaea0de482b">::write</a>(PipeFD&#91;1&#93;, &amp;Byte, 1);</Highlight></CodeLine>
-<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Ignore any write() error</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal">  (void)written;</Highlight></CodeLine>
-<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00296" /><CodeLine lineNumber="296" lineLink="/docs/api/classes/llvm/listeningsocket/#aab6af2845a3e2eacf99fe9a593660142"><Highlight kind="normal"><a href="/docs/api/classes/llvm/listeningsocket/#aab6af2845a3e2eacf99fe9a593660142">ListeningSocket::~ListeningSocket</a>() &#123;</Highlight></CodeLine>
-<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/listeningsocket/#a682299af2a92a43ba340ce4a0ce736ba">shutdown</a>();</Highlight></CodeLine>
-<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Close the pipe&#39;s FDs in the destructor instead of within</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// ListeningSocket::shutdown to avoid unnecessary synchronization issues that</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// would occur as PipeFD&#39;s values would have to be changed to -1</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The move constructor sets PipeFD to -1</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (PipeFD&#91;0&#93; != -1)</Highlight></CodeLine>
-<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="normal">    ::close(PipeFD&#91;0&#93;);</Highlight></CodeLine>
-<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (PipeFD&#91;1&#93; != -1)</Highlight></CodeLine>
-<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="normal">    ::close(PipeFD&#91;1&#93;);</Highlight></CodeLine>
-<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="normal"></Highlight><Highlight kind="comment">//  raw&#95;socket&#95;stream</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00314" /><CodeLine lineNumber="314" lineLink="/docs/api/classes/llvm/raw-socket-stream/#a86d8427648f496899f5aeb5e92ea6e81"><Highlight kind="normal"><a href="/docs/api/classes/llvm/raw-socket-stream/#a86d8427648f496899f5aeb5e92ea6e81">raw&#95;socket&#95;stream::raw&#95;socket&#95;stream</a>(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> SocketFD)</Highlight></CodeLine>
-<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal">    : <a href="/docs/api/classes/llvm/raw-fd-stream/#ac9a76e6fdfee784d51393f12ce7c5256">raw&#95;fd&#95;stream</a>(SocketFD, <a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00317" /><CodeLine lineNumber="317" lineLink="/docs/api/classes/llvm/raw-socket-stream/#abe1405099d634d6a8fa75d0ad84fe9f1"><Highlight kind="normal"><a href="/docs/api/classes/llvm/raw-socket-stream/#abe1405099d634d6a8fa75d0ad84fe9f1">raw&#95;socket&#95;stream::~raw&#95;socket&#95;stream</a>() &#123;&#125;</Highlight></CodeLine>
-<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal"><a href="/docs/api/classes/llvm/expected">Expected&lt;std::unique&#95;ptr&lt;raw&#95;socket&#95;stream&gt;</a>&gt;</Highlight></CodeLine>
-<Link id="l00320" /><CodeLine lineNumber="320" lineLink="/docs/api/classes/llvm/raw-socket-stream/#a15311330f8fe55f5a39073ea9eab65a3"><Highlight kind="normal"><a href="/docs/api/classes/llvm/raw-socket-stream/#a15311330f8fe55f5a39073ea9eab65a3">raw&#95;socket&#95;stream::createConnectedUnix</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> SocketPath) &#123;</Highlight></CodeLine>
-<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">  WSABalancer <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonmccodeemitter-cpp/#ae4dfd7b0d66121016d6466d2ff10e8ba">&#95;</a>;</Highlight></CodeLine>
-<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;WIN32</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/expected">Expected&lt;int&gt;</a> FD = <a href="#a01d53f471176148059cb8cd09dffe690">getSocketFD</a>(SocketPath);</Highlight></CodeLine>
-<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!FD)</Highlight></CodeLine>
-<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> FD.takeError();</Highlight></CodeLine>
-<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> std::make&#95;unique&lt;raw&#95;socket&#95;stream&gt;(&#42;FD);</Highlight></CodeLine>
-<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00330" /><CodeLine lineNumber="330" lineLink="/docs/api/classes/llvm/raw-socket-stream/#af22cc7ec55d3e7b68bf83856ed991f0e"><Highlight kind="normal">ssize&#95;t <a href="/docs/api/classes/llvm/raw-socket-stream/#af22cc7ec55d3e7b68bf83856ed991f0e">raw&#95;socket&#95;stream::read</a>(</Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>,</Highlight></CodeLine>
-<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal">                                </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::chrono::milliseconds &amp;Timeout) &#123;</Highlight></CodeLine>
-<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> getActiveFD = &#91;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">&#93;() -&gt; </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> this-&gt;<a href="/docs/api/classes/llvm/raw-fd-ostream/#ad429e128376a6912c6074e6c59dab97e">get&#95;fd</a>(); &#125;;</Highlight></CodeLine>
-<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal">  std::error&#95;code Err = <a href="#ab48a833c4f2a5ebcee2b8abada3e0ac5">manageTimeout</a>(Timeout, getActiveFD);</Highlight></CodeLine>
-<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Mimic raw&#95;fd&#95;stream::read error handling behavior</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Err) &#123;</Highlight></CodeLine>
-<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/raw-fd-ostream/#af96ea3efa5212f54e22e5d5d01cf029c">raw&#95;fd&#95;stream::error&#95;detected</a>(Err);</Highlight></CodeLine>
-<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> -1;</Highlight></CodeLine>
-<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/raw-fd-stream/#af64d05ca7d5c140c9a967027408c93a8">raw&#95;fd&#95;stream::read</a>(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>);</Highlight></CodeLine>
-<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===-- llvm/Support/raw&#95;socket&#95;stream.cpp - Socket streams --&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This file contains raw&#95;ostream implementations for streams to communicate</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">// via UNIX sockets</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-socket-stream-h">llvm/Support/raw&#95;socket&#95;stream.h</a>&quot;</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightPreprocessor">#include &quot;llvm/Config/config.h&quot;</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/error-h">llvm/Support/Error.h</a>&quot;</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/filesystem-h">llvm/Support/FileSystem.h</a>&quot;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightPreprocessor">#include &lt;atomic&gt;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">#include &lt;fcntl.h&gt;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightPreprocessor">#include &lt;functional&gt;</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightPreprocessor">#ifndef &#95;WIN32</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightPreprocessor">#include &lt;poll.h&gt;</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightPreprocessor">#include &lt;sys/socket.h&gt;</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightPreprocessor">#include &lt;sys/un.h&gt;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/include/llvm/support/windows/windowssupport-h">llvm/Support/Windows/WindowsSupport.h</a>&quot;</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightComment">// winsock2.h must be included before afunix.h. Briefly turn off clang-format to</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightComment">// avoid error.</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightComment">// clang-format off</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlightPreprocessor">#include &lt;winsock2.h&gt;</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightPreprocessor">#include &lt;afunix.h&gt;</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightComment">// clang-format on</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlightPreprocessor">#include &lt;io.h&gt;</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// &#95;WIN32</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightPreprocessor">#if defined(HAVE&#95;UNISTD&#95;H)</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightPreprocessor">#include &lt;unistd.h&gt;</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlightKeyword">using namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a>;</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlightPreprocessor">#ifdef &#95;WIN32</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlight">WSABalancer::WSABalancer() &#123;</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlight">  WSADATA WsaData;</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlight">  ::memset(&amp;WsaData, 0, </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(WsaData));</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (WSAStartup(MAKEWORD(2, 2), &amp;WsaData) != 0) &#123;</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/#a7f2a3d4dcfee70225988aec53ff1e173">llvm::report&#95;fatal&#95;error</a>(</span><span class="doxyHighlightStringLiteral">&quot;WSAStartup failed&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlight">WSABalancer::~WSABalancer() &#123; WSACleanup(); &#125;</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// &#95;WIN32</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56" lineLink="#a962923a59c6a9e8ab55ec73dc320f68f"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> std::error&#95;code <a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>() &#123;</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlightPreprocessor">#ifdef &#95;WIN32</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::error&#95;code(::WSAGetLastError(), std::system&#95;category());</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ae075c94db10b09d6d5876d32219eaf0d">errnoAsErrorCode</a>();</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64" lineLink="#ac93e3301780b206d83d8a7c768ce4992"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> sockaddr&#95;un <a href="#ac93e3301780b206d83d8a7c768ce4992">setSocketAddr</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> SocketPath) &#123;</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">sockaddr&#95;un Addr;</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlight">  memset(&amp;Addr, 0, </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(Addr));</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlight">  Addr.sun&#95;family = AF&#95;UNIX;</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlight">  strncpy(Addr.sun&#95;path, SocketPath.<a href="/docs/api/classes/llvm/stringref/#a223dd14e7d12bc5cea01889b972a98b2">str</a>().c&#95;str(), </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(Addr.sun&#95;path) - 1);</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> Addr;</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72" lineLink="#a01d53f471176148059cb8cd09dffe690"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/expected">Expected&lt;int&gt;</a> <a href="#a01d53f471176148059cb8cd09dffe690">getSocketFD</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> SocketPath) &#123;</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlightPreprocessor">#ifdef &#95;WIN32</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlight">  SOCKET Socket = socket(AF&#95;UNIX, SOCK&#95;STREAM, 0);</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Socket == INVALID&#95;SOCKET) &#123;</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> Socket = socket(AF&#95;UNIX, SOCK&#95;STREAM, 0);</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Socket == -1) &#123;</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// &#95;WIN32</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(<a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>(),</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlight">                                         </span><span class="doxyHighlightStringLiteral">&quot;Create socket failed&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">sockaddr&#95;un Addr = <a href="#ac93e3301780b206d83d8a7c768ce4992">setSocketAddr</a>(SocketPath);</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (::connect(Socket, (</span><span class="doxyHighlightKeyword">struct</span><span class="doxyHighlight"> sockaddr &#42;)&amp;Addr, </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(Addr)) == -1)</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(<a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>(),</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlight">                                         </span><span class="doxyHighlightStringLiteral">&quot;Connect socket failed&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlightPreprocessor">#ifdef &#95;WIN32</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> &#95;open&#95;osfhandle(Socket, 0);</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> Socket;</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// &#95;WIN32</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><span class="doxyHighlight">ListeningSocket::ListeningSocket(</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> SocketFD, <a href="/docs/api/classes/llvm/stringref">StringRef</a> SocketPath,</span></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlight">                                 </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> PipeFD&#91;2&#93;)</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlight">    : FD(SocketFD), SocketPath(SocketPath), PipeFD&#123;PipeFD&#91;0&#93;, PipeFD&#91;1&#93;&#125; &#123;&#125;</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100" lineLink="/docs/api/classes/llvm/listeningsocket/#a00e7ab1ab38cc68f656ce8a425d536bf"><span class="doxyHighlight">ListeningSocket::ListeningSocket(ListeningSocket &amp;&amp;LS)</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlight">    : FD(LS.FD.<a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/amdgpumarklastscratchload-cpp/#a8a3fe89940744b94ffe5dacd6704c2be">load</a>()), SocketPath(LS.SocketPath),</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlight">      PipeFD&#123;LS.PipeFD&#91;0&#93;, LS.PipeFD&#91;1&#93;&#125; &#123;</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><span class="doxyHighlight">  LS.FD = -1;</span></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlight">  LS.SocketPath.clear();</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlight">  LS.PipeFD&#91;0&#93; = -1;</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><span class="doxyHighlight">  LS.PipeFD&#91;1&#93; = -1;</span></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110" lineLink="/docs/api/classes/llvm/listeningsocket/#a22cd57e089541409aa05153237a44729"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/expected">Expected&lt;ListeningSocket&gt;</a> <a href="/docs/api/classes/llvm/listeningsocket/#a22cd57e089541409aa05153237a44729">ListeningSocket::createUnix</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> SocketPath,</span></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlight">                                                      </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> MaxBacklog) &#123;</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Handle instances where the target socket address already exists and</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// differentiate between a preexisting file with and without a bound socket</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// ::bind will return std::errc:address&#95;in&#95;use if a file at the socket address</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// already exists (e.g., the file was not properly unlinked due to a crash)</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// even if another socket has not yet binded to that address</span></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="/docs/api/namespaces/llvm/sys/fs/#a645a607ffcccb12f16a5736db991e7d9">llvm::sys::fs::exists</a>(SocketPath)) &#123;</span></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/expected">Expected&lt;int&gt;</a> MaybeFD = <a href="#a01d53f471176148059cb8cd09dffe690">getSocketFD</a>(SocketPath);</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!MaybeFD) &#123;</span></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// Regardless of the error, notify the caller that a file already exists</span></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// at the desired socket address and that there is no bound socket at that</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// address. The file must be removed before ::bind can use the address</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlight">      <a href="/docs/api/namespaces/llvm/#aee0e70be66536b9ef7b65ae2e5a45959">consumeError</a>(MaybeFD.<a href="/docs/api/classes/llvm/expected/#a94789df4ebd03dc008e8adebaa66ac1f">takeError</a>());</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(</span></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><span class="doxyHighlight">          std::make&#95;error&#95;code(std::errc::file&#95;exists),</span></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><span class="doxyHighlight">          </span><span class="doxyHighlightStringLiteral">&quot;Socket address unavailable&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><span class="doxyHighlight">    ::close(std::move(&#42;MaybeFD));</span></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Notify caller that the provided socket address already has a bound socket</span></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(</span></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><span class="doxyHighlight">        std::make&#95;error&#95;code(std::errc::address&#95;in&#95;use),</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><span class="doxyHighlight">        </span><span class="doxyHighlightStringLiteral">&quot;Socket address unavailable&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><span class="doxyHighlightPreprocessor">#ifdef &#95;WIN32</span></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><span class="doxyHighlight">  WSABalancer <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonmccodeemitter-cpp/#ae4dfd7b0d66121016d6466d2ff10e8ba">&#95;</a>;</span></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><span class="doxyHighlight">  SOCKET Socket = socket(AF&#95;UNIX, SOCK&#95;STREAM, 0);</span></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Socket == INVALID&#95;SOCKET)</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> Socket = socket(AF&#95;UNIX, SOCK&#95;STREAM, 0);</span></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Socket == -1)</span></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(<a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>(),</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><span class="doxyHighlight">                                         </span><span class="doxyHighlightStringLiteral">&quot;socket create failed&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">sockaddr&#95;un Addr = <a href="#ac93e3301780b206d83d8a7c768ce4992">setSocketAddr</a>(SocketPath);</span></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (::bind(Socket, (</span><span class="doxyHighlightKeyword">struct</span><span class="doxyHighlight"> sockaddr &#42;)&amp;Addr, </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(Addr)) == -1) &#123;</span></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Grab error code from call to ::bind before calling ::close</span></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><span class="doxyHighlight">    std::error&#95;code EC = <a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>();</span></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><span class="doxyHighlight">    ::close(Socket);</span></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(EC, </span><span class="doxyHighlightStringLiteral">&quot;Bind error&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Mark socket as passive so incoming connections can be accepted</span></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (::listen(Socket, MaxBacklog) == -1)</span></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(<a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>(),</span></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><span class="doxyHighlight">                                         </span><span class="doxyHighlightStringLiteral">&quot;Listen error&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> PipeFD&#91;2&#93;;</span></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><span class="doxyHighlightPreprocessor">#ifdef &#95;WIN32</span></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Reserve 1 byte for the pipe and use default textmode</span></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (::&#95;pipe(PipeFD, 1, 0) == -1)</span></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (::pipe(PipeFD) == -1)</span></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// &#95;WIN32</span></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(<a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>(),</span></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><span class="doxyHighlight">                                         </span><span class="doxyHighlightStringLiteral">&quot;pipe failed&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><span class="doxyHighlightPreprocessor">#ifdef &#95;WIN32</span></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> ListeningSocket&#123;&#95;open&#95;osfhandle(Socket, 0), SocketPath, PipeFD&#125;;</span></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> ListeningSocket&#123;Socket, SocketPath, PipeFD&#125;;</span></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// &#95;WIN32</span></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><span class="doxyHighlightComment">// If a file descriptor being monitored by ::poll is closed by another thread,</span></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><span class="doxyHighlightComment">// the result is unspecified. In the case ::poll does not unblock and return,</span></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><span class="doxyHighlightComment">// when ActiveFD is closed, you can provide another file descriptor via CancelFD</span></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><span class="doxyHighlightComment">// that when written to will cause poll to return. Typically CancelFD is the</span></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><span class="doxyHighlightComment">// read end of a unidirectional pipe.</span></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><span class="doxyHighlightComment">// Timeout should be -1 to block indefinitly</span></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><span class="doxyHighlightComment">// getActiveFD is a callback to handle ActiveFD&#39;s of std::atomic&lt;int&gt; and int</span></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> std::error&#95;code</span></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190" lineLink="#ab48a833c4f2a5ebcee2b8abada3e0ac5"><span class="doxyHighlight"><a href="#ab48a833c4f2a5ebcee2b8abada3e0ac5">manageTimeout</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::chrono::milliseconds &amp;Timeout,</span></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><span class="doxyHighlight">              </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::function&lt;</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight">()&gt; &amp;getActiveFD,</span></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><span class="doxyHighlight">              </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::optional&lt;int&gt; &amp;CancelFD = std::nullopt) &#123;</span></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">pollfd FD&#91;2&#93;;</span></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><span class="doxyHighlight">  FD&#91;0&#93;.events = POLLIN;</span></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><span class="doxyHighlightPreprocessor">#ifdef &#95;WIN32</span></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><span class="doxyHighlight">  SOCKET WinServerSock = &#95;get&#95;osfhandle(getActiveFD());</span></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><span class="doxyHighlight">  FD&#91;0&#93;.fd = WinServerSock;</span></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><span class="doxyHighlight">  FD&#91;0&#93;.fd = getActiveFD();</span></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><span class="doxyHighlight">  uint8&#95;t FDCount = 1;</span></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (CancelFD.has&#95;value()) &#123;</span></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><span class="doxyHighlight">    FD&#91;1&#93;.events = POLLIN;</span></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><span class="doxyHighlight">    FD&#91;1&#93;.fd = CancelFD.value();</span></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><span class="doxyHighlight">    FDCount++;</span></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Keep track of how much time has passed in case ::poll or WSAPoll are</span></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// interupted by a signal and need to be recalled</span></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> Start = std::chrono::steady&#95;clock::now();</span></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> RemainingTimeout = Timeout;</span></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> PollStatus = 0;</span></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">do</span><span class="doxyHighlight"> &#123;</span></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// If Timeout is -1 then poll should block and RemainingTimeout does not</span></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// need to be recalculated</span></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (PollStatus != 0 &amp;&amp; Timeout != std::chrono::milliseconds(-1)) &#123;</span></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> TotalElapsedTime =</span></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><span class="doxyHighlight">          std::chrono::duration&#95;cast&lt;std::chrono::milliseconds&gt;(</span></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><span class="doxyHighlight">              std::chrono::steady&#95;clock::now() - Start);</span></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (TotalElapsedTime &gt;= Timeout)</span></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::make&#95;error&#95;code(std::errc::operation&#95;would&#95;block);</span></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><span class="doxyHighlight">      RemainingTimeout = Timeout - TotalElapsedTime;</span></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><span class="doxyHighlightPreprocessor">#ifdef &#95;WIN32</span></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><span class="doxyHighlight">    PollStatus = WSAPoll(FD, FDCount, RemainingTimeout.count());</span></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><span class="doxyHighlight">  &#125; </span><span class="doxyHighlightKeywordFlow">while</span><span class="doxyHighlight"> (PollStatus == SOCKET&#95;ERROR &amp;&amp;</span></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><span class="doxyHighlight">           <a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>() == std::errc::interrupted);</span></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><span class="doxyHighlight">    PollStatus = ::poll(FD, FDCount, RemainingTimeout.count());</span></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><span class="doxyHighlight">  &#125; </span><span class="doxyHighlightKeywordFlow">while</span><span class="doxyHighlight"> (PollStatus == -1 &amp;&amp;</span></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><span class="doxyHighlight">           <a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>() == std::errc::interrupted);</span></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// If ActiveFD equals -1 or CancelFD has data to be read then the operation</span></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// has been canceled by another thread</span></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (getActiveFD() == -1 || (CancelFD.has&#95;value() &amp;&amp; FD&#91;1&#93;.revents &amp; POLLIN))</span></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::make&#95;error&#95;code(std::errc::operation&#95;canceled);</span></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><span class="doxyHighlightPreprocessor">#if &#95;WIN32</span></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (PollStatus == SOCKET&#95;ERROR)</span></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (PollStatus == -1)</span></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>();</span></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (PollStatus == 0)</span></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::make&#95;error&#95;code(std::errc::timed&#95;out);</span></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (FD&#91;0&#93;.revents &amp; POLLNVAL)</span></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::make&#95;error&#95;code(std::errc::bad&#95;file&#95;descriptor);</span></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::error&#95;code();</span></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/expected">Expected&lt;std::unique&#95;ptr&lt;raw&#95;socket&#95;stream&gt;</a>&gt;</span></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254" lineLink="/docs/api/classes/llvm/listeningsocket/#ac080084a7f9f9a2d530621e41a309967"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/listeningsocket/#ac080084a7f9f9a2d530621e41a309967">ListeningSocket::accept</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::chrono::milliseconds &amp;Timeout) &#123;</span></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> getActiveFD = &#91;</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">&#93;() -&gt; </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> FD; &#125;;</span></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><span class="doxyHighlight">  std::error&#95;code TimeoutErr = <a href="#ab48a833c4f2a5ebcee2b8abada3e0ac5">manageTimeout</a>(Timeout, getActiveFD, PipeFD&#91;0&#93;);</span></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (TimeoutErr)</span></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(TimeoutErr, </span><span class="doxyHighlightStringLiteral">&quot;Timeout error&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> AcceptFD;</span></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><span class="doxyHighlightPreprocessor">#ifdef &#95;WIN32</span></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><span class="doxyHighlight">  SOCKET WinAcceptSock = <a href="/docs/api/classes/llvm/listeningsocket/#ac080084a7f9f9a2d530621e41a309967">::accept</a>(&#95;get&#95;osfhandle(FD), NULL, NULL);</span></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><span class="doxyHighlight">  AcceptFD = &#95;open&#95;osfhandle(WinAcceptSock, 0);</span></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><span class="doxyHighlightPreprocessor">#else</span></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><span class="doxyHighlight">  AcceptFD = <a href="/docs/api/classes/llvm/listeningsocket/#ac080084a7f9f9a2d530621e41a309967">::accept</a>(FD, NULL, NULL);</span></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (AcceptFD == -1)</span></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a9999bd897fc8a1648bd69b36fee2d357">llvm::make&#95;error&lt;StringError&gt;</a>(<a href="#a962923a59c6a9e8ab55ec73dc320f68f">getLastSocketErrorCode</a>(),</span></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><span class="doxyHighlight">                                         </span><span class="doxyHighlightStringLiteral">&quot;Socket accept failed&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::make&#95;unique&lt;raw&#95;socket&#95;stream&gt;(AcceptFD);</span></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274" lineLink="/docs/api/classes/llvm/listeningsocket/#a682299af2a92a43ba340ce4a0ce736ba"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/listeningsocket/#a682299af2a92a43ba340ce4a0ce736ba">ListeningSocket::shutdown</a>() &#123;</span></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> ObservedFD = FD.load();</span></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (ObservedFD == -1)</span></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// If FD equals ObservedFD set FD to -1; If FD doesn&#39;t equal ObservedFD then</span></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// another thread is responsible for shutdown so return</span></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!FD.compare&#95;exchange&#95;strong(ObservedFD, -1))</span></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><span class="doxyHighlight">  ::close(ObservedFD);</span></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><span class="doxyHighlight">  ::unlink(SocketPath.c&#95;str());</span></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Ensure ::poll returns if shutdown is called by a separate thread</span></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> Byte = </span><span class="doxyHighlightCharLiteral">&#39;A&#39;</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><span class="doxyHighlight">  ssize&#95;t written = <a href="/docs/api/namespaces/llvm/#a7363e46d4dd6c78affffabaea0de482b">::write</a>(PipeFD&#91;1&#93;, &amp;Byte, 1);</span></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Ignore any write() error</span></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"><span class="doxyHighlight">  (void)written;</span></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296" lineLink="/docs/api/classes/llvm/listeningsocket/#aab6af2845a3e2eacf99fe9a593660142"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/listeningsocket/#aab6af2845a3e2eacf99fe9a593660142">ListeningSocket::~ListeningSocket</a>() &#123;</span></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/listeningsocket/#a682299af2a92a43ba340ce4a0ce736ba">shutdown</a>();</span></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Close the pipe&#39;s FDs in the destructor instead of within</span></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// ListeningSocket::shutdown to avoid unnecessary synchronization issues that</span></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// would occur as PipeFD&#39;s values would have to be changed to -1</span></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// The move constructor sets PipeFD to -1</span></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (PipeFD&#91;0&#93; != -1)</span></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><span class="doxyHighlight">    ::close(PipeFD&#91;0&#93;);</span></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (PipeFD&#91;1&#93; != -1)</span></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><span class="doxyHighlight">    ::close(PipeFD&#91;1&#93;);</span></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><span class="doxyHighlightComment">//  raw&#95;socket&#95;stream</span></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314" lineLink="/docs/api/classes/llvm/raw-socket-stream/#a86d8427648f496899f5aeb5e92ea6e81"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/raw-socket-stream/#a86d8427648f496899f5aeb5e92ea6e81">raw&#95;socket&#95;stream::raw&#95;socket&#95;stream</a>(</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> SocketFD)</span></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><span class="doxyHighlight">    : <a href="/docs/api/classes/llvm/raw-fd-stream/#ac9a76e6fdfee784d51393f12ce7c5256">raw&#95;fd&#95;stream</a>(SocketFD, <a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>) &#123;&#125;</span></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317" lineLink="/docs/api/classes/llvm/raw-socket-stream/#abe1405099d634d6a8fa75d0ad84fe9f1"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/raw-socket-stream/#abe1405099d634d6a8fa75d0ad84fe9f1">raw&#95;socket&#95;stream::~raw&#95;socket&#95;stream</a>() &#123;&#125;</span></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/expected">Expected&lt;std::unique&#95;ptr&lt;raw&#95;socket&#95;stream&gt;</a>&gt;</span></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320" lineLink="/docs/api/classes/llvm/raw-socket-stream/#a15311330f8fe55f5a39073ea9eab65a3"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/raw-socket-stream/#a15311330f8fe55f5a39073ea9eab65a3">raw&#95;socket&#95;stream::createConnectedUnix</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> SocketPath) &#123;</span></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><span class="doxyHighlightPreprocessor">#ifdef &#95;WIN32</span></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><span class="doxyHighlight">  WSABalancer <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/lib/target/hexagon/mctargetdesc/hexagonmccodeemitter-cpp/#ae4dfd7b0d66121016d6466d2ff10e8ba">&#95;</a>;</span></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// &#95;WIN32</span></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/expected">Expected&lt;int&gt;</a> FD = <a href="#a01d53f471176148059cb8cd09dffe690">getSocketFD</a>(SocketPath);</span></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!FD)</span></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> FD.takeError();</span></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::make&#95;unique&lt;raw&#95;socket&#95;stream&gt;(&#42;FD);</span></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330" lineLink="/docs/api/classes/llvm/raw-socket-stream/#af22cc7ec55d3e7b68bf83856ed991f0e"><span class="doxyHighlight">ssize&#95;t <a href="/docs/api/classes/llvm/raw-socket-stream/#af22cc7ec55d3e7b68bf83856ed991f0e">raw&#95;socket&#95;stream::read</a>(</span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>,</span></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><span class="doxyHighlight">                                </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::chrono::milliseconds &amp;Timeout) &#123;</span></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> getActiveFD = &#91;</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">&#93;() -&gt; </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> this-&gt;<a href="/docs/api/classes/llvm/raw-fd-ostream/#ad429e128376a6912c6074e6c59dab97e">get&#95;fd</a>(); &#125;;</span></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><span class="doxyHighlight">  std::error&#95;code Err = <a href="#ab48a833c4f2a5ebcee2b8abada3e0ac5">manageTimeout</a>(Timeout, getActiveFD);</span></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Mimic raw&#95;fd&#95;stream::read error handling behavior</span></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Err) &#123;</span></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/raw-fd-ostream/#af96ea3efa5212f54e22e5d5d01cf029c">raw&#95;fd&#95;stream::error&#95;detected</a>(Err);</span></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> -1;</span></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/raw-fd-stream/#af64d05ca7d5c140c9a967027408c93a8">raw&#95;fd&#95;stream::read</a>(<a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#aca185e6d0e9f423dbb24440206454872a11dbf501abf829b3ab7049c2d3a8a053">Ptr</a>, <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>);</span></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><span class="doxyHighlight">&#125;</span></CodeLine>
 
 </ProgramListing>
 

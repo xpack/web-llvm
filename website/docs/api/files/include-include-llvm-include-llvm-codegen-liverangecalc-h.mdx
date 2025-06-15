@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -108,275 +107,275 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- LiveRangeCalc.h - Calculate live ranges -----------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// The LiveRangeCalc class can be used to implement the computation of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// live ranges from scratch.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// It caches information about values in the CFG to speed up repeated</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// operations on the same live range.  The cache can be shared by</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// non-overlapping live ranges. SplitKit uses that when computing the live</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">// range of split products.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">// A low-level interface is available to clients that know where a variable is</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">// live, but don&#39;t know which value it has as every point.  LiveRangeCalc will</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="comment">// propagate values down the dominator tree, and even insert PHI-defs where</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="comment">// needed. SplitKit uses this faster interface when possible.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;CODEGEN&#95;LIVERANGECALC&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;CODEGEN&#95;LIVERANGECALC&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h">llvm/ADT/ArrayRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/bitvector-h">llvm/ADT/BitVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h">llvm/ADT/DenseMap.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/indexedmap-h">llvm/ADT/IndexedMap.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/liveinterval-h">llvm/CodeGen/LiveInterval.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/machinebasicblock-h">llvm/CodeGen/MachineBasicBlock.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/slotindexes-h">llvm/CodeGen/SlotIndexes.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;utility&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> NodeT&gt; </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/domtreenodebase">DomTreeNodeBase</a>;</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a>;</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a>;</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a>;</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a94b65b831ad8756f7d3a029a1e599f75">MachineDomTreeNode</a> = <a href="/docs/api/classes/llvm/domtreenodebase">DomTreeNodeBase&lt;MachineBasicBlock&gt;</a>;</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45" lineLink="/docs/api/classes/llvm/liverangecalc"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/liverangecalc/#ae41cc4877968749dfa2b1fc3f1110a19">LiveRangeCalc</a> &#123;</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42;MF = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &#42;MRI = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/slotindexes">SlotIndexes</a> &#42;Indexes = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a> &#42;DomTree = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/vninfo/#aa750a7f159760b9c378d930deb6a9837">VNInfo::Allocator</a> &#42;Alloc = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="comment">  /// LiveOutPair - A value and the block that defined it.  The domtree node is</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">  /// redundant, it can be computed as: MDT&#91;Indexes.getMBBFromIndex(VNI-&gt;def)&#93;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">LiveOutPair = std::pair&lt;VNInfo &#42;, MachineDomTreeNode &#42;&gt;;</Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="comment">  /// LiveOutMap - Map basic blocks to the value leaving the block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">LiveOutMap = <a href="/docs/api/classes/llvm/indexedmap">IndexedMap&lt;LiveOutPair, MBB2NumberFunctor&gt;</a>;</Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">  /// Bit vector of active entries in LiveOut, also used as a visited set by</Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="comment">  /// findReachingDefs.  One entry per basic block, indexed by block number.</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="comment">  /// This is kept as a separate bit vector because it can be cleared quickly</Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="comment">  /// when switching live ranges.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/bitvector">BitVector</a> Seen;</Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="comment">  /// Map LiveRange to sets of blocks (represented by bit vectors) that</Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="comment">  /// in the live range are defined on entry and undefined on entry.</Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="comment">  /// A block is defined on entry if there is a path from at least one of</Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="comment">  /// the defs in the live range to the entry of the block, and conversely,</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="comment">  /// a block is undefined on entry, if there is no such path (i.e. no</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="comment">  /// definition reaches the entry of the block). A single LiveRangeCalc</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">  /// object is used to track live-out information for multiple registers</Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">  /// in live range splitting (which is ok, since the live ranges of these</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="comment">  /// registers do not overlap), but the defined/undefined information must</Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">  /// be kept separate for each individual range.</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">  /// By convention, EntryInfoMap&#91;&amp;LR&#93; = &#123; Defined, Undefined &#125;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">EntryInfoMap = <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;LiveRange &#42;, std::pair&lt;BitVector, BitVector&gt;</a>&gt;;</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  EntryInfoMap EntryInfos;</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="comment">  /// Map each basic block where a live range is live out to the live-out value</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="comment">  /// and its defining block.</Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">  /// For every basic block, MBB, one of these conditions shall be true:</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  ///  1 !Seen.count(MBB-&gt;getNumber())</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="comment">  ///     Blocks without a Seen bit are ignored.</Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="comment">  ///  2 LiveOut&#91;MBB&#93;.second.getNode() == MBB</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="comment">  ///     The live-out value is defined in MBB.</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">  ///  3 forall P in preds(MBB): LiveOut&#91;P&#93; == LiveOut&#91;MBB&#93;</Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">  ///     The live-out value passses through MBB. All predecessors must carry</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">  ///     the same value.</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="comment">  /// The domtree node may be null, it can be computed.</Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">  /// The map can be shared by multiple live ranges as long as no two are</Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">  /// live-out of the same block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  LiveOutMap Map;</Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">  /// LiveInBlock - Information about a basic block where a live range is known</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  /// to be live-in, but the value has not yet been determined.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">LiveInBlock &#123;</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// The live range set that is live-in to this block.  The algorithms can</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// handle multiple non-overlapping live ranges simultaneously.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/liverange">LiveRange</a> &amp;LR;</Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// DomNode - Dominator tree node for the block.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Cleared when the final value has been determined and LI has been updated.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a94b65b831ad8756f7d3a029a1e599f75">MachineDomTreeNode</a> &#42;DomNode;</Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Position in block where the live-in range ends, or SlotIndex() if the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// range passes through the block.  When the final value has been</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// determined, the range from the block start to Kill will be added to LI.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> Kill;</Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Live-in value filled in by updateSSA once it is known.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">    <a href="/docs/api/classes/llvm/vninfo">VNInfo</a> &#42;<a href="/docs/api/classes/llvm/value">Value</a> = </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">    LiveInBlock(<a href="/docs/api/classes/llvm/liverange">LiveRange</a> &amp;LR, <a href="/docs/api/namespaces/llvm/#a94b65b831ad8756f7d3a029a1e599f75">MachineDomTreeNode</a> &#42;node, <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> kill)</Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">        : LR(LR), DomNode(node), Kill(kill) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">  /// LiveIn - Work list of blocks where the live-in value has yet to be</Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="comment">  /// determined.  This list is typically computed by findReachingDefs() and</Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="comment">  /// used as a work list by updateSSA().  The low-level interface may also be</Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="comment">  /// used to add entries directly.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;LiveInBlock, 16&gt;</a> LiveIn;</Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="comment">  /// Check if the entry to block @p MBB can be reached by any of the defs</Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="comment">  /// in @p LR. Return true if none of the defs reach the entry to @p MBB.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isDefOnEntry(<a href="/docs/api/classes/llvm/liverange">LiveRange</a> &amp;LR, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;SlotIndex&gt;</a> Undefs,</Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">                    <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/docs/api/classes/llvm/bitvector">BitVector</a> &amp;DefOnEntry,</Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">                    <a href="/docs/api/classes/llvm/bitvector">BitVector</a> &amp;UndefOnEntry);</Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">  /// Find the set of defs that can reach @p Kill. @p Kill must belong to</Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">  /// @p UseMBB.</Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">  /// If exactly one def can reach @p UseMBB, and the def dominates @p Kill,</Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="comment">  /// all paths from the def to @p UseMBB are added to @p LR, and the function</Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">  /// returns true.</Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="comment">  /// If multiple values can reach @p UseMBB, the blocks that need @p LR to be</Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="comment">  /// live in are added to the LiveIn array, and the function returns false.</Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="comment">  /// The array @p Undef provides the locations where the range @p LR becomes</Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="comment">  /// undefined by &lt;def,read-undef&gt; operands on other subranges. If @p Undef</Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="comment">  /// is non-empty and @p Kill is jointly dominated only by the entries of</Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="comment">  /// @p Undef, the function returns false.</Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="comment">  /// PhysReg, when set, is used to verify live-in lists on basic blocks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> findReachingDefs(<a href="/docs/api/classes/llvm/liverange">LiveRange</a> &amp;LR, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp;UseMBB, <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> <a href="/docs/api/classes/llvm/use">Use</a>,</Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">                        </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> PhysReg, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;SlotIndex&gt;</a> Undefs);</Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="comment">  /// updateSSA - Compute the values that will be live in to all requested</Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="comment">  /// blocks in LiveIn.  Create PHI-def values as required to preserve SSA form.</Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="comment">  /// Every live-in block must be jointly dominated by the added live-out</Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="comment">  /// blocks.  No values are read from the live ranges.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> updateSSA();</Highlight></CodeLine>
-<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="comment">  /// Transfer information from the LiveIn vector to the live ranges and update</Highlight></CodeLine>
-<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="comment">  /// the given @p LiveOuts.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> updateFromLiveIns();</Highlight></CodeLine>
-<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="comment">  /// Some getters to expose in a read-only way some private fields to</Highlight></CodeLine>
-<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="comment">  /// subclasses.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00166" /><CodeLine lineNumber="166" lineLink="/docs/api/classes/llvm/liverangecalc/#ab032314f07277bf920fd315187ab9605"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42;<a href="/docs/api/classes/llvm/liverangecalc/#ab032314f07277bf920fd315187ab9605">getMachineFunction</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> MF; &#125;</Highlight></CodeLine>
-<Link id="l00167" /><CodeLine lineNumber="167" lineLink="/docs/api/classes/llvm/liverangecalc/#ad09d2d2f0c1d47c7bc6eb04e33b5e51d"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &#42;<a href="/docs/api/classes/llvm/liverangecalc/#ad09d2d2f0c1d47c7bc6eb04e33b5e51d">getRegInfo</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> MRI; &#125;</Highlight></CodeLine>
-<Link id="l00168" /><CodeLine lineNumber="168" lineLink="/docs/api/classes/llvm/liverangecalc/#a11a21f58b3a7b8b7c401958cd3f7304f"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/slotindexes">SlotIndexes</a> &#42;<a href="/docs/api/classes/llvm/liverangecalc/#a11a21f58b3a7b8b7c401958cd3f7304f">getIndexes</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Indexes; &#125;</Highlight></CodeLine>
-<Link id="l00169" /><CodeLine lineNumber="169" lineLink="/docs/api/classes/llvm/liverangecalc/#a3c8fd02f213ccc28812243ec1f36957c"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a> &#42;<a href="/docs/api/classes/llvm/liverangecalc/#a3c8fd02f213ccc28812243ec1f36957c">getDomTree</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> DomTree; &#125;</Highlight></CodeLine>
-<Link id="l00170" /><CodeLine lineNumber="170" lineLink="/docs/api/classes/llvm/liverangecalc/#a60d4123651abf23e886661980d951ffc"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/vninfo/#aa750a7f159760b9c378d930deb6a9837">VNInfo::Allocator</a> &#42;<a href="/docs/api/classes/llvm/liverangecalc/#a60d4123651abf23e886661980d951ffc">getVNAlloc</a>() &#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Alloc; &#125;</Highlight></CodeLine>
-<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="comment">  /// Reset Map and Seen fields.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/liverangecalc/#a56cefbb66ed770ce1e6df7cbd1fa90d1">resetLiveOutMap</a>();</Highlight></CodeLine>
-<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00176" /><CodeLine lineNumber="176" lineLink="/docs/api/classes/llvm/liverangecalc/#ae41cc4877968749dfa2b1fc3f1110a19"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/liverangecalc/#ae41cc4877968749dfa2b1fc3f1110a19">LiveRangeCalc</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// High-level interface.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Calculate live ranges from scratch.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="comment">  /// reset - Prepare caches for a new set of non-overlapping live ranges.  The</Highlight></CodeLine>
-<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="comment">  /// caches must be reset before attempting calculations with a live range</Highlight></CodeLine>
-<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="comment">  /// that may overlap a previously computed live range, and before the first</Highlight></CodeLine>
-<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="comment">  /// live range in a function.  If live ranges are not known to be</Highlight></CodeLine>
-<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="comment">  /// non-overlapping, call reset before each.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/liverangecalc/#a65f0beed94a7dbdf8c8d7e2b46a0afa0">reset</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42;mf, <a href="/docs/api/classes/llvm/slotindexes">SlotIndexes</a> &#42;<a href="/docs/api/namespaces/llvm/si">SI</a>,</Highlight></CodeLine>
-<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">             <a href="/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a> &#42;MDT, <a href="/docs/api/classes/llvm/vninfo/#aa750a7f159760b9c378d930deb6a9837">VNInfo::Allocator</a> &#42;VNIA);</Highlight></CodeLine>
-<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Mid-level interface.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Modify existing live ranges.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="comment">  /// Extend the live range of @p LR to reach @p Use.</Highlight></CodeLine>
-<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="comment">  /// The existing values in @p LR must be live so they jointly dominate @p Use.</Highlight></CodeLine>
-<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="comment">  /// If @p Use is not dominated by a single existing value, PHI-defs are</Highlight></CodeLine>
-<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="comment">  /// inserted as required to preserve SSA form.</Highlight></CodeLine>
-<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="comment">  /// PhysReg, when set, is used to verify live-in lists on basic blocks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/liverangecalc/#ad445a5028efdf094173a202811f003e3">extend</a>(<a href="/docs/api/classes/llvm/liverange">LiveRange</a> &amp;LR, <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> <a href="/docs/api/classes/llvm/use">Use</a>, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> PhysReg,</Highlight></CodeLine>
-<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">              <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;SlotIndex&gt;</a> Undefs);</Highlight></CodeLine>
-<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Low-level interface.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//===--------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// These functions can be used to compute live ranges where the live-in and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// live-out blocks are already known, but the SSA value in each block is</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// unknown.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// After calling reset(), add known live-out values and known live-in blocks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Then call calculateValues() to compute the actual value that is</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// live-in to each block, and add liveness to the live ranges.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="comment">  /// setLiveOutValue - Indicate that VNI is live out from MBB.  The</Highlight></CodeLine>
-<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="comment">  /// calculateValues() function will not add liveness for MBB, the caller</Highlight></CodeLine>
-<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="comment">  /// should take care of that.</Highlight></CodeLine>
-<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="comment">  /// VNI may be null only if MBB is a live-through block also passed to</Highlight></CodeLine>
-<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="comment">  /// addLiveInBlock().</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00229" /><CodeLine lineNumber="229" lineLink="/docs/api/classes/llvm/liverangecalc/#ae8e6fcd2d2e7e04fb1aa8fab71910f68"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/liverangecalc/#ae8e6fcd2d2e7e04fb1aa8fab71910f68">setLiveOutValue</a>(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/docs/api/classes/llvm/vninfo">VNInfo</a> &#42;VNI) &#123;</Highlight></CodeLine>
-<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">    Seen.<a href="/docs/api/classes/llvm/bitvector/#a62237ebe27691377a942abe7446332ec">set</a>(<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>-&gt;getNumber());</Highlight></CodeLine>
-<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">    Map&#91;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>&#93; = LiveOutPair(VNI, </Highlight><Highlight kind="keyword">nullptr</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="comment">  /// addLiveInBlock - Add a block with an unknown live-in value.  This</Highlight></CodeLine>
-<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="comment">  /// function can only be called once per basic block.  Once the live-in value</Highlight></CodeLine>
-<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="comment">  /// has been determined, calculateValues() will add liveness to LI.</Highlight></CodeLine>
-<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="comment">  /// @param LR      The live range that is live-in to the block.</Highlight></CodeLine>
-<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="comment">  /// @param DomNode The domtree node for the block.</Highlight></CodeLine>
-<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="comment">  /// @param Kill    Index in block where LI is killed.  If the value is</Highlight></CodeLine>
-<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="comment">  ///                live-through, set Kill = SLotIndex() and also call</Highlight></CodeLine>
-<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="comment">  ///                setLiveOutValue(MBB, 0).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00243" /><CodeLine lineNumber="243" lineLink="/docs/api/classes/llvm/liverangecalc/#a46981dd5d4bb3043b740ce285b7b4a95"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/liverangecalc/#a46981dd5d4bb3043b740ce285b7b4a95">addLiveInBlock</a>(<a href="/docs/api/classes/llvm/liverange">LiveRange</a> &amp;LR, <a href="/docs/api/namespaces/llvm/#a94b65b831ad8756f7d3a029a1e599f75">MachineDomTreeNode</a> &#42;DomNode,</Highlight></CodeLine>
-<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">                      <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> Kill = <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a>()) &#123;</Highlight></CodeLine>
-<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">    LiveIn.<a href="/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">push&#95;back</a>(LiveInBlock(LR, DomNode, Kill));</Highlight></CodeLine>
-<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="comment">  /// calculateValues - Calculate the value that will be live-in to each block</Highlight></CodeLine>
-<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="comment">  /// added with addLiveInBlock.  Add PHI-def values as needed to preserve SSA</Highlight></CodeLine>
-<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="comment">  /// form.  Add liveness to all live-in blocks up to the Kill point, or the</Highlight></CodeLine>
-<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="comment">  /// whole block for live-through blocks.</Highlight></CodeLine>
-<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="comment">  /// Every predecessor of a live-in block must have been given a value with</Highlight></CodeLine>
-<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="comment">  /// setLiveOutValue, the value may be null for live-trough blocks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/liverangecalc/#ae5c960114840d1c6dddfbaa529ac633e">calculateValues</a>();</Highlight></CodeLine>
-<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="comment">  /// A diagnostic function to check if the end of the block @p MBB is</Highlight></CodeLine>
-<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="comment">  /// jointly dominated by the blocks corresponding to the slot indices</Highlight></CodeLine>
-<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="comment">  /// in @p Defs. This function is mainly for use in self-verification</Highlight></CodeLine>
-<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="comment">  /// checks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#acc1c483f4b4ee2f17bb6643a3b353609">LLVM&#95;ATTRIBUTE&#95;UNUSED</a></Highlight></CodeLine>
-<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/liverangecalc/#a13c4005ea769c09d88be76fa40744e7e">isJointlyDominated</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>,</Highlight></CodeLine>
-<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal">                                 <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;SlotIndex&gt;</a> Defs,</Highlight></CodeLine>
-<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">                                 </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/slotindexes">SlotIndexes</a> &amp;Indexes);</Highlight></CodeLine>
-<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;CODEGEN&#95;LIVERANGECALC&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- LiveRangeCalc.h - Calculate live ranges -----------------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// The LiveRangeCalc class can be used to implement the computation of</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">// live ranges from scratch.</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">// It caches information about values in the CFG to speed up repeated</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">// operations on the same live range.  The cache can be shared by</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightComment">// non-overlapping live ranges. SplitKit uses that when computing the live</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightComment">// range of split products.</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightComment">// A low-level interface is available to clients that know where a variable is</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightComment">// live, but don&#39;t know which value it has as every point.  LiveRangeCalc will</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightComment">// propagate values down the dominator tree, and even insert PHI-defs where</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightComment">// needed. SplitKit uses this faster interface when possible.</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;CODEGEN&#95;LIVERANGECALC&#95;H</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightPreprocessor">#define LLVM&#95;CODEGEN&#95;LIVERANGECALC&#95;H</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/arrayref-h">llvm/ADT/ArrayRef.h</a>&quot;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/bitvector-h">llvm/ADT/BitVector.h</a>&quot;</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h">llvm/ADT/DenseMap.h</a>&quot;</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/indexedmap-h">llvm/ADT/IndexedMap.h</a>&quot;</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/liveinterval-h">llvm/CodeGen/LiveInterval.h</a>&quot;</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/machinebasicblock-h">llvm/CodeGen/MachineBasicBlock.h</a>&quot;</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/slotindexes-h">llvm/CodeGen/SlotIndexes.h</a>&quot;</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightPreprocessor">#include &lt;utility&gt;</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> NodeT&gt; </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/domtreenodebase">DomTreeNodeBase</a>;</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a>;</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a>;</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a>;</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/#a94b65b831ad8756f7d3a029a1e599f75">MachineDomTreeNode</a> = <a href="/docs/api/classes/llvm/domtreenodebase">DomTreeNodeBase&lt;MachineBasicBlock&gt;</a>;</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45" lineLink="/docs/api/classes/llvm/liverangecalc"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/liverangecalc/#ae41cc4877968749dfa2b1fc3f1110a19">LiveRangeCalc</a> &#123;</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42;MF = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &#42;MRI = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/slotindexes">SlotIndexes</a> &#42;Indexes = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a> &#42;DomTree = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/vninfo/#aa750a7f159760b9c378d930deb6a9837">VNInfo::Allocator</a> &#42;Alloc = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlightComment">  /// LiveOutPair - A value and the block that defined it.  The domtree node is</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlightComment">  /// redundant, it can be computed as: MDT&#91;Indexes.getMBBFromIndex(VNI-&gt;def)&#93;.</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight">LiveOutPair = std::pair&lt;VNInfo &#42;, MachineDomTreeNode &#42;&gt;;</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlightComment">  /// LiveOutMap - Map basic blocks to the value leaving the block.</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight">LiveOutMap = <a href="/docs/api/classes/llvm/indexedmap">IndexedMap&lt;LiveOutPair, MBB2NumberFunctor&gt;</a>;</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlightComment">  /// Bit vector of active entries in LiveOut, also used as a visited set by</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlightComment">  /// findReachingDefs.  One entry per basic block, indexed by block number.</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlightComment">  /// This is kept as a separate bit vector because it can be cleared quickly</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlightComment">  /// when switching live ranges.</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/bitvector">BitVector</a> Seen;</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlightComment">  /// Map LiveRange to sets of blocks (represented by bit vectors) that</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlightComment">  /// in the live range are defined on entry and undefined on entry.</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlightComment">  /// A block is defined on entry if there is a path from at least one of</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlightComment">  /// the defs in the live range to the entry of the block, and conversely,</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlightComment">  /// a block is undefined on entry, if there is no such path (i.e. no</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlightComment">  /// definition reaches the entry of the block). A single LiveRangeCalc</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlightComment">  /// object is used to track live-out information for multiple registers</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlightComment">  /// in live range splitting (which is ok, since the live ranges of these</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlightComment">  /// registers do not overlap), but the defined/undefined information must</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlightComment">  /// be kept separate for each individual range.</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlightComment">  /// By convention, EntryInfoMap&#91;&amp;LR&#93; = &#123; Defined, Undefined &#125;.</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight">EntryInfoMap = <a href="/docs/api/classes/llvm/densemap">DenseMap&lt;LiveRange &#42;, std::pair&lt;BitVector, BitVector&gt;</a>&gt;;</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlight">  EntryInfoMap EntryInfos;</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlightComment">  /// Map each basic block where a live range is live out to the live-out value</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlightComment">  /// and its defining block.</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlightComment">  /// For every basic block, MBB, one of these conditions shall be true:</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlightComment">  ///  1 !Seen.count(MBB-&gt;getNumber())</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><span class="doxyHighlightComment">  ///     Blocks without a Seen bit are ignored.</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlightComment">  ///  2 LiveOut&#91;MBB&#93;.second.getNode() == MBB</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlightComment">  ///     The live-out value is defined in MBB.</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlightComment">  ///  3 forall P in preds(MBB): LiveOut&#91;P&#93; == LiveOut&#91;MBB&#93;</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlightComment">  ///     The live-out value passses through MBB. All predecessors must carry</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlightComment">  ///     the same value.</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlightComment">  /// The domtree node may be null, it can be computed.</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlightComment">  /// The map can be shared by multiple live ranges as long as no two are</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlightComment">  /// live-out of the same block.</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><span class="doxyHighlight">  LiveOutMap Map;</span></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlightComment">  /// LiveInBlock - Information about a basic block where a live range is known</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlightComment">  /// to be live-in, but the value has not yet been determined.</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">LiveInBlock &#123;</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// The live range set that is live-in to this block.  The algorithms can</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// handle multiple non-overlapping live ranges simultaneously.</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/liverange">LiveRange</a> &amp;LR;</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// DomNode - Dominator tree node for the block.</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Cleared when the final value has been determined and LI has been updated.</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/#a94b65b831ad8756f7d3a029a1e599f75">MachineDomTreeNode</a> &#42;DomNode;</span></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Position in block where the live-in range ends, or SlotIndex() if the</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// range passes through the block.  When the final value has been</span></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// determined, the range from the block start to Kill will be added to LI.</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> Kill;</span></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Live-in value filled in by updateSSA once it is known.</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlight">    <a href="/docs/api/classes/llvm/vninfo">VNInfo</a> &#42;<a href="/docs/api/classes/llvm/value">Value</a> = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlight">    LiveInBlock(<a href="/docs/api/classes/llvm/liverange">LiveRange</a> &amp;LR, <a href="/docs/api/namespaces/llvm/#a94b65b831ad8756f7d3a029a1e599f75">MachineDomTreeNode</a> &#42;node, <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> kill)</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><span class="doxyHighlight">        : LR(LR), DomNode(node), Kill(kill) &#123;&#125;</span></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><span class="doxyHighlight">  &#125;;</span></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><span class="doxyHighlightComment">  /// LiveIn - Work list of blocks where the live-in value has yet to be</span></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlightComment">  /// determined.  This list is typically computed by findReachingDefs() and</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><span class="doxyHighlightComment">  /// used as a work list by updateSSA().  The low-level interface may also be</span></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlightComment">  /// used to add entries directly.</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;LiveInBlock, 16&gt;</a> LiveIn;</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><span class="doxyHighlightComment">  /// Check if the entry to block @p MBB can be reached by any of the defs</span></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><span class="doxyHighlightComment">  /// in @p LR. Return true if none of the defs reach the entry to @p MBB.</span></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> isDefOnEntry(<a href="/docs/api/classes/llvm/liverange">LiveRange</a> &amp;LR, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;SlotIndex&gt;</a> Undefs,</span></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlight">                    <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/docs/api/classes/llvm/bitvector">BitVector</a> &amp;DefOnEntry,</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><span class="doxyHighlight">                    <a href="/docs/api/classes/llvm/bitvector">BitVector</a> &amp;UndefOnEntry);</span></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><span class="doxyHighlightComment">  /// Find the set of defs that can reach @p Kill. @p Kill must belong to</span></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><span class="doxyHighlightComment">  /// @p UseMBB.</span></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><span class="doxyHighlightComment">  /// If exactly one def can reach @p UseMBB, and the def dominates @p Kill,</span></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><span class="doxyHighlightComment">  /// all paths from the def to @p UseMBB are added to @p LR, and the function</span></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><span class="doxyHighlightComment">  /// returns true.</span></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><span class="doxyHighlightComment">  /// If multiple values can reach @p UseMBB, the blocks that need @p LR to be</span></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><span class="doxyHighlightComment">  /// live in are added to the LiveIn array, and the function returns false.</span></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><span class="doxyHighlightComment">  /// The array @p Undef provides the locations where the range @p LR becomes</span></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><span class="doxyHighlightComment">  /// undefined by &lt;def,read-undef&gt; operands on other subranges. If @p Undef</span></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><span class="doxyHighlightComment">  /// is non-empty and @p Kill is jointly dominated only by the entries of</span></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlightComment">  /// @p Undef, the function returns false.</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><span class="doxyHighlightComment">  /// PhysReg, when set, is used to verify live-in lists on basic blocks.</span></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> findReachingDefs(<a href="/docs/api/classes/llvm/liverange">LiveRange</a> &amp;LR, <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &amp;UseMBB, <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> <a href="/docs/api/classes/llvm/use">Use</a>,</span></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><span class="doxyHighlight">                        </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> PhysReg, <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;SlotIndex&gt;</a> Undefs);</span></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><span class="doxyHighlightComment">  /// updateSSA - Compute the values that will be live in to all requested</span></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><span class="doxyHighlightComment">  /// blocks in LiveIn.  Create PHI-def values as required to preserve SSA form.</span></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><span class="doxyHighlightComment">  /// Every live-in block must be jointly dominated by the added live-out</span></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><span class="doxyHighlightComment">  /// blocks.  No values are read from the live ranges.</span></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> updateSSA();</span></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><span class="doxyHighlightComment">  /// Transfer information from the LiveIn vector to the live ranges and update</span></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><span class="doxyHighlightComment">  /// the given @p LiveOuts.</span></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> updateFromLiveIns();</span></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><span class="doxyHighlightKeyword">protected</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><span class="doxyHighlightComment">  /// Some getters to expose in a read-only way some private fields to</span></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><span class="doxyHighlightComment">  /// subclasses.</span></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166" lineLink="/docs/api/classes/llvm/liverangecalc/#ab032314f07277bf920fd315187ab9605"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42;<a href="/docs/api/classes/llvm/liverangecalc/#ab032314f07277bf920fd315187ab9605">getMachineFunction</a>() &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> MF; &#125;</span></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167" lineLink="/docs/api/classes/llvm/liverangecalc/#ad09d2d2f0c1d47c7bc6eb04e33b5e51d"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/machineregisterinfo">MachineRegisterInfo</a> &#42;<a href="/docs/api/classes/llvm/liverangecalc/#ad09d2d2f0c1d47c7bc6eb04e33b5e51d">getRegInfo</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> MRI; &#125;</span></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168" lineLink="/docs/api/classes/llvm/liverangecalc/#a11a21f58b3a7b8b7c401958cd3f7304f"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/slotindexes">SlotIndexes</a> &#42;<a href="/docs/api/classes/llvm/liverangecalc/#a11a21f58b3a7b8b7c401958cd3f7304f">getIndexes</a>() &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> Indexes; &#125;</span></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169" lineLink="/docs/api/classes/llvm/liverangecalc/#a3c8fd02f213ccc28812243ec1f36957c"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a> &#42;<a href="/docs/api/classes/llvm/liverangecalc/#a3c8fd02f213ccc28812243ec1f36957c">getDomTree</a>() &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> DomTree; &#125;</span></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170" lineLink="/docs/api/classes/llvm/liverangecalc/#a60d4123651abf23e886661980d951ffc"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/vninfo/#aa750a7f159760b9c378d930deb6a9837">VNInfo::Allocator</a> &#42;<a href="/docs/api/classes/llvm/liverangecalc/#a60d4123651abf23e886661980d951ffc">getVNAlloc</a>() &#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> Alloc; &#125;</span></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><span class="doxyHighlightComment">  /// Reset Map and Seen fields.</span></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/liverangecalc/#a56cefbb66ed770ce1e6df7cbd1fa90d1">resetLiveOutMap</a>();</span></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176" lineLink="/docs/api/classes/llvm/liverangecalc/#ae41cc4877968749dfa2b1fc3f1110a19"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/liverangecalc/#ae41cc4877968749dfa2b1fc3f1110a19">LiveRangeCalc</a>() = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//===--------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// High-level interface.</span></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//===--------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Calculate live ranges from scratch.</span></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><span class="doxyHighlightComment">  /// reset - Prepare caches for a new set of non-overlapping live ranges.  The</span></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><span class="doxyHighlightComment">  /// caches must be reset before attempting calculations with a live range</span></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><span class="doxyHighlightComment">  /// that may overlap a previously computed live range, and before the first</span></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><span class="doxyHighlightComment">  /// live range in a function.  If live ranges are not known to be</span></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><span class="doxyHighlightComment">  /// non-overlapping, call reset before each.</span></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/liverangecalc/#a65f0beed94a7dbdf8c8d7e2b46a0afa0">reset</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/machinefunction">MachineFunction</a> &#42;mf, <a href="/docs/api/classes/llvm/slotindexes">SlotIndexes</a> &#42;<a href="/docs/api/namespaces/llvm/si">SI</a>,</span></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><span class="doxyHighlight">             <a href="/docs/api/classes/llvm/machinedominatortree">MachineDominatorTree</a> &#42;MDT, <a href="/docs/api/classes/llvm/vninfo/#aa750a7f159760b9c378d930deb6a9837">VNInfo::Allocator</a> &#42;VNIA);</span></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//===--------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Mid-level interface.</span></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//===--------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Modify existing live ranges.</span></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><span class="doxyHighlightComment">  /// Extend the live range of @p LR to reach @p Use.</span></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><span class="doxyHighlightComment">  /// The existing values in @p LR must be live so they jointly dominate @p Use.</span></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><span class="doxyHighlightComment">  /// If @p Use is not dominated by a single existing value, PHI-defs are</span></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><span class="doxyHighlightComment">  /// inserted as required to preserve SSA form.</span></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><span class="doxyHighlightComment">  /// PhysReg, when set, is used to verify live-in lists on basic blocks.</span></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/liverangecalc/#ad445a5028efdf094173a202811f003e3">extend</a>(<a href="/docs/api/classes/llvm/liverange">LiveRange</a> &amp;LR, <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> <a href="/docs/api/classes/llvm/use">Use</a>, </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> PhysReg,</span></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><span class="doxyHighlight">              <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;SlotIndex&gt;</a> Undefs);</span></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//===--------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Low-level interface.</span></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//===--------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// These functions can be used to compute live ranges where the live-in and</span></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// live-out blocks are already known, but the SSA value in each block is</span></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// unknown.</span></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// After calling reset(), add known live-out values and known live-in blocks.</span></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Then call calculateValues() to compute the actual value that is</span></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// live-in to each block, and add liveness to the live ranges.</span></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><span class="doxyHighlightComment">  /// setLiveOutValue - Indicate that VNI is live out from MBB.  The</span></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><span class="doxyHighlightComment">  /// calculateValues() function will not add liveness for MBB, the caller</span></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><span class="doxyHighlightComment">  /// should take care of that.</span></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><span class="doxyHighlightComment">  /// VNI may be null only if MBB is a live-through block also passed to</span></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><span class="doxyHighlightComment">  /// addLiveInBlock().</span></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229" lineLink="/docs/api/classes/llvm/liverangecalc/#ae8e6fcd2d2e7e04fb1aa8fab71910f68"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/liverangecalc/#ae8e6fcd2d2e7e04fb1aa8fab71910f68">setLiveOutValue</a>(<a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>, <a href="/docs/api/classes/llvm/vninfo">VNInfo</a> &#42;VNI) &#123;</span></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><span class="doxyHighlight">    Seen.<a href="/docs/api/classes/llvm/bitvector/#a62237ebe27691377a942abe7446332ec">set</a>(<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>-&gt;getNumber());</span></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><span class="doxyHighlight">    Map&#91;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>&#93; = LiveOutPair(VNI, </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><span class="doxyHighlightComment">  /// addLiveInBlock - Add a block with an unknown live-in value.  This</span></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><span class="doxyHighlightComment">  /// function can only be called once per basic block.  Once the live-in value</span></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><span class="doxyHighlightComment">  /// has been determined, calculateValues() will add liveness to LI.</span></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><span class="doxyHighlightComment">  /// @param LR      The live range that is live-in to the block.</span></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><span class="doxyHighlightComment">  /// @param DomNode The domtree node for the block.</span></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><span class="doxyHighlightComment">  /// @param Kill    Index in block where LI is killed.  If the value is</span></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><span class="doxyHighlightComment">  ///                live-through, set Kill = SLotIndex() and also call</span></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><span class="doxyHighlightComment">  ///                setLiveOutValue(MBB, 0).</span></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243" lineLink="/docs/api/classes/llvm/liverangecalc/#a46981dd5d4bb3043b740ce285b7b4a95"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/liverangecalc/#a46981dd5d4bb3043b740ce285b7b4a95">addLiveInBlock</a>(<a href="/docs/api/classes/llvm/liverange">LiveRange</a> &amp;LR, <a href="/docs/api/namespaces/llvm/#a94b65b831ad8756f7d3a029a1e599f75">MachineDomTreeNode</a> &#42;DomNode,</span></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><span class="doxyHighlight">                      <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a> Kill = <a href="/docs/api/classes/llvm/slotindex">SlotIndex</a>()) &#123;</span></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><span class="doxyHighlight">    LiveIn.<a href="/docs/api/classes/llvm/smallvectortemplatebase/#af42bfbc067df27c19ee2fc859df58799">push&#95;back</a>(LiveInBlock(LR, DomNode, Kill));</span></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><span class="doxyHighlightComment">  /// calculateValues - Calculate the value that will be live-in to each block</span></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><span class="doxyHighlightComment">  /// added with addLiveInBlock.  Add PHI-def values as needed to preserve SSA</span></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"><span class="doxyHighlightComment">  /// form.  Add liveness to all live-in blocks up to the Kill point, or the</span></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><span class="doxyHighlightComment">  /// whole block for live-through blocks.</span></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><span class="doxyHighlightComment">  /// Every predecessor of a live-in block must have been given a value with</span></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><span class="doxyHighlightComment">  /// setLiveOutValue, the value may be null for live-trough blocks.</span></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/liverangecalc/#ae5c960114840d1c6dddfbaa529ac633e">calculateValues</a>();</span></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><span class="doxyHighlightComment">  /// A diagnostic function to check if the end of the block @p MBB is</span></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><span class="doxyHighlightComment">  /// jointly dominated by the blocks corresponding to the slot indices</span></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><span class="doxyHighlightComment">  /// in @p Defs. This function is mainly for use in self-verification</span></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><span class="doxyHighlightComment">  /// checks.</span></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><span class="doxyHighlight">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#acc1c483f4b4ee2f17bb6643a3b353609">LLVM&#95;ATTRIBUTE&#95;UNUSED</a></span></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/liverangecalc/#a13c4005ea769c09d88be76fa40744e7e">isJointlyDominated</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/machinebasicblock">MachineBasicBlock</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/arm/armslshardening-cpp/#a5958512eae2979bd2eb383977996a600">MBB</a>,</span></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><span class="doxyHighlight">                                 <a href="/docs/api/classes/llvm/arrayref">ArrayRef&lt;SlotIndex&gt;</a> Defs,</span></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><span class="doxyHighlight">                                 </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/slotindexes">SlotIndexes</a> &amp;Indexes);</span></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace llvm</span></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;CODEGEN&#95;LIVERANGECALC&#95;H</span></CodeLine>
 
 </ProgramListing>
 

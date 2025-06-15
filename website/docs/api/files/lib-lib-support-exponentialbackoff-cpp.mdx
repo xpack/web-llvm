@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
@@ -49,35 +48,35 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- llvm/Support/ExponentialBackoff.h ------------------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h">llvm/Support/ExponentialBackoff.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;thread&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14" lineLink="/docs/api/classes/llvm/exponentialbackoff/#a2e8404047337057e4fff7e416f28ce3b"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/exponentialbackoff/#a2e8404047337057e4fff7e416f28ce3b">ExponentialBackoff::waitForNextAttempt</a>() &#123;</Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> Now = std::chrono::steady&#95;clock::now();</Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Now &gt;= EndTime)</Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/exponentialbackoff/#a4d2c6943b41cbbf75a554c1b43a92d25">duration</a> CurMaxWait = std::min(MinWait &#42; CurrentMultiplier, MaxWait);</Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal">  std::uniform&#95;int&#95;distribution&lt;uint64&#95;t&gt; Dist(MinWait.count(),</Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal">                                               CurMaxWait.count());</Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Use random&#95;device directly instead of a PRNG as uniform&#95;int&#95;distribution</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// often only takes a few samples anyway.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/exponentialbackoff/#a4d2c6943b41cbbf75a554c1b43a92d25">duration</a> WaitDuration = std::min(<a href="/docs/api/classes/llvm/exponentialbackoff/#a4d2c6943b41cbbf75a554c1b43a92d25">duration</a>(Dist(RandDev)), EndTime - Now);</Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CurMaxWait &lt; MaxWait)</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal">    CurrentMultiplier &#42;= 2;</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal">  std::this&#95;thread::sleep&#95;for(WaitDuration);</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- llvm/Support/ExponentialBackoff.h ------------------------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/exponentialbackoff-h">llvm/Support/ExponentialBackoff.h</a>&quot;</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightPreprocessor">#include &lt;thread&gt;</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightKeyword">using namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a>;</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14" lineLink="/docs/api/classes/llvm/exponentialbackoff/#a2e8404047337057e4fff7e416f28ce3b"><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/exponentialbackoff/#a2e8404047337057e4fff7e416f28ce3b">ExponentialBackoff::waitForNextAttempt</a>() &#123;</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> Now = std::chrono::steady&#95;clock::now();</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Now &gt;= EndTime)</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/exponentialbackoff/#a4d2c6943b41cbbf75a554c1b43a92d25">duration</a> CurMaxWait = std::min(MinWait &#42; CurrentMultiplier, MaxWait);</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlight">  std::uniform&#95;int&#95;distribution&lt;uint64&#95;t&gt; Dist(MinWait.count(),</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlight">                                               CurMaxWait.count());</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Use random&#95;device directly instead of a PRNG as uniform&#95;int&#95;distribution</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// often only takes a few samples anyway.</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/exponentialbackoff/#a4d2c6943b41cbbf75a554c1b43a92d25">duration</a> WaitDuration = std::min(<a href="/docs/api/classes/llvm/exponentialbackoff/#a4d2c6943b41cbbf75a554c1b43a92d25">duration</a>(Dist(RandDev)), EndTime - Now);</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (CurMaxWait &lt; MaxWait)</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlight">    CurrentMultiplier &#42;= 2;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlight">  std::this&#95;thread::sleep&#95;for(WaitDuration);</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlight">&#125;</span></CodeLine>
 
 </ProgramListing>
 

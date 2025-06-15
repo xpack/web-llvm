@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
 
 import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
@@ -34,53 +33,53 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- zOSSupport.h - Common z/OS Include File ------------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file defines z/OS implementations for common functions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;SUPPORT&#95;ZOSSUPPORT&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;SUPPORT&#95;ZOSSUPPORT&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;&#95;MVS&#95;&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;sys/resource.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;sys/wait.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="comment">// z/OS Unix System Services does not have strsignal() support, so the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="comment">// strsignal() function is implemented here.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;strsignal(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> sig) &#123;</Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> msg&#91;256&#93;;</Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal">  sprintf(msg, </Highlight><Highlight kind="stringliteral">&quot;%d&quot;</Highlight><Highlight kind="normal">, sig);</Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> msg;</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight><Highlight kind="comment">// z/OS Unix System Services does not have wait4() support, so the wait4</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="comment">// function is implemented here.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> pid&#95;t wait4(pid&#95;t pid, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> &#42;wstatus, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> options,</Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">                   </Highlight><Highlight kind="keyword">struct</Highlight><Highlight kind="normal"> rusage &#42;rusage) &#123;</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">  pid&#95;t <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a> = waitpid(pid, wstatus, options);</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> GetrusageRC = getrusage(RUSAGE&#95;CHILDREN, rusage);</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!GetrusageRC &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;Must have valid measure of the resources!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>;</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="comment">// z/OS Unix System Services does not have strnlen() support, so the strnlen()</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="comment">// function is implemented here.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> std::size&#95;t strnlen(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;S, std::size&#95;t MaxLen) &#123;</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;PtrToNullChar =</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(std::memchr(S, </Highlight><Highlight kind="charliteral">&#39;\\0&#39;</Highlight><Highlight kind="normal">, MaxLen));</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> PtrToNullChar ? PtrToNullChar - S : MaxLen;</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- zOSSupport.h - Common z/OS Include File ------------------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This file defines z/OS implementations for common functions.</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;SUPPORT&#95;ZOSSUPPORT&#95;H</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#define LLVM&#95;SUPPORT&#95;ZOSSUPPORT&#95;H</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#ifdef &#95;&#95;MVS&#95;&#95;</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#include &lt;sys/resource.h&gt;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightPreprocessor">#include &lt;sys/wait.h&gt;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightComment">// z/OS Unix System Services does not have strsignal() support, so the</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightComment">// strsignal() function is implemented here.</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;strsignal(</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> sig) &#123;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> msg&#91;256&#93;;</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlight">  sprintf(msg, </span><span class="doxyHighlightStringLiteral">&quot;%d&quot;</span><span class="doxyHighlight">, sig);</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> msg;</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightComment">// z/OS Unix System Services does not have wait4() support, so the wait4</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightComment">// function is implemented here.</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> pid&#95;t wait4(pid&#95;t pid, </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> &#42;wstatus, </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> options,</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlight">                   </span><span class="doxyHighlightKeyword">struct</span><span class="doxyHighlight"> rusage &#42;rusage) &#123;</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlight">  pid&#95;t <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a> = waitpid(pid, wstatus, options);</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> GetrusageRC = getrusage(RUSAGE&#95;CHILDREN, rusage);</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlight">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!GetrusageRC &amp;&amp; </span><span class="doxyHighlightStringLiteral">&quot;Must have valid measure of the resources!&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/ms-demangle/#afb795990ffc0cb7321e7d1eacc246324a8eea62084ca7e541d918e823422bd82e">Result</a>;</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightComment">// z/OS Unix System Services does not have strnlen() support, so the strnlen()</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightComment">// function is implemented here.</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> std::size&#95;t strnlen(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;S, std::size&#95;t MaxLen) &#123;</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;PtrToNullChar =</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">static&#95;cast&lt;</span><span class="doxyHighlightKeyword">const </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(std::memchr(S, </span><span class="doxyHighlightCharLiteral">&#39;\\0&#39;</span><span class="doxyHighlight">, MaxLen));</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> PtrToNullChar ? PtrToNullChar - S : MaxLen;</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
 
 </ProgramListing>
 

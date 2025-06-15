@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -79,270 +78,270 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- llvm/Constant.h - Constant class definition -------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file contains the declaration of the Constant class.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;IR&#95;CONSTANT&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;IR&#95;CONSTANT&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/user-h">llvm/IR/User.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/value-h">llvm/IR/Value.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">llvm/Support/Casting.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/constantrange">ConstantRange</a>;</Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/apint">APInt</a>;</Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="comment">/// This is an important base class in LLVM. It provides the common facilities</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="comment">/// of all constant values in an LLVM program. A constant is a value that is</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="comment">/// immutable at runtime. Functions are constants because their address is</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="comment">/// immutable. Same with global variables.</Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="comment">/// All constants share the capabilities provided in this class. All constants</Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="comment">/// can have a null value. They can have an operand list. Constants can be</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">/// simple (integer and floating point values), complex (arrays and structures),</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="comment">/// or expression based (computations yielding a constant value composed of</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="comment">/// only certain operators and other constant values).</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="comment">/// Note that Constants are immutable (once created they never change)</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">/// and are fully shared by structural equivalence.  This means that two</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">/// structurally equivalent constants will always have the same address.</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">/// Constants are created on demand as needed and never deleted: thus clients</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="comment">/// don&#39;t have to worry about the lifetime of the objects.</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="comment">/// LLVM Constant Representation</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42" lineLink="/docs/api/classes/llvm/constant"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/user/#a282fa3e9586425313e0a954c18deee15">User</a> &#123;</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44" lineLink="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a>(<a href="/docs/api/classes/llvm/type">Type</a> &#42;ty, <a href="/docs/api/classes/llvm/value/#af6d11b38374c4f9e6ba3a6407da2dee0">ValueTy</a> vty, <a href="/docs/api/structs/llvm/user/allocinfo">AllocInfo</a> <a href="/docs/api/structs/llvm/user/allocinfo">AllocInfo</a>)</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">      : <a href="/docs/api/classes/llvm/user/#a282fa3e9586425313e0a954c18deee15">User</a>(ty, vty, <a href="/docs/api/structs/llvm/user/allocinfo">AllocInfo</a>) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/classes/llvm/constant/#a048917dc2997cc5c5ba6096f10e722a9"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/constant/#a048917dc2997cc5c5ba6096f10e722a9">~Constant</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50" lineLink="/docs/api/classes/llvm/constant/#a20b6ec414d8e3ad6cfae7313d4ef64a7"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a20b6ec414d8e3ad6cfae7313d4ef64a7">operator=</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51" lineLink="/docs/api/classes/llvm/constant/#a3b71c28d2cdf9594b785cb2b4b3035f9"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/constant/#a3b71c28d2cdf9594b785cb2b4b3035f9">Constant</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">  /// Return true if this is the value that would be returned by getNullValue.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#ae4b6abe77abf42fb02081a6cc41a0132">isNullValue</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="comment">  /// Returns true if the value is one.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a586fb7954fcb7d759a997b3e1e979d30">isOneValue</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">  /// Return true if the value is not the one value, or,</Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="comment">  /// for vectors, does not contain one value elements.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#aeb641261038c74d4edd4d258d471111a">isNotOneValue</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="comment">  /// Return true if this is the value that would be returned by</Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="comment">  /// getAllOnesValue.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a662be1e66a5af621d46fa1c7a8aa1004">isAllOnesValue</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="comment">  /// Return true if the value is what would be returned by</Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="comment">  /// getZeroValueForNegation.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a60bcf26670bb451fea6d0924b5cdde53">isNegativeZeroValue</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">  /// Return true if the value is negative zero or null value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#ad97fc23e85a854a19101bf8e861356aa">isZeroValue</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">  /// Return true if the value is not the smallest signed value, or,</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">  /// for vectors, does not contain smallest signed value elements.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#ae426459d2c178a60009dd869bb23c4cd">isNotMinSignedValue</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="comment">  /// Return true if the value is the smallest signed value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#ab49825b73027cf30c861cfc51c6e821f">isMinSignedValue</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// Return true if this is a finite and non-zero floating-point scalar</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">  /// constant or a fixed width vector constant with all finite and non-zero</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">  /// elements.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a947eb0bc52dfe966730db285b510b678">isFiniteNonZeroFP</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="comment">  /// Return true if this is a normal (as opposed to denormal, infinity, nan,</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="comment">  /// or zero) floating-point scalar constant or a vector constant with all</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">  /// normal elements. See APFloat::isNormal.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a96b2951252cda0fe4fc0cdc9ce3770f9">isNormalFP</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">  /// Return true if this scalar has an exact multiplicative inverse or this</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="comment">  /// vector has an exact multiplicative inverse for each element in the vector.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a0551e2af33758e2c39e724ec4f205263">hasExactInverseFP</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="comment">  /// Return true if this is a floating-point NaN constant or a vector</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="comment">  /// floating-point constant with all NaN elements.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#aabb53b9354c612fd43fa47b8266114d6">isNaN</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  /// Return true if this constant and a constant &#39;Y&#39; are element-wise equal.</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">  /// This is identical to just comparing the pointers, with the exception that</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="comment">  /// for vectors, if only one of the constants has an &#96;undef&#96; element in some</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">  /// lane, the constants still match.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#aee0f586f3e5fc07e4c55d3e8caade9a6">isElementWiseEqual</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#a262774d3e5186511427e5b2414a85f7f">Y</a>) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">  /// Return true if this is a vector constant that includes any undef or</Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">  /// poison elements. Since it is impossible to inspect a scalable vector</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="comment">  /// element- wise at compile time, this function returns true only if the</Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="comment">  /// entire vector is undef or poison.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#af8b7cf9e96f6a07a3f014a2fc8383245">containsUndefOrPoisonElement</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">  /// Return true if this is a vector constant that includes any poison</Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">  /// elements.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#af9581ba8da8565cd6a274bc571a37728">containsPoisonElement</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">  /// Return true if this is a vector constant that includes any strictly undef</Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">  /// (not poison) elements.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a28416daccb470934bbad6e7d340a18e6">containsUndefElement</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="comment">  /// Return true if this is a fixed width vector constant that includes</Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">  /// any constant expressions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a923c4a7af45a4531da9d7cee1041c4bf">containsConstantExpression</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="comment">  /// Return true if the value can vary between threads.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#ad6acf67b5f3103b32b64fa9451ccbd00">isThreadDependent</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="comment">  /// Return true if the value is dependent on a dllimport variable.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a888b719d43ca27df0ed7e720650b76e5">isDLLImportDependent</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="comment">  /// Return true if the constant has users other than constant expressions and</Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="comment">  /// other dangling things.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#ac63a8c5280ada17077a6aa14363348b3">isConstantUsed</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">  /// This method classifies the entry according to whether or not it may</Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">  /// generate a relocation entry (either static or dynamic). This must be</Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="comment">  /// conservative, so if it might codegen to a relocatable entry, it should say</Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">  /// so.</Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">  /// FIXME: This really should not be in IR.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a878e80827b18cd7c1eef3866f1939bb3">needsRelocation</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a9d7229cd85e34bfb2e02a7946b73e288">needsDynamicRelocation</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">  /// For aggregates (struct/array/vector) return the constant that corresponds</Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="comment">  /// to the specified element if possible, or null if not. This can return null</Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="comment">  /// if the element index is a ConstantExpr, if &#39;this&#39; is a constant expr or</Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="comment">  /// if the constant does not fit into an uint64&#95;t.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#acd530d0571f320d47d37e7ae51cf70ff">getAggregateElement</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Elt) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#acd530d0571f320d47d37e7ae51cf70ff">getAggregateElement</a>(<a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;Elt) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="comment">  /// If all elements of the vector constant have the same value, return that</Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="comment">  /// value. Otherwise, return nullptr. Ignore poison elements by setting</Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="comment">  /// AllowPoison to true.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a25ca2f3cb40ae1c26c73054659203b2d">getSplatValue</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> AllowPoison = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="comment">  /// If C is a constant integer then return its value, otherwise C must be a</Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="comment">  /// vector of constant integers, all equal, and the common value is returned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/apint">APInt</a> &amp;<a href="/docs/api/classes/llvm/constant/#a90b7d2d0eb9eb04c4d9e60c0fabb1efb">getUniqueInteger</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="comment">  /// Convert constant to an approximate constant range. For vectors, the</Highlight></CodeLine>
-<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="comment">  /// range is the union over the element ranges. Poison elements are ignored.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/constantrange">ConstantRange</a> <a href="/docs/api/classes/llvm/constant/#a4af4fe6392d3860167eafedc817ed8b1">toConstantRange</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="comment">  /// Called if some element of this constant is no longer valid.</Highlight></CodeLine>
-<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="comment">  /// At this point only other constants may be on the use&#95;list for this</Highlight></CodeLine>
-<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="comment">  /// constant.  Any constants on our Use list must also be destroy&#39;d.  The</Highlight></CodeLine>
-<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="comment">  /// implementation must be sure to remove the constant from the list of</Highlight></CodeLine>
-<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="comment">  /// available cached constants.  Implementations should implement</Highlight></CodeLine>
-<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="comment">  /// destroyConstantImpl to remove constants from any pools/maps they are</Highlight></CodeLine>
-<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="comment">  /// contained it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#ae1a4c619a44ea59a2cdeeb85060f385d">destroyConstant</a>();</Highlight></CodeLine>
-<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="comment">  //// Methods for support type inquiry through isa, cast, and dyn&#95;cast:</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00172" /><CodeLine lineNumber="172" lineLink="/docs/api/classes/llvm/constant/#ae61355c3f2d24c689166335b945f029a"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#ae61355c3f2d24c689166335b945f029a">classof</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;V) &#123;</Highlight></CodeLine>
-<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static&#95;assert</Highlight><Highlight kind="normal">(ConstantFirstVal == 0, </Highlight><Highlight kind="stringliteral">&quot;V-&gt;getValueID() &gt;= ConstantFirstVal always succeeds&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> V-&gt;getValueID() &lt;= ConstantLastVal;</Highlight></CodeLine>
-<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="comment">  /// This method is a special form of User::replaceUsesOfWith</Highlight></CodeLine>
-<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="comment">  /// (which does not work on constants) that does work</Highlight></CodeLine>
-<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="comment">  /// on constants.  Basically this method goes through the trouble of building</Highlight></CodeLine>
-<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="comment">  /// a new constant that is equivalent to the current one, with all uses of</Highlight></CodeLine>
-<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="comment">  /// From replaced with uses of To.  After this construction is completed, all</Highlight></CodeLine>
-<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="comment">  /// of the users of &#39;this&#39; are replaced to use the new constant, and then</Highlight></CodeLine>
-<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="comment">  /// &#39;this&#39; is deleted.  In general, you should not call this method, instead,</Highlight></CodeLine>
-<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="comment">  /// use Value::replaceAllUsesWith, which automatically dispatches to this</Highlight></CodeLine>
-<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="comment">  /// method as needed.</Highlight></CodeLine>
-<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="comment">  ///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#afb784171b976ddd992e3f27ac36a894d">handleOperandChange</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;, <a href="/docs/api/classes/llvm/value">Value</a> &#42;);</Highlight></CodeLine>
-<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#aa6574d526b3e38a28f688a7bb4325c2c">getNullValue</a>(<a href="/docs/api/classes/llvm/type">Type</a>&#42; Ty);</Highlight></CodeLine>
-<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="comment">  /// @returns the value for an integer or vector of integer constant of the</Highlight></CodeLine>
-<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="comment">  /// given type that has all its bits set to true.</Highlight></CodeLine>
-<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="comment">  /// Get the all ones value</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a4d51384de6e1798bb6aa875aebeea9f0">getAllOnesValue</a>(<a href="/docs/api/classes/llvm/type">Type</a>&#42; Ty);</Highlight></CodeLine>
-<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="comment">  /// Return the value for an integer or pointer constant, or a vector thereof,</Highlight></CodeLine>
-<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="comment">  /// with the given scalar value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a0154da1d06b29a1d5649607ae2dfc389">getIntegerValue</a>(<a href="/docs/api/classes/llvm/type">Type</a> &#42;Ty, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/apint">APInt</a> &amp;V);</Highlight></CodeLine>
-<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="comment">  /// If there are any dead constant users dangling off of this constant, remove</Highlight></CodeLine>
-<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="comment">  /// them. This method is useful for clients that want to check to see if a</Highlight></CodeLine>
-<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="comment">  /// global is unused, but don&#39;t want to deal with potentially dead constants</Highlight></CodeLine>
-<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="comment">  /// hanging off of the globals.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a960620248182018e566b095f06a605df">removeDeadConstantUsers</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="comment">  /// Return true if the constant has exactly one live use.</Highlight></CodeLine>
-<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="comment">  /// This returns the same result as calling Value::hasOneUse after</Highlight></CodeLine>
-<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="comment">  /// Constant::removeDeadConstantUsers, but doesn&#39;t remove dead constants.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a853c6a408fcbc1ce65e8c9e200019a89">hasOneLiveUse</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="comment">  /// Return true if the constant has no live uses.</Highlight></CodeLine>
-<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="comment">  /// This returns the same result as calling Value::use&#95;empty after</Highlight></CodeLine>
-<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="comment">  /// Constant::removeDeadConstantUsers, but doesn&#39;t remove dead constants.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a57704906384ceba93d235e2747d6a210">hasZeroLiveUses</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00218" /><CodeLine lineNumber="218" lineLink="/docs/api/classes/llvm/constant/#a6c6af867b9eca0a16600b50e31df0e33"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a6c6af867b9eca0a16600b50e31df0e33">stripPointerCasts</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;Constant&gt;</a>(<a href="/docs/api/classes/llvm/value/#a966eb231e7d4e572874d2cb49b18faea">Value::stripPointerCasts</a>());</Highlight></CodeLine>
-<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00222" /><CodeLine lineNumber="222" lineLink="/docs/api/classes/llvm/constant/#a851f8a63da7b869315b4ebf6b10c546d"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a851f8a63da7b869315b4ebf6b10c546d">stripPointerCasts</a>() &#123;</Highlight></CodeLine>
-<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">const&#95;cast&lt;</Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a>&#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight></CodeLine>
-<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">                      </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)-&gt;stripPointerCasts());</Highlight></CodeLine>
-<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="comment">  /// Try to replace undefined constant C or undefined elements in C with</Highlight></CodeLine>
-<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="comment">  /// Replacement. If no changes are made, the constant C is returned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a174c8fd19771468c53842a7fde8ddce1">replaceUndefsWith</a>(<a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;Replacement);</Highlight></CodeLine>
-<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="comment">  /// Merges undefs of a Constant with another Constant, along with the</Highlight></CodeLine>
-<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="comment">  /// undefs already present. Other doesn&#39;t have to be the same type as C, but</Highlight></CodeLine>
-<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="comment">  /// both must either be scalars or vectors with the same element count. If no</Highlight></CodeLine>
-<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="comment">  /// changes are made, the constant C is returned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a31dbd9cf336966a863e37c5653b6c134">mergeUndefsWith</a>(<a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>);</Highlight></CodeLine>
-<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="comment">  /// Return true if a constant is ConstantData or a ConstantAggregate or</Highlight></CodeLine>
-<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="comment">  /// ConstantExpr that contain only ConstantData.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/constant/#a5a4d3145c046afe97789b9739a200971">isManifestConstant</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> PossibleRelocationsTy &#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="comment">    /// This constant requires no relocations. That is, it holds simple</Highlight></CodeLine>
-<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="comment">    /// constants (like integrals).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal">    NoRelocation = 0,</Highlight></CodeLine>
-<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="comment">    /// This constant holds static relocations that can be resolved by the</Highlight></CodeLine>
-<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="comment">    /// static linker.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">    LocalRelocation = 1,</Highlight></CodeLine>
-<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="comment">    /// This constant holds dynamic relocations that the dynamic linker will</Highlight></CodeLine>
-<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="comment">    /// need to resolve.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal">    GlobalRelocation = 2,</Highlight></CodeLine>
-<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
-<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="comment">  /// Determine what potential relocations may be needed by this constant.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">  PossibleRelocationsTy getRelocationInfo() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> hasNLiveUses(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;IR&#95;CONSTANT&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===-- llvm/Constant.h - Constant class definition -------------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This file contains the declaration of the Constant class.</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;IR&#95;CONSTANT&#95;H</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#define LLVM&#95;IR&#95;CONSTANT&#95;H</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/user-h">llvm/IR/User.h</a>&quot;</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/ir/value-h">llvm/IR/Value.h</a>&quot;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/casting-h">llvm/Support/Casting.h</a>&quot;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/constantrange">ConstantRange</a>;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/apint">APInt</a>;</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightComment">/// This is an important base class in LLVM. It provides the common facilities</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightComment">/// of all constant values in an LLVM program. A constant is a value that is</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightComment">/// immutable at runtime. Functions are constants because their address is</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightComment">/// immutable. Same with global variables.</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightComment">/// All constants share the capabilities provided in this class. All constants</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightComment">/// can have a null value. They can have an operand list. Constants can be</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlightComment">/// simple (integer and floating point values), complex (arrays and structures),</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightComment">/// or expression based (computations yielding a constant value composed of</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightComment">/// only certain operators and other constant values).</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlightComment">/// Note that Constants are immutable (once created they never change)</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlightComment">/// and are fully shared by structural equivalence.  This means that two</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightComment">/// structurally equivalent constants will always have the same address.</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightComment">/// Constants are created on demand as needed and never deleted: thus clients</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlightComment">/// don&#39;t have to worry about the lifetime of the objects.</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlightComment">/// LLVM Constant Representation</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42" lineLink="/docs/api/classes/llvm/constant"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> : </span><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/user/#a282fa3e9586425313e0a954c18deee15">User</a> &#123;</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlightKeyword">protected</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44" lineLink="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a>(<a href="/docs/api/classes/llvm/type">Type</a> &#42;ty, <a href="/docs/api/classes/llvm/value/#af6d11b38374c4f9e6ba3a6407da2dee0">ValueTy</a> vty, <a href="/docs/api/structs/llvm/user/allocinfo">AllocInfo</a> <a href="/docs/api/structs/llvm/user/allocinfo">AllocInfo</a>)</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlight">      : <a href="/docs/api/classes/llvm/user/#a282fa3e9586425313e0a954c18deee15">User</a>(ty, vty, <a href="/docs/api/structs/llvm/user/allocinfo">AllocInfo</a>) &#123;&#125;</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/classes/llvm/constant/#a048917dc2997cc5c5ba6096f10e722a9"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/constant/#a048917dc2997cc5c5ba6096f10e722a9">~Constant</a>() = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50" lineLink="/docs/api/classes/llvm/constant/#a20b6ec414d8e3ad6cfae7313d4ef64a7"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a20b6ec414d8e3ad6cfae7313d4ef64a7">operator=</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &amp;) = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51" lineLink="/docs/api/classes/llvm/constant/#a3b71c28d2cdf9594b785cb2b4b3035f9"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/constant/#a3b71c28d2cdf9594b785cb2b4b3035f9">Constant</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &amp;) = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlightComment">  /// Return true if this is the value that would be returned by getNullValue.</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#ae4b6abe77abf42fb02081a6cc41a0132">isNullValue</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlightComment">  /// Returns true if the value is one.</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a586fb7954fcb7d759a997b3e1e979d30">isOneValue</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlightComment">  /// Return true if the value is not the one value, or,</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlightComment">  /// for vectors, does not contain one value elements.</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#aeb641261038c74d4edd4d258d471111a">isNotOneValue</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><span class="doxyHighlightComment">  /// Return true if this is the value that would be returned by</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlightComment">  /// getAllOnesValue.</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a662be1e66a5af621d46fa1c7a8aa1004">isAllOnesValue</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlightComment">  /// Return true if the value is what would be returned by</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlightComment">  /// getZeroValueForNegation.</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a60bcf26670bb451fea6d0924b5cdde53">isNegativeZeroValue</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlightComment">  /// Return true if the value is negative zero or null value.</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#ad97fc23e85a854a19101bf8e861356aa">isZeroValue</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlightComment">  /// Return true if the value is not the smallest signed value, or,</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlightComment">  /// for vectors, does not contain smallest signed value elements.</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#ae426459d2c178a60009dd869bb23c4cd">isNotMinSignedValue</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlightComment">  /// Return true if the value is the smallest signed value.</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#ab49825b73027cf30c861cfc51c6e821f">isMinSignedValue</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlightComment">  /// Return true if this is a finite and non-zero floating-point scalar</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlightComment">  /// constant or a fixed width vector constant with all finite and non-zero</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlightComment">  /// elements.</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a947eb0bc52dfe966730db285b510b678">isFiniteNonZeroFP</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlightComment">  /// Return true if this is a normal (as opposed to denormal, infinity, nan,</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlightComment">  /// or zero) floating-point scalar constant or a vector constant with all</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlightComment">  /// normal elements. See APFloat::isNormal.</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a96b2951252cda0fe4fc0cdc9ce3770f9">isNormalFP</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlightComment">  /// Return true if this scalar has an exact multiplicative inverse or this</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlightComment">  /// vector has an exact multiplicative inverse for each element in the vector.</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a0551e2af33758e2c39e724ec4f205263">hasExactInverseFP</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlightComment">  /// Return true if this is a floating-point NaN constant or a vector</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><span class="doxyHighlightComment">  /// floating-point constant with all NaN elements.</span></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#aabb53b9354c612fd43fa47b8266114d6">isNaN</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlightComment">  /// Return true if this constant and a constant &#39;Y&#39; are element-wise equal.</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlightComment">  /// This is identical to just comparing the pointers, with the exception that</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlightComment">  /// for vectors, if only one of the constants has an &#96;undef&#96; element in some</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlightComment">  /// lane, the constants still match.</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#aee0f586f3e5fc07e4c55d3e8caade9a6">isElementWiseEqual</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;<a href="/docs/api/files/lib/lib/tablegen/tablegenbackendskeleton-cpp/#a262774d3e5186511427e5b2414a85f7f">Y</a>) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlightComment">  /// Return true if this is a vector constant that includes any undef or</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlightComment">  /// poison elements. Since it is impossible to inspect a scalable vector</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><span class="doxyHighlightComment">  /// element- wise at compile time, this function returns true only if the</span></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlightComment">  /// entire vector is undef or poison.</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#af8b7cf9e96f6a07a3f014a2fc8383245">containsUndefOrPoisonElement</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlightComment">  /// Return true if this is a vector constant that includes any poison</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><span class="doxyHighlightComment">  /// elements.</span></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#af9581ba8da8565cd6a274bc571a37728">containsPoisonElement</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlightComment">  /// Return true if this is a vector constant that includes any strictly undef</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlightComment">  /// (not poison) elements.</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a28416daccb470934bbad6e7d340a18e6">containsUndefElement</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><span class="doxyHighlightComment">  /// Return true if this is a fixed width vector constant that includes</span></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlightComment">  /// any constant expressions.</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a923c4a7af45a4531da9d7cee1041c4bf">containsConstantExpression</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><span class="doxyHighlightComment">  /// Return true if the value can vary between threads.</span></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#ad6acf67b5f3103b32b64fa9451ccbd00">isThreadDependent</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlightComment">  /// Return true if the value is dependent on a dllimport variable.</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a888b719d43ca27df0ed7e720650b76e5">isDLLImportDependent</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><span class="doxyHighlightComment">  /// Return true if the constant has users other than constant expressions and</span></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlightComment">  /// other dangling things.</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#ac63a8c5280ada17077a6aa14363348b3">isConstantUsed</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><span class="doxyHighlightComment">  /// This method classifies the entry according to whether or not it may</span></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><span class="doxyHighlightComment">  /// generate a relocation entry (either static or dynamic). This must be</span></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><span class="doxyHighlightComment">  /// conservative, so if it might codegen to a relocatable entry, it should say</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><span class="doxyHighlightComment">  /// so.</span></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><span class="doxyHighlightComment">  /// FIXME: This really should not be in IR.</span></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a878e80827b18cd7c1eef3866f1939bb3">needsRelocation</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a9d7229cd85e34bfb2e02a7946b73e288">needsDynamicRelocation</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><span class="doxyHighlightComment">  /// For aggregates (struct/array/vector) return the constant that corresponds</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><span class="doxyHighlightComment">  /// to the specified element if possible, or null if not. This can return null</span></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><span class="doxyHighlightComment">  /// if the element index is a ConstantExpr, if &#39;this&#39; is a constant expr or</span></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><span class="doxyHighlightComment">  /// if the constant does not fit into an uint64&#95;t.</span></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#acd530d0571f320d47d37e7ae51cf70ff">getAggregateElement</a>(</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> Elt) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#acd530d0571f320d47d37e7ae51cf70ff">getAggregateElement</a>(<a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;Elt) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><span class="doxyHighlightComment">  /// If all elements of the vector constant have the same value, return that</span></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><span class="doxyHighlightComment">  /// value. Otherwise, return nullptr. Ignore poison elements by setting</span></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><span class="doxyHighlightComment">  /// AllowPoison to true.</span></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a25ca2f3cb40ae1c26c73054659203b2d">getSplatValue</a>(</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> AllowPoison = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><span class="doxyHighlightComment">  /// If C is a constant integer then return its value, otherwise C must be a</span></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><span class="doxyHighlightComment">  /// vector of constant integers, all equal, and the common value is returned.</span></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/apint">APInt</a> &amp;<a href="/docs/api/classes/llvm/constant/#a90b7d2d0eb9eb04c4d9e60c0fabb1efb">getUniqueInteger</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><span class="doxyHighlightComment">  /// Convert constant to an approximate constant range. For vectors, the</span></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><span class="doxyHighlightComment">  /// range is the union over the element ranges. Poison elements are ignored.</span></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/constantrange">ConstantRange</a> <a href="/docs/api/classes/llvm/constant/#a4af4fe6392d3860167eafedc817ed8b1">toConstantRange</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><span class="doxyHighlightComment">  /// Called if some element of this constant is no longer valid.</span></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><span class="doxyHighlightComment">  /// At this point only other constants may be on the use&#95;list for this</span></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><span class="doxyHighlightComment">  /// constant.  Any constants on our Use list must also be destroy&#39;d.  The</span></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><span class="doxyHighlightComment">  /// implementation must be sure to remove the constant from the list of</span></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><span class="doxyHighlightComment">  /// available cached constants.  Implementations should implement</span></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><span class="doxyHighlightComment">  /// destroyConstantImpl to remove constants from any pools/maps they are</span></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><span class="doxyHighlightComment">  /// contained it.</span></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#ae1a4c619a44ea59a2cdeeb85060f385d">destroyConstant</a>();</span></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><span class="doxyHighlightComment">  //// Methods for support type inquiry through isa, cast, and dyn&#95;cast:</span></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172" lineLink="/docs/api/classes/llvm/constant/#ae61355c3f2d24c689166335b945f029a"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#ae61355c3f2d24c689166335b945f029a">classof</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/value">Value</a> &#42;V) &#123;</span></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">static&#95;assert</span><span class="doxyHighlight">(ConstantFirstVal == 0, </span><span class="doxyHighlightStringLiteral">&quot;V-&gt;getValueID() &gt;= ConstantFirstVal always succeeds&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> V-&gt;getValueID() &lt;= ConstantLastVal;</span></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><span class="doxyHighlightComment">  /// This method is a special form of User::replaceUsesOfWith</span></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><span class="doxyHighlightComment">  /// (which does not work on constants) that does work</span></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><span class="doxyHighlightComment">  /// on constants.  Basically this method goes through the trouble of building</span></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><span class="doxyHighlightComment">  /// a new constant that is equivalent to the current one, with all uses of</span></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><span class="doxyHighlightComment">  /// From replaced with uses of To.  After this construction is completed, all</span></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><span class="doxyHighlightComment">  /// of the users of &#39;this&#39; are replaced to use the new constant, and then</span></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><span class="doxyHighlightComment">  /// &#39;this&#39; is deleted.  In general, you should not call this method, instead,</span></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><span class="doxyHighlightComment">  /// use Value::replaceAllUsesWith, which automatically dispatches to this</span></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><span class="doxyHighlightComment">  /// method as needed.</span></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#afb784171b976ddd992e3f27ac36a894d">handleOperandChange</a>(<a href="/docs/api/classes/llvm/value">Value</a> &#42;, <a href="/docs/api/classes/llvm/value">Value</a> &#42;);</span></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#aa6574d526b3e38a28f688a7bb4325c2c">getNullValue</a>(<a href="/docs/api/classes/llvm/type">Type</a>&#42; Ty);</span></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><span class="doxyHighlightComment">  /// @returns the value for an integer or vector of integer constant of the</span></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><span class="doxyHighlightComment">  /// given type that has all its bits set to true.</span></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><span class="doxyHighlightComment">  /// Get the all ones value</span></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a4d51384de6e1798bb6aa875aebeea9f0">getAllOnesValue</a>(<a href="/docs/api/classes/llvm/type">Type</a>&#42; Ty);</span></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><span class="doxyHighlightComment">  /// Return the value for an integer or pointer constant, or a vector thereof,</span></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><span class="doxyHighlightComment">  /// with the given scalar value.</span></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a0154da1d06b29a1d5649607ae2dfc389">getIntegerValue</a>(<a href="/docs/api/classes/llvm/type">Type</a> &#42;Ty, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/apint">APInt</a> &amp;V);</span></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><span class="doxyHighlightComment">  /// If there are any dead constant users dangling off of this constant, remove</span></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><span class="doxyHighlightComment">  /// them. This method is useful for clients that want to check to see if a</span></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><span class="doxyHighlightComment">  /// global is unused, but don&#39;t want to deal with potentially dead constants</span></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><span class="doxyHighlightComment">  /// hanging off of the globals.</span></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a960620248182018e566b095f06a605df">removeDeadConstantUsers</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><span class="doxyHighlightComment">  /// Return true if the constant has exactly one live use.</span></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><span class="doxyHighlightComment">  /// This returns the same result as calling Value::hasOneUse after</span></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><span class="doxyHighlightComment">  /// Constant::removeDeadConstantUsers, but doesn&#39;t remove dead constants.</span></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a853c6a408fcbc1ce65e8c9e200019a89">hasOneLiveUse</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><span class="doxyHighlightComment">  /// Return true if the constant has no live uses.</span></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><span class="doxyHighlightComment">  /// This returns the same result as calling Value::use&#95;empty after</span></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><span class="doxyHighlightComment">  /// Constant::removeDeadConstantUsers, but doesn&#39;t remove dead constants.</span></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a57704906384ceba93d235e2747d6a210">hasZeroLiveUses</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218" lineLink="/docs/api/classes/llvm/constant/#a6c6af867b9eca0a16600b50e31df0e33"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a6c6af867b9eca0a16600b50e31df0e33">stripPointerCasts</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ac4fc845f5ed92de63cd4474f128f5fc5">cast&lt;Constant&gt;</a>(<a href="/docs/api/classes/llvm/value/#a966eb231e7d4e572874d2cb49b18faea">Value::stripPointerCasts</a>());</span></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222" lineLink="/docs/api/classes/llvm/constant/#a851f8a63da7b869315b4ebf6b10c546d"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a851f8a63da7b869315b4ebf6b10c546d">stripPointerCasts</a>() &#123;</span></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">const&#95;cast&lt;</span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a>&#42;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(</span></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><span class="doxyHighlight">                      </span><span class="doxyHighlightKeyword">static&#95;cast&lt;</span><span class="doxyHighlightKeyword">const </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/constant/#a6659b3192e82624cd45d835e9178f8f7">Constant</a> &#42;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">)-&gt;stripPointerCasts());</span></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><span class="doxyHighlightComment">  /// Try to replace undefined constant C or undefined elements in C with</span></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><span class="doxyHighlightComment">  /// Replacement. If no changes are made, the constant C is returned.</span></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a174c8fd19771468c53842a7fde8ddce1">replaceUndefsWith</a>(<a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;Replacement);</span></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><span class="doxyHighlightComment">  /// Merges undefs of a Constant with another Constant, along with the</span></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><span class="doxyHighlightComment">  /// undefs already present. Other doesn&#39;t have to be the same type as C, but</span></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><span class="doxyHighlightComment">  /// both must either be scalars or vectors with the same element count. If no</span></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"><span class="doxyHighlightComment">  /// changes are made, the constant C is returned.</span></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/classes/llvm/constant/#a31dbd9cf336966a863e37c5653b6c134">mergeUndefsWith</a>(<a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/namespaces/llvm/callingconv/#ac6aa1387c4375260e2468eb5a77fdb4cafd841a49aec1539bc88abc8ff9e170fb">C</a>, <a href="/docs/api/classes/llvm/constant">Constant</a> &#42;<a href="/docs/api/namespaces/llvm/#a9eb4f5b98b70ee4fab9614ed58282c1fa6311ae17c1ee52b36e68aaf4ad066387">Other</a>);</span></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><span class="doxyHighlightComment">  /// Return true if a constant is ConstantData or a ConstantAggregate or</span></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><span class="doxyHighlightComment">  /// ConstantExpr that contain only ConstantData.</span></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/constant/#a5a4d3145c046afe97789b9739a200971">isManifestConstant</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><span class="doxyHighlightKeyword">private</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">enum</span><span class="doxyHighlight"> PossibleRelocationsTy &#123;</span></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><span class="doxyHighlightComment">    /// This constant requires no relocations. That is, it holds simple</span></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><span class="doxyHighlightComment">    /// constants (like integrals).</span></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"><span class="doxyHighlight">    NoRelocation = 0,</span></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><span class="doxyHighlightComment">    /// This constant holds static relocations that can be resolved by the</span></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><span class="doxyHighlightComment">    /// static linker.</span></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><span class="doxyHighlight">    LocalRelocation = 1,</span></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><span class="doxyHighlightComment">    /// This constant holds dynamic relocations that the dynamic linker will</span></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><span class="doxyHighlightComment">    /// need to resolve.</span></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><span class="doxyHighlight">    GlobalRelocation = 2,</span></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"><span class="doxyHighlight">  &#125;;</span></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><span class="doxyHighlightComment">  /// Determine what potential relocations may be needed by this constant.</span></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><span class="doxyHighlight">  PossibleRelocationsTy getRelocationInfo() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> hasNLiveUses(</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/support/regcomp-c/#a0240ac851181b84ac374872dc5434ee4">N</a>) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace llvm</span></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;IR&#95;CONSTANT&#95;H</span></CodeLine>
 
 </ProgramListing>
 

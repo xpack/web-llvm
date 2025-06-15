@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -87,88 +86,88 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- MipsOptionRecord.h - Abstraction for storing information -&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// MipsOptionRecord - Abstraction for storing arbitrary information in</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ELF files. Arbitrary information (e.g. register usage) can be stored in Mips</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// specific ELF sections like .Mips.options. Specific records should subclass</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// MipsOptionRecord and provide an implementation to EmitMipsOptionRecord which</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">// basically just dumps the information into an ELF section. More information</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">// about .Mips.option can be found in the SysV ABI and the 64-bit ELF Object</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">// specification.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;LIB&#95;TARGET&#95;MIPS&#95;MIPSOPTIONRECORD&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;LIB&#95;TARGET&#95;MIPS&#95;MIPSOPTIONRECORD&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/mctargetdesc/mipsmctargetdesc-h">MCTargetDesc/MipsMCTargetDesc.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mccontext-h">llvm/MC/MCContext.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcregisterinfo-h">llvm/MC/MCRegisterInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstdint&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/mipselfstreamer">MipsELFStreamer</a>;</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31" lineLink="/docs/api/classes/llvm/mipsoptionrecord"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/mipsoptionrecord">MipsOptionRecord</a> &#123;</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33" lineLink="/docs/api/classes/llvm/mipsoptionrecord/#a69b74332ec93ea969171dd28e5885d7c"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mipsoptionrecord/#a69b74332ec93ea969171dd28e5885d7c">~MipsOptionRecord</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35" lineLink="/docs/api/classes/llvm/mipsoptionrecord/#aa923dd64a7f433c9135eebf8c6ebd18a"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mipsoptionrecord/#aa923dd64a7f433c9135eebf8c6ebd18a">EmitMipsOptionRecord</a>() = 0;</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38" lineLink="/docs/api/classes/llvm/mipsreginforecord"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/mipsreginforecord/#acfc18bd37af88f32dd6f57630a30604c">MipsRegInfoRecord</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mipsoptionrecord">MipsOptionRecord</a> &#123;</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40" lineLink="/docs/api/classes/llvm/mipsreginforecord/#acfc18bd37af88f32dd6f57630a30604c"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mipsreginforecord/#acfc18bd37af88f32dd6f57630a30604c">MipsRegInfoRecord</a>(<a href="/docs/api/classes/llvm/mipselfstreamer">MipsELFStreamer</a> &#42;S, <a href="/docs/api/classes/llvm/mccontext">MCContext</a> &amp;Context)</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">      : Streamer(S), Context(Context) &#123;</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">    ri&#95;gprmask = 0;</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">    ri&#95;cprmask&#91;0&#93; = ri&#95;cprmask&#91;1&#93; = ri&#95;cprmask&#91;2&#93; = ri&#95;cprmask&#91;3&#93; = 0;</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">    ri&#95;gp&#95;value = 0;</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterinfo">MCRegisterInfo</a> &#42;<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a> = Context.getRegisterInfo();</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">    GPR32RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::GPR32RegClassID));</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">    GPR64RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::GPR64RegClassID));</Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">    FGR32RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::FGR32RegClassID));</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">    FGR64RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::FGR64RegClassID));</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">    AFGR64RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::AFGR64RegClassID));</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">    MSA128BRegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::MSA128BRegClassID));</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">    COP0RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::COP0RegClassID));</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">    COP2RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::COP2RegClassID));</Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">    COP3RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::COP3RegClassID));</Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58" lineLink="/docs/api/classes/llvm/mipsreginforecord/#acf8bb46871a16719557fc231d37f5edd"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mipsreginforecord/#acf8bb46871a16719557fc231d37f5edd">~MipsRegInfoRecord</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal"> = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mipsreginforecord/#aa84b1e01b55d45024625b88ccccd4772">EmitMipsOptionRecord</a>() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mipsreginforecord/#a08ccbcf5688d00eb218e2dac89eedcb1">SetPhysRegUsed</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a359e1ff26f6d466d927a61aae45b05c3">Reg</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterinfo">MCRegisterInfo</a> &#42;MCRegInfo);</Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mipselfstreamer">MipsELFStreamer</a> &#42;Streamer;</Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mccontext">MCContext</a> &amp;Context;</Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;GPR32RegClass;</Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;GPR64RegClass;</Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;FGR32RegClass;</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;FGR64RegClass;</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;AFGR64RegClass;</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;MSA128BRegClass;</Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;COP0RegClass;</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;COP2RegClass;</Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;COP3RegClass;</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  uint32&#95;t ri&#95;gprmask;</Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  uint32&#95;t ri&#95;cprmask&#91;4&#93;;</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  int64&#95;t ri&#95;gp&#95;value;</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;LIB&#95;TARGET&#95;MIPS&#95;MIPSOPTIONRECORD&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- MipsOptionRecord.h - Abstraction for storing information -&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// MipsOptionRecord - Abstraction for storing arbitrary information in</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">// ELF files. Arbitrary information (e.g. register usage) can be stored in Mips</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">// specific ELF sections like .Mips.options. Specific records should subclass</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">// MipsOptionRecord and provide an implementation to EmitMipsOptionRecord which</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightComment">// basically just dumps the information into an ELF section. More information</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightComment">// about .Mips.option can be found in the SysV ABI and the 64-bit ELF Object</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightComment">// specification.</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;LIB&#95;TARGET&#95;MIPS&#95;MIPSOPTIONRECORD&#95;H</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">#define LLVM&#95;LIB&#95;TARGET&#95;MIPS&#95;MIPSOPTIONRECORD&#95;H</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/lib/lib/target/lib/target/mips/lib/target/mips/mctargetdesc/mipsmctargetdesc-h">MCTargetDesc/MipsMCTargetDesc.h</a>&quot;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mccontext-h">llvm/MC/MCContext.h</a>&quot;</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcregisterinfo-h">llvm/MC/MCRegisterInfo.h</a>&quot;</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightPreprocessor">#include &lt;cstdint&gt;</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/mipselfstreamer">MipsELFStreamer</a>;</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31" lineLink="/docs/api/classes/llvm/mipsoptionrecord"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/mipsoptionrecord">MipsOptionRecord</a> &#123;</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33" lineLink="/docs/api/classes/llvm/mipsoptionrecord/#a69b74332ec93ea969171dd28e5885d7c"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">virtual</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mipsoptionrecord/#a69b74332ec93ea969171dd28e5885d7c">~MipsOptionRecord</a>() = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35" lineLink="/docs/api/classes/llvm/mipsoptionrecord/#aa923dd64a7f433c9135eebf8c6ebd18a"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">virtual</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mipsoptionrecord/#aa923dd64a7f433c9135eebf8c6ebd18a">EmitMipsOptionRecord</a>() = 0;</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38" lineLink="/docs/api/classes/llvm/mipsreginforecord"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/mipsreginforecord/#acfc18bd37af88f32dd6f57630a30604c">MipsRegInfoRecord</a> : </span><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mipsoptionrecord">MipsOptionRecord</a> &#123;</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40" lineLink="/docs/api/classes/llvm/mipsreginforecord/#acfc18bd37af88f32dd6f57630a30604c"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/mipsreginforecord/#acfc18bd37af88f32dd6f57630a30604c">MipsRegInfoRecord</a>(<a href="/docs/api/classes/llvm/mipselfstreamer">MipsELFStreamer</a> &#42;S, <a href="/docs/api/classes/llvm/mccontext">MCContext</a> &amp;Context)</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlight">      : Streamer(S), Context(Context) &#123;</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlight">    ri&#95;gprmask = 0;</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlight">    ri&#95;cprmask&#91;0&#93; = ri&#95;cprmask&#91;1&#93; = ri&#95;cprmask&#91;2&#93; = ri&#95;cprmask&#91;3&#93; = 0;</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlight">    ri&#95;gp&#95;value = 0;</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcregisterinfo">MCRegisterInfo</a> &#42;<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a> = Context.getRegisterInfo();</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlight">    GPR32RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::GPR32RegClassID));</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlight">    GPR64RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::GPR64RegClassID));</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlight">    FGR32RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::FGR32RegClassID));</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlight">    FGR64RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::FGR64RegClassID));</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlight">    AFGR64RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::AFGR64RegClassID));</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlight">    MSA128BRegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::MSA128BRegClassID));</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlight">    COP0RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::COP0RegClassID));</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlight">    COP2RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::COP2RegClassID));</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlight">    COP3RegClass = &amp;(<a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a0f36ed1bc17fc1aa97fe291c439a0698">TRI</a>-&gt;getRegClass(Mips::COP3RegClassID));</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58" lineLink="/docs/api/classes/llvm/mipsreginforecord/#acf8bb46871a16719557fc231d37f5edd"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/mipsreginforecord/#acf8bb46871a16719557fc231d37f5edd">~MipsRegInfoRecord</a>() </span><span class="doxyHighlightKeyword">override</span><span class="doxyHighlight"> = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mipsreginforecord/#aa84b1e01b55d45024625b88ccccd4772">EmitMipsOptionRecord</a>() </span><span class="doxyHighlightKeyword">override</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mipsreginforecord/#a08ccbcf5688d00eb218e2dac89eedcb1">SetPhysRegUsed</a>(</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a359e1ff26f6d466d927a61aae45b05c3">Reg</a>, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcregisterinfo">MCRegisterInfo</a> &#42;MCRegInfo);</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><span class="doxyHighlightKeyword">private</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/mipselfstreamer">MipsELFStreamer</a> &#42;Streamer;</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/mccontext">MCContext</a> &amp;Context;</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;GPR32RegClass;</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;GPR64RegClass;</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;FGR32RegClass;</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;FGR64RegClass;</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;AFGR64RegClass;</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;MSA128BRegClass;</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;COP0RegClass;</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;COP2RegClass;</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcregisterclass">MCRegisterClass</a> &#42;COP3RegClass;</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlight">  uint32&#95;t ri&#95;gprmask;</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlight">  uint32&#95;t ri&#95;cprmask&#91;4&#93;;</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlight">  int64&#95;t ri&#95;gp&#95;value;</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace llvm</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;LIB&#95;TARGET&#95;MIPS&#95;MIPSOPTIONRECORD&#95;H</span></CodeLine>
 
 </ProgramListing>
 

@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -109,478 +108,478 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===--------------------- ResourceManager.h --------------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="comment">/// \\file</Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="comment">/// The classes here represent processor resource units and their management</Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="comment">/// strategy.  These classes are managed by the Scheduler.</Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;MCA&#95;HARDWAREUNITS&#95;RESOURCEMANAGER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;MCA&#95;HARDWAREUNITS&#95;RESOURCEMANAGER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h">llvm/ADT/DenseMap.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcschedule-h">llvm/MC/MCSchedule.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mca/instruction-h">llvm/MCA/Instruction.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mca/support-h">llvm/MCA/Support.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/mca">mca</a> &#123;</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="comment">/// Used to notify the internal state of a processor resource.</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="comment">/// A processor resource is available if it is not reserved, and there are</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="comment">/// available slots in the buffer.  A processor resource is unavailable if it</Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="comment">/// is either reserved, or the associated buffer is full. A processor resource</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">/// with a buffer size of -1 is always available if it is not reserved.</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="comment">/// Values of type ResourceStateEvent are returned by method</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="comment">/// ResourceManager::canBeDispatched()</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">/// The naming convention for resource state events is:</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">///  &#42; Event names start with prefix RS&#95;</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">///  &#42; Prefix RS&#95; is followed by a string describing the actual resource state.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40" lineLink="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072a"><Highlight kind="normal"></Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072a">ResourceStateEvent</a> &#123;</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41" lineLink="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072aa3f746cb41f05bc7d2405d8f261ad3b53"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072aa3f746cb41f05bc7d2405d8f261ad3b53">RS&#95;BUFFER&#95;AVAILABLE</a>,</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42" lineLink="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072aa31d38f37314ff7269028574355831c80"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072aa31d38f37314ff7269028574355831c80">RS&#95;BUFFER&#95;UNAVAILABLE</a>,</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43" lineLink="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072aadc0c2c76e3c6a9189f1c720ed16abd2f"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072aadc0c2c76e3c6a9189f1c720ed16abd2f">RS&#95;RESERVED</a></Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="comment">/// Resource allocation strategy used by hardware scheduler resources.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/classes/llvm/mca/resourcestrategy"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">ResourceStrategy &#123;</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mca/resourcestrategy/#ace11a0d466a1cb53ab316d1c0c4e300c">ResourceStrategy</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ResourceStrategy &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  ResourceStrategy &amp;operator=(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> ResourceStrategy &amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52" lineLink="/docs/api/classes/llvm/mca/resourcestrategy/#ace11a0d466a1cb53ab316d1c0c4e300c"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mca/resourcestrategy/#ace11a0d466a1cb53ab316d1c0c4e300c">ResourceStrategy</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53" lineLink="/docs/api/classes/llvm/mca/resourcestrategy/#a7e949b40770b10b26d316a04bf2edcea"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mca/resourcestrategy/#a7e949b40770b10b26d316a04bf2edcea">~ResourceStrategy</a>();</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="comment">  /// Selects a processor resource unit from a ReadyMask.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56" lineLink="/docs/api/classes/llvm/mca/resourcestrategy/#a1e2b6442d33e00ce41448e655dc22697"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> uint64&#95;t <a href="/docs/api/classes/llvm/mca/resourcestrategy/#a1e2b6442d33e00ce41448e655dc22697">select</a>(uint64&#95;t ReadyMask) = 0;</Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="comment">  /// Called by the ResourceManager when a processor resource group, or a</Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">  /// processor resource with multiple units has become unavailable.</Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="comment">  /// The default strategy uses this information to bias its selection logic.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62" lineLink="/docs/api/classes/llvm/mca/resourcestrategy/#a8f5c6f9a9d50b1d06510d43a736e9be9"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mca/resourcestrategy/#a8f5c6f9a9d50b1d06510d43a736e9be9">used</a>(uint64&#95;t ResourceMask) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="comment">/// Default resource allocation strategy used by processor resource groups and</Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="comment">/// processor resources with multiple units.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67" lineLink="/docs/api/classes/llvm/mca/defaultresourcestrategy"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/mca/defaultresourcestrategy/#a10cdf68ba23d403b70dd95f8d0f2023b">DefaultResourceStrategy</a> final : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> ResourceStrategy &#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="comment">  /// A Mask of resource unit identifiers.</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="comment">  /// There is one bit set for every available resource unit.</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="comment">  /// It defaults to the value of field ResourceSizeMask in ResourceState.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> uint64&#95;t ResourceUnitMask;</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="comment">  /// A simple round-robin selector for processor resource units.</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="comment">  /// Each bit of this mask identifies a sub resource within a group.</Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">  /// As an example, lets assume that this is a default policy for a</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="comment">  /// processor resource group composed by the following three units:</Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="comment">  ///   ResourceA -- 0b001</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="comment">  ///   ResourceB -- 0b010</Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  ///   ResourceC -- 0b100</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">  /// Field NextInSequenceMask is used to select the next unit from the set of</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  /// resource units. It defaults to the value of field &#96;ResourceUnitMasks&#96; (in</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="comment">  /// this example, it defaults to mask &#39;0b111&#39;).</Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="comment">  /// The round-robin selector would firstly select &#39;ResourceC&#39;, then</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">  /// &#39;ResourceB&#39;, and eventually &#39;ResourceA&#39;.  When a resource R is used, the</Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">  /// corresponding bit in NextInSequenceMask is cleared.  For example, if</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">  /// &#39;ResourceC&#39; is selected, then the new value of NextInSequenceMask becomes</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">  /// 0xb011.</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="comment">  /// When NextInSequenceMask becomes zero, it is automatically reset to the</Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">  /// default value (i.e. ResourceUnitMask).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  uint64&#95;t NextInSequenceMask;</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">  /// This field is used to track resource units that are used (i.e. selected)</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">  /// by other groups other than the one associated with this strategy object.</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">  /// In LLVM processor resource groups are allowed to partially (or fully)</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="comment">  /// overlap. That means, a same unit may be visible to multiple groups.</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">  /// This field keeps track of uses that have originated from outside of</Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="comment">  /// this group. The idea is to bias the selection strategy, so that resources</Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="comment">  /// that haven&#39;t been used by other groups get prioritized.</Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="comment">  /// The end goal is to (try to) keep the resource distribution as much uniform</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="comment">  /// as possible. By construction, this mask only tracks one-level of resource</Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="comment">  /// usage. Therefore, this strategy is expected to be less accurate when same</Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="comment">  /// units are used multiple times by other groups within a single round of</Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="comment">  /// select.</Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">  /// Note: an LRU selector would have a better accuracy at the cost of being</Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">  /// slightly more expensive (mostly in terms of runtime cost). Methods</Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="comment">  /// &#39;select&#39; and &#39;used&#39;, are always in the hot execution path of llvm-mca.</Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="comment">  /// Therefore, a slow implementation of &#39;select&#39; would have a negative impact</Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">  /// on the overall performance of the tool.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">  uint64&#95;t RemovedFromNextInSequence;</Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120" lineLink="/docs/api/classes/llvm/mca/defaultresourcestrategy/#a10cdf68ba23d403b70dd95f8d0f2023b"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mca/defaultresourcestrategy/#a10cdf68ba23d403b70dd95f8d0f2023b">DefaultResourceStrategy</a>(uint64&#95;t UnitMask)</Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">      : ResourceUnitMask(UnitMask), NextInSequenceMask(UnitMask),</Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">        RemovedFromNextInSequence(0) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123" lineLink="/docs/api/classes/llvm/mca/defaultresourcestrategy/#ae738360dc7fe17f32f3602264628f2dd"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mca/defaultresourcestrategy/#ae738360dc7fe17f32f3602264628f2dd">~DefaultResourceStrategy</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">  uint64&#95;t <a href="/docs/api/classes/llvm/mca/defaultresourcestrategy/#ae98cd9a61040a0208a29df6238b7aa08">select</a>(uint64&#95;t ReadyMask) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mca/defaultresourcestrategy/#a37c31dd9225bfb63fd296560b380c2bd">used</a>(uint64&#95;t Mask) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="comment">/// A processor resource descriptor.</Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="comment">/// There is an instance of this class for every processor resource defined by</Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="comment">/// the machine scheduling model.</Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="comment">/// Objects of class ResourceState dynamically track the usage of processor</Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="comment">/// resource units.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135" lineLink="/docs/api/classes/llvm/mca/resourcestate"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/mca/resourcestate">ResourceState</a> &#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="comment">  /// An index to the MCProcResourceDesc entry in the processor model.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> ProcResourceDescIndex;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="comment">  /// A resource mask. This is generated by the tool with the help of</Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="comment">  /// function &#96;mca::computeProcResourceMasks&#39; (see Support.h).</Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="comment">  /// Field ResourceMask only has one bit set if this resource state describes a</Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="comment">  /// processor resource unit (i.e. this is not a group). That means, we can</Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="comment">  /// quickly check if a resource is a group by simply counting the number of</Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="comment">  /// bits that are set in the mask.</Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="comment">  /// The most significant bit of a mask (MSB) uniquely identifies a resource.</Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="comment">  /// Remaining bits are used to describe the composition of a group (Group).</Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="comment">  /// Example (little endian):</Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="comment">  ///            Resource |  Mask      |  MSB       |  Group</Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="comment">  ///            ---------+------------+------------+------------</Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="comment">  ///            A        |  0b000001  |  0b000001  |  0b000000</Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="comment">  ///                     |            |            |</Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="comment">  ///            B        |  0b000010  |  0b000010  |  0b000000</Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="comment">  ///                     |            |            |</Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="comment">  ///            C        |  0b010000  |  0b010000  |  0b000000</Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="comment">  ///                     |            |            |</Highlight></CodeLine>
-<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="comment">  ///            D        |  0b110010  |  0b100000  |  0b010010</Highlight></CodeLine>
-<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="comment">  /// In this example, resources A, B and C are processor resource units.</Highlight></CodeLine>
-<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="comment">  /// Only resource D is a group resource, and it contains resources B and C.</Highlight></CodeLine>
-<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="comment">  /// That is because MSB(B) and MSB(C) are both contained within Group(D).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> uint64&#95;t ResourceMask;</Highlight></CodeLine>
-<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="comment">  /// A ProcResource can have multiple units.</Highlight></CodeLine>
-<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="comment">  /// For processor resource groups this field is a mask of contained resource</Highlight></CodeLine>
-<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="comment">  /// units. It is obtained from ResourceMask by clearing the highest set bit.</Highlight></CodeLine>
-<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="comment">  /// The number of resource units in a group can be simply computed as the</Highlight></CodeLine>
-<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="comment">  /// population count of this field.</Highlight></CodeLine>
-<Link id="l00171" /><CodeLine lineNumber="171"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="comment">  /// For normal (i.e. non-group) resources, the number of bits set in this mask</Highlight></CodeLine>
-<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="comment">  /// is equivalent to the number of units declared by the processor model (see</Highlight></CodeLine>
-<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="comment">  /// field &#39;NumUnits&#39; in &#39;ProcResourceUnits&#39;).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">  uint64&#95;t ResourceSizeMask;</Highlight></CodeLine>
-<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="comment">  /// A mask of ready units.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">  uint64&#95;t ReadyMask;</Highlight></CodeLine>
-<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="comment">  /// Buffered resources will have this field set to a positive number different</Highlight></CodeLine>
-<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="comment">  /// than zero. A buffered resource behaves like a reservation station</Highlight></CodeLine>
-<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="comment">  /// implementing its own buffer for out-of-order execution.</Highlight></CodeLine>
-<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="comment">  /// A BufferSize of 1 is used by scheduler resources that force in-order</Highlight></CodeLine>
-<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="comment">  /// execution.</Highlight></CodeLine>
-<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="comment">  /// A BufferSize of 0 is used to model in-order issue/dispatch resources.</Highlight></CodeLine>
-<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="comment">  /// Since in-order issue/dispatch resources don&#39;t implement buffers, dispatch</Highlight></CodeLine>
-<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="comment">  /// events coincide with issue events.</Highlight></CodeLine>
-<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="comment">  /// Also, no other instruction ca be dispatched/issue while this resource is</Highlight></CodeLine>
-<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="comment">  /// in use. Only when all the &quot;resource cycles&quot; are consumed (after the issue</Highlight></CodeLine>
-<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="comment">  /// event), a new instruction ca be dispatched.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> BufferSize;</Highlight></CodeLine>
-<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="comment">  /// Available slots in the buffer (zero, if this is not a buffered resource).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> AvailableSlots;</Highlight></CodeLine>
-<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="comment">  /// This field is set if this resource is currently reserved.</Highlight></CodeLine>
-<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="comment">  /// Resources can be reserved for a number of cycles.</Highlight></CodeLine>
-<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="comment">  /// Instructions can still be dispatched to reserved resources. However,</Highlight></CodeLine>
-<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="comment">  /// istructions dispatched to a reserved resource cannot be issued to the</Highlight></CodeLine>
-<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="comment">  /// underlying units (i.e. pipelines) until the resource is released.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/gvn-cpp/#ae8ec32a9818e9fd7c653c86bc0c4dc7ea453e6aa38d87b28ccae545967c53004f">Unavailable</a>;</Highlight></CodeLine>
-<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> IsAGroup;</Highlight></CodeLine>
-<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="comment">  /// Checks for the availability of unit &#39;SubResMask&#39; in the group.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isSubResourceReady(uint64&#95;t SubResMask)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ReadyMask &amp; SubResMask;</Highlight></CodeLine>
-<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/mca/resourcestate">ResourceState</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/mcprocresourcedesc">MCProcResourceDesc</a> &amp;<a href="/docs/api/namespaces/llvm/#a4de98a9acffcef5bb4b31862cb8c72ac">Desc</a>, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Index, uint64&#95;t Mask);</Highlight></CodeLine>
-<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> getProcResourceID()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ProcResourceDescIndex; &#125;</Highlight></CodeLine>
-<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">  uint64&#95;t getResourceMask()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ResourceMask; &#125;</Highlight></CodeLine>
-<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">  uint64&#95;t getReadyMask()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ReadyMask; &#125;</Highlight></CodeLine>
-<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> getBufferSize()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> BufferSize; &#125;</Highlight></CodeLine>
-<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isBuffered()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> BufferSize &gt; 0; &#125;</Highlight></CodeLine>
-<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isInOrder()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> BufferSize == 1; &#125;</Highlight></CodeLine>
-<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="comment">  /// Returns true if this is an in-order dispatch/issue resource.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isADispatchHazard()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> BufferSize == 0; &#125;</Highlight></CodeLine>
-<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isReserved()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/gvn-cpp/#ae8ec32a9818e9fd7c653c86bc0c4dc7ea453e6aa38d87b28ccae545967c53004f">Unavailable</a>; &#125;</Highlight></CodeLine>
-<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> setReserved() &#123; <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/gvn-cpp/#ae8ec32a9818e9fd7c653c86bc0c4dc7ea453e6aa38d87b28ccae545967c53004f">Unavailable</a> = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
-<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> clearReserved() &#123; <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/gvn-cpp/#ae8ec32a9818e9fd7c653c86bc0c4dc7ea453e6aa38d87b28ccae545967c53004f">Unavailable</a> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">; &#125;</Highlight></CodeLine>
-<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="comment">  /// Returs true if this resource is not reserved, and if there are at least</Highlight></CodeLine>
-<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="comment">  /// &#96;NumUnits&#96; available units.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isReady(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> NumUnits = 1) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">  uint64&#95;t getNumReadyUnits()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a0eea77e7bfa82e0219d2ec7b4efbc94f">llvm::popcount</a>(ReadyMask); &#125;</Highlight></CodeLine>
-<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isAResourceGroup()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> IsAGroup; &#125;</Highlight></CodeLine>
-<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> containsResource(uint64&#95;t <a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>)</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ResourceMask &amp; <a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>; &#125;</Highlight></CodeLine>
-<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> markSubResourceAsUsed(uint64&#95;t <a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>) &#123;</Highlight></CodeLine>
-<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(isSubResourceReady(<a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>));</Highlight></CodeLine>
-<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">    ReadyMask ^= <a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>;</Highlight></CodeLine>
-<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> releaseSubResource(uint64&#95;t <a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>) &#123;</Highlight></CodeLine>
-<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!isSubResourceReady(<a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>));</Highlight></CodeLine>
-<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">    ReadyMask ^= <a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>;</Highlight></CodeLine>
-<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> getNumUnits()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> isAResourceGroup() ? 1U : <a href="/docs/api/namespaces/llvm/#a0eea77e7bfa82e0219d2ec7b4efbc94f">llvm::popcount</a>(ResourceSizeMask);</Highlight></CodeLine>
-<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="comment">  /// Checks if there is an available slot in the resource buffer.</Highlight></CodeLine>
-<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="comment">  /// Returns RS&#95;BUFFER&#95;AVAILABLE if this is not a buffered resource, or if</Highlight></CodeLine>
-<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="comment">  /// there is a slot available.</Highlight></CodeLine>
-<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="comment">  /// Returns RS&#95;RESERVED if this buffered resource is a dispatch hazard, and it</Highlight></CodeLine>
-<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="comment">  /// is reserved.</Highlight></CodeLine>
-<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="comment">  /// Returns RS&#95;BUFFER&#95;UNAVAILABLE if there are no available slots.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072a">ResourceStateEvent</a> isBufferAvailable() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="comment">  /// Reserve a buffer slot.</Highlight></CodeLine>
-<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="comment">  /// Returns true if the buffer is not full.</Highlight></CodeLine>
-<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="comment">  /// It always returns true if BufferSize is set to zero.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> reserveBuffer() &#123;</Highlight></CodeLine>
-<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (BufferSize &lt;= 0)</Highlight></CodeLine>
-<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00273" /><CodeLine lineNumber="273"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00274" /><CodeLine lineNumber="274"><Highlight kind="normal">    --AvailableSlots;</Highlight></CodeLine>
-<Link id="l00275" /><CodeLine lineNumber="275"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(AvailableSlots &lt;= </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(BufferSize));</Highlight></CodeLine>
-<Link id="l00276" /><CodeLine lineNumber="276"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> AvailableSlots;</Highlight></CodeLine>
-<Link id="l00277" /><CodeLine lineNumber="277"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00278" /><CodeLine lineNumber="278"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00279" /><CodeLine lineNumber="279"><Highlight kind="comment">  /// Releases a slot in the buffer.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00280" /><CodeLine lineNumber="280"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> releaseBuffer() &#123;</Highlight></CodeLine>
-<Link id="l00281" /><CodeLine lineNumber="281"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Ignore dispatch hazards or invalid buffer sizes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00282" /><CodeLine lineNumber="282"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (BufferSize &lt;= 0)</Highlight></CodeLine>
-<Link id="l00283" /><CodeLine lineNumber="283"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00284" /><CodeLine lineNumber="284"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00285" /><CodeLine lineNumber="285"><Highlight kind="normal">    ++AvailableSlots;</Highlight></CodeLine>
-<Link id="l00286" /><CodeLine lineNumber="286"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(AvailableSlots &lt;= </Highlight><Highlight kind="keyword">static&#95;cast&lt;</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(BufferSize));</Highlight></CodeLine>
-<Link id="l00287" /><CodeLine lineNumber="287"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00288" /><CodeLine lineNumber="288"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00289" /><CodeLine lineNumber="289"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef NDEBUG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00290" /><CodeLine lineNumber="290"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> dump() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00291" /><CodeLine lineNumber="291"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00292" /><CodeLine lineNumber="292"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00293" /><CodeLine lineNumber="293"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00294" /><CodeLine lineNumber="294"><Highlight kind="comment">/// A resource unit identifier.</Highlight></CodeLine>
-<Link id="l00295" /><CodeLine lineNumber="295"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00296" /><CodeLine lineNumber="296"><Highlight kind="comment">/// This is used to identify a specific processor resource unit using a pair</Highlight></CodeLine>
-<Link id="l00297" /><CodeLine lineNumber="297"><Highlight kind="comment">/// of indices where the &#39;first&#39; index is a processor resource mask, and the</Highlight></CodeLine>
-<Link id="l00298" /><CodeLine lineNumber="298"><Highlight kind="comment">/// &#39;second&#39; index is an index for a &quot;sub-resource&quot; (i.e. unit).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00299" /><CodeLine lineNumber="299"><Highlight kind="normal"></Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal"> std::pair&lt;uint64&#95;t, uint64&#95;t&gt; <a href="/docs/api/namespaces/llvm/mca/#a961b7aeaca000c803c0f4b1df4d26c27">ResourceRef</a>;</Highlight></CodeLine>
-<Link id="l00300" /><CodeLine lineNumber="300"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00301" /><CodeLine lineNumber="301"><Highlight kind="normal"></Highlight><Highlight kind="comment">// First: a MCProcResourceDesc index identifying a buffered resource.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00302" /><CodeLine lineNumber="302"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Second: max number of buffer entries used in this resource.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00303" /><CodeLine lineNumber="303"><Highlight kind="normal"></Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal"> std::pair&lt;unsigned, unsigned&gt; BufferUsageEntry;</Highlight></CodeLine>
-<Link id="l00304" /><CodeLine lineNumber="304"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00305" /><CodeLine lineNumber="305"><Highlight kind="comment">/// A resource manager for processor resource units and groups.</Highlight></CodeLine>
-<Link id="l00306" /><CodeLine lineNumber="306"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00307" /><CodeLine lineNumber="307"><Highlight kind="comment">/// This class owns all the ResourceState objects, and it is responsible for</Highlight></CodeLine>
-<Link id="l00308" /><CodeLine lineNumber="308"><Highlight kind="comment">/// acting on requests from a Scheduler by updating the internal state of</Highlight></CodeLine>
-<Link id="l00309" /><CodeLine lineNumber="309"><Highlight kind="comment">/// ResourceState objects.</Highlight></CodeLine>
-<Link id="l00310" /><CodeLine lineNumber="310"><Highlight kind="comment">/// This class doesn&#39;t know about instruction itineraries and functional units.</Highlight></CodeLine>
-<Link id="l00311" /><CodeLine lineNumber="311"><Highlight kind="comment">/// In future, it can be extended to support itineraries too through the same</Highlight></CodeLine>
-<Link id="l00312" /><CodeLine lineNumber="312"><Highlight kind="comment">/// public interface.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00313" /><CodeLine lineNumber="313"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/resourcemanager">ResourceManager</a> &#123;</Highlight></CodeLine>
-<Link id="l00314" /><CodeLine lineNumber="314"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Set of resources available on the subtarget.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00315" /><CodeLine lineNumber="315"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00316" /><CodeLine lineNumber="316"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// There is an instance of ResourceState for every resource declared by the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00317" /><CodeLine lineNumber="317"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// target scheduling model.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00318" /><CodeLine lineNumber="318"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00319" /><CodeLine lineNumber="319"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Elements of this vector are ordered by resource kind. In particular,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00320" /><CodeLine lineNumber="320"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// resource units take precedence over resource groups.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00321" /><CodeLine lineNumber="321"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00322" /><CodeLine lineNumber="322"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The index of a processor resource in this vector depends on the value of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00323" /><CodeLine lineNumber="323"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// its mask (see the description of field ResourceState::ResourceMask).  In</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00324" /><CodeLine lineNumber="324"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// particular, it is computed as the position of the most significant bit set</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00325" /><CodeLine lineNumber="325"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// (MSB) in the mask plus one (since we want to ignore the invalid resource</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00326" /><CodeLine lineNumber="326"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// descriptor at index zero).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00327" /><CodeLine lineNumber="327"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00328" /><CodeLine lineNumber="328"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Example (little endian):</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00329" /><CodeLine lineNumber="329"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00330" /><CodeLine lineNumber="330"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//             Resource | Mask    |  MSB    | Index</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00331" /><CodeLine lineNumber="331"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//             ---------+---------+---------+-------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00332" /><CodeLine lineNumber="332"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//                 A    | 0b00001 | 0b00001 |   1</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00333" /><CodeLine lineNumber="333"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//                      |         |         |</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00334" /><CodeLine lineNumber="334"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//                 B    | 0b00100 | 0b00100 |   3</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00335" /><CodeLine lineNumber="335"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//                      |         |         |</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00336" /><CodeLine lineNumber="336"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//                 C    | 0b10010 | 0b10000 |   5</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00337" /><CodeLine lineNumber="337"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00338" /><CodeLine lineNumber="338"><Highlight kind="normal">  </Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00339" /><CodeLine lineNumber="339"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// The same index is also used to address elements within vector &#96;Strategies&#96;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00340" /><CodeLine lineNumber="340"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// and vector &#96;Resource2Groups&#96;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00341" /><CodeLine lineNumber="341"><Highlight kind="normal">  std::vector&lt;std::unique&#95;ptr&lt;ResourceState&gt;&gt; Resources;</Highlight></CodeLine>
-<Link id="l00342" /><CodeLine lineNumber="342"><Highlight kind="normal">  std::vector&lt;std::unique&#95;ptr&lt;ResourceStrategy&gt;&gt; Strategies;</Highlight></CodeLine>
-<Link id="l00343" /><CodeLine lineNumber="343"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00344" /><CodeLine lineNumber="344"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Used to quickly identify groups that own a particular resource unit.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00345" /><CodeLine lineNumber="345"><Highlight kind="normal">  std::vector&lt;uint64&#95;t&gt; Resource2Groups;</Highlight></CodeLine>
-<Link id="l00346" /><CodeLine lineNumber="346"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00347" /><CodeLine lineNumber="347"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// A table that maps processor resource IDs to processor resource masks.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00348" /><CodeLine lineNumber="348"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;uint64&#95;t, 8&gt;</a> ProcResID2Mask;</Highlight></CodeLine>
-<Link id="l00349" /><CodeLine lineNumber="349"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00350" /><CodeLine lineNumber="350"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// A table that maps resource indices to actual processor resource IDs in the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00351" /><CodeLine lineNumber="351"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// scheduling model.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00352" /><CodeLine lineNumber="352"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;unsigned, 8&gt;</a> ResIndex2ProcResID;</Highlight></CodeLine>
-<Link id="l00353" /><CodeLine lineNumber="353"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00354" /><CodeLine lineNumber="354"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Keeps track of which resources are busy, and how many cycles are left</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00355" /><CodeLine lineNumber="355"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// before those become usable again.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00356" /><CodeLine lineNumber="356"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smalldensemap">SmallDenseMap&lt;ResourceRef, unsigned&gt;</a> BusyResources;</Highlight></CodeLine>
-<Link id="l00357" /><CodeLine lineNumber="357"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00358" /><CodeLine lineNumber="358"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Set of processor resource units available on the target.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00359" /><CodeLine lineNumber="359"><Highlight kind="normal">  uint64&#95;t ProcResUnitMask;</Highlight></CodeLine>
-<Link id="l00360" /><CodeLine lineNumber="360"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00361" /><CodeLine lineNumber="361"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Set of processor resource units that are available during this cycle.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00362" /><CodeLine lineNumber="362"><Highlight kind="normal">  uint64&#95;t AvailableProcResUnits;</Highlight></CodeLine>
-<Link id="l00363" /><CodeLine lineNumber="363"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00364" /><CodeLine lineNumber="364"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Set of processor resources that are currently reserved.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00365" /><CodeLine lineNumber="365"><Highlight kind="normal">  uint64&#95;t ReservedResourceGroups;</Highlight></CodeLine>
-<Link id="l00366" /><CodeLine lineNumber="366"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00367" /><CodeLine lineNumber="367"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Set of unavailable scheduler buffer resources. This is used internally to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00368" /><CodeLine lineNumber="368"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// speedup &#96;canBeDispatched()&#96; queries.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00369" /><CodeLine lineNumber="369"><Highlight kind="normal">  uint64&#95;t AvailableBuffers;</Highlight></CodeLine>
-<Link id="l00370" /><CodeLine lineNumber="370"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00371" /><CodeLine lineNumber="371"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Set of dispatch hazard buffer resources that are currently unavailable.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00372" /><CodeLine lineNumber="372"><Highlight kind="normal">  uint64&#95;t ReservedBuffers;</Highlight></CodeLine>
-<Link id="l00373" /><CodeLine lineNumber="373"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00374" /><CodeLine lineNumber="374"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Returns the actual resource unit that will be used.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00375" /><CodeLine lineNumber="375"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/mca/#a961b7aeaca000c803c0f4b1df4d26c27">ResourceRef</a> selectPipe(uint64&#95;t ResourceID);</Highlight></CodeLine>
-<Link id="l00376" /><CodeLine lineNumber="376"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00377" /><CodeLine lineNumber="377"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/localizer-cpp/#a428090a453f41a199ef67fc3f2179fbc">use</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/mca/#a961b7aeaca000c803c0f4b1df4d26c27">ResourceRef</a> &amp;RR);</Highlight></CodeLine>
-<Link id="l00378" /><CodeLine lineNumber="378"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a650dea4533083a886cec9f16d80356d9a123fead50246387983ee340507115ef4">release</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/mca/#a961b7aeaca000c803c0f4b1df4d26c27">ResourceRef</a> &amp;RR);</Highlight></CodeLine>
-<Link id="l00379" /><CodeLine lineNumber="379"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00380" /><CodeLine lineNumber="380"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> getNumUnits(uint64&#95;t ResourceID) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00381" /><CodeLine lineNumber="381"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00382" /><CodeLine lineNumber="382"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Overrides the selection strategy for the processor resource with the given</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00383" /><CodeLine lineNumber="383"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// mask.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00384" /><CodeLine lineNumber="384"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> setCustomStrategyImpl(std::unique&#95;ptr&lt;ResourceStrategy&gt; S,</Highlight></CodeLine>
-<Link id="l00385" /><CodeLine lineNumber="385"><Highlight kind="normal">                             uint64&#95;t ResourceMask);</Highlight></CodeLine>
-<Link id="l00386" /><CodeLine lineNumber="386"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00387" /><CodeLine lineNumber="387"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00388" /><CodeLine lineNumber="388"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/resourcemanager">ResourceManager</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/mcschedmodel">MCSchedModel</a> &amp;SM);</Highlight></CodeLine>
-<Link id="l00389" /><CodeLine lineNumber="389"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/resourcemanager">~ResourceManager</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00390" /><CodeLine lineNumber="390"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00391" /><CodeLine lineNumber="391"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Overrides the selection strategy for the resource at index ResourceID in</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00392" /><CodeLine lineNumber="392"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// the MCProcResourceDesc table.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00393" /><CodeLine lineNumber="393"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> setCustomStrategy(std::unique&#95;ptr&lt;ResourceStrategy&gt; S,</Highlight></CodeLine>
-<Link id="l00394" /><CodeLine lineNumber="394"><Highlight kind="normal">                         </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> ResourceID) &#123;</Highlight></CodeLine>
-<Link id="l00395" /><CodeLine lineNumber="395"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(ResourceID &lt; ProcResID2Mask.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#a1c479a8c434377c2b8cb056bdfdfc201">size</a>() &amp;&amp;</Highlight></CodeLine>
-<Link id="l00396" /><CodeLine lineNumber="396"><Highlight kind="normal">           </Highlight><Highlight kind="stringliteral">&quot;Invalid resource index in input!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00397" /><CodeLine lineNumber="397"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> setCustomStrategyImpl(std::move(S), ProcResID2Mask&#91;ResourceID&#93;);</Highlight></CodeLine>
-<Link id="l00398" /><CodeLine lineNumber="398"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00399" /><CodeLine lineNumber="399"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00400" /><CodeLine lineNumber="400"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Returns RS&#95;BUFFER&#95;AVAILABLE if buffered resources are not reserved, and if</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00401" /><CodeLine lineNumber="401"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// there are enough available slots in the buffers.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00402" /><CodeLine lineNumber="402"><Highlight kind="normal">  ResourceStateEvent canBeDispatched(uint64&#95;t ConsumedBuffers) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00403" /><CodeLine lineNumber="403"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00404" /><CodeLine lineNumber="404"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Return the processor resource identifier associated to this Mask.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00405" /><CodeLine lineNumber="405"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> resolveResourceMask(uint64&#95;t Mask) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00406" /><CodeLine lineNumber="406"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00407" /><CodeLine lineNumber="407"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Acquires a slot from every buffered resource in mask &#96;ConsumedBuffers&#96;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00408" /><CodeLine lineNumber="408"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Units that are dispatch hazards (i.e. BufferSize=0) are marked as reserved.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00409" /><CodeLine lineNumber="409"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> reserveBuffers(uint64&#95;t ConsumedBuffers);</Highlight></CodeLine>
-<Link id="l00410" /><CodeLine lineNumber="410"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00411" /><CodeLine lineNumber="411"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Releases a slot from every buffered resource in mask &#96;ConsumedBuffers&#96;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00412" /><CodeLine lineNumber="412"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// ConsumedBuffers is a bitmask of previously acquired buffers (using method</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00413" /><CodeLine lineNumber="413"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// &#96;reserveBuffers&#96;). Units that are dispatch hazards (i.e. BufferSize=0) are</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00414" /><CodeLine lineNumber="414"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// not automatically unreserved by this method.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00415" /><CodeLine lineNumber="415"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> releaseBuffers(uint64&#95;t ConsumedBuffers);</Highlight></CodeLine>
-<Link id="l00416" /><CodeLine lineNumber="416"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00417" /><CodeLine lineNumber="417"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Reserve a processor resource. A reserved resource is not available for</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00418" /><CodeLine lineNumber="418"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// instruction issue until it is released.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00419" /><CodeLine lineNumber="419"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> reserveResource(uint64&#95;t ResourceID);</Highlight></CodeLine>
-<Link id="l00420" /><CodeLine lineNumber="420"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00421" /><CodeLine lineNumber="421"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Release a previously reserved processor resource.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00422" /><CodeLine lineNumber="422"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> releaseResource(uint64&#95;t ResourceID);</Highlight></CodeLine>
-<Link id="l00423" /><CodeLine lineNumber="423"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00424" /><CodeLine lineNumber="424"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Returns a zero mask if resources requested by Desc are all available during</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00425" /><CodeLine lineNumber="425"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// this cycle. It returns a non-zero mask value only if there are unavailable</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00426" /><CodeLine lineNumber="426"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// processor resources; each bit set in the mask represents a busy processor</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00427" /><CodeLine lineNumber="427"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// resource unit or a reserved processor resource group.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00428" /><CodeLine lineNumber="428"><Highlight kind="normal">  uint64&#95;t checkAvailability(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> InstrDesc &amp;<a href="/docs/api/namespaces/llvm/#a4de98a9acffcef5bb4b31862cb8c72ac">Desc</a>) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00429" /><CodeLine lineNumber="429"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00430" /><CodeLine lineNumber="430"><Highlight kind="normal">  uint64&#95;t getProcResUnitMask()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> ProcResUnitMask; &#125;</Highlight></CodeLine>
-<Link id="l00431" /><CodeLine lineNumber="431"><Highlight kind="normal">  uint64&#95;t getAvailableProcResUnits()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> AvailableProcResUnits; &#125;</Highlight></CodeLine>
-<Link id="l00432" /><CodeLine lineNumber="432"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00433" /><CodeLine lineNumber="433"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">ResourceWithCycles = std::pair&lt;ResourceRef, ReleaseAtCycles&gt;;</Highlight></CodeLine>
-<Link id="l00434" /><CodeLine lineNumber="434"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00435" /><CodeLine lineNumber="435"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> issueInstruction(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> InstrDesc &amp;Desc,</Highlight></CodeLine>
-<Link id="l00436" /><CodeLine lineNumber="436"><Highlight kind="normal">                        SmallVectorImpl&lt;ResourceWithCycles&gt; &amp;Pipes) &#123;</Highlight></CodeLine>
-<Link id="l00437" /><CodeLine lineNumber="437"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (<a href="/docs/api/namespaces/llvm/#a4de98a9acffcef5bb4b31862cb8c72ac">Desc</a>.HasPartiallyOverlappingGroups)</Highlight></CodeLine>
-<Link id="l00438" /><CodeLine lineNumber="438"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> issueInstructionImpl(Desc, Pipes);</Highlight></CodeLine>
-<Link id="l00439" /><CodeLine lineNumber="439"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00440" /><CodeLine lineNumber="440"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> fastIssueInstruction(Desc, Pipes);</Highlight></CodeLine>
-<Link id="l00441" /><CodeLine lineNumber="441"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00442" /><CodeLine lineNumber="442"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00443" /><CodeLine lineNumber="443"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Selects pipeline resources consumed by an instruction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00444" /><CodeLine lineNumber="444"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// This method works under the assumption that used group resources don&#39;t</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00445" /><CodeLine lineNumber="445"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// partially overlap. The logic is guaranteed to find a valid resource unit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00446" /><CodeLine lineNumber="446"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// schedule, no matter in which order individual uses are processed. For that</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00447" /><CodeLine lineNumber="447"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// reason, the vector of resource uses is simply (and quickly) processed in</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00448" /><CodeLine lineNumber="448"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// sequence. The resulting schedule is eventually stored into vector &#96;Pipes&#96;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00449" /><CodeLine lineNumber="449"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> fastIssueInstruction(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> InstrDesc &amp;Desc,</Highlight></CodeLine>
-<Link id="l00450" /><CodeLine lineNumber="450"><Highlight kind="normal">                            SmallVectorImpl&lt;ResourceWithCycles&gt; &amp;Pipes);</Highlight></CodeLine>
-<Link id="l00451" /><CodeLine lineNumber="451"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00452" /><CodeLine lineNumber="452"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Selects pipeline resources consumed by an instruction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00453" /><CodeLine lineNumber="453"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// This method works under the assumption that used resource groups may</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00454" /><CodeLine lineNumber="454"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// partially overlap. This complicates the selection process, because the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00455" /><CodeLine lineNumber="455"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// order in which uses are processed matters. The logic internally prioritizes</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00456" /><CodeLine lineNumber="456"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// groups which are more constrained than others.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00457" /><CodeLine lineNumber="457"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> issueInstructionImpl(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> InstrDesc &amp;Desc,</Highlight></CodeLine>
-<Link id="l00458" /><CodeLine lineNumber="458"><Highlight kind="normal">                            SmallVectorImpl&lt;ResourceWithCycles&gt; &amp;Pipes);</Highlight></CodeLine>
-<Link id="l00459" /><CodeLine lineNumber="459"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00460" /><CodeLine lineNumber="460"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> cycleEvent(SmallVectorImpl&lt;ResourceRef&gt; &amp;ResourcesFreed);</Highlight></CodeLine>
-<Link id="l00461" /><CodeLine lineNumber="461"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00462" /><CodeLine lineNumber="462"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef NDEBUG</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00463" /><CodeLine lineNumber="463"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a03503773241005f01b090b9862aad304">dump</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00464" /><CodeLine lineNumber="464"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::unique&#95;ptr&lt;ResourceState&gt; &amp;Resource : Resources)</Highlight></CodeLine>
-<Link id="l00465" /><CodeLine lineNumber="465"><Highlight kind="normal">      Resource-&gt;dump();</Highlight></CodeLine>
-<Link id="l00466" /><CodeLine lineNumber="466"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00467" /><CodeLine lineNumber="467"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00468" /><CodeLine lineNumber="468"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00469" /><CodeLine lineNumber="469"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace mca</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00470" /><CodeLine lineNumber="470"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00471" /><CodeLine lineNumber="471"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00472" /><CodeLine lineNumber="472"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;MCA&#95;HARDWAREUNITS&#95;RESOURCEMANAGER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===--------------------- ResourceManager.h --------------------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">/// \\file</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">/// The classes here represent processor resource units and their management</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">/// strategy.  These classes are managed by the Scheduler.</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;MCA&#95;HARDWAREUNITS&#95;RESOURCEMANAGER&#95;H</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#define LLVM&#95;MCA&#95;HARDWAREUNITS&#95;RESOURCEMANAGER&#95;H</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/densemap-h">llvm/ADT/DenseMap.h</a>&quot;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/smallvector-h">llvm/ADT/SmallVector.h</a>&quot;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcschedule-h">llvm/MC/MCSchedule.h</a>&quot;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mca/instruction-h">llvm/MCA/Instruction.h</a>&quot;</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mca/support-h">llvm/MCA/Support.h</a>&quot;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/mca">mca</a> &#123;</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightComment">/// Used to notify the internal state of a processor resource.</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightComment">/// A processor resource is available if it is not reserved, and there are</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightComment">/// available slots in the buffer.  A processor resource is unavailable if it</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightComment">/// is either reserved, or the associated buffer is full. A processor resource</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlightComment">/// with a buffer size of -1 is always available if it is not reserved.</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightComment">/// Values of type ResourceStateEvent are returned by method</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlightComment">/// ResourceManager::canBeDispatched()</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlightComment">/// The naming convention for resource state events is:</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightComment">///  &#42; Event names start with prefix RS&#95;</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightComment">///  &#42; Prefix RS&#95; is followed by a string describing the actual resource state.</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40" lineLink="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072a"><span class="doxyHighlightKeyword">enum</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072a">ResourceStateEvent</a> &#123;</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41" lineLink="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072aa3f746cb41f05bc7d2405d8f261ad3b53"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072aa3f746cb41f05bc7d2405d8f261ad3b53">RS&#95;BUFFER&#95;AVAILABLE</a>,</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42" lineLink="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072aa31d38f37314ff7269028574355831c80"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072aa31d38f37314ff7269028574355831c80">RS&#95;BUFFER&#95;UNAVAILABLE</a>,</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43" lineLink="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072aadc0c2c76e3c6a9189f1c720ed16abd2f"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072aadc0c2c76e3c6a9189f1c720ed16abd2f">RS&#95;RESERVED</a></span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlightComment">/// Resource allocation strategy used by hardware scheduler resources.</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/classes/llvm/mca/resourcestrategy"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">ResourceStrategy &#123;</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/mca/resourcestrategy/#ace11a0d466a1cb53ab316d1c0c4e300c">ResourceStrategy</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> ResourceStrategy &amp;) = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlight">  ResourceStrategy &amp;operator=(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> ResourceStrategy &amp;) = </span><span class="doxyHighlightKeyword">delete</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52" lineLink="/docs/api/classes/llvm/mca/resourcestrategy/#ace11a0d466a1cb53ab316d1c0c4e300c"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/mca/resourcestrategy/#ace11a0d466a1cb53ab316d1c0c4e300c">ResourceStrategy</a>() = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53" lineLink="/docs/api/classes/llvm/mca/resourcestrategy/#a7e949b40770b10b26d316a04bf2edcea"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">virtual</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mca/resourcestrategy/#a7e949b40770b10b26d316a04bf2edcea">~ResourceStrategy</a>();</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlightComment">  /// Selects a processor resource unit from a ReadyMask.</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56" lineLink="/docs/api/classes/llvm/mca/resourcestrategy/#a1e2b6442d33e00ce41448e655dc22697"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">virtual</span><span class="doxyHighlight"> uint64&#95;t <a href="/docs/api/classes/llvm/mca/resourcestrategy/#a1e2b6442d33e00ce41448e655dc22697">select</a>(uint64&#95;t ReadyMask) = 0;</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlightComment">  /// Called by the ResourceManager when a processor resource group, or a</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlightComment">  /// processor resource with multiple units has become unavailable.</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlightComment">  /// The default strategy uses this information to bias its selection logic.</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62" lineLink="/docs/api/classes/llvm/mca/resourcestrategy/#a8f5c6f9a9d50b1d06510d43a736e9be9"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">virtual</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mca/resourcestrategy/#a8f5c6f9a9d50b1d06510d43a736e9be9">used</a>(uint64&#95;t ResourceMask) &#123;&#125;</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlightComment">/// Default resource allocation strategy used by processor resource groups and</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlightComment">/// processor resources with multiple units.</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67" lineLink="/docs/api/classes/llvm/mca/defaultresourcestrategy"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/mca/defaultresourcestrategy/#a10cdf68ba23d403b70dd95f8d0f2023b">DefaultResourceStrategy</a> final : </span><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight"> ResourceStrategy &#123;</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlightComment">  /// A Mask of resource unit identifiers.</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlightComment">  /// There is one bit set for every available resource unit.</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlightComment">  /// It defaults to the value of field ResourceSizeMask in ResourceState.</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> uint64&#95;t ResourceUnitMask;</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlightComment">  /// A simple round-robin selector for processor resource units.</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlightComment">  /// Each bit of this mask identifies a sub resource within a group.</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlightComment">  /// As an example, lets assume that this is a default policy for a</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlightComment">  /// processor resource group composed by the following three units:</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlightComment">  ///   ResourceA -- 0b001</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlightComment">  ///   ResourceB -- 0b010</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlightComment">  ///   ResourceC -- 0b100</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlightComment">  /// Field NextInSequenceMask is used to select the next unit from the set of</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlightComment">  /// resource units. It defaults to the value of field &#96;ResourceUnitMasks&#96; (in</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><span class="doxyHighlightComment">  /// this example, it defaults to mask &#39;0b111&#39;).</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlightComment">  /// The round-robin selector would firstly select &#39;ResourceC&#39;, then</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlightComment">  /// &#39;ResourceB&#39;, and eventually &#39;ResourceA&#39;.  When a resource R is used, the</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlightComment">  /// corresponding bit in NextInSequenceMask is cleared.  For example, if</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlightComment">  /// &#39;ResourceC&#39; is selected, then the new value of NextInSequenceMask becomes</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlightComment">  /// 0xb011.</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlightComment">  /// When NextInSequenceMask becomes zero, it is automatically reset to the</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlightComment">  /// default value (i.e. ResourceUnitMask).</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlight">  uint64&#95;t NextInSequenceMask;</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlightComment">  /// This field is used to track resource units that are used (i.e. selected)</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlightComment">  /// by other groups other than the one associated with this strategy object.</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlightComment">  /// In LLVM processor resource groups are allowed to partially (or fully)</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlightComment">  /// overlap. That means, a same unit may be visible to multiple groups.</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlightComment">  /// This field keeps track of uses that have originated from outside of</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><span class="doxyHighlightComment">  /// this group. The idea is to bias the selection strategy, so that resources</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><span class="doxyHighlightComment">  /// that haven&#39;t been used by other groups get prioritized.</span></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlightComment">  /// The end goal is to (try to) keep the resource distribution as much uniform</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><span class="doxyHighlightComment">  /// as possible. By construction, this mask only tracks one-level of resource</span></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlightComment">  /// usage. Therefore, this strategy is expected to be less accurate when same</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlightComment">  /// units are used multiple times by other groups within a single round of</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><span class="doxyHighlightComment">  /// select.</span></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><span class="doxyHighlightComment">  /// Note: an LRU selector would have a better accuracy at the cost of being</span></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlightComment">  /// slightly more expensive (mostly in terms of runtime cost). Methods</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlightComment">  /// &#39;select&#39; and &#39;used&#39;, are always in the hot execution path of llvm-mca.</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlightComment">  /// Therefore, a slow implementation of &#39;select&#39; would have a negative impact</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlightComment">  /// on the overall performance of the tool.</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlight">  uint64&#95;t RemovedFromNextInSequence;</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120" lineLink="/docs/api/classes/llvm/mca/defaultresourcestrategy/#a10cdf68ba23d403b70dd95f8d0f2023b"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/mca/defaultresourcestrategy/#a10cdf68ba23d403b70dd95f8d0f2023b">DefaultResourceStrategy</a>(uint64&#95;t UnitMask)</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><span class="doxyHighlight">      : ResourceUnitMask(UnitMask), NextInSequenceMask(UnitMask),</span></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlight">        RemovedFromNextInSequence(0) &#123;&#125;</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123" lineLink="/docs/api/classes/llvm/mca/defaultresourcestrategy/#ae738360dc7fe17f32f3602264628f2dd"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">virtual</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mca/defaultresourcestrategy/#ae738360dc7fe17f32f3602264628f2dd">~DefaultResourceStrategy</a>() = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlight">  uint64&#95;t <a href="/docs/api/classes/llvm/mca/defaultresourcestrategy/#ae98cd9a61040a0208a29df6238b7aa08">select</a>(uint64&#95;t ReadyMask) </span><span class="doxyHighlightKeyword">override</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mca/defaultresourcestrategy/#a37c31dd9225bfb63fd296560b380c2bd">used</a>(uint64&#95;t Mask) </span><span class="doxyHighlightKeyword">override</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><span class="doxyHighlightComment">/// A processor resource descriptor.</span></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><span class="doxyHighlightComment">/// There is an instance of this class for every processor resource defined by</span></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><span class="doxyHighlightComment">/// the machine scheduling model.</span></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><span class="doxyHighlightComment">/// Objects of class ResourceState dynamically track the usage of processor</span></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><span class="doxyHighlightComment">/// resource units.</span></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135" lineLink="/docs/api/classes/llvm/mca/resourcestate"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/mca/resourcestate">ResourceState</a> &#123;</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><span class="doxyHighlightComment">  /// An index to the MCProcResourceDesc entry in the processor model.</span></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> ProcResourceDescIndex;</span></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><span class="doxyHighlightComment">  /// A resource mask. This is generated by the tool with the help of</span></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><span class="doxyHighlightComment">  /// function &#96;mca::computeProcResourceMasks&#39; (see Support.h).</span></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><span class="doxyHighlightComment">  /// Field ResourceMask only has one bit set if this resource state describes a</span></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><span class="doxyHighlightComment">  /// processor resource unit (i.e. this is not a group). That means, we can</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><span class="doxyHighlightComment">  /// quickly check if a resource is a group by simply counting the number of</span></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><span class="doxyHighlightComment">  /// bits that are set in the mask.</span></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlightComment">  /// The most significant bit of a mask (MSB) uniquely identifies a resource.</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlightComment">  /// Remaining bits are used to describe the composition of a group (Group).</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><span class="doxyHighlightComment">  /// Example (little endian):</span></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><span class="doxyHighlightComment">  ///            Resource |  Mask      |  MSB       |  Group</span></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><span class="doxyHighlightComment">  ///            ---------+------------+------------+------------</span></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><span class="doxyHighlightComment">  ///            A        |  0b000001  |  0b000001  |  0b000000</span></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><span class="doxyHighlightComment">  ///                     |            |            |</span></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><span class="doxyHighlightComment">  ///            B        |  0b000010  |  0b000010  |  0b000000</span></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><span class="doxyHighlightComment">  ///                     |            |            |</span></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"><span class="doxyHighlightComment">  ///            C        |  0b010000  |  0b010000  |  0b000000</span></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><span class="doxyHighlightComment">  ///                     |            |            |</span></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><span class="doxyHighlightComment">  ///            D        |  0b110010  |  0b100000  |  0b010010</span></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><span class="doxyHighlightComment">  /// In this example, resources A, B and C are processor resource units.</span></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><span class="doxyHighlightComment">  /// Only resource D is a group resource, and it contains resources B and C.</span></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><span class="doxyHighlightComment">  /// That is because MSB(B) and MSB(C) are both contained within Group(D).</span></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> uint64&#95;t ResourceMask;</span></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><span class="doxyHighlightComment">  /// A ProcResource can have multiple units.</span></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"><span class="doxyHighlightComment">  /// For processor resource groups this field is a mask of contained resource</span></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><span class="doxyHighlightComment">  /// units. It is obtained from ResourceMask by clearing the highest set bit.</span></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><span class="doxyHighlightComment">  /// The number of resource units in a group can be simply computed as the</span></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"><span class="doxyHighlightComment">  /// population count of this field.</span></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><span class="doxyHighlightComment">  /// For normal (i.e. non-group) resources, the number of bits set in this mask</span></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><span class="doxyHighlightComment">  /// is equivalent to the number of units declared by the processor model (see</span></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><span class="doxyHighlightComment">  /// field &#39;NumUnits&#39; in &#39;ProcResourceUnits&#39;).</span></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><span class="doxyHighlight">  uint64&#95;t ResourceSizeMask;</span></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><span class="doxyHighlightComment">  /// A mask of ready units.</span></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><span class="doxyHighlight">  uint64&#95;t ReadyMask;</span></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><span class="doxyHighlightComment">  /// Buffered resources will have this field set to a positive number different</span></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><span class="doxyHighlightComment">  /// than zero. A buffered resource behaves like a reservation station</span></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><span class="doxyHighlightComment">  /// implementing its own buffer for out-of-order execution.</span></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><span class="doxyHighlightComment">  /// A BufferSize of 1 is used by scheduler resources that force in-order</span></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"><span class="doxyHighlightComment">  /// execution.</span></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><span class="doxyHighlightComment">  /// A BufferSize of 0 is used to model in-order issue/dispatch resources.</span></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><span class="doxyHighlightComment">  /// Since in-order issue/dispatch resources don&#39;t implement buffers, dispatch</span></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><span class="doxyHighlightComment">  /// events coincide with issue events.</span></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><span class="doxyHighlightComment">  /// Also, no other instruction ca be dispatched/issue while this resource is</span></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><span class="doxyHighlightComment">  /// in use. Only when all the &quot;resource cycles&quot; are consumed (after the issue</span></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><span class="doxyHighlightComment">  /// event), a new instruction ca be dispatched.</span></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> BufferSize;</span></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"><span class="doxyHighlightComment">  /// Available slots in the buffer (zero, if this is not a buffered resource).</span></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> AvailableSlots;</span></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><span class="doxyHighlightComment">  /// This field is set if this resource is currently reserved.</span></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><span class="doxyHighlightComment">  /// Resources can be reserved for a number of cycles.</span></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><span class="doxyHighlightComment">  /// Instructions can still be dispatched to reserved resources. However,</span></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><span class="doxyHighlightComment">  /// istructions dispatched to a reserved resource cannot be issued to the</span></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><span class="doxyHighlightComment">  /// underlying units (i.e. pipelines) until the resource is released.</span></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/gvn-cpp/#ae8ec32a9818e9fd7c653c86bc0c4dc7ea453e6aa38d87b28ccae545967c53004f">Unavailable</a>;</span></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> IsAGroup;</span></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><span class="doxyHighlightComment">  /// Checks for the availability of unit &#39;SubResMask&#39; in the group.</span></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> isSubResourceReady(uint64&#95;t SubResMask)</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> ReadyMask &amp; SubResMask;</span></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/mca/resourcestate">ResourceState</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/mcprocresourcedesc">MCProcResourceDesc</a> &amp;<a href="/docs/api/namespaces/llvm/#a4de98a9acffcef5bb4b31862cb8c72ac">Desc</a>, </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> Index, uint64&#95;t Mask);</span></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> getProcResourceID()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> ProcResourceDescIndex; &#125;</span></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><span class="doxyHighlight">  uint64&#95;t getResourceMask()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> ResourceMask; &#125;</span></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><span class="doxyHighlight">  uint64&#95;t getReadyMask()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> ReadyMask; &#125;</span></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> getBufferSize()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> BufferSize; &#125;</span></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> isBuffered()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> BufferSize &gt; 0; &#125;</span></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> isInOrder()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> BufferSize == 1; &#125;</span></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><span class="doxyHighlightComment">  /// Returns true if this is an in-order dispatch/issue resource.</span></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> isADispatchHazard()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> BufferSize == 0; &#125;</span></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> isReserved()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/gvn-cpp/#ae8ec32a9818e9fd7c653c86bc0c4dc7ea453e6aa38d87b28ccae545967c53004f">Unavailable</a>; &#125;</span></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> setReserved() &#123; <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/gvn-cpp/#ae8ec32a9818e9fd7c653c86bc0c4dc7ea453e6aa38d87b28ccae545967c53004f">Unavailable</a> = </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">; &#125;</span></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> clearReserved() &#123; <a href="/docs/api/files/lib/lib/transforms/lib/transforms/scalar/gvn-cpp/#ae8ec32a9818e9fd7c653c86bc0c4dc7ea453e6aa38d87b28ccae545967c53004f">Unavailable</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">; &#125;</span></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><span class="doxyHighlightComment">  /// Returs true if this resource is not reserved, and if there are at least</span></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><span class="doxyHighlightComment">  /// &#96;NumUnits&#96; available units.</span></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> isReady(</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> NumUnits = 1) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235"><span class="doxyHighlight">  uint64&#95;t getNumReadyUnits()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a0eea77e7bfa82e0219d2ec7b4efbc94f">llvm::popcount</a>(ReadyMask); &#125;</span></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> isAResourceGroup()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> IsAGroup; &#125;</span></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> containsResource(uint64&#95;t <a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>)</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> ResourceMask &amp; <a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>; &#125;</span></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> markSubResourceAsUsed(uint64&#95;t <a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>) &#123;</span></CodeLine>
+<Link id="l00242" /><CodeLine lineNumber="242"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(isSubResourceReady(<a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>));</span></CodeLine>
+<Link id="l00243" /><CodeLine lineNumber="243"><span class="doxyHighlight">    ReadyMask ^= <a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>;</span></CodeLine>
+<Link id="l00244" /><CodeLine lineNumber="244"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00245" /><CodeLine lineNumber="245"></CodeLine>
+<Link id="l00246" /><CodeLine lineNumber="246"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> releaseSubResource(uint64&#95;t <a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>) &#123;</span></CodeLine>
+<Link id="l00247" /><CodeLine lineNumber="247"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(!isSubResourceReady(<a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>));</span></CodeLine>
+<Link id="l00248" /><CodeLine lineNumber="248"><span class="doxyHighlight">    ReadyMask ^= <a href="/docs/api/namespaces/llvm/mca/#a44427ff63cc2c81606a3f0175ac2b756">ID</a>;</span></CodeLine>
+<Link id="l00249" /><CodeLine lineNumber="249"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00250" /><CodeLine lineNumber="250"></CodeLine>
+<Link id="l00251" /><CodeLine lineNumber="251"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> getNumUnits()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00252" /><CodeLine lineNumber="252"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> isAResourceGroup() ? 1U : <a href="/docs/api/namespaces/llvm/#a0eea77e7bfa82e0219d2ec7b4efbc94f">llvm::popcount</a>(ResourceSizeMask);</span></CodeLine>
+<Link id="l00253" /><CodeLine lineNumber="253"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00254" /><CodeLine lineNumber="254"></CodeLine>
+<Link id="l00255" /><CodeLine lineNumber="255"><span class="doxyHighlightComment">  /// Checks if there is an available slot in the resource buffer.</span></CodeLine>
+<Link id="l00256" /><CodeLine lineNumber="256"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00257" /><CodeLine lineNumber="257"><span class="doxyHighlightComment">  /// Returns RS&#95;BUFFER&#95;AVAILABLE if this is not a buffered resource, or if</span></CodeLine>
+<Link id="l00258" /><CodeLine lineNumber="258"><span class="doxyHighlightComment">  /// there is a slot available.</span></CodeLine>
+<Link id="l00259" /><CodeLine lineNumber="259"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00260" /><CodeLine lineNumber="260"><span class="doxyHighlightComment">  /// Returns RS&#95;RESERVED if this buffered resource is a dispatch hazard, and it</span></CodeLine>
+<Link id="l00261" /><CodeLine lineNumber="261"><span class="doxyHighlightComment">  /// is reserved.</span></CodeLine>
+<Link id="l00262" /><CodeLine lineNumber="262"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00263" /><CodeLine lineNumber="263"><span class="doxyHighlightComment">  /// Returns RS&#95;BUFFER&#95;UNAVAILABLE if there are no available slots.</span></CodeLine>
+<Link id="l00264" /><CodeLine lineNumber="264"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/mca/#a75e277a81194898f20f1c3613af0072a">ResourceStateEvent</a> isBufferAvailable() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00265" /><CodeLine lineNumber="265"></CodeLine>
+<Link id="l00266" /><CodeLine lineNumber="266"><span class="doxyHighlightComment">  /// Reserve a buffer slot.</span></CodeLine>
+<Link id="l00267" /><CodeLine lineNumber="267"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00268" /><CodeLine lineNumber="268"><span class="doxyHighlightComment">  /// Returns true if the buffer is not full.</span></CodeLine>
+<Link id="l00269" /><CodeLine lineNumber="269"><span class="doxyHighlightComment">  /// It always returns true if BufferSize is set to zero.</span></CodeLine>
+<Link id="l00270" /><CodeLine lineNumber="270"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> reserveBuffer() &#123;</span></CodeLine>
+<Link id="l00271" /><CodeLine lineNumber="271"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (BufferSize &lt;= 0)</span></CodeLine>
+<Link id="l00272" /><CodeLine lineNumber="272"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00273" /><CodeLine lineNumber="273"></CodeLine>
+<Link id="l00274" /><CodeLine lineNumber="274"><span class="doxyHighlight">    --AvailableSlots;</span></CodeLine>
+<Link id="l00275" /><CodeLine lineNumber="275"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(AvailableSlots &lt;= </span><span class="doxyHighlightKeyword">static&#95;cast&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(BufferSize));</span></CodeLine>
+<Link id="l00276" /><CodeLine lineNumber="276"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> AvailableSlots;</span></CodeLine>
+<Link id="l00277" /><CodeLine lineNumber="277"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00278" /><CodeLine lineNumber="278"></CodeLine>
+<Link id="l00279" /><CodeLine lineNumber="279"><span class="doxyHighlightComment">  /// Releases a slot in the buffer.</span></CodeLine>
+<Link id="l00280" /><CodeLine lineNumber="280"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> releaseBuffer() &#123;</span></CodeLine>
+<Link id="l00281" /><CodeLine lineNumber="281"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Ignore dispatch hazards or invalid buffer sizes.</span></CodeLine>
+<Link id="l00282" /><CodeLine lineNumber="282"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (BufferSize &lt;= 0)</span></CodeLine>
+<Link id="l00283" /><CodeLine lineNumber="283"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00284" /><CodeLine lineNumber="284"></CodeLine>
+<Link id="l00285" /><CodeLine lineNumber="285"><span class="doxyHighlight">    ++AvailableSlots;</span></CodeLine>
+<Link id="l00286" /><CodeLine lineNumber="286"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(AvailableSlots &lt;= </span><span class="doxyHighlightKeyword">static&#95;cast&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(BufferSize));</span></CodeLine>
+<Link id="l00287" /><CodeLine lineNumber="287"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00288" /><CodeLine lineNumber="288"></CodeLine>
+<Link id="l00289" /><CodeLine lineNumber="289"><span class="doxyHighlightPreprocessor">#ifndef NDEBUG</span></CodeLine>
+<Link id="l00290" /><CodeLine lineNumber="290"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> dump() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00291" /><CodeLine lineNumber="291"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00292" /><CodeLine lineNumber="292"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00293" /><CodeLine lineNumber="293"></CodeLine>
+<Link id="l00294" /><CodeLine lineNumber="294"><span class="doxyHighlightComment">/// A resource unit identifier.</span></CodeLine>
+<Link id="l00295" /><CodeLine lineNumber="295"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00296" /><CodeLine lineNumber="296"><span class="doxyHighlightComment">/// This is used to identify a specific processor resource unit using a pair</span></CodeLine>
+<Link id="l00297" /><CodeLine lineNumber="297"><span class="doxyHighlightComment">/// of indices where the &#39;first&#39; index is a processor resource mask, and the</span></CodeLine>
+<Link id="l00298" /><CodeLine lineNumber="298"><span class="doxyHighlightComment">/// &#39;second&#39; index is an index for a &quot;sub-resource&quot; (i.e. unit).</span></CodeLine>
+<Link id="l00299" /><CodeLine lineNumber="299"><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight"> std::pair&lt;uint64&#95;t, uint64&#95;t&gt; <a href="/docs/api/namespaces/llvm/mca/#a961b7aeaca000c803c0f4b1df4d26c27">ResourceRef</a>;</span></CodeLine>
+<Link id="l00300" /><CodeLine lineNumber="300"></CodeLine>
+<Link id="l00301" /><CodeLine lineNumber="301"><span class="doxyHighlightComment">// First: a MCProcResourceDesc index identifying a buffered resource.</span></CodeLine>
+<Link id="l00302" /><CodeLine lineNumber="302"><span class="doxyHighlightComment">// Second: max number of buffer entries used in this resource.</span></CodeLine>
+<Link id="l00303" /><CodeLine lineNumber="303"><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight"> std::pair&lt;unsigned, unsigned&gt; BufferUsageEntry;</span></CodeLine>
+<Link id="l00304" /><CodeLine lineNumber="304"></CodeLine>
+<Link id="l00305" /><CodeLine lineNumber="305"><span class="doxyHighlightComment">/// A resource manager for processor resource units and groups.</span></CodeLine>
+<Link id="l00306" /><CodeLine lineNumber="306"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00307" /><CodeLine lineNumber="307"><span class="doxyHighlightComment">/// This class owns all the ResourceState objects, and it is responsible for</span></CodeLine>
+<Link id="l00308" /><CodeLine lineNumber="308"><span class="doxyHighlightComment">/// acting on requests from a Scheduler by updating the internal state of</span></CodeLine>
+<Link id="l00309" /><CodeLine lineNumber="309"><span class="doxyHighlightComment">/// ResourceState objects.</span></CodeLine>
+<Link id="l00310" /><CodeLine lineNumber="310"><span class="doxyHighlightComment">/// This class doesn&#39;t know about instruction itineraries and functional units.</span></CodeLine>
+<Link id="l00311" /><CodeLine lineNumber="311"><span class="doxyHighlightComment">/// In future, it can be extended to support itineraries too through the same</span></CodeLine>
+<Link id="l00312" /><CodeLine lineNumber="312"><span class="doxyHighlightComment">/// public interface.</span></CodeLine>
+<Link id="l00313" /><CodeLine lineNumber="313"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/resourcemanager">ResourceManager</a> &#123;</span></CodeLine>
+<Link id="l00314" /><CodeLine lineNumber="314"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Set of resources available on the subtarget.</span></CodeLine>
+<Link id="l00315" /><CodeLine lineNumber="315"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00316" /><CodeLine lineNumber="316"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// There is an instance of ResourceState for every resource declared by the</span></CodeLine>
+<Link id="l00317" /><CodeLine lineNumber="317"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// target scheduling model.</span></CodeLine>
+<Link id="l00318" /><CodeLine lineNumber="318"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00319" /><CodeLine lineNumber="319"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Elements of this vector are ordered by resource kind. In particular,</span></CodeLine>
+<Link id="l00320" /><CodeLine lineNumber="320"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// resource units take precedence over resource groups.</span></CodeLine>
+<Link id="l00321" /><CodeLine lineNumber="321"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00322" /><CodeLine lineNumber="322"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// The index of a processor resource in this vector depends on the value of</span></CodeLine>
+<Link id="l00323" /><CodeLine lineNumber="323"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// its mask (see the description of field ResourceState::ResourceMask).  In</span></CodeLine>
+<Link id="l00324" /><CodeLine lineNumber="324"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// particular, it is computed as the position of the most significant bit set</span></CodeLine>
+<Link id="l00325" /><CodeLine lineNumber="325"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// (MSB) in the mask plus one (since we want to ignore the invalid resource</span></CodeLine>
+<Link id="l00326" /><CodeLine lineNumber="326"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// descriptor at index zero).</span></CodeLine>
+<Link id="l00327" /><CodeLine lineNumber="327"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00328" /><CodeLine lineNumber="328"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Example (little endian):</span></CodeLine>
+<Link id="l00329" /><CodeLine lineNumber="329"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00330" /><CodeLine lineNumber="330"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//             Resource | Mask    |  MSB    | Index</span></CodeLine>
+<Link id="l00331" /><CodeLine lineNumber="331"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//             ---------+---------+---------+-------</span></CodeLine>
+<Link id="l00332" /><CodeLine lineNumber="332"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//                 A    | 0b00001 | 0b00001 |   1</span></CodeLine>
+<Link id="l00333" /><CodeLine lineNumber="333"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//                      |         |         |</span></CodeLine>
+<Link id="l00334" /><CodeLine lineNumber="334"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//                 B    | 0b00100 | 0b00100 |   3</span></CodeLine>
+<Link id="l00335" /><CodeLine lineNumber="335"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//                      |         |         |</span></CodeLine>
+<Link id="l00336" /><CodeLine lineNumber="336"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//                 C    | 0b10010 | 0b10000 |   5</span></CodeLine>
+<Link id="l00337" /><CodeLine lineNumber="337"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00338" /><CodeLine lineNumber="338"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00339" /><CodeLine lineNumber="339"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// The same index is also used to address elements within vector &#96;Strategies&#96;</span></CodeLine>
+<Link id="l00340" /><CodeLine lineNumber="340"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// and vector &#96;Resource2Groups&#96;.</span></CodeLine>
+<Link id="l00341" /><CodeLine lineNumber="341"><span class="doxyHighlight">  std::vector&lt;std::unique&#95;ptr&lt;ResourceState&gt;&gt; Resources;</span></CodeLine>
+<Link id="l00342" /><CodeLine lineNumber="342"><span class="doxyHighlight">  std::vector&lt;std::unique&#95;ptr&lt;ResourceStrategy&gt;&gt; Strategies;</span></CodeLine>
+<Link id="l00343" /><CodeLine lineNumber="343"></CodeLine>
+<Link id="l00344" /><CodeLine lineNumber="344"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Used to quickly identify groups that own a particular resource unit.</span></CodeLine>
+<Link id="l00345" /><CodeLine lineNumber="345"><span class="doxyHighlight">  std::vector&lt;uint64&#95;t&gt; Resource2Groups;</span></CodeLine>
+<Link id="l00346" /><CodeLine lineNumber="346"></CodeLine>
+<Link id="l00347" /><CodeLine lineNumber="347"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// A table that maps processor resource IDs to processor resource masks.</span></CodeLine>
+<Link id="l00348" /><CodeLine lineNumber="348"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;uint64&#95;t, 8&gt;</a> ProcResID2Mask;</span></CodeLine>
+<Link id="l00349" /><CodeLine lineNumber="349"></CodeLine>
+<Link id="l00350" /><CodeLine lineNumber="350"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// A table that maps resource indices to actual processor resource IDs in the</span></CodeLine>
+<Link id="l00351" /><CodeLine lineNumber="351"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// scheduling model.</span></CodeLine>
+<Link id="l00352" /><CodeLine lineNumber="352"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;unsigned, 8&gt;</a> ResIndex2ProcResID;</span></CodeLine>
+<Link id="l00353" /><CodeLine lineNumber="353"></CodeLine>
+<Link id="l00354" /><CodeLine lineNumber="354"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Keeps track of which resources are busy, and how many cycles are left</span></CodeLine>
+<Link id="l00355" /><CodeLine lineNumber="355"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// before those become usable again.</span></CodeLine>
+<Link id="l00356" /><CodeLine lineNumber="356"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/smalldensemap">SmallDenseMap&lt;ResourceRef, unsigned&gt;</a> BusyResources;</span></CodeLine>
+<Link id="l00357" /><CodeLine lineNumber="357"></CodeLine>
+<Link id="l00358" /><CodeLine lineNumber="358"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Set of processor resource units available on the target.</span></CodeLine>
+<Link id="l00359" /><CodeLine lineNumber="359"><span class="doxyHighlight">  uint64&#95;t ProcResUnitMask;</span></CodeLine>
+<Link id="l00360" /><CodeLine lineNumber="360"></CodeLine>
+<Link id="l00361" /><CodeLine lineNumber="361"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Set of processor resource units that are available during this cycle.</span></CodeLine>
+<Link id="l00362" /><CodeLine lineNumber="362"><span class="doxyHighlight">  uint64&#95;t AvailableProcResUnits;</span></CodeLine>
+<Link id="l00363" /><CodeLine lineNumber="363"></CodeLine>
+<Link id="l00364" /><CodeLine lineNumber="364"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Set of processor resources that are currently reserved.</span></CodeLine>
+<Link id="l00365" /><CodeLine lineNumber="365"><span class="doxyHighlight">  uint64&#95;t ReservedResourceGroups;</span></CodeLine>
+<Link id="l00366" /><CodeLine lineNumber="366"></CodeLine>
+<Link id="l00367" /><CodeLine lineNumber="367"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Set of unavailable scheduler buffer resources. This is used internally to</span></CodeLine>
+<Link id="l00368" /><CodeLine lineNumber="368"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// speedup &#96;canBeDispatched()&#96; queries.</span></CodeLine>
+<Link id="l00369" /><CodeLine lineNumber="369"><span class="doxyHighlight">  uint64&#95;t AvailableBuffers;</span></CodeLine>
+<Link id="l00370" /><CodeLine lineNumber="370"></CodeLine>
+<Link id="l00371" /><CodeLine lineNumber="371"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Set of dispatch hazard buffer resources that are currently unavailable.</span></CodeLine>
+<Link id="l00372" /><CodeLine lineNumber="372"><span class="doxyHighlight">  uint64&#95;t ReservedBuffers;</span></CodeLine>
+<Link id="l00373" /><CodeLine lineNumber="373"></CodeLine>
+<Link id="l00374" /><CodeLine lineNumber="374"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Returns the actual resource unit that will be used.</span></CodeLine>
+<Link id="l00375" /><CodeLine lineNumber="375"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/mca/#a961b7aeaca000c803c0f4b1df4d26c27">ResourceRef</a> selectPipe(uint64&#95;t ResourceID);</span></CodeLine>
+<Link id="l00376" /><CodeLine lineNumber="376"></CodeLine>
+<Link id="l00377" /><CodeLine lineNumber="377"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/codegen/lib/codegen/globalisel/localizer-cpp/#a428090a453f41a199ef67fc3f2179fbc">use</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/mca/#a961b7aeaca000c803c0f4b1df4d26c27">ResourceRef</a> &amp;RR);</span></CodeLine>
+<Link id="l00378" /><CodeLine lineNumber="378"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a650dea4533083a886cec9f16d80356d9a123fead50246387983ee340507115ef4">release</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/mca/#a961b7aeaca000c803c0f4b1df4d26c27">ResourceRef</a> &amp;RR);</span></CodeLine>
+<Link id="l00379" /><CodeLine lineNumber="379"></CodeLine>
+<Link id="l00380" /><CodeLine lineNumber="380"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> getNumUnits(uint64&#95;t ResourceID) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00381" /><CodeLine lineNumber="381"></CodeLine>
+<Link id="l00382" /><CodeLine lineNumber="382"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Overrides the selection strategy for the processor resource with the given</span></CodeLine>
+<Link id="l00383" /><CodeLine lineNumber="383"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// mask.</span></CodeLine>
+<Link id="l00384" /><CodeLine lineNumber="384"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> setCustomStrategyImpl(std::unique&#95;ptr&lt;ResourceStrategy&gt; S,</span></CodeLine>
+<Link id="l00385" /><CodeLine lineNumber="385"><span class="doxyHighlight">                             uint64&#95;t ResourceMask);</span></CodeLine>
+<Link id="l00386" /><CodeLine lineNumber="386"></CodeLine>
+<Link id="l00387" /><CodeLine lineNumber="387"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00388" /><CodeLine lineNumber="388"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/resourcemanager">ResourceManager</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/mcschedmodel">MCSchedModel</a> &amp;SM);</span></CodeLine>
+<Link id="l00389" /><CodeLine lineNumber="389"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">virtual</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/resourcemanager">~ResourceManager</a>() = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00390" /><CodeLine lineNumber="390"></CodeLine>
+<Link id="l00391" /><CodeLine lineNumber="391"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Overrides the selection strategy for the resource at index ResourceID in</span></CodeLine>
+<Link id="l00392" /><CodeLine lineNumber="392"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// the MCProcResourceDesc table.</span></CodeLine>
+<Link id="l00393" /><CodeLine lineNumber="393"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> setCustomStrategy(std::unique&#95;ptr&lt;ResourceStrategy&gt; S,</span></CodeLine>
+<Link id="l00394" /><CodeLine lineNumber="394"><span class="doxyHighlight">                         </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> ResourceID) &#123;</span></CodeLine>
+<Link id="l00395" /><CodeLine lineNumber="395"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(ResourceID &lt; ProcResID2Mask.<a href="/docs/api/classes/llvm/smallvectortemplatecommon/#a1c479a8c434377c2b8cb056bdfdfc201">size</a>() &amp;&amp;</span></CodeLine>
+<Link id="l00396" /><CodeLine lineNumber="396"><span class="doxyHighlight">           </span><span class="doxyHighlightStringLiteral">&quot;Invalid resource index in input!&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00397" /><CodeLine lineNumber="397"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> setCustomStrategyImpl(std::move(S), ProcResID2Mask&#91;ResourceID&#93;);</span></CodeLine>
+<Link id="l00398" /><CodeLine lineNumber="398"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00399" /><CodeLine lineNumber="399"></CodeLine>
+<Link id="l00400" /><CodeLine lineNumber="400"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Returns RS&#95;BUFFER&#95;AVAILABLE if buffered resources are not reserved, and if</span></CodeLine>
+<Link id="l00401" /><CodeLine lineNumber="401"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// there are enough available slots in the buffers.</span></CodeLine>
+<Link id="l00402" /><CodeLine lineNumber="402"><span class="doxyHighlight">  ResourceStateEvent canBeDispatched(uint64&#95;t ConsumedBuffers) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00403" /><CodeLine lineNumber="403"></CodeLine>
+<Link id="l00404" /><CodeLine lineNumber="404"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Return the processor resource identifier associated to this Mask.</span></CodeLine>
+<Link id="l00405" /><CodeLine lineNumber="405"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> resolveResourceMask(uint64&#95;t Mask) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00406" /><CodeLine lineNumber="406"></CodeLine>
+<Link id="l00407" /><CodeLine lineNumber="407"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Acquires a slot from every buffered resource in mask &#96;ConsumedBuffers&#96;.</span></CodeLine>
+<Link id="l00408" /><CodeLine lineNumber="408"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Units that are dispatch hazards (i.e. BufferSize=0) are marked as reserved.</span></CodeLine>
+<Link id="l00409" /><CodeLine lineNumber="409"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> reserveBuffers(uint64&#95;t ConsumedBuffers);</span></CodeLine>
+<Link id="l00410" /><CodeLine lineNumber="410"></CodeLine>
+<Link id="l00411" /><CodeLine lineNumber="411"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Releases a slot from every buffered resource in mask &#96;ConsumedBuffers&#96;.</span></CodeLine>
+<Link id="l00412" /><CodeLine lineNumber="412"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// ConsumedBuffers is a bitmask of previously acquired buffers (using method</span></CodeLine>
+<Link id="l00413" /><CodeLine lineNumber="413"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// &#96;reserveBuffers&#96;). Units that are dispatch hazards (i.e. BufferSize=0) are</span></CodeLine>
+<Link id="l00414" /><CodeLine lineNumber="414"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// not automatically unreserved by this method.</span></CodeLine>
+<Link id="l00415" /><CodeLine lineNumber="415"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> releaseBuffers(uint64&#95;t ConsumedBuffers);</span></CodeLine>
+<Link id="l00416" /><CodeLine lineNumber="416"></CodeLine>
+<Link id="l00417" /><CodeLine lineNumber="417"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Reserve a processor resource. A reserved resource is not available for</span></CodeLine>
+<Link id="l00418" /><CodeLine lineNumber="418"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// instruction issue until it is released.</span></CodeLine>
+<Link id="l00419" /><CodeLine lineNumber="419"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> reserveResource(uint64&#95;t ResourceID);</span></CodeLine>
+<Link id="l00420" /><CodeLine lineNumber="420"></CodeLine>
+<Link id="l00421" /><CodeLine lineNumber="421"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Release a previously reserved processor resource.</span></CodeLine>
+<Link id="l00422" /><CodeLine lineNumber="422"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> releaseResource(uint64&#95;t ResourceID);</span></CodeLine>
+<Link id="l00423" /><CodeLine lineNumber="423"></CodeLine>
+<Link id="l00424" /><CodeLine lineNumber="424"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Returns a zero mask if resources requested by Desc are all available during</span></CodeLine>
+<Link id="l00425" /><CodeLine lineNumber="425"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// this cycle. It returns a non-zero mask value only if there are unavailable</span></CodeLine>
+<Link id="l00426" /><CodeLine lineNumber="426"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// processor resources; each bit set in the mask represents a busy processor</span></CodeLine>
+<Link id="l00427" /><CodeLine lineNumber="427"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// resource unit or a reserved processor resource group.</span></CodeLine>
+<Link id="l00428" /><CodeLine lineNumber="428"><span class="doxyHighlight">  uint64&#95;t checkAvailability(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> InstrDesc &amp;<a href="/docs/api/namespaces/llvm/#a4de98a9acffcef5bb4b31862cb8c72ac">Desc</a>) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00429" /><CodeLine lineNumber="429"></CodeLine>
+<Link id="l00430" /><CodeLine lineNumber="430"><span class="doxyHighlight">  uint64&#95;t getProcResUnitMask()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> ProcResUnitMask; &#125;</span></CodeLine>
+<Link id="l00431" /><CodeLine lineNumber="431"><span class="doxyHighlight">  uint64&#95;t getAvailableProcResUnits()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> AvailableProcResUnits; &#125;</span></CodeLine>
+<Link id="l00432" /><CodeLine lineNumber="432"></CodeLine>
+<Link id="l00433" /><CodeLine lineNumber="433"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight">ResourceWithCycles = std::pair&lt;ResourceRef, ReleaseAtCycles&gt;;</span></CodeLine>
+<Link id="l00434" /><CodeLine lineNumber="434"></CodeLine>
+<Link id="l00435" /><CodeLine lineNumber="435"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> issueInstruction(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> InstrDesc &amp;Desc,</span></CodeLine>
+<Link id="l00436" /><CodeLine lineNumber="436"><span class="doxyHighlight">                        SmallVectorImpl&lt;ResourceWithCycles&gt; &amp;Pipes) &#123;</span></CodeLine>
+<Link id="l00437" /><CodeLine lineNumber="437"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="/docs/api/namespaces/llvm/#a4de98a9acffcef5bb4b31862cb8c72ac">Desc</a>.HasPartiallyOverlappingGroups)</span></CodeLine>
+<Link id="l00438" /><CodeLine lineNumber="438"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> issueInstructionImpl(Desc, Pipes);</span></CodeLine>
+<Link id="l00439" /><CodeLine lineNumber="439"></CodeLine>
+<Link id="l00440" /><CodeLine lineNumber="440"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> fastIssueInstruction(Desc, Pipes);</span></CodeLine>
+<Link id="l00441" /><CodeLine lineNumber="441"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00442" /><CodeLine lineNumber="442"></CodeLine>
+<Link id="l00443" /><CodeLine lineNumber="443"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Selects pipeline resources consumed by an instruction.</span></CodeLine>
+<Link id="l00444" /><CodeLine lineNumber="444"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// This method works under the assumption that used group resources don&#39;t</span></CodeLine>
+<Link id="l00445" /><CodeLine lineNumber="445"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// partially overlap. The logic is guaranteed to find a valid resource unit</span></CodeLine>
+<Link id="l00446" /><CodeLine lineNumber="446"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// schedule, no matter in which order individual uses are processed. For that</span></CodeLine>
+<Link id="l00447" /><CodeLine lineNumber="447"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// reason, the vector of resource uses is simply (and quickly) processed in</span></CodeLine>
+<Link id="l00448" /><CodeLine lineNumber="448"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// sequence. The resulting schedule is eventually stored into vector &#96;Pipes&#96;.</span></CodeLine>
+<Link id="l00449" /><CodeLine lineNumber="449"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> fastIssueInstruction(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> InstrDesc &amp;Desc,</span></CodeLine>
+<Link id="l00450" /><CodeLine lineNumber="450"><span class="doxyHighlight">                            SmallVectorImpl&lt;ResourceWithCycles&gt; &amp;Pipes);</span></CodeLine>
+<Link id="l00451" /><CodeLine lineNumber="451"></CodeLine>
+<Link id="l00452" /><CodeLine lineNumber="452"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Selects pipeline resources consumed by an instruction.</span></CodeLine>
+<Link id="l00453" /><CodeLine lineNumber="453"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// This method works under the assumption that used resource groups may</span></CodeLine>
+<Link id="l00454" /><CodeLine lineNumber="454"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// partially overlap. This complicates the selection process, because the</span></CodeLine>
+<Link id="l00455" /><CodeLine lineNumber="455"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// order in which uses are processed matters. The logic internally prioritizes</span></CodeLine>
+<Link id="l00456" /><CodeLine lineNumber="456"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// groups which are more constrained than others.</span></CodeLine>
+<Link id="l00457" /><CodeLine lineNumber="457"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> issueInstructionImpl(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> InstrDesc &amp;Desc,</span></CodeLine>
+<Link id="l00458" /><CodeLine lineNumber="458"><span class="doxyHighlight">                            SmallVectorImpl&lt;ResourceWithCycles&gt; &amp;Pipes);</span></CodeLine>
+<Link id="l00459" /><CodeLine lineNumber="459"></CodeLine>
+<Link id="l00460" /><CodeLine lineNumber="460"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> cycleEvent(SmallVectorImpl&lt;ResourceRef&gt; &amp;ResourcesFreed);</span></CodeLine>
+<Link id="l00461" /><CodeLine lineNumber="461"></CodeLine>
+<Link id="l00462" /><CodeLine lineNumber="462"><span class="doxyHighlightPreprocessor">#ifndef NDEBUG</span></CodeLine>
+<Link id="l00463" /><CodeLine lineNumber="463"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a03503773241005f01b090b9862aad304">dump</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00464" /><CodeLine lineNumber="464"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::unique&#95;ptr&lt;ResourceState&gt; &amp;Resource : Resources)</span></CodeLine>
+<Link id="l00465" /><CodeLine lineNumber="465"><span class="doxyHighlight">      Resource-&gt;dump();</span></CodeLine>
+<Link id="l00466" /><CodeLine lineNumber="466"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00467" /><CodeLine lineNumber="467"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00468" /><CodeLine lineNumber="468"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00469" /><CodeLine lineNumber="469"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// namespace mca</span></CodeLine>
+<Link id="l00470" /><CodeLine lineNumber="470"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// namespace llvm</span></CodeLine>
+<Link id="l00471" /><CodeLine lineNumber="471"></CodeLine>
+<Link id="l00472" /><CodeLine lineNumber="472"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;MCA&#95;HARDWAREUNITS&#95;RESOURCEMANAGER&#95;H</span></CodeLine>
 
 </ProgramListing>
 

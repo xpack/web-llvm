@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -99,139 +98,139 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- llvm/Debuginfod/HTTPServer.h - HTTP server library ------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="comment">///</Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="comment">/// \\file</Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="comment">/// This file contains the declarations of the HTTPServer and HTTPServerRequest</Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="comment">/// classes, the HTTPResponse, and StreamingHTTPResponse structs, and the</Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="comment">/// streamFile function.</Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="comment">///</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;DEBUGINFOD&#95;HTTPSERVER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;DEBUGINFOD&#95;HTTPSERVER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h">llvm/ADT/StringRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/error-h">llvm/Support/Error.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef LLVM&#95;ENABLE&#95;HTTPLIB</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="comment">// forward declarations</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">httplib &#123;</Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">Request;</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">Response;</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">Server;</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace httplib</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/httpresponse">HTTPResponse</a>;</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/streaminghttpresponse">StreamingHTTPResponse</a>;</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/httpserver">HTTPServer</a>;</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37" lineLink="/docs/api/classes/llvm/httpservererror"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/httpservererror/#a699d2418d2f36c113d50c59e8a14e287">HTTPServerError</a> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/errorinfo">ErrorInfo</a>&lt;HTTPServerError, ECError&gt; &#123;</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39" lineLink="/docs/api/classes/llvm/httpservererror/#a96c18824ef8a11bb1035b3d52e79fe7b"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/httpservererror/#a96c18824ef8a11bb1035b3d52e79fe7b">ID</a>;</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/httpservererror/#a699d2418d2f36c113d50c59e8a14e287">HTTPServerError</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp;Msg);</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/httpservererror/#a70fb08bd9ee431e69222fe4df5baa8e7">log</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS) </Highlight><Highlight kind="keyword">const override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">  std::string Msg;</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/classes/llvm/httpserverrequest"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/httpserverrequest">HTTPServerRequest</a> &#123;</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> HTTPServer;</Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef LLVM&#95;ENABLE&#95;HTTPLIB</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/httpserverrequest">HTTPServerRequest</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> httplib::Request &amp;HTTPLibRequest,</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">                    httplib::Response &amp;HTTPLibResponse);</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  httplib::Response &amp;HTTPLibResponse;</Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58" lineLink="/docs/api/classes/llvm/httpserverrequest/#a03eafe444d9ad3af469954d86c895d7e"><Highlight kind="normal">  std::string <a href="/docs/api/classes/llvm/httpserverrequest/#a03eafe444d9ad3af469954d86c895d7e">UrlPath</a>;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">  /// The elements correspond to match groups in the url path matching regex.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60" lineLink="/docs/api/classes/llvm/httpserverrequest/#ac717be77374df8d58d536f70879b405c"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;std::string, 1&gt;</a> <a href="/docs/api/classes/llvm/httpserverrequest/#ac717be77374df8d58d536f70879b405c">UrlPathMatches</a>;</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// TODO bring in HTTP headers</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/httpserverrequest/#a9c4103690fe948aafa737b096a31501a">setResponse</a>(<a href="/docs/api/structs/llvm/streaminghttpresponse">StreamingHTTPResponse</a> Response);</Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/httpserverrequest/#a9c4103690fe948aafa737b096a31501a">setResponse</a>(<a href="/docs/api/structs/llvm/httpresponse">HTTPResponse</a> Response);</Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68" lineLink="/docs/api/structs/llvm/httpresponse"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/httpresponse">HTTPResponse</a> &#123;</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69" lineLink="/docs/api/structs/llvm/httpresponse/#afe52333ad78c2469a1595ce6f0688996"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/httpresponse/#afe52333ad78c2469a1595ce6f0688996">Code</a>;</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/structs/llvm/httpresponse/#a7836efd5399c7508e776de141a5bc6b9"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/structs/llvm/httpresponse/#a7836efd5399c7508e776de141a5bc6b9">ContentType</a>;</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71" lineLink="/docs/api/structs/llvm/httpresponse/#a885a0e8041b6e435881acf183ca088b6"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/structs/llvm/httpresponse/#a885a0e8041b6e435881acf183ca088b6">Body</a>;</Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/namespaces/llvm/#a484725ce6bbff0f1751423cac5f22370"><Highlight kind="normal"></Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal"> std::function&lt;void(<a href="/docs/api/classes/llvm/httpserverrequest">HTTPServerRequest</a> &amp;)&gt; <a href="/docs/api/namespaces/llvm/#a484725ce6bbff0f1751423cac5f22370">HTTPRequestHandler</a>;</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">/// An HTTPContentProvider is called by the HTTPServer to obtain chunks of the</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">/// streaming response body. The returned chunk should be located at Offset</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="comment">/// bytes and have Length bytes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal"> std::function&lt;<a href="/docs/api/classes/llvm/stringref">StringRef</a>(</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="comment">/&#42;Offset&#42;/</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="comment">/&#42;Length&#42;/</Highlight><Highlight kind="normal">)&gt;</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/namespaces/llvm/#aeab59d2f1c1e3952c0a2f41712fb2238"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#aeab59d2f1c1e3952c0a2f41712fb2238">HTTPContentProvider</a>;</Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">/// Wraps the content provider with HTTP Status code and headers.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/structs/llvm/streaminghttpresponse"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/streaminghttpresponse">StreamingHTTPResponse</a> &#123;</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84" lineLink="/docs/api/structs/llvm/streaminghttpresponse/#a64a858d95e23ac6c98c94a67fb2ce0bb"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/streaminghttpresponse/#a64a858d95e23ac6c98c94a67fb2ce0bb">Code</a>;</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85" lineLink="/docs/api/structs/llvm/streaminghttpresponse/#abc08c5b80a4ce9c0dbca63c14797cf63"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;<a href="/docs/api/structs/llvm/streaminghttpresponse/#abc08c5b80a4ce9c0dbca63c14797cf63">ContentType</a>;</Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86" lineLink="/docs/api/structs/llvm/streaminghttpresponse/#a8e3c963a18ac2a16b4ea8991b3bb8955"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/streaminghttpresponse/#a8e3c963a18ac2a16b4ea8991b3bb8955">ContentLength</a>;</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87" lineLink="/docs/api/structs/llvm/streaminghttpresponse/#a490250f0ce8a4fb0b5bf87f12f34efd6"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#aeab59d2f1c1e3952c0a2f41712fb2238">HTTPContentProvider</a> <a href="/docs/api/structs/llvm/streaminghttpresponse/#a490250f0ce8a4fb0b5bf87f12f34efd6">Provider</a>;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="comment">  /// Called after the response transfer is complete with the success value of</Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">  /// the transfer.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/structs/llvm/streaminghttpresponse/#ae8aab521ee9d3a1199c55bedfe8e2e09"><Highlight kind="normal">  std::function&lt;void(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal">)&gt; <a href="/docs/api/structs/llvm/streaminghttpresponse/#ae8aab521ee9d3a1199c55bedfe8e2e09">CompletionHandler</a> = &#91;&#93;(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/lib/target/aarch64/disassembler/aarch64disassembler-cpp/#abdb086b34295fb7aa09493c62d798465">Success</a>) &#123;&#125;;</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="comment">/// Sets the response to stream the file at FilePath, if available, and</Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="comment">/// otherwise an HTTP 404 error response.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#ad7c58f347a240684b93eb7ee8bfd6824">streamFile</a>(HTTPServerRequest &amp;Request, StringRef FilePath);</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">/// An HTTP server which can listen on a single TCP/IP port for HTTP</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">/// requests and delgate them to the appropriate registered handler.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99" lineLink="/docs/api/classes/llvm/httpserver"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/httpserver/#a9ac379d2b10c907a322a7f5391c3a8a5">HTTPServer</a> &#123;</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef LLVM&#95;ENABLE&#95;HTTPLIB</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  std::unique&#95;ptr&lt;httplib::Server&gt; Server;</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Port = 0;</Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105" lineLink="/docs/api/classes/llvm/httpserver/#a9ac379d2b10c907a322a7f5391c3a8a5"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/httpserver/#a9ac379d2b10c907a322a7f5391c3a8a5">HTTPServer</a>();</Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106" lineLink="/docs/api/classes/llvm/httpserver/#af09066b05417f9a9ce9f1cd8e5ad9e18"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/httpserver/#af09066b05417f9a9ce9f1cd8e5ad9e18">~HTTPServer</a>();</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="comment">  /// Returns true only if LLVM has been compiled with a working HTTPServer.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/httpserver/#acf0f31c71f22a544b52f3e27ca81ee9e">isAvailable</a>();</Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="comment">  /// Registers a URL pattern routing rule. When the server is listening, each</Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="comment">  /// request is dispatched to the first registered handler whose UrlPathPattern</Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="comment">  /// matches the UrlPath.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/classes/llvm/httpserver/#a57df1a0b2431ed4c6afb10acfb6108d1">get</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> UrlPathPattern, <a href="/docs/api/namespaces/llvm/#a484725ce6bbff0f1751423cac5f22370">HTTPRequestHandler</a> Handler);</Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="comment">  /// Attempts to assign the requested port and interface, returning an Error</Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="comment">  /// upon failure.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/classes/llvm/httpserver/#a71ab0a18a93070081e4d5570088dc812">bind</a>(</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> Port, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;HostInterface = </Highlight><Highlight kind="stringliteral">&quot;0.0.0.0&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="comment">  /// Attempts to assign any available port and interface, returning either the</Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="comment">  /// port number or an Error upon failure.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/expected">Expected&lt;unsigned&gt;</a> <a href="/docs/api/classes/llvm/httpserver/#a71ab0a18a93070081e4d5570088dc812">bind</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;HostInterface = </Highlight><Highlight kind="stringliteral">&quot;0.0.0.0&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="comment">  /// Attempts to listen for requests on the bound port. Returns an Error if</Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="comment">  /// called before binding a port.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/classes/llvm/httpserver/#a98e1c84406f4cfcae0f250846f16c427">listen</a>();</Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="comment">  /// If the server is listening, stop and unbind the socket.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/httpserver/#ad6cdeb6e8e3440309d30d2618fcbd7f7">stop</a>();</Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// end namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;DEBUGINFOD&#95;HTTPSERVER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===-- llvm/Debuginfod/HTTPServer.h - HTTP server library ------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">/// \\file</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">/// This file contains the declarations of the HTTPServer and HTTPServerRequest</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">/// classes, the HTTPResponse, and StreamingHTTPResponse structs, and the</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">/// streamFile function.</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightComment">///</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;DEBUGINFOD&#95;HTTPSERVER&#95;H</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#define LLVM&#95;DEBUGINFOD&#95;HTTPSERVER&#95;H</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h">llvm/ADT/StringRef.h</a>&quot;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/error-h">llvm/Support/Error.h</a>&quot;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightPreprocessor">#ifdef LLVM&#95;ENABLE&#95;HTTPLIB</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightComment">// forward declarations</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">httplib &#123;</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">Request;</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">Response;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">Server;</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// namespace httplib</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/docs/api/structs/llvm/httpresponse">HTTPResponse</a>;</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/docs/api/structs/llvm/streaminghttpresponse">StreamingHTTPResponse</a>;</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/httpserver">HTTPServer</a>;</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37" lineLink="/docs/api/classes/llvm/httpservererror"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/httpservererror/#a699d2418d2f36c113d50c59e8a14e287">HTTPServerError</a> : </span><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/errorinfo">ErrorInfo</a>&lt;HTTPServerError, ECError&gt; &#123;</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39" lineLink="/docs/api/classes/llvm/httpservererror/#a96c18824ef8a11bb1035b3d52e79fe7b"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/httpservererror/#a96c18824ef8a11bb1035b3d52e79fe7b">ID</a>;</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/httpservererror/#a699d2418d2f36c113d50c59e8a14e287">HTTPServerError</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/twine">Twine</a> &amp;Msg);</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/httpservererror/#a70fb08bd9ee431e69222fe4df5baa8e7">log</a>(<a href="/docs/api/classes/llvm/raw-ostream">raw&#95;ostream</a> &amp;OS) </span><span class="doxyHighlightKeyword">const override</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlightKeyword">private</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlight">  std::string Msg;</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47" lineLink="/docs/api/classes/llvm/httpserverrequest"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/httpserverrequest">HTTPServerRequest</a> &#123;</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">friend</span><span class="doxyHighlight"> HTTPServer;</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlightPreprocessor">#ifdef LLVM&#95;ENABLE&#95;HTTPLIB</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlightKeyword">private</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/httpserverrequest">HTTPServerRequest</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> httplib::Request &amp;HTTPLibRequest,</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlight">                    httplib::Response &amp;HTTPLibResponse);</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlight">  httplib::Response &amp;HTTPLibResponse;</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58" lineLink="/docs/api/classes/llvm/httpserverrequest/#a03eafe444d9ad3af469954d86c895d7e"><span class="doxyHighlight">  std::string <a href="/docs/api/classes/llvm/httpserverrequest/#a03eafe444d9ad3af469954d86c895d7e">UrlPath</a>;</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlightComment">  /// The elements correspond to match groups in the url path matching regex.</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60" lineLink="/docs/api/classes/llvm/httpserverrequest/#ac717be77374df8d58d536f70879b405c"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/smallvector">SmallVector&lt;std::string, 1&gt;</a> <a href="/docs/api/classes/llvm/httpserverrequest/#ac717be77374df8d58d536f70879b405c">UrlPathMatches</a>;</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// TODO bring in HTTP headers</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/httpserverrequest/#a9c4103690fe948aafa737b096a31501a">setResponse</a>(<a href="/docs/api/structs/llvm/streaminghttpresponse">StreamingHTTPResponse</a> Response);</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/httpserverrequest/#a9c4103690fe948aafa737b096a31501a">setResponse</a>(<a href="/docs/api/structs/llvm/httpresponse">HTTPResponse</a> Response);</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68" lineLink="/docs/api/structs/llvm/httpresponse"><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/docs/api/structs/llvm/httpresponse">HTTPResponse</a> &#123;</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69" lineLink="/docs/api/structs/llvm/httpresponse/#afe52333ad78c2469a1595ce6f0688996"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/httpresponse/#afe52333ad78c2469a1595ce6f0688996">Code</a>;</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70" lineLink="/docs/api/structs/llvm/httpresponse/#a7836efd5399c7508e776de141a5bc6b9"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;<a href="/docs/api/structs/llvm/httpresponse/#a7836efd5399c7508e776de141a5bc6b9">ContentType</a>;</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71" lineLink="/docs/api/structs/llvm/httpresponse/#a885a0e8041b6e435881acf183ca088b6"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/structs/llvm/httpresponse/#a885a0e8041b6e435881acf183ca088b6">Body</a>;</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/namespaces/llvm/#a484725ce6bbff0f1751423cac5f22370"><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight"> std::function&lt;void(<a href="/docs/api/classes/llvm/httpserverrequest">HTTPServerRequest</a> &amp;)&gt; <a href="/docs/api/namespaces/llvm/#a484725ce6bbff0f1751423cac5f22370">HTTPRequestHandler</a>;</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlightComment">/// An HTTPContentProvider is called by the HTTPServer to obtain chunks of the</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlightComment">/// streaming response body. The returned chunk should be located at Offset</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlightComment">/// bytes and have Length bytes.</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight"> std::function&lt;<a href="/docs/api/classes/llvm/stringref">StringRef</a>(</span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> </span><span class="doxyHighlightComment">/&#42;Offset&#42;/</span><span class="doxyHighlight">, </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> </span><span class="doxyHighlightComment">/&#42;Length&#42;/</span><span class="doxyHighlight">)&gt;</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="/docs/api/namespaces/llvm/#aeab59d2f1c1e3952c0a2f41712fb2238"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/#aeab59d2f1c1e3952c0a2f41712fb2238">HTTPContentProvider</a>;</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlightComment">/// Wraps the content provider with HTTP Status code and headers.</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/structs/llvm/streaminghttpresponse"><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/docs/api/structs/llvm/streaminghttpresponse">StreamingHTTPResponse</a> &#123;</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84" lineLink="/docs/api/structs/llvm/streaminghttpresponse/#a64a858d95e23ac6c98c94a67fb2ce0bb"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/streaminghttpresponse/#a64a858d95e23ac6c98c94a67fb2ce0bb">Code</a>;</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85" lineLink="/docs/api/structs/llvm/streaminghttpresponse/#abc08c5b80a4ce9c0dbca63c14797cf63"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;<a href="/docs/api/structs/llvm/streaminghttpresponse/#abc08c5b80a4ce9c0dbca63c14797cf63">ContentType</a>;</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86" lineLink="/docs/api/structs/llvm/streaminghttpresponse/#a8e3c963a18ac2a16b4ea8991b3bb8955"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/streaminghttpresponse/#a8e3c963a18ac2a16b4ea8991b3bb8955">ContentLength</a>;</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87" lineLink="/docs/api/structs/llvm/streaminghttpresponse/#a490250f0ce8a4fb0b5bf87f12f34efd6"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#aeab59d2f1c1e3952c0a2f41712fb2238">HTTPContentProvider</a> <a href="/docs/api/structs/llvm/streaminghttpresponse/#a490250f0ce8a4fb0b5bf87f12f34efd6">Provider</a>;</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlightComment">  /// Called after the response transfer is complete with the success value of</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlightComment">  /// the transfer.</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90" lineLink="/docs/api/structs/llvm/streaminghttpresponse/#ae8aab521ee9d3a1199c55bedfe8e2e09"><span class="doxyHighlight">  std::function&lt;void(</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight">)&gt; <a href="/docs/api/structs/llvm/streaminghttpresponse/#ae8aab521ee9d3a1199c55bedfe8e2e09">CompletionHandler</a> = &#91;&#93;(</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/lib/target/aarch64/disassembler/aarch64disassembler-cpp/#abdb086b34295fb7aa09493c62d798465">Success</a>) &#123;&#125;;</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlightComment">/// Sets the response to stream the file at FilePath, if available, and</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlightComment">/// otherwise an HTTP 404 error response.</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#ad7c58f347a240684b93eb7ee8bfd6824">streamFile</a>(HTTPServerRequest &amp;Request, StringRef FilePath);</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlightComment">/// An HTTP server which can listen on a single TCP/IP port for HTTP</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlightComment">/// requests and delgate them to the appropriate registered handler.</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99" lineLink="/docs/api/classes/llvm/httpserver"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/httpserver/#a9ac379d2b10c907a322a7f5391c3a8a5">HTTPServer</a> &#123;</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlightPreprocessor">#ifdef LLVM&#95;ENABLE&#95;HTTPLIB</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlight">  std::unique&#95;ptr&lt;httplib::Server&gt; Server;</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> Port = 0;</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105" lineLink="/docs/api/classes/llvm/httpserver/#a9ac379d2b10c907a322a7f5391c3a8a5"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/httpserver/#a9ac379d2b10c907a322a7f5391c3a8a5">HTTPServer</a>();</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106" lineLink="/docs/api/classes/llvm/httpserver/#af09066b05417f9a9ce9f1cd8e5ad9e18"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/httpserver/#af09066b05417f9a9ce9f1cd8e5ad9e18">~HTTPServer</a>();</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlightComment">  /// Returns true only if LLVM has been compiled with a working HTTPServer.</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/httpserver/#acf0f31c71f22a544b52f3e27ca81ee9e">isAvailable</a>();</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlightComment">  /// Registers a URL pattern routing rule. When the server is listening, each</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><span class="doxyHighlightComment">  /// request is dispatched to the first registered handler whose UrlPathPattern</span></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlightComment">  /// matches the UrlPath.</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/classes/llvm/httpserver/#a57df1a0b2431ed4c6afb10acfb6108d1">get</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> UrlPathPattern, <a href="/docs/api/namespaces/llvm/#a484725ce6bbff0f1751423cac5f22370">HTTPRequestHandler</a> Handler);</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlightComment">  /// Attempts to assign the requested port and interface, returning an Error</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlightComment">  /// upon failure.</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/classes/llvm/httpserver/#a71ab0a18a93070081e4d5570088dc812">bind</a>(</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> Port, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;HostInterface = </span><span class="doxyHighlightStringLiteral">&quot;0.0.0.0&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlightComment">  /// Attempts to assign any available port and interface, returning either the</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><span class="doxyHighlightComment">  /// port number or an Error upon failure.</span></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/expected">Expected&lt;unsigned&gt;</a> <a href="/docs/api/classes/llvm/httpserver/#a71ab0a18a93070081e4d5570088dc812">bind</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;HostInterface = </span><span class="doxyHighlightStringLiteral">&quot;0.0.0.0&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlightComment">  /// Attempts to listen for requests on the bound port. Returns an Error if</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlightComment">  /// called before binding a port.</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/error">Error</a> <a href="/docs/api/classes/llvm/httpserver/#a98e1c84406f4cfcae0f250846f16c427">listen</a>();</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><span class="doxyHighlightComment">  /// If the server is listening, stop and unbind the socket.</span></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/httpserver/#ad6cdeb6e8e3440309d30d2618fcbd7f7">stop</a>();</span></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// end namespace llvm</span></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;DEBUGINFOD&#95;HTTPSERVER&#95;H</span></CodeLine>
 
 </ProgramListing>
 

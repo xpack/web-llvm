@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -110,247 +109,247 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===- ScoreboardHazardRecognizer.cpp - Scheduler Support -----------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements the ScoreboardHazardRecognizer class, which</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// encapsultes hazard-avoidance heuristics for scheduling, based on the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// scheduling itineraries specified for the target.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/scoreboardhazardrecognizer-h">llvm/CodeGen/ScoreboardHazardRecognizer.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/scheduledag-h">llvm/CodeGen/ScheduleDAG.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/targetinstrinfo-h">llvm/CodeGen/TargetInstrInfo.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;llvm/Config/llvm-config.h&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstrdesc-h">llvm/MC/MCInstrDesc.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">llvm/MC/MCInstrItineraries.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h">llvm/Support/Compiler.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h">llvm/Support/Debug.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h">llvm/Support/raw&#95;ostream.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cassert&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a>;</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28" lineLink="#ad78e062f62e0d6e453941fb4ca843e4d"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define DEBUG&#95;TYPE DebugType</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#aaed3ade868f57d3ccbdc61cb33b88c8a"><Highlight kind="normal"><a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#aaed3ade868f57d3ccbdc61cb33b88c8a">ScoreboardHazardRecognizer::ScoreboardHazardRecognizer</a>(</Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/instritinerarydata">InstrItineraryData</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scheduledag">ScheduleDAG</a> &#42;SchedDAG,</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;ParentDebugType)</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">    : DebugType(ParentDebugType), ItinData(<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a>), DAG(SchedDAG) &#123;</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">  (void)DebugType;</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Determine the maximum depth of any itinerary. This determines the depth of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// the scoreboard. We always make the scoreboard at least 1 cycle deep to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// avoid dealing with the boundary condition.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> ScoreboardDepth = 1;</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (ItinData &amp;&amp; !ItinData-&gt;isEmpty()) &#123;</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">    for (unsigned idx = 0; ; ++idx) &#123;</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">      if (ItinData-&gt;isEndMarker(idx))</Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">        break;</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">      const InstrStage &#42;IS = ItinData-&gt;beginStage(idx);</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">      const InstrStage &#42;E = ItinData-&gt;endStage(idx);</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">      unsigned CurCycle = 0;</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">      unsigned ItinDepth = 0;</Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal">      for (; IS != E; ++IS) &#123;</Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">        unsigned StageDepth = CurCycle + IS-&gt;getCycles();</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">        if (ItinDepth &lt; StageDepth) ItinDepth = StageDepth;</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">        CurCycle += IS-&gt;getNextCycles();</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Find the next power-of-2 &gt;= ItinDepth</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">      while (ItinDepth &gt; ScoreboardDepth) &#123;</Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">        ScoreboardDepth &#42;= 2;</Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Don&#39;t set MaxLookAhead until we find at least one nonzero stage.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// This way, an itinerary with no stages has MaxLookAhead==0, which</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// completely bypasses the scoreboard hazard logic.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal">        MaxLookAhead = ScoreboardDepth;</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  ReservedScoreboard.reset(ScoreboardDepth);</Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal">  RequiredScoreboard.reset(ScoreboardDepth);</Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// If MaxLookAhead is not set above, then we are not enabled.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!isEnabled())</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">    <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Disabled scoreboard hazard recognizer\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// A nonempty itinerary must have a SchedModel.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">    IssueWidth = ItinData-&gt;SchedModel.IssueWidth;</Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">    <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Using scoreboard hazard recognizer: Depth = &quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">                      &lt;&lt; ScoreboardDepth &lt;&lt; </Highlight><Highlight kind="charliteral">&#39;\\n&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a059770a7aafc9643d09c5d9e836b1137"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a059770a7aafc9643d09c5d9e836b1137">ScoreboardHazardRecognizer::Reset</a>() &#123;</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">  IssueCount = 0;</Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">  RequiredScoreboard.reset();</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">  ReservedScoreboard.reset();</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if !defined(NDEBUG) || defined(LLVM&#95;ENABLE&#95;DUMP)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"><a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#aa863693eef567397d9c292da5bf22d34">LLVM&#95;DUMP&#95;METHOD</a> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> ScoreboardHazardRecognizer::Scoreboard::dump()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;Scoreboard:\\n&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> last = <a href="/docs/api/namespaces/llvm/#a1eb5609345b906d024fbf9e4bc1adc06afe578efb7ca235af77fb0eef7edcf639">Depth</a> - 1;</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> ((last &gt; 0) &amp;&amp; ((&#42;</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">)&#91;last&#93; == 0))</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">    last--;</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> i = 0; i &lt;= last; i++) &#123;</Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/instrstage/#a28207c85d95c7a0d901b2d8dbc37b6e3">InstrStage::FuncUnits</a> FUs = (&#42;this)&#91;i&#93;;</Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;\\t&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> j = std::numeric&#95;limits&lt;InstrStage::FuncUnits&gt;::digits - 1;</Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">         j &gt;= 0; j--)</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; ((FUs &amp; (1ULL &lt;&lt; j)) ? </Highlight><Highlight kind="charliteral">&#39;1&#39;</Highlight><Highlight kind="normal"> : </Highlight><Highlight kind="charliteral">&#39;0&#39;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">    <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="charliteral">&#39;\\n&#39;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#abf123a1135fb5aaf6505c367fc1d5fe9"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#abf123a1135fb5aaf6505c367fc1d5fe9">ScoreboardHazardRecognizer::atIssueLimit</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (IssueWidth == 0)</Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> IssueCount == IssueWidth;</Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal"><a href="/docs/api/classes/llvm/schedulehazardrecognizer/#a9bec0e329b12bbc503d08db497d43267">ScheduleHazardRecognizer::HazardType</a></Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a8bf3deda3f11f3e49a4e3d735450c69e"><Highlight kind="normal"><a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a8bf3deda3f11f3e49a4e3d735450c69e">ScoreboardHazardRecognizer::getHazardType</a>(<a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;SU, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> Stalls) &#123;</Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!ItinData || ItinData-&gt;isEmpty())</Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/schedulehazardrecognizer/#a9bec0e329b12bbc503d08db497d43267a4e42ac50bfd060349e49904842121cf1">NoHazard</a>;</Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Note that stalls will be negative for bottom-up scheduling.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> cycle = Stalls;</Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Use the itinerary for the underlying instruction to check for</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// free FU&#39;s in the scoreboard at the appropriate future cycles.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcinstrdesc">MCInstrDesc</a> &#42;<a href="/docs/api/namespaces/llvm/mcid">MCID</a> = DAG-&gt;getInstrDesc(SU);</Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!<a href="/docs/api/namespaces/llvm/mcid">MCID</a>) &#123;</Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Don&#39;t check hazards for non-machineinstr Nodes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/schedulehazardrecognizer/#a9bec0e329b12bbc503d08db497d43267a4e42ac50bfd060349e49904842121cf1">NoHazard</a>;</Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> idx = <a href="/docs/api/namespaces/llvm/mcid">MCID</a>-&gt;getSchedClass();</Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrstage">InstrStage</a> &#42;IS = ItinData-&gt;beginStage(idx),</Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal">         &#42;E = ItinData-&gt;endStage(idx); IS != E; ++IS) &#123;</Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// We must find one of the stage&#39;s units free for every cycle the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// stage is occupied. FIXME it would be more accurate to find the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// same unit free in all the cycles.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> i = 0; i &lt; IS-&gt;getCycles(); ++i) &#123;</Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> StageCycle = cycle + (int)i;</Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (StageCycle &lt; 0)</Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">continue</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (StageCycle &gt;= (</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">)RequiredScoreboard.getDepth()) &#123;</Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">        <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((StageCycle - Stalls) &lt; (</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">)RequiredScoreboard.getDepth() &amp;&amp;</Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">               </Highlight><Highlight kind="stringliteral">&quot;Scoreboard depth exceeded!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// This stage was stalled beyond pipeline depth, so cannot conflict.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">      <a href="/docs/api/structs/llvm/instrstage/#a28207c85d95c7a0d901b2d8dbc37b6e3">InstrStage::FuncUnits</a> freeUnits = IS-&gt;getUnits();</Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (IS-&gt;getReservationKind()) &#123;</Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrstage/#a0c36089f8d92b1bcb9c0a582d42aa106a7774578153e4ca5a7299d1f42395ae6e">InstrStage::Required</a>:</Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Required FUs conflict with both reserved and required ones</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">        freeUnits &amp;= ~ReservedScoreboard&#91;StageCycle&#93;;</Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">        &#91;&#91;fallthrough&#93;&#93;;</Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrstage/#a0c36089f8d92b1bcb9c0a582d42aa106adb675fc15885dfb7a1666cc046ac7ba5">InstrStage::Reserved</a>:</Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Reserved FUs can conflict only with required ones.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">        freeUnits &amp;= ~RequiredScoreboard&#91;StageCycle&#93;;</Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!freeUnits) &#123;</Highlight></CodeLine>
-<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">        <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;&#42;&#42;&#42; Hazard in cycle +&quot;</Highlight><Highlight kind="normal"> &lt;&lt; StageCycle &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;, &quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">        <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(DAG-&gt;dumpNode(&#42;SU));</Highlight></CodeLine>
-<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/schedulehazardrecognizer/#a9bec0e329b12bbc503d08db497d43267aad25e3975650edcc9c6fb2917a61dd37">Hazard</a>;</Highlight></CodeLine>
-<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Advance the cycle to the next stage.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal">    cycle += IS-&gt;getNextCycles();</Highlight></CodeLine>
-<Link id="l00166" /><CodeLine lineNumber="166"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00167" /><CodeLine lineNumber="167"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00168" /><CodeLine lineNumber="168"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/schedulehazardrecognizer/#a9bec0e329b12bbc503d08db497d43267a4e42ac50bfd060349e49904842121cf1">NoHazard</a>;</Highlight></CodeLine>
-<Link id="l00169" /><CodeLine lineNumber="169"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00170" /><CodeLine lineNumber="170"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00171" /><CodeLine lineNumber="171" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a2c7714e5d1be43bce0fdcf57217e4414"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a2c7714e5d1be43bce0fdcf57217e4414">ScoreboardHazardRecognizer::EmitInstruction</a>(<a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;SU) &#123;</Highlight></CodeLine>
-<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (!ItinData || ItinData-&gt;isEmpty())</Highlight></CodeLine>
-<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Use the itinerary for the underlying instruction to reserve FU&#39;s</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// in the scoreboard at the appropriate future cycles.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/mcinstrdesc">MCInstrDesc</a> &#42;<a href="/docs/api/namespaces/llvm/mcid">MCID</a> = DAG-&gt;getInstrDesc(SU);</Highlight></CodeLine>
-<Link id="l00178" /><CodeLine lineNumber="178"><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/mcid">MCID</a> &amp;&amp; </Highlight><Highlight kind="stringliteral">&quot;The scheduler must filter non-machineinstrs&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00179" /><CodeLine lineNumber="179"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (DAG-&gt;TII-&gt;isZeroCost(<a href="/docs/api/namespaces/llvm/mcid">MCID</a>-&gt;Opcode))</Highlight></CodeLine>
-<Link id="l00180" /><CodeLine lineNumber="180"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">  ++IssueCount;</Highlight></CodeLine>
-<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> cycle = 0;</Highlight></CodeLine>
-<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> idx = <a href="/docs/api/namespaces/llvm/mcid">MCID</a>-&gt;getSchedClass();</Highlight></CodeLine>
-<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrstage">InstrStage</a> &#42;IS = ItinData-&gt;beginStage(idx),</Highlight></CodeLine>
-<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">         &#42;E = ItinData-&gt;endStage(idx); IS != E; ++IS) &#123;</Highlight></CodeLine>
-<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// We must reserve one of the stage&#39;s units for every cycle the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// stage is occupied. FIXME it would be more accurate to reserve</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// the same unit free in all the cycles.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00192" /><CodeLine lineNumber="192"><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> i = 0; i &lt; IS-&gt;getCycles(); ++i) &#123;</Highlight></CodeLine>
-<Link id="l00193" /><CodeLine lineNumber="193"><Highlight kind="normal">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(((cycle + i) &lt; RequiredScoreboard.getDepth()) &amp;&amp;</Highlight></CodeLine>
-<Link id="l00194" /><CodeLine lineNumber="194"><Highlight kind="normal">             </Highlight><Highlight kind="stringliteral">&quot;Scoreboard depth exceeded!&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<Link id="l00195" /><CodeLine lineNumber="195"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal">      <a href="/docs/api/structs/llvm/instrstage/#a28207c85d95c7a0d901b2d8dbc37b6e3">InstrStage::FuncUnits</a> freeUnits = IS-&gt;getUnits();</Highlight></CodeLine>
-<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">switch</Highlight><Highlight kind="normal"> (IS-&gt;getReservationKind()) &#123;</Highlight></CodeLine>
-<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrstage/#a0c36089f8d92b1bcb9c0a582d42aa106a7774578153e4ca5a7299d1f42395ae6e">InstrStage::Required</a>:</Highlight></CodeLine>
-<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Required FUs conflict with both reserved and required ones</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">        freeUnits &amp;= ~ReservedScoreboard&#91;cycle + i&#93;;</Highlight></CodeLine>
-<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">        &#91;&#91;fallthrough&#93;&#93;;</Highlight></CodeLine>
-<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">case</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/instrstage/#a0c36089f8d92b1bcb9c0a582d42aa106adb675fc15885dfb7a1666cc046ac7ba5">InstrStage::Reserved</a>:</Highlight></CodeLine>
-<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// Reserved FUs can conflict only with required ones.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal">        freeUnits &amp;= ~RequiredScoreboard&#91;cycle + i&#93;;</Highlight></CodeLine>
-<Link id="l00205" /><CodeLine lineNumber="205"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00206" /><CodeLine lineNumber="206"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00207" /><CodeLine lineNumber="207"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00208" /><CodeLine lineNumber="208"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// reduce to a single unit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00209" /><CodeLine lineNumber="209"><Highlight kind="normal">      <a href="/docs/api/structs/llvm/instrstage/#a28207c85d95c7a0d901b2d8dbc37b6e3">InstrStage::FuncUnits</a> freeUnit = 0;</Highlight></CodeLine>
-<Link id="l00210" /><CodeLine lineNumber="210"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">do</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
-<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">        freeUnit = freeUnits;</Highlight></CodeLine>
-<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">        freeUnits = freeUnit &amp; (freeUnit - 1);</Highlight></CodeLine>
-<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">      &#125; </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (freeUnits);</Highlight></CodeLine>
-<Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (IS-&gt;getReservationKind() == <a href="/docs/api/structs/llvm/instrstage/#a0c36089f8d92b1bcb9c0a582d42aa106a7774578153e4ca5a7299d1f42395ae6e">InstrStage::Required</a>)</Highlight></CodeLine>
-<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">        RequiredScoreboard&#91;cycle + i&#93; |= freeUnit;</Highlight></CodeLine>
-<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">        ReservedScoreboard&#91;cycle + i&#93; |= freeUnit;</Highlight></CodeLine>
-<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// Advance the cycle to the next stage.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">    cycle += IS-&gt;getNextCycles();</Highlight></CodeLine>
-<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(ReservedScoreboard.dump());</Highlight></CodeLine>
-<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(RequiredScoreboard.dump());</Highlight></CodeLine>
-<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00229" /><CodeLine lineNumber="229" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#ad16524a56b4cc6839dd8cf8de66ec28b"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#ad16524a56b4cc6839dd8cf8de66ec28b">ScoreboardHazardRecognizer::AdvanceCycle</a>() &#123;</Highlight></CodeLine>
-<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal">  IssueCount = 0;</Highlight></CodeLine>
-<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal">  ReservedScoreboard&#91;0&#93; = 0; ReservedScoreboard.advance();</Highlight></CodeLine>
-<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal">  RequiredScoreboard&#91;0&#93; = 0; RequiredScoreboard.advance();</Highlight></CodeLine>
-<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00234" /><CodeLine lineNumber="234"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00235" /><CodeLine lineNumber="235" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a4a4ebd25c7fd29c185a1436f39e8aae6"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a4a4ebd25c7fd29c185a1436f39e8aae6">ScoreboardHazardRecognizer::RecedeCycle</a>() &#123;</Highlight></CodeLine>
-<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">  IssueCount = 0;</Highlight></CodeLine>
-<Link id="l00237" /><CodeLine lineNumber="237"><Highlight kind="normal">  ReservedScoreboard&#91;ReservedScoreboard.getDepth()-1&#93; = 0;</Highlight></CodeLine>
-<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">  ReservedScoreboard.recede();</Highlight></CodeLine>
-<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal">  RequiredScoreboard&#91;RequiredScoreboard.getDepth()-1&#93; = 0;</Highlight></CodeLine>
-<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal">  RequiredScoreboard.recede();</Highlight></CodeLine>
-<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===- ScoreboardHazardRecognizer.cpp - Scheduler Support -----------------===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This file implements the ScoreboardHazardRecognizer class, which</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">// encapsultes hazard-avoidance heuristics for scheduling, based on the</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">// scheduling itineraries specified for the target.</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/scoreboardhazardrecognizer-h">llvm/CodeGen/ScoreboardHazardRecognizer.h</a>&quot;</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/scheduledag-h">llvm/CodeGen/ScheduleDAG.h</a>&quot;</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/codegen/targetinstrinfo-h">llvm/CodeGen/TargetInstrInfo.h</a>&quot;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightPreprocessor">#include &quot;llvm/Config/llvm-config.h&quot;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstrdesc-h">llvm/MC/MCInstrDesc.h</a>&quot;</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/mc/mcinstritineraries-h">llvm/MC/MCInstrItineraries.h</a>&quot;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h">llvm/Support/Compiler.h</a>&quot;</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h">llvm/Support/Debug.h</a>&quot;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/raw-ostream-h">llvm/Support/raw&#95;ostream.h</a>&quot;</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightPreprocessor">#include &lt;cassert&gt;</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightKeyword">using namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a>;</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28" lineLink="#ad78e062f62e0d6e453941fb4ca843e4d"><span class="doxyHighlightPreprocessor">#define DEBUG&#95;TYPE DebugType</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#aaed3ade868f57d3ccbdc61cb33b88c8a"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#aaed3ade868f57d3ccbdc61cb33b88c8a">ScoreboardHazardRecognizer::ScoreboardHazardRecognizer</a>(</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/instritinerarydata">InstrItineraryData</a> &#42;<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a>, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/scheduledag">ScheduleDAG</a> &#42;SchedDAG,</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;ParentDebugType)</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlight">    : DebugType(ParentDebugType), ItinData(<a href="/docs/api/files/lib/lib/target/lib/target/nvptx/nvvmintrrange-cpp/#ac5804672fc0850438d63caec770647f8">II</a>), DAG(SchedDAG) &#123;</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlight">  (void)DebugType;</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Determine the maximum depth of any itinerary. This determines the depth of</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// the scoreboard. We always make the scoreboard at least 1 cycle deep to</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// avoid dealing with the boundary condition.</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> ScoreboardDepth = 1;</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (ItinData &amp;&amp; !ItinData-&gt;isEmpty()) &#123;</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlight">    for (unsigned idx = 0; ; ++idx) &#123;</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlight">      if (ItinData-&gt;isEndMarker(idx))</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlight">        break;</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlight">      const InstrStage &#42;IS = ItinData-&gt;beginStage(idx);</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlight">      const InstrStage &#42;E = ItinData-&gt;endStage(idx);</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlight">      unsigned CurCycle = 0;</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlight">      unsigned ItinDepth = 0;</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlight">      for (; IS != E; ++IS) &#123;</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlight">        unsigned StageDepth = CurCycle + IS-&gt;getCycles();</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlight">        if (ItinDepth &lt; StageDepth) ItinDepth = StageDepth;</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlight">        CurCycle += IS-&gt;getNextCycles();</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// Find the next power-of-2 &gt;= ItinDepth</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlight">      while (ItinDepth &gt; ScoreboardDepth) &#123;</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlight">        ScoreboardDepth &#42;= 2;</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// Don&#39;t set MaxLookAhead until we find at least one nonzero stage.</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// This way, an itinerary with no stages has MaxLookAhead==0, which</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// completely bypasses the scoreboard hazard logic.</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><span class="doxyHighlight">        MaxLookAhead = ScoreboardDepth;</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlight">  ReservedScoreboard.reset(ScoreboardDepth);</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlight">  RequiredScoreboard.reset(ScoreboardDepth);</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// If MaxLookAhead is not set above, then we are not enabled.</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!isEnabled())</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlight">    <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;Disabled scoreboard hazard recognizer\\n&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> &#123;</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// A nonempty itinerary must have a SchedModel.</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlight">    IssueWidth = ItinData-&gt;SchedModel.IssueWidth;</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlight">    <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;Using scoreboard hazard recognizer: Depth = &quot;</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlight">                      &lt;&lt; ScoreboardDepth &lt;&lt; </span><span class="doxyHighlightCharLiteral">&#39;\\n&#39;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a059770a7aafc9643d09c5d9e836b1137"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a059770a7aafc9643d09c5d9e836b1137">ScoreboardHazardRecognizer::Reset</a>() &#123;</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlight">  IssueCount = 0;</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlight">  RequiredScoreboard.reset();</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlight">  ReservedScoreboard.reset();</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><span class="doxyHighlightPreprocessor">#if !defined(NDEBUG) || defined(LLVM&#95;ENABLE&#95;DUMP)</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlight"><a href="/docs/api/files/include/include/llvm/include/llvm/support/compiler-h/#aa863693eef567397d9c292da5bf22d34">LLVM&#95;DUMP&#95;METHOD</a> </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> ScoreboardHazardRecognizer::Scoreboard::dump()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;Scoreboard:\\n&quot;</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> last = <a href="/docs/api/namespaces/llvm/#a1eb5609345b906d024fbf9e4bc1adc06afe578efb7ca235af77fb0eef7edcf639">Depth</a> - 1;</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">while</span><span class="doxyHighlight"> ((last &gt; 0) &amp;&amp; ((&#42;</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">)&#91;last&#93; == 0))</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlight">    last--;</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> i = 0; i &lt;= last; i++) &#123;</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlight">    <a href="/docs/api/structs/llvm/instrstage/#a28207c85d95c7a0d901b2d8dbc37b6e3">InstrStage::FuncUnits</a> FUs = (&#42;this)&#91;i&#93;;</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;\\t&quot;</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> j = std::numeric&#95;limits&lt;InstrStage::FuncUnits&gt;::digits - 1;</span></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlight">         j &gt;= 0; j--)</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlight">      <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; ((FUs &amp; (1ULL &lt;&lt; j)) ? </span><span class="doxyHighlightCharLiteral">&#39;1&#39;</span><span class="doxyHighlight"> : </span><span class="doxyHighlightCharLiteral">&#39;0&#39;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlight">    <a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </span><span class="doxyHighlightCharLiteral">&#39;\\n&#39;</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#abf123a1135fb5aaf6505c367fc1d5fe9"><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#abf123a1135fb5aaf6505c367fc1d5fe9">ScoreboardHazardRecognizer::atIssueLimit</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (IssueWidth == 0)</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> IssueCount == IssueWidth;</span></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/schedulehazardrecognizer/#a9bec0e329b12bbc503d08db497d43267">ScheduleHazardRecognizer::HazardType</a></span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a8bf3deda3f11f3e49a4e3d735450c69e"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a8bf3deda3f11f3e49a4e3d735450c69e">ScoreboardHazardRecognizer::getHazardType</a>(<a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;SU, </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> Stalls) &#123;</span></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!ItinData || ItinData-&gt;isEmpty())</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/schedulehazardrecognizer/#a9bec0e329b12bbc503d08db497d43267a4e42ac50bfd060349e49904842121cf1">NoHazard</a>;</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Note that stalls will be negative for bottom-up scheduling.</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> cycle = Stalls;</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Use the itinerary for the underlying instruction to check for</span></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// free FU&#39;s in the scoreboard at the appropriate future cycles.</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcinstrdesc">MCInstrDesc</a> &#42;<a href="/docs/api/namespaces/llvm/mcid">MCID</a> = DAG-&gt;getInstrDesc(SU);</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!<a href="/docs/api/namespaces/llvm/mcid">MCID</a>) &#123;</span></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Don&#39;t check hazards for non-machineinstr Nodes.</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/schedulehazardrecognizer/#a9bec0e329b12bbc503d08db497d43267a4e42ac50bfd060349e49904842121cf1">NoHazard</a>;</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> idx = <a href="/docs/api/namespaces/llvm/mcid">MCID</a>-&gt;getSchedClass();</span></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/instrstage">InstrStage</a> &#42;IS = ItinData-&gt;beginStage(idx),</span></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"><span class="doxyHighlight">         &#42;E = ItinData-&gt;endStage(idx); IS != E; ++IS) &#123;</span></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// We must find one of the stage&#39;s units free for every cycle the</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// stage is occupied. FIXME it would be more accurate to find the</span></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// same unit free in all the cycles.</span></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> i = 0; i &lt; IS-&gt;getCycles(); ++i) &#123;</span></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> StageCycle = cycle + (int)i;</span></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (StageCycle &lt; 0)</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">continue</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (StageCycle &gt;= (</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight">)RequiredScoreboard.getDepth()) &#123;</span></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><span class="doxyHighlight">        <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>((StageCycle - Stalls) &lt; (</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight">)RequiredScoreboard.getDepth() &amp;&amp;</span></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><span class="doxyHighlight">               </span><span class="doxyHighlightStringLiteral">&quot;Scoreboard depth exceeded!&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// This stage was stalled beyond pipeline depth, so cannot conflict.</span></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">break</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><span class="doxyHighlight">      <a href="/docs/api/structs/llvm/instrstage/#a28207c85d95c7a0d901b2d8dbc37b6e3">InstrStage::FuncUnits</a> freeUnits = IS-&gt;getUnits();</span></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">switch</span><span class="doxyHighlight"> (IS-&gt;getReservationKind()) &#123;</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">case</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/instrstage/#a0c36089f8d92b1bcb9c0a582d42aa106a7774578153e4ca5a7299d1f42395ae6e">InstrStage::Required</a>:</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// Required FUs conflict with both reserved and required ones</span></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><span class="doxyHighlight">        freeUnits &amp;= ~ReservedScoreboard&#91;StageCycle&#93;;</span></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><span class="doxyHighlight">        &#91;&#91;fallthrough&#93;&#93;;</span></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">case</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/instrstage/#a0c36089f8d92b1bcb9c0a582d42aa106adb675fc15885dfb7a1666cc046ac7ba5">InstrStage::Reserved</a>:</span></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// Reserved FUs can conflict only with required ones.</span></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><span class="doxyHighlight">        freeUnits &amp;= ~RequiredScoreboard&#91;StageCycle&#93;;</span></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">break</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156"></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!freeUnits) &#123;</span></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><span class="doxyHighlight">        <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(<a href="/docs/api/namespaces/llvm/#a7c46c742c31be54870e2038048e6b391">dbgs</a>() &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;&#42;&#42;&#42; Hazard in cycle +&quot;</span><span class="doxyHighlight"> &lt;&lt; StageCycle &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;, &quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><span class="doxyHighlight">        <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(DAG-&gt;dumpNode(&#42;SU));</span></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/schedulehazardrecognizer/#a9bec0e329b12bbc503d08db497d43267aad25e3975650edcc9c6fb2917a61dd37">Hazard</a>;</span></CodeLine>
+<Link id="l00161" /><CodeLine lineNumber="161"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00162" /><CodeLine lineNumber="162"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Advance the cycle to the next stage.</span></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><span class="doxyHighlight">    cycle += IS-&gt;getNextCycles();</span></CodeLine>
+<Link id="l00166" /><CodeLine lineNumber="166"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00167" /><CodeLine lineNumber="167"></CodeLine>
+<Link id="l00168" /><CodeLine lineNumber="168"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/schedulehazardrecognizer/#a9bec0e329b12bbc503d08db497d43267a4e42ac50bfd060349e49904842121cf1">NoHazard</a>;</span></CodeLine>
+<Link id="l00169" /><CodeLine lineNumber="169"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00170" /><CodeLine lineNumber="170"></CodeLine>
+<Link id="l00171" /><CodeLine lineNumber="171" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a2c7714e5d1be43bce0fdcf57217e4414"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a2c7714e5d1be43bce0fdcf57217e4414">ScoreboardHazardRecognizer::EmitInstruction</a>(<a href="/docs/api/classes/llvm/sunit">SUnit</a> &#42;SU) &#123;</span></CodeLine>
+<Link id="l00172" /><CodeLine lineNumber="172"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!ItinData || ItinData-&gt;isEmpty())</span></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Use the itinerary for the underlying instruction to reserve FU&#39;s</span></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// in the scoreboard at the appropriate future cycles.</span></CodeLine>
+<Link id="l00177" /><CodeLine lineNumber="177"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/mcinstrdesc">MCInstrDesc</a> &#42;<a href="/docs/api/namespaces/llvm/mcid">MCID</a> = DAG-&gt;getInstrDesc(SU);</span></CodeLine>
+<Link id="l00178" /><CodeLine lineNumber="178"><span class="doxyHighlight">  <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(<a href="/docs/api/namespaces/llvm/mcid">MCID</a> &amp;&amp; </span><span class="doxyHighlightStringLiteral">&quot;The scheduler must filter non-machineinstrs&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00179" /><CodeLine lineNumber="179"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (DAG-&gt;TII-&gt;isZeroCost(<a href="/docs/api/namespaces/llvm/mcid">MCID</a>-&gt;Opcode))</span></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"></CodeLine>
+<Link id="l00182" /><CodeLine lineNumber="182"><span class="doxyHighlight">  ++IssueCount;</span></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> cycle = 0;</span></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185"></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> idx = <a href="/docs/api/namespaces/llvm/mcid">MCID</a>-&gt;getSchedClass();</span></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/instrstage">InstrStage</a> &#42;IS = ItinData-&gt;beginStage(idx),</span></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><span class="doxyHighlight">         &#42;E = ItinData-&gt;endStage(idx); IS != E; ++IS) &#123;</span></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// We must reserve one of the stage&#39;s units for every cycle the</span></CodeLine>
+<Link id="l00190" /><CodeLine lineNumber="190"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// stage is occupied. FIXME it would be more accurate to reserve</span></CodeLine>
+<Link id="l00191" /><CodeLine lineNumber="191"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// the same unit free in all the cycles.</span></CodeLine>
+<Link id="l00192" /><CodeLine lineNumber="192"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> i = 0; i &lt; IS-&gt;getCycles(); ++i) &#123;</span></CodeLine>
+<Link id="l00193" /><CodeLine lineNumber="193"><span class="doxyHighlight">      <a href="/docs/api/files/lib/lib/target/lib/target/amdgpu/silowercontrolflow-cpp/#a4868c5d81c5ccc98c47aeab6244346a0">assert</a>(((cycle + i) &lt; RequiredScoreboard.getDepth()) &amp;&amp;</span></CodeLine>
+<Link id="l00194" /><CodeLine lineNumber="194"><span class="doxyHighlight">             </span><span class="doxyHighlightStringLiteral">&quot;Scoreboard depth exceeded!&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<Link id="l00195" /><CodeLine lineNumber="195"></CodeLine>
+<Link id="l00196" /><CodeLine lineNumber="196"><span class="doxyHighlight">      <a href="/docs/api/structs/llvm/instrstage/#a28207c85d95c7a0d901b2d8dbc37b6e3">InstrStage::FuncUnits</a> freeUnits = IS-&gt;getUnits();</span></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">switch</span><span class="doxyHighlight"> (IS-&gt;getReservationKind()) &#123;</span></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">case</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/instrstage/#a0c36089f8d92b1bcb9c0a582d42aa106a7774578153e4ca5a7299d1f42395ae6e">InstrStage::Required</a>:</span></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// Required FUs conflict with both reserved and required ones</span></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><span class="doxyHighlight">        freeUnits &amp;= ~ReservedScoreboard&#91;cycle + i&#93;;</span></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><span class="doxyHighlight">        &#91;&#91;fallthrough&#93;&#93;;</span></CodeLine>
+<Link id="l00202" /><CodeLine lineNumber="202"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">case</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/instrstage/#a0c36089f8d92b1bcb9c0a582d42aa106adb675fc15885dfb7a1666cc046ac7ba5">InstrStage::Reserved</a>:</span></CodeLine>
+<Link id="l00203" /><CodeLine lineNumber="203"><span class="doxyHighlight">        </span><span class="doxyHighlightComment">// Reserved FUs can conflict only with required ones.</span></CodeLine>
+<Link id="l00204" /><CodeLine lineNumber="204"><span class="doxyHighlight">        freeUnits &amp;= ~RequiredScoreboard&#91;cycle + i&#93;;</span></CodeLine>
+<Link id="l00205" /><CodeLine lineNumber="205"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">break</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00206" /><CodeLine lineNumber="206"><span class="doxyHighlight">      &#125;</span></CodeLine>
+<Link id="l00207" /><CodeLine lineNumber="207"></CodeLine>
+<Link id="l00208" /><CodeLine lineNumber="208"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// reduce to a single unit</span></CodeLine>
+<Link id="l00209" /><CodeLine lineNumber="209"><span class="doxyHighlight">      <a href="/docs/api/structs/llvm/instrstage/#a28207c85d95c7a0d901b2d8dbc37b6e3">InstrStage::FuncUnits</a> freeUnit = 0;</span></CodeLine>
+<Link id="l00210" /><CodeLine lineNumber="210"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">do</span><span class="doxyHighlight"> &#123;</span></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><span class="doxyHighlight">        freeUnit = freeUnits;</span></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><span class="doxyHighlight">        freeUnits = freeUnit &amp; (freeUnit - 1);</span></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><span class="doxyHighlight">      &#125; </span><span class="doxyHighlightKeywordFlow">while</span><span class="doxyHighlight"> (freeUnits);</span></CodeLine>
+<Link id="l00214" /><CodeLine lineNumber="214"></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (IS-&gt;getReservationKind() == <a href="/docs/api/structs/llvm/instrstage/#a0c36089f8d92b1bcb9c0a582d42aa106a7774578153e4ca5a7299d1f42395ae6e">InstrStage::Required</a>)</span></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><span class="doxyHighlight">        RequiredScoreboard&#91;cycle + i&#93; |= freeUnit;</span></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">else</span></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><span class="doxyHighlight">        ReservedScoreboard&#91;cycle + i&#93; |= freeUnit;</span></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Advance the cycle to the next stage.</span></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><span class="doxyHighlight">    cycle += IS-&gt;getNextCycles();</span></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><span class="doxyHighlight">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(ReservedScoreboard.dump());</span></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><span class="doxyHighlight">  <a href="/docs/api/files/include/include/llvm/include/llvm/support/debug-h/#a196897517069dda1bdb549e24468f7d7">LLVM&#95;DEBUG</a>(RequiredScoreboard.dump());</span></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#ad16524a56b4cc6839dd8cf8de66ec28b"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#ad16524a56b4cc6839dd8cf8de66ec28b">ScoreboardHazardRecognizer::AdvanceCycle</a>() &#123;</span></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><span class="doxyHighlight">  IssueCount = 0;</span></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><span class="doxyHighlight">  ReservedScoreboard&#91;0&#93; = 0; ReservedScoreboard.advance();</span></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><span class="doxyHighlight">  RequiredScoreboard&#91;0&#93; = 0; RequiredScoreboard.advance();</span></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00234" /><CodeLine lineNumber="234"></CodeLine>
+<Link id="l00235" /><CodeLine lineNumber="235" lineLink="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a4a4ebd25c7fd29c185a1436f39e8aae6"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/scoreboardhazardrecognizer/#a4a4ebd25c7fd29c185a1436f39e8aae6">ScoreboardHazardRecognizer::RecedeCycle</a>() &#123;</span></CodeLine>
+<Link id="l00236" /><CodeLine lineNumber="236"><span class="doxyHighlight">  IssueCount = 0;</span></CodeLine>
+<Link id="l00237" /><CodeLine lineNumber="237"><span class="doxyHighlight">  ReservedScoreboard&#91;ReservedScoreboard.getDepth()-1&#93; = 0;</span></CodeLine>
+<Link id="l00238" /><CodeLine lineNumber="238"><span class="doxyHighlight">  ReservedScoreboard.recede();</span></CodeLine>
+<Link id="l00239" /><CodeLine lineNumber="239"><span class="doxyHighlight">  RequiredScoreboard&#91;RequiredScoreboard.getDepth()-1&#93; = 0;</span></CodeLine>
+<Link id="l00240" /><CodeLine lineNumber="240"><span class="doxyHighlight">  RequiredScoreboard.recede();</span></CodeLine>
+<Link id="l00241" /><CodeLine lineNumber="241"><span class="doxyHighlight">&#125;</span></CodeLine>
 
 </ProgramListing>
 

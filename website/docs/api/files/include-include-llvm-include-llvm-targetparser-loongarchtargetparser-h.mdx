@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -127,103 +126,103 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//==-- LoongArch64TargetParser - Parser for LoongArch64 features --&#42;- C++ -&#42;-=//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file implements a target parser to recognise LoongArch hardware features</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// such as CPU/ARCH and extension names.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;TARGETPARSER&#95;LOONGARCHTARGETPARSER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;TARGETPARSER&#95;LOONGARCHTARGETPARSER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/targetparser/triple-h">llvm/TargetParser/Triple.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;vector&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/stringref">StringRef</a>;</Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23" lineLink="/docs/api/namespaces/llvm/loongarch"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/loongarch">LoongArch</a> &#123;</Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284"><Highlight kind="normal"></Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284">FeatureKind</a> : uint32&#95;t &#123;</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// 64-bit ISA is available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284afc2b624bdc22be599c8eea536106d50f"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284afc2b624bdc22be599c8eea536106d50f">FK&#95;64BIT</a> = 1 &lt;&lt; 1,</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Single-precision floating-point instructions are available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a3b58ee64942aba6f236f142aaaabc3a1"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a3b58ee64942aba6f236f142aaaabc3a1">FK&#95;FP32</a> = 1 &lt;&lt; 2,</Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Double-precision floating-point instructions are available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284adb98b5519f9499c9eebf418eb1a938b0"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284adb98b5519f9499c9eebf418eb1a938b0">FK&#95;FP64</a> = 1 &lt;&lt; 3,</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Loongson SIMD Extension is available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284ad29b78c4b7685957b604801274d82c90"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284ad29b78c4b7685957b604801274d82c90">FK&#95;LSX</a> = 1 &lt;&lt; 4,</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Loongson Advanced SIMD Extension is available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a0a0c0d82673efc120035d311861245aa"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a0a0c0d82673efc120035d311861245aa">FK&#95;LASX</a> = 1 &lt;&lt; 5,</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Loongson Binary Translation Extension is available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a9d27f45f7bbddf136d6c71f1ce8f0d62"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a9d27f45f7bbddf136d6c71f1ce8f0d62">FK&#95;LBT</a> = 1 &lt;&lt; 6,</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Loongson Virtualization Extension is available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284abf4ec94d25682bd8f50f75122438b370"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284abf4ec94d25682bd8f50f75122438b370">FK&#95;LVZ</a> = 1 &lt;&lt; 7,</Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Allow memory accesses to be unaligned.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a4ab3d158dd89af5d8e504ac8dc982866"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a4ab3d158dd89af5d8e504ac8dc982866">FK&#95;UAL</a> = 1 &lt;&lt; 8,</Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Floating-point approximate reciprocal instructions are available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284ad9770bc4386718969492547eebe6de4f"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284ad9770bc4386718969492547eebe6de4f">FK&#95;FRECIPE</a> = 1 &lt;&lt; 9,</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Atomic memory swap and add instructions for byte and half word are</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284ae061875e965f4fe962636a27d2c017a4"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284ae061875e965f4fe962636a27d2c017a4">FK&#95;LAM&#95;BH</a> = 1 &lt;&lt; 10,</Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Atomic memory compare and swap instructions for byte, half word, word and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// double word are available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a68dfd1f70d2f792e9a5b6ac41efffd52"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a68dfd1f70d2f792e9a5b6ac41efffd52">FK&#95;LAMCAS</a> = 1 &lt;&lt; 11,</Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Do not generate load-load barrier instructions (dbar 0x700).</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a5204a9f8cd989eabc8bcf70af3a1e4a1"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a5204a9f8cd989eabc8bcf70af3a1e4a1">FK&#95;LD&#95;SEQ&#95;SA</a> = 1 &lt;&lt; 12,</Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Assume div.w&#91;u&#93; and mod.w&#91;u&#93; can handle inputs that are not sign-extended.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a8d9aa4c2a2316af7646fbcd457de3b41"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a8d9aa4c2a2316af7646fbcd457de3b41">FK&#95;DIV32</a> = 1 &lt;&lt; 13,</Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// sc.q is available.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284aabe541474a6126b93dd68d0e0f508b16"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284aabe541474a6126b93dd68d0e0f508b16">FK&#95;SCQ</a> = 1 &lt;&lt; 14,</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71" lineLink="/docs/api/structs/llvm/loongarch/featureinfo"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/loongarch/featureinfo">FeatureInfo</a> &#123;</Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72" lineLink="/docs/api/structs/llvm/loongarch/featureinfo/#ac8d2a5948f50eec4e7db674e3fdea4d3"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/structs/llvm/loongarch/featureinfo/#ac8d2a5948f50eec4e7db674e3fdea4d3">Name</a>;</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73" lineLink="/docs/api/structs/llvm/loongarch/featureinfo/#a22fd9d721d93e32badc0a83389e597bf"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284">FeatureKind</a> <a href="/docs/api/structs/llvm/loongarch/featureinfo/#a22fd9d721d93e32badc0a83389e597bf">Kind</a>;</Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76" lineLink="/docs/api/namespaces/llvm/loongarch/#a985d21e19016be0acc8ca0975923da38"><Highlight kind="normal"></Highlight><Highlight kind="keyword">enum class</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/loongarch/#a985d21e19016be0acc8ca0975923da38">ArchKind</a> &#123;</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77" lineLink="#a319f7388e74a5ee4237e06d095ba1d76"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LOONGARCH&#95;ARCH(NAME, KIND, FEATURES) KIND,</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;LoongArchTargetParser.def&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80" lineLink="#ad735198fd3bde837d28a14903a5c60ad"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81" lineLink="/docs/api/structs/llvm/loongarch/archinfo"><Highlight kind="normal"></Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/loongarch/archinfo">ArchInfo</a> &#123;</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82" lineLink="/docs/api/structs/llvm/loongarch/archinfo/#aab4f43139a81a26b8f26ab844ce276d5"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/structs/llvm/loongarch/archinfo/#aab4f43139a81a26b8f26ab844ce276d5">Name</a>;</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/structs/llvm/loongarch/archinfo/#a7e00005a461fbf6ad808e525f84d2fab"><Highlight kind="normal">  <a href="/docs/api/namespaces/llvm/loongarch/#a985d21e19016be0acc8ca0975923da38">ArchKind</a> <a href="/docs/api/structs/llvm/loongarch/archinfo/#a7e00005a461fbf6ad808e525f84d2fab">Kind</a>;</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84" lineLink="/docs/api/structs/llvm/loongarch/archinfo/#accb8372f9d860dc6500e1a8e3ebf52d3"><Highlight kind="normal">  uint32&#95;t <a href="/docs/api/structs/llvm/loongarch/archinfo/#accb8372f9d860dc6500e1a8e3ebf52d3">Features</a>;</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/loongarch/#a9ed55f5a0ac555b889c11ff633ae1eba">isValidArchName</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Arch);</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/loongarch/#a409838e230dbdf71fd3a268819adf0fc">getArchFeatures</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Arch, std::vector&lt;StringRef&gt; &amp;Features);</Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/loongarch/#a51d5665bd2d5708908ea87e2aef48cf5">isValidCPUName</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> TuneCPU);</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/loongarch/#af7c8d1932dbd377676019145bc7efa80">fillValidCPUList</a>(<a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;StringRef&gt;</a> &amp;Values);</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal"><a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/namespaces/llvm/loongarch/#a3542e87c44601a1d8d22b23aab30681b">getDefaultArch</a>(</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Is64Bit);</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace LoongArch</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;TARGETPARSER&#95;LOONGARCHTARGETPARSER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//==-- LoongArch64TargetParser - Parser for LoongArch64 features --&#42;- C++ -&#42;-=//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// This file implements a target parser to recognise LoongArch hardware features</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">// such as CPU/ARCH and extension names.</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;TARGETPARSER&#95;LOONGARCHTARGETPARSER&#95;H</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightPreprocessor">#define LLVM&#95;TARGETPARSER&#95;LOONGARCHTARGETPARSER&#95;H</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/targetparser/triple-h">llvm/TargetParser/Triple.h</a>&quot;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightPreprocessor">#include &lt;vector&gt;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/stringref">StringRef</a>;</span></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23" lineLink="/docs/api/namespaces/llvm/loongarch"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/loongarch">LoongArch</a> &#123;</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284"><span class="doxyHighlightKeyword">enum</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284">FeatureKind</a> : uint32&#95;t &#123;</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// 64-bit ISA is available.</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284afc2b624bdc22be599c8eea536106d50f"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284afc2b624bdc22be599c8eea536106d50f">FK&#95;64BIT</a> = 1 &lt;&lt; 1,</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Single-precision floating-point instructions are available.</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a3b58ee64942aba6f236f142aaaabc3a1"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a3b58ee64942aba6f236f142aaaabc3a1">FK&#95;FP32</a> = 1 &lt;&lt; 2,</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Double-precision floating-point instructions are available.</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284adb98b5519f9499c9eebf418eb1a938b0"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284adb98b5519f9499c9eebf418eb1a938b0">FK&#95;FP64</a> = 1 &lt;&lt; 3,</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Loongson SIMD Extension is available.</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284ad29b78c4b7685957b604801274d82c90"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284ad29b78c4b7685957b604801274d82c90">FK&#95;LSX</a> = 1 &lt;&lt; 4,</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Loongson Advanced SIMD Extension is available.</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a0a0c0d82673efc120035d311861245aa"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a0a0c0d82673efc120035d311861245aa">FK&#95;LASX</a> = 1 &lt;&lt; 5,</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Loongson Binary Translation Extension is available.</span></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a9d27f45f7bbddf136d6c71f1ce8f0d62"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a9d27f45f7bbddf136d6c71f1ce8f0d62">FK&#95;LBT</a> = 1 &lt;&lt; 6,</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Loongson Virtualization Extension is available.</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284abf4ec94d25682bd8f50f75122438b370"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284abf4ec94d25682bd8f50f75122438b370">FK&#95;LVZ</a> = 1 &lt;&lt; 7,</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Allow memory accesses to be unaligned.</span></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a4ab3d158dd89af5d8e504ac8dc982866"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a4ab3d158dd89af5d8e504ac8dc982866">FK&#95;UAL</a> = 1 &lt;&lt; 8,</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Floating-point approximate reciprocal instructions are available.</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284ad9770bc4386718969492547eebe6de4f"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284ad9770bc4386718969492547eebe6de4f">FK&#95;FRECIPE</a> = 1 &lt;&lt; 9,</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Atomic memory swap and add instructions for byte and half word are</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// available.</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284ae061875e965f4fe962636a27d2c017a4"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284ae061875e965f4fe962636a27d2c017a4">FK&#95;LAM&#95;BH</a> = 1 &lt;&lt; 10,</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Atomic memory compare and swap instructions for byte, half word, word and</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// double word are available.</span></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a68dfd1f70d2f792e9a5b6ac41efffd52"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a68dfd1f70d2f792e9a5b6ac41efffd52">FK&#95;LAMCAS</a> = 1 &lt;&lt; 11,</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Do not generate load-load barrier instructions (dbar 0x700).</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a5204a9f8cd989eabc8bcf70af3a1e4a1"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a5204a9f8cd989eabc8bcf70af3a1e4a1">FK&#95;LD&#95;SEQ&#95;SA</a> = 1 &lt;&lt; 12,</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Assume div.w&#91;u&#93; and mod.w&#91;u&#93; can handle inputs that are not sign-extended.</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a8d9aa4c2a2316af7646fbcd457de3b41"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284a8d9aa4c2a2316af7646fbcd457de3b41">FK&#95;DIV32</a> = 1 &lt;&lt; 13,</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// sc.q is available.</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68" lineLink="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284aabe541474a6126b93dd68d0e0f508b16"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284aabe541474a6126b93dd68d0e0f508b16">FK&#95;SCQ</a> = 1 &lt;&lt; 14,</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71" lineLink="/docs/api/structs/llvm/loongarch/featureinfo"><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/docs/api/structs/llvm/loongarch/featureinfo">FeatureInfo</a> &#123;</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72" lineLink="/docs/api/structs/llvm/loongarch/featureinfo/#ac8d2a5948f50eec4e7db674e3fdea4d3"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/structs/llvm/loongarch/featureinfo/#ac8d2a5948f50eec4e7db674e3fdea4d3">Name</a>;</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73" lineLink="/docs/api/structs/llvm/loongarch/featureinfo/#a22fd9d721d93e32badc0a83389e597bf"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a939d69d21a37e26fa57818a35441e284">FeatureKind</a> <a href="/docs/api/structs/llvm/loongarch/featureinfo/#a22fd9d721d93e32badc0a83389e597bf">Kind</a>;</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76" lineLink="/docs/api/namespaces/llvm/loongarch/#a985d21e19016be0acc8ca0975923da38"><span class="doxyHighlightKeyword">enum class</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/loongarch/#a985d21e19016be0acc8ca0975923da38">ArchKind</a> &#123;</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77" lineLink="#a319f7388e74a5ee4237e06d095ba1d76"><span class="doxyHighlightPreprocessor">#define LOONGARCH&#95;ARCH(NAME, KIND, FEATURES) KIND,</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlightPreprocessor">#include &quot;LoongArchTargetParser.def&quot;</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80" lineLink="#ad735198fd3bde837d28a14903a5c60ad"></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81" lineLink="/docs/api/structs/llvm/loongarch/archinfo"><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/docs/api/structs/llvm/loongarch/archinfo">ArchInfo</a> &#123;</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82" lineLink="/docs/api/structs/llvm/loongarch/archinfo/#aab4f43139a81a26b8f26ab844ce276d5"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/structs/llvm/loongarch/archinfo/#aab4f43139a81a26b8f26ab844ce276d5">Name</a>;</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83" lineLink="/docs/api/structs/llvm/loongarch/archinfo/#a7e00005a461fbf6ad808e525f84d2fab"><span class="doxyHighlight">  <a href="/docs/api/namespaces/llvm/loongarch/#a985d21e19016be0acc8ca0975923da38">ArchKind</a> <a href="/docs/api/structs/llvm/loongarch/archinfo/#a7e00005a461fbf6ad808e525f84d2fab">Kind</a>;</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84" lineLink="/docs/api/structs/llvm/loongarch/archinfo/#accb8372f9d860dc6500e1a8e3ebf52d3"><span class="doxyHighlight">  uint32&#95;t <a href="/docs/api/structs/llvm/loongarch/archinfo/#accb8372f9d860dc6500e1a8e3ebf52d3">Features</a>;</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/loongarch/#a9ed55f5a0ac555b889c11ff633ae1eba">isValidArchName</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Arch);</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/loongarch/#a409838e230dbdf71fd3a268819adf0fc">getArchFeatures</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Arch, std::vector&lt;StringRef&gt; &amp;Features);</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/loongarch/#a51d5665bd2d5708908ea87e2aef48cf5">isValidCPUName</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> TuneCPU);</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/loongarch/#af7c8d1932dbd377676019145bc7efa80">fillValidCPUList</a>(<a href="/docs/api/classes/llvm/smallvectorimpl">SmallVectorImpl&lt;StringRef&gt;</a> &amp;Values);</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlight"><a href="/docs/api/classes/llvm/stringref">StringRef</a> <a href="/docs/api/namespaces/llvm/loongarch/#a3542e87c44601a1d8d22b23aab30681b">getDefaultArch</a>(</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> Is64Bit);</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// namespace LoongArch</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// namespace llvm</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;TARGETPARSER&#95;LOONGARCHTARGETPARSER&#95;H</span></CodeLine>
 
 </ProgramListing>
 

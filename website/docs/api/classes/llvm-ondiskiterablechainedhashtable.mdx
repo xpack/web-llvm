@@ -17,7 +17,6 @@ import CodeBlock from '@theme/CodeBlock'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -191,36 +190,36 @@ This needs an <code>Info</code> that handles reading values from the hash table&
 
 <ProgramListing>
 
-<CodeLine><Highlight kind="keyword">class </Highlight><Highlight kind="normal">ExampleLookupInfo &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal"> ExampleData <a href="/docs/api/files/lib/lib/profiledata/instrprofreader-cpp/#ad674bc524f54fe7fb728ded6ae31d66d">data&#95;type</a>;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal"> ExampleInternalKey internal&#95;key&#95;type; </Highlight><Highlight kind="comment">// The stored key type.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal"> ExampleKey external&#95;key&#95;type; </Highlight><Highlight kind="comment">// The type to pass to find().</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal"> uint32&#95;t hash&#95;value&#95;type; </Highlight><Highlight kind="comment">// The type the hash function returns.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal"> uint32&#95;t <a href="/docs/api/files/lib/lib/profiledata/instrprofreader-cpp/#a098d428243cfee4c355f295ef47cf549">offset&#95;type</a>; </Highlight><Highlight kind="comment">// The type for offsets into the table.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<CodeLine><Highlight kind="comment">  /// Compare two keys for equality.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> EqualKey(internal&#95;key&#95;type &amp;Key1, internal&#95;key&#95;type &amp;Key2);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<CodeLine><Highlight kind="comment">  /// Calculate the hash for the given key.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> hash&#95;value&#95;type <a href="/docs/api/namespaces/llvm/indexedinstrprof/#a26647986f25d6168afc4204fd79873df">ComputeHash</a>(internal&#95;key&#95;type &amp;IKey);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<CodeLine><Highlight kind="comment">  /// Translate from the semantic type of a key in the hash table to the</Highlight></CodeLine>
-<CodeLine><Highlight kind="comment">  /// type that is actually stored and used for hashing and comparisons.</Highlight></CodeLine>
-<CodeLine><Highlight kind="comment">  /// The internal and external types are often the same, in which case this</Highlight></CodeLine>
-<CodeLine><Highlight kind="comment">  /// can simply return the passed in value.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> internal&#95;key&#95;type &amp;GetInternalKey(external&#95;key&#95;type &amp;EKey);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<CodeLine><Highlight kind="comment">  /// Read the key and data length from Buffer, leaving it pointing at the</Highlight></CodeLine>
-<CodeLine><Highlight kind="comment">  /// following byte.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> std::pair&lt;offset&#95;type, offset&#95;type&gt;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  ReadKeyDataLength(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;&amp;Buffer);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<CodeLine><Highlight kind="comment">  /// Read the key from Buffer, given the KeyLen as reported from</Highlight></CodeLine>
-<CodeLine><Highlight kind="comment">  /// ReadKeyDataLength.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> internal&#95;key&#95;type &amp;ReadKey(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;Buffer,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">                                   <a href="/docs/api/files/lib/lib/profiledata/instrprofreader-cpp/#a098d428243cfee4c355f295ef47cf549">offset&#95;type</a> KeyLen);</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<CodeLine><Highlight kind="comment">  /// Read the data for Key from Buffer, given the DataLen as reported from</Highlight></CodeLine>
-<CodeLine><Highlight kind="comment">  /// ReadKeyDataLength.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  <a href="/docs/api/files/lib/lib/profiledata/instrprofreader-cpp/#ad674bc524f54fe7fb728ded6ae31d66d">data&#95;type</a> ReadData(StringRef Key, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;Buffer,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">                     <a href="/docs/api/files/lib/lib/profiledata/instrprofreader-cpp/#a098d428243cfee4c355f295ef47cf549">offset&#95;type</a> DataLen);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">ExampleLookupInfo &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight"> ExampleData <a href="/docs/api/files/lib/lib/profiledata/instrprofreader-cpp/#ad674bc524f54fe7fb728ded6ae31d66d">data&#95;type</a>;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight"> ExampleInternalKey internal&#95;key&#95;type; </span><span class="doxyHighlightComment">// The stored key type.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight"> ExampleKey external&#95;key&#95;type; </span><span class="doxyHighlightComment">// The type to pass to find().</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight"> uint32&#95;t hash&#95;value&#95;type; </span><span class="doxyHighlightComment">// The type the hash function returns.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight"> uint32&#95;t <a href="/docs/api/files/lib/lib/profiledata/instrprofreader-cpp/#a098d428243cfee4c355f295ef47cf549">offset&#95;type</a>; </span><span class="doxyHighlightComment">// The type for offsets into the table.</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlightComment">  /// Compare two keys for equality.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> EqualKey(internal&#95;key&#95;type &amp;Key1, internal&#95;key&#95;type &amp;Key2);</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">  /// Calculate the hash for the given key.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> hash&#95;value&#95;type <a href="/docs/api/namespaces/llvm/indexedinstrprof/#a26647986f25d6168afc4204fd79873df">ComputeHash</a>(internal&#95;key&#95;type &amp;IKey);</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">  /// Translate from the semantic type of a key in the hash table to the</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">  /// type that is actually stored and used for hashing and comparisons.</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">  /// The internal and external types are often the same, in which case this</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">  /// can simply return the passed in value.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> internal&#95;key&#95;type &amp;GetInternalKey(external&#95;key&#95;type &amp;EKey);</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">  /// Read the key and data length from Buffer, leaving it pointing at the</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">  /// following byte.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> std::pair&lt;offset&#95;type, offset&#95;type&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  ReadKeyDataLength(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;&amp;Buffer);</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">  /// Read the key from Buffer, given the KeyLen as reported from</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">  /// ReadKeyDataLength.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> internal&#95;key&#95;type &amp;ReadKey(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;Buffer,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">                                   <a href="/docs/api/files/lib/lib/profiledata/instrprofreader-cpp/#a098d428243cfee4c355f295ef47cf549">offset&#95;type</a> KeyLen);</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">  /// Read the data for Key from Buffer, given the DataLen as reported from</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">  /// ReadKeyDataLength.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  <a href="/docs/api/files/lib/lib/profiledata/instrprofreader-cpp/#ad674bc524f54fe7fb728ded6ae31d66d">data&#95;type</a> ReadData(StringRef Key, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;Buffer,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">                     <a href="/docs/api/files/lib/lib/profiledata/instrprofreader-cpp/#a098d428243cfee4c355f295ef47cf549">offset&#95;type</a> DataLen);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;;</span></CodeLine>
 
 </ProgramListing>
 

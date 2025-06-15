@@ -20,7 +20,6 @@ import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
 import EnumerationList from '@xpack/docusaurus-plugin-doxygen/components/EnumerationList'
 import EnumerationListItem from '@xpack/docusaurus-plugin-doxygen/components/EnumerationListItem'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -335,21 +334,21 @@ The target needs to provide a <a href="/docs/api/classes/llvm/registerbankinfo">
 Simplified algo: 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal"><a href="#afa42d1c7970f30d2fa388d5399348001">RBI</a> = MF.subtarget.getRegBankInfo()</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"><a href="#a1a75a71e05fa8fbc53f9c4437dafef20">MIRBuilder</a>.setMF(MF)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordflow">for each</Highlight><Highlight kind="normal"> bb in MF</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for each</Highlight><Highlight kind="normal"> inst in bb</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    <a href="#a1a75a71e05fa8fbc53f9c4437dafef20">MIRBuilder</a>.setInstr(inst)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    MappingCosts = <a href="#afa42d1c7970f30d2fa388d5399348001">RBI</a>.getMapping(inst);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    Idx = findIdxOfMinCost(MappingCosts)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    CurRegBank = MappingCosts&#91;Idx&#93;.RegBank</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    <a href="#ad8501c8e8cf2d5ffaa86880f57cd4569">MRI</a>.setRegBank(inst.getOperand(0).getReg(), CurRegBank)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for each</Highlight><Highlight kind="normal"> argument in inst</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (CurRegBank != argument.RegBank)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">        ArgReg = argument.getReg()</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">        Tmp = <a href="#ad8501c8e8cf2d5ffaa86880f57cd4569">MRI</a>.createNewVirtual(<a href="#ad8501c8e8cf2d5ffaa86880f57cd4569">MRI</a>.getSize(ArgReg), CurRegBank)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">        <a href="#a1a75a71e05fa8fbc53f9c4437dafef20">MIRBuilder</a>.buildInstr(COPY, Tmp, ArgReg)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">        inst.getOperand(argument.getOperandNo()).setReg(Tmp)</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="#afa42d1c7970f30d2fa388d5399348001">RBI</a> = MF.subtarget.getRegBankInfo()</span></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="#a1a75a71e05fa8fbc53f9c4437dafef20">MIRBuilder</a>.setMF(MF)</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordFlow">for each</span><span class="doxyHighlight"> bb in MF</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">for each</span><span class="doxyHighlight"> inst in bb</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    <a href="#a1a75a71e05fa8fbc53f9c4437dafef20">MIRBuilder</a>.setInstr(inst)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    MappingCosts = <a href="#afa42d1c7970f30d2fa388d5399348001">RBI</a>.getMapping(inst);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    Idx = findIdxOfMinCost(MappingCosts)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    CurRegBank = MappingCosts&#91;Idx&#93;.RegBank</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    <a href="#ad8501c8e8cf2d5ffaa86880f57cd4569">MRI</a>.setRegBank(inst.getOperand(0).getReg(), CurRegBank)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">for each</span><span class="doxyHighlight"> argument in inst</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (CurRegBank != argument.RegBank)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">        ArgReg = argument.getReg()</span></CodeLine>
+<CodeLine><span class="doxyHighlight">        Tmp = <a href="#ad8501c8e8cf2d5ffaa86880f57cd4569">MRI</a>.createNewVirtual(<a href="#ad8501c8e8cf2d5ffaa86880f57cd4569">MRI</a>.getSize(ArgReg), CurRegBank)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">        <a href="#a1a75a71e05fa8fbc53f9c4437dafef20">MIRBuilder</a>.buildInstr(COPY, Tmp, ArgReg)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">        inst.getOperand(argument.getOperandNo()).setReg(Tmp)</span></CodeLine>
 
 </ProgramListing>
 
@@ -548,14 +547,14 @@ The repairing placement is specified by <code>RepairPt</code>. <code>NewVRegs</c
 The transformation could be sketched as: 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">... = <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbittracker-cpp/#a0ee73ba17c3a2cb54752905e99d77357">op</a> <a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a359e1ff26f6d466d927a61aae45b05c3">Reg</a></Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">... = <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbittracker-cpp/#a0ee73ba17c3a2cb54752905e99d77357">op</a> <a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a359e1ff26f6d466d927a61aae45b05c3">Reg</a></span></CodeLine>
 
 </ProgramListing>
  Becomes 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">&lt;NewRegs&gt; = COPY or <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/loopextractor-cpp/#a84dff14934298a71113ab11312c243f6">extract</a> <a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a359e1ff26f6d466d927a61aae45b05c3">Reg</a></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">... = <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbittracker-cpp/#a0ee73ba17c3a2cb54752905e99d77357">op</a> <a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a359e1ff26f6d466d927a61aae45b05c3">Reg</a></Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">&lt;NewRegs&gt; = COPY or <a href="/docs/api/files/lib/lib/transforms/lib/transforms/ipo/loopextractor-cpp/#a84dff14934298a71113ab11312c243f6">extract</a> <a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a359e1ff26f6d466d927a61aae45b05c3">Reg</a></span></CodeLine>
+<CodeLine><span class="doxyHighlight">... = <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbittracker-cpp/#a0ee73ba17c3a2cb54752905e99d77357">op</a> <a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a359e1ff26f6d466d927a61aae45b05c3">Reg</a></span></CodeLine>
 
 </ProgramListing>
 
@@ -563,14 +562,14 @@ The transformation could be sketched as:
 and 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal"><a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a359e1ff26f6d466d927a61aae45b05c3">Reg</a> = <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbittracker-cpp/#a0ee73ba17c3a2cb54752905e99d77357">op</a> ...</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a359e1ff26f6d466d927a61aae45b05c3">Reg</a> = <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbittracker-cpp/#a0ee73ba17c3a2cb54752905e99d77357">op</a> ...</span></CodeLine>
 
 </ProgramListing>
  Becomes 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal"><a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a359e1ff26f6d466d927a61aae45b05c3">Reg</a> = <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbittracker-cpp/#a0ee73ba17c3a2cb54752905e99d77357">op</a> ...</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">Reg = COPY or build&#95;sequence &lt;NewRegs&gt;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="/docs/api/files/lib/lib/codegen/machinesink-cpp/#a359e1ff26f6d466d927a61aae45b05c3">Reg</a> = <a href="/docs/api/files/lib/lib/target/lib/target/hexagon/hexagonbittracker-cpp/#a0ee73ba17c3a2cb54752905e99d77357">op</a> ...</span></CodeLine>
+<CodeLine><span class="doxyHighlight">Reg = COPY or build&#95;sequence &lt;NewRegs&gt;</span></CodeLine>
 
 </ProgramListing>
 

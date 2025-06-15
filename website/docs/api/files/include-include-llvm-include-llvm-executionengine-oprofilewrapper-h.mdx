@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -74,129 +73,129 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- OProfileWrapper.h - OProfile JIT API Wrapper ------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight><Highlight kind="comment">// This file defines a OProfileWrapper object that detects if the oprofile</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="comment">// daemon is running, and provides wrappers for opagent functions used to</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="comment">// communicate with the oprofile JIT interface. The dynamic library libopagent</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight><Highlight kind="comment">// does not need to be linked directly as this object lazily loads the library</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="comment">// when the first op&#95; function is called.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See http://oprofile.sourceforge.net/doc/devel/jit-interface.html for the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="comment">// definition of the interface.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;EXECUTIONENGINE&#95;OPROFILEWRAPPER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;EXECUTIONENGINE&#95;OPROFILEWRAPPER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/datatypes-h">llvm/Support/DataTypes.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;opagent.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28" lineLink="/docs/api/classes/llvm/oprofilewrapper"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/oprofilewrapper/#a0c1eb099fa26c019fa3f5e3c30a09b67">OProfileWrapper</a> &#123;</Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal">  op&#95;agent&#95;t    (&#42;op&#95;open&#95;agent&#95;ptr&#95;t)();</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal">  int           (&#42;op&#95;close&#95;agent&#95;ptr&#95;t)(op&#95;agent&#95;t);</Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal">  int           (&#42;op&#95;write&#95;native&#95;code&#95;ptr&#95;t)(op&#95;agent&#95;t,</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="normal">                                                </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42;,</Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">                                                uint64&#95;t,</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">                                                </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">&#42;,</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">                                                </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> int);</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal">  int           (&#42;op&#95;write&#95;debug&#95;line&#95;info&#95;ptr&#95;t)(op&#95;agent&#95;t,</Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="normal">                                                </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">&#42;,</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="normal">                                                size&#95;t,</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="normal">                                                </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">debug&#95;line&#95;info <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a>&#42;);</Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal">  int           (&#42;op&#95;unload&#95;native&#95;code&#95;ptr&#95;t)(op&#95;agent&#95;t, uint64&#95;t);</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Also used for op&#95;minor&#95;version function which has the same signature</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal">  int           (&#42;op&#95;major&#95;version&#95;ptr&#95;t)();</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// This is not a part of the opagent API, but is useful nonetheless</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal">  bool          (&#42;IsOProfileRunningPtrT)();</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal">  op&#95;agent&#95;t                      Agent;</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal">  op&#95;open&#95;agent&#95;ptr&#95;t             OpenAgentFunc;</Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal">  op&#95;close&#95;agent&#95;ptr&#95;t            CloseAgentFunc;</Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal">  op&#95;write&#95;native&#95;code&#95;ptr&#95;t      WriteNativeCodeFunc;</Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal">  op&#95;write&#95;debug&#95;line&#95;info&#95;ptr&#95;t  WriteDebugLineInfoFunc;</Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal">  op&#95;unload&#95;native&#95;code&#95;ptr&#95;t     UnloadNativeCodeFunc;</Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">  op&#95;major&#95;version&#95;ptr&#95;t          MajorVersionFunc;</Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal">  op&#95;major&#95;version&#95;ptr&#95;t          MinorVersionFunc;</Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal">  IsOProfileRunningPtrT           IsOProfileRunningFunc;</Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> Initialized;</Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/oprofilewrapper/#a0c1eb099fa26c019fa3f5e3c30a09b67">OProfileWrapper</a>();</Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// For testing with a mock opagent implementation, skips the dynamic load and</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// the function resolution.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66" lineLink="/docs/api/classes/llvm/oprofilewrapper/#ab55220d896b5ef2850bc4e5abf721113"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/oprofilewrapper/#ab55220d896b5ef2850bc4e5abf721113">OProfileWrapper</a>(op&#95;open&#95;agent&#95;ptr&#95;t OpenAgentImpl,</Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal">                  op&#95;close&#95;agent&#95;ptr&#95;t CloseAgentImpl,</Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal">                  op&#95;write&#95;native&#95;code&#95;ptr&#95;t WriteNativeCodeImpl,</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal">                  op&#95;write&#95;debug&#95;line&#95;info&#95;ptr&#95;t WriteDebugLineInfoImpl,</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">                  op&#95;unload&#95;native&#95;code&#95;ptr&#95;t UnloadNativeCodeImpl,</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">                  op&#95;major&#95;version&#95;ptr&#95;t MajorVersionImpl,</Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">                  op&#95;major&#95;version&#95;ptr&#95;t MinorVersionImpl,</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal">                  IsOProfileRunningPtrT MockIsOProfileRunningImpl = 0)</Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">  : OpenAgentFunc(OpenAgentImpl),</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">    CloseAgentFunc(CloseAgentImpl),</Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">    WriteNativeCodeFunc(WriteNativeCodeImpl),</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">    WriteDebugLineInfoFunc(WriteDebugLineInfoImpl),</Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal">    UnloadNativeCodeFunc(UnloadNativeCodeImpl),</Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">    MajorVersionFunc(MajorVersionImpl),</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal">    MinorVersionFunc(MinorVersionImpl),</Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="normal">    IsOProfileRunningFunc(MockIsOProfileRunningImpl),</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="normal">    Initialized(<a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>)</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Calls op&#95;open&#95;agent in the oprofile JIT library and saves the returned</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// op&#95;agent&#95;t handle internally so it can be used when calling all the other</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// op&#95;&#42; functions. Callers of this class do not need to keep track of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// op&#95;agent&#95;t objects.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/oprofilewrapper/#a5429b9da01b158fac3e5da48a72010bc">op&#95;open&#95;agent</a>();</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/oprofilewrapper/#a8b250a24143710b280bb480210a31bcf">op&#95;close&#95;agent</a>();</Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/oprofilewrapper/#a24f0da9d90ea20da52b527394d248aab">op&#95;write&#95;native&#95;code</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp/#a8f8f80d37794cde9472343e4487ba3eb">name</a>,</Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">                           uint64&#95;t addr,</Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">                           </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">&#42; code,</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">                           </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a10f3d955592ae2bc745f57e5b48ae115">size</a>);</Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/oprofilewrapper/#abf54432b7e558fe9cc479ce12abfa249">op&#95;write&#95;debug&#95;line&#95;info</a>(</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">&#42; code,</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">                               </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> num&#95;entries,</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal">                               </Highlight><Highlight kind="keyword">struct</Highlight><Highlight kind="normal"> debug&#95;line&#95;info </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">&#42; <a href="/docs/api/files/lib/lib/analysis/lazyvalueinfo-cpp/#ad7f64bcc544dcefb2e068282af1c549d">info</a>);</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/oprofilewrapper/#a6dbe6059e3d02647966bd2e6e54a9aba">op&#95;unload&#95;native&#95;code</a>(uint64&#95;t addr);</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/oprofilewrapper/#ad73d8440953a2a32714c7e99151b5cc9">op&#95;major&#95;version</a>();</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/oprofilewrapper/#ad56a244a605b066fd37756f8bcf5e2f9">op&#95;minor&#95;version</a>();</Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Returns true if the oprofiled process is running, the opagent library is</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// loaded and a connection to the agent has been established, and false</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// otherwise.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/oprofilewrapper/#a77fbdf212dbb6035c0a77d98c8d74224">isAgentAvailable</a>();</Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Loads the libopagent library and initializes this wrapper if the oprofile</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// daemon is running</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a19d27915595e7f0a0ef271448bcdac6f">initialize</a>();</Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Searches /proc for the oprofile daemon and returns true if the process is</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// found, or false otherwise.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> checkForOProfileProcEntry();</Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> isOProfileRunning();</Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace llvm</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// LLVM&#95;EXECUTIONENGINE&#95;OPROFILEWRAPPER&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===-- OProfileWrapper.h - OProfile JIT API Wrapper ------------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"><span class="doxyHighlightComment">// This file defines a OProfileWrapper object that detects if the oprofile</span></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightComment">// daemon is running, and provides wrappers for opagent functions used to</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightComment">// communicate with the oprofile JIT interface. The dynamic library libopagent</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"><span class="doxyHighlightComment">// does not need to be linked directly as this object lazily loads the library</span></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightComment">// when the first op&#95; function is called.</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightComment">// See http://oprofile.sourceforge.net/doc/devel/jit-interface.html for the</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightComment">// definition of the interface.</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;EXECUTIONENGINE&#95;OPROFILEWRAPPER&#95;H</span></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightPreprocessor">#define LLVM&#95;EXECUTIONENGINE&#95;OPROFILEWRAPPER&#95;H</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/datatypes-h">llvm/Support/DataTypes.h</a>&quot;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightPreprocessor">#include &lt;opagent.h&gt;</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28" lineLink="/docs/api/classes/llvm/oprofilewrapper"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/oprofilewrapper/#a0c1eb099fa26c019fa3f5e3c30a09b67">OProfileWrapper</a> &#123;</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight">  op&#95;agent&#95;t    (&#42;op&#95;open&#95;agent&#95;ptr&#95;t)();</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight">  int           (&#42;op&#95;close&#95;agent&#95;ptr&#95;t)(op&#95;agent&#95;t);</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight">  int           (&#42;op&#95;write&#95;native&#95;code&#95;ptr&#95;t)(op&#95;agent&#95;t,</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlight">                                                </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">&#42;,</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlight">                                                uint64&#95;t,</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlight">                                                </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">&#42;,</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlight">                                                </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> int);</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight">  int           (&#42;op&#95;write&#95;debug&#95;line&#95;info&#95;ptr&#95;t)(op&#95;agent&#95;t,</span></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlight">                                                </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">&#42;,</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlight">                                                size&#95;t,</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlight">                                                </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">debug&#95;line&#95;info <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/aarch64promoteconstant-cpp/#a90f8350fecae261c25be85d38b451bff">const</a>&#42;);</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight">  int           (&#42;op&#95;unload&#95;native&#95;code&#95;ptr&#95;t)(op&#95;agent&#95;t, uint64&#95;t);</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Also used for op&#95;minor&#95;version function which has the same signature</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight">  int           (&#42;op&#95;major&#95;version&#95;ptr&#95;t)();</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// This is not a part of the opagent API, but is useful nonetheless</span></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight">  bool          (&#42;IsOProfileRunningPtrT)();</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><span class="doxyHighlight">  op&#95;agent&#95;t                      Agent;</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50"><span class="doxyHighlight">  op&#95;open&#95;agent&#95;ptr&#95;t             OpenAgentFunc;</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlight">  op&#95;close&#95;agent&#95;ptr&#95;t            CloseAgentFunc;</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52"><span class="doxyHighlight">  op&#95;write&#95;native&#95;code&#95;ptr&#95;t      WriteNativeCodeFunc;</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlight">  op&#95;write&#95;debug&#95;line&#95;info&#95;ptr&#95;t  WriteDebugLineInfoFunc;</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54"><span class="doxyHighlight">  op&#95;unload&#95;native&#95;code&#95;ptr&#95;t     UnloadNativeCodeFunc;</span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlight">  op&#95;major&#95;version&#95;ptr&#95;t          MajorVersionFunc;</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"><span class="doxyHighlight">  op&#95;major&#95;version&#95;ptr&#95;t          MinorVersionFunc;</span></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><span class="doxyHighlight">  IsOProfileRunningPtrT           IsOProfileRunningFunc;</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> Initialized;</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/oprofilewrapper/#a0c1eb099fa26c019fa3f5e3c30a09b67">OProfileWrapper</a>();</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// For testing with a mock opagent implementation, skips the dynamic load and</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// the function resolution.</span></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66" lineLink="/docs/api/classes/llvm/oprofilewrapper/#ab55220d896b5ef2850bc4e5abf721113"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/oprofilewrapper/#ab55220d896b5ef2850bc4e5abf721113">OProfileWrapper</a>(op&#95;open&#95;agent&#95;ptr&#95;t OpenAgentImpl,</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><span class="doxyHighlight">                  op&#95;close&#95;agent&#95;ptr&#95;t CloseAgentImpl,</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><span class="doxyHighlight">                  op&#95;write&#95;native&#95;code&#95;ptr&#95;t WriteNativeCodeImpl,</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><span class="doxyHighlight">                  op&#95;write&#95;debug&#95;line&#95;info&#95;ptr&#95;t WriteDebugLineInfoImpl,</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlight">                  op&#95;unload&#95;native&#95;code&#95;ptr&#95;t UnloadNativeCodeImpl,</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><span class="doxyHighlight">                  op&#95;major&#95;version&#95;ptr&#95;t MajorVersionImpl,</span></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlight">                  op&#95;major&#95;version&#95;ptr&#95;t MinorVersionImpl,</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlight">                  IsOProfileRunningPtrT MockIsOProfileRunningImpl = 0)</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><span class="doxyHighlight">  : OpenAgentFunc(OpenAgentImpl),</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><span class="doxyHighlight">    CloseAgentFunc(CloseAgentImpl),</span></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlight">    WriteNativeCodeFunc(WriteNativeCodeImpl),</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlight">    WriteDebugLineInfoFunc(WriteDebugLineInfoImpl),</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><span class="doxyHighlight">    UnloadNativeCodeFunc(UnloadNativeCodeImpl),</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlight">    MajorVersionFunc(MajorVersionImpl),</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"><span class="doxyHighlight">    MinorVersionFunc(MinorVersionImpl),</span></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlight">    IsOProfileRunningFunc(MockIsOProfileRunningImpl),</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlight">    Initialized(<a href="/docs/api/files/lib/lib/analysis/basicaliasanalysis-cpp/#af6d5cafbdfc5313e65d990120021a3ec">true</a>)</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlight">  &#123;</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85"></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Calls op&#95;open&#95;agent in the oprofile JIT library and saves the returned</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// op&#95;agent&#95;t handle internally so it can be used when calling all the other</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// op&#95;&#42; functions. Callers of this class do not need to keep track of</span></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// op&#95;agent&#95;t objects.</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/oprofilewrapper/#a5429b9da01b158fac3e5da48a72010bc">op&#95;open&#95;agent</a>();</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/oprofilewrapper/#a8b250a24143710b280bb480210a31bcf">op&#95;close&#95;agent</a>();</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/oprofilewrapper/#a24f0da9d90ea20da52b527394d248aab">op&#95;write&#95;native&#95;code</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">&#42; <a href="/docs/api/files/lib/lib/target/lib/target/aarch64/smeabipass-cpp/#a8f8f80d37794cde9472343e4487ba3eb">name</a>,</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlight">                           uint64&#95;t addr,</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlight">                           </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">&#42; code,</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><span class="doxyHighlight">                           </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a10f3d955592ae2bc745f57e5b48ae115">size</a>);</span></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/oprofilewrapper/#abf54432b7e558fe9cc479ce12abfa249">op&#95;write&#95;debug&#95;line&#95;info</a>(</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">&#42; code,</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlight">                               </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> num&#95;entries,</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlight">                               </span><span class="doxyHighlightKeyword">struct</span><span class="doxyHighlight"> debug&#95;line&#95;info </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">&#42; <a href="/docs/api/files/lib/lib/analysis/lazyvalueinfo-cpp/#ad7f64bcc544dcefb2e068282af1c549d">info</a>);</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/oprofilewrapper/#a6dbe6059e3d02647966bd2e6e54a9aba">op&#95;unload&#95;native&#95;code</a>(uint64&#95;t addr);</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/oprofilewrapper/#ad73d8440953a2a32714c7e99151b5cc9">op&#95;major&#95;version</a>();</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/oprofilewrapper/#ad56a244a605b066fd37756f8bcf5e2f9">op&#95;minor&#95;version</a>();</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Returns true if the oprofiled process is running, the opagent library is</span></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// loaded and a connection to the agent has been established, and false</span></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// otherwise.</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/oprofilewrapper/#a77fbdf212dbb6035c0a77d98c8d74224">isAgentAvailable</a>();</span></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlightKeyword">private</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Loads the libopagent library and initializes this wrapper if the oprofile</span></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// daemon is running</span></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/analysis/targetlibraryinfo-cpp/#a19d27915595e7f0a0ef271448bcdac6f">initialize</a>();</span></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Searches /proc for the oprofile daemon and returns true if the process is</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// found, or false otherwise.</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> checkForOProfileProcEntry();</span></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> isOProfileRunning();</span></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"><span class="doxyHighlight">&#125; </span><span class="doxyHighlightComment">// namespace llvm</span></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// LLVM&#95;EXECUTIONENGINE&#95;OPROFILEWRAPPER&#95;H</span></CodeLine>
 
 </ProgramListing>
 

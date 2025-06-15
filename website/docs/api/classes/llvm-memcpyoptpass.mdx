@@ -17,7 +17,6 @@ import CodeBlock from '@theme/CodeBlock'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -329,15 +328,15 @@ Transform memcpy to memset when its source was just memset.
 In other words, turn: 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">memset(dst1, c, dst1&#95;size);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">memcpy(dst2, dst1, dst2&#95;size);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">memset(dst1, c, dst1&#95;size);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">memcpy(dst2, dst1, dst2&#95;size);</span></CodeLine>
 
 </ProgramListing>
  into: 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">memset(dst1, c, dst1&#95;size);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">memset(dst2, c, dst2&#95;size);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">memset(dst1, c, dst1&#95;size);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">memset(dst2, c, dst2&#95;size);</span></CodeLine>
 
 </ProgramListing>
  When dst2&#95;size &lt;= dst1&#95;size.
@@ -429,17 +428,17 @@ Try to simplify <code>MemSet</code> to only set the trailing bytes that weren&#3
 In other words, transform: 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">memset(dst, c, dst&#95;size);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">...</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">memcpy(dst, src, src&#95;size);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">memset(dst, c, dst&#95;size);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">...</span></CodeLine>
+<CodeLine><span class="doxyHighlight">memcpy(dst, src, src&#95;size);</span></CodeLine>
 
 </ProgramListing>
  into: 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">...</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">memset(dst + src&#95;size, c, dst&#95;size &lt;= src&#95;size ? 0 : dst&#95;size - src&#95;size);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">memcpy(dst, src, src&#95;size);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">...</span></CodeLine>
+<CodeLine><span class="doxyHighlight">memset(dst + src&#95;size, c, dst&#95;size &lt;= src&#95;size ? 0 : dst&#95;size - src&#95;size);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">memcpy(dst, src, src&#95;size);</span></CodeLine>
 
 </ProgramListing>
 

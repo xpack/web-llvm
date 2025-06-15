@@ -17,7 +17,6 @@ import CodeBlock from '@theme/CodeBlock'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -228,15 +227,15 @@ User-defined <code>struct</code> types can participate in this interface by prov
 This interface does not impose requirements on the hasher <code>update(<a href="/docs/api/classes/llvm/arrayref">ArrayRef</a>&lt;uint8&#95;t&gt; Data)</code> method. We want to avoid collisions for variable-size types; for example for 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">builder.add(&#123;1&#125;);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">builder.add(&#123;2, 3&#125;);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">builder.add(&#123;1&#125;);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">builder.add(&#123;2, 3&#125;);</span></CodeLine>
 
 </ProgramListing>
  and 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">builder.add(&#123;1, 2&#125;);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">builder.add(&#123;3&#125;);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">builder.add(&#123;1, 2&#125;);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">builder.add(&#123;3&#125;);</span></CodeLine>
 
 </ProgramListing>
  . Thus, specializations of <code>add</code> and <code>addHash</code> for variable-size types must not assume that the hasher type considers the size as part of the hash; they must explicitly add the size to the hash. See for example specializations for <code><a href="/docs/api/classes/llvm/arrayref">ArrayRef</a></code> and <code><a href="/docs/api/classes/llvm/stringref">StringRef</a></code>.
@@ -323,15 +322,15 @@ Support hashing <code><a href="/docs/api/classes/llvm/arrayref">ArrayRef</a></co
 <code>Value.size()</code> is taken into account to ensure cases like 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">builder.add(&#123;1&#125;);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">builder.add(&#123;2, 3&#125;);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">builder.add(&#123;1&#125;);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">builder.add(&#123;2, 3&#125;);</span></CodeLine>
 
 </ProgramListing>
  and 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">builder.add(&#123;1, 2&#125;);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">builder.add(&#123;3&#125;);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">builder.add(&#123;1, 2&#125;);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">builder.add(&#123;3&#125;);</span></CodeLine>
 
 </ProgramListing>
  do not collide.
@@ -350,15 +349,15 @@ Support hashing <code><a href="/docs/api/classes/llvm/stringref">StringRef</a></
 <code>Value.size()</code> is taken into account to ensure cases like 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">builder.add(</Highlight><Highlight kind="stringliteral">&quot;a&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">builder.add(</Highlight><Highlight kind="stringliteral">&quot;bc&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">builder.add(</span><span class="doxyHighlightStringLiteral">&quot;a&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">builder.add(</span><span class="doxyHighlightStringLiteral">&quot;bc&quot;</span><span class="doxyHighlight">);</span></CodeLine>
 
 </ProgramListing>
  and 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">builder.add(</Highlight><Highlight kind="stringliteral">&quot;ab&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">builder.add(</Highlight><Highlight kind="stringliteral">&quot;c&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">builder.add(</span><span class="doxyHighlightStringLiteral">&quot;ab&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">builder.add(</span><span class="doxyHighlightStringLiteral">&quot;c&quot;</span><span class="doxyHighlight">);</span></CodeLine>
 
 </ProgramListing>
  do not collide.
@@ -379,9 +378,9 @@ Implement hashing for user-defined <code>struct</code>s.
 
 <ProgramListing>
 
-<CodeLine><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> HasherT, llvm::endianness Endianness&gt;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> addHash(<a href="#a3790ea10d4f6d2364d6b1fb2bddfbf4e">HashBuilder&lt;HasherT, Endianness&gt;</a> &amp;HBuilder,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">             </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> UserDefinedStruct &amp;<a href="/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> HasherT, llvm::endianness Endianness&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> addHash(<a href="#a3790ea10d4f6d2364d6b1fb2bddfbf4e">HashBuilder&lt;HasherT, Endianness&gt;</a> &amp;HBuilder,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">             </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> UserDefinedStruct &amp;<a href="/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>);</span></CodeLine>
 
 </ProgramListing>
 
@@ -389,17 +388,17 @@ Implement hashing for user-defined <code>struct</code>s.
 For example: 
 <ProgramListing>
 
-<CodeLine><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">SimpleStruct &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> c;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> i;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> HasherT, llvm::endianness Endianness&gt;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> addHash(<a href="#a3790ea10d4f6d2364d6b1fb2bddfbf4e">HashBuilder&lt;HasherT, Endianness&gt;</a> &amp;HBuilder,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">             </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> SimpleStruct &amp;<a href="/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  HBuilder.add(<a href="/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>.c);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  HBuilder.add(<a href="/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>.i);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">SimpleStruct &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> c;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> i;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> HasherT, llvm::endianness Endianness&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> addHash(<a href="#a3790ea10d4f6d2364d6b1fb2bddfbf4e">HashBuilder&lt;HasherT, Endianness&gt;</a> &amp;HBuilder,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">             </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> SimpleStruct &amp;<a href="/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  HBuilder.add(<a href="/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>.c);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  HBuilder.add(<a href="/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>.i);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;</span></CodeLine>
 
 </ProgramListing>
 
@@ -409,25 +408,25 @@ To avoid endianness issues, specializations of <code>addHash</code> should gener
 
 <ProgramListing>
 
-<CodeLine><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">&#95;&#95;attribute&#95;&#95; ((packed)) StructWithFastHash &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a1960c14773241d6a238d2db593abe552">C</a>;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// If possible, we want to hash both &#96;I&#96; and &#96;C&#96; in a single</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// &#96;update&#96; call for performance concerns.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> HasherT, llvm::endianness Endianness&gt;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> addHash(HashBuilder&lt;HasherT, Endianness&gt; &amp;HBuilder,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">                      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> StructWithFastHash &amp;Value) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Endianness == <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dba8e5f3adee38c8fccc13c1f3be0143796">llvm::endianness::native</a>) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      HBuilder.update(<a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef</a>(</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">          </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">uint8&#95;t &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(&amp;Value), </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(Value)));</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Rely on existing &#96;add&#96; methods to handle endianness.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      HBuilder.add(<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.I);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      HBuilder.add(<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.C);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">&#95;&#95;attribute&#95;&#95; ((packed)) StructWithFastHash &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/ir/builtingcs-cpp/#a1960c14773241d6a238d2db593abe552">C</a>;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// If possible, we want to hash both &#96;I&#96; and &#96;C&#96; in a single</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// &#96;update&#96; call for performance concerns.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> HasherT, llvm::endianness Endianness&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">friend</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> addHash(HashBuilder&lt;HasherT, Endianness&gt; &amp;HBuilder,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">                      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> StructWithFastHash &amp;Value) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Endianness == <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dba8e5f3adee38c8fccc13c1f3be0143796">llvm::endianness::native</a>) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      HBuilder.update(<a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef</a>(</span></CodeLine>
+<CodeLine><span class="doxyHighlight">          </span><span class="doxyHighlightKeyword">reinterpret&#95;cast&lt;</span><span class="doxyHighlightKeyword">const </span><span class="doxyHighlight">uint8&#95;t &#42;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(&amp;Value), </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(Value)));</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#125; </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// Rely on existing &#96;add&#96; methods to handle endianness.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      HBuilder.add(<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.I);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      HBuilder.add(<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.C);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  &#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;;</span></CodeLine>
 
 </ProgramListing>
 
@@ -437,30 +436,30 @@ To avoid collisions, specialization of <code>addHash</code> for variable-size ty
 For example: 
 <ProgramListing>
 
-<CodeLine><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">CustomContainer &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/logicalview/#a8d87e69e124542d3338b631934cdbea9aaa56a2e65d8106aef3c61e4f6bf94fdb">Elements</a>&#91;100&#93;;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  CustomContainer(</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>) : <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>(<a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = 0; <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> != <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>; ++<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/logicalview/#a8d87e69e124542d3338b631934cdbea9aaa56a2e65d8106aef3c61e4f6bf94fdb">Elements</a>&#91;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>&#93; = <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> HasherT, llvm::endianness Endianness&gt;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">friend</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> addHash(HashBuilder&lt;HasherT, Endianness&gt; &amp;HBuilder,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">                      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> CustomContainer &amp;Value) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (Endianness == <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dba8e5f3adee38c8fccc13c1f3be0143796">llvm::endianness::native</a>) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      HBuilder.update(<a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef</a>(</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">          </Highlight><Highlight kind="keyword">reinterpret&#95;cast&lt;</Highlight><Highlight kind="keyword">const </Highlight><Highlight kind="normal">uint8&#95;t &#42;</Highlight><Highlight kind="keyword">&gt;</Highlight><Highlight kind="normal">(&amp;<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Size),</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">          </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Size) + <a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Size &#42; </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Elements&#91;0&#93;)));</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      </Highlight><Highlight kind="comment">// &#96;addRange&#96; will take care of encoding the size.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      HBuilder.addRange(&amp;<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Elements&#91;0&#93;, &amp;<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Elements&#91;0&#93; +</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      <a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Size);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">CustomContainer &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">private</span><span class="doxyHighlight">:</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/logicalview/#a8d87e69e124542d3338b631934cdbea9aaa56a2e65d8106aef3c61e4f6bf94fdb">Elements</a>&#91;100&#93;;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  CustomContainer(</span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>) : <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>(<a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> = 0; <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a> != <a href="/docs/api/files/lib/lib/analysis/inlineorder-cpp/#a7ee6f0cb51c3b9056199e9a0001fe8c3a6f6cb72d544962fa333e2e34ce64f719">Size</a>; ++<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      <a href="/docs/api/namespaces/llvm/logicalview/#a8d87e69e124542d3338b631934cdbea9aaa56a2e65d8106aef3c61e4f6bf94fdb">Elements</a>&#91;<a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>&#93; = <a href="/docs/api/files/lib/lib/support/md5-cpp/#ac0eafdc9ee161b71e7af98af736952fd">I</a>;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  &#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> HasherT, llvm::endianness Endianness&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">friend</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> addHash(HashBuilder&lt;HasherT, Endianness&gt; &amp;HBuilder,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">                      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> CustomContainer &amp;Value) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (Endianness == <a href="/docs/api/namespaces/llvm/#ae1e26e57357947b25e392fd18ab000dba8e5f3adee38c8fccc13c1f3be0143796">llvm::endianness::native</a>) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      HBuilder.update(<a href="/docs/api/namespaces/llvm/#ab9c6b351507d3c0730f4290919d43a12">ArrayRef</a>(</span></CodeLine>
+<CodeLine><span class="doxyHighlight">          </span><span class="doxyHighlightKeyword">reinterpret&#95;cast&lt;</span><span class="doxyHighlightKeyword">const </span><span class="doxyHighlight">uint8&#95;t &#42;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight">(&amp;<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Size),</span></CodeLine>
+<CodeLine><span class="doxyHighlight">          </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Size) + <a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Size &#42; </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Elements&#91;0&#93;)));</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#125; </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// &#96;addRange&#96; will take care of encoding the size.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      HBuilder.addRange(&amp;<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Elements&#91;0&#93;, &amp;<a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Elements&#91;0&#93; +</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      <a href="/docs/api/namespaces/llvm/targetstackid/#a71392100eb15ba746b1f898986f5d8a5">Value</a>.Size);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  &#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;;</span></CodeLine>
 
 </ProgramListing>
 
@@ -498,14 +497,14 @@ A convenenience variadic helper.
 It simply iterates over its arguments, in order. 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal"><a href="#a91945efc8e44a3f170402a1b1a2316fe">add</a>(Arg1, Arg2);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="#a91945efc8e44a3f170402a1b1a2316fe">add</a>(Arg1, Arg2);</span></CodeLine>
 
 </ProgramListing>
  is equivalent to 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal"><a href="#a91945efc8e44a3f170402a1b1a2316fe">add</a>(Arg1)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"><a href="#a91945efc8e44a3f170402a1b1a2316fe">add</a>(Arg2)</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="#a91945efc8e44a3f170402a1b1a2316fe">add</a>(Arg1)</span></CodeLine>
+<CodeLine><span class="doxyHighlight"><a href="#a91945efc8e44a3f170402a1b1a2316fe">add</a>(Arg2)</span></CodeLine>
 
 </ProgramListing>
 

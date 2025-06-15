@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
@@ -126,160 +125,160 @@ The file content with the documentation metadata removed is:
 
 <ProgramListing>
 
-<Link id="l00001" /><CodeLine lineNumber="1"><Highlight kind="comment">//===-- llvm/LineEditor/LineEditor.h - line editor --------------&#42;- C++ -&#42;-===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00002" /><CodeLine lineNumber="2"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00003" /><CodeLine lineNumber="3"><Highlight kind="normal"></Highlight><Highlight kind="comment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00004" /><CodeLine lineNumber="4"><Highlight kind="normal"></Highlight><Highlight kind="comment">// See https://llvm.org/LICENSE.txt for license information.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00005" /><CodeLine lineNumber="5"><Highlight kind="normal"></Highlight><Highlight kind="comment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00006" /><CodeLine lineNumber="6"><Highlight kind="normal"></Highlight><Highlight kind="comment">//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00007" /><CodeLine lineNumber="7"><Highlight kind="normal"></Highlight><Highlight kind="comment">//===----------------------------------------------------------------------===//</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00008" /><CodeLine lineNumber="8"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00009" /><CodeLine lineNumber="9"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef LLVM&#95;LINEEDITOR&#95;LINEEDITOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00010" /><CodeLine lineNumber="10"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define LLVM&#95;LINEEDITOR&#95;LINEEDITOR&#95;H</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00011" /><CodeLine lineNumber="11"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00012" /><CodeLine lineNumber="12"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h">llvm/ADT/StringRef.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00013" /><CodeLine lineNumber="13"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;cstdio&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00014" /><CodeLine lineNumber="14"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;memory&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;optional&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;string&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;utility&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00018" /><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;vector&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00019" /><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00020" /><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</Highlight></CodeLine>
-<Link id="l00021" /><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00022" /><CodeLine lineNumber="22" lineLink="/docs/api/classes/llvm/lineeditor"><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/classes/llvm/lineeditor/#a850c7f0652c0d7273484a266093805dd">LineEditor</a> &#123;</Highlight></CodeLine>
-<Link id="l00023" /><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00024" /><CodeLine lineNumber="24"><Highlight kind="comment">  /// Create a LineEditor object.</Highlight></CodeLine>
-<Link id="l00025" /><CodeLine lineNumber="25"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00026" /><CodeLine lineNumber="26"><Highlight kind="comment">  /// \\param ProgName The name of the current program. Used to form a default</Highlight></CodeLine>
-<Link id="l00027" /><CodeLine lineNumber="27"><Highlight kind="comment">  /// prompt.</Highlight></CodeLine>
-<Link id="l00028" /><CodeLine lineNumber="28"><Highlight kind="comment">  /// \\param HistoryPath Path to the file in which to store history data, if</Highlight></CodeLine>
-<Link id="l00029" /><CodeLine lineNumber="29"><Highlight kind="comment">  /// possible.</Highlight></CodeLine>
-<Link id="l00030" /><CodeLine lineNumber="30"><Highlight kind="comment">  /// \\param In The input stream used by the editor.</Highlight></CodeLine>
-<Link id="l00031" /><CodeLine lineNumber="31"><Highlight kind="comment">  /// \\param Out The output stream used by the editor.</Highlight></CodeLine>
-<Link id="l00032" /><CodeLine lineNumber="32"><Highlight kind="comment">  /// \\param Err The error stream used by the editor.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00033" /><CodeLine lineNumber="33"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/lineeditor/#a850c7f0652c0d7273484a266093805dd">LineEditor</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> ProgName, <a href="/docs/api/classes/llvm/stringref">StringRef</a> HistoryPath = </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal">, FILE &#42;In = stdin,</Highlight></CodeLine>
-<Link id="l00034" /><CodeLine lineNumber="34"><Highlight kind="normal">             FILE &#42;Out = stdout, FILE &#42;Err = stderr);</Highlight></CodeLine>
-<Link id="l00035" /><CodeLine lineNumber="35"><Highlight kind="normal">  <a href="/docs/api/classes/llvm/lineeditor/#af1ec5b901f227b48659f9b2360092b27">~LineEditor</a>();</Highlight></CodeLine>
-<Link id="l00036" /><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00037" /><CodeLine lineNumber="37"><Highlight kind="comment">  /// Reads a line.</Highlight></CodeLine>
-<Link id="l00038" /><CodeLine lineNumber="38"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00039" /><CodeLine lineNumber="39"><Highlight kind="comment">  /// \\return The line, or std::optional&lt;std::string&gt;() on EOF.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00040" /><CodeLine lineNumber="40"><Highlight kind="normal">  std::optional&lt;std::string&gt; <a href="/docs/api/classes/llvm/lineeditor/#ac1b66a9787d9b423292d75fb5eedf082">readLine</a>() </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00041" /><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00042" /><CodeLine lineNumber="42"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/lineeditor/#ac2b493477c839b5c9bac51b09db7610a">saveHistory</a>();</Highlight></CodeLine>
-<Link id="l00043" /><CodeLine lineNumber="43"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/lineeditor/#a638fd1b86995827b00f34fe47e4f385a">loadHistory</a>();</Highlight></CodeLine>
-<Link id="l00044" /><CodeLine lineNumber="44"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/lineeditor/#a001e6b9ba0f38e37645ab73117658e4d">setHistorySize</a>(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a10f3d955592ae2bc745f57e5b48ae115">size</a>);</Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> std::string <a href="/docs/api/classes/llvm/lineeditor/#a6cf24dc9e2a09abc839f199155753e53">getDefaultHistoryPath</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> ProgName);</Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="comment">  /// The action to perform upon a completion request.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49" lineLink="/docs/api/structs/llvm/lineeditor/completionaction"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/lineeditor/completionaction">CompletionAction</a> &#123;</Highlight></CodeLine>
-<Link id="l00050" /><CodeLine lineNumber="50" lineLink="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70e"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">enum</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70e">ActionKind</a> &#123;</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="comment">      /// Insert Text at the cursor position.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00052" /><CodeLine lineNumber="52" lineLink="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70ea71f426eb85c217d0b6213c099ac405ae"><Highlight kind="normal">      <a href="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70ea71f426eb85c217d0b6213c099ac405ae">AK&#95;Insert</a>,</Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="comment">      /// Show Completions, or beep if the list is empty.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00054" /><CodeLine lineNumber="54" lineLink="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70ea44496236f3d5e0a77dc12f50d7d2d6cc"><Highlight kind="normal">      <a href="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70ea44496236f3d5e0a77dc12f50d7d2d6cc">AK&#95;ShowCompletions</a></Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
-<Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57" lineLink="/docs/api/structs/llvm/lineeditor/completionaction/#a5d8e514dd4b30f8f3d0a59b0f8b989b5"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70e">ActionKind</a> <a href="/docs/api/structs/llvm/lineeditor/completionaction/#a5d8e514dd4b30f8f3d0a59b0f8b989b5">Kind</a>;</Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="comment">    /// The text to insert.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60" lineLink="/docs/api/structs/llvm/lineeditor/completionaction/#a146daa7ce4b2082c567ed6f4e75c32ac"><Highlight kind="normal">    std::string <a href="/docs/api/structs/llvm/lineeditor/completionaction/#a146daa7ce4b2082c567ed6f4e75c32ac">Text</a>;</Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="comment">    /// The list of completions to show.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/structs/llvm/lineeditor/completionaction/#a5632d03f14b73ad8110f8f573c302846"><Highlight kind="normal">    std::vector&lt;std::string&gt; <a href="/docs/api/structs/llvm/lineeditor/completionaction/#a5632d03f14b73ad8110f8f573c302846">Completions</a>;</Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="comment">  /// A possible completion at a given cursor position.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67" lineLink="/docs/api/structs/llvm/lineeditor/completion"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><a href="/docs/api/structs/llvm/lineeditor/completion/#afe213a90edae8e628a81f6004eea9d01">Completion</a> &#123;</Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68" lineLink="/docs/api/structs/llvm/lineeditor/completion/#afe213a90edae8e628a81f6004eea9d01"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/lineeditor/completion/#afe213a90edae8e628a81f6004eea9d01">Completion</a>() = </Highlight><Highlight kind="keywordflow">default</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69" lineLink="/docs/api/structs/llvm/lineeditor/completion/#a7d59bd4c3e0ff888941568ef59ebc157"><Highlight kind="normal">    <a href="/docs/api/structs/llvm/lineeditor/completion/#a7d59bd4c3e0ff888941568ef59ebc157">Completion</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;<a href="/docs/api/structs/llvm/lineeditor/completion/#a3c239d3902f72d63849233982175381b">TypedText</a>, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;<a href="/docs/api/structs/llvm/lineeditor/completion/#a1bf47a02f06e5046c1061e4ada6ba0c4">DisplayText</a>)</Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal">        : <a href="/docs/api/structs/llvm/lineeditor/completion/#a3c239d3902f72d63849233982175381b">TypedText</a>(<a href="/docs/api/structs/llvm/lineeditor/completion/#a3c239d3902f72d63849233982175381b">TypedText</a>), <a href="/docs/api/structs/llvm/lineeditor/completion/#a1bf47a02f06e5046c1061e4ada6ba0c4">DisplayText</a>(<a href="/docs/api/structs/llvm/lineeditor/completion/#a1bf47a02f06e5046c1061e4ada6ba0c4">DisplayText</a>) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="comment">    /// The text to insert. If the user has already input some of the</Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="comment">    /// completion, this should only include the rest of the text.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/structs/llvm/lineeditor/completion/#a3c239d3902f72d63849233982175381b"><Highlight kind="normal">    std::string <a href="/docs/api/structs/llvm/lineeditor/completion/#a3c239d3902f72d63849233982175381b">TypedText</a>;</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="comment">    /// A description of this completion. This may be the completion itself, or</Highlight></CodeLine>
-<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="comment">    /// maybe a summary of its type or arguments.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00078" /><CodeLine lineNumber="78" lineLink="/docs/api/structs/llvm/lineeditor/completion/#a1bf47a02f06e5046c1061e4ada6ba0c4"><Highlight kind="normal">    std::string <a href="/docs/api/structs/llvm/lineeditor/completion/#a1bf47a02f06e5046c1061e4ada6ba0c4">DisplayText</a>;</Highlight></CodeLine>
-<Link id="l00079" /><CodeLine lineNumber="79"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
-<Link id="l00080" /><CodeLine lineNumber="80"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00081" /><CodeLine lineNumber="81"><Highlight kind="comment">  /// Set the completer for this LineEditor. A completer is a function object</Highlight></CodeLine>
-<Link id="l00082" /><CodeLine lineNumber="82"><Highlight kind="comment">  /// which takes arguments of type StringRef (the string to complete) and</Highlight></CodeLine>
-<Link id="l00083" /><CodeLine lineNumber="83"><Highlight kind="comment">  /// size&#95;t (the zero-based cursor position in the StringRef) and returns a</Highlight></CodeLine>
-<Link id="l00084" /><CodeLine lineNumber="84"><Highlight kind="comment">  /// CompletionAction.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00085" /><CodeLine lineNumber="85" lineLink="/docs/api/classes/llvm/lineeditor/#ac206d08836b1ecbc66b9bef758bbd5d3"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> T&gt; </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/lineeditor/#ac206d08836b1ecbc66b9bef758bbd5d3">setCompleter</a>(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> Comp) &#123;</Highlight></CodeLine>
-<Link id="l00086" /><CodeLine lineNumber="86"><Highlight kind="normal">    Completer.reset(</Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> CompleterModel&lt;T&gt;(Comp));</Highlight></CodeLine>
-<Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="comment">  /// Set the completer for this LineEditor to the given list completer.</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="comment">  /// A list completer is a function object which takes arguments of type</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="comment">  /// StringRef (the string to complete) and size&#95;t (the zero-based cursor</Highlight></CodeLine>
-<Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="comment">  /// position in the StringRef) and returns a std::vector&lt;Completion&gt;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00093" /><CodeLine lineNumber="93" lineLink="/docs/api/classes/llvm/lineeditor/#af10d0940b86e6d4650dfe2c55c65f4bf"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> T&gt; </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/lineeditor/#af10d0940b86e6d4650dfe2c55c65f4bf">setListCompleter</a>(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> Comp) &#123;</Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">    Completer.reset(</Highlight><Highlight kind="keyword">new</Highlight><Highlight kind="normal"> ListCompleterModel&lt;T&gt;(Comp));</Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight><Highlight kind="comment"></Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="comment">  /// Use the current completer to produce a CompletionAction for the given</Highlight></CodeLine>
-<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="comment">  /// completion request. If the current completer is a list completer, this</Highlight></CodeLine>
-<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="comment">  /// will return an AK&#95;Insert CompletionAction if each completion has a common</Highlight></CodeLine>
-<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="comment">  /// prefix, or an AK&#95;ShowCompletions CompletionAction otherwise.</Highlight></CodeLine>
-<Link id="l00101" /><CodeLine lineNumber="101"><Highlight kind="comment">  ///</Highlight></CodeLine>
-<Link id="l00102" /><CodeLine lineNumber="102"><Highlight kind="comment">  /// \\param Buffer The string to complete</Highlight></CodeLine>
-<Link id="l00103" /><CodeLine lineNumber="103"><Highlight kind="comment">  /// \\param Pos The zero-based cursor position in the StringRef</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00104" /><CodeLine lineNumber="104"><Highlight kind="normal">  CompletionAction <a href="/docs/api/classes/llvm/lineeditor/#a2c9715831437239c8b4aebeb3772ba7b">getCompletionAction</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Buffer, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> Pos) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00105" /><CodeLine lineNumber="105"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00106" /><CodeLine lineNumber="106" lineLink="/docs/api/classes/llvm/lineeditor/#aed1afe007404f4f8a7a5d2ee4c907862"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;<a href="/docs/api/classes/llvm/lineeditor/#aed1afe007404f4f8a7a5d2ee4c907862">getPrompt</a>()</Highlight><Highlight kind="keyword"> const </Highlight><Highlight kind="normal">&#123; </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> Prompt; &#125;</Highlight></CodeLine>
-<Link id="l00107" /><CodeLine lineNumber="107" lineLink="/docs/api/classes/llvm/lineeditor/#a20f2e551d8bd00097a3a69837a6a9c86"><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/classes/llvm/lineeditor/#a20f2e551d8bd00097a3a69837a6a9c86">setPrompt</a>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::string &amp;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>) &#123; Prompt = <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>; &#125;</Highlight></CodeLine>
-<Link id="l00108" /><CodeLine lineNumber="108"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00109" /><CodeLine lineNumber="109"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Public so callbacks in LineEditor.cpp can use it.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">InternalData;</Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">  std::string Prompt;</Highlight></CodeLine>
-<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">  std::string HistoryPath;</Highlight></CodeLine>
-<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal">  std::unique&#95;ptr&lt;InternalData&gt; <a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a>;</Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">CompleterConcept &#123;</Highlight></CodeLine>
-<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> ~CompleterConcept();</Highlight></CodeLine>
-<Link id="l00119" /><CodeLine lineNumber="119"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> CompletionAction complete(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Buffer, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> Pos) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> = 0;</Highlight></CodeLine>
-<Link id="l00120" /><CodeLine lineNumber="120"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">ListCompleterConcept : CompleterConcept &#123;</Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    ~ListCompleterConcept() </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">    CompletionAction complete(StringRef Buffer, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> Pos) </Highlight><Highlight kind="keyword">const override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> std::string getCommonPrefix(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::vector&lt;Completion&gt; &amp;Comps);</Highlight></CodeLine>
-<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> std::vector&lt;Completion&gt; getCompletions(StringRef Buffer,</Highlight></CodeLine>
-<Link id="l00127" /><CodeLine lineNumber="127"><Highlight kind="normal">                                                   </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> Pos) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> = 0;</Highlight></CodeLine>
-<Link id="l00128" /><CodeLine lineNumber="128"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
-<Link id="l00129" /><CodeLine lineNumber="129"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00130" /><CodeLine lineNumber="130"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
-<Link id="l00131" /><CodeLine lineNumber="131"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">CompleterModel : CompleterConcept &#123;</Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132"><Highlight kind="normal">    CompleterModel(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> Value) : Value(Value) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">    CompletionAction complete(StringRef Buffer, </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> Pos)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>(Buffer, Pos);</Highlight></CodeLine>
-<Link id="l00135" /><CodeLine lineNumber="135"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00136" /><CodeLine lineNumber="136"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> Value;</Highlight></CodeLine>
-<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
-<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00139" /><CodeLine lineNumber="139"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
-<Link id="l00140" /><CodeLine lineNumber="140"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">ListCompleterModel : ListCompleterConcept &#123;</Highlight></CodeLine>
-<Link id="l00141" /><CodeLine lineNumber="141"><Highlight kind="normal">    ListCompleterModel(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> Value) : Value(std::<a href="/docs/api/namespaces/llvm/#abfc9c7ecf70f66901e439f7c04ef3dbb">move</a>(Value)) &#123;&#125;</Highlight></CodeLine>
-<Link id="l00142" /><CodeLine lineNumber="142"><Highlight kind="normal">    std::vector&lt;Completion&gt; getCompletions(StringRef Buffer,</Highlight></CodeLine>
-<Link id="l00143" /><CodeLine lineNumber="143"><Highlight kind="normal">                                           </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> Pos)</Highlight><Highlight kind="keyword"> const override </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00144" /><CodeLine lineNumber="144"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>(Buffer, Pos);</Highlight></CodeLine>
-<Link id="l00145" /><CodeLine lineNumber="145"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">    <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> Value;</Highlight></CodeLine>
-<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
-<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">  std::unique&#95;ptr&lt;const CompleterConcept&gt; Completer;</Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">&#125;;</Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">&#125;</Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight></CodeLine>
+<Link id="l00001" /><CodeLine lineNumber="1"><span class="doxyHighlightComment">//===-- llvm/LineEditor/LineEditor.h - line editor --------------&#42;- C++ -&#42;-===//</span></CodeLine>
+<Link id="l00002" /><CodeLine lineNumber="2"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00003" /><CodeLine lineNumber="3"><span class="doxyHighlightComment">// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.</span></CodeLine>
+<Link id="l00004" /><CodeLine lineNumber="4"><span class="doxyHighlightComment">// See https://llvm.org/LICENSE.txt for license information.</span></CodeLine>
+<Link id="l00005" /><CodeLine lineNumber="5"><span class="doxyHighlightComment">// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception</span></CodeLine>
+<Link id="l00006" /><CodeLine lineNumber="6"><span class="doxyHighlightComment">//</span></CodeLine>
+<Link id="l00007" /><CodeLine lineNumber="7"><span class="doxyHighlightComment">//===----------------------------------------------------------------------===//</span></CodeLine>
+<Link id="l00008" /><CodeLine lineNumber="8"></CodeLine>
+<Link id="l00009" /><CodeLine lineNumber="9"><span class="doxyHighlightPreprocessor">#ifndef LLVM&#95;LINEEDITOR&#95;LINEEDITOR&#95;H</span></CodeLine>
+<Link id="l00010" /><CodeLine lineNumber="10"><span class="doxyHighlightPreprocessor">#define LLVM&#95;LINEEDITOR&#95;LINEEDITOR&#95;H</span></CodeLine>
+<Link id="l00011" /><CodeLine lineNumber="11"></CodeLine>
+<Link id="l00012" /><CodeLine lineNumber="12"><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/adt/stringref-h">llvm/ADT/StringRef.h</a>&quot;</span></CodeLine>
+<Link id="l00013" /><CodeLine lineNumber="13"><span class="doxyHighlightPreprocessor">#include &lt;cstdio&gt;</span></CodeLine>
+<Link id="l00014" /><CodeLine lineNumber="14"><span class="doxyHighlightPreprocessor">#include &lt;memory&gt;</span></CodeLine>
+<Link id="l00015" /><CodeLine lineNumber="15"><span class="doxyHighlightPreprocessor">#include &lt;optional&gt;</span></CodeLine>
+<Link id="l00016" /><CodeLine lineNumber="16"><span class="doxyHighlightPreprocessor">#include &lt;string&gt;</span></CodeLine>
+<Link id="l00017" /><CodeLine lineNumber="17"><span class="doxyHighlightPreprocessor">#include &lt;utility&gt;</span></CodeLine>
+<Link id="l00018" /><CodeLine lineNumber="18"><span class="doxyHighlightPreprocessor">#include &lt;vector&gt;</span></CodeLine>
+<Link id="l00019" /><CodeLine lineNumber="19"></CodeLine>
+<Link id="l00020" /><CodeLine lineNumber="20"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm">llvm</a> &#123;</span></CodeLine>
+<Link id="l00021" /><CodeLine lineNumber="21"></CodeLine>
+<Link id="l00022" /><CodeLine lineNumber="22" lineLink="/docs/api/classes/llvm/lineeditor"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/classes/llvm/lineeditor/#a850c7f0652c0d7273484a266093805dd">LineEditor</a> &#123;</span></CodeLine>
+<Link id="l00023" /><CodeLine lineNumber="23"><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00024" /><CodeLine lineNumber="24"><span class="doxyHighlightComment">  /// Create a LineEditor object.</span></CodeLine>
+<Link id="l00025" /><CodeLine lineNumber="25"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00026" /><CodeLine lineNumber="26"><span class="doxyHighlightComment">  /// \\param ProgName The name of the current program. Used to form a default</span></CodeLine>
+<Link id="l00027" /><CodeLine lineNumber="27"><span class="doxyHighlightComment">  /// prompt.</span></CodeLine>
+<Link id="l00028" /><CodeLine lineNumber="28"><span class="doxyHighlightComment">  /// \\param HistoryPath Path to the file in which to store history data, if</span></CodeLine>
+<Link id="l00029" /><CodeLine lineNumber="29"><span class="doxyHighlightComment">  /// possible.</span></CodeLine>
+<Link id="l00030" /><CodeLine lineNumber="30"><span class="doxyHighlightComment">  /// \\param In The input stream used by the editor.</span></CodeLine>
+<Link id="l00031" /><CodeLine lineNumber="31"><span class="doxyHighlightComment">  /// \\param Out The output stream used by the editor.</span></CodeLine>
+<Link id="l00032" /><CodeLine lineNumber="32"><span class="doxyHighlightComment">  /// \\param Err The error stream used by the editor.</span></CodeLine>
+<Link id="l00033" /><CodeLine lineNumber="33"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/lineeditor/#a850c7f0652c0d7273484a266093805dd">LineEditor</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> ProgName, <a href="/docs/api/classes/llvm/stringref">StringRef</a> HistoryPath = </span><span class="doxyHighlightStringLiteral">&quot;&quot;</span><span class="doxyHighlight">, FILE &#42;In = stdin,</span></CodeLine>
+<Link id="l00034" /><CodeLine lineNumber="34"><span class="doxyHighlight">             FILE &#42;Out = stdout, FILE &#42;Err = stderr);</span></CodeLine>
+<Link id="l00035" /><CodeLine lineNumber="35"><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/lineeditor/#af1ec5b901f227b48659f9b2360092b27">~LineEditor</a>();</span></CodeLine>
+<Link id="l00036" /><CodeLine lineNumber="36"></CodeLine>
+<Link id="l00037" /><CodeLine lineNumber="37"><span class="doxyHighlightComment">  /// Reads a line.</span></CodeLine>
+<Link id="l00038" /><CodeLine lineNumber="38"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00039" /><CodeLine lineNumber="39"><span class="doxyHighlightComment">  /// \\return The line, or std::optional&lt;std::string&gt;() on EOF.</span></CodeLine>
+<Link id="l00040" /><CodeLine lineNumber="40"><span class="doxyHighlight">  std::optional&lt;std::string&gt; <a href="/docs/api/classes/llvm/lineeditor/#ac1b66a9787d9b423292d75fb5eedf082">readLine</a>() </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00041" /><CodeLine lineNumber="41"></CodeLine>
+<Link id="l00042" /><CodeLine lineNumber="42"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/lineeditor/#ac2b493477c839b5c9bac51b09db7610a">saveHistory</a>();</span></CodeLine>
+<Link id="l00043" /><CodeLine lineNumber="43"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/lineeditor/#a638fd1b86995827b00f34fe47e4f385a">loadHistory</a>();</span></CodeLine>
+<Link id="l00044" /><CodeLine lineNumber="44"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/lineeditor/#a001e6b9ba0f38e37645ab73117658e4d">setHistorySize</a>(</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a10f3d955592ae2bc745f57e5b48ae115">size</a>);</span></CodeLine>
+<Link id="l00045" /><CodeLine lineNumber="45"></CodeLine>
+<Link id="l00046" /><CodeLine lineNumber="46"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> std::string <a href="/docs/api/classes/llvm/lineeditor/#a6cf24dc9e2a09abc839f199155753e53">getDefaultHistoryPath</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> ProgName);</span></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><span class="doxyHighlightComment">  /// The action to perform upon a completion request.</span></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49" lineLink="/docs/api/structs/llvm/lineeditor/completionaction"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/docs/api/structs/llvm/lineeditor/completionaction">CompletionAction</a> &#123;</span></CodeLine>
+<Link id="l00050" /><CodeLine lineNumber="50" lineLink="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70e"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">enum</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70e">ActionKind</a> &#123;</span></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><span class="doxyHighlightComment">      /// Insert Text at the cursor position.</span></CodeLine>
+<Link id="l00052" /><CodeLine lineNumber="52" lineLink="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70ea71f426eb85c217d0b6213c099ac405ae"><span class="doxyHighlight">      <a href="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70ea71f426eb85c217d0b6213c099ac405ae">AK&#95;Insert</a>,</span></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><span class="doxyHighlightComment">      /// Show Completions, or beep if the list is empty.</span></CodeLine>
+<Link id="l00054" /><CodeLine lineNumber="54" lineLink="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70ea44496236f3d5e0a77dc12f50d7d2d6cc"><span class="doxyHighlight">      <a href="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70ea44496236f3d5e0a77dc12f50d7d2d6cc">AK&#95;ShowCompletions</a></span></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><span class="doxyHighlight">    &#125;;</span></CodeLine>
+<Link id="l00056" /><CodeLine lineNumber="56"></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57" lineLink="/docs/api/structs/llvm/lineeditor/completionaction/#a5d8e514dd4b30f8f3d0a59b0f8b989b5"><span class="doxyHighlight">    <a href="/docs/api/structs/llvm/lineeditor/completionaction/#ac232b5a8e51db460ca00d6122f0db70e">ActionKind</a> <a href="/docs/api/structs/llvm/lineeditor/completionaction/#a5d8e514dd4b30f8f3d0a59b0f8b989b5">Kind</a>;</span></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><span class="doxyHighlightComment">    /// The text to insert.</span></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60" lineLink="/docs/api/structs/llvm/lineeditor/completionaction/#a146daa7ce4b2082c567ed6f4e75c32ac"><span class="doxyHighlight">    std::string <a href="/docs/api/structs/llvm/lineeditor/completionaction/#a146daa7ce4b2082c567ed6f4e75c32ac">Text</a>;</span></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"></CodeLine>
+<Link id="l00062" /><CodeLine lineNumber="62"><span class="doxyHighlightComment">    /// The list of completions to show.</span></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63" lineLink="/docs/api/structs/llvm/lineeditor/completionaction/#a5632d03f14b73ad8110f8f573c302846"><span class="doxyHighlight">    std::vector&lt;std::string&gt; <a href="/docs/api/structs/llvm/lineeditor/completionaction/#a5632d03f14b73ad8110f8f573c302846">Completions</a>;</span></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><span class="doxyHighlight">  &#125;;</span></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><span class="doxyHighlightComment">  /// A possible completion at a given cursor position.</span></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67" lineLink="/docs/api/structs/llvm/lineeditor/completion"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="/docs/api/structs/llvm/lineeditor/completion/#afe213a90edae8e628a81f6004eea9d01">Completion</a> &#123;</span></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68" lineLink="/docs/api/structs/llvm/lineeditor/completion/#afe213a90edae8e628a81f6004eea9d01"><span class="doxyHighlight">    <a href="/docs/api/structs/llvm/lineeditor/completion/#afe213a90edae8e628a81f6004eea9d01">Completion</a>() = </span><span class="doxyHighlightKeywordFlow">default</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69" lineLink="/docs/api/structs/llvm/lineeditor/completion/#a7d59bd4c3e0ff888941568ef59ebc157"><span class="doxyHighlight">    <a href="/docs/api/structs/llvm/lineeditor/completion/#a7d59bd4c3e0ff888941568ef59ebc157">Completion</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::string &amp;<a href="/docs/api/structs/llvm/lineeditor/completion/#a3c239d3902f72d63849233982175381b">TypedText</a>, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::string &amp;<a href="/docs/api/structs/llvm/lineeditor/completion/#a1bf47a02f06e5046c1061e4ada6ba0c4">DisplayText</a>)</span></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><span class="doxyHighlight">        : <a href="/docs/api/structs/llvm/lineeditor/completion/#a3c239d3902f72d63849233982175381b">TypedText</a>(<a href="/docs/api/structs/llvm/lineeditor/completion/#a3c239d3902f72d63849233982175381b">TypedText</a>), <a href="/docs/api/structs/llvm/lineeditor/completion/#a1bf47a02f06e5046c1061e4ada6ba0c4">DisplayText</a>(<a href="/docs/api/structs/llvm/lineeditor/completion/#a1bf47a02f06e5046c1061e4ada6ba0c4">DisplayText</a>) &#123;&#125;</span></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><span class="doxyHighlightComment">    /// The text to insert. If the user has already input some of the</span></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><span class="doxyHighlightComment">    /// completion, this should only include the rest of the text.</span></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/structs/llvm/lineeditor/completion/#a3c239d3902f72d63849233982175381b"><span class="doxyHighlight">    std::string <a href="/docs/api/structs/llvm/lineeditor/completion/#a3c239d3902f72d63849233982175381b">TypedText</a>;</span></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><span class="doxyHighlightComment">    /// A description of this completion. This may be the completion itself, or</span></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><span class="doxyHighlightComment">    /// maybe a summary of its type or arguments.</span></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78" lineLink="/docs/api/structs/llvm/lineeditor/completion/#a1bf47a02f06e5046c1061e4ada6ba0c4"><span class="doxyHighlight">    std::string <a href="/docs/api/structs/llvm/lineeditor/completion/#a1bf47a02f06e5046c1061e4ada6ba0c4">DisplayText</a>;</span></CodeLine>
+<Link id="l00079" /><CodeLine lineNumber="79"><span class="doxyHighlight">  &#125;;</span></CodeLine>
+<Link id="l00080" /><CodeLine lineNumber="80"></CodeLine>
+<Link id="l00081" /><CodeLine lineNumber="81"><span class="doxyHighlightComment">  /// Set the completer for this LineEditor. A completer is a function object</span></CodeLine>
+<Link id="l00082" /><CodeLine lineNumber="82"><span class="doxyHighlightComment">  /// which takes arguments of type StringRef (the string to complete) and</span></CodeLine>
+<Link id="l00083" /><CodeLine lineNumber="83"><span class="doxyHighlightComment">  /// size&#95;t (the zero-based cursor position in the StringRef) and returns a</span></CodeLine>
+<Link id="l00084" /><CodeLine lineNumber="84"><span class="doxyHighlightComment">  /// CompletionAction.</span></CodeLine>
+<Link id="l00085" /><CodeLine lineNumber="85" lineLink="/docs/api/classes/llvm/lineeditor/#ac206d08836b1ecbc66b9bef758bbd5d3"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> T&gt; </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/lineeditor/#ac206d08836b1ecbc66b9bef758bbd5d3">setCompleter</a>(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> Comp) &#123;</span></CodeLine>
+<Link id="l00086" /><CodeLine lineNumber="86"><span class="doxyHighlight">    Completer.reset(</span><span class="doxyHighlightKeyword">new</span><span class="doxyHighlight"> CompleterModel&lt;T&gt;(Comp));</span></CodeLine>
+<Link id="l00087" /><CodeLine lineNumber="87"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88"></CodeLine>
+<Link id="l00089" /><CodeLine lineNumber="89"><span class="doxyHighlightComment">  /// Set the completer for this LineEditor to the given list completer.</span></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><span class="doxyHighlightComment">  /// A list completer is a function object which takes arguments of type</span></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><span class="doxyHighlightComment">  /// StringRef (the string to complete) and size&#95;t (the zero-based cursor</span></CodeLine>
+<Link id="l00092" /><CodeLine lineNumber="92"><span class="doxyHighlightComment">  /// position in the StringRef) and returns a std::vector&lt;Completion&gt;.</span></CodeLine>
+<Link id="l00093" /><CodeLine lineNumber="93" lineLink="/docs/api/classes/llvm/lineeditor/#af10d0940b86e6d4650dfe2c55c65f4bf"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> T&gt; </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/lineeditor/#af10d0940b86e6d4650dfe2c55c65f4bf">setListCompleter</a>(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> Comp) &#123;</span></CodeLine>
+<Link id="l00094" /><CodeLine lineNumber="94"><span class="doxyHighlight">    Completer.reset(</span><span class="doxyHighlightKeyword">new</span><span class="doxyHighlight"> ListCompleterModel&lt;T&gt;(Comp));</span></CodeLine>
+<Link id="l00095" /><CodeLine lineNumber="95"><span class="doxyHighlight">  &#125;</span></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><span class="doxyHighlightComment">  /// Use the current completer to produce a CompletionAction for the given</span></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><span class="doxyHighlightComment">  /// completion request. If the current completer is a list completer, this</span></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><span class="doxyHighlightComment">  /// will return an AK&#95;Insert CompletionAction if each completion has a common</span></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><span class="doxyHighlightComment">  /// prefix, or an AK&#95;ShowCompletions CompletionAction otherwise.</span></CodeLine>
+<Link id="l00101" /><CodeLine lineNumber="101"><span class="doxyHighlightComment">  ///</span></CodeLine>
+<Link id="l00102" /><CodeLine lineNumber="102"><span class="doxyHighlightComment">  /// \\param Buffer The string to complete</span></CodeLine>
+<Link id="l00103" /><CodeLine lineNumber="103"><span class="doxyHighlightComment">  /// \\param Pos The zero-based cursor position in the StringRef</span></CodeLine>
+<Link id="l00104" /><CodeLine lineNumber="104"><span class="doxyHighlight">  CompletionAction <a href="/docs/api/classes/llvm/lineeditor/#a2c9715831437239c8b4aebeb3772ba7b">getCompletionAction</a>(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Buffer, </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> Pos) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00105" /><CodeLine lineNumber="105"></CodeLine>
+<Link id="l00106" /><CodeLine lineNumber="106" lineLink="/docs/api/classes/llvm/lineeditor/#aed1afe007404f4f8a7a5d2ee4c907862"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::string &amp;<a href="/docs/api/classes/llvm/lineeditor/#aed1afe007404f4f8a7a5d2ee4c907862">getPrompt</a>()</span><span class="doxyHighlightKeyword"> const </span><span class="doxyHighlight">&#123; </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> Prompt; &#125;</span></CodeLine>
+<Link id="l00107" /><CodeLine lineNumber="107" lineLink="/docs/api/classes/llvm/lineeditor/#a20f2e551d8bd00097a3a69837a6a9c86"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/classes/llvm/lineeditor/#a20f2e551d8bd00097a3a69837a6a9c86">setPrompt</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::string &amp;<a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>) &#123; Prompt = <a href="/docs/api/files/lib/lib/option/option-cpp/#a04665169063c8ca1f2ea96c27fc7c2b2">P</a>; &#125;</span></CodeLine>
+<Link id="l00108" /><CodeLine lineNumber="108"></CodeLine>
+<Link id="l00109" /><CodeLine lineNumber="109"><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Public so callbacks in LineEditor.cpp can use it.</span></CodeLine>
+<Link id="l00110" /><CodeLine lineNumber="110"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">InternalData;</span></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112"><span class="doxyHighlightKeyword">private</span><span class="doxyHighlight">:</span></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><span class="doxyHighlight">  std::string Prompt;</span></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><span class="doxyHighlight">  std::string HistoryPath;</span></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><span class="doxyHighlight">  std::unique&#95;ptr&lt;InternalData&gt; <a href="/docs/api/namespaces/llvm/#aa20539e89704d20b98b97e9c3feac934">Data</a>;</span></CodeLine>
+<Link id="l00116" /><CodeLine lineNumber="116"></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">CompleterConcept &#123;</span></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">virtual</span><span class="doxyHighlight"> ~CompleterConcept();</span></CodeLine>
+<Link id="l00119" /><CodeLine lineNumber="119"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">virtual</span><span class="doxyHighlight"> CompletionAction complete(<a href="/docs/api/classes/llvm/stringref">StringRef</a> Buffer, </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> Pos) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> = 0;</span></CodeLine>
+<Link id="l00120" /><CodeLine lineNumber="120"><span class="doxyHighlight">  &#125;;</span></CodeLine>
+<Link id="l00121" /><CodeLine lineNumber="121"></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">ListCompleterConcept : CompleterConcept &#123;</span></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><span class="doxyHighlight">    ~ListCompleterConcept() </span><span class="doxyHighlightKeyword">override</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><span class="doxyHighlight">    CompletionAction complete(StringRef Buffer, </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> Pos) </span><span class="doxyHighlightKeyword">const override</span><span class="doxyHighlight">;</span></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> std::string getCommonPrefix(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::vector&lt;Completion&gt; &amp;Comps);</span></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">virtual</span><span class="doxyHighlight"> std::vector&lt;Completion&gt; getCompletions(StringRef Buffer,</span></CodeLine>
+<Link id="l00127" /><CodeLine lineNumber="127"><span class="doxyHighlight">                                                   </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> Pos) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> = 0;</span></CodeLine>
+<Link id="l00128" /><CodeLine lineNumber="128"><span class="doxyHighlight">  &#125;;</span></CodeLine>
+<Link id="l00129" /><CodeLine lineNumber="129"></CodeLine>
+<Link id="l00130" /><CodeLine lineNumber="130"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> T&gt;</span></CodeLine>
+<Link id="l00131" /><CodeLine lineNumber="131"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">CompleterModel : CompleterConcept &#123;</span></CodeLine>
+<Link id="l00132" /><CodeLine lineNumber="132"><span class="doxyHighlight">    CompleterModel(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> Value) : Value(Value) &#123;&#125;</span></CodeLine>
+<Link id="l00133" /><CodeLine lineNumber="133"><span class="doxyHighlight">    CompletionAction complete(StringRef Buffer, </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> Pos)</span><span class="doxyHighlightKeyword"> const override </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00134" /><CodeLine lineNumber="134"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>(Buffer, Pos);</span></CodeLine>
+<Link id="l00135" /><CodeLine lineNumber="135"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> Value;</span></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><span class="doxyHighlight">  &#125;;</span></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"></CodeLine>
+<Link id="l00139" /><CodeLine lineNumber="139"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> T&gt;</span></CodeLine>
+<Link id="l00140" /><CodeLine lineNumber="140"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">ListCompleterModel : ListCompleterConcept &#123;</span></CodeLine>
+<Link id="l00141" /><CodeLine lineNumber="141"><span class="doxyHighlight">    ListCompleterModel(<a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> Value) : Value(std::<a href="/docs/api/namespaces/llvm/#abfc9c7ecf70f66901e439f7c04ef3dbb">move</a>(Value)) &#123;&#125;</span></CodeLine>
+<Link id="l00142" /><CodeLine lineNumber="142"><span class="doxyHighlight">    std::vector&lt;Completion&gt; getCompletions(StringRef Buffer,</span></CodeLine>
+<Link id="l00143" /><CodeLine lineNumber="143"><span class="doxyHighlight">                                           </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> Pos)</span><span class="doxyHighlightKeyword"> const override </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<Link id="l00144" /><CodeLine lineNumber="144"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/llvm/#a066e2a31a13d6520e52ae1944f194662">Value</a>(Buffer, Pos);</span></CodeLine>
+<Link id="l00145" /><CodeLine lineNumber="145"><span class="doxyHighlight">    &#125;</span></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><span class="doxyHighlight">    <a href="/docs/api/files/lib/lib/target/lib/target/mips/mips16isellowering-cpp/#a0acb682b8260ab1c60b918599864e2e5">T</a> Value;</span></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><span class="doxyHighlight">  &#125;;</span></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><span class="doxyHighlight">  std::unique&#95;ptr&lt;const CompleterConcept&gt; Completer;</span></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><span class="doxyHighlight">&#125;;</span></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><span class="doxyHighlight">&#125;</span></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><span class="doxyHighlightPreprocessor">#endif</span></CodeLine>
 
 </ProgramListing>
 

@@ -16,7 +16,6 @@ import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
 import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
@@ -104,41 +103,41 @@ Using the C++ API:
 
 <ProgramListing extension="c++">
 
-<CodeLine><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/blake3-h">llvm/Support/BLAKE3.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;<a href="/docs/api/files/include/include/llvm/include/llvm/support/errno-h">errno.h</a>&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;stdio.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;stdlib.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;string.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;unistd.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/gen-inline-oz-test-model/#a217f2ab6000d72ad475b25276d3e1ac9">main</a>() &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Initialize the hasher.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  <a href="/docs/api/classes/llvm/blake3">llvm::BLAKE3</a> hasher;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Read input bytes from stdin.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> buf&#91;65536&#93;;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (1) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    ssize&#95;t n = <a href="/docs/api/namespaces/llvm/support/endian/#acfdf941f45bc58470ed8423b98862486">read</a>(STDIN&#95;FILENO, buf, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(buf));</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (n &gt; 0) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      hasher.<a href="/docs/api/classes/llvm/blake3/#ad247de2450380eeba2fab0e794d5e44f">update</a>(<a href="/docs/api/classes/llvm/stringref">llvm::StringRef</a>(buf, n));</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (n == 0) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="comment">// end of file</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      fprintf(stderr, </Highlight><Highlight kind="stringliteral">&quot;read failed: %s\\n&quot;</Highlight><Highlight kind="normal">, strerror(errno));</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      exit(1);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Finalize the hash. Default output length is 32 bytes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> output = hasher.<a href="/docs/api/classes/llvm/blake3/#a006c25a3aced3ec5ff196b8141161592">final</a>();</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Print the hash as hexadecimal.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (uint8&#95;t </Highlight><Highlight kind="keywordtype">byte</Highlight><Highlight kind="normal"> : output) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    printf(</Highlight><Highlight kind="stringliteral">&quot;%02x&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keywordtype">byte</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  printf(</Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm/include/llvm/support/blake3-h">llvm/Support/BLAKE3.h</a>&quot;</span></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &lt;<a href="/docs/api/files/include/include/llvm/include/llvm/support/errno-h">errno.h</a>&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &lt;stdio.h&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &lt;stdlib.h&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &lt;string.h&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &lt;unistd.h&gt;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/gen-inline-oz-test-model/#a217f2ab6000d72ad475b25276d3e1ac9">main</a>() &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Initialize the hasher.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  <a href="/docs/api/classes/llvm/blake3">llvm::BLAKE3</a> hasher;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Read input bytes from stdin.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> buf&#91;65536&#93;;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">while</span><span class="doxyHighlight"> (1) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    ssize&#95;t n = <a href="/docs/api/namespaces/llvm/support/endian/#acfdf941f45bc58470ed8423b98862486">read</a>(STDIN&#95;FILENO, buf, </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(buf));</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (n &gt; 0) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      hasher.<a href="/docs/api/classes/llvm/blake3/#ad247de2450380eeba2fab0e794d5e44f">update</a>(<a href="/docs/api/classes/llvm/stringref">llvm::StringRef</a>(buf, n));</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#125; </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (n == 0) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">break</span><span class="doxyHighlight">; </span><span class="doxyHighlightComment">// end of file</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#125; </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      fprintf(stderr, </span><span class="doxyHighlightStringLiteral">&quot;read failed: %s\\n&quot;</span><span class="doxyHighlight">, strerror(errno));</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      exit(1);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  &#125;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Finalize the hash. Default output length is 32 bytes.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> output = hasher.<a href="/docs/api/classes/llvm/blake3/#a006c25a3aced3ec5ff196b8141161592">final</a>();</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Print the hash as hexadecimal.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (uint8&#95;t </span><span class="doxyHighlightKeywordType">byte</span><span class="doxyHighlight"> : output) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    printf(</span><span class="doxyHighlightStringLiteral">&quot;%02x&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightKeywordType">byte</span><span class="doxyHighlight">);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  &#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  printf(</span><span class="doxyHighlightStringLiteral">&quot;\\n&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> 0;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;</span></CodeLine>
 
 </ProgramListing>
 
@@ -152,43 +151,43 @@ Using the C API:
 
 <ProgramListing extension="c">
 
-<CodeLine><Highlight kind="preprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm-c/blake3-h">llvm-c/blake3.h</a>&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;<a href="/docs/api/files/include/include/llvm/include/llvm/support/errno-h">errno.h</a>&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;stdio.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;stdlib.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;string.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;unistd.h&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <a href="/docs/api/namespaces/gen-inline-oz-test-model/#a217f2ab6000d72ad475b25276d3e1ac9">main</a>() &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Initialize the hasher.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> hasher;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a8a051c13b70081b426f0c0693e6977af">llvm&#95;blake3&#95;hasher&#95;init</a>(&amp;hasher);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Read input bytes from stdin.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> buf&#91;65536&#93;;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">while</Highlight><Highlight kind="normal"> (1) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    ssize&#95;t n = <a href="/docs/api/namespaces/llvm/support/endian/#acfdf941f45bc58470ed8423b98862486">read</a>(STDIN&#95;FILENO, buf, </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal">(buf));</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (n &gt; 0) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a75e25f25c6fc1db9056087bbc458a0bc">llvm&#95;blake3&#95;hasher&#95;update</a>(&amp;hasher, buf, n);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (n == 0) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">break</Highlight><Highlight kind="normal">; </Highlight><Highlight kind="comment">// end of file</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#125; </Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"> &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      fprintf(stderr, </Highlight><Highlight kind="stringliteral">&quot;read failed: %s\\n&quot;</Highlight><Highlight kind="normal">, strerror(errno));</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">      exit(1);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Finalize the hash. LLVM&#95;BLAKE3&#95;OUT&#95;LEN is the default output length, 32 bytes.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  uint8&#95;t output&#91;<a href="/docs/api/files/include/include/llvm-c/blake3-h/#a9a7048b8a78d415916d028f4b8477cc3">LLVM&#95;BLAKE3&#95;OUT&#95;LEN</a>&#93;;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a269ade5376073ccdb1307a0daddaa1de">llvm&#95;blake3&#95;hasher&#95;finalize</a>(&amp;hasher, output, <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a9a7048b8a78d415916d028f4b8477cc3">LLVM&#95;BLAKE3&#95;OUT&#95;LEN</a>);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Print the hash as hexadecimal.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">for</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> i = 0; i &lt; <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a9a7048b8a78d415916d028f4b8477cc3">LLVM&#95;BLAKE3&#95;OUT&#95;LEN</a>; i++) &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    printf(</Highlight><Highlight kind="stringliteral">&quot;%02x&quot;</Highlight><Highlight kind="normal">, output&#91;i&#93;);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  printf(</Highlight><Highlight kind="stringliteral">&quot;\\n&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> 0;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &quot;<a href="/docs/api/files/include/include/llvm-c/blake3-h">llvm-c/blake3.h</a>&quot;</span></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &lt;<a href="/docs/api/files/include/include/llvm/include/llvm/support/errno-h">errno.h</a>&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &lt;stdio.h&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &lt;stdlib.h&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &lt;string.h&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &lt;unistd.h&gt;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="/docs/api/namespaces/gen-inline-oz-test-model/#a217f2ab6000d72ad475b25276d3e1ac9">main</a>() &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Initialize the hasher.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> hasher;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a8a051c13b70081b426f0c0693e6977af">llvm&#95;blake3&#95;hasher&#95;init</a>(&amp;hasher);</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Read input bytes from stdin.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> buf&#91;65536&#93;;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">while</span><span class="doxyHighlight"> (1) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    ssize&#95;t n = <a href="/docs/api/namespaces/llvm/support/endian/#acfdf941f45bc58470ed8423b98862486">read</a>(STDIN&#95;FILENO, buf, </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight">(buf));</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (n &gt; 0) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a75e25f25c6fc1db9056087bbc458a0bc">llvm&#95;blake3&#95;hasher&#95;update</a>(&amp;hasher, buf, n);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#125; </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (n == 0) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">break</span><span class="doxyHighlight">; </span><span class="doxyHighlightComment">// end of file</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#125; </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      fprintf(stderr, </span><span class="doxyHighlightStringLiteral">&quot;read failed: %s\\n&quot;</span><span class="doxyHighlight">, strerror(errno));</span></CodeLine>
+<CodeLine><span class="doxyHighlight">      exit(1);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    &#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  &#125;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Finalize the hash. LLVM&#95;BLAKE3&#95;OUT&#95;LEN is the default output length, 32 bytes.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  uint8&#95;t output&#91;<a href="/docs/api/files/include/include/llvm-c/blake3-h/#a9a7048b8a78d415916d028f4b8477cc3">LLVM&#95;BLAKE3&#95;OUT&#95;LEN</a>&#93;;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a269ade5376073ccdb1307a0daddaa1de">llvm&#95;blake3&#95;hasher&#95;finalize</a>(&amp;hasher, output, <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a9a7048b8a78d415916d028f4b8477cc3">LLVM&#95;BLAKE3&#95;OUT&#95;LEN</a>);</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// Print the hash as hexadecimal.</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> i = 0; i &lt; <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a9a7048b8a78d415916d028f4b8477cc3">LLVM&#95;BLAKE3&#95;OUT&#95;LEN</a>; i++) &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    printf(</span><span class="doxyHighlightStringLiteral">&quot;%02x&quot;</span><span class="doxyHighlight">, output&#91;i&#93;);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  &#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  printf(</span><span class="doxyHighlightStringLiteral">&quot;\\n&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> 0;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;</span></CodeLine>
 
 </ProgramListing>
 
@@ -207,19 +206,19 @@ Using the C API:
 
 <ProgramListing extension="c++">
 
-<CodeLine><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/codeview/#a1ec06922412c1f297e72b2134072621da021508d03d4b477e1a922f793599d69f">BLAKE3</a> &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// API</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  llvm&#95;blake3&#95;hasher Hasher;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/codeview/#a1ec06922412c1f297e72b2134072621da021508d03d4b477e1a922f793599d69f">BLAKE3</a> &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// API</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">private</span><span class="doxyHighlight">:</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  llvm&#95;blake3&#95;hasher Hasher;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;;</span></CodeLine>
 
 </ProgramListing>
  
 <ProgramListing extension="c">
 
-<CodeLine><Highlight kind="keyword">typedef</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// private fields</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125; <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a>;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">&#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightComment">// private fields</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125; <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a>;</span></CodeLine>
 
 </ProgramListing>
 
@@ -240,16 +239,16 @@ An incremental BLAKE3 hashing state, which can accept any number of updates. Thi
 
 <ProgramListing extension="c++">
 
-<CodeLine><Highlight kind="normal">BLAKE3::BLAKE3();</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> BLAKE3::init();</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">BLAKE3::BLAKE3();</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> BLAKE3::init();</span></CodeLine>
 
 </ProgramListing>
  
 <ProgramListing extension="c">
 
-<CodeLine><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a8a051c13b70081b426f0c0693e6977af">llvm&#95;blake3&#95;hasher&#95;init</a>(</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a8a051c13b70081b426f0c0693e6977af">llvm&#95;blake3&#95;hasher&#95;init</a>(</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self);</span></CodeLine>
 
 </ProgramListing>
 
@@ -268,18 +267,18 @@ Initialize a <code><a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake
 
 <ProgramListing extension="c++">
 
-<CodeLine><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> BLAKE3::update(ArrayRef&lt;uint8&#95;t&gt; Data);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> BLAKE3::update(StringRef Str);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> BLAKE3::update(ArrayRef&lt;uint8&#95;t&gt; Data);</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> BLAKE3::update(StringRef Str);</span></CodeLine>
 
 </ProgramListing>
  
 <ProgramListing extension="c">
 
-<CodeLine><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a75e25f25c6fc1db9056087bbc458a0bc">llvm&#95;blake3&#95;hasher&#95;update</a>(</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;input,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> input&#95;len);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a75e25f25c6fc1db9056087bbc458a0bc">llvm&#95;blake3&#95;hasher&#95;update</a>(</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> &#42;input,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> input&#95;len);</span></CodeLine>
 
 </ProgramListing>
 
@@ -298,23 +297,23 @@ Add input to the hasher. This can be called any number of times.
 
 <ProgramListing extension="c++">
 
-<CodeLine><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> NumBytes = LLVM&#95;BLAKE3&#95;OUT&#95;LEN&gt;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><a href="/docs/api/namespaces/llvm/#a081d38a75bd71be1f6b2db493b46c70e">BLAKE3Result</a> = std::array&lt;uint8&#95;t, NumBytes&gt;;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> NumBytes = LLVM&#95;BLAKE3&#95;OUT&#95;LEN&gt;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> BLAKE3::final(BLAKE3Result&lt;NumBytes&gt; &amp;Result);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> NumBytes = LLVM&#95;BLAKE3&#95;OUT&#95;LEN&gt;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">BLAKE3Result&lt;NumBytes&gt; BLAKE3::final();</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> NumBytes = LLVM&#95;BLAKE3&#95;OUT&#95;LEN&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/docs/api/namespaces/llvm/#a081d38a75bd71be1f6b2db493b46c70e">BLAKE3Result</a> = std::array&lt;uint8&#95;t, NumBytes&gt;;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> NumBytes = LLVM&#95;BLAKE3&#95;OUT&#95;LEN&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> BLAKE3::final(BLAKE3Result&lt;NumBytes&gt; &amp;Result);</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> NumBytes = LLVM&#95;BLAKE3&#95;OUT&#95;LEN&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">BLAKE3Result&lt;NumBytes&gt; BLAKE3::final();</span></CodeLine>
 
 </ProgramListing>
  
 <ProgramListing extension="c">
 
-<CodeLine><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a269ade5376073ccdb1307a0daddaa1de">llvm&#95;blake3&#95;hasher&#95;finalize</a>(</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  uint8&#95;t &#42;out,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> out&#95;len);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a269ade5376073ccdb1307a0daddaa1de">llvm&#95;blake3&#95;hasher&#95;finalize</a>(</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  uint8&#95;t &#42;out,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> out&#95;len);</span></CodeLine>
 
 </ProgramListing>
 
@@ -343,9 +342,9 @@ Shorter BLAKE3 outputs are prefixes of longer ones. Explicitly requesting a shor
 
 <ProgramListing extension="c">
 
-<CodeLine><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#aaf8dcf7da9729af05bec0662d3873280">llvm&#95;blake3&#95;hasher&#95;init&#95;keyed</a>(</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> uint8&#95;t key&#91;<a href="/docs/api/files/include/include/llvm-c/blake3-h/#ac6e51ba539cfceb419c6ba3f03338b47">LLVM&#95;BLAKE3&#95;KEY&#95;LEN</a>&#93;);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#aaf8dcf7da9729af05bec0662d3873280">llvm&#95;blake3&#95;hasher&#95;init&#95;keyed</a>(</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> uint8&#95;t key&#91;<a href="/docs/api/files/include/include/llvm-c/blake3-h/#ac6e51ba539cfceb419c6ba3f03338b47">LLVM&#95;BLAKE3&#95;KEY&#95;LEN</a>&#93;);</span></CodeLine>
 
 </ProgramListing>
 
@@ -364,9 +363,9 @@ Initialize a <code><a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake
 
 <ProgramListing extension="c">
 
-<CodeLine><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#acd67a8b965297a5e15381f1fea23fce6">llvm&#95;blake3&#95;hasher&#95;init&#95;derive&#95;key</a>(</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal"> &#42;context);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#acd67a8b965297a5e15381f1fea23fce6">llvm&#95;blake3&#95;hasher&#95;init&#95;derive&#95;key</a>(</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> &#42;context);</span></CodeLine>
 
 </ProgramListing>
 
@@ -390,10 +389,10 @@ This function is intended for application code written in C. For language bindin
 
 <ProgramListing extension="c">
 
-<CodeLine><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#ae9a8ac402d13484bcb44c12d572fecb8">llvm&#95;blake3&#95;hasher&#95;init&#95;derive&#95;key&#95;raw</a>(</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> &#42;context,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> context&#95;len);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#ae9a8ac402d13484bcb44c12d572fecb8">llvm&#95;blake3&#95;hasher&#95;init&#95;derive&#95;key&#95;raw</a>(</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> &#42;context,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> context&#95;len);</span></CodeLine>
 
 </ProgramListing>
 
@@ -416,11 +415,11 @@ Application code in C should prefer <code>llvm&#95;blake3&#95;hasher&#95;init&#9
 
 <ProgramListing extension="c">
 
-<CodeLine><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#ad3added645a514c2976352a72152c472">llvm&#95;blake3&#95;hasher&#95;finalize&#95;seek</a>(</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  uint64&#95;t seek,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  uint8&#95;t &#42;out,</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordtype">size&#95;t</Highlight><Highlight kind="normal"> out&#95;len);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#ad3added645a514c2976352a72152c472">llvm&#95;blake3&#95;hasher&#95;finalize&#95;seek</a>(</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  uint64&#95;t seek,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  uint8&#95;t &#42;out,</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordType">size&#95;t</span><span class="doxyHighlight"> out&#95;len);</span></CodeLine>
 
 </ProgramListing>
 
@@ -439,8 +438,8 @@ The same as <code>llvm&#95;blake3&#95;hasher&#95;finalize</code>, but with an ad
 
 <ProgramListing extension="c">
 
-<CodeLine><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a368118adf27068d9bf7b8f34b8f9be7a">llvm&#95;blake3&#95;hasher&#95;reset</a>(</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> <a href="/docs/api/files/include/include/llvm-c/blake3-h/#a368118adf27068d9bf7b8f34b8f9be7a">llvm&#95;blake3&#95;hasher&#95;reset</a>(</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  <a href="/docs/api/structs/llvm-blake3-hasher">llvm&#95;blake3&#95;hasher</a> &#42;self);</span></CodeLine>
 
 </ProgramListing>
 
