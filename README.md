@@ -26,6 +26,17 @@ in the `website` folder.
 The steps below are for completeness, and document how to generate the
 Doxygen documentation and convert it to Docusaurus MDX.
 
+## Preliminary results
+
+The issue is related to the very large size of some files, and to the
+extreme large number of components in the MDX files in the `files` folder.
+
+After optimising the code to generate less components in the program
+listings, things improved, the memory consumption halved, but the build
+still used about 2 GB of swap memory.
+
+~~~
+
 ## LLVM
 
 The LLVM documentation is in the main LLVM repo. It can be downloaded either
